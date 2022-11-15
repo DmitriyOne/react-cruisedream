@@ -1,10 +1,10 @@
 
 const App = () => {
-  return (
-    <div>
+	return (
+		<div>
       Hello
-    </div>
-  );
-}
+		</div>
+	);
+};
 
 export default App;
