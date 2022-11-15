@@ -1,10 +1,7 @@
+import { AppRoutes } from './components'
 
-const App = () => {
-	return (
-		<div>
-      Hello
-		</div>
-	);
-};
+const App = () => (
+	<AppRoutes />
+)
 
-export default App;
+export default App

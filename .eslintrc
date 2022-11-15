@@ -9,11 +9,11 @@
     "no-console": "warn",
     "quotes": [
       "warn",
-      "double"
+      "single"
     ],
     "jsx-quotes": [
       "warn",
-      "prefer-single"
+      "prefer-double"
     ],
     "indent": [
       "warn",
@@ -27,7 +27,7 @@
     ],
     "semi": [
       "warn",
-      "always"
+      "never"
     ],
     "eol-last": [
       "warn",
