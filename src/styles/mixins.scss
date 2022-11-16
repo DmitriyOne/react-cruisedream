@@ -1,3 +1,5 @@
+@use './family.scss';
+
 @mixin media-minw($width) {
   @media only screen and (min-width: ($width + "px")) {
     @content;
@@ -56,4 +58,9 @@
 @mixin fluidMaxSize($size, $property: width) {
   #{$property}: 100%;
   max-#{$property}: $size + px;
+}
+
+@mixin fonts($family, $weight: 400) {
+  font-family: $family;
+  font-weight: $weight;
 }
