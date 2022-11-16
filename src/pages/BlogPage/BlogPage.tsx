@@ -1,10 +1,10 @@
 import { Heading } from '../../components'
 
-export const CruisePage = () => {
+export const BlogPage = () => {
 	return (
 		<div>
 			<Heading align="center">
-				CruisePage
+				BlogPage
 			</Heading>
 		</div>
 	)
