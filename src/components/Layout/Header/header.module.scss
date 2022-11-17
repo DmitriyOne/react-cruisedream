@@ -1,0 +1,15 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+
+.component {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.header {
+	padding: 10px 20px;
+
+	@include mixins.media-w(breakpoints.$laptop){
+		padding: 12px 20px;
+	}
+}

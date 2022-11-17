@@ -1,0 +1,58 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+
+.full {
+	width: 100%;
+	max-width: 100%
+}
+
+.container {
+	@include mixins.fluidMaxSize(1500);
+	margin: 0 auto;
+
+	// @include mixins.media-w(breakpoints.$laptop-l) {
+	// 	@include mixins.fluidMaxSize(1220);
+	// }
+
+	// @include mixins.media-w(breakpoints.$laptop-s) {
+	// 	@include mixins.fluidMaxSize(1024);
+	// }
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.alignStart {
+	align-items: flex-start;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.alignEnd {
+	align-items: flex-end;
+}
+
+.justifyAround {
+	justify-content: space-around;
+}
+
+.justifyBetween {
+	justify-content: space-between;
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.justifyBaseline {
+	justify-content: baseline;
+}
