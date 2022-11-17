@@ -24,7 +24,7 @@ export const Header = () => {
 							burgerIsOpen={burgerIsOpen}
 						/>
 					}
-					<Logo />
+					<Logo className={styles.logo} />
 					<Navbar navbarIsOpen={burgerIsOpen} />
 					<Contacts />
 				</Container>

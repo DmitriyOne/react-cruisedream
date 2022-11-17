@@ -1,0 +1,74 @@
+@use '.././../../styles/colors.scss';
+@use '.././../../styles/family.scss';
+@use '.././../../styles/mixins.scss';
+
+.footer {
+	@include mixins.flex-spb;
+	padding: 80px 20px;
+	background-color: #004A76;
+}
+
+.logoText {
+	display: block;
+	width: 100%;
+	@include mixins.fonts(family.$source-sans-pro, 600);
+	font-size: 16px;
+	line-height: 120%;
+	text-align: center;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	color: colors.$white;
+	text-align: right;
+	margin-top: 12px;
+}
+
+.socialRow {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 80px;
+}
+
+.socialIcon {
+	display: block;
+	@include mixins.square-size(18);
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.buttonFeedback {
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	padding: 12px 30px;
+	border: 2px solid colors.$white;
+}
+
+.phoneFeedback {
+	display: block;
+	font-size: 20px;
+	line-height: 100%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.mailFeedback {
+	display: block;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	text-align: right;
+}
+
+.arrow {
+	width: 16px;
+	height: 30px;
+}
