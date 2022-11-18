@@ -4,7 +4,7 @@ export const NotFoundPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				NotFoundPage
+				404 ошибка
 			</Heading>
 		</div>
 	)

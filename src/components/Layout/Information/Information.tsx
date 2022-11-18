@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
-import { B, Button, Container } from '../../../../components'
+import { B, Button, Container } from '../..'
 
 import closeIcon from './icons/close.svg'
 

@@ -4,7 +4,7 @@ export const AcrossRussiaPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				AcrossRussiaPage
+				По России
 			</Heading>
 		</div>
 	)

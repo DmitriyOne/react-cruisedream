@@ -4,7 +4,7 @@ export const HomePage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				HomePage
+				Главная страница
 			</Heading>
 		</div>
 	)

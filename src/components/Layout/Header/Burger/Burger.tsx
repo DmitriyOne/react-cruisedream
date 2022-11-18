@@ -27,9 +27,6 @@ export const Burger: FC<IProps> = ({
 				<span className={style.line} />
 				<span className={style.line} />
 			</div>
-			<span className={style.text}>
-				Меню
-			</span>
 		</Button >
 	)
 }

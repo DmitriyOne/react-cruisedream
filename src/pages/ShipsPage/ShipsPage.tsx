@@ -4,7 +4,7 @@ export const ShipsPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				ShipsPage
+				Страница кораблей
 			</Heading>
 		</div>
 	)
