@@ -6,5 +6,6 @@ export const CRUISE_ROUTES = {
 	SHIPS: '/ships',
 	COMPANIES: '/companies',
 	BLOG: '/blog',
-	NOT_FOUND: '*'
+	NOT_FOUND: '*',
+	EMPTY: '#'
 }
