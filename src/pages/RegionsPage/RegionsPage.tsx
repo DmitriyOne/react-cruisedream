@@ -2,7 +2,7 @@ import { Heading } from '../../components'
 
 export const RegionsPage = () => {
 	return (
-		<div>
+		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
 				RegionsPage
 			</Heading>
