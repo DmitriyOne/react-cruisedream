@@ -4,7 +4,7 @@ export const BlogPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				BlogPage
+				Страницы блога
 			</Heading>
 		</div>
 	)

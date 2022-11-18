@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 interface IProps
 	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>,
 		HTMLButtonElement> {
-	children: ReactNode
+	children?: ReactNode
 	className?: string
 	href?: string;
-	target?: '_blank';
+	target?: '_blank'
 	reactHref?: string
 };
 
@@ -33,7 +33,7 @@ export const Button: FC<IProps> = ({
 			</a>
 		)
 	}
-	if(reactHref) {
+	if (reactHref) {
 		return (
 			<Link
 				to={reactHref}

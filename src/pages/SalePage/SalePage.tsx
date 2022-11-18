@@ -4,7 +4,7 @@ export const SalePage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				SalePage
+				Страница акций
 			</Heading>
 		</div>
 	)

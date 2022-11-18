@@ -4,7 +4,7 @@ export const RegionsPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-				RegionsPage
+				Страница регионов
 			</Heading>
 		</div>
 	)

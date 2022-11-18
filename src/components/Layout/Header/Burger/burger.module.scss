@@ -70,13 +70,3 @@
     }
   }
 }
-
-.text {
-  @include mixins.fonts(family.$source-sans-pro);
-  font-size: 12px;
-  line-height: 140%;
-  letter-spacing: 0.05em;
-  color: #004A76;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
