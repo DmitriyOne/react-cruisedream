@@ -1,9 +1,23 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/family.scss';
 @use '../../../../styles/colors.scss';
+@use '../../../../styles/breakpoints.scss';
 
 .component {
 	margin-right: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 40px;
+	}
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-right: 60px;
+	}
+}
+
+.logo {
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
 }
 
 .logoText {
@@ -18,12 +32,20 @@
 	color: colors.$white;
 	text-align: right;
 	margin-top: 12px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 14px;
+	}
 }
 
 .socialRow {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 40px;
+	}
 }
 
 .socialIcon {

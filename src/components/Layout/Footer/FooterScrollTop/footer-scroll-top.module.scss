@@ -1,0 +1,14 @@
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/mixins.scss';
+
+.arrow {
+	width: 16px;
+	height: 30px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none;
+	}
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: block;
+	}
+}

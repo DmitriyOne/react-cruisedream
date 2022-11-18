@@ -2,9 +2,9 @@ import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { B } from '../../../B'
 import { Button } from '../../../Button'
 
-import styles from './feedback.module.scss'
+import styles from './footer-feedback.module.scss'
 
-export const Feedback = () => {
+export const FooterFeedback = () => {
 	return (
 		<div className={styles.component}>
 			<Button className={styles.buttonFeedback}>

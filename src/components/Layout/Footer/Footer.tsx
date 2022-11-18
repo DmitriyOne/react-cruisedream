@@ -1,24 +1,26 @@
+import { useWindowSize } from '../../../hooks'
 import { Container } from '../../../components'
 
-import { Feedback } from './Feedback/Feedback'
-import { FooterLinks } from './FooterLinks/FooterLinks'
-import { ScrollTop } from './ScrollTop/ScrollTop'
-import { Socials } from './Socials/Socials'
+import { FooterFeedback } from './FooterFeedback/FooterFeedback'
+import { FooterMenu } from './FooterMenu/FooterMenu'
+import { FooterScrollTop } from './FooterScrollTop/FooterScrollTop'
+import { FooterLogo } from './FooterLogo/FooterLogo'
+import { FooterSocials } from './FooterSocials/FooterSocials'
 
 import styles from './footer.module.scss'
 
 export const Footer = () => {
+	const { isMobile, isDesktop } = useWindowSize()
+
+	const direction = isDesktop ? 'row' : 'column'
 	return (
 		<footer className={styles.footer}>
-			<Container direction="row">
-				<div className={styles.col}>
-					<Socials />
-					<FooterLinks />
-				</div>
-				<div className={styles.col}>
-					<Feedback />
-					<ScrollTop />
-				</div>
+			<Container direction={direction}>
+				{isDesktop && <FooterLogo />}
+				<FooterMenu />
+				<FooterFeedback />
+				{isDesktop && <FooterScrollTop />}
+				{isMobile && <FooterSocials />}
 			</Container>
 		</footer>
 	)
