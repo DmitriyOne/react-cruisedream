@@ -4,7 +4,7 @@ export const CompaniesPage = () => {
 	return (
 		<div style={{ marginTop: '150px' }}>
 			<Heading align="center">
-			CompaniesPage
+				Страница компаний
 			</Heading>
 		</div>
 	)

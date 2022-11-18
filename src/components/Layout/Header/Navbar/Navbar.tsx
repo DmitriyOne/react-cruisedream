@@ -2,7 +2,10 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import arrowIcon from './icons/arrow.svg'
+
 import { MenuLinks } from '../../../../constants'
+import { useWindowSize } from '../../../../hooks'
 
 import styles from './navbar.module.scss'
 
@@ -13,6 +16,7 @@ interface IProps {
 export const Navbar: FC<IProps> = ({
 	navbarIsOpen,
 }) => {
+	const { isTablet } = useWindowSize()
 	const componentClassName = classNames(styles.component, {
 		[styles.active]: navbarIsOpen
 	})
@@ -34,6 +38,14 @@ export const Navbar: FC<IProps> = ({
 							}
 						>
 							{item.text}
+							{isTablet &&
+								<span className={styles.icon}>
+									<img
+										src={arrowIcon}
+										alt="Arrow right"
+									/>
+								</span>
+							}
 						</NavLink>
 					</li>
 				)}

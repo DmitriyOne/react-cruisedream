@@ -2,9 +2,9 @@ import { Button } from '../../../../Button'
 
 import searchIcon from '../icons/search.svg'
 
-import styles from './top.module.scss'
+import styles from './contact-top.module.scss'
 
-export const Top = () => {
+export const ContactTop = () => {
 	return (
 		<div className={styles.row}>
 			<Button className={styles.topSearch}>
