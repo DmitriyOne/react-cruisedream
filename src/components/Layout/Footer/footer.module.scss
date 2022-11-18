@@ -1,18 +1,13 @@
-@use '.././../../styles/colors.scss';
-@use '.././../../styles/family.scss';
 @use '.././../../styles/mixins.scss';
+@use '.././../../styles/breakpoints.scss';
 
 .footer {
 	@include mixins.flex-spb;
 	padding: 80px 20px;
 	background-color: #004A76;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
 }
-
-.col {
-	display: flex;
-	align-items: center;
-}
-
-
-
-

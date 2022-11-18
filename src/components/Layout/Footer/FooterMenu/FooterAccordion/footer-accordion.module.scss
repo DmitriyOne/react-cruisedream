@@ -1,0 +1,32 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	display: flex;
+	flex-direction: column;
+
+	&.active {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: none;
+	}
+}
+
+.link {
+	display: block;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	margin-top: 13px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: center;
+		font-size: 18px;
+	}
+}
