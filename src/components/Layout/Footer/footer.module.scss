@@ -1,0 +1,18 @@
+@use '.././../../styles/colors.scss';
+@use '.././../../styles/family.scss';
+@use '.././../../styles/mixins.scss';
+
+.footer {
+	@include mixins.flex-spb;
+	padding: 80px 20px;
+	background-color: #004A76;
+}
+
+.col {
+	display: flex;
+	align-items: center;
+}
+
+
+
+

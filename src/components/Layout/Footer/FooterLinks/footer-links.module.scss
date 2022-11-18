@@ -1,0 +1,38 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.row {
+	display: flex;
+}
+
+.col {
+	margin-right: 80px;
+
+	&:last-child {
+		margin-right: 0px;
+	}
+}
+
+.link {
+	display: block;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	margin-top: 13px;
+}
+
+.visible {
+	margin-top: 0px;
+}
+
+.dropdown {
+	display: flex;
+	flex-direction: column;
+}
+
+.hidden {
+
+}

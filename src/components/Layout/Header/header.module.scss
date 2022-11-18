@@ -1,0 +1,31 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/z-index.scss';
+
+.component {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.header {
+	padding: 10px 20px;
+
+	@include mixins.media-w(breakpoints.$laptop){
+		padding: 12px 20px;
+	}
+}
+
+.logo {
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		position: relative;
+		z-index: z-index.$idx-header;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(125);
+	}
+}

@@ -1,0 +1,43 @@
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.row {
+	display: flex;
+	justify-content: flex-end;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: none;
+	}
+}
+
+.bottom {
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		align-items: flex-end
+	}
+}
+
+.bottomIcon {
+	@include mixins.square-size(16);
+	margin-left: 20px;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		margin-left: 10px;
+	}
+}
+
+.bottomText {
+	display: block;
+	margin-left: 16px;
+	font-size: 16px;
+	line-height: 120%;
+	color: rgba(79, 78, 78, 0.4);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 14px;
+	}
+}
