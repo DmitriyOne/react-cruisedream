@@ -12,6 +12,7 @@ export const ContactBottom = () => {
 			<Button
 				className={styles.bottomIcon}
 				href={CRUISE_SOCIAL_LINKS.telegram}
+				target="_blank"
 			>
 				<img
 					src={telegramIcon}
@@ -21,6 +22,7 @@ export const ContactBottom = () => {
 			<Button
 				className={styles.bottomIcon}
 				href={CRUISE_SOCIAL_LINKS.whatsapp}
+				target="_blank"
 			>
 				<img
 					src={whatsappIcon}

@@ -16,6 +16,10 @@
 		transition: left .4s;
 	}
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 50px;
+	}
+
 	&.active {
 		left: 0;
 	}
@@ -95,6 +99,10 @@
 
 	&.active::before {
 		left: 0;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			left: -110%;
+		}
 	}
 
 	@include mixins.media-w(breakpoints.$laptop) {

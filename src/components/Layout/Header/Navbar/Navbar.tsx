@@ -7,14 +7,18 @@ import arrowIcon from './icons/arrow.svg'
 import { MenuLinks } from '../../../../constants'
 import { useWindowSize } from '../../../../hooks'
 
+import { NavbarFooter } from './NavbarFooter/NavbarFooter'
+
 import styles from './navbar.module.scss'
 
 interface IProps {
 	navbarIsOpen: boolean;
+	navIsClose: () => void
 };
 
 export const Navbar: FC<IProps> = ({
 	navbarIsOpen,
+	navIsClose,
 }) => {
 	const { isTablet } = useWindowSize()
 	const componentClassName = classNames(styles.component, {
@@ -36,6 +40,7 @@ export const Navbar: FC<IProps> = ({
 							className={({ isActive }) =>
 								isActive ? linkClassName : styles.link
 							}
+							onClick={navIsClose}
 						>
 							{item.text}
 							{isTablet &&
@@ -50,6 +55,7 @@ export const Navbar: FC<IProps> = ({
 					</li>
 				)}
 			</ul>
+			{isTablet && <NavbarFooter />}
 		</nav>
 	)
 }
