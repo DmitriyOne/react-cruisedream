@@ -37,7 +37,10 @@ export const Header = () => {
 						/>
 					}
 					<Logo className={styles.logo} />
-					<Navbar navbarIsOpen={burgerIsOpen} />
+					<Navbar
+						navbarIsOpen={burgerIsOpen}
+						navIsClose={burgerToggle}
+					/>
 					<Contacts />
 				</Container>
 			</div>

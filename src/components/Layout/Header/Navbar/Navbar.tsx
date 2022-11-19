@@ -11,10 +11,12 @@ import styles from './navbar.module.scss'
 
 interface IProps {
 	navbarIsOpen: boolean;
+	navIsClose: () => void
 };
 
 export const Navbar: FC<IProps> = ({
 	navbarIsOpen,
+	navIsClose,
 }) => {
 	const { isTablet } = useWindowSize()
 	const componentClassName = classNames(styles.component, {
@@ -36,6 +38,7 @@ export const Navbar: FC<IProps> = ({
 							className={({ isActive }) =>
 								isActive ? linkClassName : styles.link
 							}
+							onClick={navIsClose}
 						>
 							{item.text}
 							{isTablet &&
