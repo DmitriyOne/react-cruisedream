@@ -11,7 +11,7 @@ export const FooterFeedback = () => {
 				ЗАКАЗАТЬ ЗВОНОК
 			</Button>
 			<a
-				href={CRUISE_SOCIAL_LINKS.phone}
+				href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
 				className={styles.phoneFeedback}
 				target="_blank"
 				rel="noreferrer"

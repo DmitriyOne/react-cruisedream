@@ -13,6 +13,7 @@ export const ContactDropdown = () => {
 				<Button
 					key={idx}
 					href={item.href}
+					target="_blank"
 					className={classNames(styles.link, {
 						[styles.sspFont]: item.font === 'ssp'
 					})}
