@@ -7,7 +7,7 @@ import mailIcon from './icons/mail.svg'
 
 export const DropdownLinks = [
 	{
-		href: `${CRUISE_SOCIAL_LINKS.phone}`,
+		href: `tel:${CRUISE_SOCIAL_LINKS.phone}`,
 		icon: phoneIcon,
 		alt: 'Phone Icon',
 		text: '+7 499 653 89 91',

@@ -16,6 +16,10 @@
 		transition: left .4s;
 	}
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 50px;
+	}
+
 	&.active {
 		left: 0;
 	}

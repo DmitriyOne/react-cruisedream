@@ -7,6 +7,8 @@ import arrowIcon from './icons/arrow.svg'
 import { MenuLinks } from '../../../../constants'
 import { useWindowSize } from '../../../../hooks'
 
+import { NavbarFooter } from './NavbarFooter/NavbarFooter'
+
 import styles from './navbar.module.scss'
 
 interface IProps {
@@ -53,6 +55,7 @@ export const Navbar: FC<IProps> = ({
 					</li>
 				)}
 			</ul>
+			{isTablet && <NavbarFooter />}
 		</nav>
 	)
 }

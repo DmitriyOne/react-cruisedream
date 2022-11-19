@@ -1,5 +1,5 @@
 export const CRUISE_SOCIAL_LINKS = {
-	phone: 'tel:+74996538991',
+	phone: '+7 499 653 89 91',
 	telegram: 'https://t.me/cruisedream_ru',
 	whatsapp: 'tel:+74996338991',
 	vk: 'http://vk.com',

@@ -10,7 +10,7 @@ export const ContactCenter = () => {
 		<div className={styles.row}>
 			<Button
 				className={styles.centerPhone}
-				href={CRUISE_SOCIAL_LINKS.phone}
+				href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
 			>
 				+7 499 653 89 91
 			</Button>
