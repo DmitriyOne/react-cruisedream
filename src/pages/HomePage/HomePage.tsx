@@ -1,11 +1,10 @@
-import { Heading } from '../../components'
+
+import { Intro } from './intro'
 
 export const HomePage = () => {
 	return (
-		<div style={{ marginTop: '150px' }}>
-			<Heading align="center">
-				Главная страница
-			</Heading>
-		</div>
+		<>
+			<Intro />
+		</>
 	)
 }

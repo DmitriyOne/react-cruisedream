@@ -10,4 +10,5 @@ export const CRUISE_ROUTES = {
 	EMPTY: '#',
 	ACCOUNT: '/account',
 	SUBSCRIBE: '/subscribe',
+	TO_BOOK: '/to-book'
 }
