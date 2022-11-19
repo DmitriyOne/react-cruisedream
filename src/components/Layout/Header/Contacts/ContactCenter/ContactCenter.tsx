@@ -11,6 +11,7 @@ export const ContactCenter = () => {
 			<Button
 				className={styles.centerPhone}
 				href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
+				target="_blank"
 			>
 				+7 499 653 89 91
 			</Button>
