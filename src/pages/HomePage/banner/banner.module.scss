@@ -43,7 +43,7 @@
 		padding-bottom: 12px;
 	}
 	@include mixins.media-w(breakpoints.$tablet) {
-		font-size: 16px;
+		font-size: 14px;
 		padding-bottom: 4px;
 	}
 }
@@ -62,7 +62,7 @@
 		padding-bottom: 18px;
 	}
 	@include mixins.media-w(breakpoints.$tablet) {
-		font-size: 22px;
+		font-size: 20px;
 	}
 }
 
@@ -130,5 +130,8 @@
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 14px;
 		padding-top: 24px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
 	}
 }
