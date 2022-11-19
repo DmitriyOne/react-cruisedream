@@ -1,0 +1,90 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+@use '../../../styles/family.scss';
+
+.component {
+	position: relative;
+	padding: 88px 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	@include mixins.absolute-center;
+	@include mixins.bg-cover;
+	background-image: url('../../../assets/images/about/about.jpeg');
+	z-index: -1;
+}
+
+.content {
+	@include mixins.fluidMaxSize(660);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(560);
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(360);
+	}
+}
+
+.title {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 45px;
+	line-height: 120%;
+	color: colors.$white;
+	padding-bottom: 18px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 36px;
+		padding-bottom: 12px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 24px;
+		padding-bottom: 10px;
+	}
+}
+
+.description {
+	@include mixins.fonts(family.$source-sans-pro, 300);
+	font-size: 20px;
+	line-height: 120%;
+	color: colors.$white;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}
+
+.button {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 120%;
+	color: #004275;
+	padding: 20px 50px;
+	background: #FDBB11;
+	border-radius: 5px;	
+	margin-top: 60px;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 50px;
+	}
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 14px;
+		padding: 12px 20px;
+	}
+}
