@@ -1,7 +1,8 @@
 import { FC } from 'react'
+
 import { B, Button } from '../../../../components'
-import { CRUISE_ROUTES } from '../../../../constants'
-import styles from './context.module.scss'
+
+import styles from './content.module.scss'
 
 enum ETextDirection {
 	left = 'left',
@@ -11,9 +12,15 @@ enum ETextDirection {
 
 interface IProps {
 	variant?: keyof typeof ETextDirection
+	title?: string
+	href?: string
 }
 
-export const IntroContext: FC<IProps> = ({ variant }) => {
+export const IntroContent: FC<IProps> = ({
+	variant,
+	title,
+	href,
+}) => {
 	return (
 		<div className={styles.component}>
 			<h1 className={styles.title}>
@@ -23,11 +30,11 @@ export const IntroContext: FC<IProps> = ({ variant }) => {
 						-30%
 					</span>
 				</span>
-				НА СЕМЕЙНЫЙ КРУИЗ
+				{title}
 			</h1>
 			<Button
-				reactHref={CRUISE_ROUTES.TO_BOOK}
-				className={styles.button}
+				reactHref={href}
+				className={styles.button} 
 			>
 				<B fontWeight={500}>
 					ЗАБРОНИРОВАТЬ

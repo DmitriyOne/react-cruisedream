@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ForwardedRef, forwardRef, ReactNode } from 'react'
 import classNames from 'classnames'
 
 import styles from './button.module.scss'
@@ -14,14 +14,15 @@ interface IProps
 	reactHref?: string
 };
 
-export const Button: FC<IProps> = ({
+export const Button = forwardRef(({
 	className,
 	children,
 	href,
 	target,
 	reactHref,
 	...props
-}) => {
+}: IProps, ref?: ForwardedRef<HTMLButtonElement>
+) => {
 	if (href) {
 		return (
 			<a
@@ -47,6 +48,7 @@ export const Button: FC<IProps> = ({
 
 	return (
 		<button
+			ref={ref}
 			className={classNames(
 				styles.component,
 				className,
@@ -57,3 +59,4 @@ export const Button: FC<IProps> = ({
 		</button>
 	)
 }
+)
