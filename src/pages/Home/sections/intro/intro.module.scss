@@ -27,7 +27,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-
 }
 
 .swiperArrow {
@@ -40,20 +39,47 @@
 	@include mixins.bg-cover;
 	z-index: 1;
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 8px;
+		height: 16px;
+	}
+
 	&.prev {
 		left: 55px;
 		transform: translateY(-50%) rotate(-180deg);
 
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			left: 30px;
+		}
 		@include mixins.media-w(breakpoints.$tablet) {
-			left: 25px;
+			left: 10px;
 		}
 	}
 
 	&.next {
 		right: 55px;
 
-		@include mixins.media-w(breakpoints.$tablet) {
-			right: 25px;
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			right: 30px;
 		}
+		@include mixins.media-w(breakpoints.$tablet) {
+			right: 10px;
+		}
+	}
+}
+
+.imageWrapper {
+	width: 100%;
+	height: 100%;
+	@include mixins.absolute-center;
+	z-index: -1;
+}
+
+.image {
+	height: 100%;
+	object-position: top;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		object-position: left;
 	}
 }

@@ -11,7 +11,7 @@ export const Discount:FC<IProps> = ({
 	return (
 		<div className={styles.component}>
 			<span className={styles.text}>
-				{percentage}%
+				-{percentage}%
 			</span>
 		</div>
 	)

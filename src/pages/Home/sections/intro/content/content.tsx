@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import classNames from 'classnames'
 import { FC } from 'react'
 
 import { B, Button } from '../../../../../components'
@@ -15,20 +16,30 @@ interface IProps {
 	variant?: keyof typeof ETextDirection
 	title?: string
 	href?: string
+	discount?: number
 }
 
 export const IntroContent: FC<IProps> = ({
 	variant,
 	title,
 	href,
+	discount,
 }) => {
+	const textPosition = classNames({
+		[styles.left]: variant === 'left',
+		[styles.center]: variant === 'center',
+		[styles.right]: variant === 'right'
+	})
 	return (
-		<div className={styles.component}>
+		<div className={classNames(
+			styles.component,
+			textPosition
+		)}>
 			<h1 className={styles.title}>
 				<span className={styles.textSale}>
 					АКЦИЯ
 					<span className={styles.textSaleDamion}>
-						-30%
+						-{discount}%
 					</span>
 				</span>
 				{title}

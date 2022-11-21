@@ -5,7 +5,6 @@ import classNames from 'classnames'
 
 import { Button, Container } from '../../../../components'
 import { IntroContent } from './content/content'
-import { Background } from './background/background'
 import { SwiperIntro } from './swiper-intro'
 
 import 'swiper/css'
@@ -50,9 +49,20 @@ export const Intro = () => {
 						className={styles.slide}
 						key={idx}
 					>
-						<Background src={slider.src} alt={slider.alt} />
+						<div className={styles.imageWrapper}>
+							<img
+								className={styles.image}
+								src={slider.src}
+								alt={slider.alt}
+							/>
+						</div>
 						<Container className={styles.container}>
-							<IntroContent title={slider.title} href={slider.href} />
+							<IntroContent
+								title={slider.title}
+								href={slider.href}
+								variant={slider.textPosition}
+								discount={slider.discount}
+							/>
 						</Container>
 					</SwiperSlide>
 				)}
