@@ -91,5 +91,6 @@
 	}
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 12px;
+		text-transform: none;
 	}
 }

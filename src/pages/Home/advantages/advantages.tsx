@@ -5,7 +5,7 @@ import styles from './advantages.module.scss'
 export const Advantages = () => {
 	return (
 		<Container width="full" className={styles.component}>
-			<Container className={styles.container}>
+			<Container className={styles.container} align='start'>
 				{AdvantagesData.map((item, idx) =>
 					<div className={styles.wrapper} key={idx}>
 						<span className={styles.icon}>
