@@ -1,0 +1,153 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.swiper {
+	margin-top: 28px;
+	width: 100%;
+	height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 20px;
+	}
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 20px;
+	}
+	
+	&>div{
+		align-items: stretch;
+	}
+}
+
+.slide {
+	@include mixins.flex-center;
+	flex-direction: column;
+	position: relative;
+	padding: 40px 20px;
+	height: auto;
+	min-height: 585px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		min-height: 485px;
+	}
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 20px;
+	}
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		min-height: 420px;
+	}
+}
+
+.cardImageWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	transition: box-shadow .4s;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		transition: background-color .4s;
+		z-index: 1;
+	}
+}
+
+.cardImage {
+	height: 100%;
+	object-position: center;
+	transition: transform .6s;
+}
+
+.cardContent {
+	@include mixins.flex-center;
+	flex-direction: column;
+	@include mixins.fluidMaxSize(280);
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 100%;
+	}
+}
+
+.cardContent .cardTitle {
+	@include mixins.fonts(family.$source-sans-pro, 600);
+	font-size: 48px;
+	line-height: 140%;
+	color: colors.$white;
+	padding-bottom: 50px;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 38px;
+		padding-bottom: 20px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 22px;
+	}
+}
+
+.cardDescription {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 20px;
+	line-height: 120%;
+	color: colors.$white;
+	text-align: center;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}
+
+.cardButton {
+	display: inline-block;
+	margin-top: 80px;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 120%;
+	color: colors.$white;
+	padding: 16px 48px;
+	border: 2px solid colors.$white;
+	border-radius: 3px;
+	transition: all .2s;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 40px;
+		font-size: 16px;
+	}
+}
+
+@include mixins.media-minw(breakpoints.$laptop) {
+	.slide:hover .cardImageWrapper::before {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.slide:hover .cardImageWrapper {
+		box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+	}
+
+	.slide:hover .cardImage {
+		transform: scale(1.1);
+	}
+
+	.slide:hover .cardButton {
+		background: #004275;
+		border-color: #004275;
+	}
+}
