@@ -1,0 +1,7 @@
+export * from './intro'
+export * from './about'
+export * from './advantages'
+export * from './banner'
+export * from './partners'
+export * from './regions'
+export * from './sale'
