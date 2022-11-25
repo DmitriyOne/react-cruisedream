@@ -1,0 +1,75 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 28px 20px 0 20px;
+}
+
+.form {
+	@include mixins.flex-spb;
+	@include mixins.fluidMaxSize(1140);
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+    @include mixins.fluidMaxSize(740);
+		flex-wrap: wrap;
+  }
+
+	@include mixins.media-w(breakpoints.$tablet) {
+    flex-direction: column;
+  }
+}
+
+.button {
+	padding: 17px 43px;
+  font-size: 17px;
+  line-height: 120%;
+  color: colors.$white;
+  background: #004275;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    font-size: 14px;
+    padding: 12px 50px;
+  }
+}
+
+.select {
+	width: 100%;
+}
+
+.col {
+	@include mixins.fluidMaxSize(240);
+  margin-right: 40px;
+
+  @include mixins.media-w(breakpoints.$laptop) {
+    @include mixins.fluidMaxSize(340);
+  }
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    max-width: 100%;
+    margin-bottom: 40px;
+    margin-right: 0;
+  }
+
+  &:nth-child(even) {
+    @include mixins.media-w(breakpoints.$laptop) {    
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(1) {
+    @include mixins.media-w(breakpoints.$laptop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &:nth-child(2) {
+    @include mixins.media-w(breakpoints.$laptop) {
+      margin-bottom: 40px;
+    }
+  }
+}
