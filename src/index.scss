@@ -2,6 +2,7 @@
 @use './styles/mixins.scss';
 @use './styles/family.scss';
 @use './styles/colors.scss';
+@use './styles/z-index.scss';
 
 @keyframes scaleIn {
 	0% {
@@ -90,4 +91,8 @@
 			background-color: rgba(0,0,0, 0.3) !important;
 		}
 	}
+}
+
+.react-datepicker-popper {
+	z-index: z-index.$datepicker;
 }

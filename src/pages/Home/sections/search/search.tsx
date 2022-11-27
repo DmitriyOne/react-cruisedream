@@ -4,6 +4,8 @@ import Select from 'react-select'
 import DatePicker, { CalendarContainer } from 'react-datepicker'
 
 import { Button, Container } from '../../../../components'
+
+import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
 
 const options1 = [
@@ -36,8 +38,8 @@ const options2 = [
 ]
 
 export const Search = () => {
-	const [currentCountry, setCurrentCountry] = useState('south-korea')
-	const [startDate, setStartDate] = useState<Date | null>(new Date())
+	const [currentCountry, setCurrentCountry] = useState('')
+	const [startDate, setStartDate] = useState<Date>()
 
 	// const getValue = () => {
 	// 	return currentCountry ? options.find(c => c.value === currentCountry) : ''
@@ -46,18 +48,7 @@ export const Search = () => {
 	// const onChange = (newValue: any) => {
 	// 	setCurrentCountry(newValue.value)
 	// }
-	const MyContainer = ({ className = '', children = <></> }) => {
-		return (
-			<div style={{ padding: '16px', background: '#216ba5', color: '#fff' }}>
-				<CalendarContainer className={className}>
-					<div style={{ background: '#f0f0f0' }}>
-						What is your favorite day?
-					</div>
-					<div style={{ position: 'relative' }}>{children}</div>
-				</CalendarContainer>
-			</div>
-		)
-	}
+
 	return (
 		<Container width="full" className={styles.component}>
 			<form className={styles.form}>
@@ -76,13 +67,15 @@ export const Search = () => {
 					classNamePrefix="select-search"
 				/>
 
-				<DatePicker
-					wrapperClassName={styles.col}
-					selected={startDate}
-					onChange={(date) => setStartDate(date)}
-					calendarContainer={MyContainer}
-				/>
-
+				<div className={styles.col}>
+					<DatePicker
+						wrapperClassName={classNames(styles.datepicker)}
+						selected={startDate}
+						onChange={(date: Date) => setStartDate(date)}
+						placeholderText="Даты круиза"
+						className={styles.inputDatepicker}
+					/>
+				</div>
 				<Button className={styles.button}>
 					НАЙТИ КРУИЗ
 				</Button>

@@ -1,28 +1,29 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/colors.scss';
+@use '../../../../styles/family.scss';
 
 .component {
-	padding: 28px 20px 0 20px;
+  padding: 28px 20px 0 20px;
 }
 
 .form {
-	@include mixins.flex-spb;
-	@include mixins.fluidMaxSize(1140);
-	margin: 0 auto;
+  @include mixins.flex-spb;
+  @include mixins.fluidMaxSize(1140);
+  margin: 0 auto;
 
-	@include mixins.media-w(breakpoints.$laptop) {
+  @include mixins.media-w(breakpoints.$laptop) {
     @include mixins.fluidMaxSize(740);
-		flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
-	@include mixins.media-w(breakpoints.$tablet) {
+  @include mixins.media-w(breakpoints.$tablet) {
     flex-direction: column;
   }
 }
 
 .button {
-	padding: 17px 43px;
+  padding: 17px 43px;
   font-size: 17px;
   line-height: 120%;
   color: colors.$white;
@@ -38,11 +39,11 @@
 }
 
 .select {
-	width: 100%;
+  width: 100%;
 }
 
 .col {
-	@include mixins.fluidMaxSize(240);
+  @include mixins.fluidMaxSize(240);
   margin-right: 40px;
 
   @include mixins.media-w(breakpoints.$laptop) {
@@ -56,7 +57,7 @@
   }
 
   &:nth-child(even) {
-    @include mixins.media-w(breakpoints.$laptop) {    
+    @include mixins.media-w(breakpoints.$laptop) {
       margin-right: 0;
     }
   }
@@ -71,5 +72,34 @@
     @include mixins.media-w(breakpoints.$laptop) {
       margin-bottom: 40px;
     }
+  }
+}
+
+.datepicker {
+  padding: 5px 0 10px;
+  border-bottom: 1px solid #4F4E4E;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 20px;
+    @include mixins.bg-cover;
+    background-image: url('./icons/datepicker.svg');
+  }
+}
+
+.inputDatepicker {
+  @include mixins.fonts(family.$source-sans-pro, 300);
+  font-size: 24px;
+  line-height: 120%;
+  color: #004275;
+
+  &::placeholder {
+    color: #004275;
   }
 }
