@@ -8,8 +8,9 @@ export const Advantages = () => {
 			<Container className={styles.container} align="start">
 				{AdvantagesData.map((item, idx) =>
 					<div className={styles.wrapper} key={idx}>
-						<span className={styles.icon}>
+						<span className={styles.imgWrapper}>
 							<img
+								className={styles.img}
 								src={item.icon}
 								alt={item.alt}
 							/>
