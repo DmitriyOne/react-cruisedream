@@ -32,30 +32,61 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
-
-	useEffect(() => {
-		window.addEventListener('mousewheel', function (event) {
-			const currentEl = Math.round(ref.current!.getBoundingClientRect().top)
-			const currentElHeight = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
-
-			if (currentEl <= currentElHeight || currentEl === 0) {
-				setIsScroll(true)
-			} else {
-				setIsScroll(false)
-			}
-
-			// if (event.deltaY < 0) {
-			// 	setIsScrollUp(true)
-			// }
-			// else if (event.deltaY > 0) {
-			// 	setIsScrollUp(false)
-			// }
-		})
-	}, [isScroll])
-
-
 	const isFixed = isScroll && isTablet
 	const isShowFixed = isScrollUp && isTablet
+
+
+
+
+
+
+
+
+	document.addEventListener('touchstart', handleTouchStart, false)
+	document.addEventListener('touchmove', handleTouchMove, false)
+
+	let xDown: any = null
+	let yDown: any = null
+
+	function handleTouchStart(evt: any) {
+		xDown = evt.touches[0].clientX
+		yDown = evt.touches[0].clientY
+	};
+
+	function handleTouchMove(evt: any) {
+		if (!xDown || !yDown) {
+			return
+		}
+
+		var xUp = evt.touches[0].clientX
+		var yUp = evt.touches[0].clientY
+
+		var xDiff = xDown - xUp
+		var yDiff = yDown - yUp
+
+		if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+			if (xDiff > 0) {
+				/* left swipe */
+				alert('left swipe')
+			} else {
+				/* right swipe */
+				alert('right swipe')
+			}
+		} else {
+			if (yDiff > 0) {
+				/* up swipe */
+			} else {
+				/* down swipe */
+			}
+		}
+		/* reset values */
+		xDown = null
+		yDown = null
+	};
+
+
+
+
 
 
 
@@ -68,9 +99,9 @@ export const Header = () => {
 			>
 				<Information />
 				<div
-					ref={ref}
 					className={styles.header}
 					style={isFixed ? { paddingTop: `${ref.current?.offsetHeight}px` } : undefined}
+					ref={ref}
 				>
 					<Container
 						direction="row"

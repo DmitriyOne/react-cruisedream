@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, FC, ReactNode, LegacyRef, forwardRef, ForwardedRef, CSSProperties } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, forwardRef, ForwardedRef } from 'react'
 import classNames from 'classnames'
 
 import { EDirection, EAlign, EJustify, ESize } from './enums/EContainer'
@@ -36,8 +36,7 @@ export const Container = forwardRef(({
 		[styles.justifyAround]: justify === 'around',
 		[styles.justifyBetween]: justify === 'between',
 		[styles.justifyCenter]: justify === 'center',
-		[styles.justifyBaseline]: justify === 'baseline'
-
+		[styles.justifyBaseline]: justify === 'baseline',
 	})
 
 	return (

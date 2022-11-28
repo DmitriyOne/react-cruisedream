@@ -22,9 +22,7 @@ export const B: FC<IProps> = ({
 	})
 
 	return (
-		<b
-			className={componentClassName}
-		>
+		<b className={componentClassName}>
 			{children}
 		</b>
 	)
