@@ -2,7 +2,10 @@ import { useState } from 'react'
 import classNames from 'classnames'
 import Select from 'react-select'
 import DatePicker from 'react-datepicker'
+import { ru } from 'date-fns/esm/locale'
 
+
+import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { optionCompanyHome, optionRegionHome } from '../../../../model/interfaces'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { Button, Container } from '../../../../components'
@@ -10,7 +13,6 @@ import { Logo } from '../../../../components/Layout/Logo'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
-import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 
 export const Search = () => {
 	const [currentCountry, setCurrentCountry] = useState('')
@@ -60,6 +62,7 @@ export const Search = () => {
 							onChange={(date: Date) => setStartDate(date)}
 							placeholderText="Даты круиза"
 							className={styles.inputDatepicker}
+							locale={ru}
 						/>
 					</div>
 					<Button className={styles.button}>
