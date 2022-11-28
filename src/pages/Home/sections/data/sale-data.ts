@@ -1,7 +1,7 @@
-import saleImg from '../../../../../assets/images/sale/sale-1.jpeg'
-import { CRUISE_ROUTES } from '../../../../../constants'
+import saleImg from '../../../../assets/images/sale/sale-1.jpeg'
+import { CRUISE_ROUTES } from '../../../../constants'
 
-export const SaleCardData = [
+export const SaleData = [
 	{
 		src: saleImg,
 		alt: 'Coconut cocktail on the beach',

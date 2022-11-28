@@ -1,37 +1,13 @@
-import { SwiperOptions } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Link } from 'react-router-dom'
 
-import { Button, Heading } from '../../../../../components'
-import { Discount } from '../discount/discount'
-import { SaleCardData } from './sale-card-data'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { params } from './swiper'
+
+import { SaleData } from '../../data'
+
+import { Heading, Discount } from '../../../../../components'
 
 import styles from './sale-card.module.scss'
-
-const params: SwiperOptions = {
-	slidesPerView: 1.05,
-	spaceBetween: 15,
-	breakpoints: {
-		1280: {
-			slidesPerView: 4,
-			spaceBetween: 40,
-		},
-		1024: {
-			slidesPerView: 3.3,
-			spaceBetween: 30,
-		},
-		768: {
-			slidesPerView: 2.5,
-			spaceBetween: 30,
-		},
-		620: {
-			slidesPerView: 2.2,
-			spaceBetween: 20,
-		},
-		520: {
-			slidesPerView: 1.7,
-		}
-	}
-}
 
 export const SaleCard = () => {
 
@@ -40,15 +16,15 @@ export const SaleCard = () => {
 			className={styles.swiper}
 			{...params}
 		>
-			{SaleCardData.map((item, idx) => {
+			{SaleData.map((item, idx) => {
 				const isSale = item.discount
 				return (
 					<SwiperSlide
 						className={styles.slide}
 						key={idx}
 					>
-						<Button
-							reactHref={item.href}
+						<Link
+							to={item.href}
 							className={styles.link}
 						>
 							<div className={styles.cardImageWrapper} >
@@ -65,7 +41,7 @@ export const SaleCard = () => {
 								{item.description}
 							</p>
 							{isSale && <Discount percentage={item.discountPercentage} />}
-						</Button>
+						</Link>
 					</SwiperSlide>
 				)
 			}

@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import classNames from 'classnames'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
-import { B, Button } from '../../../../../components'
+import { B } from '../../../../../components'
 
 import styles from './content.module.scss'
 
@@ -44,14 +45,14 @@ export const IntroContent: FC<IProps> = ({
 				</span>
 				{title}
 			</h1>
-			<Button
-				reactHref={href}
+			<Link
+				to={href!}
 				className={styles.button}
 			>
 				<B fontWeight={500}>
 					ЗАБРОНИРОВАТЬ
 				</B>
-			</Button>
+			</Link>
 		</div>
 	)
 }

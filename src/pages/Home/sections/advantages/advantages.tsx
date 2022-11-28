@@ -1,5 +1,7 @@
 import { Container } from '../../../../components'
-import { AdvantagesData } from './advantages-data'
+
+import { AdvantagesData } from '../data/advantages-data'
+
 import styles from './advantages.module.scss'
 
 export const Advantages = () => {

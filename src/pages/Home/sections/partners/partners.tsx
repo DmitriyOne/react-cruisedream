@@ -1,9 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
 
-import partner1Image from '../../../../assets/images/partners/partner-caribbean.png'
-import partner2Image from '../../../../assets/images/partners/partner-celebrity.png'
-import partner3Image from '../../../../assets/images/partners/partner-msc-cruises.png'
+import { params } from './swiper'
+import { PartnersData } from '../data/partners-data'
 
 import { Container, Heading } from '../../../../components'
 
@@ -22,36 +20,20 @@ export const Partners = () => {
 					круизные компании
 				</span>
 				<Swiper
-					slidesPerView={3}
-					spaceBetween={25}
-					modules={[Pagination]}
-					pagination={{
-						el: `.${styles.pagination}`,
-						clickable: true,
-						bulletClass: `${styles.bullet}`,
-						bulletActiveClass: `${styles.active}`
-					}}
-					loop={true}
 					className={styles.swiper}
+					{...params}
 				>
-					<SwiperSlide className={styles.slide}>
-						<img
-							src={partner1Image}
-							alt="Partner Caribbean"
-						/>
-					</SwiperSlide>
-					<SwiperSlide className={styles.slide}>
-						<img
-							src={partner2Image}
-							alt="Partner Celebrity"
-						/>
-					</SwiperSlide>
-					<SwiperSlide className={styles.slide}>
-						<img
-							src={partner3Image}
-							alt="Partner MSC Cruises"
-						/>
-					</SwiperSlide>
+					{PartnersData.map(item =>
+						<SwiperSlide
+							key={item.id}
+							className={styles.slide}
+						>
+							<img
+								src={item.src}
+								alt={item.alt}
+							/>
+						</SwiperSlide>
+					)}
 					<div className={styles.pagination} />
 				</Swiper>
 			</div>

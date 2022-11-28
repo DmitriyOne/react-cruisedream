@@ -1,8 +1,7 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ForwardedRef, forwardRef, ReactNode } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, ForwardedRef, forwardRef, ReactNode } from 'react'
 import classNames from 'classnames'
 
 import styles from './button.module.scss'
-import { Link } from 'react-router-dom'
 
 interface IProps
 	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>,
@@ -11,7 +10,6 @@ interface IProps
 	className?: string
 	href?: string;
 	target?: '_blank'
-	reactHref?: string
 };
 
 export const Button = forwardRef(({
@@ -19,7 +17,6 @@ export const Button = forwardRef(({
 	children,
 	href,
 	target,
-	reactHref,
 	...props
 }: IProps, ref?: ForwardedRef<HTMLButtonElement>
 ) => {
@@ -34,18 +31,6 @@ export const Button = forwardRef(({
 			</a>
 		)
 	}
-	if (reactHref) {
-		return (
-			<Link
-				to={reactHref}
-				className={className}
-				target={target}
-			>
-				{children}
-			</Link>
-		)
-	}
-
 	return (
 		<button
 			ref={ref}

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { Button } from '../../../Button'
 
 import style from './burger.module.scss'
+import { useBodyOverflow } from '../../../../hooks'
 
 interface IProps {
 	burgerToggle: () => void;
@@ -14,6 +15,8 @@ export const Burger: FC<IProps> = ({
 	burgerToggle,
 	burgerIsOpen,
 }) => {
+	useBodyOverflow(burgerIsOpen)
+
 	const burgerClassName = classNames(style.burger, {
 		[style.active]: burgerIsOpen
 	})

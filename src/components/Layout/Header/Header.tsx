@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import classNames from 'classnames'
 
 import { Logo } from '../Logo'
@@ -16,17 +15,7 @@ export const Header = () => {
 	const { isTablet } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
-
-	useEffect(() => {
-		const originalStyle = window.getComputedStyle(document.body).overflow
-		if (burgerIsOpen) {
-			document.body.style.overflow = 'hidden'
-		}
-		return () => {
-			document.body.style.overflow = originalStyle
-		}
-	}, [burgerIsOpen])
-
+	
 	return (
 		<>
 			<header

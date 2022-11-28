@@ -1,5 +1,8 @@
-import { Button, Container, Heading } from '../../../../components'
+import { Link } from 'react-router-dom'
+
+import { Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
+
 import { SaleCard } from './sale-card/sale-card'
 
 import styles from './sale.module.scss'
@@ -12,12 +15,12 @@ export const Sale = () => {
 					АКЦИИ
 				</Heading>
 				<SaleCard />
-				<Button
+				<Link
 					className={styles.button}
-					reactHref={CRUISE_ROUTES.SALE}
+					to={CRUISE_ROUTES.SALE}
 				>
 					ВСЕ АКЦИИ
-				</Button>
+				</Link>
 			</Container>
 		</Container>
 	)

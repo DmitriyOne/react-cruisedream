@@ -1,42 +1,15 @@
-import { Grid, SwiperOptions } from 'swiper'
+import { Link } from 'react-router-dom'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { RegionCardsData } from './region-cards-data'
+import { RegionsData } from '../../data'
+import { params } from './swiper'
 
-import { Button, Heading } from '../../../../../components'
+import { Heading } from '../../../../../components'
 
 import 'swiper/css'
 import 'swiper/css/grid'
 import styles from './region-card.module.scss'
-
-const params: SwiperOptions = {
-	slidesPerView: 1.05,
-	spaceBetween: 15,
-	modules: [Grid],
-	breakpoints: {
-		1280: {
-			slidesPerView: 3,
-			spaceBetween: 40,
-			grid: {
-				rows: 2,
-				fill: 'row'
-			},
-		},
-		1024: {
-			spaceBetween: 20,
-			slidesPerView: 2.6,
-		},
-		990: {
-			slidesPerView: 2.6,
-		},
-		768: {
-			slidesPerView: 2.2,
-		},
-		620: {
-			slidesPerView: 1.6,
-		}
-	}
-}
 
 export const RegionCard = () => {
 
@@ -45,7 +18,7 @@ export const RegionCard = () => {
 			className={styles.swiper}
 			{...params}
 		>
-			{RegionCardsData.map((item, idx) =>
+			{RegionsData.map((item, idx) =>
 				<SwiperSlide
 					className={styles.slide}
 					key={idx}
@@ -64,16 +37,15 @@ export const RegionCard = () => {
 						<p className={styles.cardDescription}>
 							{item.description}
 						</p>
-						<Button
-							reactHref={item.href}
+						<Link
+							to={item.href}
 							className={styles.cardButton}
 						>
 							ВЫБРАТЬ
-						</Button>
+						</Link>
 					</div>
 				</SwiperSlide>
 			)}
 		</Swiper>
-
 	)
 }
