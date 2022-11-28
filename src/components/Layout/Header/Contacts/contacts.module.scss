@@ -1,3 +1,11 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/z-index.scss';
+
 .component {
 	position: relative;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		z-index: z-index.$idx-header;
+	}
 }

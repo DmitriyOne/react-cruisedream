@@ -1,0 +1,128 @@
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	@include mixins.fluidMaxSize(630);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.flex-center;
+		flex-direction: column;
+		padding-top: 60px;
+	}
+
+	&.left {
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			@include mixins.flex-center;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+	}
+	
+	&.center {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			@include mixins.flex-center;
+			flex-direction: column;
+		}
+	}
+	
+	&.right {
+		margin-left: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			@include mixins.flex-center;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+	}
+}
+
+.title {
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 120%;
+	color: colors.$white;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}
+
+.textSale {
+	display: block;
+	font-weight: 400;
+	font-size: 64px;
+	line-height: 120%;
+	color: colors.$white;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 54px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 32px;
+	}
+}
+
+.textSaleDamion {
+	@include mixins.fonts(family.$damion);
+	font-size: 96px;
+	line-height: 120%;
+	color: colors.$white;
+	padding-left: 5px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 48px;
+	}
+}
+
+.button {
+	display: inline-block;
+	margin-top: 210px;
+	font-size: 16px;
+	line-height: 120%;
+	text-align: center;
+	color: #004275;
+	background: #FDBB11;
+	box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+	padding: 18px 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		padding: 11px 20px;
+		margin-top: 80px;
+	}
+}
+
+.component.center .title {
+	text-align: center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;
+	}
+}
+
+.component.right .title {
+	text-align: right;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;
+	}
+}

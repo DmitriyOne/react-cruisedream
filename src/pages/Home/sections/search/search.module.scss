@@ -1,0 +1,203 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/z-index.scss';
+
+.component {
+  margin-top: 16px;
+}
+
+.container {
+  transition: all 0.5s;
+  padding: 12px 20px;
+  background-color: colors.$white;
+}
+
+.fixed {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: z-index.$idx-header;
+
+  &.show {
+    top: 0;
+  }
+
+  & .form {
+    @include mixins.media-w(breakpoints.$laptop-l){
+      @include mixins.fluidMaxSize(960);
+    }
+  }
+
+  & .button {
+    background-color: colors.$transparent;
+    border: 1px solid #004275;
+    color: #004275;
+  }
+}
+
+.form {
+  @include mixins.flex-spb;
+  @include mixins.fluidMaxSize(1140);
+  margin: 0 auto;
+
+  @include mixins.media-w(breakpoints.$laptop) {
+    @include mixins.fluidMaxSize(740);
+    flex-wrap: wrap;
+  }
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    flex-direction: column;
+  }
+}
+
+.button {
+  padding: 17px 43px;
+  font-size: 17px;
+  line-height: 120%;
+  color: colors.$white;
+  background-color: #004275;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid colors.$transparent;
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    font-size: 14px;
+    padding: 12px 50px;
+  }
+}
+
+.select {
+  width: 100%;
+}
+
+.col {
+  @include mixins.fluidMaxSize(240);
+  margin-right: 40px;
+
+  @include mixins.media-w(breakpoints.$laptop) {
+    @include mixins.fluidMaxSize(340);
+  }
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    max-width: 100%;
+    margin-bottom: 40px;
+    margin-right: 0;
+  }
+
+  &:nth-child(even) {
+    @include mixins.media-w(breakpoints.$laptop) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(1) {
+    @include mixins.media-w(breakpoints.$laptop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &:nth-child(2) {
+    @include mixins.media-w(breakpoints.$laptop) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.datepicker {
+  padding: 5px 0 10px;
+  border-bottom: 1px solid #4F4E4E;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 20px;
+    @include mixins.bg-cover;
+    background-image: url('./icons/datepicker.svg');
+  }
+}
+
+.inputDatepicker {
+  @include mixins.fonts(family.$source-sans-pro, 300);
+  font-size: 24px;
+  line-height: 120%;
+  color: #004275;
+
+  @include mixins.media-w(breakpoints.$laptop-l) {
+    font-size: 20px;
+  }
+
+  &::placeholder {
+    color: #004275;
+  }
+}
+
+.logo {
+  display: none;
+  margin-right: 40px;
+
+  @include mixins.media-w(1900) {
+    @include mixins.fluidMaxSize(200);
+    margin-right: 20px;
+  }
+
+  @include mixins.media-w(breakpoints.$laptop-l) {
+    @include mixins.fluidMaxSize(180);
+  }
+
+  @include mixins.media-w(breakpoints.$laptop-s) {
+    display: none
+  }
+
+  &.show {
+    display: block;
+
+    @include mixins.media-w(breakpoints.$laptop-s) {
+      display: none
+    }
+  }
+}
+
+.phone {
+  display: none;
+  margin-left: 40px;
+  font-size: 37px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  color: #004275;
+  transition: all .4s;
+
+  @include mixins.media-w(1900) {
+    font-size: 28px;
+    margin-left: 20px;
+  }
+
+  @include mixins.media-w(1660) {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    @include mixins.square-size(25);
+    min-width: 25px;
+    @include mixins.bg-cover;
+    background-image: url('./icons/phone.svg');
+  }
+
+  @include mixins.media-w(breakpoints.$laptop-s) {
+    display: none
+  }
+
+  &.show {
+    display: block;
+
+    @include mixins.media-w(breakpoints.$laptop-s) {
+      display: none
+    }
+  }
+}
