@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, FC, ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, forwardRef, ForwardedRef } from 'react'
 import classNames from 'classnames'
 
 import { EDirection, EAlign, EJustify, ESize } from './enums/EContainer'
@@ -15,14 +15,16 @@ interface IProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 	children: ReactNode
 }
 
-export const Container: FC<IProps> = ({
+export const Container = forwardRef(({
 	width = 'container',
 	direction = 'row',
 	align = 'center',
 	justify = 'between',
 	className,
-	children
-}) => {
+	children,
+	...props
+}: IProps, ref?: ForwardedRef<HTMLDivElement>
+) => {
 	const componentClassName = classNames(className, {
 		[styles.full]: width === 'full',
 		[styles.container]: width === 'container',
@@ -34,13 +36,17 @@ export const Container: FC<IProps> = ({
 		[styles.justifyAround]: justify === 'around',
 		[styles.justifyBetween]: justify === 'between',
 		[styles.justifyCenter]: justify === 'center',
-		[styles.justifyBaseline]: justify === 'baseline'
-
+		[styles.justifyBaseline]: justify === 'baseline',
 	})
 
 	return (
-		<div className={componentClassName}>
+		<div
+			ref={ref}
+			className={componentClassName}
+			{...props}
+		>
 			{children}
 		</div>
 	)
 }
+)

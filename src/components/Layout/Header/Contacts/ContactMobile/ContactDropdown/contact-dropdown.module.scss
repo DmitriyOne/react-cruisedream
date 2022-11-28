@@ -1,6 +1,7 @@
 @use '../../../../../../styles/mixins.scss';
 @use '../../../../../../styles/family.scss';
 @use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/z-index.scss';
 
 .component {
 	display: flex;
@@ -15,6 +16,7 @@
 	background: #FFFFFF;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
 	padding: 45px 20px;
+	z-index: z-index.$idx-header;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		top: 27px;

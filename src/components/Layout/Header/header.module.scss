@@ -1,6 +1,7 @@
 @use '../../../styles/mixins.scss';
 @use '../../../styles/breakpoints.scss';
 @use '../../../styles/z-index.scss';
+@use '../../../styles/colors.scss';
 
 .component {
 	display: flex;
@@ -8,11 +9,28 @@
 }
 
 .header {
+	
+}
+
+.headerRow {
+	background-color: colors.$white;
 	padding: 10px 20px;
+	transition: all .5s;
 
 	@include mixins.media-w(breakpoints.$laptop){
 		padding: 12px 20px;
 	}
+}
+
+.fixed {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: z-index.$idx-header;
+
+  &.show {
+    top: 0;
+  }
 }
 
 .logo {

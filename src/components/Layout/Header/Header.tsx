@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import classNames from 'classnames'
 
 import { Logo } from '../Logo'
 import { Navbar } from './Navbar'
@@ -6,7 +7,7 @@ import { Contacts } from './Contacts'
 import { Burger } from './Burger'
 import { Information } from '../Information'
 
-import { useOpen, useWindowSize } from '../../../hooks'
+import { useOpen, useWindowSize, useScrollUpMobile } from '../../../hooks'
 import { Container } from '../../Container'
 
 import styles from './header.module.scss'
@@ -14,6 +15,7 @@ import styles from './header.module.scss'
 export const Header = () => {
 	const { isTablet } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
+	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
 
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow
@@ -26,24 +28,41 @@ export const Header = () => {
 	}, [burgerIsOpen])
 
 	return (
-		<header className={isTablet ? styles.component : ''}>
-			<Information />
-			<div className={styles.header}>
-				<Container direction="row">
-					{isTablet &&
-						<Burger
-							burgerToggle={burgerToggle}
-							burgerIsOpen={burgerIsOpen}
+		<>
+			<header
+				className={classNames(
+					isTablet ? styles.component : undefined,
+				)}
+			>
+				<Information />
+				<div
+					className={styles.header}
+					style={isFixed ? { paddingTop: `${ref.current?.offsetHeight}px` } : undefined}
+					ref={ref}
+				>
+					<Container
+						direction="row"
+						className={classNames(
+							styles.headerRow,
+							isFixed ? styles.fixed : undefined,
+							isShowFixed ? styles.show : undefined
+						)}
+					>
+						{isTablet &&
+							<Burger
+								burgerToggle={burgerToggle}
+								burgerIsOpen={burgerIsOpen}
+							/>
+						}
+						<Logo className={styles.logo} />
+						<Navbar
+							navbarIsOpen={burgerIsOpen}
+							navIsClose={burgerToggle}
 						/>
-					}
-					<Logo className={styles.logo} />
-					<Navbar
-						navbarIsOpen={burgerIsOpen}
-						navIsClose={burgerToggle}
-					/>
-					<Contacts />
-				</Container>
-			</div>
-		</header>
+						<Contacts />
+					</Container>
+				</div>
+			</header>
+		</>
 	)
 }
