@@ -1,12 +1,14 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Select from 'react-select'
-import DatePicker, { CalendarContainer } from 'react-datepicker'
+import DatePicker from 'react-datepicker'
 
 import { Button, Container } from '../../../../components'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
+import { Logo } from '../../../../components/Layout/Logo'
+import { useWindowSize } from '../../../../hooks'
 
 const options1 = [
 	{
@@ -40,6 +42,17 @@ const options2 = [
 export const Search = () => {
 	const [currentCountry, setCurrentCountry] = useState('')
 	const [startDate, setStartDate] = useState<Date>()
+	const ref = useRef<HTMLDivElement>(null)
+	const { isTablet } = useWindowSize()
+	const [isScroll, setIsScroll] = useState<boolean | undefined>(false)
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			const el = ref.current!.getBoundingClientRect().top
+			const isCurrentScroll = !isTablet && Math.round(el) <= 0
+			setIsScroll(isCurrentScroll)
+		})
+	})
 
 	// const getValue = () => {
 	// 	return currentCountry ? options.find(c => c.value === currentCountry) : ''
@@ -50,23 +63,30 @@ export const Search = () => {
 	// }
 
 	return (
-		<Container width="full" className={styles.component}>
-			<form className={styles.form}>
+		<Container
+			ref={ref}
+			width="full"
+			className={classNames(
+				styles.component,
+				isScroll ? styles.sticky : undefined
+			)}
+		>
 
+			{isScroll && <Logo className={styles.logo} />}
+
+			<form className={styles.form}>
 				<Select
 					options={options1}
 					placeholder="Регион круиза"
 					className={classNames(styles.select, styles.col)}
 					classNamePrefix="select-search"
 				/>
-
 				<Select
 					options={options2}
 					placeholder="Круизная компания"
 					className={classNames(styles.select, styles.col)}
 					classNamePrefix="select-search"
 				/>
-
 				<div className={styles.col}>
 					<DatePicker
 						wrapperClassName={classNames(styles.datepicker)}
@@ -80,6 +100,13 @@ export const Search = () => {
 					НАЙТИ КРУИЗ
 				</Button>
 			</form>
+			{isScroll &&
+				<Button
+					className={styles.phone}
+				>
+					+7 499 653 89 91
+				</Button>
+			}
 		</Container>
 	)
 
