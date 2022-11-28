@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
+import classNames from 'classnames'
 
 import { Logo } from '../Logo'
 import { Navbar } from './Navbar'
@@ -6,21 +7,18 @@ import { Contacts } from './Contacts'
 import { Burger } from './Burger'
 import { Information } from '../Information'
 
-import { useOpen, useScrollUp, useWindowSize } from '../../../hooks'
+import { useOpen, useWindowSize, useScrollUpMobile } from '../../../hooks'
 import { Container } from '../../Container'
 
 import styles from './header.module.scss'
-import classNames from 'classnames'
 
 export const Header = () => {
-	const { isTablet, isDesktop } = useWindowSize()
+	const { isTablet } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
-	// const { isScroll, ref } = useScrollUp()
+	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
 
-	const [isScroll, setIsScroll] = useState(false)
-	const [isScrollUp, setIsScrollUp] = useState(false)
-	const ref = useRef<HTMLDivElement>(null)
-
+	// console.log('isFixed:', isFixed)
+	// console.log('isShowFixed:', isShowFixed)
 
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow
@@ -31,37 +29,6 @@ export const Header = () => {
 			document.body.style.overflow = originalStyle
 		}
 	}, [burgerIsOpen])
-
-	const isFixed = isScroll && isTablet
-	const isShowFixed = isScrollUp && isTablet
-
-
-	useEffect(() => {
-		const elRef = Math.round(ref.current!.getBoundingClientRect().top)
-		const currentElRef = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
-
-		if (elRef <= currentElRef) {
-			setIsScroll(true)
-		} else {
-			setIsScroll(false)
-		}
-
-		var prevScrollpos = window.pageYOffset
-		window.onscroll = function () {
-			var currentScrollPos = window.pageYOffset
-			if (prevScrollpos > currentScrollPos) {
-				setIsScrollUp(true)
-			} else {
-				setIsScrollUp(false)
-			}
-			prevScrollpos = currentScrollPos
-		}
-	})
-
-
-
-
-
 
 	return (
 		<>
