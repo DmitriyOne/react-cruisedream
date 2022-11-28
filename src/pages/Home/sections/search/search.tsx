@@ -10,6 +10,7 @@ import { Logo } from '../../../../components/Layout/Logo'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
+import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 
 export const Search = () => {
 	const [currentCountry, setCurrentCountry] = useState('')
@@ -67,6 +68,7 @@ export const Search = () => {
 				</form>
 
 				<Button
+					href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
 					className={classNames(
 						styles.phone,
 						isFixed ? styles.show : undefined
@@ -75,7 +77,7 @@ export const Search = () => {
 					+7 499 653 89 91
 				</Button>
 			</Container>
-		</Container>
+		</Container >
 	)
 
 }

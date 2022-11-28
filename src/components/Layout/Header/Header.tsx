@@ -17,9 +17,6 @@ export const Header = () => {
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
 
-	// console.log('isFixed:', isFixed)
-	// console.log('isShowFixed:', isShowFixed)
-
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow
 		if (burgerIsOpen) {

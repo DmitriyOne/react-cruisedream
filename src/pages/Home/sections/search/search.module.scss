@@ -23,6 +23,18 @@
   &.show {
     top: 0;
   }
+
+  & .form {
+    @include mixins.media-w(breakpoints.$laptop-l){
+      @include mixins.fluidMaxSize(960);
+    }
+  }
+
+  & .button {
+    background-color: colors.$transparent;
+    border: 1px solid #004275;
+    color: #004275;
+  }
 }
 
 .form {
@@ -45,10 +57,11 @@
   font-size: 17px;
   line-height: 120%;
   color: colors.$white;
-  background: #004275;
+  background-color: #004275;
   border-radius: 3px;
   text-transform: uppercase;
   white-space: nowrap;
+  border: 1px solid colors.$transparent;
 
   @include mixins.media-w(breakpoints.$tablet) {
     font-size: 14px;
@@ -117,42 +130,49 @@
   line-height: 120%;
   color: #004275;
 
+  @include mixins.media-w(breakpoints.$laptop-l) {
+    font-size: 20px;
+  }
+
   &::placeholder {
     color: #004275;
   }
 }
 
 .logo {
-  opacity: 0;
+  display: none;
   margin-right: 40px;
-  transition: opacity .4s;
 
   @include mixins.media-w(1900) {
     @include mixins.fluidMaxSize(200);
     margin-right: 20px;
   }
 
-  @include mixins.media-w(1660) {
-    display: none;
+  @include mixins.media-w(breakpoints.$laptop-l) {
+    @include mixins.fluidMaxSize(180);
   }
 
-  // @include mixins.media-w(breakpoints.$laptop) {
-  //   display: none;
-  // }
+  @include mixins.media-w(breakpoints.$laptop-s) {
+    display: none
+  }
 
   &.show {
-    opacity: 1;
+    display: block;
+
+    @include mixins.media-w(breakpoints.$laptop-s) {
+      display: none
+    }
   }
 }
 
 .phone {
-  opacity: 0;
+  display: none;
   margin-left: 40px;
   font-size: 37px;
   line-height: 120%;
   letter-spacing: 0.01em;
   color: #004275;
-  transition: opacity .4s;
+  transition: all .4s;
 
   @include mixins.media-w(1900) {
     font-size: 28px;
@@ -160,14 +180,24 @@
   }
 
   @include mixins.media-w(1660) {
-    display: none;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    @include mixins.square-size(25);
+    min-width: 25px;
+    @include mixins.bg-cover;
+    background-image: url('./icons/phone.svg');
   }
 
-  // @include mixins.media-w(breakpoints.$laptop) {
-  //   display: none;
-  // }
+  @include mixins.media-w(breakpoints.$laptop-s) {
+    display: none
+  }
 
   &.show {
-    opacity: 1;
+    display: block;
+
+    @include mixins.media-w(breakpoints.$laptop-s) {
+      display: none
+    }
   }
 }

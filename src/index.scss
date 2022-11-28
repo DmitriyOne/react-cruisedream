@@ -3,6 +3,7 @@
 @use './styles/family.scss';
 @use './styles/colors.scss';
 @use './styles/z-index.scss';
+@use './styles/breakpoints.scss';
 
 @keyframes scaleIn {
 	0% {
@@ -36,6 +37,10 @@
 		font-size: 24px;
 		line-height: 120%;
 		color: #004275 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
 	}
 
 	&__single-value {
@@ -44,6 +49,10 @@
 		line-height: 120%;
 		color: #004275 !important;
 		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
 	}
 
 	&__placeholder {
@@ -52,6 +61,10 @@
 		line-height: 120%;
 		color: #004275 !important;
 		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
 	}
 
 	&__input-container {
