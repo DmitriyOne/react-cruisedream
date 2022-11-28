@@ -6,16 +6,16 @@ import { Contacts } from './Contacts'
 import { Burger } from './Burger'
 import { Information } from '../Information'
 
-import { useOpen, useWindowSize } from '../../../hooks'
+import { useOpen, useScrollUp, useWindowSize } from '../../../hooks'
 import { Container } from '../../Container'
 
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
 export const Header = () => {
-	const { isTablet } = useWindowSize()
+	const { isTablet, isDesktop } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
-	const [isScroll, setIsScroll] = useState(false)
+	const { isScroll, isScrollUp, ref } = useScrollUp()
 
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow
@@ -27,32 +27,22 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
-	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			const isCurrentScroll = window.scrollY
-			setIsScroll(isCurrentScroll >= 20)
-		})
-
-		window.addEventListener('wheel', function (event) {
-			if (event.deltaY < 0) {
-				console.log('scrolling up')
-			}
-			else if (event.deltaY > 0) {
-				console.log('scrolling down')
-			}
-		})
-	})
-
-
+	const isSticky = isScroll && isTablet
+	const isShowSticky = isScrollUp && isTablet
 
 	return (
 		<>
-			<header className={classNames(
-				styles.component,
-				isScroll ? styles.sticky : undefined
-			)}>
-				{!isTablet && <Information />}
-				<div className={styles.header}>
+			<header
+				ref={ref}
+				className={classNames(
+					isTablet ? styles.component : undefined,
+					isSticky ? styles.sticky : undefined,
+					isShowSticky ? styles.show : undefined
+				)}
+			>
+				{isDesktop && <Information />}
+				<div className={styles.header}
+				>
 					<Container direction="row">
 						{isTablet &&
 							<Burger

@@ -7,14 +7,19 @@
 .component {
   margin-top: 16px;
   padding: 12px 20px;
-  background-color: colors.$white
+  background-color: colors.$white;
+  transition: all 0.5s;
 }
 
 .sticky {
   position: sticky;
-  top: 0;
+  top: -100%;
   left: 0;
   z-index: z-index.$idx-header;
+
+  &.show {
+    top: 0;
+  }
 }
 
 .form {
@@ -117,18 +122,18 @@
 .logo {
   margin-right: 40px;
 
-  // @include mixins.media-w(1900) {
-  //   @include mixins.fluidMaxSize(200);
-  //   margin-right: 20px;
-  // }
+  @include mixins.media-w(1900) {
+    @include mixins.fluidMaxSize(200);
+    margin-right: 20px;
+  }
 
-  // @include mixins.media-w(1660) {
-  //   display: none;
-  // }
-
-  @include mixins.media-w(breakpoints.$laptop) {
+  @include mixins.media-w(1660) {
     display: none;
   }
+
+  // @include mixins.media-w(breakpoints.$laptop) {
+  //   display: none;
+  // }
 }
 
 .phone {
@@ -138,16 +143,16 @@
   letter-spacing: 0.01em;
   color: #004275;
 
-  // @include mixins.media-w(1900) {
-  //   font-size: 28px;
-  //   margin-left: 20px;
-  // }
+  @include mixins.media-w(1900) {
+    font-size: 28px;
+    margin-left: 20px;
+  }
 
-  // @include mixins.media-w(1660) {
-  //   display: none;
-  // }
-
-  @include mixins.media-w(breakpoints.$laptop) {
+  @include mixins.media-w(1660) {
     display: none;
   }
+
+  // @include mixins.media-w(breakpoints.$laptop) {
+  //   display: none;
+  // }
 }

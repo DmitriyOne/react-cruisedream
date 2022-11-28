@@ -6,19 +6,23 @@
 .component {
 	// display: flex;
 	// flex-direction: column-reverse;
-	transition: all .3s;
 }
 
 .sticky {
-	position: sticky;
-	top: 0;
-	left: 0;
-	background-color: colors.$white;
-	z-index: z-index.$idx-header;
+  position: sticky;
+  top: -100%;
+  left: 0;
+  z-index: z-index.$idx-header;
+
+  &.show {
+    top: 0;
+  }
 }
 
 .header {
 	padding: 10px 20px;
+	background-color: colors.$white;
+	transition: all .5s;
 
 	@include mixins.media-w(breakpoints.$laptop){
 		padding: 12px 20px;
