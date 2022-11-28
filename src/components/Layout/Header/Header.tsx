@@ -37,51 +37,25 @@ export const Header = () => {
 
 
 	useEffect(() => {
+		const elRef = Math.round(ref.current!.getBoundingClientRect().top)
+		const currentElRef = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
 
-		const currentEl = Math.round(ref.current!.getBoundingClientRect().top)
-		const currentElHeight = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
-
-		console.log('currentEl: ', currentEl)
-		console.log('currentElHeight: ', currentElHeight)
-
-
-		if (currentEl <= currentElHeight) {
+		if (elRef <= currentElRef) {
 			setIsScroll(true)
 		} else {
 			setIsScroll(false)
 		}
 
-		document.addEventListener('touchstart', handleTouchStart, false)
-		document.addEventListener('touchmove', handleTouchMove, false)
-
-		let xDown: any = null
-		let yDown: any = null
-
-		function handleTouchStart(evt: any) {
-			xDown = evt.touches[0].clientX
-			yDown = evt.touches[0].clientY
-		};
-
-		function handleTouchMove(evt: any) {
-			if (!xDown || !yDown) {
-				return
-			}
-
-			var yUp = evt.touches[0].clientY
-
-			var yDiff = yDown - yUp
-
-			if (yDiff > 0) {
-				/* up swipe */
-				setIsScrollUp(false)
-			} else {
-				/* down swipe */
+		var prevScrollpos = window.pageYOffset
+		window.onscroll = function () {
+			var currentScrollPos = window.pageYOffset
+			if (prevScrollpos > currentScrollPos) {
 				setIsScrollUp(true)
+			} else {
+				setIsScrollUp(false)
 			}
-			/* reset values */
-			xDown = null
-			yDown = null
-		};
+			prevScrollpos = currentScrollPos
+		}
 	})
 
 
