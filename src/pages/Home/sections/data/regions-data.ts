@@ -1,10 +1,11 @@
-import { CRUISE_ROUTES } from '../../../../../constants'
+/* eslint-disable max-len */
+import { CRUISE_ROUTES } from '../../../../constants'
 
-import cardEuropeImage from '../../../../../assets/images/region/region-europe.jpeg'
-import cardAsiaImage from '../../../../../assets/images/region/region-asia.jpeg'
-import cardRussiaImage from '../../../../../assets/images/region/region-russia.jpeg'
+import cardEuropeImage from '../../../../assets/images/region/region-europe.jpeg'
+import cardAsiaImage from '../../../../assets/images/region/region-asia.jpeg'
+import cardRussiaImage from '../../../../assets/images/region/region-russia.jpeg'
 
-export const RegionCardsData = [
+export const RegionsData = [
 	{
 		src: cardEuropeImage,
 		alt: 'Beautiful sea breeze',

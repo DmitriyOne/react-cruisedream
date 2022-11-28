@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import bgImage1 from '../../../../assets/images/intro/intro-2.jpeg'
 import bgImage2 from '../../../../assets/images/intro/intro-1.jpeg'
 import bgImage3 from '../../../../assets/images/intro/intro-3.jpeg'
@@ -10,7 +11,7 @@ enum ETextDirection {
 	right = 'right'
 }
 
-export const SwiperIntro = [
+export const IntroData = [
 	{
 		src: bgImage1,
 		alt: 'Family look at the sea',

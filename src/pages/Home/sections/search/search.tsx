@@ -1,21 +1,20 @@
 import { useState } from 'react'
 import classNames from 'classnames'
+
 import Select from 'react-select'
 import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
 
-
 import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
-import { optionCompanyHome, optionRegionHome } from '../../../../model/interfaces'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { Button, Container } from '../../../../components'
-import { Logo } from '../../../../components/Layout/Logo'
+import { optionRegionHome, optionCompanyHome } from '../data'
+
+import { Button, Container, Logo } from '../../../../components'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
 
 export const Search = () => {
-	const [currentCountry, setCurrentCountry] = useState('')
 	const [startDate, setStartDate] = useState<Date>()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
@@ -69,7 +68,6 @@ export const Search = () => {
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>
-
 				<Button
 					href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
 					className={classNames(

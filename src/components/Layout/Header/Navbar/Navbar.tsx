@@ -26,7 +26,6 @@ export const Navbar: FC<IProps> = ({
 	})
 
 	const linkClassName = classNames(styles.link, styles.active)
-
 	return (
 		<nav className={componentClassName}>
 			<ul className={styles.menu}>
@@ -40,7 +39,7 @@ export const Navbar: FC<IProps> = ({
 							className={({ isActive }) =>
 								isActive ? linkClassName : styles.link
 							}
-							onClick={navIsClose}
+							onClick={isTablet ? navIsClose : undefined}
 						>
 							{item.text}
 							{isTablet &&

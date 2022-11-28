@@ -13,7 +13,6 @@ export const FooterMenu = () => {
 	const { selected, toggle } = useAccordion()
 	const { isTablet } = useWindowSize()
 
-	
 	return (
 		<nav className={styles.nav}>
 			{FooterLinks.map((visible, id) => {

@@ -1,10 +1,10 @@
-import { Button, Container, Heading } from '../../../../components'
+import { Container, Heading } from '../../../../components'
+import { Link } from 'react-router-dom'
 
-import 'swiper/css'
-import 'swiper/css/grid'
-import styles from './regions.module.scss'
 import { RegionCard } from './region-card/region-card'
 import { CRUISE_ROUTES } from '../../../../constants'
+
+import styles from './regions.module.scss'
 
 export const Regions = () => {
 	return (
@@ -14,12 +14,12 @@ export const Regions = () => {
 					РЕГИОНЫ
 				</Heading>
 				<RegionCard />
-				<Button
+				<Link
 					className={styles.button}
-					reactHref={CRUISE_ROUTES.SHIPS}
+					to={CRUISE_ROUTES.SHIPS}
 				>
 					ВСЕ РЕГИОНЫ
-				</Button>
+				</Link>
 			</Container>
 		</Container>
 	)

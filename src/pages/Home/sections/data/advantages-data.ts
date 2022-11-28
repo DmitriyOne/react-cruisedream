@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import anchorIcon from '../../../../assets/images/advantages/anchor.svg'
 import bookmarkIcon from '../../../../assets/images/advantages/bookmark.svg'
 import lockIcon from '../../../../assets/images/advantages/lock.svg'
