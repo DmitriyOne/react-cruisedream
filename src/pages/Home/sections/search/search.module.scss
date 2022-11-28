@@ -6,13 +6,16 @@
 
 .component {
   margin-top: 16px;
-  padding: 12px 20px;
-  background-color: colors.$white;
-  transition: all 0.5s;
 }
 
-.sticky {
-  position: sticky;
+.container {
+  transition: all 0.5s;
+  padding: 12px 20px;
+  background-color: colors.$white;
+}
+
+.fixed {
+  position: fixed;
   top: -100%;
   left: 0;
   z-index: z-index.$idx-header;
@@ -120,7 +123,9 @@
 }
 
 .logo {
+  opacity: 0;
   margin-right: 40px;
+  transition: opacity .4s;
 
   @include mixins.media-w(1900) {
     @include mixins.fluidMaxSize(200);
@@ -134,14 +139,20 @@
   // @include mixins.media-w(breakpoints.$laptop) {
   //   display: none;
   // }
+
+  &.show {
+    opacity: 1;
+  }
 }
 
 .phone {
+  opacity: 0;
   margin-left: 40px;
   font-size: 37px;
   line-height: 120%;
   letter-spacing: 0.01em;
   color: #004275;
+  transition: opacity .4s;
 
   @include mixins.media-w(1900) {
     font-size: 28px;
@@ -155,4 +166,8 @@
   // @include mixins.media-w(breakpoints.$laptop) {
   //   display: none;
   // }
+
+  &.show {
+    opacity: 1;
+  }
 }

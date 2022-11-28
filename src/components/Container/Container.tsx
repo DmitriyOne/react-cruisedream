@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, FC, ReactNode, LegacyRef, forwardRef, ForwardedRef } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, FC, ReactNode, LegacyRef, forwardRef, ForwardedRef, CSSProperties } from 'react'
 import classNames from 'classnames'
 
 import { EDirection, EAlign, EJustify, ESize } from './enums/EContainer'
@@ -22,6 +22,7 @@ export const Container = forwardRef(({
 	justify = 'between',
 	className,
 	children,
+	...props
 }: IProps, ref?: ForwardedRef<HTMLDivElement>
 ) => {
 	const componentClassName = classNames(className, {
@@ -43,6 +44,7 @@ export const Container = forwardRef(({
 		<div
 			ref={ref}
 			className={componentClassName}
+			{...props}
 		>
 			{children}
 		</div>

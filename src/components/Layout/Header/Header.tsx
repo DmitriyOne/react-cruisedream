@@ -27,23 +27,30 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
-	const isSticky = isScroll && isTablet
-	const isShowSticky = isScrollUp && isTablet
+	const isFixed = isScroll && isTablet
+	const isShowFixed = isScrollUp && isTablet
 
 	return (
 		<>
 			<header
-				ref={ref}
 				className={classNames(
 					isTablet ? styles.component : undefined,
-					isSticky ? styles.sticky : undefined,
-					isShowSticky ? styles.show : undefined
 				)}
 			>
-				{isDesktop && <Information />}
-				<div className={styles.header}
+				<Information />
+				<div
+					ref={ref}
+					className={styles.header}
+					style={isFixed ? { paddingTop: `${ref.current?.offsetHeight}px` } : undefined}
 				>
-					<Container direction="row">
+					<Container
+						direction="row"
+						className={classNames(
+							styles.headerRow,
+							isFixed ? styles.fixed : undefined,
+							isShowFixed ? styles.show : undefined
+						)}
+					>
 						{isTablet &&
 							<Burger
 								burgerToggle={burgerToggle}
@@ -59,7 +66,6 @@ export const Header = () => {
 					</Container>
 				</div>
 			</header>
-			{isTablet && <Information />}
 		</>
 	)
 }
