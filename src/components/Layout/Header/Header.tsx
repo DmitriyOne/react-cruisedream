@@ -17,7 +17,6 @@ export const Header = () => {
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
 	// const { isScroll, isScrollUp, ref } = useScrollUp()
 
-	const [isScroll, setIsScroll] = useState(false)
 	const [isScrollUp, setIsScrollUp] = useState(false)
 	const ref = useRef<HTMLDivElement>(null)
 
@@ -32,60 +31,43 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
-	const isFixed = isScroll && isTablet
+	const isFixed = isTablet
 	const isShowFixed = isScrollUp && isTablet
 
 
+	useEffect(() => {
+		document.addEventListener('touchstart', handleTouchStart, false)
+		document.addEventListener('touchmove', handleTouchMove, false)
 
+		let xDown: any = null
+		let yDown: any = null
 
+		function handleTouchStart(evt: any) {
+			xDown = evt.touches[0].clientX
+			yDown = evt.touches[0].clientY
+		};
 
-
-
-
-	document.addEventListener('touchstart', handleTouchStart, false)
-	document.addEventListener('touchmove', handleTouchMove, false)
-
-	let xDown: any = null
-	let yDown: any = null
-
-	function handleTouchStart(evt: any) {
-		xDown = evt.touches[0].clientX
-		yDown = evt.touches[0].clientY
-	};
-
-	function handleTouchMove(evt: any) {
-		if (!xDown || !yDown) {
-			return
-		}
-
-		var xUp = evt.touches[0].clientX
-		var yUp = evt.touches[0].clientY
-
-		var xDiff = xDown - xUp
-		var yDiff = yDown - yUp
-
-		if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
-			if (xDiff > 0) {
-				/* left swipe */
-				alert('left swipe')
-			} else {
-				/* right swipe */
-				alert('right swipe')
+		function handleTouchMove(evt: any) {
+			if (!xDown || !yDown) {
+				return
 			}
-		} else {
+
+			var yUp = evt.touches[0].clientY
+
+			var yDiff = yDown - yUp
+
 			if (yDiff > 0) {
-				alert('up swipe')
 				/* up swipe */
+				setIsScrollUp(false)
 			} else {
-				alert('down swipe')
 				/* down swipe */
+				setIsScrollUp(true)
 			}
-		}
-		/* reset values */
-		xDown = null
-		yDown = null
-	};
-
+			/* reset values */
+			xDown = null
+			yDown = null
+		};
+	})
 
 
 
