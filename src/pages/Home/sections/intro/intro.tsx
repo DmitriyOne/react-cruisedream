@@ -33,6 +33,7 @@ export const Intro = () => {
 			<Swiper
 				loop={true}
 				className={styles.swiper}
+				allowTouchMove={false}
 				spaceBetween={50}
 				slidesPerView={1}
 				navigation={{
