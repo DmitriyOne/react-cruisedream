@@ -15,8 +15,9 @@ import classNames from 'classnames'
 export const Header = () => {
 	const { isTablet, isDesktop } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
-	// const { isScroll, isScrollUp, ref } = useScrollUp()
+	// const { isScroll, ref } = useScrollUp()
 
+	const [isScroll, setIsScroll] = useState(false)
 	const [isScrollUp, setIsScrollUp] = useState(false)
 	const ref = useRef<HTMLDivElement>(null)
 
@@ -31,11 +32,25 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
-	const isFixed = isTablet
+	const isFixed = isScroll && isTablet
 	const isShowFixed = isScrollUp && isTablet
 
 
 	useEffect(() => {
+
+		const currentEl = Math.round(ref.current!.getBoundingClientRect().top)
+		const currentElHeight = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
+
+		console.log('currentEl: ', currentEl)
+		console.log('currentElHeight: ', currentElHeight)
+
+
+		if (currentEl <= currentElHeight) {
+			setIsScroll(true)
+		} else {
+			setIsScroll(false)
+		}
+
 		document.addEventListener('touchstart', handleTouchStart, false)
 		document.addEventListener('touchmove', handleTouchMove, false)
 
