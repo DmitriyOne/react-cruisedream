@@ -74,8 +74,10 @@ export const Header = () => {
 			}
 		} else {
 			if (yDiff > 0) {
+				alert('up swipe')
 				/* up swipe */
 			} else {
+				alert('down swipe')
 				/* down swipe */
 			}
 		}
