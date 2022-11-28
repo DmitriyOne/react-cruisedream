@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Logo } from '../Logo'
 import { Navbar } from './Navbar'
@@ -15,7 +15,12 @@ import classNames from 'classnames'
 export const Header = () => {
 	const { isTablet, isDesktop } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
-	const { isScroll, isScrollUp, ref } = useScrollUp()
+	// const { isScroll, isScrollUp, ref } = useScrollUp()
+
+	const [isScroll, setIsScroll] = useState(false)
+	const [isScrollUp, setIsScrollUp] = useState(false)
+	const ref = useRef<HTMLDivElement>(null)
+
 
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow
@@ -27,8 +32,32 @@ export const Header = () => {
 		}
 	}, [burgerIsOpen])
 
+
+	useEffect(() => {
+		window.addEventListener('mousewheel', function (event) {
+			const currentEl = Math.round(ref.current!.getBoundingClientRect().top)
+			const currentElHeight = ref.current!.offsetHeight - ref.current!.offsetHeight * 2
+
+			if (currentEl <= currentElHeight || currentEl === 0) {
+				setIsScroll(true)
+			} else {
+				setIsScroll(false)
+			}
+
+			// if (event.deltaY < 0) {
+			// 	setIsScrollUp(true)
+			// }
+			// else if (event.deltaY > 0) {
+			// 	setIsScrollUp(false)
+			// }
+		})
+	}, [isScroll])
+
+
 	const isFixed = isScroll && isTablet
 	const isShowFixed = isScrollUp && isTablet
+
+
 
 	return (
 		<>
