@@ -107,7 +107,6 @@
 }
 
 .datepicker {
-  padding: 5px 0 10px;
   border-bottom: 1px solid #4F4E4E;
   position: relative;
 
@@ -125,10 +124,13 @@
 }
 
 .inputDatepicker {
+  padding: 5px 0 10px;
+  width: 100%;
   @include mixins.fonts(family.$source-sans-pro, 300);
   font-size: 24px;
   line-height: 120%;
   color: #004275;
+  cursor: pointer;
 
   @include mixins.media-w(breakpoints.$laptop-l) {
     font-size: 20px;
