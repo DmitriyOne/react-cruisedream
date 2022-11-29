@@ -15,7 +15,7 @@ export const Regions = () => {
 				</Heading>
 				<RegionCard />
 				<Link
-					className={styles.button}
+					className={styles.link}
 					to={CRUISE_ROUTES.SHIPS}
 				>
 					ВСЕ РЕГИОНЫ

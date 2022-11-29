@@ -56,17 +56,24 @@
   padding: 17px 43px;
   font-size: 17px;
   line-height: 120%;
-  color: colors.$white;
-  background-color: #004275;
+	color: colors.$btn-text;
+  background-color: colors.$transparent;
   border-radius: 3px;
+  border: 1px solid colors.$btn-border;
   text-transform: uppercase;
   white-space: nowrap;
-  border: 1px solid colors.$transparent;
 
   @include mixins.media-w(breakpoints.$tablet) {
     font-size: 14px;
     padding: 12px 50px;
   }
+
+  @include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+		}
+	}
 }
 
 .select {

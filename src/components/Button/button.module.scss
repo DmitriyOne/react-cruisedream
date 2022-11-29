@@ -1,6 +1,7 @@
 .component {
   display: block;
   cursor: pointer;
+  transition: all .3s;
 
   svg {
     width: 100%;

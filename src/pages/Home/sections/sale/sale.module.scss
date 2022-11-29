@@ -9,6 +9,7 @@
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		padding-right: 0;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-top: 45px;
 	}
@@ -30,7 +31,7 @@
 	}
 }
 
-.button {
+.link {
 	display: inline-block;
 	margin-top: 45px;
 	margin-left: auto;
@@ -39,15 +40,23 @@
 	line-height: 120%;
 	text-align: center;
 	text-transform: uppercase;
-	color: #00064A;
+	color: colors.$btn-text;
 	padding: 18px 50px;
 	border-radius: 3px;
-	border: 1px solid rgba(0, 6, 74, 0.6);
+	border: 1px solid colors.$btn-border;
 	background-color: colors.$transparent;
+  transition: all .3s;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin-top: 30px;
 		font-size: 16px;
 		padding: 16px 40px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+		}
 	}
 }
