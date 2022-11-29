@@ -46,13 +46,13 @@ export const Search = () => {
 						options={optionRegionHome}
 						placeholder="Регион круиза"
 						className={classNames(styles.select, styles.col)}
-						classNamePrefix="select-search"
+						classNamePrefix="select-transparent"
 					/>
 					<Select
 						options={optionCompanyHome}
 						placeholder="Круизная компания"
 						className={classNames(styles.select, styles.col)}
-						classNamePrefix="select-search"
+						classNamePrefix="select-transparent"
 					/>
 					<div className={styles.col}>
 						<DatePicker
