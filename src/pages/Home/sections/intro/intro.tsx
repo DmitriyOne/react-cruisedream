@@ -15,7 +15,7 @@ import 'swiper/css/navigation'
 import styles from './intro.module.scss'
 
 export const Intro = () => {
-	const {navPrevButton, navNextButton, onBeforeInit} = useSwiperButtons()
+	const { navPrevButton, navNextButton, onBeforeInit } = useSwiperButtons()
 
 	return (
 		<Container
@@ -43,7 +43,10 @@ export const Intro = () => {
 								alt={slider.alt}
 							/>
 						</div>
-						<Container className={styles.container}>
+						<Container
+							width="containerXl"
+							className={styles.container}
+						>
 							<IntroContent
 								title={slider.title}
 								href={slider.href}

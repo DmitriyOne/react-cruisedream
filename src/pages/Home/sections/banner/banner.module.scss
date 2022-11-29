@@ -5,6 +5,10 @@
 .component {
 	position: relative;
 	padding: 40px 20px 30px 20px;
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding: 20px;
+	}
 }
 
 .bg {
@@ -64,6 +68,9 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 20px;
 	}
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		font-size: 16px;
+	}
 }
 
 .form {
@@ -98,6 +105,10 @@
 	@include mixins.media-w(breakpoints.$tablet-s) {
 		min-height: 47px;
 	}
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		min-height: 40px;
+		font-size: 14px;
+	}
 }
 
 .button {
@@ -117,6 +128,11 @@
 		padding-top: 16px;
 		padding-bottom: 12px;
 	}
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding-top: 12px;
+		padding-bottom: 10px;
+		font-size: 14px;
+	}
 }
 
 .footnote {
@@ -133,5 +149,9 @@
 	}
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 12px;
+	}
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding-top: 16px;
+		font-size: 10px;
 	}
 }
