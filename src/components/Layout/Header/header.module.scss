@@ -13,16 +13,17 @@
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop){
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .headerRow {
 	background-color: colors.$white;
 	padding: 10px 0px;
 	transition: all .5s;
-
-	@include mixins.media-w(breakpoints.$laptop-l) {
-
-	}
 
 	@include mixins.media-w(breakpoints.$laptop){
 		padding: 12px 20px;

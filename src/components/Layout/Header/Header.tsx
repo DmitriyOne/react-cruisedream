@@ -1,20 +1,22 @@
+import { useContext } from 'react'
 import classNames from 'classnames'
+
+import { HeaderContext } from '../../../context'
+import { useWindowSize, useScrollUpMobile } from '../../../hooks'
 
 import { Logo } from '../Logo'
 import { Navbar } from './Navbar'
 import { Contacts } from './Contacts'
 import { Burger } from './Burger'
 import { Information } from '../Information'
-
-import { useOpen, useWindowSize, useScrollUpMobile } from '../../../hooks'
 import { Container } from '../../Container'
 
 import styles from './header.module.scss'
 
 export const Header = () => {
 	const { isTablet } = useWindowSize()
-	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
+	const { isOpen: burgerIsOpen, onToggle: burgerToggle  } = useContext(HeaderContext)
 
 	return (
 		<>
