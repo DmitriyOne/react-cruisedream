@@ -24,7 +24,10 @@ export const Button = forwardRef(({
 		return (
 			<a
 				href={href}
-				className={className}
+				className={classNames(
+					styles.component,
+					className,
+				)}
 				target={target}
 			>
 				{children}

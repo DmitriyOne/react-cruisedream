@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 import { PartnersData } from '../data/partners-data'
 
-import { Container, Heading } from '../../../../components'
+import { Button, Container, Heading } from '../../../../components'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -28,10 +28,15 @@ export const Partners = () => {
 							key={item.id}
 							className={styles.slide}
 						>
-							<img
-								src={item.src}
-								alt={item.alt}
-							/>
+							<Button
+								href={item.href}
+								className={styles.link}
+							>
+								<img
+									src={item.src}
+									alt={item.alt}
+								/>
+							</Button>
 						</SwiperSlide>
 					)}
 					<div className={styles.pagination} />

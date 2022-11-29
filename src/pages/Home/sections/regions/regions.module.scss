@@ -27,7 +27,7 @@
 	}
 }
 
-.button {
+.link {
 	display: inline-block;
 	margin-top: 45px;
 	margin-left: auto;
@@ -36,14 +36,23 @@
 	line-height: 120%;
 	text-align: center;
 	text-transform: uppercase;
-	color: colors.$white;
+	color: colors.$btn-text;
 	padding: 18px 50px;
-	background-color: #004275;
+	background-color: colors.$transparent;
+	border: 1px solid colors.$btn-border;
 	border-radius: 3px;
+	transition: all .3s;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin-top: 30px;
 		font-size: 16px;
 		padding: 16px 40px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+		}
 	}
 }

@@ -28,6 +28,7 @@
 		border-bottom: 1px solid #4F4E4E !important;
 		box-shadow: none !important;
 		padding: 5px 0 10px;
+		cursor: pointer !important;
 	}
 
 	&__value-container {
@@ -70,6 +71,7 @@
 	&__input-container {
 		margin: 0 !important;
     padding: 0 !important;
+		cursor: pointer;
 	}
 
 	&__indicator-separator {
