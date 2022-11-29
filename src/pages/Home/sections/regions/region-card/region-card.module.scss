@@ -23,18 +23,17 @@
 }
 
 .slide {
-	@include mixins.flex-center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	flex-direction: column;
 	position: relative;
-	padding: 40px 20px;
+	padding: 70px 20px;
 	height: auto;
 	min-height: 585px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		min-height: 485px;
-	}
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		padding: 20px;
 	}
 	@include mixins.media-w(breakpoints.$mobile-l) {
 		min-height: 420px;
@@ -71,9 +70,12 @@
 }
 
 .cardContent {
-	@include mixins.flex-center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	flex-direction: column;
 	@include mixins.fluidMaxSize(280);
+	height: 100%;
 	margin: 0 auto;
 
 	@include mixins.media-w(breakpoints.$tablet) {
@@ -106,6 +108,7 @@
 	color: colors.$white;
 	text-align: center;
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	padding-bottom: 20px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 18px;
@@ -117,7 +120,7 @@
 
 .cardButton {
 	display: inline-block;
-	margin-top: 80px;
+	margin-top: auto;
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 120%;
