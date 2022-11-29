@@ -79,6 +79,28 @@
 	position: relative;
 	padding-bottom: 2px;
 	overflow-x: hidden;
+	font-size: 24px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover::before {
+			left: 0;
+		}
+	}
 
 	&::before {
 		content: '';
@@ -91,25 +113,12 @@
 		transition: left .3s;
 	}
 
-	@include mixins.media-minw(breakpoints.$laptop) {
-		&:hover::before {
-			left: 0;
-		}
-	}
-
 	&.active::before {
 		left: 0;
 
 		@include mixins.media-w(breakpoints.$laptop) {
 			left: -110%;
 		}
-	}
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
 	}
 }
 

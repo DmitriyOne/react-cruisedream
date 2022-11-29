@@ -15,7 +15,10 @@ export const Footer = () => {
 	const direction = isDesktop ? 'row' : 'column'
 	return (
 		<footer className={styles.footer}>
-			<Container direction={direction}>
+			<Container
+				width="containerXl"
+				direction={direction}
+			>
 				{isDesktop && <FooterLogo />}
 				<FooterMenu />
 				<FooterFeedback />

@@ -109,3 +109,8 @@
 .react-datepicker-popper {
 	z-index: z-index.$datepicker;
 }
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+	text-transform: capitalize;
+}

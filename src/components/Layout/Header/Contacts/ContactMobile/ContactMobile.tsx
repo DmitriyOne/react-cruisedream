@@ -1,19 +1,35 @@
+import { useContext, useEffect } from 'react'
+
+import { HeaderContext } from '../../../../../context'
 import { useOpen } from '../../../../../hooks'
-import { Button } from '../../../../Button'
+
+import { Button } from '../../../../../components'
+import { ContactDropdown } from './ContactDropdown/ContactDropdown'
 
 import phoneIcon from '../icons/phone.svg'
 
 import styles from './contact-mobile.module.scss'
-import { ContactDropdown } from './ContactDropdown/ContactDropdown'
 
 export const ContactMobile = () => {
-	const { isOpen, onToggle: dropdownIsOpen } = useOpen()
+	const { isOpen: isShowContacts, onClose: onCloseContacts, onToggle: onToggleContacts } = useOpen()
+	const { isOpen: menuOpen, onClose: menuClose } = useContext(HeaderContext)
+
+	useEffect(() => {
+		if (menuOpen) {
+			onCloseContacts()
+		}
+	}, [menuOpen])
+
+	const handlerClick = () => {
+		menuClose()
+		onToggleContacts()
+	}
 
 	return (
 		<>
 			<Button
 				className={styles.centerButton}
-				onClick={dropdownIsOpen}
+				onClick={handlerClick}
 			>
 				<img
 					className={styles.centerIcon}
@@ -21,9 +37,9 @@ export const ContactMobile = () => {
 					alt="Phone icon"
 				/>
 			</Button>
-		
-			{isOpen 
-			&& <ContactDropdown />
+
+			{isShowContacts
+				&& <ContactDropdown />
 			}
 		</>
 	)
