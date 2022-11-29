@@ -15,7 +15,7 @@ export const Header = () => {
 	const { isTablet } = useWindowSize()
 	const { onToggle: burgerToggle, isOpen: burgerIsOpen } = useOpen()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
-	
+
 	return (
 		<>
 			<header
@@ -31,6 +31,7 @@ export const Header = () => {
 				>
 					<Container
 						direction="row"
+						width="containerXl"
 						className={classNames(
 							styles.headerRow,
 							isFixed ? styles.fixed : undefined,

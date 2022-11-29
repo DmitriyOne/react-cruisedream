@@ -4,18 +4,25 @@
 @use '../../../styles/colors.scss';
 
 .component {
+	width: 100%;
 	display: flex;
 	flex-direction: column-reverse;
 }
 
 .header {
-	
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .headerRow {
 	background-color: colors.$white;
-	padding: 10px 20px;
+	padding: 10px 0px;
 	transition: all .5s;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+
+	}
 
 	@include mixins.media-w(breakpoints.$laptop){
 		padding: 12px 20px;
