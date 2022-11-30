@@ -1,8 +1,10 @@
 import { Container, Heading } from '../../../../components'
 
 import { VisibleFilters } from './visible-filters/visibleFilters'
+import { Buttons } from './buttons/buttons'
 
 import styles from './form.module.scss'
+import { HiddenFilters } from './hidden-filters/hiddenFilters'
 
 export const Form = () => {
 
@@ -14,6 +16,8 @@ export const Form = () => {
 				</Heading>
 				<form className={styles.form}>
 					<VisibleFilters />
+					<HiddenFilters />
+					<Buttons />
 				</form>
 			</div>
 		</Container>

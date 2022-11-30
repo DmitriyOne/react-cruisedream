@@ -11,6 +11,8 @@ export enum EAlign {
 }
 
 export enum EJustify {
+	start = 'start',
+	end = 'end',
 	around = 'around',
 	between = 'between',
 	center = 'center',

@@ -10,14 +10,14 @@ interface IProps {
 export const HeaderProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle, onClose } = useOpen()
 
+	const value = {
+		isOpen,
+		onToggle,
+		onClose
+	}
+
 	return (
-		<HeaderContext.Provider
-			value={{
-				isOpen: isOpen,
-				onClose: onClose,
-				onToggle: onToggle
-			}}
-		>
+		<HeaderContext.Provider value={value}>
 			{children}
 		</HeaderContext.Provider>
 	)

@@ -8,7 +8,6 @@ import { Button, Container } from '../../../../../components'
 import { option1, option2 } from '../../data'
 
 import styles from './visible-filters.module.scss'
-import classNames from 'classnames'
 
 export const VisibleFilters = () => {
 	const [startDate, setStartDate] = useState<Date>()

@@ -1,33 +1,25 @@
-export const option1 = [
-	{
-		value: 'Карибы 	1',
-		label: 'Карибы  1'
-	},
-	{
-		value: 'Карибы  2',
-		label: 'Компания  2'
-	},
-	{
-		value: 'Карибы 3',
-		label: 'Карибы 3'
-	}
-]
+import { optionPort1, optionPort2, optionPort3 } from './select-options-data'
 
-export const option2 = [
+export const SelectData = [
 	{
-		value: 'Royalcaribbean 	1',
-		label: 'Royalcaribbean  1'
+		id: 1,
+		label: 'Порт отправления',
+		options: optionPort1,
+		placeholder: 'Все',
+		className: 'select-white',
 	},
 	{
-		value: 'Royalcaribbean  2',
-		label: 'Royalcaribbean  2'
+		id: 2,
+		label: 'Порт захода',
+		options: optionPort2,
+		placeholder: 'Все',
+		className: 'select-white',
 	},
 	{
-		value: 'Royalcaribbean 3',
-		label: 'Royalcaribbean 3'
-	},
-	{
-		value: 'Royalcaribbean 4',
-		label: 'Royalcaribbean 4'
+		id: 3,
+		label: 'Порт отправления',
+		options: optionPort3,
+		placeholder: 'Все',
+		className: 'select-white',
 	}
 ]
