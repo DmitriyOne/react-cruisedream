@@ -60,7 +60,7 @@ export const HiddenFilters = () => {
 					</div>
 				)}
 			</div>
-			<div className={styles.row}>
+			<div className={classNames(styles.row, styles.last)}>
 				<div className={styles.col}>
 					<label className={styles.label}>
 						Круизный лайнер
@@ -74,7 +74,7 @@ export const HiddenFilters = () => {
 				<div className={classNames(styles.col, styles.flex)}>
 					<div className={styles.select}>
 						<label className={styles.label}>
-							Круизный лайнер
+						Тип круиза
 						</label>
 						<Select
 							options={optionTypeCruise}
@@ -102,7 +102,9 @@ export const HiddenFilters = () => {
 						</div>
 					</div>
 				</div>
-				<div className={classNames(styles.col, styles.flex)}>
+				<div
+					className={classNames(styles.col, styles.flex)}
+				>
 					<Input
 						componentClassName={styles.half}
 						inputClassName={styles.input}

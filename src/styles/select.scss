@@ -92,6 +92,10 @@
 		@include mixins.bg-cover;
 		background-image: url('../assets/images/select/arrow-down-dark.svg');
 
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			width: 12px;
+		}
+
 		&:hover {
 			color: #999aa5 !important;
 		}
@@ -185,6 +189,10 @@
 		@include mixins.bg-cover;
 		background-image: url('../assets/images/select/arrow-down.svg');
 
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			width: 12px;
+		}
+		
 		&:hover {
 			color: #999aa5 !important;
 		}
