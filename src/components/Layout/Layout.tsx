@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { ScrollTop } from './ScrollTop'
 
 export const Layout = () => {
 	return (
@@ -11,6 +12,7 @@ export const Layout = () => {
 				<Outlet />
 			</main>
 			<Footer />
+			<ScrollTop />
 		</>
 	)
 }

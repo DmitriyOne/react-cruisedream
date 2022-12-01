@@ -2,30 +2,40 @@ import { FormEvent, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import Select from 'react-select'
-import DatePicker from 'react-datepicker'
-import { ru } from 'date-fns/esm/locale'
 
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { SearchFiltersContext } from '../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
-import { Button, Container, Logo } from '../../../../components'
+import { Button, Container, Logo, MyDatepicker } from '../../../../components'
 
-import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
 
 export const Search = () => {
-	const navigate = useNavigate()
 	const [startDate, setStartDate] = useState<Date>()
+	const [endDate, setEndDate] = useState<Date>()
+
+	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
 	const { getValueRegion, onChangeRegion, getValueCompany, onChangeCompany } = useContext(SearchFiltersContext)
+
+	console.log('start: ', startDate)
+	console.log('end: ', endDate)
+
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
 		navigate(CRUISE_ROUTES.SEARCH)
 	}
+
+	const onChange = (dates: any) => {
+		const [start, end] = dates
+		setStartDate(start)
+		setEndDate(end)
+	}
+
 
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
@@ -66,17 +76,20 @@ export const Search = () => {
 						value={getValueCompany()}
 						onChange={onChangeCompany}
 					/>
-					<div className={styles.col}>
-						<DatePicker
-							wrapperClassName={classNames(styles.datepicker)}
-							selected={startDate}
-							onChange={(date: Date) => setStartDate(date)}
-							placeholderText="Даты круиза"
-							className={styles.inputDatepicker}
-							locale={ru}
-							dateFormat={'dd.MM.yyyy'}
-						/>
-					</div>
+
+
+
+					<MyDatepicker
+						componentClassName={styles.col}
+						wrapperClassName={styles.datepickerWrapper}
+						inputClassName={styles.inputDatepicker}
+						placeholder="Даты круиза"
+						startDate={startDate}
+						endDate={endDate}
+						onChange={onChange}
+					/>
+
+
 					<Button
 						className={styles.button}
 						onClick={handlerClick}

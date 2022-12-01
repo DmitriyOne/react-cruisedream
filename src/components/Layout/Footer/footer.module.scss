@@ -11,3 +11,11 @@
 		padding-bottom: 60px;
 	}
 }
+
+.wrapper {
+	display: flex;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+	}
+}

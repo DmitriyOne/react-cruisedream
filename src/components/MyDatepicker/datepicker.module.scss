@@ -1,0 +1,32 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+@use '../../styles/family.scss';
+@use '../../styles/colors.scss';
+
+.component {
+	display: flex;
+	position: relative;
+}
+
+.datepicker {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include mixins.bg-cover;
+  }
+}
+
+.input {
+  width: 100%;
+  @include mixins.fonts(family.$source-sans-pro, 300);
+  line-height: 120%;
+  cursor: pointer;
+}
+
+
+
+

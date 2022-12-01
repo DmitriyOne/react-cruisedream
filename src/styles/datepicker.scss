@@ -1,7 +1,24 @@
 @use './z-index.scss';
 
+@keyframes scaleInDatePicker {
+	0% {
+		opacity: 0;
+		transform: scale(0.9) translate3d(0px, 45px, 0px);
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1) translate3d(0px, 45px, 0px);
+	}
+}
+
 .react-datepicker-popper {
-	z-index: z-index.$datepicker;
+	z-index: z-index.$datepicker !important;
+	animation: scaleInDatePicker 0.35s ease-in-out;
 }
 
 .react-datepicker__current-month,

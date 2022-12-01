@@ -6,10 +6,6 @@
 .component {
 	padding: 65px 20px 45px;
 
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		padding-right: 0;
-	}
-
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-top: 45px;
 	}
@@ -21,9 +17,11 @@
 	line-height: 120%;
 	color: #004275;
 	text-align: center;
+	padding-bottom: 28px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 28px;
+		padding-bottom: 20px;
 	}
 
 	@include mixins.media-w(breakpoints.$tablet-s) {
@@ -33,7 +31,7 @@
 
 .link {
 	display: inline-block;
-	margin-top: 45px;
+	margin-top: 40px;
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 17px;
@@ -51,6 +49,10 @@
 		margin-top: 30px;
 		font-size: 16px;
 		padding: 16px 40px;
+	}
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		margin-top: 20px;
 	}
 
 	@include mixins.media-minw(breakpoints.$laptop) {
