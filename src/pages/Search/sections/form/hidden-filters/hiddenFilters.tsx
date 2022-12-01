@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
+import classNames from 'classnames'
 import Select from 'react-select'
 
 import { optionLiner, optionTypeCruise, SelectData } from '../../data'
@@ -6,9 +7,12 @@ import { optionLiner, optionTypeCruise, SelectData } from '../../data'
 import { Container, Input } from '../../../../../components'
 
 import styles from './hidden-filters.module.scss'
-import classNames from 'classnames'
 
-export const HiddenFilters = () => {
+interface IProps {
+	isOpen?: boolean
+}
+
+export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
 
@@ -22,7 +26,10 @@ export const HiddenFilters = () => {
 		<Container
 			width="full"
 			direction="column"
-			className={styles.component}
+			className={classNames(
+				styles.component,
+				isOpen ? styles.active : undefined
+			)}
 			justify="start"
 			align="start"
 		>
@@ -74,7 +81,7 @@ export const HiddenFilters = () => {
 				<div className={classNames(styles.col, styles.flex)}>
 					<div className={styles.select}>
 						<label className={styles.label}>
-						Тип круиза
+							Тип круиза
 						</label>
 						<Select
 							options={optionTypeCruise}

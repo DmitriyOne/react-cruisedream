@@ -2,7 +2,15 @@
 @use '../../../../../styles/breakpoints.scss';
 @use '../../../../../styles/colors.scss';
 
-.component {}
+.component {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 1s;
+
+	&.active {
+		max-height: 100%;
+	}
+}
 
 .row {
 	display: flex;
@@ -18,7 +26,7 @@
 		margin-top: 0;
 	}
 
-	& > .col {
+	&>.col {
 		@include mixins.media-w(breakpoints.$tablet) {
 			margin-top: 15px;
 		}
@@ -55,6 +63,7 @@
 		@include mixins.media-w(breakpoints.$laptop) {
 			padding-right: 15px;
 		}
+
 		@include mixins.media-w(breakpoints.$tablet) {
 			padding-right: 0;
 		}
@@ -118,6 +127,7 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 20%;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet-s) {
 		width: 35%;
 	}

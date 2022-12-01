@@ -1,31 +1,39 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Select from 'react-select'
 import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
 
-import { Button, Container } from '../../../../../components'
+import { SearchFiltersContext } from '../../../../../context'
+import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
 
-import { option1, option2 } from '../../data'
+import { Button, Container } from '../../../../../components'
 
 import styles from './visible-filters.module.scss'
 
 export const VisibleFilters = () => {
 	const [startDate, setStartDate] = useState<Date>()
 	const [endDate, setEndDate] = useState<Date>()
+	const { currentRegion } = useContext(SearchFiltersContext)
+	console.log(currentRegion)
+
 
 	return (
 		<Container width="full" className={styles.component}>
 			<Select
-				options={option1}
+				options={optionRegionHome}
 				placeholder="Карибы"
 				className={styles.col}
 				classNamePrefix="select-white"
+				value={currentRegion}
+				// onChange={onChangeRegion}
 			/>
 			<Select
-				options={option2}
+				options={optionCompanyHome}
 				placeholder="Royalcaribbean"
 				className={styles.col}
 				classNamePrefix="select-white"
+				// value={getValueCompany()}
+				// onChange={onChangeCompany}
 			/>
 			<div className={styles.col}>
 				<DatePicker

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import classNames from 'classnames'
 
 import Select from 'react-select'
@@ -7,17 +7,36 @@ import { ru } from 'date-fns/esm/locale'
 
 import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { optionRegionHome, optionCompanyHome } from '../data'
+import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
 import { Button, Container, Logo } from '../../../../components'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
+import { SearchFiltersContext } from '../../../../context'
 
 export const Search = () => {
 	const [startDate, setStartDate] = useState<Date>()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
+	const { currentRegion, currentCompany, setCurrentRegion} = useContext(SearchFiltersContext)
+	console.log(currentRegion)
+
+	const getValueRegion = () => {
+		return currentRegion ? optionRegionHome.find(c => c.value === currentRegion.value) : ''
+	}
+
+	const onChangeRegion = (newValue: any) => {
+		setCurrentRegion(newValue)
+	}
+
+	const getValueCompany = () => {
+		return currentCompany ? optionCompanyHome.find(c => c.value === currentCompany.value) : ''
+	}
+
+	const onChangeCompany = (newValue: any) => {
+		// setCurrentCompany(newValue.value)
+	}
 
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
@@ -47,12 +66,16 @@ export const Search = () => {
 						placeholder="Регион круиза"
 						className={classNames(styles.select, styles.col)}
 						classNamePrefix="select-transparent"
+						onChange={onChangeRegion}
+						value={getValueRegion()}
 					/>
 					<Select
 						options={optionCompanyHome}
 						placeholder="Круизная компания"
 						className={classNames(styles.select, styles.col)}
 						classNamePrefix="select-transparent"
+						onChange={onChangeCompany}
+						value={getValueCompany()}
 					/>
 					<div className={styles.col}>
 						<DatePicker
