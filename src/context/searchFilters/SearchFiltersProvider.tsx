@@ -1,10 +1,12 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
+
+import { optionRegionHome, optionCompanyHome } from '../../fakedata'
 
 import { ISelect } from '../../model/interfaces'
 import { useOpen } from '../../hooks'
 
 import { SearchFiltersContext } from './SearchFiltersContext'
-import { optionCompanyHome, optionRegionHome } from '../../fakedata'
+
 
 interface IProps {
 	children: ReactNode
@@ -15,32 +17,42 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 	const [currentRegion, setCurrentRegion] = useState<ISelect>()
 	const [currentCompany, setCurrentCompany] = useState<ISelect>()
 
-	if (!currentRegion) {
-		const newEl = localStorage.getItem('region')
-		setCurrentRegion(JSON.parse(newEl!))
-		console.log(JSON.parse(newEl!))
+	useEffect(() => {
+		const valueRegionLS = localStorage.getItem('region')
+		const valueCompanyLS = localStorage.getItem('company')
+		if (valueRegionLS) {
+			setCurrentRegion(JSON.parse(valueRegionLS))
+		}
+		if (valueCompanyLS) {
+			setCurrentCompany(JSON.parse(valueCompanyLS))
+		}
+	}, [])
 
+	const getValueRegion = () => {
+		return currentRegion ? optionRegionHome.find(c => c.value === currentRegion.value) : ''
 	}
 
-	const mySetCurrentRegion = (value: ISelect) => {
-		console.log('works')
-		console.log(value)
-
-		localStorage.setItem('region', JSON.stringify(value))
-		setCurrentRegion(value)
+	const getValueCompany = () => {
+		return currentCompany ? optionCompanyHome.find(c => c.value === currentCompany.value) : ''
 	}
 
-	const mySetCurrentCompany = (value: ISelect) => {
-		setCurrentCompany(value)
+	const onChangeRegion = (newValue: any) => {
+		localStorage.setItem('region', JSON.stringify(newValue))
+		setCurrentRegion(newValue)
+	}
+
+	const onChangeCompany = (newValue: any) => {
+		localStorage.setItem('company', JSON.stringify(newValue))
+		setCurrentCompany(newValue)
 	}
 
 	const value = {
 		isOpen,
 		onToggle,
-		currentCompany,
-		currentRegion,
-		setCurrentRegion: mySetCurrentRegion,
-		setCurrentCompany: mySetCurrentCompany,
+		getValueCompany,
+		onChangeCompany,
+		getValueRegion,
+		onChangeRegion
 	}
 
 	return (

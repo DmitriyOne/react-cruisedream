@@ -13,9 +13,7 @@ import styles from './visible-filters.module.scss'
 export const VisibleFilters = () => {
 	const [startDate, setStartDate] = useState<Date>()
 	const [endDate, setEndDate] = useState<Date>()
-	const { currentRegion } = useContext(SearchFiltersContext)
-	console.log(currentRegion)
-
+	const { getValueRegion, onChangeRegion, getValueCompany, onChangeCompany } = useContext(SearchFiltersContext)
 
 	return (
 		<Container width="full" className={styles.component}>
@@ -24,16 +22,16 @@ export const VisibleFilters = () => {
 				placeholder="Карибы"
 				className={styles.col}
 				classNamePrefix="select-white"
-				value={currentRegion}
-				// onChange={onChangeRegion}
+				value={getValueRegion()}
+				onChange={onChangeRegion}
 			/>
 			<Select
 				options={optionCompanyHome}
 				placeholder="Royalcaribbean"
 				className={styles.col}
 				classNamePrefix="select-white"
-				// value={getValueCompany()}
-				// onChange={onChangeCompany}
+				value={getValueCompany()}
+				onChange={onChangeCompany}
 			/>
 			<div className={styles.col}>
 				<DatePicker

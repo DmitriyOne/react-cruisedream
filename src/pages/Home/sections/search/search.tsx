@@ -1,41 +1,30 @@
-import { useContext, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
-
 import Select from 'react-select'
 import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
 
-import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
+import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
+import { SearchFiltersContext } from '../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
 import { Button, Container, Logo } from '../../../../components'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
-import { SearchFiltersContext } from '../../../../context'
 
 export const Search = () => {
+	const navigate = useNavigate()
 	const [startDate, setStartDate] = useState<Date>()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
-	const { currentRegion, currentCompany, setCurrentRegion} = useContext(SearchFiltersContext)
-	console.log(currentRegion)
+	const { getValueRegion, onChangeRegion, getValueCompany, onChangeCompany } = useContext(SearchFiltersContext)
 
-	const getValueRegion = () => {
-		return currentRegion ? optionRegionHome.find(c => c.value === currentRegion.value) : ''
-	}
-
-	const onChangeRegion = (newValue: any) => {
-		setCurrentRegion(newValue)
-	}
-
-	const getValueCompany = () => {
-		return currentCompany ? optionCompanyHome.find(c => c.value === currentCompany.value) : ''
-	}
-
-	const onChangeCompany = (newValue: any) => {
-		// setCurrentCompany(newValue.value)
+	const handlerClick = (e: FormEvent) => {
+		e.preventDefault()
+		navigate(CRUISE_ROUTES.SEARCH)
 	}
 
 	const isFixed = isScroll && isDesktop
@@ -66,16 +55,16 @@ export const Search = () => {
 						placeholder="Регион круиза"
 						className={classNames(styles.select, styles.col)}
 						classNamePrefix="select-transparent"
-						onChange={onChangeRegion}
 						value={getValueRegion()}
+						onChange={onChangeRegion}
 					/>
 					<Select
 						options={optionCompanyHome}
 						placeholder="Круизная компания"
 						className={classNames(styles.select, styles.col)}
 						classNamePrefix="select-transparent"
-						onChange={onChangeCompany}
 						value={getValueCompany()}
+						onChange={onChangeCompany}
 					/>
 					<div className={styles.col}>
 						<DatePicker
@@ -85,9 +74,13 @@ export const Search = () => {
 							placeholderText="Даты круиза"
 							className={styles.inputDatepicker}
 							locale={ru}
+							dateFormat={'dd.MM.yyyy'}
 						/>
 					</div>
-					<Button className={styles.button}>
+					<Button
+						className={styles.button}
+						onClick={handlerClick}
+					>
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>

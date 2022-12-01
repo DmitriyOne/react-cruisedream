@@ -1,20 +1,21 @@
 import { createContext } from 'react'
-import { ISelect } from '../../model/interfaces'
 
 interface IProps {
 	isOpen: boolean
 	onToggle: () => void
-	currentRegion?: ISelect
-	setCurrentRegion: (value: ISelect) => void
-	currentCompany?: ISelect
-	setCurrentCompany: (value: ISelect) => void
+	onChangeRegion: (value: any) => void
+	getValueRegion: () => '' | {} | undefined
+	onChangeCompany: (value: any) => void
+	getValueCompany: () => '' | {} | undefined
 }
 
 const defaultValue: IProps = {
 	isOpen: false,
 	onToggle: () => { },
-	setCurrentRegion: () => { },
-	setCurrentCompany: () => { },
+	onChangeRegion: () => {},
+	getValueRegion: () => '',
+	onChangeCompany: () => {},
+	getValueCompany: () => '',
 }
 
 export const SearchFiltersContext = createContext<IProps>(defaultValue)
