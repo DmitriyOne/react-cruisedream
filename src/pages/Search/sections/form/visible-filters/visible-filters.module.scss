@@ -12,6 +12,7 @@
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-bottom: 20px;
 	}
@@ -26,6 +27,7 @@
 		@include mixins.fluidMaxSize(230);
 		margin-top: 10px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		max-width: 100%;
 		margin-right: 0;
@@ -36,32 +38,29 @@
 	}
 }
 
-.datepicker {
+.relative {
 	position: relative;
+}
+
+.datepickerWrapper {
 	background-color: colors.$white;
 	border-radius: 3px;
 
 	&::before {
-		content: '';
-		position: absolute;
-		top: 50%;
 		right: 15px;
-		transform: translateY(-50%);
 		width: 14px;
 		height: 17px;
-		@include mixins.bg-cover;
 		background-image: url('../icons/datepicker.svg');
 	}
 }
 
 .inputDatepicker {
+	font-family: family.$montserrat !important;
+	font-weight: 400 !important;
 	padding: 15px 12px;
-	width: 100%;
 	font-size: 17px;
-	line-height: 120%;
 	color: rgba(79, 78, 78, 0.6);
 	text-align: center;
-	cursor: pointer;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 14px;
@@ -84,6 +83,7 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-top: 10px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 14px;
 	}
@@ -93,6 +93,6 @@
 			background-color: colors.$transparent;
 			color: colors.$btn-text;
 			border: 1px solid colors.$btn-border;
-		}	
+		}
 	}
 }

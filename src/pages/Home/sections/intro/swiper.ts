@@ -12,9 +12,4 @@ export const params: SwiperOptions = {
 	fadeEffect: { 
 		crossFade: true,
 	},
-	breakpoints: {
-		1024: {
-			allowTouchMove: false
-		}
-	}
 }

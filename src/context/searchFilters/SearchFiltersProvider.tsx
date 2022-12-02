@@ -7,7 +7,6 @@ import { useOpen } from '../../hooks'
 
 import { SearchFiltersContext } from './SearchFiltersContext'
 
-
 interface IProps {
 	children: ReactNode
 }
@@ -16,15 +15,26 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle } = useOpen(false)
 	const [currentRegion, setCurrentRegion] = useState<ISelect>()
 	const [currentCompany, setCurrentCompany] = useState<ISelect>()
+	const [startDate, setStartDate] = useState<Date>()
+	const [endDate, setEndDate] = useState<Date>()
 
 	useEffect(() => {
 		const valueRegionLS = localStorage.getItem('region')
 		const valueCompanyLS = localStorage.getItem('company')
+		const startDateLS = localStorage.getItem('start')
+		const endDateLS = localStorage.getItem('end')
+
 		if (valueRegionLS) {
 			setCurrentRegion(JSON.parse(valueRegionLS))
 		}
 		if (valueCompanyLS) {
 			setCurrentCompany(JSON.parse(valueCompanyLS))
+		}
+		if (startDateLS) {
+			setStartDate(new Date(startDateLS))
+		}
+		if (endDateLS) {
+			setEndDate(new Date(endDateLS))
 		}
 	}, [])
 
@@ -46,13 +56,40 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 		setCurrentCompany(newValue)
 	}
 
+	const onChangeDates = (dates: any) => {
+		const [start, end] = dates
+		setStartDate(start)
+		setEndDate(end)
+		localStorage.setItem('start', start!.toDateString())
+		if (end === null) {
+			return
+		}
+		localStorage.setItem('end', end!.toDateString())
+	}
+
+	const onChangeStartDate = (date: Date) => {
+		setStartDate(date)
+		localStorage.setItem('start', date!.toDateString())
+	}
+
+	const onChangeEndDate = (date: Date) => {
+		setEndDate(date)
+		localStorage.setItem('end', date!.toDateString())
+	}
+
+
 	const value = {
 		isOpen,
 		onToggle,
 		getValueCompany,
 		onChangeCompany,
 		getValueRegion,
-		onChangeRegion
+		onChangeRegion,
+		startDate,
+		endDate,
+		onChangeDates,
+		onChangeStartDate,
+		onChangeEndDate
 	}
 
 	return (

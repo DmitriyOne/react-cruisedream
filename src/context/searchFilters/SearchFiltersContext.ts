@@ -7,6 +7,11 @@ interface IProps {
 	getValueRegion: () => '' | {} | undefined
 	onChangeCompany: (value: any) => void
 	getValueCompany: () => '' | {} | undefined
+	startDate?: Date
+	endDate?: Date
+	onChangeDates: (dates: any) => void
+	onChangeStartDate: (date: Date) => void
+	onChangeEndDate: (date: Date) => void
 }
 
 const defaultValue: IProps = {
@@ -16,6 +21,9 @@ const defaultValue: IProps = {
 	getValueRegion: () => '',
 	onChangeCompany: () => {},
 	getValueCompany: () => '',
+	onChangeDates: () => {},
+	onChangeStartDate: () => {},
+	onChangeEndDate: () => {}
 }
 
 export const SearchFiltersContext = createContext<IProps>(defaultValue)

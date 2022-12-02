@@ -13,29 +13,32 @@ import { Button, Container, Logo, MyDatepicker } from '../../../../components'
 import styles from './search.module.scss'
 
 export const Search = () => {
-	const [startDate, setStartDate] = useState<Date>()
-	const [endDate, setEndDate] = useState<Date>()
-
+	// const [startDate, setStartDate] = useState<Date>()
+	// const [endDate, setEndDate] = useState<Date>()
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
-	const { getValueRegion, onChangeRegion, getValueCompany, onChangeCompany } = useContext(SearchFiltersContext)
-
-	console.log('start: ', startDate)
-	console.log('end: ', endDate)
-
+	const { 
+		getValueRegion, 
+		onChangeRegion, 
+		getValueCompany, 
+		onChangeCompany,
+		startDate,
+		endDate,
+		onChangeDates
+	} = useContext(SearchFiltersContext)
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
 		navigate(CRUISE_ROUTES.SEARCH)
 	}
 
-	const onChange = (dates: any) => {
-		const [start, end] = dates
-		setStartDate(start)
-		setEndDate(end)
-	}
-
+	// const onChange = (dates: any) => {
+	// 	const [start, end] = dates
+	// 	setStartDate(start)
+	// 	setEndDate(end)
+	// }
+	
 
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
@@ -86,7 +89,7 @@ export const Search = () => {
 						placeholder="Даты круиза"
 						startDate={startDate}
 						endDate={endDate}
-						onChange={onChange}
+						onChange={onChangeDates}
 					/>
 
 

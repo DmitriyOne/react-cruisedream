@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import Select from 'react-select'
 import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
@@ -6,14 +6,22 @@ import { ru } from 'date-fns/esm/locale'
 import { SearchFiltersContext } from '../../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
 
-import { Button, Container } from '../../../../../components'
+import { Button, Container, MyDatepicker } from '../../../../../components'
 
 import styles from './visible-filters.module.scss'
+import classNames from 'classnames'
 
 export const VisibleFilters = () => {
-	const [startDate, setStartDate] = useState<Date>()
-	const [endDate, setEndDate] = useState<Date>()
-	const { getValueRegion, onChangeRegion, getValueCompany, onChangeCompany } = useContext(SearchFiltersContext)
+	const {
+		getValueRegion,
+		onChangeRegion,
+		getValueCompany,
+		onChangeCompany,
+		startDate,
+		endDate,
+		onChangeStartDate,
+		onChangeEndDate
+	} = useContext(SearchFiltersContext)
 
 	return (
 		<Container width="full" className={styles.component}>
@@ -33,32 +41,16 @@ export const VisibleFilters = () => {
 				value={getValueCompany()}
 				onChange={onChangeCompany}
 			/>
-			<div className={styles.col}>
-				<DatePicker
-					wrapperClassName={styles.datepicker}
-					selected={startDate}
-					onChange={(date: Date) => setStartDate(date)}
-					placeholderText="11.03.23"
-					className={styles.inputDatepicker}
-					dateFormat={'dd.MM.yyyy'}
-					startDate={startDate}
-					endDate={endDate}
-					locale={ru}
-				/>
-			</div>
-			<div className={styles.col}>
-				<DatePicker
-					wrapperClassName={styles.datepicker}
-					selected={endDate}
-					onChange={(date: Date) => setEndDate(date)}
-					placeholderText="25.03.23"
-					className={styles.inputDatepicker}
-					dateFormat={'dd.MM.yyyy'}
-					startDate={startDate}
-					endDate={endDate}
-					locale={ru}
-				/>
-			</div>
+			<MyDatepicker
+				componentClassName={classNames(styles.col, styles.relative)}
+				wrapperClassName={styles.datepickerWrapper}
+				inputClassName={styles.inputDatepicker}
+				width="half"
+				startDate={startDate}
+				endDate={endDate}
+				onChangeStart={onChangeStartDate}
+				onChangeEnd={onChangeEndDate}
+			/>
 			<Button className={styles.button}>
 				НАЙТИ КРУИЗ
 			</Button>
