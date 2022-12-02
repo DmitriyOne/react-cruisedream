@@ -1,15 +1,12 @@
 import { useContext } from 'react'
-import Select from 'react-select'
-import DatePicker from 'react-datepicker'
-import { ru } from 'date-fns/esm/locale'
+import classNames from 'classnames'
 
 import { SearchFiltersContext } from '../../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
 
-import { Button, Container, MyDatepicker } from '../../../../../components'
+import { Button, Container, MyDatepicker, MySelect } from '../../../../../components'
 
 import styles from './visible-filters.module.scss'
-import classNames from 'classnames'
 
 export const VisibleFilters = () => {
 	const {
@@ -25,21 +22,21 @@ export const VisibleFilters = () => {
 
 	return (
 		<Container width="full" className={styles.component}>
-			<Select
-				options={optionRegionHome}
+			<MySelect
 				placeholder="Карибы"
-				className={styles.col}
-				classNamePrefix="select-white"
-				value={getValueRegion()}
+				options={optionRegionHome}
+				value={getValueRegion}
 				onChange={onChangeRegion}
-			/>
-			<Select
-				options={optionCompanyHome}
-				placeholder="Royalcaribbean"
 				className={styles.col}
 				classNamePrefix="select-white"
-				value={getValueCompany()}
+			/>
+			<MySelect
+				placeholder="Royalcaribbean"
+				options={optionCompanyHome}
+				value={getValueCompany}
 				onChange={onChangeCompany}
+				className={styles.col}
+				classNamePrefix="select-white"
 			/>
 			<MyDatepicker
 				componentClassName={classNames(styles.col, styles.relative)}

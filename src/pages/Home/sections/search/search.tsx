@@ -1,27 +1,24 @@
-import { FormEvent, useContext, useState } from 'react'
+import { FormEvent, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
-import Select from 'react-select'
 
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { SearchFiltersContext } from '../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
-import { Button, Container, Logo, MyDatepicker } from '../../../../components'
+import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
 import styles from './search.module.scss'
 
 export const Search = () => {
-	// const [startDate, setStartDate] = useState<Date>()
-	// const [endDate, setEndDate] = useState<Date>()
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
-	const { 
-		getValueRegion, 
-		onChangeRegion, 
-		getValueCompany, 
+	const {
+		getValueRegion,
+		onChangeRegion,
+		getValueCompany,
 		onChangeCompany,
 		startDate,
 		endDate,
@@ -33,16 +30,8 @@ export const Search = () => {
 		navigate(CRUISE_ROUTES.SEARCH)
 	}
 
-	// const onChange = (dates: any) => {
-	// 	const [start, end] = dates
-	// 	setStartDate(start)
-	// 	setEndDate(end)
-	// }
-	
-
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
-
 	return (
 		<Container
 			style={isFixed ? { paddingTop: `${ref.current?.offsetHeight}px` } : undefined}
@@ -63,25 +52,22 @@ export const Search = () => {
 					isFixed ? styles.show : undefined
 				)} />
 				<form className={styles.form}>
-					<Select
+					<MySelect
 						options={optionRegionHome}
-						placeholder="Регион круиза"
-						className={classNames(styles.select, styles.col)}
-						classNamePrefix="select-transparent"
-						value={getValueRegion()}
+						value={getValueRegion}
 						onChange={onChangeRegion}
-					/>
-					<Select
-						options={optionCompanyHome}
-						placeholder="Круизная компания"
-						className={classNames(styles.select, styles.col)}
+						placeholder="Регион круиза"
+						className={styles.col}
 						classNamePrefix="select-transparent"
-						value={getValueCompany()}
-						onChange={onChangeCompany}
 					/>
-
-
-
+					<MySelect
+						options={optionCompanyHome}
+						value={getValueCompany}
+						onChange={onChangeCompany}
+						placeholder="Круизная компания"
+						className={styles.col}
+						classNamePrefix="select-transparent"
+					/>
 					<MyDatepicker
 						componentClassName={styles.col}
 						wrapperClassName={styles.datepickerWrapper}
@@ -91,8 +77,6 @@ export const Search = () => {
 						endDate={endDate}
 						onChange={onChangeDates}
 					/>
-
-
 					<Button
 						className={styles.button}
 						onClick={handlerClick}

@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
 
 import 'react-datepicker/dist/react-datepicker.css'
-import styles from './datepicker.module.scss'
+import styles from './my-datepicker.module.scss'
 
 interface IProps {
 	width?: 'full' | 'half'
@@ -32,8 +32,6 @@ export const MyDatepicker: FC<IProps> = ({
 	onChangeStart,
 	onChangeEnd,
 }) => {
-
-
 
 	const isFull = width === 'full'
 	return (

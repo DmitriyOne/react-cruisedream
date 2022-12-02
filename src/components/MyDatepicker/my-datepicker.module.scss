@@ -36,17 +36,9 @@
   }
 }
 
-.my {
-	animation: scaleInDatePicker 0.35s ease-in-out !important;
-}
-
 .input {
   width: 100%;
   @include mixins.fonts(family.$source-sans-pro, 300);
   line-height: 120%;
   cursor: pointer;
 }
-
-
-
-
