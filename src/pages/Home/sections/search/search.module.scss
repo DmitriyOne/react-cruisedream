@@ -81,10 +81,6 @@
 	}
 }
 
-.select {
-  width: 100%;
-}
-
 .col {
   @include mixins.fluidMaxSize(255);
   margin-right: 40px;

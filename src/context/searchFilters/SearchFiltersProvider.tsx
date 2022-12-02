@@ -77,7 +77,6 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 		localStorage.setItem('end', date!.toDateString())
 	}
 
-
 	const value = {
 		isOpen,
 		onToggle,

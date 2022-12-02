@@ -1,10 +1,10 @@
 import { FC, useState } from 'react'
 import classNames from 'classnames'
-import Select from 'react-select'
 
-import { optionLiner, optionTypeCruise, SelectData } from '../../data'
+import { optionShip, optionPort1, optionPort2, optionPort3, optionTypeCruise } from '../../data'
+import { ISelect } from '../../../../../model/interfaces'
 
-import { Container, Input } from '../../../../../components'
+import { Container, Input, MySelect } from '../../../../../components'
 
 import styles from './hidden-filters.module.scss'
 
@@ -15,6 +15,11 @@ interface IProps {
 export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
+	const [port1, setPort1] = useState<ISelect>()
+	const [port2, setPort2] = useState<ISelect>()
+	const [port3, setPort3] = useState<ISelect>()
+	const [ship, setShip] = useState<ISelect>()
+	const [typeCruise, setTypeCruise] = useState<ISelect>()
 
 	const handlerChangeOne = () => {
 		setCheckedOne(prev => !prev)
@@ -22,6 +27,46 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const handlerChangeTwo = () => {
 		setCheckedTwo(prev => !prev)
 	}
+
+	const getValuePort1 = () => {
+		return port1 ? optionPort1.find(p => p.value === port1.value) : ''
+	}
+
+	const getValuePort2 = () => {
+		return port2 ? optionPort2.find(p => p.value === port2.value) : ''
+	}
+	const getValuePort3 = () => {
+		return port3 ? optionPort3.find(p => p.value === port3.value) : ''
+	}
+
+	const getValueShip = () => {
+		return ship ? optionShip.find(p => p.value === ship.value) : ''
+	}
+
+	const getValueTypeCruise = () => {
+		return typeCruise ? optionTypeCruise.find(p => p.value === typeCruise.value) : ''
+	}
+
+	const handlerChange = (newValue: any) => {
+		const changePort1 = optionPort1.find(p => p.value === newValue.value)
+		const changePort2 = optionPort2.find(p => p.value === newValue.value)
+		const changePort3 = optionPort3.find(p => p.value === newValue.value)
+		const changeShip = optionShip.find(p => p.value === newValue.value)
+		const changeTypeCruise = optionTypeCruise.find(p => p.value === newValue.value)
+
+		if (changePort1) {
+			setPort1(newValue)
+		} else if (changePort2) {
+			setPort2(newValue)
+		} else if (changePort3) {
+			setPort3(newValue)
+		} else if (changeShip) {
+			setShip(newValue)
+		} else if (changeTypeCruise) {
+			setTypeCruise(newValue)
+		}
+	}
+
 	return (
 		<Container
 			width="full"
@@ -54,28 +99,54 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 				/>
 			</div>
 			<div className={styles.row}>
-				{SelectData.map(item =>
-					<div className={styles.col} key={item.id}>
-						<label className={styles.label}>
-							{item.label}
-						</label>
-						<Select
-							options={item.options}
-							placeholder={item.placeholder}
-							classNamePrefix={item.className}
-						/>
-					</div>
-				)}
+				<div className={styles.col}>
+					<label className={styles.label}>
+						Порт отправления
+					</label>
+					<MySelect
+						options={optionPort1}
+						placeholder="Все"
+						classNamePrefix="select-white"
+						value={getValuePort1}
+						onChange={handlerChange}
+					/>
+				</div>
+				<div className={styles.col}>
+					<label className={styles.label}>
+						Порт захода
+					</label>
+					<MySelect
+						options={optionPort2}
+						placeholder="Все"
+						classNamePrefix="select-white"
+						value={getValuePort2}
+						onChange={handlerChange}
+					/>
+				</div>
+				<div className={styles.col}>
+					<label className={styles.label}>
+						Порт прибытия
+					</label>
+					<MySelect
+						options={optionPort3}
+						placeholder="Все"
+						classNamePrefix="select-white"
+						value={getValuePort3}
+						onChange={handlerChange}
+					/>
+				</div>
 			</div>
 			<div className={classNames(styles.row, styles.last)}>
 				<div className={styles.col}>
 					<label className={styles.label}>
 						Круизный лайнер
 					</label>
-					<Select
-						options={optionLiner}
+					<MySelect
+						options={optionShip}
 						placeholder="Все"
 						classNamePrefix="select-white"
+						value={getValueShip}
+						onChange={handlerChange}
 					/>
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
@@ -83,10 +154,12 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						<label className={styles.label}>
 							Тип круиза
 						</label>
-						<Select
+						<MySelect
 							options={optionTypeCruise}
 							placeholder="Все"
 							classNamePrefix="select-white"
+							value={getValueTypeCruise}
+							onChange={handlerChange}
 						/>
 					</div>
 					<div className={styles.amountDays}>

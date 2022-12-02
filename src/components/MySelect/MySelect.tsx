@@ -12,7 +12,7 @@ interface IProps {
 	classNamePrefix?: string
 	options: ISelect[]
 	value: () => {} | '' | undefined
-	onChange: (value: any) => void
+	onChange?: (value: any) => void
 }
 
 export const MySelect: FC<IProps> = ({
