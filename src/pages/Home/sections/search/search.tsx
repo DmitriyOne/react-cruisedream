@@ -1,10 +1,9 @@
-import { FormEvent, useContext } from 'react'
+import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
-import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
+import { CRUISE_ROUTES } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { SearchFiltersContext } from '../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
 import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
@@ -15,15 +14,19 @@ export const Search = () => {
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
-	const {
-		getValueRegion,
-		onChangeRegion,
-		getValueCompany,
-		onChangeCompany,
-		startDate,
-		endDate,
-		onChangeDates
-	} = useContext(SearchFiltersContext)
+	const [startDate, setStartDate] = useState<Date>()
+	const [endDate, setEndDate] = useState<Date>()
+
+	const onChangeDates = (dates: any) => {
+		const [start, end] = dates
+		setStartDate(start)
+		setEndDate(end)
+		// localStorage.setItem('start', start!.toDateString())
+		// if (end === null) {
+		// 	return
+		// }
+		// localStorage.setItem('end', end!.toDateString())
+	}
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
@@ -54,16 +57,12 @@ export const Search = () => {
 				<form className={styles.form}>
 					<MySelect
 						options={optionRegionHome}
-						value={getValueRegion}
-						onChange={onChangeRegion}
 						placeholder="Регион круиза"
 						className={styles.col}
 						classNamePrefix="select-transparent"
 					/>
 					<MySelect
 						options={optionCompanyHome}
-						value={getValueCompany}
-						onChange={onChangeCompany}
 						placeholder="Круизная компания"
 						className={styles.col}
 						classNamePrefix="select-transparent"
@@ -84,15 +83,6 @@ export const Search = () => {
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>
-				<Button
-					href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
-					className={classNames(
-						styles.phone,
-						isFixed ? styles.show : undefined
-					)}
-				>
-					+7 499 653 89 91
-				</Button>
 			</Container>
 		</Container >
 	)

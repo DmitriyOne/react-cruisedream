@@ -1,7 +1,6 @@
-import { FC, useContext, useState } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 
-import { SearchFiltersContext } from '../../../../../context'
 import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../../../fakedata'
 
 import { Container, Input, MySelect } from '../../../../../components'
@@ -15,19 +14,7 @@ interface IProps {
 export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
-	const { 
-		getValuePort1, 
-		getValuePort2, 
-		getValuePort3, 
-		getValueShip, 
-		getValueTypeCruise, 
-		onChangePort1,
-		onChangePort2,
-		onChangePort3,
-		onChangeShip,
-		onChangeTypeCruise,
-	 } = useContext(SearchFiltersContext)
-
+	
 	const handlerChangeOne = () => {
 		setCheckedOne(prev => !prev)
 	}
@@ -75,9 +62,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort1}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						value={getValuePort1}
-						onChange={onChangePort1}
-						isClearable
 					/>
 				</div>
 				<div className={styles.col}>
@@ -88,8 +72,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort2}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						value={getValuePort2}
-						onChange={onChangePort2}
 					/>
 				</div>
 				<div className={styles.col}>
@@ -100,8 +82,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort3}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						value={getValuePort3}
-						onChange={onChangePort3}
 					/>
 				</div>
 			</div>
@@ -114,8 +94,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionShip}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						value={getValueShip}
-						onChange={onChangeShip}
 					/>
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
@@ -127,8 +105,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 							options={optionTypeCruise}
 							placeholder="Все"
 							classNamePrefix="select-white"
-							value={getValueTypeCruise}
-							onChange={onChangeTypeCruise}
 						/>
 					</div>
 					<div className={styles.amountDays}>

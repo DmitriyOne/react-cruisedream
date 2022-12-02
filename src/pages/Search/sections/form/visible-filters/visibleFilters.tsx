@@ -1,7 +1,6 @@
-import { useContext } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames'
 
-import { SearchFiltersContext } from '../../../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
 
 import { Button, Container, MyDatepicker, MySelect } from '../../../../../components'
@@ -9,32 +8,30 @@ import { Button, Container, MyDatepicker, MySelect } from '../../../../../compon
 import styles from './visible-filters.module.scss'
 
 export const VisibleFilters = () => {
-	const {
-		getValueRegion,
-		onChangeRegion,
-		getValueCompany,
-		onChangeCompany,
-		startDate,
-		endDate,
-		onChangeStartDate,
-		onChangeEndDate
-	} = useContext(SearchFiltersContext)
+	const [startDate, setStartDate] = useState<Date>()
+	const [endDate, setEndDate] = useState<Date>()
+
+	const onChangeStartDate = (date: Date) => {
+		setStartDate(date)
+		localStorage.setItem('start', date!.toDateString())
+	}
+
+	const onChangeEndDate = (date: Date) => {
+		setEndDate(date)
+		localStorage.setItem('end', date!.toDateString())
+	}
 
 	return (
 		<Container width="full" className={styles.component}>
 			<MySelect
 				placeholder="Карибы"
 				options={optionRegionHome}
-				value={getValueRegion}
-				onChange={onChangeRegion}
 				className={styles.col}
 				classNamePrefix="select-white"
 			/>
 			<MySelect
 				placeholder="Royalcaribbean"
 				options={optionCompanyHome}
-				value={getValueCompany}
-				onChange={onChangeCompany}
 				className={styles.col}
 				classNamePrefix="select-white"
 			/>
