@@ -4,18 +4,10 @@
 @use '../../../../../styles/breakpoints.scss';
 
 .swiper {
-	margin-top: 28px;
 	width: 100%;
 	height: 100%;
   margin-left: auto;
   margin-right: auto;
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		padding-right: 20px;
-	}
-	@include mixins.media-w(breakpoints.$laptop) {
-		margin-top: 20px;
-	}
 	
 	&>div{
 		align-items: stretch;
@@ -28,12 +20,16 @@
 	justify-content: space-between;
 	flex-direction: column;
 	position: relative;
-	padding: 70px 20px;
+	padding: 90px 20px;
 	height: auto;
 	min-height: 585px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		min-height: 485px;
+	}
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 60px;
+		padding-bottom: 60px;
 	}
 	@include mixins.media-w(breakpoints.$mobile-l) {
 		min-height: 420px;
@@ -60,6 +56,10 @@
 		background-color: transparent;
 		transition: background-color .4s;
 		z-index: 1;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			background-color: rgba(0, 0, 0, 0.4);
+		}
 	}
 }
 
@@ -80,6 +80,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		max-width: 100%;
+		justify-content: center
 	}
 }
 
@@ -92,9 +93,12 @@
 	text-align: center;
 	text-transform: uppercase;
 
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 20px;
+	}
+
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 38px;
-		padding-bottom: 20px;
 	}
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 22px;

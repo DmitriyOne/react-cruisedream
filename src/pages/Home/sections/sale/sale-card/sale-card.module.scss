@@ -4,15 +4,10 @@
 
 .swiper {
 	width: 100%;
-	margin-top: 35px;
 	overflow: visible;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
-		padding-right: 20px;
 		overflow: hidden;
-	}
-	@include mixins.media-w(breakpoints.$tablet) {
-		margin-top: 20px;
 	}
 
 	&>div {

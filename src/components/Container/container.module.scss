@@ -38,6 +38,14 @@
 	align-items: flex-end;
 }
 
+.justifyStart {
+	justify-content: flex-start;
+}
+
+.justifyEnd {
+	justify-content: flex-end;
+}
+
 .justifyAround {
 	justify-content: space-around;
 }

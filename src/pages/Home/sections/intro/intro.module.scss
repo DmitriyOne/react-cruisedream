@@ -1,9 +1,7 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 
-.component {
-	
-}
+.component {}
 
 .swiper {
 	width: 100%;
@@ -19,6 +17,7 @@
 		padding-top: 20px;
 		padding-bottom: 100px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-top: 40px;
 		padding-bottom: 40px;
@@ -33,37 +32,65 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 13px;
-	height: 24px;
-	background-image: url('../../../../assets/images/swiper/arrow-right.svg');
-	@include mixins.bg-cover;
+	width: 100px;
+	height: 100%;
 	z-index: 1;
 
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 50px;
+	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
-		width: 8px;
-		height: 16px;
+		width: 30px;
 	}
 
 	&.prev {
-		left: 55px;
-		transform: translateY(-50%) rotate(-180deg);
+		left: 0;
 
-		@include mixins.media-w(breakpoints.$laptop-l) {
-			left: 30px;
-		}
-		@include mixins.media-w(breakpoints.$tablet) {
-			left: 10px;
+		&::before {
+			left: 55px;
+			transform: translateY(-50%) rotate(-180deg);
+
+			@include mixins.media-w(breakpoints.$laptop-l) {
+				left: 30px;
+			}
+
+			@include mixins.media-w(breakpoints.$tablet) {
+				left: 10px;
+			}
 		}
 	}
 
 	&.next {
-		right: 55px;
+		right: 0;
 
-		@include mixins.media-w(breakpoints.$laptop-l) {
-			right: 30px;
+		&::before {
+			right: 55px;
+
+			@include mixins.media-w(breakpoints.$laptop-l) {
+				right: 30px;
+			}
+
+			@include mixins.media-w(breakpoints.$tablet) {
+				right: 10px;
+			}
+
 		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 13px;
+		height: 26px;
+		background-image: url('../../../../assets/images/swiper/arrow-right.svg');
+		@include mixins.bg-cover;
+
 		@include mixins.media-w(breakpoints.$tablet) {
-			right: 10px;
+			width: 8px;
+			height: 16px;
 		}
 	}
 }

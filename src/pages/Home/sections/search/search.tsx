@@ -1,27 +1,40 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
-import Select from 'react-select'
-import DatePicker from 'react-datepicker'
-import { ru } from 'date-fns/esm/locale'
-
-import { CRUISE_SOCIAL_LINKS } from '../../../../constants'
+import { CRUISE_ROUTES } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { optionRegionHome, optionCompanyHome } from '../data'
+import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
-import { Button, Container, Logo } from '../../../../components'
+import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
-import 'react-datepicker/dist/react-datepicker.css'
 import styles from './search.module.scss'
 
 export const Search = () => {
-	const [startDate, setStartDate] = useState<Date>()
+	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
+	const [startDate, setStartDate] = useState<Date>()
+	const [endDate, setEndDate] = useState<Date>()
+
+	const onChangeDates = (dates: any) => {
+		const [start, end] = dates
+		setStartDate(start)
+		setEndDate(end)
+		// localStorage.setItem('start', start!.toDateString())
+		// if (end === null) {
+		// 	return
+		// }
+		// localStorage.setItem('end', end!.toDateString())
+	}
+
+	const handlerClick = (e: FormEvent) => {
+		e.preventDefault()
+		navigate(CRUISE_ROUTES.SEARCH)
+	}
 
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
-
 	return (
 		<Container
 			style={isFixed ? { paddingTop: `${ref.current?.offsetHeight}px` } : undefined}
@@ -42,41 +55,34 @@ export const Search = () => {
 					isFixed ? styles.show : undefined
 				)} />
 				<form className={styles.form}>
-					<Select
+					<MySelect
 						options={optionRegionHome}
 						placeholder="Регион круиза"
-						className={classNames(styles.select, styles.col)}
-						classNamePrefix="select-search"
+						className={styles.col}
+						classNamePrefix="select-transparent"
 					/>
-					<Select
+					<MySelect
 						options={optionCompanyHome}
 						placeholder="Круизная компания"
-						className={classNames(styles.select, styles.col)}
-						classNamePrefix="select-search"
+						className={styles.col}
+						classNamePrefix="select-transparent"
 					/>
-					<div className={styles.col}>
-						<DatePicker
-							wrapperClassName={classNames(styles.datepicker)}
-							selected={startDate}
-							onChange={(date: Date) => setStartDate(date)}
-							placeholderText="Даты круиза"
-							className={styles.inputDatepicker}
-							locale={ru}
-						/>
-					</div>
-					<Button className={styles.button}>
+					<MyDatepicker
+						componentClassName={styles.col}
+						wrapperClassName={styles.datepickerWrapper}
+						inputClassName={styles.inputDatepicker}
+						placeholder="Даты круиза"
+						startDate={startDate}
+						endDate={endDate}
+						onChange={onChangeDates}
+					/>
+					<Button
+						className={styles.button}
+						onClick={handlerClick}
+					>
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>
-				<Button
-					href={`tel:${CRUISE_SOCIAL_LINKS.phone}`}
-					className={classNames(
-						styles.phone,
-						isFixed ? styles.show : undefined
-					)}
-				>
-					+7 499 653 89 91
-				</Button>
 			</Container>
 		</Container >
 	)

@@ -25,7 +25,7 @@
 	color: colors.$white;
 	margin-top: 13px;
 
-	@include mixins.media-w(breakpoints.$tablet) {
+	@include mixins.media-w(breakpoints.$laptop) {
 		text-align: center;
 		font-size: 18px;
 	}

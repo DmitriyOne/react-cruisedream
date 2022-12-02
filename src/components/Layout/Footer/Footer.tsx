@@ -3,14 +3,13 @@ import { Container } from '../../../components'
 
 import { FooterFeedback } from './FooterFeedback/FooterFeedback'
 import { FooterMenu } from './FooterMenu/FooterMenu'
-import { FooterScrollTop } from './FooterScrollTop/FooterScrollTop'
 import { FooterLogo } from './FooterLogo/FooterLogo'
 import { FooterSocials } from './FooterSocials/FooterSocials'
 
 import styles from './footer.module.scss'
 
 export const Footer = () => {
-	const { isMobile, isDesktop } = useWindowSize()
+	const { isDesktop, isTablet } = useWindowSize()
 
 	const direction = isDesktop ? 'row' : 'column'
 	return (
@@ -19,11 +18,12 @@ export const Footer = () => {
 				width="containerXl"
 				direction={direction}
 			>
-				{isDesktop && <FooterLogo />}
-				<FooterMenu />
+				<div className={styles.wrapper}>
+					{isDesktop && <FooterLogo />}
+					<FooterMenu />
+				</div>
 				<FooterFeedback />
-				{isDesktop && <FooterScrollTop />}
-				{isMobile && <FooterSocials />}
+				{isTablet && <FooterSocials />}
 			</Container>
 		</footer>
 	)

@@ -1,0 +1,230 @@
+@use './mixins.scss';
+@use './family.scss';
+@use './colors.scss';
+@use './breakpoints.scss';
+
+@keyframes scaleIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+.select-transparent {
+	&__control {
+		min-height: auto !important;
+		background-color: transparent !important;
+		border: none !important;
+		border-radius: 0 !important;
+		border-bottom: 1px solid #4F4E4E !important;
+		box-shadow: none !important;
+		padding: 5px 0 10px;
+		cursor: pointer !important;
+	}
+
+	&__value-container {
+		@include mixins.fonts(family.$source-sans-pro, 300);
+		padding: 0 !important;
+		cursor: text !important;
+		font-size: 24px;
+		line-height: 120%;
+		color: #004275 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
+	}
+
+	&__single-value {
+		@include mixins.fonts(family.$source-sans-pro, 300);
+		font-size: 24px;
+		line-height: 120%;
+		color: #004275 !important;
+		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
+	}
+
+	&__placeholder {
+		@include mixins.fonts(family.$source-sans-pro, 300);
+		font-size: 24px;
+		line-height: 120%;
+		color: #004275 !important;
+		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
+	}
+
+	&__input-container {
+		margin: 0 !important;
+		padding: 0 !important;
+		cursor: pointer;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+
+	}
+
+	&__indicator {
+		color: #66676e !important;
+		padding: 0 !important;
+		width: 16px;
+		height: 10px;
+		@include mixins.bg-cover;
+		background-image: url('../assets/images/select/arrow-down-dark.svg');
+
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			width: 12px;
+		}
+
+		&:hover {
+			color: #999aa5 !important;
+		}
+
+		& svg {
+			display: none;
+		}
+	}
+
+	&__menu {
+		background-color: #fff !important;
+		color: rgba(white, 0.6) !important;
+		animation: scaleIn 0.35s ease-in-out;
+	}
+
+	&__option {
+		cursor: pointer !important;
+		color: colors.$black !important;
+
+		&--is-selected {
+			background-color: rgba(0, 0, 0, 0.3) !important;
+		}
+	}
+}
+
+.select-white {
+	&__control {
+		min-height: auto !important;
+		background-color: colors.$white !important;
+		border: none !important;
+		border-radius: 3px !important;
+		box-shadow: none !important;
+		padding: 15px 12px;
+		cursor: pointer !important;
+	}
+
+	&__value-container {
+		padding: 0 !important;
+		cursor: text !important;
+		font-size: 17px;
+		line-height: 120%;
+		color: rgba(79, 78, 78, 0.6) !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__single-value {
+		font-size: 17px;
+		line-height: 120%;
+		color: rgba(79, 78, 78, 0.6) !important;
+		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__placeholder {
+		font-size: 17px;
+		line-height: 120%;
+		color: rgba(79, 78, 78, 0.6) !important;
+		margin: 0 !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__input-container {
+		margin: 0 !important;
+		padding: 0 !important;
+		cursor: pointer;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+
+	}
+
+	&__indicator {
+		color: rgba(79, 78, 78, 0.6) !important;
+		padding: 0 !important;
+		width: 16px;
+		height: 10px;
+		@include mixins.bg-cover;
+		background-image: url('../assets/images/select/arrow-down.svg');
+
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			width: 12px;
+		}
+		
+		&:hover {
+			color: #999aa5 !important;
+		}
+
+		& svg {
+			display: none;
+		}
+	}
+
+	&__clear-indicator {
+		@include mixins.square-size(12);
+		@include mixins.bg-cover;
+		background-image: url('../assets/images/select/delete.svg');
+	}
+
+	&__menu {
+		background-color: #fff !important;
+		color: rgba(white, 0.6) !important;
+		animation: scaleIn 0.35s ease-in-out;
+	}
+
+	&__option {
+		cursor: pointer !important;
+		color: colors.$black !important;
+		font-size: 16px !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px !important;
+		}
+
+		&--is-selected {
+			background-color: rgba(0, 0, 0, 0.3) !important;
+		}
+	}
+}

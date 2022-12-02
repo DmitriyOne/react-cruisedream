@@ -19,7 +19,7 @@
 
 .bottomIcon {
 	@include mixins.square-size(16);
-	margin-left: 20px;
+	margin-left: 6px;
 
 	&:first-child {
 		margin-left: 0;
@@ -32,8 +32,8 @@
 
 .bottomText {
 	display: block;
-	margin-left: 16px;
-	font-size: 16px;
+	margin-left: 6px;
+	font-size: 17px;
 	line-height: 120%;
 	color: rgba(79, 78, 78, 0.4);
 
