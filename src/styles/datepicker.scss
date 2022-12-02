@@ -1,10 +1,37 @@
 @use './z-index.scss';
 
-.react-datepicker-popper {
-	z-index: z-index.$datepicker;
+@keyframes scaleInDatePicker {
+	0% {
+		opacity: 0;
+		transform: scale(0.9) translate3d(0px, 0px, 0px);
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1) translate3d(0px, 0px, 0px);
+	}
 }
+
+.react-datepicker-popper {
+	transform: translate3d(0, 0, 0) !important;
+	animation: scaleInDatePicker 0.35s ease-in-out !important;
+	z-index: z-index.$datepicker !important;
+	top: 100% !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;}
 
 .react-datepicker__current-month,
 .react-datepicker__day-name {
 	text-transform: capitalize;
+}
+
+.react-datepicker__triangle,
+.react-datepicker__triangle::after,
+.react-datepicker__triangle::before {
+	left: 50% !important;
+	transform: translateX(0%) !important;
 }

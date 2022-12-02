@@ -24,11 +24,11 @@ export const Intro = () => {
 		>
 			<Swiper
 				className={styles.swiper}
+				onBeforeInit={onBeforeInit}
 				navigation={{
 					prevEl: navPrevButton.current,
 					nextEl: navNextButton.current,
 				}}
-				onBeforeInit={onBeforeInit}
 				{...params}
 			>
 				{IntroData.map((slider, idx) =>

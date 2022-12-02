@@ -1,7 +1,7 @@
 import { SwiperOptions } from 'swiper'
 
 export const params: SwiperOptions = {
-	slidesPerView: 0.99,
+	slidesPerView: 1,
 	spaceBetween: 20,
 	breakpoints: {
 		1280: {

@@ -1,10 +1,15 @@
 
-import { SwiperOptions, Navigation } from 'swiper'
+import { SwiperOptions, Navigation, EffectFade } from 'swiper'
 
 export const params: SwiperOptions = {
 	loop: true,
-	allowTouchMove: false,
+	allowTouchMove: true,
 	spaceBetween: 0,
 	slidesPerView: 1,
-	modules: [Navigation],
+	speed: 700,
+	modules: [EffectFade, Navigation],
+	effect: 'fade',
+	fadeEffect: { 
+		crossFade: true,
+	},
 }

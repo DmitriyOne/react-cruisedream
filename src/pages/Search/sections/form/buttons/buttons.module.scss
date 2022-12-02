@@ -1,0 +1,56 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	@include mixins.flex-center;
+	padding-top: 40px;
+}
+
+.button {
+	min-width: 180px;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	padding: 10px 17px;
+	margin-right: 10px;
+	text-align: center;
+	border-width: 2px;
+	border-style: solid;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		min-width: 150px;
+		font-size: 14px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.filterShow {
+	color: colors.$btn-text;
+	background-color: colors.$transparent;
+	border-color: colors.$btn-border;
+}
+
+.filterHide {
+	color: rgba(79, 78, 78, 0.7);
+	background-color: colors.$transparent;
+	border-color: rgba(79, 78, 78, 0.6);
+}
+
+.buttonApply {
+	color: colors.$white;
+	background-color: colors.$btn-hover;
+	border-color: colors.$transparent;
+
+	&:hover {
+		color: colors.$btn-text;
+		background-color: colors.$transparent;
+		border-color: colors.$btn-border;
+	}
+}

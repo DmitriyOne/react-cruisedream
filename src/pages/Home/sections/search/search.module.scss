@@ -12,6 +12,11 @@
   transition: all 0.5s;
   padding: 12px 20px;
   background-color: colors.$white;
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .fixed {
@@ -76,12 +81,8 @@
 	}
 }
 
-.select {
-  width: 100%;
-}
-
 .col {
-  @include mixins.fluidMaxSize(240);
+  @include mixins.fluidMaxSize(255);
   margin-right: 40px;
 
   @include mixins.media-w(breakpoints.$laptop) {
@@ -90,7 +91,7 @@
 
   @include mixins.media-w(breakpoints.$tablet) {
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     margin-right: 0;
   }
 
@@ -104,49 +105,21 @@
     @include mixins.media-w(breakpoints.$laptop) {
       margin-bottom: 40px;
     }
+    @include mixins.media-w(breakpoints.$tablet) {
+      margin-bottom: 30px;
+    }
   }
 
   &:nth-child(2) {
     @include mixins.media-w(breakpoints.$laptop) {
       margin-bottom: 40px;
     }
+    @include mixins.media-w(breakpoints.$tablet) {
+      margin-bottom: 30px;
+    }
   }
 }
 
-.datepicker {
-  border-bottom: 1px solid #4F4E4E;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 20px;
-    @include mixins.bg-cover;
-    background-image: url('./icons/datepicker.svg');
-  }
-}
-
-.inputDatepicker {
-  padding: 5px 0 10px;
-  width: 100%;
-  @include mixins.fonts(family.$source-sans-pro, 300);
-  font-size: 24px;
-  line-height: 120%;
-  color: #004275;
-  cursor: pointer;
-
-  @include mixins.media-w(breakpoints.$laptop-l) {
-    font-size: 20px;
-  }
-
-  &::placeholder {
-    color: #004275;
-  }
-}
 
 .logo {
   display: none;
@@ -208,5 +181,31 @@
     @include mixins.media-w(breakpoints.$laptop-s) {
       display: none
     }
+  }
+}
+
+.datepickerWrapper {
+  border-bottom: 1px solid #4F4E4E !important;
+
+  &::before {
+    content: '';
+    right: 0;
+    width: 18px;
+    height: 20px;
+    background-image: url('./icons/datepicker.svg');
+  }
+}
+
+.inputDatepicker {
+  padding: 5px 0 10px;
+  font-size: 24px;
+  color: #004275;
+
+  @include mixins.media-w(breakpoints.$laptop-l) {
+    font-size: 20px;
+  }
+
+  &::placeholder {
+    color: #004275;
   }
 }

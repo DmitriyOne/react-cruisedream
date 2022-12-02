@@ -1,4 +1,5 @@
 export * from './Home'
+export * from './Search'
 export * from './Sale'
 export * from './Regions'
 export * from './AcrossRussia'
