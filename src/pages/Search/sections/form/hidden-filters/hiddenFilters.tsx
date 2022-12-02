@@ -11,15 +11,30 @@ interface IProps {
 	isOpen?: boolean
 }
 
+interface ISelected {
+	value: string
+}
+
 export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
+	const [selected, setSelected] = useState<string[]>([])
+
+	console.log(selected);
 	
+
 	const handlerChangeOne = () => {
 		setCheckedOne(prev => !prev)
 	}
 	const handlerChangeTwo = () => {
 		setCheckedTwo(prev => !prev)
+	}
+
+	const onMyChange = (e: any) => {
+		const newEl = {
+			value: e
+		}
+		setSelected([...selected, e.value])
 	}
 
 	return (
@@ -62,6 +77,7 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort1}
 						placeholder="Все"
 						classNamePrefix="select-white"
+						onChange={(e) => onMyChange(e)}
 					/>
 				</div>
 				<div className={styles.col}>
@@ -72,6 +88,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort2}
 						placeholder="Все"
 						classNamePrefix="select-white"
+						onChange={(e) => onMyChange(e)}
+
 					/>
 				</div>
 				<div className={styles.col}>
@@ -82,6 +100,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort3}
 						placeholder="Все"
 						classNamePrefix="select-white"
+						onChange={(e) => onMyChange(e)}
+
 					/>
 				</div>
 			</div>

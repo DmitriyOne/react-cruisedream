@@ -12,8 +12,6 @@ interface IProps extends StateManagerProps {
 	placeholder?: string
 	classNamePrefix?: string
 	options: ISelect[]
-	// value: any
-	onChange?: (value: any) => void
 }
 
 export const MySelect: FC<IProps> = ({
@@ -21,8 +19,6 @@ export const MySelect: FC<IProps> = ({
 	placeholder,
 	classNamePrefix,
 	options,
-	// value,
-	onChange,
 	...props
 }) => {
 
@@ -32,8 +28,6 @@ export const MySelect: FC<IProps> = ({
 			placeholder={placeholder}
 			className={classNames(styles.select, className)}
 			classNamePrefix={classNamePrefix}
-			// value={value}
-			// onChange={onChange}
 			{...props}
 		/>
 	)
