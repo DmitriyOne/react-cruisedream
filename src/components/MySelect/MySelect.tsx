@@ -1,12 +1,13 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 import Select from 'react-select'
+import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
 
 import { ISelect } from '../../model/interfaces'
 
 import styles from './my-select.module.scss'
 
-interface IProps {
+interface IProps extends StateManagerProps {
 	className?: string
 	placeholder?: string
 	classNamePrefix?: string
@@ -22,6 +23,7 @@ export const MySelect: FC<IProps> = ({
 	options,
 	value,
 	onChange,
+	...props
 }) => {
 
 	return (
@@ -32,6 +34,7 @@ export const MySelect: FC<IProps> = ({
 			classNamePrefix={classNamePrefix}
 			value={value()}
 			onChange={onChange}
+			{...props}
 		/>
 	)
 }

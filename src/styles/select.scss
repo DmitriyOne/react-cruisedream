@@ -202,6 +202,12 @@
 		}
 	}
 
+	&__clear-indicator {
+		@include mixins.square-size(12);
+		@include mixins.bg-cover;
+		background-image: url('../assets/images/select/delete.svg');
+	}
+
 	&__menu {
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
