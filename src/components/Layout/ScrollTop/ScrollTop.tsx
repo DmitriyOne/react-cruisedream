@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
+
 import { Button } from '../../Button'
-import { Container } from '../../Container'
 
 import arrowIcon from './icon/arrow-top.svg'
 

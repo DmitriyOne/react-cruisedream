@@ -1,18 +1,42 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
-import SwiperCore from 'swiper'
+import SwiperCore, { Swiper } from 'swiper'
 
 export const useSwiperButtons = () => {
+	const [swiper, setSwiper] = useState<Swiper>()
+
 	const navPrevButton = useRef<HTMLButtonElement>(null)
 	const navNextButton = useRef<HTMLButtonElement>(null)
 
 	const onBeforeInit = (Swiper: SwiperCore): void => {
+
 		if (typeof Swiper.params.navigation !== 'boolean') {
 			const navigation = Swiper.params.navigation
+
 			navigation!.prevEl = navPrevButton.current
 			navigation!.nextEl = navNextButton.current
 		}
 	}
 
-	return { navNextButton, navPrevButton, onBeforeInit }
+	const upDateSwiper = (s: Swiper) => {
+		setSwiper(s)
+	}
+
+	const handlerPrev = () => {
+		swiper!.slidePrev()
+	}
+
+	const handlerNext = () => {
+		swiper!.slideNext()
+	}
+
+	return {
+		navNextButton,
+		navPrevButton,
+		onBeforeInit,
+		swiper,
+		upDateSwiper,
+		handlerNext,
+		handlerPrev
+	}
 }

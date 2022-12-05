@@ -11,16 +11,12 @@ interface IProps {
 	isOpen?: boolean
 }
 
-interface ISelected {
-	value: string
-}
-
 export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
 	const [selected, setSelected] = useState<string[]>([])
 
-	console.log(selected);
+	// console.log(selected);
 	
 
 	const handlerChangeOne = () => {
@@ -31,9 +27,6 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	}
 
 	const onMyChange = (e: any) => {
-		const newEl = {
-			value: e
-		}
 		setSelected([...selected, e.value])
 	}
 
