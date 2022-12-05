@@ -1,12 +1,13 @@
 import { FormEvent, useContext } from 'react'
-import { B, Button, Container, Heading } from '../../../../../components'
-import { SearchFiltersContext } from '../../../../../context'
 
-import crossIcon from '../icons/remove.svg'
+import { SearchFiltersContext } from '../../../../context'
+import { B, Button, Container, Heading } from '../../../../components'
 
-import styles from './selected-filters.module.scss'
+import crossIcon from './icons/remove.svg'
 
-export const SelectedFilters = () => {
+import styles from './selected.module.scss'
+
+export const Selected = () => {
 	const {
 		region,
 		onChangeRegion,

@@ -3,13 +3,13 @@ import { useContext } from 'react'
 import { SearchFiltersContext } from '../../../../context'
 import { Container, Heading } from '../../../../components'
 
-import { VisibleFilters } from './visible-filters/visibleFilters'
-import { HiddenFilters } from './hidden-filters/hiddenFilters'
+import { Visible } from './visible/visible'
+import { Hidden } from './hidden/hidden'
 import { Buttons } from './buttons/buttons'
 
-import styles from './form.module.scss'
+import styles from './filters.module.scss'
 
-export const Form = () => {
+export const Filters = () => {
 	const { isOpen } = useContext(SearchFiltersContext)
 
 	return (
@@ -19,8 +19,8 @@ export const Form = () => {
 					Круизы по Карибскому морю с Royal Caribbean
 				</Heading>
 				<form className={styles.form}>
-					<VisibleFilters />
-					{isOpen && <HiddenFilters isOpen={isOpen} />}
+					<Visible />
+					{isOpen && <Hidden isOpen={isOpen} />}
 					<Buttons />
 				</form>
 			</div>

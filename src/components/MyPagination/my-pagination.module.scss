@@ -1,0 +1,52 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/colors.scss';
+
+.component {
+	@include mixins.flex-center;
+}
+
+.squareWrapper {
+	display: flex;
+}
+
+.square {
+	min-width: 48px;
+	min-height: 48px;
+	font-size: 20px;
+	line-height: 120%;
+	text-align: center;
+	color: colors.$white;
+	background-color: rgba(0, 66, 117, 0.7);
+	border-radius: 3px;
+	padding: 12px 4px;
+	margin-right: 10px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		color: #004275;
+		background-color: rgba(79, 78, 78, 0.15);
+	}
+}
+
+.prev {
+
+	& .icon {
+		transform: rotate(-180deg);
+	}
+}
+
+.next {}
+
+.icon {
+	width: 12px;
+}
+
+.amountWrapper {
+	font-size: 14px;
+	line-height: 120%;
+	color: #004275;
+	margin-left: 30px;
+}

@@ -1,18 +1,18 @@
 import { FC, useContext, useState } from 'react'
 import classNames from 'classnames'
 
+import { SearchFiltersContext } from '../../../../../context'
 import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../../../fakedata'
 
 import { Container, Input, MySelect } from '../../../../../components'
 
-import styles from './hidden-filters.module.scss'
-import { SearchFiltersContext } from '../../../../../context'
+import styles from './hidden.module.scss'
 
 interface IProps {
 	isOpen?: boolean
 }
 
-export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
+export const Hidden: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
 	const {

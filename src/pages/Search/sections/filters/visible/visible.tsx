@@ -1,29 +1,15 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import classNames from 'classnames'
 
 import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
+import { SearchFiltersContext } from '../../../../../context'
 
 import { Button, Container, MyDatepicker, MySelect } from '../../../../../components'
 
-import styles from './visible-filters.module.scss'
-import { SearchFiltersContext } from '../../../../../context'
+import styles from './visible.module.scss'
 
-export const VisibleFilters = () => {
-	// const [startDate, setStartDate] = useState<Date>()
-	// const [endDate, setEndDate] = useState<Date>()
+export const Visible = () => {
 	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
-
-	// const onChangeStartDate = (date: Date) => {
-	// 	console.log(date.toLocaleDateString('ru-RU'))
-
-	// 	setStartDate(date)
-	// }
-
-	// const onChangeEndDate = (date: Date) => {
-	// 	console.log(date)
-
-	// 	setEndDate(date)
-	// }
 
 	return (
 		<Container width="full" className={styles.component}>
