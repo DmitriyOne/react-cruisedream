@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import classNames from 'classnames'
 
 import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../../../fakedata'
@@ -6,6 +6,7 @@ import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } f
 import { Container, Input, MySelect } from '../../../../../components'
 
 import styles from './hidden-filters.module.scss'
+import { SearchFiltersContext } from '../../../../../context'
 
 interface IProps {
 	isOpen?: boolean
@@ -14,20 +15,27 @@ interface IProps {
 export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 	const [checkedOne, setCheckedOne] = useState(true)
 	const [checkedTwo, setCheckedTwo] = useState(false)
-	const [selected, setSelected] = useState<string[]>([])
-
-	// console.log(selected);
-	
+	const {
+		ship,
+		typeCruise,
+		port1,
+		port2,
+		port3,
+		onChangePort1,
+		onChangePort2,
+		onChangePort3,
+		onChangeShip,
+		onChangeTypeCruise,
+		amountDays,
+		price
+	} = useContext(SearchFiltersContext)
 
 	const handlerChangeOne = () => {
 		setCheckedOne(prev => !prev)
 	}
+
 	const handlerChangeTwo = () => {
 		setCheckedTwo(prev => !prev)
-	}
-
-	const onMyChange = (e: any) => {
-		setSelected([...selected, e.value])
 	}
 
 	return (
@@ -70,7 +78,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort1}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						onChange={(e) => onMyChange(e)}
+						onChange={onChangePort1}
+						value={port1}
 					/>
 				</div>
 				<div className={styles.col}>
@@ -81,8 +90,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort2}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						onChange={(e) => onMyChange(e)}
-
+						onChange={onChangePort2}
+						value={port2}
 					/>
 				</div>
 				<div className={styles.col}>
@@ -93,8 +102,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionPort3}
 						placeholder="Все"
 						classNamePrefix="select-white"
-						onChange={(e) => onMyChange(e)}
-
+						onChange={onChangePort3}
+						value={port3}
 					/>
 				</div>
 			</div>
@@ -107,6 +116,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						options={optionShip}
 						placeholder="Все"
 						classNamePrefix="select-white"
+						value={ship}
+						onChange={onChangeShip}
 					/>
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
@@ -118,6 +129,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 							options={optionTypeCruise}
 							placeholder="Все"
 							classNamePrefix="select-white"
+							value={typeCruise}
+							onChange={onChangeTypeCruise}
 						/>
 					</div>
 					<div className={styles.amountDays}>
@@ -129,13 +142,15 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 								inputClassName={styles.input}
 								type="number"
 								placeholder="От"
-								max={2}
-								maxLength={2}
+								value={amountDays.amountStart}
+								onChange={amountDays.onChangeAmountStart}
 							/>
 							<Input
 								inputClassName={styles.input}
 								type="number"
 								placeholder="До"
+								value={amountDays.amountEnd}
+								onChange={amountDays.onChangeAmountEnd}
 							/>
 						</div>
 					</div>
@@ -151,6 +166,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						placeholder="0"
 						labelPosition="top"
 						labelText="Цена от"
+						value={price.priceStart}
+						onChange={price.onChangePriceStart}
 					/>
 					<Input
 						componentClassName={styles.half}
@@ -160,6 +177,8 @@ export const HiddenFilters: FC<IProps> = ({ isOpen }) => {
 						placeholder="9 000 000"
 						labelPosition="top"
 						labelText="Цена до"
+						value={price.priceEnd}
+						onChange={price.onChangePriceEnd}
 					/>
 				</div>
 			</div>

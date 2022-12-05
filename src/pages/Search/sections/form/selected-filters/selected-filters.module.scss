@@ -1,0 +1,51 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/colors.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	padding: 22px 20px;
+	background-color: colors.$white;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.component .title {
+	width: auto;
+	margin-right: 28px;
+	font-size: 24px;
+	line-height: 120%;
+	color: #004A76;
+	white-space: nowrap;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 10px;
+}
+
+.optionWrapper {
+	display: flex;
+	margin-right: 32px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.optionText {
+	font-size: 17px;
+	line-height: 120%;
+	color: #004A76;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #4F4E4E;
+}
+
+.removeBtn {
+	@include mixins.square-size(8);
+}
+
+.removeIcon {
+	display: block;
+}

@@ -1,13 +1,117 @@
-import { createContext } from 'react'
+import { ChangeEvent, createContext } from 'react'
+import { ISelect } from '../../model/interfaces'
+
+interface IInputDate {
+	dateStart?: Date
+	onChangeDateStart: (date: Date) => void
+	resetDateStart: () => void
+	dateEnd?: Date
+	onChangeDateEnd: (date: Date) => void
+	resetDateEnd: () => void
+}
+
+interface IInputPrice {
+	priceStart: string
+	onChangePriceStart: (e: ChangeEvent<HTMLInputElement>) => void
+	resetPriceStart: () => void
+	priceEnd: string
+	onChangePriceEnd: (e: ChangeEvent<HTMLInputElement>) => void
+	resetPriceEnd: () => void
+}
+
+interface IInputAmount {
+	amountStart: string
+	onChangeAmountStart: (e: ChangeEvent<HTMLInputElement>) => void
+	resetAmountStart: () => void
+	amountEnd: string
+	onChangeAmountEnd: (e: ChangeEvent<HTMLInputElement>) => void
+	resetAmountEnd: () => void
+}
 
 interface IProps {
 	isOpen: boolean
 	onToggle: () => void
+	isSelected: boolean
+
+	region: ISelect | undefined
+	onChangeRegion: (value: any) => void
+
+	cruise: ISelect | undefined
+	onChangeCruise: (value: any) => void
+
+	port1: ISelect | undefined
+	onChangePort1: (value: any) => void
+
+	port2: ISelect | undefined
+	onChangePort2: (value: any) => void
+
+	port3: ISelect | undefined
+	onChangePort3: (value: any) => void
+
+	ship: ISelect | undefined
+	onChangeShip: (value: any) => void
+
+	typeCruise: ISelect | undefined
+	onChangeTypeCruise: (value: any) => void
+
+	amountDays: IInputAmount
+
+	price: IInputPrice
+
+	date: IInputDate
 }
 
 const defaultValue: IProps = {
 	isOpen: false,
 	onToggle: () => { },
+	isSelected: false,
+	
+	region: { label: '', value: '' },
+	onChangeRegion: () => { },
+
+	cruise: { label: '', value: '' },
+	onChangeCruise: () => { },
+
+	port1: { label: '', value: '' },
+	onChangePort1: () => { },
+
+	port2: { label: '', value: '' },
+	onChangePort2: () => { },
+
+	port3: { label: '', value: '' },
+	onChangePort3: () => { },
+
+	ship: { label: '', value: '' },
+	onChangeShip: () => { },
+
+
+	typeCruise: { label: '', value: '' },
+	onChangeTypeCruise: () => { },
+
+	amountDays: {
+		amountStart: '',
+		onChangeAmountStart: () => { },
+		resetAmountStart: () => { },
+		amountEnd: '',
+		onChangeAmountEnd: () => { },
+		resetAmountEnd: () => { }
+	},
+
+	price: {
+		priceStart: '',
+		onChangePriceStart: () => { },
+		resetPriceStart: () => { },
+		priceEnd: '',
+		onChangePriceEnd: () => { },
+		resetPriceEnd: () => { },
+	},
+
+	date: {
+		resetDateStart: () => { },
+		onChangeDateStart: () => { },
+		resetDateEnd: () => { },
+		onChangeDateEnd: () => { }
+	}
 }
 
 export const SearchFiltersContext = createContext<IProps>(defaultValue)
