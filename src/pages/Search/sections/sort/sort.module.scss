@@ -2,19 +2,10 @@
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/colors.scss';
 
-.component {
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
 .container {
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		flex-direction: column;
-	}
-
-	&.row {
-		flex-direction: row;
 	}
 }
 
@@ -24,9 +15,13 @@
 		width: 100%;
 		margin-bottom: 20px;
 	}
+}
 
-	&.mb0 {
-		margin-bottom: 0;
+.amountWrapper {
+	margin-left: 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-left: 20px;
 	}
 }
 
@@ -60,25 +55,5 @@
 		justify-content: flex-end;
 		width: 30%;
 		margin-bottom: 0;
-	}
-}
-
-.showMore {
-	font-size: 17px;
-	line-height: 120%;
-	color: colors.$btn-text;
-	padding: 14px 22px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: colors.$btn-border;
-	border-radius: 3px;
-	background-color: colors.$transparent;
-
-	@include mixins.media-minw(breakpoints.$laptop) {
-		&:hover {
-			background-color: colors.$btn-hover;
-			color: colors.$white;
-			border-color: colors.$transparent;
-		}
 	}
 }

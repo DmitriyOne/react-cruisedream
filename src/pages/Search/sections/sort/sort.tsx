@@ -13,7 +13,10 @@ export const Sort = () => {
 				justify="between"
 				align="center"
 			>
-				<MyPagination className={styles.pagination} />
+				<MyPagination
+					className={styles.pagination}
+					amountClassName={styles.amountWrapper}
+				/>
 				<div className={styles.sortWrapper}>
 					<SortBy className={styles.sortBy} />
 					<ShowBy className={styles.showBy} />

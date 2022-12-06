@@ -2,15 +2,37 @@
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/colors.scss';
 
-.component {
-	padding-left: 20px;
-	padding-right: 20px;
+.half {
+	display: flex;
+	justify-content: space-between;
+	width: calc(50% + 84px);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+		align-items: flex-start;
+	}
 }
 
 .pagination {
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.amountWrapper {
+	margin-left: 30px;
+
 	@include mixins.media-w(breakpoints.$laptop) {
-		width: auto;
+		margin-left: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 10px;
+		margin-left: 0;
+		width: 100%;
 	}
 }
 
@@ -24,6 +46,11 @@
 	border-color: colors.$btn-border;
 	border-radius: 3px;
 	background-color: colors.$transparent;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+		padding: 9px 18px;
+	}
 
 	@include mixins.media-minw(breakpoints.$laptop) {
 		&:hover {

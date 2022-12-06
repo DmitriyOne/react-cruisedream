@@ -10,11 +10,12 @@
 	}
 }
 
-.squareWrapper {
+.itemWrapper {
 	display: flex;
 }
 
-.square {
+.item {
+	@include mixins.flex-center;
 	min-width: 48px;
 	min-height: 48px;
 	font-size: 20px;
@@ -67,9 +68,4 @@
 	font-size: 14px;
 	line-height: 120%;
 	color: #004275;
-	margin-left: 30px;
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		margin-left: 20px;
-	}
 }
