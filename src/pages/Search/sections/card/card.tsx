@@ -1,6 +1,6 @@
-import { CardCenter } from './card-center/card-center'
-import { CardLeft } from './card-left/card-left'
-import { CardRight } from './card-right/card-right'
+import { CardBody } from './card-body/card-body'
+import { CardPrice } from './card-price/card-price'
+import { CardSlider } from './card-slider/card-slider'
 
 import styles from './card.module.scss'
 
@@ -8,9 +8,9 @@ export const Card = () => {
 
 	return (
 		<div className={styles.component}>
-			<CardLeft />
-			<CardCenter />
-			<CardRight />
+			<CardSlider/>
+			<CardBody />
+			<CardPrice />
 		</div>
 	)
 }

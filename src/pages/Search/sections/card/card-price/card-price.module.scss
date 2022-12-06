@@ -1,0 +1,62 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	flex: 1;
+	padding: 28px 46px 28px;
+	@include mixins.flex-center;
+	flex-direction: column;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 1px;
+		height: 80%;
+		background-color: #7E7E7E;
+	}
+}
+
+.logo {
+	@include mixins.fluidMaxSize(250);
+}
+
+.bottom {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.text {
+	font-size: 16px;
+	line-height: 120%;
+	color: rgba(79, 78, 78, 0.6);
+}
+
+.darker{
+	color: rgba(79, 78, 78, 0.8);
+}
+
+.price {
+	font-size: 36px;
+	line-height: 120%;
+	color: #FDBB11;
+}
+
+.button {
+	width: 100%;
+	font-size: 17px;
+	line-height: 120%;
+	color: colors.$white;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 14px;
+	background-color: colors.$btn-hover;
+	margin-top: 12px;
+}

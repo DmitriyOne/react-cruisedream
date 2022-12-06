@@ -1,0 +1,13 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	background-color: colors.$white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

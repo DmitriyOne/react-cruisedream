@@ -10,7 +10,7 @@ export const Main = () => {
 
 	return (
 		<Container width="full" className={styles.component}>
-			<Container width="containerXl" direction="column" align="start">
+			<Container width="container" direction="column" align="start">
 				<Sort />
 				<Card />
 				<PaginationBottom />
