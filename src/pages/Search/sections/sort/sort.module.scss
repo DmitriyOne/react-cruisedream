@@ -2,7 +2,10 @@
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/colors.scss';
 
-.container {
+.component {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		flex-direction: column;
@@ -49,11 +52,9 @@
 }
 
 .showBy {
-	margin-bottom: 20px;
-
+	
 	@include mixins.media-w(breakpoints.$laptop) {
 		justify-content: flex-end;
 		width: 30%;
-		margin-bottom: 0;
 	}
 }
