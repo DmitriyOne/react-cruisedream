@@ -1,8 +1,13 @@
 @use '../../styles/mixins.scss';
 @use '../../styles/colors.scss';
+@use '../../styles/breakpoints.scss';
 
 .component {
 	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: flex-start;
+	}
 }
 
 .squareWrapper {
@@ -20,6 +25,14 @@
 	border-radius: 3px;
 	padding: 12px 4px;
 	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+		min-width: 35px;
+		min-height: 35px;	
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
 
 	&:last-child {
 		margin-right: 0;
@@ -41,7 +54,13 @@
 .next {}
 
 .icon {
+	display: block;
 	width: 12px;
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 10px;
+	}
 }
 
 .amountWrapper {
@@ -49,4 +68,8 @@
 	line-height: 120%;
 	color: #004275;
 	margin-left: 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-left: 20px;
+	}
 }

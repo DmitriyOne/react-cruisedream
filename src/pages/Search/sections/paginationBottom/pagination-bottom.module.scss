@@ -1,0 +1,45 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.pagination {
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: auto;
+	}
+}
+
+.showMore {
+	font-size: 17px;
+	line-height: 120%;
+	color: colors.$btn-text;
+	padding: 14px 22px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+			border-color: colors.$transparent;
+		}
+	}
+}
+
+.showBy {
+	margin-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: flex-end;
+		width: 30%;
+		margin-bottom: 0;
+	}
+}

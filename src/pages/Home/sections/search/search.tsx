@@ -21,11 +21,6 @@ export const Search = () => {
 		const [start, end] = dates
 		setStartDate(start)
 		setEndDate(end)
-		// localStorage.setItem('start', start!.toDateString())
-		// if (end === null) {
-		// 	return
-		// }
-		// localStorage.setItem('end', end!.toDateString())
 	}
 
 	const handlerClick = (e: FormEvent) => {
