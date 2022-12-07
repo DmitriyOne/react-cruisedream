@@ -8,7 +8,7 @@ export const SearchPage = () => {
 	const { isSelected } = useContext(SearchFiltersContext)
 
 	return (
-		<> 
+		<>
 			<Filters />
 			{isSelected && <Selected />}
 			<Main />

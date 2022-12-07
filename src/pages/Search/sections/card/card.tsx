@@ -8,9 +8,11 @@ export const Card = () => {
 
 	return (
 		<div className={styles.component}>
-			<CardSlider/>
-			<CardBody />
-			<CardPrice />
+			<CardSlider />
+			<div className={styles.wrapper}>
+				<CardBody />
+				<CardPrice />
+			</div>
 		</div>
 	)
 }

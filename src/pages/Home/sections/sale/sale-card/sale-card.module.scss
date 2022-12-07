@@ -98,6 +98,12 @@
 	}
 }
 
+.discount {
+	position: absolute;
+	top: 0px;
+	right: 0;
+}
+
 @include mixins.media-minw(breakpoints.$laptop) {
 	.slide:hover .cardImageWrapper::before {
 		background-color: rgba(0, 0, 0, 0.5);

@@ -3,11 +3,34 @@
 @use '../../../../../styles/colors.scss';
 
 .component {
-	flex: 1;
+	width: 39%;
 	padding: 28px 46px 28px;
-	@include mixins.flex-center;
+	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	position: relative;
+	background-color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 35%;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-ss) {
+		width: 30%;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding: 0;
+	}
 
 	&::before {
 		content: '';
@@ -16,8 +39,16 @@
 		left: 0;
 		transform: translateY(-50%);
 		width: 1px;
-		height: 80%;
+		height: calc(100% - 56px);
 		background-color: #7E7E7E;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			height: calc(100% - 40px);
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			display: none;
+		}
 	}
 }
 
@@ -31,22 +62,83 @@
 	align-items: flex-start;
 	flex-direction: column;
 	margin-top: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 0;
+	}
 }
 
 .text {
 	font-size: 16px;
 	line-height: 120%;
 	color: rgba(79, 78, 78, 0.6);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+	}
 }
 
-.darker{
+.darker {
 	color: rgba(79, 78, 78, 0.8);
+}
+
+.priceWrapper {
+	width: 100%;
+	@include mixins.flex-spb;
 }
 
 .price {
 	font-size: 36px;
 	line-height: 120%;
 	color: #FDBB11;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		font-size: 36px;
+		text-align: center;
+	}
+}
+
+.discount {
+	margin-left: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-left: 5px;
+	}
+}
+
+.discountText {
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 32px !important;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 26px !important;
+	}
+}
+
+.discountPercentage {
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px !important;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px !important;
+	}
 }
 
 .button {
@@ -59,4 +151,14 @@
 	padding: 14px;
 	background-color: colors.$btn-hover;
 	margin-top: 12px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+		padding: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+		padding: 16px;
+	}
 }

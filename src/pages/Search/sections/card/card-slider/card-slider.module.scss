@@ -1,6 +1,159 @@
 @use '../../../../../styles/mixins.scss';
 @use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
 
 .component {
-	flex: 1.7;
+	width: 33%;
+	position: relative;
+
+	@include mixins.media-w(breakpoints.$laptop-ss) {
+		display: none;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: block;
+		width: 100%;
+		height: 205px;
+	}
+}
+
+.labelWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	@include mixins.flex-center;
+	min-width: 205px;
+	min-height: 45px;
+	padding: 10px 12px;
+	background-color: #FDBB11;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		min-width: 180px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+		min-width: 55px;
+		min-height: 55px;
+		padding: 8px;
+		background-color: #004275;
+	}
+}
+
+.labelTitle {
+	font-size: 20px;
+	line-height: 110%;
+	text-align: center;
+	color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 26px;
+	}
+}
+
+.labelSubtitle {
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		line-height: 100%;
+		font-weight: 600;
+		color: colors.$white;
+		font-size: 12px;
+	}
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	img {
+		display: block;
+		height: 100%;
+		object-position: center;
+	}
+}
+
+.swiperArrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 100%;
+	z-index: 1;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 30px;
+	}
+
+	&.prev {
+		left: 0;
+
+		&::before {
+			left: 50%;
+			transform: translateY(-50%) rotate(-180deg);
+
+			// @include mixins.media-w(breakpoints.$laptop-l) {
+			// 	left: 30px;
+			// }
+
+			// @include mixins.media-w(breakpoints.$laptop) {
+			// 	left: 10px;
+			// }
+		}
+	}
+
+	&.next {
+		right: 0;
+
+		&::before {
+			right: 50%;
+			transform: translateX(50%);
+
+			// @include mixins.media-w(breakpoints.$laptop-l) {
+			// 	right: 30px;
+			// }
+
+			// @include mixins.media-w(breakpoints.$laptop) {
+			// 	right: 10px;
+			// }
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 13px;
+		height: 26px;
+		background-image: url('../icons/arrow-slider.svg');
+		@include mixins.bg-cover;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 8px;
+			height: 16px;
+		}
+	}
+}
+
+.discount {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	padding: 4px !important;
+}
+
+.discountText {
+	font-size: 22px !important;
+}
+
+.discountPercentage {
+	font-size: 16px !important;
 }

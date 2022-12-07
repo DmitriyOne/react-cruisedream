@@ -22,8 +22,6 @@ export const Heading: FunctionComponent<IProps> = ({
 		as,
 		{
 			className: classNames(
-				styles.title,
-				styles[as],
 				className,
 				styles[align]
 			)
