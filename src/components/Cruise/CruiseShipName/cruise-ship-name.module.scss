@@ -1,0 +1,48 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+
+.component {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.icon {
+	display: block;
+	min-width: 22px;
+	margin-right: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-right: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 12px;
+		min-width: 12px;
+	}
+
+	img {
+		display: block;
+		width: auto;
+		margin: 0 auto;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 100%;
+		}
+	}
+}
+
+.title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 120%;
+	color: #004275;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}

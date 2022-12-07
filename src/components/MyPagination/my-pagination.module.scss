@@ -26,6 +26,7 @@
 	border-radius: 3px;
 	padding: 12px 4px;
 	margin-right: 10px;
+	cursor: pointer;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 14px;

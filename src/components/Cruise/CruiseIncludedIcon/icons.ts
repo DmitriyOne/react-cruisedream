@@ -1,10 +1,10 @@
-import iconService from '../icons/service.svg'
-import iconPlane from '../icons/plane.svg'
-import iconHotel from '../icons/hotel.svg'
-import iconTrain from '../icons/train.svg'
-import iconCash from '../icons/money.svg'
-import iconStops from '../icons/stops.svg'
-import iconBar from '../icons/bar.svg'
+import iconService from './icons/service.svg'
+import iconPlane from './icons/plane.svg'
+import iconHotel from './icons/hotel.svg'
+import iconTrain from './icons/train.svg'
+import iconCash from './icons/money.svg'
+import iconStops from './icons/stops.svg'
+import iconBar from './icons/bar.svg'
 
 export const IconIncludedCruise = [
 	{
