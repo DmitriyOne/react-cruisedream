@@ -9,10 +9,8 @@
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		margin-left: 60px;
 	}
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		margin-right: 0;
-	}
 	@include mixins.media-w(breakpoints.$laptop) {
+		margin-left: 0;
 		width: 100%;
 		@include mixins.flex-center;
 		flex-direction: column;
