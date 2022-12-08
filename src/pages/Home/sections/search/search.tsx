@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
-import { CRUISE_ROUTES } from '../../../../constants'
+import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
@@ -78,6 +78,17 @@ export const Search = () => {
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>
+				<div>
+					<a
+						href={`tel:${CRUISE_SOCIAL_LINKS.phone}>`}
+						className={classNames(
+							styles.phone,
+							isFixed ? styles.show : undefined
+						)}
+					>
+						+7 499 653 89 91
+					</a>
+				</div>
 			</Container>
 		</Container >
 	)
