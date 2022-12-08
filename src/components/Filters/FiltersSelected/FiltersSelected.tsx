@@ -1,13 +1,13 @@
 import { FormEvent, useContext } from 'react'
 
-import { SearchFiltersContext } from '../../../../context'
-import { B, Button, Container, Heading } from '../../../../components'
+import { SearchFiltersContext } from '../../../context'
+import { Container, B, Heading, Button } from '../../../components'
 
 import crossIcon from './icons/remove.svg'
 
-import styles from './selected.module.scss'
+import styles from './filters-selected.module.scss'
 
-export const Selected = () => {
+export const FiltersSelected = () => {
 	const {
 		region,
 		onChangeRegion,
@@ -269,3 +269,4 @@ export const Selected = () => {
 		</Container>
 	)
 }
+

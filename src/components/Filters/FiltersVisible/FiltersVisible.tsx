@@ -1,14 +1,14 @@
 import { useContext } from 'react'
 import classNames from 'classnames'
 
-import { optionRegionHome, optionCompanyHome } from '../../../../../fakedata'
-import { SearchFiltersContext } from '../../../../../context'
+import { SearchFiltersContext } from '../../../context'
+import { optionRegionHome, optionCompanyHome } from '../../../fakedata'
 
-import { Button, Container, MyDatepicker, MySelect } from '../../../../../components'
+import { Container, MySelect, MyDatepicker, Button } from '../../../components'
 
-import styles from './visible.module.scss'
+import styles from './filters-visible.module.scss'
 
-export const Visible = () => {
+export const FiltersVisible = () => {
 	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
 
 	return (

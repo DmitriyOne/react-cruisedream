@@ -1,8 +1,9 @@
 import { useContext } from 'react'
+import { FiltersSelected } from '../../components/Filters'
 
 import { SearchFiltersContext } from '../../context'
 
-import { Filters, Main, Selected } from './sections'
+import { Filters, Main } from './sections'
 
 export const SearchPage = () => {
 	const { isSelected } = useContext(SearchFiltersContext)
@@ -10,7 +11,7 @@ export const SearchPage = () => {
 	return (
 		<>
 			<Filters />
-			{isSelected && <Selected />}
+			{isSelected && <FiltersSelected />}
 			<Main />
 		</>
 	)

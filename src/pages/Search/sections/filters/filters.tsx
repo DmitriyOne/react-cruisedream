@@ -2,9 +2,8 @@ import { useContext } from 'react'
 
 import { SearchFiltersContext } from '../../../../context'
 import { Container, Heading } from '../../../../components'
+import { FiltersHidden, FiltersVisible } from '../../../../components/Filters'
 
-import { Visible } from './visible/visible'
-import { Hidden } from './hidden/hidden'
 import { Buttons } from './buttons/buttons'
 
 import styles from './filters.module.scss'
@@ -19,8 +18,8 @@ export const Filters = () => {
 					Круизы по Карибскому морю с Royal Caribbean
 				</Heading>
 				<form className={styles.form}>
-					<Visible />
-					{isOpen && <Hidden isOpen={isOpen} />}
+					<FiltersVisible />
+					{isOpen && <FiltersHidden  isOpen={isOpen} />}
 					<Buttons />
 				</form>
 			</div>
