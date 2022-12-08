@@ -4,6 +4,7 @@ import styles from './partners.module.scss'
 
 export const params: SwiperOptions = {
 	loop: true,
+	cssMode: true,
 	slidesPerView: 2,
 	spaceBetween: 25,
 	modules: [Pagination],

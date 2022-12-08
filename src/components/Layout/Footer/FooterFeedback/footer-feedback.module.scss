@@ -4,18 +4,15 @@
 @use '../../../../styles/breakpoints.scss';
 
 .component {
-	margin-right: 150px;
 	margin-left: 80px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
-		margin-right: 80px;
 		margin-left: 60px;
 	}
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		margin-right: 0;
 	}
 	@include mixins.media-w(breakpoints.$laptop) {
-		margin-right: 50px;
 		width: 100%;
 		@include mixins.flex-center;
 		flex-direction: column;
