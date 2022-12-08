@@ -10,8 +10,28 @@ import {
 	CruiseShipName,
 	CruiseRoute
 } from '../../../../../components/Cruise'
+import { ICruiseRoute, IIncludedIcon } from '../../../../../model/interfaces'
+import { FC } from 'react'
 
-export const CardBody = () => {
+interface IProps {
+	logo: string
+	days: number
+	cruiseName: string
+	datepicker: string
+	shipName: string
+	routes: ICruiseRoute[]
+	icons: IIncludedIcon[]
+}
+
+export const CardBody: FC<IProps> = ({
+	logo,
+	days,
+	cruiseName,
+	datepicker,
+	shipName,
+	routes,
+	icons
+}) => {
 	const { isMobile } = useWindowSize()
 
 	return (
@@ -20,23 +40,23 @@ export const CardBody = () => {
 			<div className={styles.header}>
 				{isMobile
 					?
-					<CruiseLogo />
+					<CruiseLogo logo={logo} />
 					:
-					<CruiseAmountDays />
+					<CruiseAmountDays days={days} />
 				}
 				<div className={styles.headerWrapper}>
-					<CruiseName />
-					<CruiseDates />
+					<CruiseName name={cruiseName} />
+					<CruiseDates datepicker={datepicker} />
 				</div>
 			</div>
 
 			<div className={styles.body}>
-				<CruiseShipName />
-				<CruiseRoute />
+				<CruiseShipName ship={shipName} />
+				<CruiseRoute routes={routes} />
 			</div>
 
 			{!isMobile &&
-				<CruiseIncludedIcon />
+				<CruiseIncludedIcon icons={icons} />
 			}
 		</div>
 	)

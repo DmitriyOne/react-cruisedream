@@ -1,10 +1,16 @@
-import markerIcon from './icons/marker.svg'
+import { FC } from 'react'
 
-import { RouteBreadcrumbs } from './route'
+import { ICruiseRoute } from '../../../model/interfaces'
+
+import markerIcon from './icons/marker.svg'
 
 import styles from './cruise-route.module.scss'
 
-export const CruiseRoute = () => {
+interface IProps {
+	routes: ICruiseRoute[]
+}
+
+export const CruiseRoute:FC<IProps> = ({routes}) => {
 
 	return (
 		<div className={styles.component}>
@@ -15,7 +21,7 @@ export const CruiseRoute = () => {
 				/>
 			</span>
 			<ul className={styles.container}>
-				{RouteBreadcrumbs.map((breadcrumbs, idx) =>
+				{routes.map((breadcrumbs, idx) =>
 					<li
 						key={idx}
 						className={styles.item}

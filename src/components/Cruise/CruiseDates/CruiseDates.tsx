@@ -4,8 +4,13 @@ import calendarIcon from './icons/calendar.svg'
 import arrowIcon from './icons/arrow-down.svg'
 
 import styles from './cruise-dates.module.scss'
+import { FC } from 'react'
 
-export const CruiseDates = () => {
+interface IProps {
+	datepicker: string
+}
+
+export const CruiseDates:FC<IProps> = ({datepicker}) => {
 	const { isMobile } = useWindowSize()
 
 	return (
@@ -19,7 +24,7 @@ export const CruiseDates = () => {
 				</span>
 			}
 			<span className={styles.text}>
-				01.03.22 - 08.03.23
+				{datepicker}
 			</span>
 			<span className={styles.arrow}>
 				<img

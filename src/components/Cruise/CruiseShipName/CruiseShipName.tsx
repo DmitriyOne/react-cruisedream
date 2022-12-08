@@ -1,10 +1,15 @@
+import { FC } from 'react'
 import { Heading } from '../../Headings'
 
 import shipIcon from './icons/ship.svg'
 
 import styles from './cruise-ship-name.module.scss'
 
-export const CruiseShipName = () => {
+interface IProps {
+	ship: string
+}
+
+export const CruiseShipName:FC<IProps> = ({ship}) => {
 
 	return (
 		<div className={styles.component}>
@@ -15,7 +20,7 @@ export const CruiseShipName = () => {
 				/>
 			</span>
 			<Heading as="h4" className={styles.title}>
-				Celebrity Flora
+				{ship}
 			</Heading>
 		</div>
 	)

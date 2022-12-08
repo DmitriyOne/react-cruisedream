@@ -1,16 +1,22 @@
-import { IconIncludedCruise } from './icons'
+import { FC } from 'react'
+
+import { IIncludedIcon } from '../../../model/interfaces'
 
 import { Heading } from '../../Headings'
 
 import styles from './cruise-included-icon.module.scss'
 
-export const CruiseIncludedIcon = () => {
+interface IProps {
+	icons: IIncludedIcon[]
+}
+
+export const CruiseIncludedIcon:FC<IProps> = ({icons}) => {
 
 	return (
 		<ul className={styles.component}>
-			{IconIncludedCruise.map((icon =>
+			{icons.map(((icon, id) =>
 				<li
-					key={icon.title}
+					key={id}
 					className={styles.item}
 				>
 					<span className={styles.icon}>

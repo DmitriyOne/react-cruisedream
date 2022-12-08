@@ -4,6 +4,7 @@
 .component {
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin-bottom: 10px;
@@ -14,7 +15,7 @@
 	display: block;
 	width: 12px;
 	margin-right: 15px;
-	
+
 	img {
 		width: 100%;
 	}
@@ -25,10 +26,12 @@
 	line-height: 110%;
 	font-weight: 500;
 	color: rgba(79, 78, 78, 0.8);
+	border-bottom: 1px solid rgba(79, 78, 78, 0.8);
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 16px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 12px;
 	}
@@ -45,5 +48,9 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 10px;
+	}
+
+	img {
+		display: block;
 	}
 }

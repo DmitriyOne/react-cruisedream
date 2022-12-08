@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FC, useContext } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 
 import { PaginateContext } from '../../context'
 
@@ -16,15 +16,35 @@ export const MyPagination: FC<IProps> = ({
 	className,
 	amountClassName,
 }) => {
+	const [isShowPrev, setIsShowPrev] = useState(true)
+	const [isShowNext, setIsShowNext] = useState(true)
 	const pageNumbers = [1, 2, 3]
-	const {currentPage, handlerPaginate} = useContext(PaginateContext)
+	const { currentPage, handlerPaginate } = useContext(PaginateContext)
+
+	useEffect(() => {
+		setIsShowPrev(currentPage !== pageNumbers[0])
+		setIsShowNext(currentPage !== pageNumbers.length)
+	}, [currentPage])
+
+	const handlerPrevPage = () => {
+		handlerPaginate(currentPage - 1)
+	}
+
+	const handlerNextPage = () => {
+		handlerPaginate(currentPage + 1)
+	}
 
 	return (
 		<div className={classNames(styles.component, className)}>
 			<ul className={styles.itemWrapper}>
-				<li className={classNames(styles.item, styles.prev)}>
-					<img className={styles.icon} src={arrowIcon} alt="Prev icon" />
-				</li>
+				{isShowPrev &&
+					<li
+						className={classNames(styles.item, styles.prev)}
+						onClick={handlerPrevPage}
+					>
+						<img className={styles.icon} src={arrowIcon} alt="Prev icon" />
+					</li>
+				}
 				{pageNumbers.map(number =>
 					<li
 						key={number}
@@ -36,9 +56,14 @@ export const MyPagination: FC<IProps> = ({
 						{number}
 					</li>
 				)}
-				<li className={classNames(styles.item, styles.next)}>
-					<img className={styles.icon} src={arrowIcon} alt="Next icon" />
-				</li>
+				{isShowNext &&
+					<li
+						className={classNames(styles.item, styles.next)}
+						onClick={handlerNextPage}
+					>
+						<img className={styles.icon} src={arrowIcon} alt="Next icon" />
+					</li>
+				}
 			</ul>
 			<div className={classNames(styles.amountWrapper, amountClassName)}>
 				{currentPage} из {pageNumbers.length}

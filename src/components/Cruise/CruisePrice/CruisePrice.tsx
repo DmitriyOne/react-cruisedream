@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import classNames from 'classnames'
 
 import { useWindowSize } from '../../../hooks'
@@ -6,9 +7,16 @@ import { B, Button, Discount } from '../../../components'
 
 import styles from './cruise-price.module.scss'
 
-export const CruisePrice = () => {
+interface IProps {
+	priceFrom: string
+	isSale: boolean
+	sale?: number
+}
+
+export const CruisePrice:FC<IProps> = ({priceFrom, isSale, sale}) => {
 	const { isMobile } = useWindowSize()
 
+	const isShowDiscount = !isMobile && isSale
 	return (
 		<>
 			{!isMobile &&
@@ -18,11 +26,11 @@ export const CruisePrice = () => {
 			}
 			<div className={styles.priceWrapper}>
 				<B fontWeight={700} className={styles.price}>
-					от 1 590 $
+					от {priceFrom}
 				</B>
-				{!isMobile &&
+				{isShowDiscount &&
 					<Discount
-						percentage={25}
+						percentage={sale}
 						className={styles.discount}
 						classNameText={styles.discountText}
 						classNamePercentage={styles.discountPercentage}
