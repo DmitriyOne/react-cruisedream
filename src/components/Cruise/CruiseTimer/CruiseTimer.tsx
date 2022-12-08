@@ -14,6 +14,10 @@ export const CruiseTimer: FC<IProps> = ({ deadline }) => {
 
 	const getTime = (value: string) => {
 		const time = Date.parse(deadline) - Date.now()
+		console.log(Date.parse(deadline));
+		
+		console.log(time);
+		
 
 		setDays(Math.floor(time / (1000 * 60 * 60 * 24)))
 		setHours(Math.floor((time / (1000 * 60 * 60)) % 24))

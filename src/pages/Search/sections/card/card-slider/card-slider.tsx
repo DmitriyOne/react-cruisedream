@@ -14,7 +14,7 @@ export const CardSlider = () => {
 
 			<CruiseSlider />
 
-			<CruiseTimer deadline="12.31.2022" />
+			<CruiseTimer deadline="31 Dec 2022" />
 
 			{isMobile
 				&& <Discount
