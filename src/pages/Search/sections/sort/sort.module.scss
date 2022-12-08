@@ -39,6 +39,11 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 .sortBy {
@@ -48,6 +53,10 @@
 		width: 70%;
 		margin-bottom: 0;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-bottom: 20px;
+	}
 }
 
 .showBy {
@@ -55,5 +64,9 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		justify-content: flex-end;
 		width: 30%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 100%;
 	}
 }

@@ -2,15 +2,32 @@ import classNames from 'classnames'
 
 import { CRUISE_SOCIAL_LINKS } from '../../../constants'
 
-import { FiltersSelected } from '../../Filters'
-import { Container, Logo, Button,  } from '../../../components'
+import { FiltersSelected } from '../../Filters/FiltersSelected/FiltersSelected'
+import { Container, Logo, Button, } from '../../../components'
 import { useScrollUp, useWindowSize } from '../../../hooks'
 
 import styles from './sticky-search-page.module.scss'
+import { FormEvent, useEffect, useState } from 'react'
 
 export const StickySearchPage = () => {
+	const [el, setEl] = useState(0)
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
+
+	useEffect(() => {
+		const elScroll = ref.current!.getBoundingClientRect().top + window.scrollY
+		setEl(elScroll)
+	}, [ref, el])
+
+
+	const scrollToElement = (e: FormEvent) => {
+		e.preventDefault()
+
+		window.scroll({
+			top: el,
+			behavior: 'smooth'
+		})
+	}
 
 	const isFixed = isScroll && isDesktop
 	const isShowFixed = isScrollUp && isDesktop
@@ -40,19 +57,22 @@ export const StickySearchPage = () => {
 							styles.button,
 							isFixed ? styles.show : undefined
 						)}
+						onClick={scrollToElement}
 					>
 						ПОКАЗАТЬ ФИЛЬТРЫ
 					</Button>
 				</div>
-				<a
-					href={`tel:${CRUISE_SOCIAL_LINKS.phone}>`}
-					className={classNames(
-						styles.phone,
-						isFixed ? styles.show : undefined
-					)}
-				>
-					+7 499 653 89 91
-				</a>
+				<div className={styles.phoneWrapper}>
+					<a
+						href={`tel:${CRUISE_SOCIAL_LINKS.phone}>`}
+						className={classNames(
+							styles.phone,
+							isFixed ? styles.show : undefined
+						)}
+					>
+						+7 499 653 89 91
+					</a>
+				</div>
 			</Container>
 		</Container>
 	)

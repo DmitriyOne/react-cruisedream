@@ -7,7 +7,7 @@ export const useScrollUp = () => {
 	const ref = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
-		window.addEventListener('wheel', (event) => {
+		window.addEventListener('scroll', () => {
 			const currentEl = Math.round(ref.current!.getBoundingClientRect().top)
 			const currentElHeight = ref.current!.offsetHeight - ref.current!.offsetHeight * 2			
 
@@ -16,7 +16,9 @@ export const useScrollUp = () => {
 			} else {
 				setIsScroll(false)
 			}
+		})
 
+		window.addEventListener('wheel', (event) => {
 			if (event.deltaY < 0) {
 				setIsScrollUp(true)
 			}

@@ -1,11 +1,12 @@
 import classNames from 'classnames'
 import { FormEvent, useContext } from 'react'
-import { Button, Container } from '../../../../../components'
-import { SearchFiltersContext } from '../../../../../context'
 
-import styles from './buttons.module.scss'
+import { SearchFiltersContext } from '../../../context'
+import { Container, Button } from '../../../components'
 
-export const Buttons = () => {
+import styles from './filter-buttons.module.scss'
+
+export const FilterButtons = () => {
 	const { isOpen, onToggle } = useContext(SearchFiltersContext)
 
 	const handlerButtonApply = (e: FormEvent) => {

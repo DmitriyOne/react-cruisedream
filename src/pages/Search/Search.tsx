@@ -1,10 +1,11 @@
 import { useContext } from 'react'
-import { FiltersSelected } from '../../components/Filters'
+
+import { Filters } from '../../components'
 import { StickySearchPage } from '../../components/Sticky'
 
 import { SearchFiltersContext } from '../../context'
 
-import { Filters, Main } from './sections'
+import {  Main } from './sections'
 
 export const SearchPage = () => {
 	const { isSelected } = useContext(SearchFiltersContext)

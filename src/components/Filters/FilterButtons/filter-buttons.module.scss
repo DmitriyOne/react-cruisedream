@@ -1,11 +1,15 @@
-@use '../../../../../styles/mixins.scss';
-@use '../../../../../styles/breakpoints.scss';
-@use '../../../../../styles/family.scss';
-@use '../../../../../styles/colors.scss';
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
 
 .component {
 	@include mixins.flex-center;
 	padding-top: 40px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 20px;
+	}
 }
 
 .button {

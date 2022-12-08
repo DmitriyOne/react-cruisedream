@@ -1,12 +1,13 @@
 import { useContext } from 'react'
 
-import { SearchFiltersContext } from '../../../../context'
-import { Container, Heading } from '../../../../components'
-import { FiltersHidden, FiltersVisible } from '../../../../components/Filters'
+import { SearchFiltersContext } from '../../context'
+import { Container, Heading } from '../../components'
 
-import { Buttons } from './buttons/buttons'
+import { FiltersVisible } from './FiltersVisible/FiltersVisible'
+import { FiltersHidden } from './FiltersHidden/FiltersHidden'
+import { FilterButtons } from './FilterButtons/FilterButtons'
 
-import styles from './filters.module.scss'
+import styles from './filter.module.scss'
 
 export const Filters = () => {
 	const { isOpen } = useContext(SearchFiltersContext)
@@ -19,8 +20,8 @@ export const Filters = () => {
 				</Heading>
 				<form className={styles.form}>
 					<FiltersVisible />
-					{isOpen && <FiltersHidden  isOpen={isOpen} />}
-					<Buttons />
+					{isOpen && <FiltersHidden isOpen={isOpen} />}
+					<FilterButtons />
 				</form>
 			</div>
 		</Container>

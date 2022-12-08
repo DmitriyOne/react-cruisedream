@@ -32,13 +32,9 @@
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		font-size: 20px !important;
-		@include mixins.fluidMaxSize(150);
-		white-space: normal;
 		margin-right: 15px;
 	}
 	@include mixins.media-w(breakpoints.$laptop-s) {
-		white-space: nowrap;
-		max-width: max-content;
 		margin-right: 25px;
 	}
 	@include mixins.media-w(breakpoints.$laptop) {

@@ -8,6 +8,12 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		justify-content: flex-start;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 }
 
 .itemWrapper {
@@ -69,4 +75,10 @@
 	font-size: 14px;
 	line-height: 120%;
 	color: #004275;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 10px;
+		margin-left: 0;
+		width: 100%;
+	}
 }

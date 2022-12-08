@@ -105,6 +105,20 @@
 	}
 }
 
+.phoneWrapper {
+	margin-left: 20px;
+	display: flex;
+	justify-content: flex-end;
+
+	@include mixins.media-w(1900) {
+		margin-left: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
+}
+
 .phone {
 	display: none;
 	font-size: 37px;
@@ -112,11 +126,9 @@
 	letter-spacing: 0.01em;
 	color: #004275;
 	transition: all .4s;
-	margin-left: 20px;
 
 	@include mixins.media-w(1900) {
 		font-size: 28px;
-		margin-left: 10px;
 	}
 
 	@include mixins.media-w(1660) {
