@@ -7,6 +7,7 @@ import { Dates } from './Dates/Dates'
 import { Route } from './Route/Route'
 
 import 'tippy.js/dist/tippy.css'
+import 'tippy.js/animations/scale.css'
 import styles from './my-tooltip.module.scss'
 
 interface IProps {
@@ -41,6 +42,7 @@ export const MyTooltip: FC<IProps> = ({
 			arrow={false}
 			placement="bottom-start"
 			offset={[0, 4]}
+			animation="scale"
 		>
 			{children}
 		</Tippy>

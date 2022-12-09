@@ -12,17 +12,20 @@ import { Information } from '../Information'
 import { Container } from '../../Container'
 
 import styles from './header.module.scss'
+import { InputSearch } from '../InputSearch'
 
 export const Header = () => {
 	const { isTablet } = useWindowSize()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
-	const { isOpen: burgerIsOpen, onToggle: burgerToggle  } = useContext(HeaderContext)
+	const { isOpen: burgerIsOpen, onToggle: burgerToggle } = useContext(HeaderContext)
+
+	const componentClass = classNames(styles.component, styles.column)
 
 	return (
 		<>
 			<header
 				className={classNames(
-					isTablet ? styles.component : undefined,
+					isTablet ? componentClass : styles.component,
 				)}
 			>
 				<Information />
@@ -54,6 +57,7 @@ export const Header = () => {
 						<Contacts />
 					</Container>
 				</div>
+				<InputSearch />
 			</header>
 		</>
 	)
