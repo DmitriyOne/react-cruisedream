@@ -62,9 +62,13 @@
 
 	&::after {
 		content: "/"; 
+		padding-left: 3px;
+		padding-right: 3px;
 	}
 
-	&:last-child::before {
+	&:last-child::after {
 		display: none;
+		padding-left: 3px;
+		padding-right: 3px;
 	}
 }

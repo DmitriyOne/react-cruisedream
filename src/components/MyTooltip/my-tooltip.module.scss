@@ -16,32 +16,37 @@
 
 .date {
 	@include mixins.fluidMaxSize(230);
+	max-width: 230px !important;
 	min-width: 230px;
 	max-height: 72px;
 
 	@include mixins.media-w(breakpoints.$laptop) {
-		@include mixins.fluidMaxSize(180);
+		max-width: 180px !important;
 		min-width: 180px;
 		max-height: 62px;
 	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		@include mixins.fluidMaxSize(140);
+		max-width: 140px !important;
 		min-width: 140px;
 		max-height: 53px;
 	}
 }
 
 .routes {
-	@include mixins.fluidMaxSize(360);
+	max-width: 365px !important;
 	max-height: 156px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
-		@include mixins.fluidMaxSize(420);
+		max-width: 420px !important;
 		max-height: 128px;
 	}
 
-	@include mixins.media-w(breakpoints.$tablet-s) {
+	@include mixins.media-w(breakpoints.$laptop) {
+		max-height: 115px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
 		max-width: 260px !important;
 		max-height: 92px;
 	}

@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC, ReactElement } from 'react'
 import Tippy from '@tippyjs/react'
 
@@ -7,7 +8,6 @@ import { Route } from './Route/Route'
 
 import 'tippy.js/dist/tippy.css'
 import styles from './my-tooltip.module.scss'
-import classNames from 'classnames'
 
 interface IProps {
 	isDates?: boolean
@@ -40,7 +40,7 @@ export const MyTooltip: FC<IProps> = ({
 			disabled={!content}
 			arrow={false}
 			placement="bottom-start"
-			offset={[0, 0]}
+			offset={[0, 4]}
 		>
 			{children}
 		</Tippy>
