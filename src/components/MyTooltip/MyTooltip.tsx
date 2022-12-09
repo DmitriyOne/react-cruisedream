@@ -39,6 +39,8 @@ export const MyTooltip: FC<IProps> = ({
 			delay={100}
 			disabled={!content}
 			arrow={false}
+			placement="bottom-start"
+			offset={[0, 0]}
 		>
 			{children}
 		</Tippy>

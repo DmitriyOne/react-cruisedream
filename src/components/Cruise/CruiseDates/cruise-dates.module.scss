@@ -56,23 +56,3 @@
 		display: block;
 	}
 }
-
-.tooltip {
-	left: 90% !important;
-	@include mixins.fluidMaxSize(230);
-	min-width: 230px;
-	max-height: 72px;
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		@include mixins.fluidMaxSize(180);
-		min-width: 180px;
-		max-height: 62px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		@include mixins.fluidMaxSize(140);
-		min-width: 140px;
-		max-height: 53px;
-		left: 15% !important;
-	}
-}

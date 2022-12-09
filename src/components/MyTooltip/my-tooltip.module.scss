@@ -29,7 +29,6 @@
 		@include mixins.fluidMaxSize(140);
 		min-width: 140px;
 		max-height: 53px;
-		left: 15% !important;
 	}
 }
 
@@ -42,12 +41,8 @@
 		max-height: 128px;
 	}
 
-	@include mixins.media-w(breakpoints.$tablet) {
-    left: 20px !important;
-	}
-
 	@include mixins.media-w(breakpoints.$tablet-s) {
-    @include mixins.fluidMaxSize(260);
+		max-width: 260px !important;
 		max-height: 92px;
 	}
 }

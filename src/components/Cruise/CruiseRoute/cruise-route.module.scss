@@ -68,27 +68,3 @@
 		display: none;
 	}
 }
-
-.tooltip {
-	top: 30% !important;
-	@include mixins.fluidMaxSize(360);
-	max-height: 156px;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		@include mixins.fluidMaxSize(420);
-		max-height: 128px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet) {
-    left: 20px !important;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet-s) {
-    @include mixins.fluidMaxSize(260);
-		max-height: 92px;
-	}
-}
-
-.tooltipText {
-	border-bottom: none;
-}
