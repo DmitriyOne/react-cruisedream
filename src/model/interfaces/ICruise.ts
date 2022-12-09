@@ -2,9 +2,10 @@ import { ICruiseRoute } from './ICruiseRoute'
 import { IIncludedIcon } from './IIncludedIcon'
 
 export interface ICruise {
-	id: number
+	id: string
 	days: number
 	datepicker: string
+	otherDates?: string[]
 	icons: IIncludedIcon[]
 	label: string
 	logo: string

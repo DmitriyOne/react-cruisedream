@@ -21,10 +21,12 @@ export const Card = () => {
 					/>
 					<div className={styles.wrapper}>
 						<CardBody
+							id={cruise.id}
 							logo={cruise.logo}
 							days={cruise.days}
 							cruiseName={cruise.cruiseName}
 							datepicker={cruise.datepicker}
+							otherDates={cruise.otherDates}
 							shipName={cruise.shipName}
 							routes={cruise.cruiseRoute}
 							icons={cruise.icons}

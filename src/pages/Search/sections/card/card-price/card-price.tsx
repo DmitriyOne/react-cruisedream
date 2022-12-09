@@ -1,17 +1,11 @@
 import { FC } from 'react'
 import { CruiseLogo, CruisePrice } from '../../../../../components/Cruise'
 import { useWindowSize } from '../../../../../hooks'
+import { IPrice } from '../interfaces/IPrice'
 
 import styles from './card-price.module.scss'
 
-interface IProps {
-	logo: string
-	priceFrom: string
-	isSale: boolean
-	sale?: number
-}
-
-export const CardPrice: FC<IProps> = ({ logo, priceFrom, isSale, sale }) => {
+export const CardPrice: FC<IPrice> = ({ logo, priceFrom, isSale, sale }) => {
 	const { isMobile } = useWindowSize()
 
 	return (

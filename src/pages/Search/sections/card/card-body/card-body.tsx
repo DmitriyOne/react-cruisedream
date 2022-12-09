@@ -1,6 +1,8 @@
+import { FC } from 'react'
 import { useWindowSize } from '../../../../../hooks'
 
-import styles from './card-body.module.scss'
+import { IBody } from '../interfaces/IBody'
+
 import {
 	CruiseAmountDays,
 	CruiseLogo,
@@ -10,24 +12,16 @@ import {
 	CruiseShipName,
 	CruiseRoute
 } from '../../../../../components/Cruise'
-import { ICruiseRoute, IIncludedIcon } from '../../../../../model/interfaces'
-import { FC } from 'react'
 
-interface IProps {
-	logo: string
-	days: number
-	cruiseName: string
-	datepicker: string
-	shipName: string
-	routes: ICruiseRoute[]
-	icons: IIncludedIcon[]
-}
+import styles from './card-body.module.scss'
 
-export const CardBody: FC<IProps> = ({
+export const CardBody: FC<IBody> = ({
+	id,
 	logo,
 	days,
 	cruiseName,
 	datepicker,
+	otherDates,
 	shipName,
 	routes,
 	icons
@@ -46,13 +40,13 @@ export const CardBody: FC<IProps> = ({
 				}
 				<div className={styles.headerWrapper}>
 					<CruiseName name={cruiseName} />
-					<CruiseDates datepicker={datepicker} />
+					<CruiseDates datepicker={datepicker} otherDates={otherDates} id={id} />
 				</div>
 			</div>
 
 			<div className={styles.body}>
 				<CruiseShipName ship={shipName} />
-				<CruiseRoute routes={routes} />
+				<CruiseRoute routes={routes} id={id} />
 			</div>
 
 			{!isMobile &&

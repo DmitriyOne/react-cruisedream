@@ -8,40 +8,26 @@ import iconBar from '../../assets/images/included/bar.svg'
 
 import { IIncludedIcon } from '../../model/interfaces'
 
-export const IconIncludedCruise: IIncludedIcon[] = [
-	{
-		title: 'Сервис',
-		src: iconService,
-		alt: 'Service icon'
-	},
-	{
-		title: 'Перелет',
-		src: iconPlane,
-		alt: 'Plane icon'
-	},
-	{
-		title: 'Отель',
-		src: iconHotel,
-		alt: 'Hotel icon'
-	},
-	{
-		title: 'Поезд',
-		src: iconTrain,
-		alt: 'Train icon'
-	},
-	{
-		title: 'Чаевые',
-		src: iconCash,
-		alt: 'Cash icon'
-	},
-	{
-		title: 'Остановки',
-		src: iconStops,
-		alt: 'Stops icon'
-	},
-	{
-		title: 'Бар',
-		src: iconBar,
-		alt: 'Bar icon'
-	}
+export const IconIncludedCruise1: IIncludedIcon[] = [
+	{ title: 'Сервис', src: iconService, alt: 'Service icon' },
+	{ title: 'Перелет', src: iconPlane, alt: 'Plane icon' },
+	{ title: 'Отель', src: iconHotel, alt: 'Hotel icon' },
+	{ title: 'Поезд', src: iconTrain, alt: 'Train icon' },
+	{ title: 'Чаевые', src: iconCash, alt: 'Cash icon' },
+	{ title: 'Остановки', src: iconStops, alt: 'Stops icon' },
+	{ title: 'Бар', src: iconBar, alt: 'Bar icon' }
+]
+
+export const IconIncludedCruise2: IIncludedIcon[] = [
+	{ title: 'Сервис', src: iconService, alt: 'Service icon' },
+	{ title: 'Перелет', src: iconPlane, alt: 'Plane icon' },
+	{ title: 'Поезд', src: iconTrain, alt: 'Train icon' },
+	{ title: 'Остановки', src: iconStops, alt: 'Stops icon' },
+	{ title: 'Бар', src: iconBar, alt: 'Bar icon' }
+]
+
+export const IconIncludedCruise3: IIncludedIcon[] = [
+	{ title: 'Сервис', src: iconService, alt: 'Service icon' },
+	{ title: 'Перелет', src: iconPlane, alt: 'Plane icon' },
+	{ title: 'Остановки', src: iconStops, alt: 'Stops icon' },
 ]

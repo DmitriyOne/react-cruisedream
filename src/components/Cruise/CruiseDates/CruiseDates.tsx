@@ -1,20 +1,30 @@
+import { FC, useEffect, useState } from 'react'
+
 import { useWindowSize } from '../../../hooks'
+import { MyTooltip } from '../../MyTooltip'
 
 import calendarIcon from './icons/calendar.svg'
 import arrowIcon from './icons/arrow-down.svg'
 
 import styles from './cruise-dates.module.scss'
-import { FC } from 'react'
 
 interface IProps {
+	id?: string
 	datepicker: string
+	otherDates?: string[]
+	cruiseName?: string
 }
 
-export const CruiseDates:FC<IProps> = ({datepicker}) => {
+export const CruiseDates: FC<IProps> = ({ datepicker, otherDates, id }) => {
 	const { isMobile } = useWindowSize()
+	const [idTooltip, setIdTooltip] = useState('')
+
+	useEffect(() => {
+		setIdTooltip('my-dates-tooltip-' + id)
+	}, [id])
 
 	return (
-		<div className={styles.component}>
+		<div id={idTooltip} className={styles.component}>
 			{isMobile &&
 				<span className={styles.icon}>
 					<img
@@ -23,9 +33,11 @@ export const CruiseDates:FC<IProps> = ({datepicker}) => {
 					/>
 				</span>
 			}
-			<span className={styles.text}>
-				{datepicker}
-			</span>
+			<MyTooltip isDates otherDates={otherDates}>
+				<span className={styles.text}>
+					{datepicker}
+				</span>
+			</MyTooltip>
 			<span className={styles.arrow}>
 				<img
 					src={arrowIcon}

@@ -1,20 +1,14 @@
+import { FC } from 'react'
+
 import { useWindowSize } from '../../../../../hooks'
+import { ISlider } from '../interfaces/ISlider'
 
 import { Discount } from '../../../../../components'
 import { CruiseAmountDays, CruiseTimer, CruiseLabel, CruiseSlider } from '../../../../../components/Cruise'
 
 import styles from './card-slider.module.scss'
-import { FC } from 'react'
 
-interface IProps {
-	days: number
-	label: string
-	images: string[]
-	isTimer: boolean
-	deadline?: string
-}
-
-export const CardSlider: FC<IProps> = ({ days, label, images, isTimer, deadline }) => {
+export const CardSlider: FC<ISlider> = ({ days, label, images, isTimer, deadline }) => {
 	const { isMobile } = useWindowSize()
 
 	return (
