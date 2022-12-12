@@ -1,24 +1,28 @@
+/* eslint-disable max-len */
 import { Dispatch, SetStateAction, useRef } from 'react'
 import Select from 'react-select'
 import { ActionMeta, Options } from 'react-select'
 
-import { ISelect } from '../../model/interfaces'
+import { ISelect } from '../../../model/interfaces'
+import { CheckboxSelect } from '../../Input'
 
-interface Props {
+interface IProps {
 	options: ISelect[]
 	selected: ISelect[],
 	setSelected: Dispatch<SetStateAction<any>>,
-	title: string,
+	placeholder?: string,
 	hide?: boolean
+	className?: string
+	classNamePrefix?: string
 }
 
-export function TestNewSelect(props: Props) {
+export function CustomMultiSelect({...props}: IProps) {
 	const valueRef = useRef(props.selected)
 	valueRef.current = props.selected
 
-	const selectAllOption = { value: '*', label: 'Select All' }
+	const selectAllOption = { value: '*', label: 'Все' }
 	const isSelectAllSelected = () => valueRef.current.length === props.options.length
-	const isOptionSelected = (option: ISelect, selectValue: Options<ISelect>) =>
+	const isOptionSelected = (option: any, selectValue: Options<any>) =>
 		valueRef.current.some(({ value }) => value === option.value) ||
 		isSelectAllSelected()
 
@@ -27,39 +31,38 @@ export function TestNewSelect(props: Props) {
 
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
 		const { action, option, removedValue } = actionMeta
-		// Reassigning for typing. Unknown by default
 		const opt = option as ISelect
 		const removed = removedValue as ISelect
 		if (action === 'select-option' && opt.value === selectAllOption.value) {
-			console.log('new item selected')
 			props.setSelected(props.options)
 		} else if ((action === 'deselect-option' && opt.value === selectAllOption.value) || (action === 'remove-value' && removed.value === selectAllOption.value)) {
 			props.setSelected([])
-			console.log('all items removed')
 		} else if (actionMeta.action === 'deselect-option' && isSelectAllSelected()) {
 			props.setSelected(
 				props.options.filter(({ value }) => value !== opt.value))
-			console.log('new item removed')
 		} else {
 			props.setSelected(newValue || [])
-			console.log('new item added')
 		}
-		//console.log(action, newValue, getValue());
 	}
 
 	return (
 		<Select
 			isOptionSelected={isOptionSelected}
 			closeMenuOnSelect={false}
-			defaultValue={getOptions()} // Should default to select all option
+			defaultValue={getOptions()}
+			components={{
+				Option: CheckboxSelect
+			}}
 			value={getValue()}
 			isMulti
-			placeholder={props.title}
+			placeholder={props.placeholder}
 			options={getOptions()}
 			onChange={handleSelect}
 			hideSelectedOptions={props.hide ?? false}
-			instanceId={props.title}
-			id={props.title}
+			instanceId={props.placeholder}
+			id={props.placeholder}
+			className={props.className}
+			classNamePrefix={props.classNamePrefix}
 		/>
 	)
 }

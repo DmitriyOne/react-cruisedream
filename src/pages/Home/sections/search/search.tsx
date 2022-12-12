@@ -1,12 +1,13 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
+import Select from 'react-select'
 
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
-import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
+import { Button, CheckboxSelect, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
 import styles from './search.module.scss'
 
@@ -50,6 +51,7 @@ export const Search = () => {
 					isFixed ? styles.show : undefined
 				)} />
 				<form className={styles.form}>
+
 					<MySelect
 						options={optionRegionHome}
 						placeholder="Регион круиза"

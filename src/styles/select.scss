@@ -80,8 +80,13 @@
 	}
 
 	&__clear-indicator {
-		@include mixins.square-size(12);
-		background-image: url('../assets/images/select/delete.svg');
+		display: none;
+		// @include mixins.square-size(12);
+		// background-image: url('../assets/images/select/delete.svg');
+	}
+
+	&__indicator-separator {
+		display: none;
 	}
 
 	&__dropdown-indicator {
@@ -109,15 +114,12 @@
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
 		animation: scaleIn 0.35s ease-in-out;
+		z-index: 10 !important;
 	}
 
 	&__option {
 		cursor: pointer !important;
 		color: colors.$black !important;
-
-		// &--is-selected {
-		// 	background-color: rgba(0, 0, 0, 0.3) !important;
-		// }
 	}
 }
 

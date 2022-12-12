@@ -1,19 +1,3 @@
-// import { FC } from 'react'
-
-// import { IInput, Input } from '../Input'
-
-// import styles from './checkbox-select.module.scss'
-
-// export const CheckboxSelect: FC<IInput> = ({ ...props }) => {
-// 	return (
-// 		<Input
-// 			type="checkbox"
-// 			inputClassName={styles.input}
-// 			labelClassName={styles.label}
-// 			{...props}
-// 		/>
-// 	)
-// }
 
 import { FC } from 'react'
 
