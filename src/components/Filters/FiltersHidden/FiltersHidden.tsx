@@ -7,14 +7,15 @@ import { Container, Input, MySelect } from '../../../components'
 import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../fakedata'
 
 import styles from './filters-hidden.module.scss'
+import { CheckboxFilter } from '../../Input/CheckboxFilter/CheckboxFilter'
 
 interface IProps {
 	isOpen: boolean
 }
 
 export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
-	const [checkedOne, setCheckedOne] = useState(true)
-	const [checkedTwo, setCheckedTwo] = useState(false)
+	const [checkedRiver, setCheckedRiver] = useState(true)
+	const [checkedSea, setCheckedSea] = useState(false)
 	const {
 		ship,
 		typeCruise,
@@ -31,11 +32,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 	} = useContext(SearchFiltersContext)
 
 	const handlerChangeOne = () => {
-		setCheckedOne(prev => !prev)
+		setCheckedRiver(prev => !prev)
 	}
 
 	const handlerChangeTwo = () => {
-		setCheckedTwo(prev => !prev)
+		setCheckedSea(prev => !prev)
 	}
 
 	return (
@@ -50,22 +51,20 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 			align="start"
 		>
 			<div className={styles.row}>
-				<Input
+				<CheckboxFilter
 					componentClassName={styles.checkbox}
-					type="checkbox"
 					labelText="Река"
 					labelPosition="right"
 					name="checkbox1"
-					checked={checkedOne}
+					checked={checkedRiver}
 					onChange={handlerChangeOne}
 				/>
-				<Input
+				<CheckboxFilter
 					componentClassName={styles.checkbox}
-					type="checkbox"
 					labelText="Море"
 					labelPosition="right"
 					name="checkbox2"
-					checked={checkedTwo}
+					checked={checkedSea}
 					onChange={handlerChangeTwo}
 				/>
 			</div>

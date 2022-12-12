@@ -1,0 +1,56 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	display: flex !important;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px !important;
+	padding: 0px 20px !important;
+	background-color: colors.$transparent !important;
+
+	&:first-child {
+		margin-top: 10px !important; 
+	}
+
+	&:last-child {
+		margin-bottom: 10px !important;
+	}
+}
+
+.text {
+	font-size: 18px;
+	line-height: 110%;
+	color: #004275;
+}
+
+.inputWrapper {
+	@include mixins.square-size(20);
+}
+
+.input[type=checkbox]+.label:before {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 100%;
+	background-color: colors.$white;
+	border: 1px solid #004A76;
+}
+
+.input[type=checkbox]+.label::after {
+	top: 50%;
+	left: 2px;
+	width: 16px;
+	height: 13px;
+	@include mixins.bg-cover;
+	background-image: url('../icons/checkedFilters.svg');
+	opacity: 0;
+	transform: scale(0) translateY(-50%);
+	transition: all .2s;
+}
+
+.input[type=checkbox]:checked+.label::after {
+	opacity: 1;
+	transform: scale(1) translateY(-50%);
+}

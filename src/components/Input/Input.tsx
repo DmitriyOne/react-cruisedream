@@ -11,7 +11,7 @@ import { ELabelPosition } from '../../model/enums'
 
 import styles from './input.module.scss'
 
-interface IProps
+export interface IInput
 	extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
 	componentClassName?: string
 	type?: InputHTMLAttributes<HTMLInputElement>['type']
@@ -27,7 +27,7 @@ interface IProps
 	children?: ReactNode
 }
 
-export const Input: FC<IProps> = ({
+export const Input: FC<IInput> = ({
 	componentClassName,
 	type = 'text',
 	name,
@@ -48,9 +48,8 @@ export const Input: FC<IProps> = ({
 		[styles.labelRight]: labelPosition === 'right',
 		[styles.labelTop]: labelPosition === 'top',
 	})
-	const inputClass = classNames(styles.input, inputClassName, {
-		[styles.checkbox]: type === 'checkbox',
-	})
+	const inputClass = classNames(styles.input, inputClassName)
+
 	return (
 		<div className={componentClass}
 		>

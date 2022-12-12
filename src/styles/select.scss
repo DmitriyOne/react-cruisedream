@@ -75,30 +75,30 @@
 		cursor: pointer;
 	}
 
-	&__indicator-separator {
-		display: none !important;
-	}
-
 	&__indicators {
 		cursor: pointer !important;
-
 	}
 
-	&__indicator {
-		color: #66676e !important;
-		padding: 0 !important;
+	&__clear-indicator {
+		@include mixins.square-size(12);
+		background-image: url('../assets/images/select/delete.svg');
+	}
+
+	&__dropdown-indicator {
+		margin-right: 0 !important;
 		width: 16px;
 		height: 10px;
-		@include mixins.bg-cover;
 		background-image: url('../assets/images/select/arrow-down-dark.svg');
 
 		@include mixins.media-w(breakpoints.$tablet-s) {
 			width: 12px;
 		}
+	}
 
-		&:hover {
-			color: #999aa5 !important;
-		}
+	&__indicator {
+		padding: 0 5px !important;
+		@include mixins.bg-cover;
+		margin: 0 10px;
 
 		& svg {
 			display: none;
@@ -115,9 +115,9 @@
 		cursor: pointer !important;
 		color: colors.$black !important;
 
-		&--is-selected {
-			background-color: rgba(0, 0, 0, 0.3) !important;
-		}
+		// &--is-selected {
+		// 	background-color: rgba(0, 0, 0, 0.3) !important;
+		// }
 	}
 }
 
