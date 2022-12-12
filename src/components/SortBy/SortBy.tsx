@@ -19,13 +19,15 @@ export const SortBy: FC<IProps> = ({ className }) => {
 				className={classNames(styles.select, styles.sortCurrency)}
 				options={sortCurrency}
 				classNamePrefix="select-sort"
-				defaultValue={sortCurrency[0]}
+				defaultSelect={sortCurrency}
+				isMulti={false}
+				// defaultValue={sortCurrency[1]}
 			/>
 			<MySelect
 				className={styles.select}
 				options={sortBy}
 				classNamePrefix="select-sort"
-				defaultValue={sortBy[0]}
+				// defaultValue={sortBy[1]}
 			/>
 		</div>
 	)

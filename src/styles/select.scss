@@ -121,6 +121,20 @@
 		cursor: pointer !important;
 		color: colors.$black !important;
 	}
+
+	&__multi-value {
+		background-color: transparent !important; 
+    margin: 0 !important;
+    border-radius: 0 !important;
+	}
+
+	&__multi-value__label {
+		border-radius: 0 !important;
+		font-size: 24px !important;
+		line-height: 120% !important;
+		color: #004275 !important;
+    padding: 0 !important;
+	}
 }
 
 .select-white {
@@ -224,10 +238,20 @@
 		@include mixins.media-w(breakpoints.$tablet) {
 			font-size: 14px !important;
 		}
+	}
 
-		&--is-selected {
-			background-color: rgba(0, 0, 0, 0.3) !important;
-		}
+	&__multi-value {
+		background-color: transparent !important; 
+    margin: 0 !important;
+    border-radius: 0 !important;
+	}
+
+	&__multi-value__label {
+		border-radius: 0 !important;
+		font-size: 17px;
+		line-height: 120%;
+		color: rgba(79, 78, 78, 0.6) !important;
+    padding: 0 !important;
 	}
 }
 
