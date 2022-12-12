@@ -3,7 +3,8 @@ import {
 	ChangeEvent,
 	DetailedHTMLProps,
 	FC,
-	InputHTMLAttributes
+	InputHTMLAttributes,
+	ReactNode
 } from 'react'
 
 import { ELabelPosition } from '../../model/enums'
@@ -23,6 +24,7 @@ interface IProps
 	labelText?: string
 	labelPosition?: keyof typeof ELabelPosition
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+	children?: ReactNode
 }
 
 export const Input: FC<IProps> = ({
@@ -37,6 +39,7 @@ export const Input: FC<IProps> = ({
 	labelText,
 	labelPosition,
 	onChange,
+	children,
 	...props
 }) => {
 
@@ -65,6 +68,7 @@ export const Input: FC<IProps> = ({
 			<label htmlFor={name} className={classNames(styles.label, labelClassName)}>
 				{labelText}
 			</label>
+			{children}
 		</div>
 	)
 }

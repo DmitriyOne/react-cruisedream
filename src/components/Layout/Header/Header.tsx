@@ -15,7 +15,7 @@ import styles from './header.module.scss'
 import { InputSearch } from '../InputSearch'
 
 export const Header = () => {
-	const { isTablet } = useWindowSize()
+	const { isTablet, isDesktop } = useWindowSize()
 	const { isFixed, isShowFixed, ref } = useScrollUpMobile()
 	const { isOpen: burgerIsOpen, onToggle: burgerToggle } = useContext(HeaderContext)
 
@@ -57,7 +57,7 @@ export const Header = () => {
 						<Contacts />
 					</Container>
 				</div>
-				<InputSearch />
+				{isDesktop && <InputSearch />}
 			</header>
 		</>
 	)
