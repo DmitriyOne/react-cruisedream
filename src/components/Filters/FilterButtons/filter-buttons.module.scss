@@ -45,6 +45,13 @@
 	color: rgba(79, 78, 78, 0.7);
 	background-color: colors.$transparent;
 	border-color: rgba(79, 78, 78, 0.6);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+		margin-right: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 
 .buttonApply {
@@ -52,9 +59,15 @@
 	background-color: colors.$btn-hover;
 	border-color: colors.$transparent;
 
-	&:hover {
-		color: colors.$btn-text;
-		background-color: colors.$transparent;
-		border-color: colors.$btn-border;
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+	}
+
+	@include mixins.media-minw(breakpoints.$tablet) {
+		&:hover {
+			color: colors.$btn-text;
+			background-color: colors.$transparent;
+			border-color: colors.$btn-border;
+		}
 	}
 }
