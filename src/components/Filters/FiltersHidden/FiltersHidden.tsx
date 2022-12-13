@@ -99,10 +99,12 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					</label>
 					<MySelect
 						options={optionPort3}
+						defaultSelect={optionPort3}
 						placeholder="Все"
 						classNamePrefix="select-white"
 						onChange={onChangePort3}
 						value={port3}
+						allowSelectAll={true}
 					/>
 				</div>
 			</div>
@@ -154,9 +156,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						</div>
 					</div>
 				</div>
-				<div
-					className={classNames(styles.col, styles.flex)}
-				>
+				<div className={classNames(styles.col, styles.flex)}>
 					<Input
 						componentClassName={styles.half}
 						inputClassName={styles.input}

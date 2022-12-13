@@ -14,10 +14,12 @@ interface IProps {
 	hide?: boolean
 	className?: string
 	classNamePrefix?: string
+	allowSelectAll?: boolean
 }
 
-export function CustomMultiSelect({...props}: IProps) {
+export function CustomMultiSelect({ ...props }: IProps) {
 	const valueRef = useRef(props.selected)
+
 	valueRef.current = props.selected
 
 	const selectAllOption = { value: '*', label: 'Все' }
@@ -48,7 +50,6 @@ export function CustomMultiSelect({...props}: IProps) {
 	return (
 		<Select
 			isOptionSelected={isOptionSelected}
-			closeMenuOnSelect={false}
 			defaultValue={getOptions()}
 			components={{
 				Option: CheckboxSelect
@@ -58,6 +59,7 @@ export function CustomMultiSelect({...props}: IProps) {
 			placeholder={props.placeholder}
 			options={getOptions()}
 			onChange={handleSelect}
+			closeMenuOnSelect={false}
 			hideSelectedOptions={props.hide ?? false}
 			instanceId={props.placeholder}
 			id={props.placeholder}

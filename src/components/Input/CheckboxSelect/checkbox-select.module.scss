@@ -22,10 +22,12 @@
 	font-size: 18px;
 	line-height: 110%;
 	color: #004275;
+	margin-right: 15px;
 }
 
 .inputWrapper {
 	@include mixins.square-size(20);
+	min-width: 20px;
 }
 
 .input[type=checkbox]+.label:before {

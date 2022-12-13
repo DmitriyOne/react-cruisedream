@@ -188,16 +188,21 @@
 		cursor: pointer;
 	}
 
+	&__clear-indicator {
+		display: none !important;
+		// @include mixins.square-size(12);
+		// background-image: url('../assets/images/select/delete.svg');
+	}
+
 	&__indicator-separator {
 		display: none !important;
 	}
 
 	&__indicators {
 		cursor: pointer !important;
-
 	}
 
-	&__indicator {
+	&__dropdown-indicator {
 		color: rgba(79, 78, 78, 0.6) !important;
 		padding: 0 !important;
 		width: 16px;
@@ -255,7 +260,7 @@
 	}
 }
 
-.select-sort {
+.select-sort {	
 	&__control {
 		min-height: auto !important;
 		background-color: colors.$white !important;
@@ -349,12 +354,15 @@
 	}
 
 	&__clear-indicator {
-		@include mixins.square-size(12);
-		@include mixins.bg-cover;
-		background-image: url('../assets/images/select/delete.svg');
+		display: none !important; 
+		// @include mixins.square-size(12);
+		// @include mixins.bg-cover;
+		// background-image: url('../assets/images/select/delete.svg');
 	}
 
 	&__menu {
+		width: auto !important;
+		min-width: 100% !important;
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
 		animation: scaleIn 0.35s ease-in-out;
@@ -367,10 +375,6 @@
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			font-size: 14px !important;
-		}
-
-		&--is-selected {
-			background-color: rgba(0, 0, 0, 0.3) !important;
 		}
 	}
 }

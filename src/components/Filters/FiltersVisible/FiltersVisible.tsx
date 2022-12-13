@@ -10,6 +10,7 @@ import styles from './filters-visible.module.scss'
 
 export const FiltersVisible = () => {
 	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
+	
 
 	return (
 		<Container width="full" className={styles.component}>
