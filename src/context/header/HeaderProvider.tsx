@@ -9,11 +9,15 @@ interface IProps {
 
 export const HeaderProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle, onClose } = useOpen()
+	const { isOpen: isOpenSearch, onToggle: onToggleSearch, onClose: onCloseSearch } = useOpen()
 
 	const value = {
 		isOpen,
 		onToggle,
-		onClose
+		onClose,
+		isOpenSearch,
+		onCloseSearch,
+		onToggleSearch
 	}
 
 	return (

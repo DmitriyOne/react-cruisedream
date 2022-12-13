@@ -57,3 +57,24 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: 'Advent Pro';
+	src: url('../assets/fonts/advent-pro/AdventPro-SemiBold.woff2') format('woff2'),
+			url('../assets/fonts/advent-pro/AdventPro-SemiBold.woff') format('woff'),
+			url('../assets/fonts/advent-pro/AdventPro-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Advent Pro';
+	src: url('../assets/fonts/advent-pro/AdventPro-Medium.woff2') format('woff2'),
+			url('../assets/fonts/advent-pro/AdventPro-Medium.woff') format('woff'),
+			url('../assets/fonts/advent-pro/AdventPro-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+

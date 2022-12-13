@@ -1,9 +1,11 @@
 import { Pagination, SwiperOptions } from 'swiper'
+
 import styles from './partners.module.scss'
 
 export const params: SwiperOptions = {
 	loop: true,
-	slidesPerView: 3,
+	cssMode: true,
+	slidesPerView: 2,
 	spaceBetween: 25,
 	modules: [Pagination],
 	pagination: {
@@ -12,4 +14,9 @@ export const params: SwiperOptions = {
 		bulletClass: `${styles.bullet}`,
 		bulletActiveClass: `${styles.active}`
 	},
+	breakpoints: {
+		768: {
+			slidesPerView: 3,
+		}
+	}
 }

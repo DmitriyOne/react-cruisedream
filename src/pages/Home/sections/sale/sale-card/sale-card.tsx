@@ -40,7 +40,11 @@ export const SaleCard = () => {
 							<p className={styles.cardDescription}>
 								{item.description}
 							</p>
-							{isSale && <Discount percentage={item.discountPercentage} />}
+							{isSale &&
+								<Discount
+									percentage={item.discountPercentage}
+									className={styles.discount}
+								/>}
 						</Link>
 					</SwiperSlide>
 				)

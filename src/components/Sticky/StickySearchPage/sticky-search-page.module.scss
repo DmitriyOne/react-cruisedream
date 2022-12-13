@@ -1,0 +1,156 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+@use '../../../styles/z-index.scss';
+@use '../../../styles/family.scss';
+
+.component {}
+
+.container {
+	transition: all 0.5s;
+	padding: 22px 20px;
+	background-color: colors.$white;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+.fixed {
+	position: fixed;
+	top: -100%;
+	left: 0;
+	z-index: z-index.$idx-header;
+
+	&.show {
+		top: 0;
+	}
+
+	& .form {
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			@include mixins.fluidMaxSize(960);
+		}
+	}
+
+	& .button {
+		background-color: colors.$transparent;
+		border: 1px solid #004275;
+		color: #004275;
+	}
+}
+
+.logo {
+	display: none;
+	margin-right: 40px;
+
+	@include mixins.media-w(1900) {
+		@include mixins.fluidMaxSize(200);
+		margin-right: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(180);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none
+	}
+
+	&.show {
+		display: block;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			display: none
+		}
+	}
+}
+
+.button {
+	display: none;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$btn-text;
+	padding: 10px 17px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: colors.$btn-border;
+	background-color: colors.$transparent;
+	margin-left: 15px;
+	white-space: nowrap;
+
+	&.show {
+		display: block;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			display: none
+		}
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			border-color: colors.$transparent;
+			color: colors.$white;
+		}
+	}
+}
+
+.phoneWrapper {
+	margin-left: 20px;
+	display: flex;
+	justify-content: flex-end;
+
+	@include mixins.media-w(1900) {
+		margin-left: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
+}
+
+.phone {
+	display: none;
+	font-size: 37px;
+	line-height: 120%;
+	letter-spacing: 0.01em;
+	color: #004275;
+	transition: all .4s;
+
+	@include mixins.media-w(1900) {
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(1660) {
+		margin-left: 20px;
+		font-size: 0;
+		line-height: 0;
+		letter-spacing: 0;
+		@include mixins.square-size(25);
+		min-width: 25px;
+		@include mixins.bg-cover;
+		background-image: url('./icons/phone.svg');
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none
+	}
+
+	&.show {
+		display: block;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			display: none
+		}
+	}
+}

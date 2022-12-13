@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+
+import { HeaderContext } from '../../../../../context'
 import { Button } from '../../../../Button'
 
 import searchIcon from '../icons/search.svg'
@@ -5,9 +8,11 @@ import searchIcon from '../icons/search.svg'
 import styles from './contact-top.module.scss'
 
 export const ContactTop = () => {
+	const { onToggleSearch } = useContext(HeaderContext)
+
 	return (
 		<div className={styles.row}>
-			<Button className={styles.topSearch}>
+			<Button className={styles.topSearch} onClick={onToggleSearch}>
 				<img
 					src={searchIcon}
 					alt="Whatsapp icon"

@@ -2,6 +2,7 @@ import { SwiperOptions } from 'swiper'
 
 export const params: SwiperOptions = {
 	slidesPerView: 1,
+	cssMode: true,
 	spaceBetween: 20,
 	breakpoints: {
 		1280: {

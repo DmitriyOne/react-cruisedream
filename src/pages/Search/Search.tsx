@@ -1,12 +1,21 @@
-import { Form } from './sections'
+import { useContext } from 'react'
 
-import { SelectedFilters } from './sections/form/selected-filters/selectedFilters'
+import { Banner, Filters } from '../../components'
+import { StickySearchPage } from '../../components/Sticky'
+
+import { SearchFiltersContext } from '../../context'
+
+import {  Main } from './sections'
 
 export const SearchPage = () => {
+	const { isSelected } = useContext(SearchFiltersContext)
+
 	return (
 		<>
-			<Form />
-			<SelectedFilters />
+			<Filters />
+			{isSelected && <StickySearchPage />}
+			<Main />
+			<Banner />
 		</>
 	)
 }

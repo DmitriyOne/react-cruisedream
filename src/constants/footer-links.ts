@@ -29,6 +29,14 @@ const ShipsAccordion = [
 	{ href: CRUISE_ROUTES.HOME, text: 'Корабли 5', },
 ]
 
+const BlogAccordion = [
+	{ href: CRUISE_ROUTES.HOME, text: 'Блог 2', },
+	{ href: CRUISE_ROUTES.HOME, text: 'Блог 3', },
+	{ href: CRUISE_ROUTES.HOME, text: 'Блог 4', },
+	{ href: CRUISE_ROUTES.HOME, text: 'Блог 5', },
+]
+
+
 export const FooterLinks = [
 	{
 		title: 'Главная',
@@ -45,5 +53,9 @@ export const FooterLinks = [
 	{
 		title: 'Корабли',
 		items: ShipsAccordion
+	},
+	{
+		title: 'Блог',
+		items: BlogAccordion
 	},
 ]

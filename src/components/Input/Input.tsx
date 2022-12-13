@@ -3,14 +3,15 @@ import {
 	ChangeEvent,
 	DetailedHTMLProps,
 	FC,
-	InputHTMLAttributes
+	InputHTMLAttributes,
+	ReactNode
 } from 'react'
 
 import { ELabelPosition } from '../../model/enums'
 
 import styles from './input.module.scss'
 
-interface IProps
+export interface IInput
 	extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
 	componentClassName?: string
 	type?: InputHTMLAttributes<HTMLInputElement>['type']
@@ -23,9 +24,10 @@ interface IProps
 	labelText?: string
 	labelPosition?: keyof typeof ELabelPosition
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+	children?: ReactNode
 }
 
-export const Input: FC<IProps> = ({
+export const Input: FC<IInput> = ({
 	componentClassName,
 	type = 'text',
 	name,
@@ -37,6 +39,7 @@ export const Input: FC<IProps> = ({
 	labelText,
 	labelPosition,
 	onChange,
+	children,
 	...props
 }) => {
 
@@ -45,9 +48,8 @@ export const Input: FC<IProps> = ({
 		[styles.labelRight]: labelPosition === 'right',
 		[styles.labelTop]: labelPosition === 'top',
 	})
-	const inputClass = classNames(styles.input, inputClassName, {
-		[styles.checkbox]: type === 'checkbox',
-	})
+	const inputClass = classNames(styles.input, inputClassName)
+
 	return (
 		<div className={componentClass}
 		>
@@ -65,6 +67,7 @@ export const Input: FC<IProps> = ({
 			<label htmlFor={name} className={classNames(styles.label, labelClassName)}>
 				{labelText}
 			</label>
+			{children}
 		</div>
 	)
 }
