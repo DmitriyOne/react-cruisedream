@@ -1,0 +1,37 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
+
+.component {
+	display: flex;
+	align-items: center;
+}
+
+.item {
+	display: inline-block;
+
+	&::after {
+		content: "/";
+		display: inline-block;
+		margin: 0 4px;
+		font-size: 15px;
+		line-height: 120%;
+		color: rgba(79, 78, 78, 0.6);
+	}
+
+	&:last-child::after {
+		display: none;
+	}
+}
+
+.link {
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.6);
+}
+
+.current {
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.6);
+}

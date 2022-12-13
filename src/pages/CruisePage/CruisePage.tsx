@@ -1,5 +1,5 @@
 import { useWindowSize } from '../../hooks'
-import { CruiseHeader } from './sections'
+import { Header, Overview } from './sections'
 
 export const CruisePage = () => {
 	const { isMobile } = useWindowSize()
@@ -7,7 +7,8 @@ export const CruisePage = () => {
 	const isShow = !isMobile
 	return (
 		<>
-			{isShow && <CruiseHeader />}
+			{isShow && <Header />}
+			<Overview />
 		</>
 	)
 }

@@ -27,8 +27,9 @@ export const Container = forwardRef(({
 ) => {
 	const componentClassName = classNames(className, {
 		[styles.full]: width === 'full',
-		[styles.container]: width === 'container',
 		[styles.containerXL]: width === 'containerXl',
+		[styles.container]: width === 'container',
+		[styles.containerS]: width === 'containerS',
 		[styles.row]: direction === 'row',
 		[styles.column]: direction === 'column',
 		[styles.alignStart]: align === 'start',

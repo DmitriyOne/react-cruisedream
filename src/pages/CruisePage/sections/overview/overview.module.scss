@@ -1,0 +1,19 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding: 20px 20px 30px;
+}
+
+.header {
+	width: 100%;
+	padding-bottom: 4px;
+	@include mixins.flex-spb;
+}
+
+.numberCruise {
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.6);
+	margin-left: 40px;
+}

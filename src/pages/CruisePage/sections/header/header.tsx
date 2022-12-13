@@ -3,7 +3,7 @@ import { CruiseNavbar } from '../../../../components/Cruise'
 
 import styles from './header.module.scss'
 
-export const CruiseHeader = () => {
+export const Header = () => {
 	return (
 		<Container width="full" className={styles.component}>
 			<CruiseNavbar />

@@ -6,13 +6,18 @@
 	max-width: 100%
 }
 
+.containerXL {
+	@include mixins.fluidMaxSize(1680);
+	margin: 0 auto;
+}
+
 .container {
 	@include mixins.fluidMaxSize(1500);
 	margin: 0 auto;
 }
 
-.containerXL {
-	@include mixins.fluidMaxSize(1680);
+.containerS {
+	@include mixins.fluidMaxSize(1370);
 	margin: 0 auto;
 }
 

@@ -8,9 +8,9 @@ import { DataOtherDates1} from './cruise/data-other-dates'
 import { RouteBreadcrumbsCruise1, RouteBreadcrumbsCruise2, RouteBreadcrumbsCruise3 } from './cruise/data-route'
 import { SliderImageCruise1, SliderImageCruise2 } from './cruise/data-slider-images'
 
-export const DataCruise: ICruise[] = [
+export const DataAllCruise: ICruise[] = [
 	{
-		id: '1',
+		id: '4764326',
 		days: 8,
 		datepicker: '01.03.23 - 08.03.23',
 		otherDates: DataOtherDates1,

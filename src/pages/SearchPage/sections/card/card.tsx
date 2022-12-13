@@ -1,4 +1,4 @@
-import { DataCruise } from '../../../../fakedata'
+import { DataAllCruise } from '../../../../fakedata'
 
 import { CardBody } from './card-body/card-body'
 import { CardPrice } from './card-price/card-price'
@@ -10,7 +10,7 @@ export const Card = () => {
 
 	return (
 		<>
-			{DataCruise.map(cruise =>
+			{DataAllCruise.map(cruise =>
 				<div key={cruise.id} className={styles.component}>
 					<CardSlider
 						days={cruise.days}

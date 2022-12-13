@@ -21,6 +21,7 @@ export enum EJustify {
 
 export enum ESize {
 	full = 'full',
+	containerXl = 'container-xl',
 	container = 'container',
-	containerXl = 'container-xl'
+	containerS = 'container-s'
 }
