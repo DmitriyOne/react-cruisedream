@@ -2,6 +2,7 @@
 @use './family.scss';
 @use './colors.scss';
 @use './breakpoints.scss';
+@use './z-index.scss';
 
 @keyframes scaleIn {
 	0% {
@@ -114,7 +115,7 @@
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
 		animation: scaleIn 0.35s ease-in-out;
-		z-index: 10 !important;
+		z-index: z-index.$idx-select-menu !important;
 	}
 
 	&__option {
@@ -233,6 +234,7 @@
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
 		animation: scaleIn 0.35s ease-in-out;
+		z-index: z-index.$idx-select-menu !important;
 	}
 
 	&__option {
@@ -366,6 +368,7 @@
 		background-color: #fff !important;
 		color: rgba(white, 0.6) !important;
 		animation: scaleIn 0.35s ease-in-out;
+		z-index: z-index.$idx-select-menu !important;
 	}
 
 	&__option {
