@@ -1,9 +1,11 @@
 import { FC } from 'react'
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 
 import { useWindowSize } from '../../../hooks'
+import { CRUISE_ROUTES } from '../../../constants'
 
-import { B, Button, Discount } from '../../../components'
+import { B, Discount } from '../../../components'
 
 import styles from './cruise-price.module.scss'
 
@@ -42,9 +44,9 @@ export const CruisePrice:FC<IProps> = ({priceFrom, isSale, sale}) => {
 					за человека
 				</B>
 			}
-			<Button className={styles.button}>
+			<Link to={CRUISE_ROUTES.CRUISE} className={styles.button}>
 				ВЫБРАТЬ
-			</Button>
+			</Link>
 		</>
 	)
 }
