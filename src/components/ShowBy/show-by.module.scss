@@ -1,0 +1,19 @@
+.component {
+	display: flex;
+	align-items: center;
+}
+
+.text {
+	font-size: 14px;
+	line-height: 120%;
+	color: #004275;
+	margin-right: 8px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		font-weight: 700;
+	}
+}

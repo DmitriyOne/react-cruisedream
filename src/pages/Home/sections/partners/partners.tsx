@@ -1,15 +1,19 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
+import classNames from 'classnames'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
+
 import { PartnersData } from '../data/partners-data'
 
+import { useSwiperButtons } from '../../../../hooks'
 import { Button, Container, Heading } from '../../../../components'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import styles from './partners.module.scss'
-
 export const Partners = () => {
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+
 	return (
 		<Container width="full" className={styles.component}>
 			<div className={styles.container}>
@@ -21,6 +25,7 @@ export const Partners = () => {
 				</span>
 				<Swiper
 					className={styles.swiper}
+					onSwiper={upDateSwiper}
 					{...params}
 				>
 					{PartnersData.map(item =>
@@ -42,6 +47,14 @@ export const Partners = () => {
 					<div className={styles.pagination} />
 				</Swiper>
 			</div>
+			<Button
+				className={classNames(styles.swiperArrow, styles.prev)}
+				onClick={handlerPrev}
+			/>
+			<Button
+				className={classNames(styles.swiperArrow, styles.next)}
+				onClick={handlerNext}
+			/>
 		</Container>
 	)
 }

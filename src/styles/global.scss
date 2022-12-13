@@ -67,6 +67,8 @@ input::-webkit-inner-spin-button,
 input[type="number"] {
   appearance: none;
   appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
 
 main {
@@ -78,4 +80,8 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.tippy-content {
+	padding: 0;
 }

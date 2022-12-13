@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
-import { CRUISE_ROUTES } from '../../../../constants'
+import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
 
@@ -21,11 +21,6 @@ export const Search = () => {
 		const [start, end] = dates
 		setStartDate(start)
 		setEndDate(end)
-		// localStorage.setItem('start', start!.toDateString())
-		// if (end === null) {
-		// 	return
-		// }
-		// localStorage.setItem('end', end!.toDateString())
 	}
 
 	const handlerClick = (e: FormEvent) => {
@@ -57,15 +52,21 @@ export const Search = () => {
 				<form className={styles.form}>
 					<MySelect
 						options={optionRegionHome}
+						defaultSelect={optionRegionHome}
 						placeholder="Регион круиза"
 						className={styles.col}
 						classNamePrefix="select-transparent"
+						closeMenuOnSelect={false}
+						allowSelectAll={true}
 					/>
 					<MySelect
 						options={optionCompanyHome}
+						defaultSelect={optionCompanyHome}
 						placeholder="Круизная компания"
 						className={styles.col}
 						classNamePrefix="select-transparent"
+						closeMenuOnSelect={false}
+						allowSelectAll={true}
 					/>
 					<MyDatepicker
 						componentClassName={styles.col}
@@ -83,6 +84,17 @@ export const Search = () => {
 						НАЙТИ КРУИЗ
 					</Button>
 				</form>
+				<div>
+					<a
+						href={`tel:${CRUISE_SOCIAL_LINKS.phone}>`}
+						className={classNames(
+							styles.phone,
+							isFixed ? styles.show : undefined
+						)}
+					>
+						+7 499 653 89 91
+					</a>
+				</div>
 			</Container>
 		</Container >
 	)

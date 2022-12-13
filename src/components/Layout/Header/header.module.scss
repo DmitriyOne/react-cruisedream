@@ -4,6 +4,10 @@
 @use '../../../styles/colors.scss';
 
 .component {
+	position: relative;
+}
+
+.column {
 	width: 100%;
 	display: flex;
 	flex-direction: column-reverse;

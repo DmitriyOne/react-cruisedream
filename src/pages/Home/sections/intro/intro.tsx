@@ -57,12 +57,12 @@ export const Intro = () => {
 					</SwiperSlide>
 				)}
 				<Button
-					className={classNames(styles.swiperArrow, styles.prev)}
 					ref={navPrevButton}
+					className={classNames(styles.swiperArrow, styles.prev)}
 				/>
 				<Button
-					className={classNames(styles.swiperArrow, styles.next)}
 					ref={navNextButton}
+					className={classNames(styles.swiperArrow, styles.next)}
 				/>
 			</Swiper>
 		</Container>

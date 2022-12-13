@@ -18,10 +18,8 @@ export const Footer = () => {
 				width="containerXl"
 				direction={direction}
 			>
-				<div className={styles.wrapper}>
-					{isDesktop && <FooterLogo />}
-					<FooterMenu />
-				</div>
+				{isDesktop && <FooterLogo />}
+				<FooterMenu />
 				<FooterFeedback />
 				{isTablet && <FooterSocials />}
 			</Container>
