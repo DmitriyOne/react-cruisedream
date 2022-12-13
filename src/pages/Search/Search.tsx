@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { Filters } from '../../components'
+import { Banner, Filters } from '../../components'
 import { StickySearchPage } from '../../components/Sticky'
 
 import { SearchFiltersContext } from '../../context'
@@ -15,6 +15,7 @@ export const SearchPage = () => {
 			<Filters />
 			{isSelected && <StickySearchPage />}
 			<Main />
+			<Banner />
 		</>
 	)
 }

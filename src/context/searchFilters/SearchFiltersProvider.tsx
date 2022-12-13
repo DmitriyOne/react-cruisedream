@@ -28,7 +28,6 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 
 	const onChangeRegion = (value: any) => {
 		setRegion(value)
-		console.log(region)
 	}
 
 	const onChangeCruise = (value: any) => {

@@ -28,10 +28,6 @@ export const FiltersSelected = () => {
 		date
 	} = useContext(SearchFiltersContext)
 
-	console.log(region)
-	console.log(typeCruise)
-
-
 	const handlerRemoveRegion = (e: FormEvent) => {
 		e.preventDefault()
 		onChangeRegion('')

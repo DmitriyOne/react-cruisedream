@@ -3,11 +3,11 @@ import { IIncludedIcon } from './IIncludedIcon'
 
 export interface ICruise {
 	id: string
+	label: string
 	days: number
 	datepicker: string
 	otherDates?: string[]
 	icons: IIncludedIcon[]
-	label: string
 	logo: string
 	cruiseName: string
 	priceFrom: string

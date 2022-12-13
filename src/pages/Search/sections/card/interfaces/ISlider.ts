@@ -4,4 +4,6 @@ export interface ISlider {
 	images: string[]
 	isTimer: boolean
 	deadline?: string
+	isSale: boolean
+	sale?: number
 }

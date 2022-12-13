@@ -1,4 +1,5 @@
-import { Intro, Search, Banner, About, Advantages, Partners, Regions, Sale } from './sections'
+import { Banner } from '../../components'
+import { Intro, Search, About, Advantages, Partners, Regions, Sale } from './sections'
 
 export const HomePage = () => {
 
@@ -7,8 +8,8 @@ export const HomePage = () => {
 			<Intro />
 			<Search />
 			<Sale />
-			<Banner />
 			<Regions />
+			<Banner />
 			<Partners />
 			<About />
 			<Advantages />

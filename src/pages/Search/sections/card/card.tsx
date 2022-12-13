@@ -18,6 +18,8 @@ export const Card = () => {
 						images={cruise.sliderImages}
 						isTimer={cruise.isTimer}
 						deadline={cruise.deadline}
+						isSale={cruise.isSale}
+						sale={cruise.sale}
 					/>
 					<div className={styles.wrapper}>
 						<CardBody

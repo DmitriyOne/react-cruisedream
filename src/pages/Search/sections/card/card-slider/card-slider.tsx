@@ -8,9 +8,10 @@ import { CruiseAmountDays, CruiseTimer, CruiseLabel, CruiseSlider } from '../../
 
 import styles from './card-slider.module.scss'
 
-export const CardSlider: FC<ISlider> = ({ days, label, images, isTimer, deadline }) => {
+export const CardSlider: FC<ISlider> = ({ days, label, images, isTimer, deadline, isSale, sale }) => {
 	const { isMobile } = useWindowSize()
 
+	const isShowDiscount = isMobile && isSale
 	return (
 		<div className={styles.component}>
 			{isMobile ? <CruiseAmountDays days={days} /> : <CruiseLabel label={label} />}
@@ -19,9 +20,9 @@ export const CardSlider: FC<ISlider> = ({ days, label, images, isTimer, deadline
 
 			{isTimer && <CruiseTimer deadline={deadline!} />}
 
-			{isMobile
+			{isShowDiscount
 				&& <Discount
-					percentage={25}
+					percentage={sale}
 					className={styles.discount}
 					classNameText={styles.discountText}
 					classNamePercentage={styles.discountPercentage}
