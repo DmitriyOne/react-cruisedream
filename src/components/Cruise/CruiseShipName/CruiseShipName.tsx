@@ -10,16 +10,18 @@ interface IProps {
 	ship: string
 	isIcon?: boolean
 	classNameText?: string
+	classComponent?: string
 }
 
 export const CruiseShipName: FC<IProps> = ({
 	ship,
 	isIcon = true,
-	classNameText
+	classNameText,
+	classComponent
 }) => {
 
 	return (
-		<div className={styles.component}>
+		<div className={classNames(classComponent, styles.component)}>
 			{isIcon &&
 				<span className={styles.icon}>
 					<img

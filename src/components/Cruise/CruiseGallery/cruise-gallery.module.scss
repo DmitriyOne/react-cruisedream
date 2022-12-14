@@ -9,24 +9,97 @@
 .galley {
 	display: flex;
 	height: 600px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		height: 550px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 400px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 300px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		height: 250px;
+	}
+}
+
+.discount {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: block;
+	}
+	
+	@include mixins.media-w(breakpoints.$tablet) {
+		right: 0;
+	}
+}
+
+.discountText {
+	font-size: 34px !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 24px !important;
+	}
+}
+
+.discountPercentage {
+	font-size: 20px !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px !important;
+	}
 }
 
 .left {
 	width: 68%;
 	height: 100%;
 	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 75%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-right: 0;
+	}
 }
 
 .right {
 	width: 32%;
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: 10px;
 	height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 25%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: none;
+	}
 
 	& .imgWrapper {
 		width: 100%;
-		max-height: 295px;
+		height: 49%;
+	}
+}
+
+.right .imgWrapper {
+
+	&:first-child {
+		margin-bottom: 5px;
+	}
+	&:last-child {
+		margin-top: 5px;
 	}
 }
 

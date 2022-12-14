@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -7,12 +8,13 @@ import styles from './breadcrumbs.module.scss'
 
 interface IProps {
 	currentPage: string
+	classComponent?: string
 }
 
-export const Breadcrumb: FC<IProps> = ({ currentPage }) => {
+export const Breadcrumb: FC<IProps> = ({ currentPage, classComponent }) => {
 
 	return (
-		<ul className={styles.component}>
+		<ul className={classNames(classComponent, styles.component)}>
 			<li className={styles.item}>
 				<Link
 					to={CRUISE_ROUTES.HOME}

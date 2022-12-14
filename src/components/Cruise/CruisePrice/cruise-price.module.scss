@@ -86,10 +86,6 @@
 .flex {
 	display: flex;
 	align-items: stretch;
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		flex-direction: column;
-	}
 }
 
 .button {

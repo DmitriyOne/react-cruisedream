@@ -45,7 +45,7 @@ export const CardBody: FC<IBody> = ({
 			</div>
 
 			<div className={styles.body}>
-				<CruiseShipName ship={shipName} />
+				<CruiseShipName classComponent={styles.shipWrapper} ship={shipName} />
 				<CruiseRoute routes={routes} id={id} />
 			</div>
 

@@ -45,6 +45,8 @@ interface IProps {
 	priceClass?: string
 	priceSpanClass?: string
 
+	discountClass?: string
+
 	textClass?: string
 
 	onClickСhoose?: () => void
@@ -67,6 +69,7 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 	modalButtonTextColor = 'blue',
 	priceClass,
 	priceSpanClass,
+	discountClass,
 	textClass,
 	onClickСhoose,
 	onShowModal,
@@ -120,7 +123,7 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 				{isShowDiscount &&
 					<Discount
 						percentage={sale}
-						className={styles.discount}
+						className={classNames(discountClass, styles.discount)}
 						classNameText={styles.discountText}
 						classNamePercentage={styles.discountPercentage}
 					/>

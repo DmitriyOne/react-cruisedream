@@ -1,27 +1,54 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
-import { B, Breadcrumb, Container, Heading } from '../../../../components'
-import { CruiseAmountDays, CruiseDates, CruiseGallery, CruiseIncludedIcon, CruiseLogo, CruiseShipName, CruisePrice } from '../../../../components/Cruise'
 import { DataSingleCruise } from '../../../../fakedata/data-single-cruise'
+import { useWindowSize } from '../../../../hooks'
+
+import { B, Breadcrumb, Container, Heading } from '../../../../components'
+import {
+	CruiseAmountDays,
+	CruiseDates,
+	CruiseGallery,
+	CruiseIncludedIcon,
+	CruiseLogo,
+	CruiseShipName,
+	CruisePrice,
+	CruiseRoute
+} from '../../../../components/Cruise'
 
 import styles from './overview.module.scss'
 
 export const Overview = () => {
 	const [cruise, setCruise] = useState(DataSingleCruise)
+	const { isMobile } = useWindowSize()
 
+
+	const isShowOnDesktop = !isMobile
+	const isShowOnMobile = isMobile
+	const isShowIcon = isMobile
 	return (
 		<Container width="full" className={styles.component}>
 			<Container width="containerS" direction="column" align="start">
 
 				<div className={styles.header}>
-					<Breadcrumb currentPage={cruise.cruiseName} />
+					<Breadcrumb classComponent={styles.breadcrumb} currentPage={cruise.cruiseName} />
 					<div className={styles.numberCruise}>
 						Номер круиза {cruise.id}
 					</div>
 				</div>
 
-				<CruiseGallery label={cruise.label} />
+				<CruiseGallery
+					label={cruise.label}
+					sale={cruise.sale}
+					days={cruise.days}
+				/>
+
+				{isShowOnMobile &&
+					<CruiseLogo
+						className={styles.logo}
+						logo={cruise.logo}
+					/>
+				}
 
 				<div
 					className={classNames(
@@ -29,17 +56,19 @@ export const Overview = () => {
 					)}
 				>
 					<div className={styles.colLeft}>
-						<Heading as="h1">
-							<B fontWeight={600} className={styles.title}>
+						<Heading as="h1" className={styles.title}>
+							<B fontWeight={600} >
 								{cruise.cruiseName}
 							</B>
 						</Heading>
 					</div>
-					<div className={styles.colRight}>
-						<CruiseAmountDays
-							className={styles.daysWrapper}
-							days={cruise.days}
-						/>
+					<div className={classNames(styles.colRight, styles.laptopReverse)}>
+						{isShowOnDesktop &&
+							<CruiseAmountDays
+								className={styles.daysWrapper}
+								days={cruise.days}
+							/>
+						}
 						<CruiseDates
 							classNameText={styles.datesText}
 							classNameArrow={styles.datesArrow}
@@ -50,15 +79,24 @@ export const Overview = () => {
 				</div>
 
 				<div className={styles.row}>
-					<div className={styles.colLeft}>
-						<CruiseLogo logo={cruise.logo} />
+					<div className={classNames(styles.colLeft, styles.laptopFull)}>
+						{isShowOnDesktop &&
+							<CruiseLogo
+								className={styles.logo}
+								logo={cruise.logo}
+							/>
+						}
 						<CruiseShipName
 							classNameText={styles.shipName}
 							ship={cruise.shipName}
-							isIcon={false}
+							isIcon={isShowIcon}
 						/>
 					</div>
 				</div>
+
+				{isShowOnMobile &&
+					<CruiseRoute routes={cruise.cruiseRoute} />
+				}
 
 				<div
 					className={classNames(
@@ -66,20 +104,24 @@ export const Overview = () => {
 					)}
 				>
 					<div className={styles.colLeft}>
-						<CruiseIncludedIcon
-							classNameItem={styles.includedItem}
-							classNameIcon={styles.includedIcon}
-							icons={cruise.icons}
-						/>
+						{isShowOnDesktop &&
+							<CruiseIncludedIcon
+								classNameItem={styles.includedItem}
+								classNameIcon={styles.includedIcon}
+								icons={cruise.icons}
+							/>
+						}
 					</div>
 					<div className={classNames(styles.colRight, styles.column)}>
 						<CruisePrice
+							buttonsRowClass={styles.rowButtons}
 							buttonClass={styles.button}
 							priceClass={styles.price}
 							priceSpanClass={styles.priceSpan}
 							textClass={styles.priceBottomText}
 							modalButtonClass={styles.priceModalBtn}
-							priceFrom={cruise.priceFrom}
+							discountClass={styles.discount}
+							priceFrom={'150 000'}
 							isSale={cruise.isSale}
 							sale={cruise.sale}
 							isCruisePage
