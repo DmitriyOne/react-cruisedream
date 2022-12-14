@@ -102,4 +102,8 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		padding: 8px 10px;
 	}
+
+	&::before {
+		display: none;
+	}
 }

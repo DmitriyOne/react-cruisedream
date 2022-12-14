@@ -103,6 +103,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 13px;
+		border-width: 1px;
 	}
 }
 

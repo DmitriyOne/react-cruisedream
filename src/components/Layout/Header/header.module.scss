@@ -26,7 +26,7 @@
 
 .headerRow {
 	background-color: colors.$white;
-	padding: 10px 0px;
+	padding: 18px 0px;
 	transition: all .5s;
 
 	@include mixins.media-w(breakpoints.$laptop){

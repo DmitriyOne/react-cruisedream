@@ -87,6 +87,7 @@ export const Overview = () => {
 							/>
 						}
 						<CruiseShipName
+							classComponent={styles.shipWrapper}
 							classNameText={styles.shipName}
 							ship={cruise.shipName}
 							isIcon={isShowIcon}
@@ -95,7 +96,10 @@ export const Overview = () => {
 				</div>
 
 				{isShowOnMobile &&
-					<CruiseRoute routes={cruise.cruiseRoute} />
+					<CruiseRoute
+						classComponent={styles.routeWrapper}
+						routes={cruise.cruiseRoute}
+					/>
 				}
 
 				<div

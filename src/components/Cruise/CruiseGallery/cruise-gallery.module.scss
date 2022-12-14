@@ -19,10 +19,6 @@
 	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		height: 300px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet-s) {
 		height: 250px;
 	}
 }

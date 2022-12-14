@@ -5,10 +5,19 @@
 .component {
 	display: flex;
 	align-items: center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-wrap: wrap;
+	}
 }
 
 .item {
 	display: inline-block;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		line-height: 90%;
+	}
 
 	&::after {
 		content: "/";
@@ -17,6 +26,10 @@
 		font-size: 15px;
 		line-height: 120%;
 		color: rgba(79, 78, 78, 0.6);
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 12px;
+		}
 	}
 
 	&:last-child::after {
@@ -28,10 +41,19 @@
 	font-size: 15px;
 	line-height: 110%;
 	color: rgba(79, 78, 78, 0.6);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		line-height: 90%;
+	}
 }
 
 .current {
 	font-size: 15px;
 	line-height: 110%;
 	color: rgba(79, 78, 78, 0.6);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
 }

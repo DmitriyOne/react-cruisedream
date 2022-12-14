@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import classNames from 'classnames'
 
 import { ICruiseRoute } from '../../../model/interfaces'
 
@@ -10,17 +11,18 @@ import { MyTooltip } from '../../MyTooltip'
 interface IProps {
 	id?: string
 	routes: ICruiseRoute[]
+	classComponent?: string
 }
 
-export const CruiseRoute: FC<IProps> = ({ routes, id }) => {
-	const [idTooltip, setIdTooltip] = useState('sdfd')
+export const CruiseRoute: FC<IProps> = ({ routes, id, classComponent }) => {
+	const [idTooltip, setIdTooltip] = useState('')
 
 	useEffect(() => {
 		setIdTooltip('my-route-tooltip-' + id)
 	}, [id])
 
 	return (
-		<div className={styles.component}>
+		<div className={classNames(classComponent, styles.component)}>
 			<span className={styles.icon}>
 				<img
 					src={markerIcon}
