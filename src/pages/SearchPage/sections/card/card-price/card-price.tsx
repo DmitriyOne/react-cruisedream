@@ -15,6 +15,8 @@ export const CardPrice: FC<IPrice> = ({ logo, priceFrom, isSale, sale }) => {
 			}
 			<div className={styles.bottom}>
 				<CruisePrice
+					buttonsRowClass={styles.rowButton}
+					buttonClass={styles.button}
 					priceFrom={priceFrom}
 					isSale={isSale}
 					sale={sale}

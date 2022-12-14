@@ -63,3 +63,20 @@
 		margin-top: 0;
 	}
 }
+
+.rowButton {
+	margin-top: 12px;
+}
+
+.button {
+	padding: 14px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 16px;
+	}
+}
+

@@ -55,7 +55,8 @@
 	}
 
 	img {
-		width: auto;
+		// width: auto;
+		width: 50%;
 
 		@include mixins.media-w(breakpoints.$laptop-l) {
 			width: 55%;

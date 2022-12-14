@@ -7,15 +7,24 @@ import calendarIcon from './icons/calendar.svg'
 import arrowIcon from './icons/arrow-down.svg'
 
 import styles from './cruise-dates.module.scss'
+import classNames from 'classnames'
 
 interface IProps {
 	id?: string
 	datepicker: string
 	otherDates?: string[]
 	cruiseName?: string
+	classNameText?: string
+	classNameArrow?: string
 }
 
-export const CruiseDates: FC<IProps> = ({ datepicker, otherDates, id }) => {
+export const CruiseDates: FC<IProps> = ({
+	datepicker,
+	otherDates,
+	id,
+	classNameText,
+	classNameArrow
+}) => {
 	const { isMobile } = useWindowSize()
 	const [idTooltip, setIdTooltip] = useState('')
 
@@ -34,11 +43,11 @@ export const CruiseDates: FC<IProps> = ({ datepicker, otherDates, id }) => {
 				</span>
 			}
 			<MyTooltip isDates otherDates={otherDates}>
-				<span className={styles.text}>
+				<span className={classNames(classNameText, styles.text)}>
 					{datepicker}
 				</span>
 			</MyTooltip>
-			<span className={styles.arrow}>
+			<span className={classNames(classNameArrow, styles.arrow)}>
 				<img
 					src={arrowIcon}
 					alt="Arrow Icon"

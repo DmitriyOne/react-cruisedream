@@ -17,22 +17,23 @@ export const CruiseGallery: FC<IProps> = ({ label }) => {
 	return (
 		<div className={styles.component}>
 			<div className={styles.galley}>
-				<div className={styles.imgWrapper}>
+				<div className={classNames(styles.left, styles.imgWrapper)}>
 					<img src={img1Src} alt="Ship" />
 					<CruiseLabel label={label} />
 				</div>
 
-				<div className={styles.imgWrapper}>
-					<img src={img2Src} alt="Ship" />
+				<div className={styles.right}>
+					<div className={styles.imgWrapper}>
+						<img src={img2Src} alt="Ship" />
+					</div>
+					<div className={styles.imgWrapper}>
+						<img src={img3Src} alt="Ship" />
+						<Button className={styles.button}>
+							ВСЕ ФОТО
+						</Button>
+					</div>
 				</div>
-
-				<div className={styles.imgWrapper}>
-					<img src={img3Src} alt="Ship" />
-
-					<Button className={styles.button}>
-						ВСЕ ФОТО
-					</Button>
-				</div>
+				
 			</div>
 		</div>
 	)

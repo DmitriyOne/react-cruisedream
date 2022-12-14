@@ -16,7 +16,7 @@ export const DataSingleCruise: ICruise = {
 	label: 'Cruisedream',
 	logo: logo1Src,
 	cruiseName: 'Жемчужины Персидского залива',
-	priceFrom: '1 590 $',
+	priceFrom: '1 590',
 	cruiseRoute: RouteBreadcrumbsCruise1,
 	shipName: 'Celebrity Flora',
 	sliderImages: SliderImageCruise1,

@@ -5,6 +5,41 @@
 	padding: 20px 20px 30px;
 }
 
+.row {
+	display: flex;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.pt0 {
+	padding-top: 0;
+}
+
+.alignTop {
+	align-items: flex-start;
+}
+
+.alignBottom {
+	align-items: flex-end;
+}
+
+.colLeft {
+	width: 68%;
+	padding-right: 10px;
+	@include mixins.flex-spb;
+}
+
+.colRight {
+	width: 32%;
+	display: flex;
+	align-items: center;
+}
+
+.column {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
 .header {
 	width: 100%;
 	padding-bottom: 4px;
@@ -16,4 +51,103 @@
 	line-height: 110%;
 	color: rgba(79, 78, 78, 0.6);
 	margin-left: 40px;
+}
+
+.title {
+	font-size: 27px;
+	line-height: 110%;
+	color: #004275;
+}
+
+.daysWrapper {
+	min-width: 105px;
+	min-height: 95px;
+	margin-right: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		min-width: 80px;
+		min-height: 75px;
+		margin-right: 10px;
+	}
+}
+
+.datesText {
+	font-size: 32px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 21px;
+	}
+}
+
+.datesArrow {
+	width: 22px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 18px;
+	}
+}
+
+.shipName {
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.includedItem {
+	width: 60px;
+}
+
+.includedIcon {
+	@include mixins.square-size(60);
+}
+
+.rowButtons {
+
+}
+
+.button {
+	padding: 18px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	&:first-child {
+		margin-right: 5px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			margin-right: 0;
+		}
+	}
+	&:last-child {
+		margin-left: 5px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			margin-left: 0;
+		}
+	}
+}
+
+.price {
+	font-size: 61px;
+	line-height: 90%;
+	color: #FDBB11;
+}
+
+.priceSpan {
+	font-size: 36px;
+}
+
+.priceBottomText {
+	padding-bottom: 6px;
+	color: rgba(79, 78, 78, 0.8);
+}
+
+.priceModalBtn {
+	border-radius: 3px;
 }

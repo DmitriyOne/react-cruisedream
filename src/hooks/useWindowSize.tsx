@@ -7,7 +7,7 @@ interface IWindowSize {
 
 export const useWindowSize = () => {
 	const [windowSize, setWindowSize] = useState<IWindowSize>({
-		width: undefined,
+		width: 768,
 		height: undefined,
 	})
 
@@ -26,7 +26,7 @@ export const useWindowSize = () => {
 	}, [])
 
 	const isMobile = windowSize.width ? windowSize.width <= 768 : undefined
-	const isTablet = windowSize.width ? windowSize.width <= 1024 : undefined
+	const isTablet = windowSize.width ? windowSize.width < 1024 : undefined
 	const isDesktop = windowSize.width ? windowSize.width > 1024 : undefined
 
 	return { ...windowSize, isMobile, isDesktop, isTablet }
