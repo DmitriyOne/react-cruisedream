@@ -29,7 +29,7 @@ export const CruisePage = () => {
 				otherDates={cruise.otherDates}
 				shipName={cruise.ship.name}
 				cruiseRoute={cruise.cruiseRoute}
-				icons={cruise.icons}
+				icons={cruise.options.icons}
 				isSale={cruise.isSale}
 				sale={cruise.sale}
 			/>

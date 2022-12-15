@@ -1,6 +1,29 @@
-import { ICruiseRoute } from './ICruiseRoute'
-import { IIncludedIcon } from './IIncludedIcon'
 import { IShip } from './IShip'
+
+export interface IIncludedTitle {
+	title: string
+}
+
+export interface IExtraTitle {
+	title: string
+}
+
+export interface IIncludedIcon {
+	title: string
+	src: string
+	alt: string
+}
+
+export interface ICruiseRoute {
+	city: string
+	country: string
+}
+
+export interface ICruiseOption {
+	icons: IIncludedIcon[]
+	included: IIncludedTitle[]
+	extra: IExtraTitle[]
+}
 
 export interface ICruise {
 	id: string
@@ -8,16 +31,16 @@ export interface ICruise {
 	days: number
 	datepicker: string
 	otherDates?: string[]
-	icons: IIncludedIcon[]
+	// icons: IIncludedIcon[]
 	logo: string
 	cruiseName: string
 	priceFrom: string
 	cruiseRoute: ICruiseRoute[]
-	// shipName: string
 	sliderImages: string[]
 	isTimer: boolean
 	deadline?: string
 	isSale: boolean
 	sale?: number
 	ship: IShip
+	options: ICruiseOption
 }
