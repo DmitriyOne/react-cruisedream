@@ -1,5 +1,6 @@
 import { ICruiseRoute } from './ICruiseRoute'
 import { IIncludedIcon } from './IIncludedIcon'
+import { IShip } from './IShip'
 
 export interface ICruise {
 	id: string
@@ -12,10 +13,11 @@ export interface ICruise {
 	cruiseName: string
 	priceFrom: string
 	cruiseRoute: ICruiseRoute[]
-	shipName: string
+	// shipName: string
 	sliderImages: string[]
 	isTimer: boolean
 	deadline?: string
 	isSale: boolean
 	sale?: number
+	ship: IShip
 }

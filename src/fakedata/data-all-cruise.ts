@@ -4,9 +4,10 @@ import logo2Src from '../assets/images/partners/partner-caribbean.png'
 import { ICruise } from '../model/interfaces'
 
 import { IconIncludedCruise1, IconIncludedCruise2, IconIncludedCruise3 } from './cruise/data-included-icons'
-import { DataOtherDates1} from './cruise/data-other-dates'
+import { DataOtherDates1 } from './cruise/data-other-dates'
 import { RouteBreadcrumbsCruise1, RouteBreadcrumbsCruise2, RouteBreadcrumbsCruise3 } from './cruise/data-route'
 import { SliderImageCruise1, SliderImageCruise2 } from './cruise/data-slider-images'
+import { DataShipDesc } from './cruise/data-ship-desc'
 
 export const DataAllCruise: ICruise[] = [
 	{
@@ -20,12 +21,12 @@ export const DataAllCruise: ICruise[] = [
 		cruiseName: 'Жемчужины Персидского залива',
 		priceFrom: '1 590',
 		cruiseRoute: RouteBreadcrumbsCruise1,
-		shipName: 'Celebrity Flora',
 		sliderImages: SliderImageCruise1,
 		isTimer: true,
 		deadline: '28 Dec 2022 17:00',
 		isSale: true,
-		sale: 25
+		sale: 25,
+		ship: DataShipDesc
 	},
 	{
 		id: '2',
@@ -38,10 +39,10 @@ export const DataAllCruise: ICruise[] = [
 		cruiseName: 'По Красному морю и Саудовской Аравии',
 		priceFrom: '1 190',
 		cruiseRoute: RouteBreadcrumbsCruise2,
-		shipName: 'MSC Splendid',
 		sliderImages: SliderImageCruise2,
 		isTimer: false,
 		isSale: false,
+		ship: DataShipDesc
 	},
 	{
 		id: '3',
@@ -54,12 +55,12 @@ export const DataAllCruise: ICruise[] = [
 		cruiseName: 'По Карибскому морю с CRUISEDREAM',
 		priceFrom: '1 990',
 		cruiseRoute: RouteBreadcrumbsCruise3,
-		shipName: 'Celebrity Flora',
 		sliderImages: SliderImageCruise1,
 		isTimer: true,
 		deadline: '20 Dec 2022 17:00',
 		isSale: true,
-		sale: 50
+		sale: 50,
+		ship: DataShipDesc
 	},
 	{
 		id: '4',
@@ -72,9 +73,9 @@ export const DataAllCruise: ICruise[] = [
 		cruiseName: 'По Карибскому морю с CRUISEDREAM',
 		priceFrom: '1 590',
 		cruiseRoute: RouteBreadcrumbsCruise1,
-		shipName: 'Celebrity Flora',
 		sliderImages: SliderImageCruise2,
 		isTimer: false,
 		isSale: false,
+		ship: DataShipDesc
 	},
 ]

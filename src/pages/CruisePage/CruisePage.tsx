@@ -5,7 +5,7 @@ import { DataSingleCruise } from '../../fakedata'
 import { useWindowSize } from '../../hooks'
 import { ICruise } from '../../model/interfaces'
 
-import { Header, Overview } from './sections'
+import { Header, Overview, Ship } from './sections'
 
 export const CruisePage = () => {
 	const [cruise, setCruise] = useState<ICruise>(DataSingleCruise)
@@ -27,11 +27,15 @@ export const CruisePage = () => {
 				logo={cruise.logo}
 				datepicker={cruise.datepicker}
 				otherDates={cruise.otherDates}
-				shipName={cruise.shipName}
+				shipName={cruise.ship.name}
 				cruiseRoute={cruise.cruiseRoute}
 				icons={cruise.icons}
 				isSale={cruise.isSale}
 				sale={cruise.sale}
+			/>
+			<Ship
+				shipName={cruise.ship.name}
+				shipImages={cruise.ship.images}
 			/>
 		</>
 	)

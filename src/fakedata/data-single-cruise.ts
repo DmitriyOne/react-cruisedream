@@ -5,6 +5,7 @@ import { ICruise } from '../model/interfaces'
 import { IconIncludedCruise1 } from './cruise/data-included-icons'
 import { DataOtherDates1 } from './cruise/data-other-dates'
 import { RouteBreadcrumbsCruise1 } from './cruise/data-route'
+import { DataShipDesc } from './cruise/data-ship-desc'
 import { SliderImageCruise1 } from './cruise/data-slider-images'
 
 export const DataSingleCruise: ICruise = {
@@ -18,10 +19,11 @@ export const DataSingleCruise: ICruise = {
 	cruiseName: 'Жемчужины Персидского залива',
 	priceFrom: '1 590',
 	cruiseRoute: RouteBreadcrumbsCruise1,
-	shipName: 'Celebrity Flora',
+	// shipName: 'Celebrity Flora',
 	sliderImages: SliderImageCruise1,
 	isTimer: true,
 	deadline: '28 Dec 2022 17:00',
 	isSale: true,
-	sale: 25
+	sale: 25,
+	ship: DataShipDesc
 }

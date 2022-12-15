@@ -31,7 +31,7 @@ export const Card = () => {
 							cruiseName={cruise.cruiseName}
 							datepicker={cruise.datepicker}
 							otherDates={cruise.otherDates}
-							shipName={cruise.shipName}
+							shipName={cruise.ship.name}
 							routes={cruise.cruiseRoute}
 							icons={cruise.icons}
 						/>
