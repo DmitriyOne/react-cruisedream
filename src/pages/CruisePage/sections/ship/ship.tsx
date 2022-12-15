@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
-import { Container } from '../../../../components'
+import { useWindowSize } from '../../../../hooks'
 import { IShipImage, IShipLinks } from '../../../../model/interfaces'
 
+import { Container } from '../../../../components'
 import { Description } from './description/description'
 import { Slider } from './slider/slider'
 
 import styles from './ship.module.scss'
-import { useWindowSize } from '../../../../hooks'
 
 interface IProps {
 	shipName: string

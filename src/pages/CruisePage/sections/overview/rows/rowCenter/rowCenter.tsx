@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { CruiseLogo, CruiseShipName } from '../../../../../../components/Cruise'
+import { CruiseLogo } from '../../../../../../components/Cruise'
+import { ShipName } from '../../../../../../components/Ship'
 import { useWindowSize } from '../../../../../../hooks'
 
 import styles from './row-center.module.scss'
@@ -32,10 +33,10 @@ export const RowCenter: FC<IProps> = ({
 						logo={logo}
 					/>
 				}
-				<CruiseShipName
+				<ShipName
 					classComponent={styles.shipWrapper}
 					classNameText={styles.shipName}
-					ship={shipName}
+					name={shipName}
 					isIcon={isShowIcon}
 				/>
 			</div>

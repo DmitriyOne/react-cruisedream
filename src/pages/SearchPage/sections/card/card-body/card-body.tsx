@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { useWindowSize } from '../../../../../hooks'
 
+import { useWindowSize } from '../../../../../hooks'
 import { IBody } from '../interfaces/IBody'
 
 import {
@@ -9,9 +9,9 @@ import {
 	CruiseDates,
 	CruiseName,
 	CruiseIncludedIcon,
-	CruiseShipName,
 	CruiseRoute
 } from '../../../../../components/Cruise'
+import { ShipName } from '../../../../../components/Ship'
 
 import styles from './card-body.module.scss'
 
@@ -45,7 +45,7 @@ export const CardBody: FC<IBody> = ({
 			</div>
 
 			<div className={styles.body}>
-				<CruiseShipName classComponent={styles.shipWrapper} ship={shipName} />
+				<ShipName classComponent={styles.shipWrapper} name={shipName} isIcon />
 				<CruiseRoute routes={routes} id={id} />
 			</div>
 
