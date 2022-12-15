@@ -1,4 +1,5 @@
-import { DataAllCruise } from '../../../../fakedata'
+import { useContext } from 'react'
+import { CruiseContext } from '../../../../context'
 
 import { CardBody } from './card-body/card-body'
 import { CardPrice } from './card-price/card-price'
@@ -7,10 +8,11 @@ import { CardSlider } from './card-slider/card-slider'
 import styles from './card.module.scss'
 
 export const Card = () => {
+	const {allCruises} = useContext(CruiseContext)
 
 	return (
 		<>
-			{DataAllCruise.map(cruise =>
+			{allCruises.map(cruise =>
 				<div key={cruise.id} className={styles.component}>
 					<CardSlider
 						days={cruise.days}

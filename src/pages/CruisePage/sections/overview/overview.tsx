@@ -1,41 +1,47 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import { FC, } from 'react'
 
-import { DataSingleCruise } from '../../../../fakedata/data-single-cruise'
 import { useWindowSize } from '../../../../hooks'
 
-import { B, Breadcrumb, Container, Heading } from '../../../../components'
+import { Container } from '../../../../components'
 import {
-	CruiseAmountDays,
-	CruiseDates,
 	CruiseGallery,
-	CruiseIncludedIcon,
 	CruiseLogo,
-	CruiseShipName,
-	CruisePrice,
-	CruiseRoute
+	CruiseRoute,
 } from '../../../../components/Cruise'
 
 import styles from './overview.module.scss'
+import { OverviewHeader } from './overviewHeader/overviewHeader'
+import { ICruiseRoute, IIncludedIcon } from '../../../../model/interfaces'
+import { RowBottom, RowCenter, RowTop } from './rows'
 
-export const Overview = () => {
-	const [cruise, setCruise] = useState(DataSingleCruise)
+interface IProps {
+	cruiseName: string
+	id: string
+	label: string
+	sale?: number
+	days: number
+	logo: string
+	datepicker: string
+	otherDates?: string[]
+	shipName: string
+	cruiseRoute: ICruiseRoute[]
+	icons: IIncludedIcon[]
+	isSale: boolean
+}
+
+export const Overview: FC<IProps> = ({ ...cruise }) => {
 	const { isMobile } = useWindowSize()
 
-
-	const isShowOnDesktop = !isMobile
 	const isShowOnMobile = isMobile
-	const isShowIcon = isMobile
 	return (
 		<Container width="full" className={styles.component}>
 			<Container width="containerS" direction="column" align="start">
 
-				<div className={styles.header}>
-					<Breadcrumb classComponent={styles.breadcrumb} currentPage={cruise.cruiseName} />
-					<div className={styles.numberCruise}>
-						Номер круиза {cruise.id}
-					</div>
-				</div>
+				<OverviewHeader
+					cruiseName={cruise.cruiseName}
+					id={cruise.id}
+				/>
 
 				<CruiseGallery
 					label={cruise.label}
@@ -50,50 +56,24 @@ export const Overview = () => {
 					/>
 				}
 
-				<div
-					className={classNames(
+				<RowTop
+					componentClass={classNames(
 						styles.row, styles.alignTop
 					)}
-				>
-					<div className={styles.colLeft}>
-						<Heading as="h1" className={styles.title}>
-							<B fontWeight={600} >
-								{cruise.cruiseName}
-							</B>
-						</Heading>
-					</div>
-					<div className={classNames(styles.colRight, styles.laptopReverse)}>
-						{isShowOnDesktop &&
-							<CruiseAmountDays
-								className={styles.daysWrapper}
-								days={cruise.days}
-							/>
-						}
-						<CruiseDates
-							classNameText={styles.datesText}
-							classNameArrow={styles.datesArrow}
-							datepicker={cruise.datepicker}
-							otherDates={cruise.otherDates}
-						/>
-					</div>
-				</div>
+					columnLeftClass={styles.colLeft}
+					columnRightClass={styles.colRight}
+					cruiseName={cruise.cruiseName}
+					days={cruise.days}
+					datepicker={cruise.datepicker}
+					otherDates={cruise.otherDates}
+				/>
 
-				<div className={styles.row}>
-					<div className={classNames(styles.colLeft, styles.laptopFull)}>
-						{isShowOnDesktop &&
-							<CruiseLogo
-								className={styles.logo}
-								logo={cruise.logo}
-							/>
-						}
-						<CruiseShipName
-							classComponent={styles.shipWrapper}
-							classNameText={styles.shipName}
-							ship={cruise.shipName}
-							isIcon={isShowIcon}
-						/>
-					</div>
-				</div>
+				<RowCenter
+					componentClass={styles.row}
+					columnLeftClass={styles.colLeft}
+					logo={cruise.logo}
+					shipName={cruise.shipName}
+				/>
 
 				{isShowOnMobile &&
 					<CruiseRoute
@@ -102,38 +82,17 @@ export const Overview = () => {
 					/>
 				}
 
-				<div
-					className={classNames(
+				<RowBottom
+					componentClass={classNames(
 						styles.row, styles.pt0, styles.alignBottom
 					)}
-				>
-					<div className={styles.colLeft}>
-						{isShowOnDesktop &&
-							<CruiseIncludedIcon
-								classNameItem={styles.includedItem}
-								classNameIcon={styles.includedIcon}
-								icons={cruise.icons}
-							/>
-						}
-					</div>
-					<div className={classNames(styles.colRight, styles.column)}>
-						<CruisePrice
-							buttonsRowClass={styles.rowButtons}
-							buttonClass={styles.button}
-							priceClass={styles.price}
-							priceSpanClass={styles.priceSpan}
-							textClass={styles.priceBottomText}
-							modalButtonClass={styles.priceModalBtn}
-							discountClass={styles.discount}
-							priceFrom={'150 000'}
-							isSale={cruise.isSale}
-							sale={cruise.sale}
-							isCruisePage
-							buttonText="ЗАБРОНИРОВАТЬ"
-						/>
-					</div>
-				</div>
-
+					columnLeftClass={styles.colLeft}
+					columnRightClass={styles.colRight}
+					icons={cruise.icons}
+					isSale={cruise.isSale}
+					sale={cruise.sale}
+				/>
+				
 			</Container>
 		</Container>
 	)

@@ -9,7 +9,6 @@ interface IProps {
 }
 
 export const CruiseAmountDays:FC<IProps> = ({days, className}) => {
-
 	return (
 		<div className={classNames(className, styles.component)}>
 			<span className={styles.days}>
