@@ -17,7 +17,7 @@ interface IProps {
 	images: IShipImage[]
 }
 
-export const Slider:FC<IProps> = ({images}) => {
+export const Slider: FC<IProps> = ({ images }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -29,13 +29,11 @@ export const Slider:FC<IProps> = ({images}) => {
 			>
 
 				{images.map((img, idx) =>
-					<SwiperSlide key={idx}>
-						<span className={styles.image}>
-							<img
-								src={img.image}
-								alt="Cruise 1"
-							/>
-						</span>
+					<SwiperSlide key={idx} className={styles.image}>
+						<img
+							src={img.image}
+							alt="Cruise 1"
+						/>
 					</SwiperSlide>
 				)}
 

@@ -7,6 +7,7 @@ import { Description } from './description/description'
 import { Slider } from './slider/slider'
 
 import styles from './ship.module.scss'
+import { useWindowSize } from '../../../../hooks'
 
 interface IProps {
 	shipName: string
@@ -20,10 +21,12 @@ interface IProps {
 }
 
 export const Ship: FC<IProps> = ({ ...cruise }) => {
+	const { isTablet } = useWindowSize()
 
+	const direction = isTablet ? 'columnReverse' : 'row'
 	return (
 		<Container width="full" className={styles.component}>
-			<Container width="containerXl" align="center">
+			<Container width="containerXl" align="stretch" direction={direction}>
 				<Description
 					name={cruise.shipName}
 					year={cruise.shipYear}
