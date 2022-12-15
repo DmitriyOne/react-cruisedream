@@ -36,6 +36,12 @@ export const CruisePage = () => {
 			<Ship
 				shipName={cruise.ship.name}
 				shipImages={cruise.ship.images}
+				shipYear={cruise.ship.year}
+				shipCapacity={cruise.ship.capacity}
+				shipWeight={cruise.ship.weight}
+				shipTeam={cruise.ship.team}
+				shipDescription={cruise.ship.description}
+				shipLinks={cruise.ship.links}
 			/>
 		</>
 	)
