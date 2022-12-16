@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { TermsConditions } from '../../components'
 
 
 import { DataSingleCruise } from '../../fakedata'
@@ -52,6 +53,12 @@ export const CruisePage = () => {
 				shipName={cruise.ship.name}
 				deadline={cruise.deadline!}
 			/>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<TermsConditions />
 		</>
 	)
 }
