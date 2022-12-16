@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 
+
 import { DataSingleCruise } from '../../fakedata'
 
 import { useWindowSize } from '../../hooks'
 import { ICruise } from '../../model/interfaces'
 
-import { Header, Overview, Ship } from './sections'
+import { Header, Options, Overview, Ship } from './sections'
 
 export const CruisePage = () => {
 	const [cruise, setCruise] = useState<ICruise>(DataSingleCruise)
@@ -42,6 +43,10 @@ export const CruisePage = () => {
 				shipTeam={cruise.ship.team}
 				shipDescription={cruise.ship.description}
 				shipLinks={cruise.ship.links}
+			/>
+			<Options
+				includedTitles={cruise.options.included}
+				extraTitles={cruise.options.extra}
 			/>
 		</>
 	)

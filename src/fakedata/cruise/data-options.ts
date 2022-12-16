@@ -2,17 +2,29 @@ import { ICruiseOption, IExtraTitle, IIncludedTitle } from '../../model/interfac
 import { iconIncludedCruise1, iconIncludedCruise2, iconIncludedCruise3 } from './data-included-icons'
 
 const includedTitle: IIncludedTitle[] = [
-	{ title: 'title included 1' },
-	{ title: 'title included 2' },
-	{ title: 'title included 3' },
-	{ title: 'title included 4' },
+	{ title: 'Проживание в каюте Проживание в каюте Проживание в каюте Проживание в каюте' },
+	{ title: 'Питание во время круиза' },
+	{ title: 'Портовые сборы и таксы' },
+	{ title: 'Дневные развлечения на борту' },
+	{ title: 'Вечерняя развлекательная программа' },
+	{ title: 'Представления в театре' },
+	{ title: 'Выступление артистов в течение дня на борту' },
+	{ title: 'Детский клуб' },
+	{ title: 'Фитнес-клуб' },
 ]
 
 const extraTitle: IExtraTitle[] = [
-	{ title: 'title extra 1' },
-	{ title: 'title extra 2' },
-	{ title: 'title extra 3' },
-	{ title: 'title extra 4' },
+	{ title: 'Авиаперелёт' },
+	{ title: 'Медицинская страховка' },
+	{ title: 'Страховка от невыезда' },
+	{ title: 'Визы' },
+	{ title: 'Трансфер аэропорт/порт/аэропорт' },
+	{ title: 'Чаевые персоналу' },
+	{ title: 'Алкогольные напитки' },
+	{ title: 'Альтернативные рестораны' },
+	{ title: 'Услуги спа, салона красоты, тренера в фитнес клубе и няни в детском клубе' },
+	{ title: 'Экскурсии' },
+	{ title: 'Интернет' },
 ]
 
 export const DataOptions: ICruiseOption = {
