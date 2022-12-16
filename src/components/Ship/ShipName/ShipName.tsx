@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import { Heading } from '../../Headings'
@@ -13,6 +13,7 @@ interface IProps {
 	classComponent?: string
 	isIcon?: boolean
 	isDesc?: boolean
+	isBookTo?: boolean
 }
 
 export const ShipName: FC<IProps> = ({
@@ -20,8 +21,23 @@ export const ShipName: FC<IProps> = ({
 	classNameText,
 	classComponent,
 	isIcon,
-	isDesc
+	isDesc,
+	isBookTo
 }) => {
+	const [content, setContent] = useState('')
+
+	const isDescContent = 'Лайнер' + ' ' + name
+	const isBookToContent = 'Круиз на борту лайнера' + ' ' + name
+
+	useEffect(() => {
+		if (isDesc) {
+			setContent(isDescContent)
+		} else if (isBookTo) {
+			setContent(isBookToContent)
+		} else {
+			setContent(name)
+		}
+	}, [])
 
 	return (
 		<div className={classNames(classComponent, styles.component)}>
@@ -34,7 +50,7 @@ export const ShipName: FC<IProps> = ({
 				</span>
 			}
 			<Heading as="h3" className={classNames(classNameText, styles.title)}>
-				{isDesc ? 'Лайнер' + ' ' + name : name}
+				{content}
 				{isDesc && <span className={styles.line} />}
 			</Heading>
 		</div>

@@ -6,7 +6,7 @@ import { DataSingleCruise } from '../../fakedata'
 import { useWindowSize } from '../../hooks'
 import { ICruise } from '../../model/interfaces'
 
-import { Header, Options, Overview, Ship } from './sections'
+import { Header, Options, Overview, Ship, ToBook } from './sections'
 
 export const CruisePage = () => {
 	const [cruise, setCruise] = useState<ICruise>(DataSingleCruise)
@@ -47,6 +47,10 @@ export const CruisePage = () => {
 			<Options
 				includedTitles={cruise.options.included}
 				extraTitles={cruise.options.extra}
+			/>
+			<ToBook
+				shipName={cruise.ship.name}
+				deadline={cruise.deadline!}
 			/>
 		</>
 	)
