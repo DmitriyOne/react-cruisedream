@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react'
-import { TermsConditions } from '../../components'
-
 
 import { DataSingleCruise } from '../../fakedata'
 
 import { useWindowSize } from '../../hooks'
 import { ICruise } from '../../model/interfaces'
 
-import { Header, Options, Overview, Ship, ToBook } from './sections'
+import { FAQ, Header, Options, Overview, Ship, TermsAndCond, ToBook } from './sections'
 
 export const CruisePage = () => {
 	const [cruise, setCruise] = useState<ICruise>(DataSingleCruise)
@@ -58,7 +56,8 @@ export const CruisePage = () => {
 			<br />
 			<br />
 			<br />
-			<TermsConditions />
+			<FAQ />
+			<TermsAndCond />
 		</>
 	)
 }
