@@ -13,7 +13,7 @@ export const ToBook: FC<IProps> = ({ shipName, deadline }) => {
 
 	return (
 		<Container width="full" className={styles.component}>
-			<Container width="containerS" direction="column">
+			<Container width="containerS" justify="between" className={styles.container}>
 				<CruiseToBook shipName={shipName} deadline={deadline} />
 
 			</Container>

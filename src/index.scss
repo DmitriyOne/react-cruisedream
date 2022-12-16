@@ -1,3 +1,7 @@
 @import './styles/global.scss';
 @import './styles/select.scss';
 @import './styles/datepicker.scss';
+
+#root {
+	overflow-x: hidden;
+}

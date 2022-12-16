@@ -18,7 +18,12 @@ export const CardSlider: FC<ISlider> = ({ days, label, images, isTimer, deadline
 
 			<CruiseSlider images={images} />
 
-			{isTimer && <CruiseTimer deadline={deadline!} />}
+			{isTimer &&
+				<CruiseTimer
+					deadline={deadline!}
+					classComponent={styles.timer}
+				/>
+			}
 
 			{isShowDiscount
 				&& <Discount

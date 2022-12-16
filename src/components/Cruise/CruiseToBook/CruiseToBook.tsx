@@ -15,14 +15,19 @@ export const CruiseToBook: FC<IProps> = ({ shipName, deadline }) => {
 
 	return (
 		<>
-			<ShipName
-				classComponent={styles.shipWrapper}
-				classNameText={styles.shipName}
-				name={shipName}
-				isBookTo
+			<CruiseTimer
+				classComponent={styles.timer}
+				classNumber={styles.timerNumber}
+				deadline={deadline}
+				isSeconds={false}
 			/>
-			<div className={styles.row}>
-				<CruiseTimer deadline={deadline} />
+			<div className={styles.contentWrapper}>
+				<ShipName
+					classComponent={styles.shipWrapper}
+					classNameText={styles.shipName}
+					name={shipName}
+					isBookTo
+				/>
 				<p className={styles.text}>
 					<span className={styles.uppercase}>
 						ЗАБРОНИРУЙТЕ СЕГОДНЯ И
@@ -31,10 +36,10 @@ export const CruiseToBook: FC<IProps> = ({ shipName, deadline }) => {
 					&nbsp;
 					на следующее бронирование
 				</p>
-				<Button className={styles.button}>
-					ЗАБРОНИРОВАТЬ
-				</Button>
 			</div>
+			<Button className={styles.button}>
+				ЗАБРОНИРОВАТЬ
+			</Button>
 		</>
 	)
 }
