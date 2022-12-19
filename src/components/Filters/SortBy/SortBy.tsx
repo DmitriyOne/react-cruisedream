@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { sortBy, sortCurrency } from '../../fakedata'
+import { sortBy, sortCurrency } from '../../../fakedata'
 
-import { MySelect } from '../MySelect'
+import { MySelect } from '../../MySelect'
 
 import styles from './sort-by.module.scss'
 

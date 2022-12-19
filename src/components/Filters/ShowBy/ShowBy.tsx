@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { Button } from '../Button'
+import { Button } from '../../Button'
 
 import styles from './show-by.module.scss'
 
@@ -9,7 +9,7 @@ interface IProps {
 	className?: string
 }
 
-export const ShowBy:FC<IProps> = ({className}) => {
+export const ShowBy: FC<IProps> = ({ className }) => {
 
 	return (
 		<div className={classNames(styles.component, className)}>

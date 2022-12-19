@@ -5,7 +5,7 @@ import { DataSingleCruise } from '../../fakedata'
 import { useWindowSize } from '../../hooks'
 import { ICruise } from '../../model/interfaces'
 
-import { FAQ, Header, Options, Overview, Ship, TermsAndCond, ToBook } from './sections'
+import { FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook } from './sections'
 
 export const CruisePage = () => {
 	const [cruise, setCruise] = useState<ICruise>(DataSingleCruise)
@@ -43,6 +43,7 @@ export const CruisePage = () => {
 				shipDescription={cruise.ship.description}
 				shipLinks={cruise.ship.links}
 			/>
+			<Route />
 			<Options
 				includedTitles={cruise.options.included}
 				extraTitles={cruise.options.extra}
@@ -51,11 +52,6 @@ export const CruisePage = () => {
 				shipName={cruise.ship.name}
 				deadline={cruise.deadline!}
 			/>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 			<FAQ />
 			<TermsAndCond />
 		</>

@@ -1,0 +1,42 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
+
+.component {
+	
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 28px;
+}
+
+.title {
+	min-width: 140px;
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$transparent;
+	padding: 8px 6px;
+	margin-right: 5px;
+	background-color: #004275;
+
+	&.active {
+		background-color: colors.$transparent;
+		color: #004275;
+		border-color: #004275;;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.body {}
+
+.text {}
