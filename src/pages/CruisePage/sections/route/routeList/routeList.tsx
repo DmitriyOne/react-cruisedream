@@ -3,14 +3,17 @@ import classNames from 'classnames'
 import { Heading } from '../../../../../components'
 
 import infoIcon from './images/info.svg'
+import arrowIcon from './images/arrow.svg'
 
 import styles from './route-list.module.scss'
+import { useWindowSize } from '../../../../../hooks'
 
 export const RouteList = () => {
-
+	const { isTablet } = useWindowSize()
 	// const rowClassName = classNames(styles.row, styles.header)
 	// const titleClassName = classNames(styles.title, styles.col)
 	// const textClassName = classNames(styles.)
+	const icon = isTablet ? arrowIcon : infoIcon
 	return (
 		<div className={styles.component}>
 			<div className={styles.header}>
@@ -51,7 +54,7 @@ export const RouteList = () => {
 						</div>
 						<div className={styles.col}>
 							<span className={styles.info}>
-								<img src={infoIcon} alt="Info icon" />
+								<img src={icon} alt="Info icon" />
 							</span>
 						</div>
 						<div className={styles.col}>
@@ -65,9 +68,9 @@ export const RouteList = () => {
 							</span>
 						</div>
 					</div>
-					<div className={styles.hidden}>
+					{/* <div className={styles.hidden}>
 						dsffsdgfsgsd
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
