@@ -36,6 +36,7 @@ export const Card = () => {
 							icons={cruise.options.icons}
 						/>
 						<CardPrice
+						cruiseId={cruise.id}
 							logo={cruise.logo}
 							priceFrom={cruise.priceFrom}
 							isSale={cruise.isSale}

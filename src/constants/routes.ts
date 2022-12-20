@@ -2,7 +2,7 @@ export const CRUISE_ROUTES = {
 	HOME: '/',
 	SALE: '/sale',
 	SEARCH: '/search',
-	CRUISE: '/cruise-4764326',
+	CRUISE: '/cruise/:id',
 	REGIONS: '/regions',
 	ACROSS_RUSSIA: '/across-russia',
 	SHIPS: '/ships',

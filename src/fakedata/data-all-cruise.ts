@@ -11,7 +11,7 @@ import { DataOptions, DataOptions2, DataOptions3 } from './cruise/data-options'
 
 export const DataAllCruise: ICruise[] = [
 	{
-		id: '4764326',
+		id: '1',
 		days: 8,
 		datepicker: '01.03.23 - 08.03.23',
 		otherDates: DataOtherDates1,

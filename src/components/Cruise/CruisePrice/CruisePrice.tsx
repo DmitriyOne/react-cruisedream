@@ -27,6 +27,7 @@ enum EColor {
 }
 
 interface IProps {
+	cruiseId?: string
 	priceFrom: string
 	isSale: boolean
 	sale?: number
@@ -74,6 +75,7 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 	onClickСhoose,
 	onShowModal,
 	isCruisePage,
+	cruiseId
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -144,7 +146,7 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 					</Button>
 				}
 				<Link
-					to={CRUISE_ROUTES.CRUISE}
+					to={`/cruise/${cruiseId}`}
 					className={classNameButton}
 					onClick={onClickСhoose}
 				>

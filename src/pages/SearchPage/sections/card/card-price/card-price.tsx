@@ -5,7 +5,7 @@ import { IPrice } from '../interfaces/IPrice'
 
 import styles from './card-price.module.scss'
 
-export const CardPrice: FC<IPrice> = ({ logo, priceFrom, isSale, sale }) => {
+export const CardPrice: FC<IPrice> = ({ logo, priceFrom, isSale, sale, cruiseId }) => {
 	const { isMobile } = useWindowSize()
 
 	return (
@@ -20,6 +20,7 @@ export const CardPrice: FC<IPrice> = ({ logo, priceFrom, isSale, sale }) => {
 					priceFrom={priceFrom}
 					isSale={isSale}
 					sale={sale}
+					cruiseId={cruiseId}
 				/>
 			</div>
 		</div>
