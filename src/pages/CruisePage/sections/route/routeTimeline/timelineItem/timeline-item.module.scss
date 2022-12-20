@@ -1,0 +1,115 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/colors.scss';
+@use '../../../../../../styles/family.scss';
+
+.component {
+	width: 100%;
+	background-color: colors.$white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+	position: relative;
+}
+
+.image {
+	display: block;
+	height: 225px;
+
+	img {
+		height: 100%;
+	}
+}
+
+.label {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 75px;
+	min-height: 55px;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 100%;
+	text-align: center;
+	color: colors.$white;
+	background-color: #FDBB11;
+	padding: 4px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-weight: 600;
+		min-width: 55px;
+		min-height: 50px;
+	}
+}
+
+.labelSpan {
+	display: block;
+	font-size: 15px;
+	line-height: 100%;
+	font-weight: 600;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.body {
+	padding: 45px 15px 40px;
+	@include mixins.flex-spb;
+	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 30px 40px;
+	}
+}
+
+.title {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+	color: #004275;
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.date {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	text-align: center;
+	color: rgba(79, 78, 78, 0.8);
+	padding-bottom: 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 30px 40px;
+	}
+}
+
+.desc {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	text-align: center;
+	color: rgba(79, 78, 78, 0.9);
+	padding-bottom: 40px;
+}
+
+.button {
+	display: inline-block;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 110%;
+	text-align: center;
+	color: #004275;
+	padding: 12px;
+	min-width: 205px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	background-color: colors.$white;
+	border: 2px solid #004275;
+	border-radius: 3px;
+}

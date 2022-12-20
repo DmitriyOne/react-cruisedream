@@ -1,6 +1,7 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
 
 .component {
 	padding: 30px 12px 40px;
@@ -36,4 +37,35 @@
 		font-size: 24px;
 		padding-bottom: 18px;
 	}
+}
+
+.tabsHeader {
+	justify-content: center;
+}
+
+.tabsTitle {
+	min-width: 140px;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	text-align: center;
+	padding: 8px 6px;
+	margin-right: 5px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.tabsBody {
+	position: relative;
+	@include mixins.fluidMaxSize(900);
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		max-width: 750px;
+	}
+	
 }

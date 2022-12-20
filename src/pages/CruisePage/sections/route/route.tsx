@@ -1,9 +1,30 @@
 import { Container, Heading, Tabs } from '../../../../components'
-import { DataTabs } from '../../../../fakedata'
+import { ITabs } from '../../../../model/interfaces'
 
 import styles from './route.module.scss'
+import { RouteTimeline } from './routeTimeline/routeTimeline'
 
 export const Route = () => {
+
+	const tabs: ITabs[] = [
+		{
+			id: 1,
+			title: 'ТАЙМЛАЙН',
+			children: <RouteTimeline />
+		},
+		{
+			id: 2,
+			title: 'СПИСОК',
+			children: <p> 222222</p>
+		},
+		{
+			id: 3,
+			title: 'КАРТА',
+			children: <p>bbbfgdbgbgfbgflllllqqq 33333</p>
+		}
+	]
+
+
 	return (
 		<Container width="full" className={styles.component}>
 			<Container direction="column">
@@ -11,7 +32,10 @@ export const Route = () => {
 					ВАШ МАРШРУТ
 				</Heading>
 				<Tabs
-					items={DataTabs}
+					headerClass={styles.tabsHeader}
+					items={tabs}
+					bodyClass={styles.tabsBody}
+					titleClass={styles.tabsTitle}
 				/>
 			</Container>
 		</Container>

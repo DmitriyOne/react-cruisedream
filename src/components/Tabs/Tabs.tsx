@@ -7,16 +7,21 @@ import styles from './tabs.module.scss'
 
 interface IProps {
 	items: ITabs[]
+	componentClass?: string
+	headerClass?: string
 	titleClass?: string
-	textClass?: string
+	bodyClass?: string
 }
 
-export const Tabs: FC<IProps> = ({ items, titleClass, textClass }) => {
+export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClass, bodyClass }) => {
 	const [visibleTab, setVisibleTab] = useState<number | null>(items[0].id)
 
+	const componentClassName = classNames(componentClass, styles.component)
+	const headerClassName = classNames(headerClass, styles.header)
 	const titleClassName = classNames(titleClass, styles.title)
 	const titleActiveClassName = classNames(titleClass, styles.title, styles.active)
-	const textClassName = classNames(textClass, styles.text)
+	const textClassName = classNames(styles.content)
+	const bodyClassName = classNames(bodyClass, styles.body)
 
 	const listTitles = items.map((item) =>
 		<h5
@@ -39,11 +44,11 @@ export const Tabs: FC<IProps> = ({ items, titleClass, textClass }) => {
 	)
 
 	return (
-		<div className={styles.component}>
-			<div className={styles.header}>
+		<div className={componentClassName}>
+			<div className={headerClassName}>
 				{listTitles}
 			</div>
-			<div className={styles.body}>
+			<div className={bodyClassName}>
 				{listContent}
 			</div>
 		</div>
