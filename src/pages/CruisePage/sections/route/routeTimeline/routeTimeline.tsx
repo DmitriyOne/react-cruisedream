@@ -1,22 +1,18 @@
 import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow } from 'swiper'
-
 import { params } from './swiper'
 
 import img1Src from './images/1.jpg'
 import img2Src from './images/2.jpg'
 
-import { useSwiperButtons, useWindowSize } from '../../../../../hooks'
+import { useSwiperButtons, useSwiperChangeEffect } from '../../../../../hooks'
 import { Button } from '../../../../../components'
-
 import { TimelineItem } from './timelineItem/timelineItem'
 
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import styles from './route-timeline.module.scss'
-import { useEffect, useState } from 'react'
 
 const timeline = [
 	{
@@ -50,11 +46,11 @@ const timeline = [
 ]
 
 export const RouteTimeline = (): JSX.Element => {
-	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
-	const { isMobile } = useWindowSize()
+	const { handlerNext, handlerPrev, upDateSwiper } = useSwiperButtons()
+	const { onBeforeInit } = useSwiperChangeEffect()
 
 	return (
-		<>
+		<div className={styles.component}>
 			<Button
 				className={classNames(styles.swiperArrow, styles.prev)}
 				onClick={handlerPrev}
@@ -62,7 +58,8 @@ export const RouteTimeline = (): JSX.Element => {
 			<Swiper
 				className={styles.swiper}
 				onSwiper={upDateSwiper}
-			{...params}
+				onBeforeInit={onBeforeInit}
+				{...params}
 			>
 				{timeline.map((slide, idx) =>
 					<SwiperSlide key={idx} className={styles.slide}>
@@ -77,6 +74,6 @@ export const RouteTimeline = (): JSX.Element => {
 				className={classNames(styles.swiperArrow, styles.next)}
 				onClick={handlerNext}
 			/>
-		</>
+		</div>
 	)
 }

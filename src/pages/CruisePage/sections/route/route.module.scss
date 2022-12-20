@@ -41,6 +41,11 @@
 
 .tabsHeader {
 	justify-content: center;
+	margin-bottom: 28px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 10px;
+	}
 }
 
 .tabsTitle {
@@ -61,11 +66,5 @@
 
 .tabsBody {
 	position: relative;
-	@include mixins.fluidMaxSize(900);
 	margin: 0 auto;
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		max-width: 750px;
-	}
-	
 }

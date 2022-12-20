@@ -6,6 +6,7 @@ export const params: SwiperOptions = {
 	loop: true,
 	modules: [EffectCoverflow],
 	effect: 'coverflow',
+	grabCursor: true,
 	centeredSlides: true,
 	coverflowEffect: {
 		rotate: 0,
@@ -20,3 +21,4 @@ export const params: SwiperOptions = {
 	slidePrevClass: `${styles.prevSlide}`,
 	slideVisibleClass: `${styles.visibleSlide}`,
 }
+

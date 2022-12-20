@@ -1,7 +1,7 @@
-import styles from './timeline-item.module.scss'
-
 import { Button, Heading } from '../../../../../../components'
 import { FC } from 'react'
+
+import styles from './timeline-item.module.scss'
 
 interface IProps {
 	image: string
@@ -29,6 +29,9 @@ export const TimelineItem: FC<IProps> = ({ image, port }) => {
 				</Heading>
 				<div className={styles.date}>
 					Ср 01 мар 2023
+				</div>
+				<div className={styles.time}>
+					08:00-18:00
 				</div>
 				<p className={styles.desc}>
 					Как же класно мы пойдет по морям из великолепного города Сохна

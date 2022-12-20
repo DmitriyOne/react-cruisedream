@@ -1,8 +1,10 @@
 import { Container, Heading, Tabs } from '../../../../components'
 import { ITabs } from '../../../../model/interfaces'
 
-import styles from './route.module.scss'
+import { RouteList } from './routeList/routeList'
 import { RouteTimeline } from './routeTimeline/routeTimeline'
+
+import styles from './route.module.scss'
 
 export const Route = () => {
 
@@ -15,7 +17,7 @@ export const Route = () => {
 		{
 			id: 2,
 			title: 'СПИСОК',
-			children: <p> 222222</p>
+			children: <RouteList />
 		},
 		{
 			id: 3,

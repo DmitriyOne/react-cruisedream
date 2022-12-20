@@ -55,12 +55,17 @@
 }
 
 .body {
-	padding: 45px 15px 40px;
+	padding-top: 45px;
+	padding-bottom: 40px;
 	@include mixins.flex-spb;
 	flex-direction: column;
 
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 12px;
+	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
-		padding: 12px 30px 40px;
+		padding-bottom: 0;
 	}
 }
 
@@ -83,11 +88,24 @@
 	line-height: 110%;
 	text-align: center;
 	color: rgba(79, 78, 78, 0.8);
-	padding-bottom: 25px;
+	padding-bottom: 10px;
 
-	@include mixins.media-w(breakpoints.$tablet) {
-		padding: 12px 30px 40px;
-	}
+	// @include mixins.media-w(breakpoints.$tablet) {
+	// 	padding-bottom: 10px;
+	// }
+}
+
+.time {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+	padding-bottom: 10px;
+
+	// @include mixins.media-w(breakpoints.$tablet) {
+	// 	padding-top: 5px;
+		
+	// }
 }
 
 .desc {
@@ -96,7 +114,11 @@
 	line-height: 110%;
 	text-align: center;
 	color: rgba(79, 78, 78, 0.9);
-	padding-bottom: 40px;
+	padding: 0 30px 40px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 0 20px 30px;
+	}
 }
 
 .button {
@@ -112,4 +134,14 @@
 	background-color: colors.$white;
 	border: 2px solid #004275;
 	border-radius: 3px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		border: none;
+		filter: none;
+		background-color: colors.$btn-hover;
+		color: colors.$white;
+		font-size: 13px;
+		border-radius: 0;
+	}
 }

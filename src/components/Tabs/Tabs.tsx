@@ -20,7 +20,6 @@ export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClas
 	const headerClassName = classNames(headerClass, styles.header)
 	const titleClassName = classNames(titleClass, styles.title)
 	const titleActiveClassName = classNames(titleClass, styles.title, styles.active)
-	const textClassName = classNames(styles.content)
 	const bodyClassName = classNames(bodyClass, styles.body)
 
 	const listTitles = items.map((item) =>
@@ -36,7 +35,7 @@ export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClas
 	const listContent = items.map((item) =>
 		<div
 			key={item.id}
-			className={textClassName}
+			className={bodyClassName}
 			style={visibleTab === item.id ? {} : { display: 'none' }}
 		>
 			{item.children}
@@ -48,9 +47,7 @@ export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClas
 			<div className={headerClassName}>
 				{listTitles}
 			</div>
-			<div className={bodyClassName}>
-				{listContent}
-			</div>
+			{listContent}
 		</div>
 	)
 }
