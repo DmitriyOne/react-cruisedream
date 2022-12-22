@@ -15,6 +15,7 @@ export const Main = () => {
 				<Card />
 				<Card />
 				<Card />
+				<Card />
 				<PaginationBottom />
 			</Container>
 		</Container>

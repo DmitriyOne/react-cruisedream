@@ -77,7 +77,7 @@
 .swiperArrow {
 	width: 13px;
 	height: 26px;
-	background-image: url('./images/arrow-white.svg');
+	background-image: url('../images/arrow-white.svg');
 	@include mixins.bg-cover;
 
 	@include mixins.media-w(breakpoints.$tablet) {
@@ -126,7 +126,7 @@
 		transform: translateY(-50%);
 		width: 6px;
 		height: 10px;
-		background-image: url('./images/arrow-gray.svg');
+		background-image: url('../images/arrow-gray.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {

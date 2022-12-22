@@ -16,12 +16,13 @@ export const CardSlider = () => {
 			<CruiseSlider />
 
 			<CruiseTimer
-				deadline='28 Dec 2022 17:00'
+				deadline="28 Dec 2022 17:00"
 				classComponent={styles.timer}
 			/>
 
 			{isShowDiscount
 				&& <Discount
+					percentage={25}
 					className={styles.discount}
 					classNameText={styles.discountText}
 					classNamePercentage={styles.discountPercentage}

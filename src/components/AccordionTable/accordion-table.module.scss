@@ -19,6 +19,8 @@
 		display: none;
 	}
 
+
+
 	& .col {
 		display: flex;
 		align-items: center;
@@ -129,6 +131,11 @@
 	padding: 6px 0;
 	border-bottom: 1px solid rgba(79, 78, 78, 0.4);
 	overflow: hidden;
+	cursor: pointer;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 6px;
+	}
 }
 
 .visible {
@@ -171,7 +178,6 @@
 }
 
 .date {
-	display: block;
 	font-weight: 500;
 	font-size: 15px;
 	line-height: 110%;
@@ -190,6 +196,10 @@
 	line-height: 110%;
 	color: #4F4E4E;
 	text-align: left;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 15px;
+	}
 }
 
 .info {
@@ -204,6 +214,12 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		width: 14px;
 		height: 8px;
+	}
+
+	&.active {
+		@include mixins.media-w(breakpoints.$laptop) {
+			transform: rotate(-180deg);
+		}
 	}
 
 	img {
@@ -223,9 +239,53 @@
 
 .hidden {
 	transition: height 0.4s ease;
-	
+	overflow: hidden;
+
 	&.active {
-		height: auto;
+		height: auto !important;
+	}
+}
+
+.hiddenRow {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 6px;
+}
+
+.hiddenCol {
+	display: flex;
+	align-items: center;
+	@include mixins.fluidMaxSize(300);
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.6);
+
+	&:first-child {
+		justify-content: flex-end;
+		padding-right: 8px;
+	}
+
+	&:last-child {
+		justify-content: flex-start;
+		padding-left: 8px;
+	}
+}
+
+.hiddenColText {
+	display: block;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	color: #004275;
+
+	&:first-child {
+		padding-left: 8px;
+	}
+
+	&:last-child {
+		padding-right: 8px;
 	}
 }
 
@@ -245,12 +305,28 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-left: 0;
 		width: 100%;
+		padding-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
 	}
 }
 
 .hiddenImg {
+	display: block;
 	@include mixins.fluidMaxSize(180);
+	min-width: 180px;
 	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(250);
+		min-width: 250px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(480);
+	}
 }
 
 .hiddenText {
