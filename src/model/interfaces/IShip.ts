@@ -14,6 +14,5 @@ export interface IShip {
 	capacity: number
 	weight: number
 	team: number
-	description: string
 	links: IShipLinks[]
 }

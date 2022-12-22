@@ -1,4 +1,4 @@
-export const DataOtherDates1 = [
+export const DataTooltipDates = [
 	'01.03.22 - 09.03.23',
 	'09.03.22 - 15.03.23',
 	'02.05.22 - 21.03.23',

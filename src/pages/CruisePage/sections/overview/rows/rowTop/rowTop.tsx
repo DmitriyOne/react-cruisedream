@@ -12,20 +12,12 @@ interface IProps {
 	componentClass?: string
 	columnLeftClass?: string
 	columnRightClass?: string
-	cruiseName: string
-	days: number
-	datepicker: string
-	otherDates?: string[]
 }
 
 export const RowTop: FC<IProps> = ({
 	componentClass,
 	columnLeftClass,
 	columnRightClass,
-	cruiseName,
-	days,
-	datepicker,
-	otherDates
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -36,7 +28,7 @@ export const RowTop: FC<IProps> = ({
 			<div className={columnLeftClass}>
 				<Heading as="h1" className={styles.title}>
 					<B fontWeight={600} >
-						{cruiseName}
+						Жемчужины Персидского залива
 					</B>
 				</Heading>
 			</div>
@@ -44,14 +36,11 @@ export const RowTop: FC<IProps> = ({
 				{isShowOnDesktop &&
 					<CruiseAmountDays
 						className={styles.daysWrapper}
-						days={days}
 					/>
 				}
 				<CruiseDates
 					classNameText={styles.datesText}
 					classNameArrow={styles.datesArrow}
-					datepicker={datepicker}
-					otherDates={otherDates}
 				/>
 			</div>
 		</div>

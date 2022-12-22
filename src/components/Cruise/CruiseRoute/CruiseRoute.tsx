@@ -7,19 +7,21 @@ import markerIcon from './icons/marker.svg'
 
 import styles from './cruise-route.module.scss'
 import { MyTooltip } from '../../MyTooltip'
+import { DataTooltipRoutes } from './data/tooltip-route'
+import { DataShowRoutes } from './data/show-routes'
 
 interface IProps {
-	id?: string
-	routes: ICruiseRoute[]
+	// id?: string
+	// routes: ICruiseRoute[]
 	classComponent?: string
 }
 
-export const CruiseRoute: FC<IProps> = ({ routes, id, classComponent }) => {
+export const CruiseRoute: FC<IProps> = ({ classComponent }) => {
 	const [idTooltip, setIdTooltip] = useState('')
 
 	useEffect(() => {
-		setIdTooltip('my-route-tooltip-' + id)
-	}, [id])
+		setIdTooltip('my-route-tooltip-' + 1)
+	}, [])
 
 	return (
 		<div className={classNames(classComponent, styles.component)}>
@@ -29,9 +31,9 @@ export const CruiseRoute: FC<IProps> = ({ routes, id, classComponent }) => {
 					alt="Marker icon"
 				/>
 			</span>
-			<MyTooltip isRoutes routes={routes}>
+			<MyTooltip isRoutes tooltipRoutes={DataTooltipRoutes}>
 				<ul id={idTooltip} className={styles.container}>
-					{routes.map((breadcrumbs, idx) =>
+					{DataShowRoutes.map((breadcrumbs, idx) =>
 						<li
 							key={idx}
 							className={styles.item}

@@ -8,7 +8,6 @@ import shipIcon from './icons/ship.svg'
 import styles from './ship-name.module.scss'
 
 interface IProps {
-	name: string
 	classNameText?: string
 	classComponent?: string
 	isIcon?: boolean
@@ -17,7 +16,6 @@ interface IProps {
 }
 
 export const ShipName: FC<IProps> = ({
-	name,
 	classNameText,
 	classComponent,
 	isIcon,
@@ -26,8 +24,8 @@ export const ShipName: FC<IProps> = ({
 }) => {
 	const [content, setContent] = useState('')
 
-	const isDescContent = 'Лайнер' + ' ' + name
-	const isBookToContent = 'Круиз на борту лайнера' + ' ' + name
+	const isDescContent = 'Лайнер' + ' ' + 'MSC Splendida'
+	const isBookToContent = 'Круиз на борту лайнера' + ' ' + 'MSC Splendida'
 
 	useEffect(() => {
 		if (isDesc) {
@@ -35,7 +33,7 @@ export const ShipName: FC<IProps> = ({
 		} else if (isBookTo) {
 			setContent(isBookToContent)
 		} else {
-			setContent(name)
+			setContent('MSC Splendida')
 		}
 	}, [])
 

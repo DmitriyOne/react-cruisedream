@@ -1,19 +1,13 @@
-import { FC } from 'react'
-
-import { IShipLinks } from '../../../model/interfaces'
+import { SHIP_LINKS_TO } from '../../../constants'
 
 import arrowIcon from './icons/arrow.svg'
 
 import styles from './ship-links.module.scss'
 
-interface IProps {
-	links: IShipLinks[]
-}
-
-export const ShipLinks: FC<IProps> = ({links}) => {
+export const ShipLinks = () => {
 	return (
 		<ul className={styles.component}>
-			{links.map((item, idx) =>
+			{SHIP_LINKS_TO.map((item, idx) =>
 				<li key={idx} className={styles.item}>
 					<a href={item.href} className={styles.link}>
 						<span className={styles.text}>

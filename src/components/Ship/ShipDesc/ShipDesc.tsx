@@ -1,14 +1,13 @@
-import { FC, useState } from 'react'
+/* eslint-disable max-len */
+import { useState } from 'react'
 
 import { Button } from '../../../components'
 
 import styles from './ship-desc.module.scss'
 
-interface IProps {
-	desc: string
-}
+const desc = 'Круиз на борту лайнера MSC Splendida – это комфортное и стильное путешествие на современном корабле. Splendida переводится с итальянского как великолепная, и попав на борт, вы сразу же поймёте, почему лайнер получил свой имя. Изысканный, элегантный дизайн, который грамотно сочетает в себе итальянскую классику с яркими акцентами круиз на борту лайнера MSC Splendida – это комфортное и стильное путешествие на современном корабле. Splendida переводится с итальянского как великолепная, и попав на борт, вы сразу же поймёте, почему лайнер получил свой имя. Изысканный, элегантный дизайн, который грамотно сочетает в себе итальянскую классику с яркими акцентами'
 
-export const ShipDesc: FC<IProps> = ({ desc }) => {
+export const ShipDesc = () => {
 	const [isReadMore, setIsReadMore] = useState(true)
 	const text = desc
 

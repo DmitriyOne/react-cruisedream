@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react'
 
 import { useWindowSize } from '../../../hooks'
 import { MyTooltip } from '../../MyTooltip'
+import { DataTooltipDates } from './data/tooltip-dates'
 
 import calendarIcon from './icons/calendar.svg'
 import arrowIcon from './icons/arrow-down.svg'
@@ -10,18 +11,11 @@ import styles from './cruise-dates.module.scss'
 import classNames from 'classnames'
 
 interface IProps {
-	id?: string
-	datepicker: string
-	otherDates?: string[]
-	cruiseName?: string
 	classNameText?: string
 	classNameArrow?: string
 }
 
 export const CruiseDates: FC<IProps> = ({
-	datepicker,
-	otherDates,
-	id,
 	classNameText,
 	classNameArrow
 }) => {
@@ -29,8 +23,8 @@ export const CruiseDates: FC<IProps> = ({
 	const [idTooltip, setIdTooltip] = useState('')
 
 	useEffect(() => {
-		setIdTooltip('my-dates-tooltip-' + id)
-	}, [id])
+		setIdTooltip('my-dates-tooltip-' + 1)
+	}, [])
 
 	return (
 		<div id={idTooltip} className={styles.component}>
@@ -42,9 +36,9 @@ export const CruiseDates: FC<IProps> = ({
 					/>
 				</span>
 			}
-			<MyTooltip isDates otherDates={otherDates}>
+			<MyTooltip isDates tooltipDates={DataTooltipDates}>
 				<span className={classNames(classNameText, styles.text)}>
-					{datepicker}
+					01.03.23 - 08.03.23
 				</span>
 			</MyTooltip>
 			<span className={classNames(classNameArrow, styles.arrow)}>

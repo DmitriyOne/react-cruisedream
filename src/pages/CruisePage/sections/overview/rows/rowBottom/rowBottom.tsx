@@ -2,7 +2,6 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { CruiseIncludedIcon, CruisePrice } from '../../../../../../components/Cruise'
 import { useWindowSize } from '../../../../../../hooks'
-import { IIncludedIcon } from '../../../../../../model/interfaces'
 
 import styles from './row-bottom.module.scss'
 
@@ -10,18 +9,12 @@ interface IProps {
 	componentClass?: string
 	columnLeftClass?: string
 	columnRightClass?: string
-	icons: IIncludedIcon[]
-	isSale: boolean
-	sale?: number
 }
 
 export const RowBottom: FC<IProps> = ({
 	componentClass,
 	columnLeftClass,
 	columnRightClass,
-	icons,
-	isSale,
-	sale
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -36,7 +29,6 @@ export const RowBottom: FC<IProps> = ({
 					<CruiseIncludedIcon
 						classNameItem={styles.includedItem}
 						classNameIcon={styles.includedIcon}
-						icons={icons}
 					/>
 				}
 			</div>
@@ -49,9 +41,6 @@ export const RowBottom: FC<IProps> = ({
 					textClass={styles.priceBottomText}
 					modalButtonClass={styles.priceModalBtn}
 					discountClass={styles.discount}
-					priceFrom={'150 000'}
-					isSale={isSale}
-					sale={sale}
 					isCruisePage
 					buttonText="ЗАБРОНИРОВАТЬ"
 				/>

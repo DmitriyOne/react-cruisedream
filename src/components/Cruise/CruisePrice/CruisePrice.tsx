@@ -5,7 +5,6 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { useWindowSize } from '../../../hooks'
-import { CRUISE_ROUTES } from '../../../constants'
 
 import { B, Button, Discount } from '../../../components'
 
@@ -27,11 +26,6 @@ enum EColor {
 }
 
 interface IProps {
-	cruiseId?: string
-	priceFrom: string
-	isSale: boolean
-	sale?: number
-
 	buttonsRowClass?: string
 	buttonText?: string
 	buttonClass?: string
@@ -56,9 +50,7 @@ interface IProps {
 	isCruisePage?: boolean
 }
 
-export const CruisePrice: FC<IProps> = ({ priceFrom,
-	isSale,
-	sale,
+export const CruisePrice: FC<IProps> = ({
 	buttonsRowClass,
 	buttonText = 'ВЫБРАТЬ',
 	buttonClass,
@@ -75,7 +67,6 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 	onClickСhoose,
 	onShowModal,
 	isCruisePage,
-	cruiseId
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -103,11 +94,11 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 		[styles.flex]: isCruisePage
 	})
 
-	const classNameText = classNames(textClass,styles.text)
+	const classNameText = classNames(textClass, styles.text)
 
-	const isShowDiscount = !isMobile && isSale
+	const isShowDiscount = !isMobile
 	const isShowTopBlock = !isMobile && !isCruisePage
-	const isShowBottomBlock = !isMobile && isCruisePage	
+	const isShowBottomBlock = !isMobile && isCruisePage
 	return (
 		<>
 			{isShowTopBlock &&
@@ -120,11 +111,11 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 					<span className={classNames(priceSpanClass, styles.priceSpan)}>
 						от
 					</span>
-					{priceFrom}$
+					1400$
 				</B>
 				{isShowDiscount &&
 					<Discount
-						percentage={sale}
+						percentage={50}
 						className={classNames(discountClass, styles.discount)}
 						classNameText={styles.discountText}
 						classNamePercentage={styles.discountPercentage}
@@ -146,7 +137,7 @@ export const CruisePrice: FC<IProps> = ({ priceFrom,
 					</Button>
 				}
 				<Link
-					to={`/cruise/${cruiseId}`}
+					to={'/cruise/1'}
 					className={classNameButton}
 					onClick={onClickСhoose}
 				>

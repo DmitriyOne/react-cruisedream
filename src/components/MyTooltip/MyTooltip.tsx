@@ -13,17 +13,17 @@ import styles from './my-tooltip.module.scss'
 interface IProps {
 	isDates?: boolean
 	isRoutes?: boolean
-	otherDates?: string[]
-	routes?: ICruiseRoute[]
+	tooltipDates?: string[]
+	tooltipRoutes?: ICruiseRoute[]
 	children: ReactElement
 }
 
 export const MyTooltip: FC<IProps> = ({
-	otherDates, children, routes, isDates, isRoutes
+	tooltipDates, children, tooltipRoutes, isDates, isRoutes
 }) => {
 
-	const DateContent = <Dates otherDates={otherDates} classText={styles.text} />
-	const RoutesContent = <Route routes={routes} classText={styles.text} />
+	const DateContent = <Dates tooltipDates={tooltipDates} classText={styles.text} />
+	const RoutesContent = <Route tooltipRoutes={tooltipRoutes} classText={styles.text} />
 
 	const content = isDates ? DateContent : isRoutes ? RoutesContent : null
 

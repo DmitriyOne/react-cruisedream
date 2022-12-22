@@ -31,7 +31,6 @@ export interface ICruise {
 	days: number
 	datepicker: string
 	otherDates?: string[]
-	// icons: IIncludedIcon[]
 	logo: string
 	cruiseName: string
 	priceFrom: string

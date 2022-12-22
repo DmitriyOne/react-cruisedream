@@ -1,7 +1,6 @@
-import { ICruiseOption, IExtraTitle, IIncludedTitle } from '../../model/interfaces'
-import { iconIncludedCruise1, iconIncludedCruise2, iconIncludedCruise3 } from './data-included-icons'
+import { IExtraTitle, IIncludedTitle } from '../../../../model/interfaces'
 
-const includedTitle: IIncludedTitle[] = [
+export const DataIncludedTitles: IIncludedTitle[] = [
 	{ title: 'Проживание в каюте Проживание в каюте Проживание в каюте Проживание в каюте' },
 	{ title: 'Питание во время круиза' },
 	{ title: 'Портовые сборы и таксы' },
@@ -13,7 +12,7 @@ const includedTitle: IIncludedTitle[] = [
 	{ title: 'Фитнес-клуб' },
 ]
 
-const extraTitle: IExtraTitle[] = [
+export const DataExtraTitles: IExtraTitle[] = [
 	{ title: 'Авиаперелёт' },
 	{ title: 'Медицинская страховка' },
 	{ title: 'Страховка от невыезда' },
@@ -26,21 +25,3 @@ const extraTitle: IExtraTitle[] = [
 	{ title: 'Экскурсии' },
 	{ title: 'Интернет' },
 ]
-
-export const DataOptions: ICruiseOption = {
-	icons: iconIncludedCruise1,
-	included: includedTitle,
-	extra: extraTitle
-}
-
-export const DataOptions2: ICruiseOption = {
-	icons: iconIncludedCruise2,
-	included: includedTitle,
-	extra: extraTitle
-}
-
-export const DataOptions3: ICruiseOption = {
-	icons: iconIncludedCruise3,
-	included: includedTitle,
-	extra: extraTitle
-}

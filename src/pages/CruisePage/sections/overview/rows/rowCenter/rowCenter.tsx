@@ -10,15 +10,11 @@ import styles from './row-center.module.scss'
 interface IProps {
 	componentClass?: string
 	columnLeftClass?: string
-	logo: string
-	shipName: string
 }
 
 export const RowCenter: FC<IProps> = ({
 	componentClass,
 	columnLeftClass,
-	logo,
-	shipName
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -30,13 +26,11 @@ export const RowCenter: FC<IProps> = ({
 				{isShowOnDesktop &&
 					<CruiseLogo
 						className={styles.logo}
-						logo={logo}
 					/>
 				}
 				<ShipName
 					classComponent={styles.shipWrapper}
 					classNameText={styles.shipName}
-					name={shipName}
 					isIcon={isShowIcon}
 				/>
 			</div>
