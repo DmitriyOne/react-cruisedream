@@ -5,6 +5,11 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
 }
 
 .header {
@@ -19,8 +24,6 @@
 		display: none;
 	}
 
-
-
 	& .col {
 		display: flex;
 		align-items: center;
@@ -34,13 +37,17 @@
 
 .body {
 	width: 100%;
+
+	&:nth-child(odd) .port {
+		color:#004275;
+	}
 }
 
 .header,
 .body {
 
 	& .col:nth-child(1) {
-		width: 4%;
+		width: 3%;
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			width: auto;
@@ -51,9 +58,11 @@
 
 	& .col:nth-child(2) {
 		width: 6%;
+		margin-right: 20px;
 
 		@include mixins.media-w(breakpoints.$laptop-s) {
 			width: 8%;
+			margin-right: 10px;
 		}
 
 		@include mixins.media-w(breakpoints.$laptop) {
@@ -64,7 +73,7 @@
 			width: auto;
 			padding-left: 10px;
 			padding-right: 16px;
-
+			margin-right: 0px;
 		}
 
 		@include mixins.media-w(breakpoints.$tablet-s) {
@@ -178,6 +187,7 @@
 }
 
 .date {
+	display: block;
 	font-weight: 500;
 	font-size: 15px;
 	line-height: 110%;
