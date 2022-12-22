@@ -1,13 +1,16 @@
 /* eslint-disable no-unused-vars */
 export enum EDirection {
 	row = 'row',
-	column = 'column'
+	rowReverse = 'row-reverse',
+	column = 'column',
+	columnReverse = 'column-reverse'
 }
 
 export enum EAlign {
 	start = 'start',
 	center = 'center',
-	end = 'end'
+	end = 'end',
+	stretch = 'stretch'
 }
 
 export enum EJustify {
@@ -21,6 +24,7 @@ export enum EJustify {
 
 export enum ESize {
 	full = 'full',
+	containerXl = 'container-xl',
 	container = 'container',
-	containerXl = 'container-xl'
+	containerS = 'container-s'
 }

@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 import { Heading } from '../../Headings'
 
@@ -7,10 +8,10 @@ interface IProps {
 	name: string
 }
 
-export const CruiseName:FC<IProps> = ({name}) => {
+export const CruiseName: FC<IProps> = ({ name }) => {
 
 	return (
-		<Heading as="h3" className={styles.component}>
+		<Heading as="h3" className={classNames(styles.component)}>
 			{name}
 		</Heading>
 	)

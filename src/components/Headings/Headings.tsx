@@ -1,11 +1,12 @@
-import { createElement, FunctionComponent, ReactNode } from 'react'
+import { createElement, DetailedHTMLProps, FunctionComponent, HTMLAttributes, ReactNode } from 'react'
 import classNames from 'classnames'
 
 import { ETags, ETextPosition } from '../../model/enums'
 
 import styles from './headings.module.scss'
 
-interface IProps {
+interface IProps
+	extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
 	as?: keyof typeof ETags
 	className?: string
 	children: ReactNode
@@ -16,7 +17,8 @@ export const Heading: FunctionComponent<IProps> = ({
 	as = 'h1',
 	className,
 	children,
-	align = 'left'
+	align = 'left',
+	...props
 }) => {
 	return createElement(
 		as,
@@ -24,7 +26,8 @@ export const Heading: FunctionComponent<IProps> = ({
 			className: classNames(
 				className,
 				styles[align]
-			)
+			),
+			props: { ...props }
 		},
 		children
 	)

@@ -1,0 +1,251 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	width: 100%;
+	padding-bottom: 6px;
+	border-bottom: 1px solid rgba(79, 78, 78, 0.4);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: none;
+	}
+
+	& .col {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	& .col:nth-child(3) {
+		justify-content: flex-start;
+	}
+}
+
+.body {
+	width: 100%;
+}
+
+.header,
+.body {
+
+	& .col:nth-child(1) {
+		width: 4%;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+			padding-left: 8px;
+			padding-right: 4px;
+		}
+	}
+
+	& .col:nth-child(2) {
+		width: 6%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 8%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 12%;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+			padding-left: 10px;
+			padding-right: 16px;
+
+		}
+
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			min-width: 80px;
+		}
+	}
+
+	& .col:nth-child(3) {
+		width: 60%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 56%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 78%;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 100%;
+		}
+	}
+
+	& .col:nth-child(4) {
+		width: 6%;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+		}
+
+	}
+
+	& .col:nth-child(5) {
+		width: 12%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 13%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			display: none;
+		}
+	}
+
+	& .col:nth-child(6) {
+		width: 12%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 13%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			display: none;
+		}
+	}
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 6px 0;
+	border-bottom: 1px solid rgba(79, 78, 78, 0.4);
+}
+
+.visible {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 110%;
+	color: #004275;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+}
+
+.number {
+	display: block;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 110%;
+	color: #004275;
+	text-align: center;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+}
+
+.date {
+	display: block;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+	text-align: center;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		text-align: left;
+	}
+}
+
+.port {
+	display: block;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 110%;
+	color: #4F4E4E;
+	text-align: left;
+}
+
+.info {
+	display: block;
+	@include mixins.square-size(25);
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.square-size(20);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 14px;
+		height: 8px;
+	}
+
+	img {
+		display: block;
+		height: 100%;
+	}
+}
+
+.text {
+	display: block;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+	text-align: center;
+}
+
+.hidden {
+	display: flex;
+	align-items: flex-start;
+	width: 60%;
+	margin-left: 10%;
+	padding-top: 6px;
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-left: 12%;
+		width: 56%;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+.hiddenImg {
+	@include mixins.fluidMaxSize(180);
+	margin-right: 10px;
+}
+
+.hiddenText {
+	font-size: 15px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+}

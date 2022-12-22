@@ -50,27 +50,25 @@
 	margin-right: 26px;
 	color: #004275;
 
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+		margin-top: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 19px;
+	}
+
 	&:first-child {
 		margin-top: 0;
 	}
 
 	&:last-child {
 		margin-right: 0;
-	}
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		font-size: 14px;
-		margin-right: 16px;
-	}
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		width: 100%;
-		font-size: 22px;
-		margin-top: 18px;
-	}
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		font-size: 19px;
 	}
 }
 
@@ -126,3 +124,4 @@
 	display: block;
 	width: 8px;
 }
+

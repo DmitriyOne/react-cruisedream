@@ -1,14 +1,16 @@
-import styles from './cruise-logo.module.scss'
-
 import { FC } from 'react'
+import classNames from 'classnames'
+
+import styles from './cruise-logo.module.scss'
 
 interface IProps {
 	logo: string
+	className?: string
 }
 
-export const CruiseLogo:FC<IProps> = ({logo}) => {
+export const CruiseLogo: FC<IProps> = ({ logo, className }) => {
 	return (
-		<div className={styles.logo}>
+		<div className={classNames(className, styles.logo)}>
 			<img
 				src={logo}
 				alt="Logo Caribbean"

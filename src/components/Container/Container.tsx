@@ -27,13 +27,17 @@ export const Container = forwardRef(({
 ) => {
 	const componentClassName = classNames(className, {
 		[styles.full]: width === 'full',
-		[styles.container]: width === 'container',
 		[styles.containerXL]: width === 'containerXl',
+		[styles.container]: width === 'container',
+		[styles.containerS]: width === 'containerS',
 		[styles.row]: direction === 'row',
+		[styles.rowReverse]: direction === 'rowReverse',
 		[styles.column]: direction === 'column',
+		[styles.columnReverse]: direction === 'columnReverse',
 		[styles.alignStart]: align === 'start',
 		[styles.alignCenter]: align === 'center',
 		[styles.alignEnd]: align === 'end',
+		[styles.alignStretch]: align === 'stretch',
 		[styles.justifyStart]: justify === 'start',
 		[styles.justifyEnd]: justify === 'end',
 		[styles.justifyBetween]: justify === 'between',
