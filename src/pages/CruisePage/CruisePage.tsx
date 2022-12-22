@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react'
-
 import { useWindowSize } from '../../hooks'
-import { ICruise } from '../../model/interfaces'
 
-import { FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook } from './sections'
+import { Cabins, FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook } from './sections'
 
 export const CruisePage = () => {
 	const { isMobile } = useWindowSize()
@@ -17,6 +14,7 @@ export const CruisePage = () => {
 			<Route />
 			<Options />
 			<ToBook />
+			<Cabins />
 			<FAQ />
 			<TermsAndCond />
 		</>

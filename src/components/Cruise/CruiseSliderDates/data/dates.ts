@@ -1,0 +1,73 @@
+import { ICabinsSwiper } from '../../../../model/interfaces'
+
+export const DataCabinsDates: ICabinsSwiper[] = [
+	{
+		id: 1,
+		start: '01.03.2023',
+		end: '08.03.2023',
+		price: 1625,
+		isPrice: true,
+		isSales: false,
+		isCall: false,
+	},
+	{
+		id: 2,
+		start: '01.04.2023',
+		end: '08.04.2023',
+		price: 1870,
+		isPrice: true,
+		isSales: false,
+		isCall: false,
+	},
+	{
+		id: 3,
+		start: '01.05.2023',
+		end: '08.05.2023',
+		isPrice: false,
+		isSales: true,
+		isCall: false,
+	},
+	{
+		id: 4,
+		start: '01.06.2023',
+		end: '08.06.2023',
+		price: 1100,
+		isPrice: true,
+		isSales: false,
+		isCall: false,
+	},
+	{
+		id: 5,
+		start: '01.07.2023',
+		end: '08.07.2023',
+		isPrice: false,
+		isSales: false,
+		isCall: true,
+	},
+	{
+		id: 6,
+		start: '01.08.2023',
+		end: '08.08.2023',
+		price: 1200,
+		isPrice: true,
+		isSales: false,
+		isCall: false,
+	},
+	{
+		id: 7,
+		start: '01.09.2023',
+		end: '08.09.2023',
+		price: 1450,
+		isPrice: true,
+		isSales: false,
+		isCall: false,
+	},
+	{
+		id: 8,
+		start: '01.03.2023',
+		end: '08.03.2023',
+		isPrice: false,
+		isSales: true,
+		isCall: false,
+	}
+]
