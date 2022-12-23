@@ -62,6 +62,16 @@
 	text-align: center;
 	padding: 8px 6px;
 	margin-right: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$transparent;
+	background-color: #004275;
+
+	&.active {
+		background-color: colors.$transparent;
+		color: #004275;
+		border-color: #004275;
+	}
 
 	&:last-child {
 		margin-right: 0;

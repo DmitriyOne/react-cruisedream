@@ -1,6 +1,6 @@
 import { useWindowSize } from '../../hooks'
 
-import { Cabins, FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook } from './sections'
+import { Cabins, Dates, FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook } from './sections'
 
 export const CruisePage = () => {
 	const { isMobile } = useWindowSize()
@@ -14,6 +14,7 @@ export const CruisePage = () => {
 			<Route />
 			<Options />
 			<ToBook />
+			<Dates />
 			<Cabins />
 			<FAQ />
 			<TermsAndCond />

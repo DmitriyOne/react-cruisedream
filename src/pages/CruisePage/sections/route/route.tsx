@@ -17,6 +17,7 @@ export const Route = () => {
 					items={tabs}
 					bodyClass={styles.tabsBody}
 					titleClass={styles.tabsTitle}
+					titleActiveClass={styles.active}
 				/>
 			</Container>
 		</Container>

@@ -1,0 +1,68 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+}
+
+.tabsHeaderWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	@include mixins.fluidMaxSize(1370);
+	margin: 0 auto;
+}
+
+.tabsHeader {
+	width: 100%;
+	border-bottom: 0.3px solid rgba(79, 78, 78, 0.4);
+
+	margin-bottom: 35px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+	}
+}
+
+.tabsTitle {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 28px;
+	line-height: 110%;
+	color: rgba(0, 66, 117, 0.55);
+	text-transform: none !important;
+	margin-right: 40px;
+	text-align: center;
+	padding: 0 20px 12px;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: colors.$transparent;
+
+	&.active {
+		border-bottom-color: rgba(79, 78, 78, 0.5);
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.tabsSubtitle {
+	display: block;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 110%;
+	color: #004275;
+	text-align: center;
+	padding-top: 4px;
+}
+
+.tabsBody {
+	@include mixins.fluidMaxSize(1370);
+	margin: 0 auto;
+}

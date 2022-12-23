@@ -12,18 +12,8 @@
 }
 
 .title {
-	border-width: 1px;
-	border-style: solid;
-	border-color: colors.$transparent;
-	background-color: #004275;
 	text-transform: uppercase;
 	cursor: pointer;
-
-	&.active {
-		background-color: colors.$transparent;
-		color: #004275;
-		border-color: #004275;
-	}
 }
 
 .body {

@@ -9,17 +9,31 @@ interface IProps {
 	items: ITabs[]
 	componentClass?: string
 	headerClass?: string
+	headerWrapperClass?: string
 	titleClass?: string
+	titleActiveClass?: string
+	subTitleClass?: string
 	bodyClass?: string
+	isHeaderWrapper?: boolean
 }
 
-export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClass, bodyClass }) => {
+export const Tabs: FC<IProps> = ({
+	items,
+	componentClass,
+	headerClass,
+	headerWrapperClass,
+	titleClass,
+	titleActiveClass,
+	subTitleClass,
+	bodyClass,
+	isHeaderWrapper,
+}) => {
 	const [visibleTab, setVisibleTab] = useState<number | null>(items[0].id)
 
 	const componentClassName = classNames(componentClass, styles.component)
 	const headerClassName = classNames(headerClass, styles.header)
 	const titleClassName = classNames(titleClass, styles.title)
-	const titleActiveClassName = classNames(titleClass, styles.title, styles.active)
+	const titleActiveClassName = classNames(titleClass, titleActiveClass, styles.title)
 	const bodyClassName = classNames(bodyClass, styles.body)
 
 	const listTitles = items.map((item) =>
@@ -29,6 +43,11 @@ export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClas
 			className={visibleTab === item.id ? titleActiveClassName : titleClassName}
 		>
 			{item.title}
+			{item.subtitle &&
+				<span className={subTitleClass}>
+					{item.subtitle}
+				</span>
+			}
 		</h5>
 	)
 
@@ -45,7 +64,16 @@ export const Tabs: FC<IProps> = ({ items, componentClass, headerClass, titleClas
 	return (
 		<div className={componentClassName}>
 			<div className={headerClassName}>
-				{listTitles}
+				{isHeaderWrapper
+					?
+					<div className={headerWrapperClass}>
+						{listTitles}
+					</div>
+					:
+					<>
+						{listTitles}
+					</>
+				}
 			</div>
 			{listContent}
 		</div>
