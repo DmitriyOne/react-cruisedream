@@ -4,12 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from '../data/swiper'
 import { DataCabinsDates } from '../data/dates'
 
-import { Button } from '../../../Button'
+import { Button, B } from '../../../../components'
 import { useSwiperButtons } from '../../../../hooks'
 
 import 'swiper/css'
 import styles from './choose-slider.module.scss'
-import { B } from '../../../B'
 
 export const ChooseSlider = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()

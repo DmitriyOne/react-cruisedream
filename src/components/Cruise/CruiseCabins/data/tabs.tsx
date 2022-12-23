@@ -1,11 +1,13 @@
 import { ITabs } from '../../../../model/interfaces'
 
+import { CabinsDesc } from '../CabinsDesc/CabinsDesc'
+
 export const tabs: ITabs[] = [
 	{
 		id: 1,
 		title: 'Внутренняя',
 		subtitle: 'от 1 225 $',
-		children: <p>Внутренняя каюта</p>
+		children: <CabinsDesc/>
 	},
 	{
 		id: 2,

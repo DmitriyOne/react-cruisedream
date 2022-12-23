@@ -1,0 +1,113 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.swiperContainer {
+	width: 100%;
+	position: relative;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 480px;
+		margin: 0 auto;
+	}
+}
+
+.swiper {
+	width: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 260px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		height: 230px;
+	}
+}
+
+.slide {
+
+	img {
+		display: block;
+		height: 100%;
+	}
+}
+
+.swiperArrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 100%;
+	z-index: 20;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 30px;
+	}
+
+	&.prev {
+		left: 0px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			left: 0;
+		}
+
+		&::before {
+			transform: rotate(-180deg);
+		}
+	}
+
+	&.next {
+		right: 0px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			right: 0;
+		}
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		width: 12px;
+		height: 22px;
+		background-image: url('../../images/arrow.svg');
+		@include mixins.bg-cover;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 8px;
+			height: 16px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 6px;
+			height: 12px;
+		}
+	}
+}
+
+.showMore {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 100%;
+	letter-spacing: 0.05em;
+	color: rgba(79, 78, 78, 0.8);
+	padding: 5px 25px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: colors.$white;
+	border: 0.5px solid rgba(79, 78, 78, 0.8);
+	border-radius: 3px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: none;
+	}
+}
