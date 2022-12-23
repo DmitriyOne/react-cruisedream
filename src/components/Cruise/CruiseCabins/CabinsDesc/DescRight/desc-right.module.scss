@@ -103,7 +103,6 @@
 	padding: 6px 4px;
 	min-width: 40px;
 	min-height: 40px;
-	background-color: #F98F8F;
 	border-radius: 2px;
 	margin-right: 15px;
 
@@ -124,6 +123,25 @@
 		margin-right: 8px;
 		min-width: 20px;
 		min-height: 20px;
+	}
+}
+
+.code {
+
+	&.pink {
+		background-color: #F98F8F;
+	}
+
+	&.red {
+		background-color: #C20303;
+	}
+
+	&.viol {
+		background-color: #7F3AAA;
+	}
+
+	&.blue {
+		background-color: #4E7BBF;
 	}
 }
 
@@ -173,6 +191,7 @@
 	font-size: 20px;
 	line-height: 120%;
 	color: #004275;
+	font-weight: 500;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: colors.$transparent;

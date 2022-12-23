@@ -1,5 +1,7 @@
 import classNames from 'classnames'
-import { B } from '../../../../B'
+
+import { B, Button } from '../../../../../components'
+import { innerCabins } from '../../data/cabins'
 
 import styles from './desc-right.module.scss'
 
@@ -25,46 +27,39 @@ export const DescRight = () => {
 				</div>
 			</div>
 			<div className={styles.body}>
-				<div className={styles.row}>
-					<div className={styles.item}>
-						<span className={styles.code}>
-							A2
-						</span>
-						<B fontWeight={500} className={styles.deck}>
-							Палуба - 21
-						</B>
+				{innerCabins.map(cabin =>
+					<div key={cabin.id} className={styles.row}>
+						<div className={styles.item}>
+							<span className={classNames(
+								styles.code,
+								cabin.deck.code === 'A1' ? styles.pink : '',
+								cabin.deck.code === 'A2' ? styles.red : '',
+								cabin.deck.code === 'BU' ? styles.viol : '',
+								cabin.deck.code === 'BY' ? styles.blue : '',
+							)}>
+								{cabin.deck.code}
+							</span>
+							<B fontWeight={500} className={styles.deck}>
+								{cabin.deck.name}
+							</B>
+						</div>
+						<div className={styles.item}>
+							<B fontWeight={700} className={styles.price}>
+								{cabin.price} $
+							</B>
+						</div>
+						<div className={styles.item}>
+							<Button
+								className={classNames(
+									styles.choose,
+									cabin.checked ? styles.checked : ''
+								)}
+							>
+								Выбрать
+							</Button>
+						</div>
 					</div>
-					<div className={styles.item}>
-						<B fontWeight={700} className={styles.price}>
-							1 725 $
-						</B>
-					</div>
-					<div className={styles.item}>
-						<B fontWeight={500} className={styles.choose}>
-							Выбрать
-						</B>
-					</div>
-				</div>
-				<div className={styles.row}>
-					<div className={styles.item}>
-						<span className={styles.code}>
-							A2
-						</span>
-						<B fontWeight={500} className={styles.deck}>
-							Палуба - 21
-						</B>
-					</div>
-					<div className={styles.item}>
-						<B fontWeight={700} className={styles.price}>
-							1 725 $
-						</B>
-					</div>
-					<div className={styles.item}>
-						<B fontWeight={500} className={styles.choose}>
-							Выбрать
-						</B>
-					</div>
-				</div>
+				)}
 			</div>
 			{/* <div className={styles.hidden}>
 				<p className={styles.hiddenText}>

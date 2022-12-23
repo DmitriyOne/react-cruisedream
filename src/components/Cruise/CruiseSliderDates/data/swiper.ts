@@ -15,7 +15,7 @@ export const params: SwiperOptions = {
 	slidePrevClass: `${styles.prevSlide}`,
 	slideVisibleClass: `${styles.visibleSlide}`,
 	breakpoints: {
-		1440: {
+		1441: {
 			spaceBetween: 10,
 			slidesPerView: 6,
 		},
