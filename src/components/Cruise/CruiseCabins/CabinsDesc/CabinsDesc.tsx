@@ -1,25 +1,37 @@
+import { FC } from 'react'
+
 import { Heading } from '../../../../components'
+
+import { ICabins } from '../../../../model/interfaces'
 
 import { DescLeft } from './DescLeft/DescLeft'
 import { DescRight } from './DescRight/DescRight'
 
 import styles from './cabins-desc.module.scss'
 
-export const CabinsDesc = () => {
+interface IProps {
+	cabins: ICabins[]
+}
+
+export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 
 	return (
-		<div className={styles.component}>
-			<Heading as="h5" className={styles.title}>
-				КАЮТА С БАЛКОНОМ С ОГРАНИЧЕННЫМ ВИДОМ
-			</Heading>
-			<div className={styles.container}>
-				<div className={styles.left}>
-					<DescLeft />
+		<>
+			{cabins.map(cabin =>
+				<div key={cabin.id} className={styles.component}>
+					<Heading as="h5" className={styles.title}>
+						{cabin.title}
+					</Heading>
+					<div className={styles.container}>
+						<div className={styles.left}>
+							<DescLeft images={cabin.images} />
+						</div>
+						<div className={styles.right}>
+							<DescRight cabinsDesc={cabin.desc} />
+						</div>
+					</div>
 				</div>
-				<div className={styles.right}>
-					<DescRight />
-				</div>
-			</div>
-		</div>
+			)}
+		</>
 	)
 }

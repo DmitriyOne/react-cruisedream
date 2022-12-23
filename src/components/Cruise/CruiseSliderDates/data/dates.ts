@@ -1,6 +1,6 @@
-import { ICabinsSwiper } from '../../../../model/interfaces'
+import { ICabinsSwiperDates } from '../../../../model/interfaces'
 
-export const DataCabinsDates: ICabinsSwiper[] = [
+export const DataCabinsDates: ICabinsSwiperDates[] = [
 	{
 		id: 1,
 		start: '01.03.2023',

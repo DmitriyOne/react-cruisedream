@@ -1,30 +1,33 @@
 import { ITabs } from '../../../../model/interfaces'
 
-import { CabinsDesc } from '../CabinsDesc/CabinsDesc'
+import { CabinsInner } from '../CabinsInner/CabinsInner'
+import { CabinsSuite } from '../CabinsSuite/CabinsSuite'
+import { CabinsWithBalcony } from '../CabinsWithBalcony/CabinsWithBalcony'
+import { CabinsWithWindow } from '../CabinsWithWindow/CabinsWithWindow'
 
 export const tabs: ITabs[] = [
 	{
 		id: 1,
 		title: 'Внутренняя',
 		subtitle: 'от 1 225 $',
-		children: <CabinsDesc/>
+		children: <CabinsInner />
 	},
 	{
 		id: 2,
 		title: 'C окном',
 		subtitle: 'от 1 625 $',
-		children: <p>Каюта с окном</p>
+		children: <CabinsWithWindow />
 	},
 	{
 		id: 3,
 		title: 'C балконом',
 		subtitle: 'от 1 725 $',
-		children: <p>Каюта с балконом</p>
+		children: <CabinsWithBalcony />
 	},
 	{
 		id: 4,
 		title: 'Сьют',
 		subtitle: 'от 1 955 $',
-		children: <p>Сьют каюта</p>
+		children: <CabinsSuite />
 	}
 ]

@@ -1,5 +1,17 @@
 import { EDeckCode } from '../enums'
 
+export interface ICabinsImages {
+	src: string
+	alt: string
+}
+
+export interface ICabins {
+	id: number
+	title: string
+	images: ICabinsImages[]
+	desc: ICabinsDesc[]
+}
+
 export interface IDeck {
 	code: keyof typeof EDeckCode
 	name: string
@@ -12,7 +24,7 @@ export interface ICabinsDesc {
 	checked: boolean
 }
 
-export interface ICabinsSwiper {
+export interface ICabinsSwiperDates {
 	id: number
 	start: string
 	end: string

@@ -1,11 +1,16 @@
+import { FC } from 'react'
 import classNames from 'classnames'
 
 import { B, Button } from '../../../../../components'
-import { innerCabins } from '../../data/cabins'
+import { ICabinsDesc } from '../../../../../model/interfaces'
 
 import styles from './desc-right.module.scss'
 
-export const DescRight = () => {
+interface IProps {
+	cabinsDesc: ICabinsDesc[]
+}
+
+export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
 
 	return (
 		<>
@@ -27,7 +32,7 @@ export const DescRight = () => {
 				</div>
 			</div>
 			<div className={styles.body}>
-				{innerCabins.map(cabin =>
+				{cabinsDesc.map(cabin =>
 					<div key={cabin.id} className={styles.row}>
 						<div className={styles.item}>
 							<span className={classNames(

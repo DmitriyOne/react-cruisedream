@@ -1,15 +1,21 @@
+import { FC } from 'react'
 import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { params, swiperImages } from '../../data/swiper'
+import { params } from '../../data/swiper'
 
+import { ICabinsImages } from '../../../../../model/interfaces'
 import { Button } from '../../../../../components'
 import { useSwiperButtons } from '../../../../../hooks'
 
 import 'swiper/css'
 import styles from './desc-left.module.scss'
 
-export const DescLeft = () => {
+interface IProps {
+	images: ICabinsImages[]
+}
+
+export const DescLeft: FC<IProps> = ({ images }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -20,7 +26,7 @@ export const DescLeft = () => {
 					onSwiper={upDateSwiper}
 					{...params}
 				>
-					{swiperImages.map((slide, idx) =>
+					{images.map((slide, idx) =>
 						<SwiperSlide key={idx} className={styles.slide}>
 							<img src={slide.src} alt={slide.alt} />
 						</SwiperSlide>
