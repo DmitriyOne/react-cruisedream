@@ -8,6 +8,10 @@
 	margin-bottom: 5px;
 	width: 100%;
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+	}
+
 	&:last-child {
 		margin-bottom: 0;
 	}

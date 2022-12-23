@@ -25,7 +25,7 @@ export const innerLimitCabinsDesc: ICabinsDesc[] = [
 		id: 1,
 		deck: deck1,
 		price: 2899,
-		checked: false
+		checked: true
 	},
 	{
 		id: 2,

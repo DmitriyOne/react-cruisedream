@@ -215,9 +215,17 @@
 	}
 
 	@include mixins.media-minw(breakpoints.$laptop) {
-		&:hover {
+		&:hover:not(.checked) {
 			border-bottom-color: #4F4E4E;
 		}
+	}
+}
+
+.choose {
+
+	&.checked {
+		color: #FDBB11;
+		border-bottom-color: #FDBB11;
 	}
 }
 

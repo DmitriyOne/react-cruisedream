@@ -60,7 +60,7 @@ export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
 									cabin.checked ? styles.checked : ''
 								)}
 							>
-								Выбрать
+								{cabin.checked ? 'Выбрано' : 'Выбрать'}
 							</Button>
 						</div>
 					</div>
