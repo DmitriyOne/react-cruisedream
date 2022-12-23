@@ -1,0 +1,150 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: space-between;
+		padding-top: 15px;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-right: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 50px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-right: 20px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-end;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: center;
+	}
+}
+
+.adultIcon {
+	display: block;
+	width: 30px;
+	margin-right: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 18px;
+		margin-right: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 4px;
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.childIcon {
+	display: block;
+	width: 27px;
+	margin-right: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 18px;
+		margin-right: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 4px;
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.countWrapper {
+	display: flex;
+	align-items: center;
+	padding-bottom: 2px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.countText {
+	min-width: 70px;
+	font-size: 24px;
+	line-height: 110%;
+	color: #004275;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 55px;
+		padding-left: 5px;
+		padding-right: 5px;
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		min-width: 45px;
+		font-size: 16px;
+	}
+}
+
+.countButton {
+	@include mixins.square-size(25);
+	font-size: 20px;
+	line-height: 100%;
+	color: colors.$white;
+	background-color: rgba(79, 78, 78, 0.5);
+}
+
+.label {
+	display: block;
+	@include mixins.fluidMaxSize(120);
+	margin-left: auto;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 110%;
+	text-align: center;
+	color: rgba(79, 78, 78, 0.8);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 10px;
+		@include mixins.fluidMaxSize(105);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 8px;
+		@include mixins.fluidMaxSize(95);
+	}
+}

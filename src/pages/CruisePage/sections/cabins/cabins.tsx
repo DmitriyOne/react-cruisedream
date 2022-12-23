@@ -1,5 +1,5 @@
 import { Container, Heading } from '../../../../components'
-import { CruiseSliderDates } from '../../../../components/Cruise'
+import { CruiseCountPassengers, CruiseSliderDates } from '../../../../components/Cruise'
 
 import styles from './cabins.module.scss'
 
@@ -11,6 +11,7 @@ export const Cabins = () => {
 					КАЮТЫ И ЦЕНЫ
 				</Heading>
 				<CruiseSliderDates />
+				<CruiseCountPassengers />
 			</Container>
 		</Container>
 	)
