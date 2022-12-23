@@ -7,7 +7,7 @@ export const params: SwiperOptions = {
 	allowTouchMove: true,
 	grabCursor: true,
 	spaceBetween: 5,
-	slidesPerView: 3.5,
+	slidesPerView: 3.4,
 	centeredSlides: true,
 	speed: 700,
 	slideActiveClass: `${styles.activeSlide}`,
@@ -15,9 +15,13 @@ export const params: SwiperOptions = {
 	slidePrevClass: `${styles.prevSlide}`,
 	slideVisibleClass: `${styles.visibleSlide}`,
 	breakpoints: {
-		1025: {
+		1440: {
 			spaceBetween: 10,
 			slidesPerView: 6,
-		}
+		},
+		1025: {
+			spaceBetween: 10,
+			slidesPerView: 5,
+		},
 	}
 }
