@@ -1,0 +1,22 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
+
+.component {
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.body {
+	display: flex;
+	align-items: center;
+}

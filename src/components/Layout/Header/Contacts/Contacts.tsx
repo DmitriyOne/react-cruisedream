@@ -6,12 +6,16 @@ import { ContactMobile } from './ContactMobile/ContactMobile'
 import { ContactTop } from './ContactTop/ContactTop'
 
 import styles from './contacts.module.scss'
+import classNames from 'classnames'
 
 export const Contacts = () => {
 	const { isTablet } = useWindowSize()
 
+	const componentClass = classNames(styles.component, {
+		[styles.mobile]: isTablet
+	})
 	return (
-		<div className={isTablet ? styles.component : ''}>
+		<div className={componentClass}>
 			{isTablet
 				?
 				<ContactMobile />

@@ -17,7 +17,7 @@ export const Discount: FC<IProps> = ({
 	classNamePercentage
 }) => {
 	return (
-		<div className={classNames(styles.component, className)}>
+		<div className={classNames(className, styles.component)}>
 			<span className={classNames(styles.text, classNameText)}>
 				{percentage}
 				<span className={classNames(styles.percentage, classNamePercentage)}>

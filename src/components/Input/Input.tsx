@@ -47,6 +47,7 @@ export const Input: FC<IInput> = ({
 		[styles.labelLeft]: labelPosition === 'left',
 		[styles.labelRight]: labelPosition === 'right',
 		[styles.labelTop]: labelPosition === 'top',
+		[styles.labelBottom]: labelPosition === 'bottom',
 	})
 	const inputClass = classNames(styles.input, inputClassName)
 

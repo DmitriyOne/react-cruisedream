@@ -1,0 +1,96 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 30px 12px 40px;
+	background-color: #EFEFEF;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 0 16px;
+	}
+}
+
+.title {
+	width: 100%;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 46px;
+	line-height: 110%;
+	color: #004275;
+	padding-bottom: 12px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 36px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 24px;
+		padding-bottom: 18px;
+	}
+}
+
+.tabsHeader {
+	justify-content: center;
+	margin-bottom: 28px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+}
+
+.tabsTitle {
+	min-width: 140px;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 15px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: colors.$white;
+	text-align: center;
+	padding: 8px 6px;
+	margin-right: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$transparent;
+	background-color: #004275;
+
+	&.active {
+		background-color: colors.$transparent;
+		color: #004275;
+		border-color: #004275;
+	}
+
+	&:last-child {
+		margin-right: 0;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			display: none;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+		padding: 6px;
+		@include mixins.fonts(family.$montserrat);
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+}
+
+.tabsBody {
+	position: relative;
+	margin: 0 auto;
+}

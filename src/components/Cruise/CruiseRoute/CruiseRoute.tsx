@@ -1,35 +1,35 @@
 import { FC, useEffect, useState } from 'react'
-
-import { ICruiseRoute } from '../../../model/interfaces'
+import classNames from 'classnames'
 
 import markerIcon from './icons/marker.svg'
 
 import styles from './cruise-route.module.scss'
 import { MyTooltip } from '../../MyTooltip'
+import { DataTooltipRoutes } from './data/tooltip-route'
+import { DataShowRoutes } from './data/show-routes'
 
 interface IProps {
-	id?: string
-	routes: ICruiseRoute[]
+	classComponent?: string
 }
 
-export const CruiseRoute: FC<IProps> = ({ routes, id }) => {
-	const [idTooltip, setIdTooltip] = useState('sdfd')
+export const CruiseRoute: FC<IProps> = ({ classComponent }) => {
+	const [idTooltip, setIdTooltip] = useState('')
 
 	useEffect(() => {
-		setIdTooltip('my-route-tooltip-' + id)
-	}, [id])
+		setIdTooltip('my-route-tooltip-' + 1)
+	}, [])
 
 	return (
-		<div className={styles.component}>
+		<div className={classNames(classComponent, styles.component)}>
 			<span className={styles.icon}>
 				<img
 					src={markerIcon}
 					alt="Marker icon"
 				/>
 			</span>
-			<MyTooltip isRoutes routes={routes}>
+			<MyTooltip isRoutes tooltipRoutes={DataTooltipRoutes}>
 				<ul id={idTooltip} className={styles.container}>
-					{routes.map((breadcrumbs, idx) =>
+					{DataShowRoutes.map((breadcrumbs, idx) =>
 						<li
 							key={idx}
 							className={styles.item}

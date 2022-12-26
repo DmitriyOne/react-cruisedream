@@ -1,0 +1,11 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+
+.component {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+}

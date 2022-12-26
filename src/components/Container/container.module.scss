@@ -6,13 +6,18 @@
 	max-width: 100%
 }
 
+.containerXL {
+	@include mixins.fluidMaxSize(1680);
+	margin: 0 auto;
+}
+
 .container {
 	@include mixins.fluidMaxSize(1500);
 	margin: 0 auto;
 }
 
-.containerXL {
-	@include mixins.fluidMaxSize(1680);
+.containerS {
+	@include mixins.fluidMaxSize(1370);
 	margin: 0 auto;
 }
 
@@ -21,9 +26,19 @@
 	flex-direction: row;
 }
 
+.rowReverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
 .column {
 	display: flex;
 	flex-direction: column;
+}
+
+.columnReverse {
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 .alignStart {
@@ -36,6 +51,10 @@
 
 .alignEnd {
 	align-items: flex-end;
+}
+
+.alignStretch {
+	align-items: stretch;
 }
 
 .justifyStart {

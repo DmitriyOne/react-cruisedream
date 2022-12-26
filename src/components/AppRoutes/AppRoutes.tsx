@@ -6,6 +6,7 @@ import { CRUISE_ROUTES } from '../../constants'
 import {
 	HomePage,
 	SearchPage,
+	CruisePage,
 	SalePage,
 	RegionsPage,
 	AcrossRussiaPage,
@@ -26,6 +27,7 @@ export const AppRoutes = () => {
 						<Route path={CRUISE_ROUTES.HOME} element={<Layout />}>
 							<Route index element={<HomePage />} />
 							<Route path={CRUISE_ROUTES.SEARCH} element={<SearchPage />} />
+							<Route path={CRUISE_ROUTES.CRUISE} element={<CruisePage />} />
 							<Route path={CRUISE_ROUTES.SALE} element={<SalePage />} />
 							<Route path={CRUISE_ROUTES.REGIONS} element={<RegionsPage />} />
 							<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />

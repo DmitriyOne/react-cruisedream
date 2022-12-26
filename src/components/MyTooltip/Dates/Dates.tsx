@@ -2,14 +2,14 @@ import { FC } from 'react'
 import { B } from '../../B'
 
 interface IProps {
-	otherDates?: string[]
+	tooltipDates?: string[]
 	classText?: string
 }
 
-export const Dates: FC<IProps> = ({ otherDates, classText }) => {
+export const Dates: FC<IProps> = ({ tooltipDates, classText }) => {
 	return (
 		<>
-			{otherDates?.map((date, idx) =>
+			{tooltipDates?.map((date, idx) =>
 				<B
 					key={idx}
 					fontWeight={500}

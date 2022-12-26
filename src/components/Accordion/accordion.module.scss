@@ -1,0 +1,35 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+
+.component {
+	width: 100%;
+	overflow: hidden;
+}
+
+.title {
+	cursor: pointer;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+.arrow {
+	transition: transform .4s;
+
+	&.active {
+		transform: rotate(-180deg);
+	}
+}
+
+.body {
+	flex: 1 1 auto;
+	transition: height 0.4s ease;
+
+	&.active {
+		height: auto;
+	}
+
+}

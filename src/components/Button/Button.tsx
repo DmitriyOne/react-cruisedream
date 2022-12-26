@@ -1,14 +1,20 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, ForwardedRef, forwardRef, ReactNode } from 'react'
 import classNames from 'classnames'
 
+import { EWidth, EBackground, EColor, EBorder } from '../../model/enums'
+
 import styles from './button.module.scss'
 
 interface IProps
-	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>,HTMLButtonElement> {
+	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	children?: ReactNode
 	className?: string
-	href?: string;
+	href?: string
 	target?: '_blank'
+	width?: keyof typeof EWidth
+	bg?: keyof typeof EBackground
+	textColor?: keyof typeof EColor
+	border?: keyof typeof EBorder
 };
 
 export const Button = forwardRef(({
@@ -16,6 +22,10 @@ export const Button = forwardRef(({
 	children,
 	href,
 	target,
+	width,
+	bg,
+	textColor,
+	border = 'none',
 	...props
 }: IProps, ref?: ForwardedRef<HTMLButtonElement>
 ) => {
@@ -33,13 +43,22 @@ export const Button = forwardRef(({
 			</a>
 		)
 	}
+	const buttonClassName = classNames(className, styles.component, {
+		[styles.full]: width === 'full',
+		[styles.half]: width === 'half',
+		[styles.bgBlue]: bg === 'blue',
+		[styles.bgTransparent]: bg === 'transparent',
+		[styles.textBlue]: textColor === 'blue',
+		[styles.textWhite]: textColor === 'white',
+		[styles.borderBlue]: border === 'blue',
+		[styles.borderTransparent]: border === 'transparent',
+		[styles.borderNone]: border === 'none',
+	})
+
 	return (
 		<button
 			ref={ref}
-			className={classNames(
-				styles.component,
-				className,
-			)}
+			className={buttonClassName}
 			{...props}
 		>
 			{children}

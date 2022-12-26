@@ -1,25 +1,27 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 
-import { IIncludedIcon } from '../../../model/interfaces'
+import { DataIncludedIcon } from './data/included-icons'
 
 import { Heading } from '../../Headings'
 
 import styles from './cruise-included-icon.module.scss'
 
 interface IProps {
-	icons: IIncludedIcon[]
+	classNameIcon?: string
+	classNameItem?: string
 }
 
-export const CruiseIncludedIcon:FC<IProps> = ({icons}) => {
+export const CruiseIncludedIcon: FC<IProps> = ({ classNameIcon, classNameItem }) => {
 
 	return (
 		<ul className={styles.component}>
-			{icons.map(((icon, id) =>
+			{DataIncludedIcon.map(((icon, id) =>
 				<li
 					key={id}
-					className={styles.item}
+					className={classNames(classNameItem, styles.item)}
 				>
-					<span className={styles.icon}>
+					<span className={classNames(classNameIcon, styles.icon)}>
 						<img
 							src={icon.src}
 							alt={icon.alt}
