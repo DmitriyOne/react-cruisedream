@@ -16,14 +16,14 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		flex-direction: column;
-		padding-top: 0;
+		padding-top: 0px;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
 }
 
 .pt0 {
-	padding-top: 0;
+	padding-top: 10px;
 }
 
 .alignTop {
@@ -71,4 +71,8 @@
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+}
+
+.logo {
+	margin-top: 10px;
 }

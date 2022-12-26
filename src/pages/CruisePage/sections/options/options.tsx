@@ -1,22 +1,14 @@
-import { FC } from 'react'
-
 import { Container } from '../../../../components'
 import { ShipOptions } from '../../../../components/Ship'
-import { IIncludedTitle, IExtraTitle } from '../../../../model/interfaces'
 
 import styles from './options.module.scss'
 
-interface IProps {
-	includedTitles: IIncludedTitle[]
-	extraTitles: IExtraTitle[]
-}
-
-export const Options: FC<IProps> = ({ includedTitles, extraTitles }) => {
+export const Options = () => {
 
 	return (
-		<Container width="full" className={styles.component}>
+		<Container id="included" width="full" className={styles.component}>
 			<Container width="containerS" direction="column" align="start">
-				<ShipOptions includedTitles={includedTitles} extraTitles={extraTitles} />
+				<ShipOptions />
 			</Container>
 		</Container>
 	)

@@ -1,0 +1,16 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	width: 100%;
+	
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 235px;
+	}
+
+	img {
+		@include mixins.media-w(breakpoints.$tablet) {
+			height: 100%;
+		}
+	}
+}

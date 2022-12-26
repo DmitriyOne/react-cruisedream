@@ -1,8 +1,8 @@
-import { FC } from 'react'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { params } from './swiper'
+import { params } from './data/swiper'
+import { DataSliderImg } from './data/data-slider'
 
 import { useSwiperButtons } from '../../../hooks'
 import { Button } from '../../Button'
@@ -11,11 +11,8 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import styles from './cruise-slider.module.scss'
 
-interface IProps {
-	images: string[]
-}
 
-export const CruiseSlider: FC<IProps> = ({ images }) => {
+export const CruiseSlider = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -26,7 +23,7 @@ export const CruiseSlider: FC<IProps> = ({ images }) => {
 				{...params}
 			>
 
-				{images.map((img, idx) =>
+				{DataSliderImg.map((img, idx) =>
 					<SwiperSlide key={idx}>
 						<span className={styles.image}>
 							<img

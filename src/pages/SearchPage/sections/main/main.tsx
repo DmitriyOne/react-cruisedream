@@ -13,6 +13,9 @@ export const Main = () => {
 			<Container width="container" direction="column" align="start">
 				<Sort />
 				<Card />
+				<Card />
+				<Card />
+				<Card />
 				<PaginationBottom />
 			</Container>
 		</Container>

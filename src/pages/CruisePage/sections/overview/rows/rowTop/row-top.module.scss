@@ -29,7 +29,7 @@
 		width: 100%;
 		font-size: 18px;
 		text-align: center;
-		padding-top: 15px;
+		padding-top: 2px;
 		padding-bottom: 10px;
 	}
 	@include mixins.media-w(breakpoints.$tablet-s) {

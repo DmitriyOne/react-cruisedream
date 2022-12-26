@@ -1,20 +1,14 @@
-import { FC } from 'react'
 import classNames from 'classnames'
 
-import { IExtraTitle, IIncludedTitle } from '../../../model/interfaces'
 import { Heading } from '../../../components'
+import { DataExtraTitles, DataIncludedTitles } from './data/ship-options'
 
 import { ExtraTitle } from './ExtraTitle/ExtraTitle'
 import { IncludedTitle } from './IncludedTitle/IncludedTitle'
 
 import styles from './ship-options.module.scss'
 
-interface IProps {
-	includedTitles: IIncludedTitle[]
-	extraTitles: IExtraTitle[]
-}
-
-export const ShipOptions: FC<IProps> = ({ includedTitles, extraTitles }) => {
+export const ShipOptions = () => {
 
 	return (
 		<>
@@ -23,7 +17,7 @@ export const ShipOptions: FC<IProps> = ({ includedTitles, extraTitles }) => {
 					ВКЛЮЧЕНО В ВАШ КРУИЗ
 				</Heading>
 				<ul className={styles.ul}>
-					{includedTitles.map((item, idx) =>
+					{DataIncludedTitles.map((item, idx) =>
 						<IncludedTitle key={idx} className={styles.item} title={item.title} />
 					)}
 				</ul>
@@ -33,7 +27,7 @@ export const ShipOptions: FC<IProps> = ({ includedTitles, extraTitles }) => {
 					ОПЛАЧИВАЕТСЯ ДОПОЛНИТЕЛЬНО
 				</Heading>
 				<ul className={styles.ul}>
-					{extraTitles.map((item, idx) =>
+					{DataExtraTitles.map((item, idx) =>
 						<ExtraTitle key={idx} className={styles.item} title={item.title} />
 					)}
 				</ul>

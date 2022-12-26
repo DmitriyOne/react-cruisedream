@@ -8,8 +8,7 @@
 	background-color: #EFEFEF;
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		padding-top: 12px;
-		padding-bottom: 16px;
+		padding: 12px 0 16px;
 	}
 }
 
@@ -46,6 +45,11 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-bottom: 10px;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
 }
 
 .tabsTitle {
@@ -58,9 +62,31 @@
 	text-align: center;
 	padding: 8px 6px;
 	margin-right: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$transparent;
+	background-color: #004275;
+
+	&.active {
+		background-color: colors.$transparent;
+		color: #004275;
+		border-color: #004275;
+	}
 
 	&:last-child {
 		margin-right: 0;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			display: none;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+		padding: 6px;
+		@include mixins.fonts(family.$montserrat);
+		font-size: 12px;
+		letter-spacing: 0;
 	}
 }
 

@@ -18,6 +18,8 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		flex-direction: column;
 		min-height: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 }
 

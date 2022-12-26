@@ -1,31 +1,23 @@
-import { FC } from 'react'
-
 import { Button } from '../../../components'
 import { ShipName } from '../../Ship'
 import { CruiseTimer } from '../CruiseTimer/CruiseTimer'
 
 import styles from './cruise-to-book.module.scss'
 
-interface IProps {
-	shipName: string
-	deadline: string
-}
-
-export const CruiseToBook: FC<IProps> = ({ shipName, deadline }) => {
+export const CruiseToBook = () => {
 
 	return (
 		<>
 			<CruiseTimer
 				classComponent={styles.timer}
 				classNumber={styles.timerNumber}
-				deadline={deadline}
+				deadline="28 Dec 2022 17:00"
 				isSeconds={false}
 			/>
 			<div className={styles.contentWrapper}>
 				<ShipName
 					classComponent={styles.shipWrapper}
 					classNameText={styles.shipName}
-					name={shipName}
 					isBookTo
 				/>
 				<p className={styles.text}>

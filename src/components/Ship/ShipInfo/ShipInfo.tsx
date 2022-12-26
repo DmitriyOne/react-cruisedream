@@ -1,22 +1,8 @@
-import { FC } from 'react'
-
 import { Heading, B } from '../../../components'
 
 import styles from './ship-info.module.scss'
 
-interface IProps {
-	year: number
-	capacity: number
-	weight: number
-	team: number
-}
-
-export const ShipInfo: FC<IProps> = ({
-	year,
-	capacity,
-	weight,
-	team
-}) => {
+export const ShipInfo = () => {
 
 	return (
 		<div className={styles.component}>
@@ -25,7 +11,7 @@ export const ShipInfo: FC<IProps> = ({
 					Год постройки:
 				</Heading>
 				<B fontWeight={600} className={styles.number}>
-					{year}
+					2009
 				</B>
 			</div>
 			<div className={styles.col}>
@@ -33,7 +19,7 @@ export const ShipInfo: FC<IProps> = ({
 					Вместимость:
 				</Heading>
 				<B fontWeight={600} className={styles.number}>
-					{capacity}
+					3935
 				</B>
 			</div>
 			<div className={styles.col}>
@@ -41,7 +27,7 @@ export const ShipInfo: FC<IProps> = ({
 					Водоизмещение:
 				</Heading>
 				<B fontWeight={600} className={styles.number}>
-					{weight}
+					1333
 				</B>
 			</div>
 			<div className={styles.col}>
@@ -49,7 +35,7 @@ export const ShipInfo: FC<IProps> = ({
 					Команда:
 				</Heading>
 				<B fontWeight={600} className={styles.number}>
-					{team}
+					1200
 				</B>
 			</div>
 		</div>

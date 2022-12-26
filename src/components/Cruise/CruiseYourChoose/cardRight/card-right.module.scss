@@ -1,0 +1,330 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.row {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 10px;
+	}
+
+	&:first-child {
+		margin-top: 6px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			margin-top: 0;
+		}
+	}
+
+	& .col:nth-child(2) {
+		max-width: 110px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			padding-left: 0;
+			padding-right: 0;
+			max-width: 75px;
+		}
+	}
+}
+
+.col {
+	flex: 1;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.changeButton {
+	font-size: 14px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		font-size: 12px;
+		text-align: right;
+	}
+}
+
+.cabins {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.currentCabins {
+	display: block;
+	font-size: 14px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 13px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.cabinsCode {
+	@include mixins.flex-center;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 100%;
+	text-align: center;
+	color: colors.$white;
+	background: #C20303;
+	border-radius: 2px;
+	min-width: 20px;
+	min-height: 20px;
+	margin-right: 8px;
+}
+
+.logo {
+	max-width: 220px;
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		max-width: 180px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		max-width: 140px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 6px;
+		margin-bottom: 12px;
+	}
+}
+
+.passengers {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.passengersIcon {
+	display: block;
+	width: 16px;
+	margin-right: 12px;
+}
+
+.shipName {
+	width: 100%;
+	font-size: 25px;
+	font-weight: 600;
+	color: #004275;
+	text-align: center;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 23px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.dateWrapper {
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 0;
+	}
+}
+
+.date {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+	border-bottom: none;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		color: rgba(79, 78, 78, 0.8);
+		border-bottom: 1px solid rgba(79, 78, 78, 0.8);
+	}
+}
+
+.price {
+	display: block;
+	font-size: 32px;
+	line-height: 100%;
+	text-align: center;
+	color: #004275;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 6px;
+		padding-bottom: 12px;
+	}
+}
+
+.buttonsWrapper {
+	display: flex;
+	align-items: stretch;
+	@include mixins.fluidMaxSize(450);
+	margin-left: auto;
+	padding: 18px 18px 4px 0;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(420);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 100%;
+		justify-content: center;
+		padding-top: 0;
+		padding-right: 0;
+	}
+}
+
+.buttonCol {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: auto;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 50%;
+	}
+
+	&:first-child {
+		margin-right: 12px;
+	}
+
+	&:first-child .button {
+		border-radius: 3px;
+	}
+}
+
+.button {
+	font-size: 17px;
+	line-height: 110%;
+	font-weight: 400;
+	padding: 18px 4px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		max-width: 160px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+		min-width: 145px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		max-width: 100%;
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 12px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-top: 4px;
+	}
+}
+
+.listItem {
+	font-size: 14px;
+	line-height: 145%;
+	color: rgba(79, 78, 78, 0.8);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 10px;
+	}
+
+	&::before {
+		display: inline-block;
+	}
+}
+
+.listItem.minus::before {
+	content: '-';
+}
+
+.listItem.plus::before {
+	content: '+';
+}

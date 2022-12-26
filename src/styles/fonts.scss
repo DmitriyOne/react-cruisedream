@@ -10,6 +10,16 @@
 
 @font-face {
 	font-family: 'Montserrat';
+	src: url('../assets/fonts/montserrat/Montserrat-Medium.woff2') format('woff2'),
+			url('../assets/fonts/montserrat/Montserrat-Medium.woff') format('woff'),
+			url('../assets/fonts/montserrat/Montserrat-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Montserrat';
 	src: url('../assets/fonts/montserrat/Montserrat-Regular.woff2') format('woff2'),
 			url('../assets/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
 			url('../assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
