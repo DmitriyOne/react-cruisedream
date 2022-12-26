@@ -60,6 +60,12 @@
 	width: 100%;
 	display: flex;
 	border: 1px solid rgba(0, 66, 117, 0.8);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+		border: none;
+		padding-top: 6px;
+	}
 }
 
 .cardLeft{ 
@@ -87,5 +93,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 100%;
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 }

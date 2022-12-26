@@ -6,11 +6,6 @@
 .swiperContainer {
 	width: 100%;
 	position: relative;
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		max-width: 480px;
-		margin: 0 auto;
-	}
 }
 
 .swiper {
