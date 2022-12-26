@@ -8,8 +8,8 @@ export const HomePage = () => {
 			<Intro />
 			<Search />
 			<Sale />
-			<Regions />
 			<Banner />
+			<Regions />
 			<Partners />
 			<About />
 			<Advantages />

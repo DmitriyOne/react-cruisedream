@@ -1,9 +1,15 @@
+/* eslint-disable no-unused-vars */
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, forwardRef, ForwardedRef } from 'react'
 import classNames from 'classnames'
 
 import { EDirection, EAlign, EJustify, ESize } from './enums/EContainer'
 
 import styles from './container.module.scss'
+
+enum ETag {
+	section = 'section',
+	div = 'div'
+}
 
 interface IProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 	HTMLDivElement> {
@@ -13,6 +19,7 @@ interface IProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 	justify?: keyof typeof EJustify
 	className?: string
 	children: ReactNode
+	tag?: keyof typeof ETag
 }
 
 export const Container = forwardRef(({
@@ -21,6 +28,7 @@ export const Container = forwardRef(({
 	align = 'center',
 	justify = 'between',
 	className,
+	tag = 'div',
 	children,
 	...props
 }: IProps, ref?: ForwardedRef<HTMLDivElement>
@@ -44,6 +52,18 @@ export const Container = forwardRef(({
 		[styles.justifyCenter]: justify === 'center',
 		[styles.justifyBaseline]: justify === 'baseline',
 	})
+
+	if (tag === 'section') {
+		return (
+			<section
+				ref={ref}
+				className={componentClassName}
+				{...props}
+			>
+				{children}
+			</section>
+		)
+	}
 
 	return (
 		<div

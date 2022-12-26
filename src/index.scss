@@ -1,7 +1,19 @@
 @import './styles/global.scss';
 @import './styles/select.scss';
 @import './styles/datepicker.scss';
+@import './styles/family.scss';
+@import './styles/mixins.scss';
 
 #root {
 	overflow-x: hidden;
+}
+
+.title {
+	display: block;
+	@include fonts($source-sans-pro);
+	font-size: 36px;
+	line-height: 120%;
+	text-align: center;
+	color: #004275;
+	padding-bottom: 22px;
 }

@@ -4,7 +4,7 @@ import styles from './about.module.scss'
 
 export const About = () => {
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<div className={styles.bg} />
 			<Container
 				direction="column"

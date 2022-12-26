@@ -9,7 +9,7 @@ import styles from './main.module.scss'
 export const Main = () => {
 
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<Container width="container" direction="column" align="start">
 				<Sort />
 				<Card />

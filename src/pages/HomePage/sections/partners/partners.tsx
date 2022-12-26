@@ -15,7 +15,7 @@ export const Partners = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<div className={styles.container}>
 				<Heading as="h3" className={styles.title}>
 					НАШИ ПАРТНЕРЫ

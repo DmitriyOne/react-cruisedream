@@ -17,7 +17,7 @@ export const FAQ = () => {
 	}
 
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<div className={styles.container}>
 				<Heading as="h4" className={styles.title}>
 					ЧАСТО ЗАДАВЕМЫЕ ВОПРОСЫ
