@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 

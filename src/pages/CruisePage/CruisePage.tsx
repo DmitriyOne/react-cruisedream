@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useWindowSize } from '../../hooks'
 
 import { Cabins, Dates, FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook, YourCruise } from './sections'

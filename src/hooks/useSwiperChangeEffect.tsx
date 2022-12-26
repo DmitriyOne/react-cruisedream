@@ -8,6 +8,7 @@ export const useSwiperChangeEffect = () => {
 		if (windowSize <= 768) {
 			swiperParams.effect = 'slide'
 			swiperParams.spaceBetween = 15
+			swiperParams.cssMode = true
 		}
 	}
 

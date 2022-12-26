@@ -1,8 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { ICruiseRoute } from '../../../model/interfaces'
-
 import markerIcon from './icons/marker.svg'
 
 import styles from './cruise-route.module.scss'
@@ -11,8 +9,6 @@ import { DataTooltipRoutes } from './data/tooltip-route'
 import { DataShowRoutes } from './data/show-routes'
 
 interface IProps {
-	// id?: string
-	// routes: ICruiseRoute[]
 	classComponent?: string
 }
 

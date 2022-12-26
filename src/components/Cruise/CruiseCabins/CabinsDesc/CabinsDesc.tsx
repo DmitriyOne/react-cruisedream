@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react'
+import { FC, useState } from 'react'
 
 import { Heading } from '../../../../components'
 
@@ -15,6 +15,7 @@ interface IProps {
 
 export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 	const [activeId, setActive] = useState<number | null>(null)
+	const [checkedId, setCheckedId] = useState<number | null>(null)
 
 	const handleToggle = (idx: number) => {
 		if (activeId === idx) {
@@ -23,6 +24,15 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 			setActive(idx)
 		}
 	}
+
+	const handleChecked = (idx: number) => {
+		if (checkedId === idx) {
+			setCheckedId(null)
+		} else {
+			setCheckedId(idx)
+		}
+	}
+
 	return (
 		<>
 			{cabins.map(cabin =>
@@ -35,7 +45,13 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 							<DescLeft id={cabin.id} images={cabin.images} handleToggle={handleToggle} />
 						</div>
 						<div className={styles.right}>
-							<DescRight id={cabin.id} cabinsDesc={cabin.desc} activeId={activeId} />
+							<DescRight
+								id={cabin.id}
+								cabinsDesc={cabin.desc}
+								activeId={activeId}
+								checkedId={checkedId}
+								handleChecked={handleChecked}
+							/>
 						</div>
 					</div>
 				</div>

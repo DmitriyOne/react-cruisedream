@@ -1,4 +1,5 @@
-import { FC, useState } from 'react'
+/* eslint-disable max-len */
+import { FC } from 'react'
 import classNames from 'classnames'
 
 import { B, Button } from '../../../../../components'
@@ -10,9 +11,11 @@ interface IProps {
 	id: number
 	cabinsDesc: ICabinsDesc[]
 	activeId: number | null
+	checkedId: number | null
+	handleChecked: (id: number) => void
 }
 
-export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId }) => {
+export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId, checkedId, handleChecked }) => {
 
 	return (
 		<>
@@ -59,10 +62,11 @@ export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId }) => {
 							<Button
 								className={classNames(
 									styles.choose,
-									cabin.checked ? styles.checked : '',
+									checkedId === cabin.id ? styles.checked : ''
 								)}
+								onClick={() => handleChecked(cabin.id)}
 							>
-								{cabin.checked ? 'Выбрано' : 'Выбрать'}
+								{checkedId === cabin.id ? 'Выбрано' : 'Выбрать'}
 							</Button>
 						</div>
 					</div>
