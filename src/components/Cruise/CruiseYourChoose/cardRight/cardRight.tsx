@@ -1,3 +1,5 @@
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 import { B, Button } from '../../../../components'
 
 import { ShipName } from '../../../Ship'
@@ -35,9 +37,9 @@ export const CardRight = () => {
 					</div>
 				</div>
 				<div className={styles.col}>
-					<Button className={styles.changeButton}>
+					<AnchorLink href="#cabins" className={styles.changeButton}>
 						изменить
-					</Button>
+					</AnchorLink>
 				</div>
 				{isShowBlock &&
 					<div className={styles.col}>
@@ -57,9 +59,9 @@ export const CardRight = () => {
 					</B>
 				</div>
 				<div className={styles.col}>
-					<Button className={styles.changeButton}>
+					<AnchorLink href="#count-passengers" className={styles.changeButton}>
 						изменить
-					</Button>
+					</AnchorLink>
 				</div>
 				{isShowBlock &&
 					<div className={styles.col}>
@@ -72,9 +74,9 @@ export const CardRight = () => {
 					<CruiseDates classComponent={styles.dateWrapper} classNameText={styles.date} isOnlyStartDate />
 				</div>
 				<div className={styles.col}>
-					<Button className={styles.changeButton}>
+					<AnchorLink href="#cabins-dates" className={styles.changeButton}>
 						изменить
-					</Button>
+					</AnchorLink>
 				</div>
 				{isShowBlock &&
 					<div className={styles.col}>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useCallback, useState } from 'react'
 
 import { Heading } from '../../../../components'
 
@@ -14,7 +14,15 @@ interface IProps {
 }
 
 export const CabinsDesc: FC<IProps> = ({ cabins }) => {
+	const [activeId, setActive] = useState<number | null>(null)
 
+	const handleToggle = (idx: number) => {
+		if (activeId === idx) {
+			setActive(null)
+		} else {
+			setActive(idx)
+		}
+	}
 	return (
 		<>
 			{cabins.map(cabin =>
@@ -24,10 +32,10 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 					</Heading>
 					<div className={styles.container}>
 						<div className={styles.left}>
-							<DescLeft images={cabin.images} />
+							<DescLeft id={cabin.id} images={cabin.images} handleToggle={handleToggle} />
 						</div>
 						<div className={styles.right}>
-							<DescRight cabinsDesc={cabin.desc} />
+							<DescRight id={cabin.id} cabinsDesc={cabin.desc} activeId={activeId} />
 						</div>
 					</div>
 				</div>

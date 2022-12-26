@@ -11,10 +11,10 @@ export const Ship = () => {
 
 	const direction = isTablet ? 'columnReverse' : 'row'
 	return (
-		<Container width="full" className={styles.component}>
+		<Container id="ship" width="full" className={styles.component}>
 			<Container width="containerXl" align="stretch" direction={direction}>
-				<Description/>
-				<Slider  />
+				<Description />
+				<Slider />
 			</Container>
 		</Container>
 	)

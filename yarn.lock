@@ -2146,6 +2146,13 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
+"@types/react-anchor-link-smooth-scroll@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.2.tgz#50a4aaa7c2731f644f8a7b69225669fc29bc6746"
+  integrity sha512-ZemNS6WzQN8KA4w0sy5N86qJ55Ft7OnIDGH6QIHe0LL27xkZpNINMNZGR0DacIVPU66+JrbDqi1cKms9qhcPNQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-datepicker@^4.8.0":
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/@types/react-datepicker/-/react-datepicker-4.8.0.tgz#0221bd38725b7db64cd08a89f49a93d816c2f691"
@@ -7540,6 +7547,11 @@ raw-body@2.5.1:
     http-errors "2.0.0"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-anchor-link-smooth-scroll@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-anchor-link-smooth-scroll/-/react-anchor-link-smooth-scroll-1.0.12.tgz#5cd49c73e74be6d20b4c05a5e5c72d07ebbedac7"
+  integrity sha512-aaY+9X0yh8YnC0jBfoTKpsiCLdO/Y6pCltww+VB+NnTBPDOvnIdnp1AlazajsDitc1j+cVSQ+yNtaVeTIMQbxw==
 
 react-app-polyfill@^3.0.0:
   version "3.0.0"

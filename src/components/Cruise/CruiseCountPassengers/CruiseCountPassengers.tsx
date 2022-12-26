@@ -30,7 +30,7 @@ export const CruiseCountPassengers = () => {
 	})
 
 	return (
-		<div className={styles.component}>
+		<div id="count-passengers" className={styles.component}>
 			<div className={styles.container}>
 				<div className={styles.wrapper}>
 					<span className={styles.adultIcon}>

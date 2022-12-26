@@ -227,6 +227,10 @@
 		color: #FDBB11;
 		border-bottom-color: #FDBB11;
 	}
+
+	&.active {
+		background-color: red;
+	}
 }
 
 .hidden {
@@ -235,7 +239,8 @@
 
 .hiddenText {
 	@include mixins.fonts(family.$source-sans-pro);
-	font-size: 18px;
+	font-size: 28px;
 	line-height: 120%;
 	color: #4F4E4E;
+	color: rgba(79, 78, 78, 0.8);
 }

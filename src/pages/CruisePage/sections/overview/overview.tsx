@@ -13,24 +13,20 @@ import styles from './overview.module.scss'
 import { OverviewHeader } from './overviewHeader/overviewHeader'
 import { RowBottom, RowCenter, RowTop } from './rows'
 
-export const Overview =  () => {
+export const Overview = () => {
 	const { isMobile } = useWindowSize()
 
 	const isShowOnMobile = isMobile
 	return (
-		<Container width="full" className={styles.component}>
+		<Container id="overview" width="full" className={styles.component}>
 			<Container width="containerS" direction="column" align="start">
 
-				<OverviewHeader
-				/>
+				<OverviewHeader />
 
-				<CruiseGallery
-				/>
+				<CruiseGallery />
 
 				{isShowOnMobile &&
-					<CruiseLogo
-						className={styles.logo}
-					/>
+					<CruiseLogo className={styles.logo} />
 				}
 
 				<RowTop
@@ -59,7 +55,6 @@ export const Overview =  () => {
 					columnLeftClass={styles.colLeft}
 					columnRightClass={styles.colRight}
 				/>
-				
 			</Container>
 		</Container>
 	)

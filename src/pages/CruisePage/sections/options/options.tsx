@@ -6,9 +6,9 @@ import styles from './options.module.scss'
 export const Options = () => {
 
 	return (
-		<Container width="full" className={styles.component}>
+		<Container id="included" width="full" className={styles.component}>
 			<Container width="containerS" direction="column" align="start">
-				<ShipOptions  />
+				<ShipOptions />
 			</Container>
 		</Container>
 	)

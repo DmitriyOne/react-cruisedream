@@ -5,7 +5,7 @@ import styles from './cabins.module.scss'
 
 export const Cabins = () => {
 	return (
-		<Container width="full" className={styles.component}>
+		<Container id="cabins" width="full" className={styles.component}>
 			<CruiseCabins />
 		</Container>
 	)

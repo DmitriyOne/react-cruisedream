@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 
 import { B, Button } from '../../../../../components'
@@ -7,10 +7,12 @@ import { ICabinsDesc } from '../../../../../model/interfaces'
 import styles from './desc-right.module.scss'
 
 interface IProps {
+	id: number
 	cabinsDesc: ICabinsDesc[]
+	activeId: number | null
 }
 
-export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
+export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId }) => {
 
 	return (
 		<>
@@ -33,7 +35,7 @@ export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
 			</div>
 			<div className={styles.body}>
 				{cabinsDesc.map(cabin =>
-					<div key={cabin.id} className={styles.row}>
+					<div key={cabin.id} className={styles.row} >
 						<div className={styles.item}>
 							<span className={classNames(
 								styles.code,
@@ -57,7 +59,7 @@ export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
 							<Button
 								className={classNames(
 									styles.choose,
-									cabin.checked ? styles.checked : ''
+									cabin.checked ? styles.checked : '',
 								)}
 							>
 								{cabin.checked ? 'Выбрано' : 'Выбрать'}
@@ -66,11 +68,13 @@ export const DescRight: FC<IProps> = ({ cabinsDesc }) => {
 					</div>
 				)}
 			</div>
-			{/* <div className={styles.hidden}>
-				<p className={styles.hiddenText}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam perspiciatis reiciendis veritatis dicta iusto facere sed repudiandae quidem, nulla, optio ea nemo, pariatur necessitatibus neque temporibus aliquam eius similique maiores quod. Debitis harum maxime repellat veniam expedita libero molestiae nobis, reprehenderit facere aut quam eveniet voluptas est vero sit ullam, ad quis corrupti! Rem praesentium ea facere obcaecati reiciendis modi corporis dolore minus nisi aspernatur voluptatum nemo molestias, quis placeat dolorum ut. Autem odit expedita alias a minima nulla nemo aliquam, sunt ea, itaque perspiciatis atque rem repellat temporibus. Repellat consectetur quisquam voluptate deserunt illo hic error, aliquam optio.
-				</p>
-			</div> */}
+			{activeId === id &&
+				<div className={styles.hidden}>
+					<p className={styles.hiddenText}>
+						ПРИМЕР ТЕКСТ международный туристический холдинг, основанный в 1990 году, признанный лидер по европейским направлениям и круизам.В структуру холдинга входит туроператорская  круизной компании MSC Cruises на территории России и ряда стран. В структуру холдинга входит туроператорская  компании MSC Cruises на территории ряда стран.
+					</p>
+				</div>
+			}
 		</>
 	)
 }

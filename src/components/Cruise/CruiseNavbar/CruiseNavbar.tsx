@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { CRUISE_HREFS_ANCHOR } from '../../../constants/cruise-links'
 
@@ -10,15 +11,15 @@ export const CruiseNavbar = () => {
 			<ul className={styles.menu}>
 				{CRUISE_HREFS_ANCHOR.map((item, idx) =>
 					<li key={idx} className={styles.item}>
-						<a
+						<AnchorLink
 							href={item.href}
 							className={classNames(
 								styles.link,
-								item.isBooknow ? styles.booknow : ''
+								item.isBooknow ? styles.booknow : '',
 							)}
 						>
 							{item.text}
-						</a>
+						</AnchorLink>
 					</li>
 				)}
 			</ul>

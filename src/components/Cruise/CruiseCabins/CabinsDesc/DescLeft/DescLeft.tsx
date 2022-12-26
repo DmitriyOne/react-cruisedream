@@ -12,10 +12,12 @@ import 'swiper/css'
 import styles from './desc-left.module.scss'
 
 interface IProps {
+	id: number
 	images: ICabinsImages[]
+	handleToggle: (id: number) => void
 }
 
-export const DescLeft: FC<IProps> = ({ images }) => {
+export const DescLeft: FC<IProps> = ({ id, images, handleToggle }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -41,7 +43,10 @@ export const DescLeft: FC<IProps> = ({ images }) => {
 					onClick={handlerNext}
 				/>
 			</div>
-			<Button className={styles.showMore}>
+			<Button
+				className={styles.showMore}
+				onClick={() => handleToggle(id)}
+			>
 				Описание
 			</Button>
 		</>
