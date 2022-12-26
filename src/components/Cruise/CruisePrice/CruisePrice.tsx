@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
@@ -7,23 +5,9 @@ import { Link } from 'react-router-dom'
 import { useWindowSize } from '../../../hooks'
 
 import { B, Button, Discount } from '../../../components'
+import { EWidth, EBackground, EColor } from '../../../model/enums'
 
 import styles from './cruise-price.module.scss'
-
-enum EWidth {
-	full = 'full',
-	half = 'half'
-}
-
-enum EBackground {
-	blue = 'blue',
-	transparent = 'transparent'
-}
-
-enum EColor {
-	blue = 'blue',
-	white = 'white'
-}
 
 interface IProps {
 	buttonsRowClass?: string

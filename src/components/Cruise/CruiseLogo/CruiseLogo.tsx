@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
-import logo1Src from '../../../assets/images/partners/partner-caribbean.png'
+import logo1Src from '../../../assets/images/partners/partner-celebrity.png'
 
 import styles from './cruise-logo.module.scss'
 

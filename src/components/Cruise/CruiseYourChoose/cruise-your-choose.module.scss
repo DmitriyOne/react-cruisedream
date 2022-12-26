@@ -55,3 +55,37 @@
 		padding-left: 10px;
 	}
 }
+
+.body {
+	width: 100%;
+	display: flex;
+	border: 1px solid rgba(0, 66, 117, 0.8);
+}
+
+.cardLeft{ 
+	width: 33%;
+	display: flex;
+	position: relative;
+	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 36%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+.cardRight {
+	width: 67%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 64%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+	}
+}

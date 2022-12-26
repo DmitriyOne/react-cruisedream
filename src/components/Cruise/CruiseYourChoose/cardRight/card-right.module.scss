@@ -1,0 +1,141 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.row {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+
+	&:first-child {
+		padding-top: 6px;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	& .col:nth-child(2) {
+		max-width: 110px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.col {
+	flex: 1;
+}
+
+.changeButton {
+	font-size: 14px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+// First row
+.cabins {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+}
+
+.currentCabins {
+	display: block;
+	font-size: 14px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+}
+
+.logo {
+	max-width: 220px;
+	margin: 0 auto;
+}
+
+// Second row
+.passengers {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+}
+
+.shipName {
+	width: 100%;
+	font-size: 25px;
+	font-weight: 600;
+	color: #004275;
+	text-align: center;
+}
+
+// Third row
+.date {
+	font-size: 23px;
+	line-height: 120%;
+	color: #004275;
+}
+
+.price {
+	display: block;
+	font-size: 32px;
+	line-height: 100%;
+	text-align: center;
+	color: #004275;
+}
+
+// Buttons
+.buttonsWrapper {
+	display: flex;
+	align-items: stretch;
+	@include mixins.fluidMaxSize(450);
+	margin-left: auto;
+	padding-right: 18px;
+}
+
+.buttonCol {
+	width: 50%;
+
+	&:first-child {
+		margin-right: 12px;
+	}
+
+	&:first-child .button {
+		border-radius: 3px;
+	}
+}
+
+.button {
+	font-size: 17px;
+	line-height: 110%;
+	font-weight: 400;
+	padding: 18px 4px;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 12px;
+}
+
+.listItem {
+	font-size: 14px;
+	line-height: 145%;
+	color: rgba(79, 78, 78, 0.8);
+
+	&::before {
+		display: inline-block;
+	}
+}
+
+.listItem.minus::before {
+	content: '-';
+}
+
+.listItem.plus::before {
+	content: '+';
+}
