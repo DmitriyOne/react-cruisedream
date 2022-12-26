@@ -6,7 +6,6 @@ export const params: SwiperOptions = {
 	loop: true,
 	allowTouchMove: true,
 	grabCursor: true,
-	cssMode: true,
 	spaceBetween: 5,
 	slidesPerView: 3.4,
 	centeredSlides: true,
