@@ -1,18 +1,15 @@
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { paramsGrid } from '../../../../fakedata'
+import { params3Col } from '../../../../fakedata'
 
+import { Link } from 'react-router-dom'
 import { CardBlackout, Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
-import { dataRegionsCard } from '../../../../fakedata/data-regions-card'
+import styles from './popular-post.module.scss'
+import { dataPopularBlogPosts } from '../../../../fakedata/data-popular-blog-posts'
 
-import 'swiper/css'
-import 'swiper/css/grid'
-import styles from './regions.module.scss'
-
-export const Regions = () => {
+export const PopularPost = () => {
 	return (
 		<Container
 			width="full"
@@ -21,25 +18,30 @@ export const Regions = () => {
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
-				РЕГИОНЫ
+				ПОПУЛЯРНЫЕ СООБЩЕНИЯ ИЗ БЛОГА
 			</Heading>
 
 			<Container>
 				<Swiper
 					className={styles.swiper}
-					{...paramsGrid}
+					{...params3Col}
 				>
-					{dataRegionsCard.map(card =>
+					{dataPopularBlogPosts.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardBlackout card={card} />
+							<CardBlackout
+								card={card}
+								titleSize="small"
+								bodySize="large"
+							/>
 						</SwiperSlide>
 					)}
 				</Swiper>
 			</Container>
 
 			<Link to={CRUISE_ROUTES.SHIPS} className="button">
-				ВСЕ РЕГИОНЫ
+				ВСЕ ПОСТЫ
 			</Link>
 		</Container>
+
 	)
 }

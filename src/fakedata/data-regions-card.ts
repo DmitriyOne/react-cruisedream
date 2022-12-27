@@ -2,14 +2,14 @@
 import { CRUISE_ROUTES } from '../constants'
 import { ICard } from '../model/interfaces'
 
-import cardEuropeImage from '../assets/images/region/region-europe.jpeg'
-import cardAsiaImage from '../assets/images/region/region-asia.jpeg'
-import cardRussiaImage from '../assets/images/region/region-russia.jpeg'
+import europeSrc from '../assets/images/region/region-europe.jpeg'
+import asiaSrc from '../assets/images/region/region-asia.jpeg'
+import russiaSrc from '../assets/images/region/region-russia.jpeg'
 
 export const dataRegionsCard: ICard[] = [
 	{
 		id: 1,
-		src: cardEuropeImage,
+		src: europeSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'ЕВРОПА',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
@@ -17,7 +17,7 @@ export const dataRegionsCard: ICard[] = [
 	},
 	{
 		id: 2,
-		src: cardAsiaImage,
+		src: asiaSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'Азия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
@@ -25,7 +25,7 @@ export const dataRegionsCard: ICard[] = [
 	},
 	{
 		id: 3,
-		src: cardRussiaImage,
+		src: russiaSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'Россия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
@@ -33,7 +33,7 @@ export const dataRegionsCard: ICard[] = [
 	},
 	{
 		id: 4,
-		src: cardEuropeImage,
+		src: europeSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'ЕВРОПА',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
@@ -41,7 +41,7 @@ export const dataRegionsCard: ICard[] = [
 	},
 	{
 		id: 5,
-		src: cardAsiaImage,
+		src: asiaSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'Азия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
@@ -49,7 +49,7 @@ export const dataRegionsCard: ICard[] = [
 	},
 	{
 		id: 6,
-		src: cardRussiaImage,
+		src: russiaSrc,
 		alt: 'Beautiful sea breeze',
 		title: 'Россия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',

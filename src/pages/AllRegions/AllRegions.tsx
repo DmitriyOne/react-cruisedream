@@ -1,4 +1,4 @@
-import { Cruises, Intro, Regions } from './sections'
+import { Cruises, Intro, PopularPost, Regions } from './sections'
 
 export const AllRegionsPage = () => {
 	return (
@@ -6,6 +6,7 @@ export const AllRegionsPage = () => {
 			<Intro />
 			<Regions />
 			<Cruises />
+			<PopularPost />
 		</>
 	)
 }
