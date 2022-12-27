@@ -4,18 +4,20 @@ import { FC } from 'react'
 import styles from './cruise-amount-days.module.scss'
 
 interface IProps {
-	className?: string
+	classComponent?: string
+	classNumber?: string
+	classText?: string
 }
 
-export const CruiseAmountDays:FC<IProps> = ({ className}) => {
+export const CruiseAmountDays: FC<IProps> = ({ classComponent, classNumber, classText }) => {
 	return (
-		<div className={classNames(className, styles.component)}>
-			<span className={styles.days}>
+		<div className={classNames(classComponent, styles.component)}>
+			<span className={classNames(classNumber, styles.days)}>
 				7
 			</span>
-			<span className={styles.text}>
+			<span className={classNames(classText, styles.text)}>
 				ночей
 			</span>
-		</div>
+		</div >
 	)
 }

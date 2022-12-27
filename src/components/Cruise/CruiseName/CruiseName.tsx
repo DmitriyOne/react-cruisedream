@@ -1,13 +1,18 @@
 import classNames from 'classnames'
+import { FC } from 'react'
 
 import { Heading } from '../../Headings'
 
 import styles from './cruise-name.module.scss'
 
-export const CruiseName = () => {
+interface IProps {
+	className?: string
+}
+
+export const CruiseName: FC<IProps> = ({ className }) => {
 
 	return (
-		<Heading as="h3" className={classNames(styles.component)}>
+		<Heading as="h3" className={classNames(className, styles.component)}>
 			Жемчужины Персидского залива
 		</Heading>
 	)

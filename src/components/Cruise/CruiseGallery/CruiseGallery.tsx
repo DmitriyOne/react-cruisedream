@@ -30,7 +30,7 @@ export const CruiseGallery = () => {
 					/>
 					{isShowOnMobile &&
 						<CruiseAmountDays
-							className={styles.daysWrapper}
+							classComponent={styles.daysWrapper}
 						/>
 					}
 				</div>
