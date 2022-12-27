@@ -6,6 +6,7 @@ import { params3Col } from '../../../../fakedata'
 import { Link } from 'react-router-dom'
 import { CardBlackout, Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
+import 'swiper/css'
 import styles from './popular-post.module.scss'
 import { dataPopularBlogPosts } from '../../../../fakedata/data-popular-blog-posts'
 

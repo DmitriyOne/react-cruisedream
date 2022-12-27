@@ -1,4 +1,5 @@
-import { Cruises, Intro, PopularPost, Regions } from './sections'
+import { Banner } from '../../components'
+import { Cruises, Intro, PopularCruises, PopularPost, Regions } from './sections'
 
 export const AllRegionsPage = () => {
 	return (
@@ -6,6 +7,8 @@ export const AllRegionsPage = () => {
 			<Intro />
 			<Regions />
 			<Cruises />
+			<Banner />
+			<PopularCruises />
 			<PopularPost />
 		</>
 	)
