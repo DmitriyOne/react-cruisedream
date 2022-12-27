@@ -1,4 +1,5 @@
 import { Banner } from '../../components'
+import { About, Advantages } from '../HomePage/sections'
 import { Cruises, Intro, PopularCruises, PopularPost, Regions } from './sections'
 
 export const AllRegionsPage = () => {
@@ -10,6 +11,8 @@ export const AllRegionsPage = () => {
 			<Banner />
 			<PopularCruises />
 			<PopularPost />
+			<About/>
+			<Advantages/>
 		</>
 	)
 }
