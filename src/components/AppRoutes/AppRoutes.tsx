@@ -8,7 +8,7 @@ import {
 	SearchPage,
 	CruisePage,
 	SalePage,
-	RegionsPage,
+	AllRegionsPage,
 	AcrossRussiaPage,
 	ShipsPage,
 	CompaniesPage,
@@ -29,7 +29,7 @@ export const AppRoutes = () => {
 							<Route path={CRUISE_ROUTES.SEARCH} element={<SearchPage />} />
 							<Route path={CRUISE_ROUTES.CRUISE} element={<CruisePage />} />
 							<Route path={CRUISE_ROUTES.SALE} element={<SalePage />} />
-							<Route path={CRUISE_ROUTES.REGIONS} element={<RegionsPage />} />
+							<Route path={CRUISE_ROUTES.REGIONS} element={<AllRegionsPage />} />
 							<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />
 							<Route path={CRUISE_ROUTES.SHIPS} element={<ShipsPage />} />
 							<Route path={CRUISE_ROUTES.COMPANIES} element={<CompaniesPage />} />

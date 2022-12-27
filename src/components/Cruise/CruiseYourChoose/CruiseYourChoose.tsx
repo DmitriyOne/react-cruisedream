@@ -14,7 +14,7 @@ export const CruiseYourChoose = () => {
 	return (
 		<>
 			<div className={styles.header}>
-				<CruiseAmountDays className={styles.headerAmountDays} />
+				<CruiseAmountDays classComponent={styles.headerAmountDays} />
 				{isMobile
 					?
 					<Heading as="h4" className={styles.headerTitle}>

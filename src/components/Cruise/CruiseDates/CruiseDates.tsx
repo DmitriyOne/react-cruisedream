@@ -14,14 +14,20 @@ interface IProps {
 	classComponent?: string
 	classNameText?: string
 	classNameArrow?: string
+	classTooltipText?: string
+	classTooltipWrapper?: string
 	isOnlyStartDate?: boolean
+	isAlwaysShowIcon?: boolean
 }
 
 export const CruiseDates: FC<IProps> = ({
 	classComponent,
 	classNameText,
 	classNameArrow,
-	isOnlyStartDate = false
+	classTooltipText,
+	classTooltipWrapper,
+	isOnlyStartDate = false,
+	isAlwaysShowIcon = false
 }) => {
 	const { isMobile } = useWindowSize()
 	const [idTooltip, setIdTooltip] = useState('')
@@ -31,7 +37,7 @@ export const CruiseDates: FC<IProps> = ({
 	}, [])
 
 	const classNameComponent = classNames(classComponent, styles.component)
-
+	const isShowIcon = isAlwaysShowIcon || isMobile
 	return (
 		<>
 			{isOnlyStartDate
@@ -51,7 +57,7 @@ export const CruiseDates: FC<IProps> = ({
 				</div>
 				:
 				<div id={idTooltip} className={classNameComponent}>
-					{isMobile &&
+					{isShowIcon &&
 						<span className={styles.icon}>
 							<img
 								src={calendarIcon}
@@ -59,7 +65,12 @@ export const CruiseDates: FC<IProps> = ({
 							/>
 						</span>
 					}
-					<MyTooltip isDates tooltipDates={DataTooltipDates}>
+					<MyTooltip
+						isDates
+						tooltipDates={DataTooltipDates}
+						classTooltipWrapper={classTooltipWrapper}
+						classTooltipText={classTooltipText}
+					>
 						<span className={classNames(classNameText, styles.text)}>
 							01.03.23 - 08.03.23
 						</span>

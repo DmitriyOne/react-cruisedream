@@ -9,7 +9,7 @@ import styles from './sale.module.scss'
 
 export const Sale = () => {
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<Container className={styles.container} direction="column">
 				<Heading as="h3" className={styles.title}>
 					АКЦИИ

@@ -10,9 +10,19 @@ import { DataShowRoutes } from './data/show-routes'
 
 interface IProps {
 	classComponent?: string
+	classText?: string
+	classIcon?: string
+	classTooltipWrapper?: string
+	classTooltipText?: string
 }
 
-export const CruiseRoute: FC<IProps> = ({ classComponent }) => {
+export const CruiseRoute: FC<IProps> = ({
+	classComponent,
+	classText,
+	classIcon,
+	classTooltipWrapper,
+	classTooltipText
+}) => {
 	const [idTooltip, setIdTooltip] = useState('')
 
 	useEffect(() => {
@@ -21,18 +31,23 @@ export const CruiseRoute: FC<IProps> = ({ classComponent }) => {
 
 	return (
 		<div className={classNames(classComponent, styles.component)}>
-			<span className={styles.icon}>
+			<span className={classNames(classIcon, styles.icon)}>
 				<img
 					src={markerIcon}
 					alt="Marker icon"
 				/>
 			</span>
-			<MyTooltip isRoutes tooltipRoutes={DataTooltipRoutes}>
+			<MyTooltip
+				isRoutes
+				tooltipRoutes={DataTooltipRoutes}
+				classTooltipWrapper={classTooltipWrapper}
+				classTooltipText={classTooltipText}
+			>
 				<ul id={idTooltip} className={styles.container}>
 					{DataShowRoutes.map((breadcrumbs, idx) =>
 						<li
 							key={idx}
-							className={styles.item}
+							className={classNames(classText, styles.item)}
 						>
 							{breadcrumbs.city},
 							<span>

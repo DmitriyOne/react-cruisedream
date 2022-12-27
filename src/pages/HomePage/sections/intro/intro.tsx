@@ -21,6 +21,7 @@ export const Intro = () => {
 		<Container
 			width="full"
 			className={styles.component}
+			tag="section"
 		>
 			<Swiper
 				className={styles.swiper}

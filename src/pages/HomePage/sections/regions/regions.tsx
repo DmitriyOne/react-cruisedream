@@ -8,7 +8,7 @@ import styles from './regions.module.scss'
 
 export const Regions = () => {
 	return (
-		<Container width="full" className={styles.component}>
+		<Container width="full" className={styles.component} tag="section">
 			<Container className={styles.container} direction="column">
 				<Heading as="h3" className={styles.title}>
 					РЕГИОНЫ

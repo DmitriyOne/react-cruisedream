@@ -49,7 +49,7 @@ export const CruiseTimer: FC<IProps> = ({
 					дней
 				</span>
 			</div>
-			<div className={styles.dots}>
+			<div className={classNames(classNumber, styles.dots)}>
 				:
 			</div>
 			<div className={styles.item}>
@@ -60,7 +60,7 @@ export const CruiseTimer: FC<IProps> = ({
 					часов
 				</span>
 			</div>
-			<div className={styles.dots}>
+			<div className={classNames(classNumber, styles.dots)}>
 				:
 			</div>
 			<div className={styles.item}>
@@ -73,7 +73,7 @@ export const CruiseTimer: FC<IProps> = ({
 			</div>
 			{isSeconds &&
 				<>
-					<div className={styles.dots}>
+					<div className={classNames(classNumber, styles.dots)}>
 						:
 					</div>
 					<div className={styles.item}>

@@ -10,11 +10,18 @@ import { Button } from '../../Button'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import styles from './cruise-slider.module.scss'
+import { FC } from 'react'
 
+interface IProps {
+	classImage?: string
+	classArrow?:string
+}
 
-export const CruiseSlider = () => {
+export const CruiseSlider:FC<IProps> = ({classImage, classArrow}) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
+	const imageClassName = classNames(classImage, styles.image)
+	const arrowClassName = classNames(classArrow, styles.swiperArrow)
 	return (
 		<>
 			<Swiper
@@ -25,7 +32,7 @@ export const CruiseSlider = () => {
 
 				{DataSliderImg.map((img, idx) =>
 					<SwiperSlide key={idx}>
-						<span className={styles.image}>
+						<span className={imageClassName}>
 							<img
 								src={img}
 								alt="Cruise 1"
@@ -36,11 +43,11 @@ export const CruiseSlider = () => {
 
 			</Swiper>
 			<Button
-				className={classNames(styles.swiperArrow, styles.prev)}
+				className={classNames(arrowClassName, styles.prev)}
 				onClick={handlerPrev}
 			/>
 			<Button
-				className={classNames(styles.swiperArrow, styles.next)}
+				className={classNames(arrowClassName, styles.next)}
 				onClick={handlerNext}
 			/>
 		</>

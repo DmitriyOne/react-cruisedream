@@ -35,7 +35,7 @@ export const RowTop: FC<IProps> = ({
 			<div className={classNames(columnRightClass, styles.laptopReverse)}>
 				{isShowOnDesktop &&
 					<CruiseAmountDays
-						className={styles.daysWrapper}
+						classComponent={styles.daysWrapper}
 					/>
 				}
 				<CruiseDates

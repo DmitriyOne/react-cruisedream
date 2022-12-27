@@ -18,7 +18,7 @@ export const Overview = () => {
 
 	const isShowOnMobile = isMobile
 	return (
-		<Container id="overview" width="full" className={styles.component}>
+		<Container id="overview" width="full" className={styles.component} tag="section">
 			<Container width="containerS" direction="column" align="start">
 
 				<OverviewHeader />

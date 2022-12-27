@@ -11,6 +11,7 @@ import styles from './ship-name.module.scss'
 interface IProps {
 	classNameText?: string
 	classComponent?: string
+	classIcon?: string
 	isIcon?: boolean
 	isDesc?: boolean
 	isBookTo?: boolean
@@ -19,6 +20,7 @@ interface IProps {
 export const ShipName: FC<IProps> = ({
 	classNameText,
 	classComponent,
+	classIcon,
 	isIcon,
 	isDesc,
 	isBookTo
@@ -41,7 +43,7 @@ export const ShipName: FC<IProps> = ({
 	return (
 		<div className={classNames(classComponent, styles.component)}>
 			{isIcon &&
-				<span className={styles.icon}>
+				<span className={classNames(classIcon, styles.icon)}>
 					<img
 						src={shipIcon}
 						alt="Celebrity Flora"
