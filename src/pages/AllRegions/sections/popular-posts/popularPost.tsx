@@ -15,7 +15,7 @@ export const PopularPost = () => {
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			className={classNames(styles.component, 'pb-section')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
