@@ -1,0 +1,22 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+
+.component {
+	width: 100%;
+	max-height: 945px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 500px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+	height: 400px;
+	}
+}
+
+.img {
+		
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 100%;
+	}
+}

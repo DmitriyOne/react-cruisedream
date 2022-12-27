@@ -12,6 +12,14 @@
 
 .contentWrapper {
 	padding: 0 20px 26px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 8px;
+	}
 }
 
 .text {
@@ -37,7 +45,12 @@
 	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		font-size: 16px;
+		font-size: 14px;
+		padding-bottom: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 12px;
 	}
 
 	&:last-child {
@@ -54,11 +67,4 @@
 			text-decoration: underline;
 		}
 	}
-}
-
-.map {
-	width: 100%;
-	max-height: 945px;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {}
 }

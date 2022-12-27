@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { B, Container } from '../../../../components'
+import { B, Container, MapsImages } from '../../../../components'
 
 import mapImage from '../../../../assets/images/regions-page/map.jpg'
 
@@ -21,9 +21,7 @@ export const Intro = () => {
 					While travelling abroad, it is very important to keep up to date on advice regarding your health and safety, <a href="#" className={styles.link}> please click here for more information.</a> For detailed advice on travel requirements from the Foreign & Commonwealth Office, <a href="#" className={styles.link}>please click here.</a>
 				</p>
 			</Container>
-			<div className={styles.map}>
-				<img src={mapImage} alt="Map" />
-			</div>
+			<MapsImages />
 		</Container>
 	)
 }
