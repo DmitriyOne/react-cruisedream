@@ -1,8 +1,7 @@
 import { Grid, SwiperOptions } from 'swiper'
 
-export const params: SwiperOptions = {
+export const paramsGrid: SwiperOptions = {
 	slidesPerView: 1,
-	cssMode: true,
 	spaceBetween: 20,
 	modules: [Grid],
 	breakpoints: {
@@ -15,7 +14,6 @@ export const params: SwiperOptions = {
 			},
 		},
 		1024: {
-			spaceBetween: 20,
 			slidesPerView: 2.6,
 		},
 		990: {

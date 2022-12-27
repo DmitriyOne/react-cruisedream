@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { params } from '../../../../fakedata/swiper-grid'
+import { paramsGrid } from '../../../../fakedata'
 
 import { CardBlackout, Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
@@ -18,6 +18,7 @@ export const Regions = () => {
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
 				РЕГИОНЫ
@@ -26,7 +27,7 @@ export const Regions = () => {
 			<Container>
 				<Swiper
 					className={styles.swiper}
-					{...params}
+					{...paramsGrid}
 				>
 					{dataRegionsCard.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>

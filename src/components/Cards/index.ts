@@ -1,2 +1,2 @@
 export * from './CardBlackout/CardBlackout'
-export * from './Cards'
+export * from './CardWithRoute/CardWithRoute'

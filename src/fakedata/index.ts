@@ -1,2 +1,6 @@
 export * from './data-select'
 export * from './data-faq'
+export * from './swiper-grid'
+export * from './data-regions-card'
+export * from './data-without-fly-card'
+export * from './swiper-4-col'
