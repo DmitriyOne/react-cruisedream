@@ -3,7 +3,6 @@
 
 .component {
 	width: 100%;
-	max-height: 945px;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		height: 500px;

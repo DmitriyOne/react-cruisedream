@@ -4,9 +4,50 @@
 @import './styles/family.scss';
 @import './styles/mixins.scss';
 @import './styles/breakpoints.scss';
+@import './styles/colors.scss';
 
 #root {
 	overflow-x: hidden;
+}
+
+.pt-section {
+	padding-top: 32px;
+
+	@include media-w($laptop-l) {
+		padding-top: 25px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-top: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-top: 16px;
+	}
+
+	@include media-w($tablet) {
+		padding-top: 12px;
+	}
+}
+
+.pb-section {
+	padding-bottom: 42px;
+
+	@include media-w($laptop-l) {
+		padding-bottom: 36px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 16px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 12px;
+	}
 }
 
 .title {
@@ -16,25 +57,20 @@
 	line-height: 120%;
 	text-align: center;
 	color: #004275;
-	padding-top: 32px;
 	padding-bottom: 22px;
-	border-top: 1px solid rgba(79, 78, 78, 0.4);
 
 	@include media-w($laptop-l) {
 		font-size: 32px;
-		padding-top: 25px;
 		padding-bottom: 18px;
 	}
 
 	@include media-w($laptop-s) {
 		font-size: 28px;
-		padding-top: 22px;
 		padding-bottom: 14px;
 	}
 
 	@include media-w($laptop) {
 		font-size: 24px;
-		padding-top: 14px;
 		padding-bottom: 12px;
 	}
 
@@ -50,24 +86,51 @@
 	line-height: 120%;
 	color: #546E90;
 	text-align: center;
-	padding-top: 32px;
 	padding-bottom: 32px;
 
 	@include media-w($laptop-l) {
 		font-size: 30px;
-		padding-top: 24px;
 		padding-bottom: 24px;
 	}
 
 	@include media-w($laptop-s) {
 		font-size: 26px;
-		padding-top: 18px;
 		padding-bottom: 18px;
 	}
 
 	@include media-w($laptop) {
 		font-size: 24px;
-		padding-top: 12px;
 		padding-bottom: 12px;
+	}
+}
+
+.button {
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 17px;
+	line-height: 120%;
+	text-align: center;
+	text-transform: uppercase;
+	color: $btn-text;
+	padding: 18px 50px;
+	background-color: $transparent;
+	border: 1px solid $btn-border;
+	border-radius: 3px;
+	white-space: nowrap;
+	transition: all .3s;
+
+	@include media-w($tablet) {
+		margin-top: 20px;
+		font-size: 16px;
+		padding: 16px 40px;
+	}
+
+	@include media-minw($laptop) {
+		&:hover {
+			background-color: $btn-hover;
+			color: $white;
+		}
 	}
 }

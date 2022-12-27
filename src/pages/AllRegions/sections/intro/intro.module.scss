@@ -3,11 +3,7 @@
 @use '../../../../styles/family.scss';
 
 .component {
-	@include mixins.fonts(family.$source-sans-pro);
-	font-size: 25px;
-	line-height: 110%;
-	text-align: center;
-	color: rgba(79, 78, 78, 0.8);
+	border-top: 1px solid rgba(79, 78, 78, 0.4);
 }
 
 .contentWrapper {
