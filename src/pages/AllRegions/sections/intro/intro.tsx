@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 import { B, Container, MapsImages } from '../../../../components'
 
-import mapImage from '../../../../assets/images/regions-page/map.jpg'
-
 import styles from './intro.module.scss'
 
 export const Intro = () => {

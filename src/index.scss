@@ -42,3 +42,32 @@
 		padding-bottom: 10px;
 	}
 }
+
+.title-secondary {
+	width: 100%;
+	@include fonts($source-sans-pro, 300);
+	font-size: 36px;
+	line-height: 120%;
+	color: #546E90;
+	text-align: center;
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	@include media-w($laptop-l) {
+		font-size: 30px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	@include media-w($laptop-s) {
+		font-size: 26px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+	@include media-w($laptop) {
+		font-size: 24px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
