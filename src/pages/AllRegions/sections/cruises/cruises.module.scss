@@ -7,6 +7,22 @@
 	padding-right: 10px;
 }
 
+.pt {
+	padding-top: 22px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 4px;
+	}
+}
+
 .container {
 	position: relative;
 }

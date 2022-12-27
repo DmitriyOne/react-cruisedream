@@ -1,15 +1,13 @@
 import classNames from 'classnames'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { dataWithoutFlyCard, params4Col } from '../../../../fakedata'
+import { Container } from '../../../../components'
 
-import { Button, CardWithRoute, Container, Heading } from '../../../../components'
+import { InternationalCruises } from './international-cruises/internationalCruises'
+import { NoFlyCruises } from './no-fly-cruises/noFlyCruises'
 
 import styles from './cruises.module.scss'
-import { useSwiperButtons } from '../../../../hooks'
 
 export const Cruises = () => {
-	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
 		<Container
@@ -18,31 +16,8 @@ export const Cruises = () => {
 			className={classNames(styles.component, 'pt-section', 'pb-section')}
 			tag="section"
 		>
-			<Heading as="h2" className="title-secondary">
-				БЕЗ ПЕРЕЛЕТНЫЕ
-			</Heading>
-			<Container className={styles.container}>
-				<Swiper
-					className={styles.swiper}
-					onSwiper={upDateSwiper}
-					{...params4Col}
-				>
-					{dataWithoutFlyCard.map(card =>
-						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardWithRoute {...card} />
-						</SwiperSlide>
-					)}
-				</Swiper>
-				<Button
-					className={classNames(styles.swiperArrow, styles.prev)}
-					onClick={handlerPrev}
-				/>
-				<Button
-					className={classNames(styles.swiperArrow, styles.next)}
-					onClick={handlerNext}
-				/>
-			</Container>
-
+			<NoFlyCruises />
+			<InternationalCruises />
 		</Container>
 	)
 }

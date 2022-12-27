@@ -57,6 +57,7 @@
 	line-height: 120%;
 	text-align: center;
 	color: #004275;
+	text-transform: uppercase;
 	padding-bottom: 22px;
 
 	@include media-w($laptop-l) {
@@ -86,6 +87,7 @@
 	line-height: 120%;
 	color: #546E90;
 	text-align: center;
+	text-transform: uppercase;
 	padding-bottom: 32px;
 
 	@include media-w($laptop-l) {
