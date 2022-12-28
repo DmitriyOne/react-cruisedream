@@ -1,6 +1,6 @@
 import { Grid, SwiperOptions } from 'swiper'
 
-export const paramsGrid: SwiperOptions = {
+export const params3x2Grid: SwiperOptions = {
 	slidesPerView: 1,
 	spaceBetween: 20,
 	modules: [Grid],
