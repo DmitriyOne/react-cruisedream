@@ -21,6 +21,7 @@ export const Intro = () => {
 	const direction = isMobile ? 'columnReverse' : 'column'
 	return (
 		<Container
+			id="review"
 			width="full"
 			className={classNames(styles.component, 'pt-section')}
 			direction={direction}

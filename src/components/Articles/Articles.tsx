@@ -14,6 +14,7 @@ export const Articles: FC<IProps> = ({ articles }) => {
 		<Container
 			width="full"
 			direction="column"
+			id="info"
 		>
 			{articles.map((article =>
 				<ArticleItem key={article.id} {...article} />

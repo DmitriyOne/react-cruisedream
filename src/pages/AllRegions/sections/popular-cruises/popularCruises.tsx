@@ -2,8 +2,7 @@ import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { CardPopularCruise, Container, Heading } from '../../../../components'
-import { params4Col } from '../../../../fakedata'
-import { dataPopularCruises } from '../../../../fakedata/data-popular-cruises'
+import { params4Col, dataPopularCruises } from '../../../../fakedata'
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'
 import { Link } from 'react-router-dom'
@@ -12,6 +11,7 @@ import { CRUISE_ROUTES } from '../../../../constants'
 export const PopularCruises = () => {
 	return (
 		<Container
+			id="cruise"
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pt-section', 'pb-section')}

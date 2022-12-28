@@ -13,6 +13,7 @@ import { dataPopularBlogPosts } from '../../../../fakedata/data-popular-blog-pos
 export const PopularPost = () => {
 	return (
 		<Container
+			id="ports"
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pb-section')}

@@ -16,6 +16,7 @@ export const Countries = () => {
 
 	return (
 		<Container
+			id="countries"
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pb-section')}

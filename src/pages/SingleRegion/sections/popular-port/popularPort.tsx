@@ -9,6 +9,7 @@ import styles from './popular-port.module.scss'
 export const PopularPort = () => {
 	return (
 		<Container
+			id="ports"
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pt-section', 'pb-section')}
