@@ -5,6 +5,8 @@ export interface ICard {
 	title?: string
 	date?: string
 	subtitle?: string
+	isSubtitleIndent?: boolean;
+	isSubtitleJustify?: boolean
 	tags?: string
 	learnMoreHref?:string
 	href?: string

@@ -1,6 +1,6 @@
-import { HeaderAnchors } from '../../components'
+import { HeaderAnchors, MapsImages } from '../../components'
 import { PopularCruises } from '../AllRegions/sections'
-import { Desc, Intro, Countries, HelpfulPosts } from './sections'
+import { Desc, Intro, Countries, HelpfulPosts, PopularPort } from './sections'
 
 export const SingleRegionPage = () => {
 	return (
@@ -10,6 +10,8 @@ export const SingleRegionPage = () => {
 			<PopularCruises />
 			<Desc />
 			<Countries />
+			<MapsImages />
+			<PopularPort />
 			<HelpfulPosts />
 		</>
 	)
