@@ -10,30 +10,48 @@ import classNames from 'classnames'
 
 enum ETitleSize {
 	large = 'l',
-	small = 's'
+	small = 's',
+	mobLarge = 'mob-large'
+}
+
+enum EPosition {
+	spb = 'spb',
+	center = 'center'
 }
 
 interface IProps {
 	card: ICard
 	titleSize?: keyof typeof ETitleSize
 	bodySize?: keyof typeof ETitleSize
+	position?: keyof typeof EPosition
 }
 
 export const CardBlackout: FC<IProps> = ({
 	card,
 	bodySize = 'small',
-	titleSize = 'large'
+	titleSize = 'large',
+	position = 'spb',
 }) => {
+	const componentClassName = classNames(styles.component, {
+		[styles.spb]: position === 'spb',
+		[styles.center]: position === 'center'
+	})
 	const titleClassName = classNames(styles.title, {
 		[styles.large]: titleSize === 'large',
 		[styles.small]: titleSize === 'small',
+		[styles.mobLarge]: titleSize === 'mobLarge'
 	})
 	const bodyClassName = classNames(styles.body, {
 		[styles.large]: bodySize === 'large',
 		[styles.small]: bodySize === 'small',
+		[styles.spb]: position === 'spb',
+		[styles.center]: position === 'center'
+	})
+	const buttonClassName = classNames(styles.button, {
+		[styles.mt0]: position === 'center'
 	})
 	return (
-		<div className={styles.component}>
+		<div className={componentClassName}>
 			<div className={styles.imageWrapper} >
 				<img
 					className={styles.image}
@@ -50,12 +68,14 @@ export const CardBlackout: FC<IProps> = ({
 						{card.date}
 					</span>
 				}
-				<p className={styles.subtitle}>
-					{card.subtitle}
-				</p>
+				{card.subtitle &&
+					<p className={styles.subtitle}>
+						{card.subtitle}
+					</p>
+				}
 				<Link
 					to={card.href!}
-					className={styles.button}
+					className={buttonClassName}
 				>
 					ВЫБРАТЬ
 				</Link>
