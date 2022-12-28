@@ -8,6 +8,7 @@ export const HelpfulAdvice = () => {
 		<Container
 			width="full"
 			direction="column"
+			className="pt-section"
 			tag="section"
 		>
 			<Container direction="column" className={styles.content}>
