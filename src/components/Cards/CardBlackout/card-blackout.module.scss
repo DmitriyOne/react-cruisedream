@@ -6,7 +6,7 @@
 .component {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+
 	flex-direction: column;
 	position: relative;
 	padding: 90px 20px;
@@ -23,7 +23,18 @@
 	}
 
 	@include mixins.media-w(breakpoints.$mobile-l) {
-		min-height: 420px;
+		min-height: 440px;
+	}
+}
+
+.component {
+
+	&.spb {
+		justify-content: space-between;
+	}
+
+	&.center {
+		justify-content: center;
 	}
 }
 
@@ -63,7 +74,6 @@
 .body {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	flex-direction: column;
 	height: 100%;
 	margin: 0 auto;
@@ -83,6 +93,14 @@
 	&.small {
 		@include mixins.fluidMaxSize(280);
 	}
+
+	&.spb {
+		justify-content: space-between;
+	}
+
+	&.center {
+		justify-content: center;
+	}
 }
 
 .title {
@@ -95,7 +113,7 @@
 .title {
 	&.large {
 		font-size: 48px;
-		line-height: 140%;
+		line-height: 120%;
 		padding-bottom: 50px;
 
 		@include mixins.media-w(breakpoints.$laptop-l) {
@@ -124,6 +142,26 @@
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			max-width: 100%;
+		}
+	}
+
+	&.mobLarge {
+		font-size: 48px;
+		line-height: 120%;
+		padding-bottom: 50px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			padding-bottom: 20px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			font-size: 38px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			max-width: 320px;
+			font-size: 32px;
+			padding-bottom: 60px;
 		}
 	}
 }
@@ -177,6 +215,10 @@
 		font-size: 16px;
 		background: #004275;
 		border-color: #004275;
+	}
+
+	&.mt0 {
+		margin-top: 0px;
 	}
 }
 

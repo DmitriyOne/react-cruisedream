@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ICard } from '../../../model/interfaces'
@@ -6,6 +7,10 @@ import { Heading } from '../../Headings'
 import styles from './card-with-route.module.scss'
 
 export const CardWithRoute: FC<ICard> = ({ ...card }) => {
+	const subtitleClassName = classNames(styles.subtitle, {
+		[styles.indent]: card.isSubtitleIndent,
+		[styles.justify]: card.isSubtitleJustify
+	})
 	return (
 		<div className={styles.component}>
 			<div className={styles.imageWrapper}>
@@ -21,7 +26,7 @@ export const CardWithRoute: FC<ICard> = ({ ...card }) => {
 						{card.title}
 					</B>
 				</Heading>
-				<p className={styles.subtitle}>
+				<p className={subtitleClassName}>
 					{card.subtitle}
 				</p>
 			</div>

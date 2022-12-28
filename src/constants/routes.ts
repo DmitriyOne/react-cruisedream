@@ -3,14 +3,17 @@ export const CRUISE_ROUTES = {
 	SALE: '/sale',
 	SEARCH: '/search',
 	CRUISE: '/cruise/:id',
+
 	REGIONS: '/regions',
+	SINGLE_REGIONS: '/region/mediterranean',
+
 	ACROSS_RUSSIA: '/across-russia',
 	SHIPS: '/ships',
 	COMPANIES: '/companies',
 	BLOG: '/blog',
 	NOT_FOUND: '*',
-	EMPTY: '#',
 	ACCOUNT: '/account',
 	SUBSCRIBE: '/subscribe',
-	TO_BOOK: '/to-book'
+	TO_BOOK: '/to-book',
+	EMPTY: '#',
 }

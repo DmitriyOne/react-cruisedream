@@ -13,6 +13,7 @@ import { dataPopularBlogPosts } from '../../../../fakedata/data-popular-blog-pos
 export const PopularPost = () => {
 	return (
 		<Container
+			id="ports"
 			width="full"
 			direction="column"
 			className={classNames(styles.component, 'pb-section')}
@@ -39,7 +40,7 @@ export const PopularPost = () => {
 				</Swiper>
 			</Container>
 
-			<Link to={CRUISE_ROUTES.SHIPS} className="button">
+			<Link to={CRUISE_ROUTES.EMPTY} className="button">
 				ВСЕ ПОСТЫ
 			</Link>
 		</Container>
