@@ -10,7 +10,7 @@ export const dataAboutCompany: ICard[] = [
 		src: shipSrc,
 		alt: 'Moscow city',
 		title: 'Сelebrity Cruises',
-		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
+		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd. ',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: `${CRUISE_ROUTES.EMPTY}`,
