@@ -22,7 +22,7 @@ export const Intro = () => {
 	return (
 		<Container
 			width="full"
-			className={classNames(styles.component, 'pt-section pb-section')}
+			className={classNames(styles.component, 'pt-section')}
 			direction={direction}
 			tag="section"
 		>
