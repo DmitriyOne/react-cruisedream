@@ -39,7 +39,7 @@ export const PopularPost = () => {
 				</Swiper>
 			</Container>
 
-			<Link to={CRUISE_ROUTES.SHIPS} className="button">
+			<Link to={CRUISE_ROUTES.EMPTY} className="button">
 				ВСЕ ПОСТЫ
 			</Link>
 		</Container>

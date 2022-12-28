@@ -6,6 +6,8 @@ import { params4Col } from '../../../../fakedata'
 import { dataPopularCruises } from '../../../../fakedata/data-popular-cruises'
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'
+import { Link } from 'react-router-dom'
+import { CRUISE_ROUTES } from '../../../../constants'
 
 export const PopularCruises = () => {
 	return (
@@ -33,6 +35,9 @@ export const PopularCruises = () => {
 					)}
 				</Swiper>
 			</Container>
+			<Link to={CRUISE_ROUTES.EMPTY} className="button">
+				ВСЕ КРУИЗЫ
+			</Link>
 		</Container>
 	)
 }

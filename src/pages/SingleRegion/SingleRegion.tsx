@@ -1,4 +1,5 @@
 import { HeaderAnchors } from '../../components'
+import { PopularCruises } from '../AllRegions/sections'
 import { Intro } from './sections'
 
 export const SingleRegionPage = () => {
@@ -6,6 +7,7 @@ export const SingleRegionPage = () => {
 		<>
 			<HeaderAnchors />
 			<Intro />
+			<PopularCruises />
 		</>
 	)
 }
