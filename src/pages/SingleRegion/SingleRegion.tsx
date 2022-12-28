@@ -1,6 +1,7 @@
 import { Articles, HeaderAnchors, MapsImages } from '../../components'
 import { dataRegionArticles } from '../../fakedata'
 import { PopularCruises } from '../AllRegions/sections'
+import { About, Advantages } from '../HomePage/sections'
 import { Desc, Intro, Countries, HelpfulPosts, PopularPort, HelpfulAdvice } from './sections'
 
 export const SingleRegionPage = () => {
@@ -17,6 +18,8 @@ export const SingleRegionPage = () => {
 			<HelpfulAdvice />
 			<PopularCruises />
 			<HelpfulPosts />
+			<About />
+			<Advantages />
 		</>
 	)
 }
