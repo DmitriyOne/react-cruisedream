@@ -1,26 +1,45 @@
-import { Container, Heading } from '../../../../components'
+import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
-import { RegionCard } from './region-card/region-card'
-import { CRUISE_ROUTES } from '../../../../constants'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { params3x2Grid } from '../../../../fakedata'
 
+import { CardBlackout, Container, Heading } from '../../../../components'
+import { CRUISE_ROUTES } from '../../../../constants'
+import { dataRegionsCard } from '../../../../fakedata/data-regions-card'
+
+import 'swiper/css'
+import 'swiper/css/grid'
 import styles from './regions.module.scss'
 
 export const Regions = () => {
 	return (
-		<Container width="full" className={styles.component} tag="section">
-			<Container className={styles.container} direction="column">
-				<Heading as="h3" className={styles.title}>
-					РЕГИОНЫ
-				</Heading>
-				<RegionCard />
-				<Link
-					className={styles.link}
-					to={CRUISE_ROUTES.SHIPS}
+		<Container
+			width="full"
+			direction="column"
+			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			tag="section"
+		>
+			<Heading as="h2" className="title-secondary">
+				РЕГИОНЫ
+			</Heading>
+
+			<Container>
+				<Swiper
+					className={styles.swiper}
+					{...params3x2Grid}
 				>
-					ВСЕ РЕГИОНЫ
-				</Link>
+					{dataRegionsCard.map(card =>
+						<SwiperSlide key={card.id} className={styles.slide}>
+							<CardBlackout card={card} />
+						</SwiperSlide>
+					)}
+				</Swiper>
 			</Container>
+
+			<Link to={CRUISE_ROUTES.SHIPS} className="button">
+				ВСЕ РЕГИОНЫ
+			</Link>
 		</Container>
 	)
 }
