@@ -1,36 +1,36 @@
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Button, CardWithRoute, Container, Heading } from '../../../../components'
-import { params4Col, dataNewShip } from '../../../../fakedata'
+import { Button, CardAboutCompany, Container, Heading } from '../../../../components'
 import { useSwiperButtons } from '../../../../hooks'
+import { dataAboutCompany, params3x3Grid } from '../../../../fakedata'
 
 import 'swiper/css'
-import styles from './new-ships.module.scss'
+import styles from './all-cruise-company.module.scss'
 
-export const NewShips = () => {
+export const AllCruiseCompany = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pb-section')}
+			className={classNames(styles.component, 'pt-section', 'pb-section')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
-				НОВЫЕ КОРАБЛИ
+				ВСЕ КРУИЗНЫЕ КОМПАНИИ
 			</Heading>
 
 			<Container className={styles.container}>
 				<Swiper
 					className={styles.swiper}
 					onSwiper={upDateSwiper}
-					{...params4Col}
+					{...params3x3Grid}
 				>
-					{dataNewShip.map(card =>
+					{dataAboutCompany.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardWithRoute
+							<CardAboutCompany
 								{...card}
 							/>
 						</SwiperSlide>
@@ -44,8 +44,8 @@ export const NewShips = () => {
 					className={classNames(styles.swiperArrow, styles.next)}
 					onClick={handlerNext}
 				/>
-
 			</Container>
 		</Container>
+
 	)
 }

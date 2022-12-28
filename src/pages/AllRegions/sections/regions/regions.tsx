@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { paramsGrid } from '../../../../fakedata'
+import { params3x2Grid } from '../../../../fakedata'
 
 import { CardBlackout, Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
@@ -27,7 +27,7 @@ export const Regions = () => {
 			<Container>
 				<Swiper
 					className={styles.swiper}
-					{...paramsGrid}
+					{...params3x2Grid}
 				>
 					{dataRegionsCard.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
