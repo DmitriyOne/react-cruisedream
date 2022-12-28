@@ -13,7 +13,8 @@ import {
 	ShipsPage,
 	AllCompanyPage,
 	BlogPage,
-	NotFoundPage
+	NotFoundPage,
+	SingleRegionPage
 } from '../../pages'
 
 import { Layout } from '../Layout'
@@ -29,7 +30,10 @@ export const AppRoutes = () => {
 							<Route path={CRUISE_ROUTES.SEARCH} element={<SearchPage />} />
 							<Route path={CRUISE_ROUTES.CRUISE} element={<CruisePage />} />
 							<Route path={CRUISE_ROUTES.SALE} element={<SalePage />} />
+
 							<Route path={CRUISE_ROUTES.REGIONS} element={<AllRegionsPage />} />
+							<Route path={CRUISE_ROUTES.SINGLE_REGIONS} element={<SingleRegionPage />} />
+							
 							<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />
 							<Route path={CRUISE_ROUTES.SHIPS} element={<ShipsPage />} />
 							<Route path={CRUISE_ROUTES.COMPANIES} element={<AllCompanyPage />} />

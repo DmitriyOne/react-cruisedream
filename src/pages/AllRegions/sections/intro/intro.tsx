@@ -12,7 +12,7 @@ export const Intro = () => {
 			direction="column"
 			tag="section"
 		>
-			<Heading align="center" className="title">
+			<Heading align="center" as="h1" className="title">
 				ВСЕ РЕГИОНЫ
 			</Heading>
 			<Container width="container" className={styles.contentWrapper} direction="column" align="center">
