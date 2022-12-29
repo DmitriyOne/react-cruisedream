@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import { ICard } from '../../model/interfaces'
 
-import img1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/1.jpg'
-import img2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/2.jpg'
-import img3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/3.jpg'
+import img1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/1.jpg'
+import img2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/2.jpg'
+import img3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/3.jpg'
 
 export const dataHelpfulBlogPosts: ICard[] = [
 	{
