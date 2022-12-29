@@ -5,3 +5,7 @@ export * from './select'
 export * from './homepage'
 export * from './swiper'
 export * from './cards'
+
+export * from './data-gallery'
+export * from './data-desc'
+export * from './data-helpful-advice'

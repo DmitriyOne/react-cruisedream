@@ -9,6 +9,9 @@ export const CRUISE_ROUTES = {
 	COMPANIES: '/all-companies',
 	CURRENT_COMPANY: '/company/:id',
 
+	COUNTRIES: '/all-countries',
+	CURRENT_COUNTRY: '/country/:id',
+
 	SHIPS: '/all-ships',
 	CURRENT_SHIP: '/ship/:id',
 
