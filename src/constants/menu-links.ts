@@ -1,7 +1,7 @@
 import { CRUISE_ROUTES } from './routes'
 
 export const MenuLinks = [
-	{ href: CRUISE_ROUTES.SALE, text: 'Акции' },
+	{ href: CRUISE_ROUTES.DISCOUNTS, text: 'Акции' },
 	{ href: CRUISE_ROUTES.REGIONS, text: 'Регионы' },
 	{ href: CRUISE_ROUTES.ACROSS_RUSSIA, text: 'По России' },
 	{ href: CRUISE_ROUTES.SHIPS, text: 'Корабли' },

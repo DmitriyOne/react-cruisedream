@@ -74,7 +74,7 @@ export const CardBlackout: FC<IProps> = ({
 					</p>
 				}
 				<Link
-					to={card.href!}
+					to={`${card.href}/${card.id}`}
 					className={buttonClassName}
 				>
 					ВЫБРАТЬ

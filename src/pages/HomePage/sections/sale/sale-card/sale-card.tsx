@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 
-import { SaleData } from '../../data'
+import { dataSale } from '../../../../../fakedata'
 
 import { Heading, Discount } from '../../../../../components'
 
@@ -16,7 +16,7 @@ export const SaleCard = () => {
 			className={styles.swiper}
 			{...params}
 		>
-			{SaleData.map((item, idx) => {
+			{dataSale.map((item, idx) => {
 				const isSale = item.discount
 				return (
 					<SwiperSlide

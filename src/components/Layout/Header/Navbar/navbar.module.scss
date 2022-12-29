@@ -113,10 +113,6 @@
 
 	&.active::before {
 		left: 0;
-
-		@include mixins.media-w(breakpoints.$laptop) {
-			left: -110%;
-		}
 	}
 }
 

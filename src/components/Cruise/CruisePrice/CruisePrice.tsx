@@ -124,23 +124,31 @@ export const CruisePrice: FC<IProps> = ({
 						</B>
 					}
 					<div className={classNameRowButtons}>
-						{isCruisePage &&
-							<Button
-								className={classNameModalButton}
-								onClick={onShowModal}
+						{isCruisePage
+							?
+							<>
+								<Button
+									className={classNameModalButton}
+									onClick={onShowModal}
+								>
+									ЗАПРОСИТЬ
+								</Button>
+								<Button
+									className={classNameButton}
+									onClick={onClickСhoose}
+								>
+									{buttonText}
+								</Button>
+							</>
+							:
+							<Link
+								to={'/cruise/1'}
+								className={classNameButton}
 							>
-								ЗАПРОСИТЬ
-							</Button>
+								{buttonText}
+							</Link>
 						}
-						<Link
-							to={'/cruise/1'}
-							className={classNameButton}
-							onClick={onClickСhoose}
-						>
-							{buttonText}
-						</Link>
 					</div>
-
 				</>
 			}
 		</>
