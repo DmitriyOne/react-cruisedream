@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
 import { ICard } from '../model/interfaces'
 
 import italySrc from '../assets/images/countries/italy.jpg'
@@ -13,7 +12,7 @@ export const dataCountries: ICard[] = [
 		alt: '',
 		title: 'ИТАЛИЯ',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 	{
 		id: 2,
@@ -21,7 +20,7 @@ export const dataCountries: ICard[] = [
 		alt: '',
 		title: 'ГРЕЦИЯ',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 	{
 		id: 3,
@@ -29,6 +28,6 @@ export const dataCountries: ICard[] = [
 		alt: '',
 		title: 'ХОРВАТИЯ',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 ]

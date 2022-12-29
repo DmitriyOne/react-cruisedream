@@ -17,7 +17,7 @@ export const Sale = () => {
 				<SaleCard />
 				<Link
 					className={styles.link}
-					to={CRUISE_ROUTES.SALE}
+					to={CRUISE_ROUTES.DISCOUNTS}
 				>
 					ВСЕ АКЦИИ
 				</Link>

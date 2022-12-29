@@ -14,7 +14,7 @@ export const dataPopularBlogPosts: ICard[] = [
 		title: 'Staff Stories: Queen Mary 2’s iconic transatlantic crossing',
 		date: '07 Dec 2022',
 		subtitle: 'Join ROL Cruise team member Madison as she sails aboard Cunard’s iconic ship Queen Mary 2 for an unforgettable transatlantic crossing.',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: `/${CRUISE_ROUTES.EMPTY}`,
 	},
 	{
 		id: 2,
@@ -23,7 +23,7 @@ export const dataPopularBlogPosts: ICard[] = [
 		title: 'Staff Stories: Queen Mary 2’s iconic transatlantic crossing',
 		date: '07 Dec 2022',
 		subtitle: 'Join ROL Cruise team member Madison as she sails aboard Cunard’s iconic ship Queen Mary 2 for an unforgettable transatlantic crossing.',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: `/${CRUISE_ROUTES.EMPTY}`,
 	},
 	{
 		id: 3,
@@ -32,6 +32,6 @@ export const dataPopularBlogPosts: ICard[] = [
 		title: 'Staff Stories: Queen Mary 2’s iconic transatlantic crossing',
 		date: '07 Dec 2022',
 		subtitle: 'Join ROL Cruise team member Madison as she sails aboard Cunard’s iconic ship Queen Mary 2 for an unforgettable transatlantic crossing.',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: `/${CRUISE_ROUTES.EMPTY}`,
 	},
 ]

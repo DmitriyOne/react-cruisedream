@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
 import { ICard } from '../model/interfaces'
 
 import europeSrc from '../assets/images/region/region-europe.jpeg'
@@ -13,7 +12,7 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'ЕВРОПА',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	},
 	{
 		id: 2,
@@ -21,7 +20,7 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'Азия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	},
 	{
 		id: 3,
@@ -29,7 +28,7 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'Россия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	},
 	{
 		id: 4,
@@ -37,7 +36,7 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'ЕВРОПА',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	},
 	{
 		id: 5,
@@ -45,7 +44,7 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'Азия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	},
 	{
 		id: 6,
@@ -53,6 +52,6 @@ export const dataRegionsCard: ICard[] = [
 		alt: 'Beautiful sea breeze',
 		title: 'Россия',
 		subtitle: 'В первоначальном значении Круиз - морское путешествие. В настоящее время понятие расширилось',
-		href: `${CRUISE_ROUTES.ACROSS_RUSSIA}`
+		href: '/region',
 	}
 ]

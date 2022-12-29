@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ICard } from '../../../model/interfaces'
@@ -65,7 +66,7 @@ export const CardPopularCruise: FC<ICard> = ({ ...card }) => {
 				/>
 			</div>
 			<Link
-				to={card.href!}
+				to={`${card.href}/${card.id}`}
 				className={styles.button}
 			>
 				ВЫБРАТЬ

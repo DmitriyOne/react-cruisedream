@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
 import { ICard } from '../model/interfaces'
 
 import dubaiSrc from '../assets/images/international/1.jpg'
@@ -14,7 +13,7 @@ export const dataInternationalCard: ICard[] = [
 		alt: 'Moscow city',
 		title: 'Дубай',
 		subtitle: 'Сохна, Египет / Сафага, Египет / Акаба, Иордания / Джидда, Саудовская Аравия / Янб',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 	{
 		id: 2,
@@ -22,7 +21,7 @@ export const dataInternationalCard: ICard[] = [
 		alt: 'Санкт-Петербург',
 		title: 'Стамбул',
 		subtitle: 'Барселона, Испания / Валенсия, Испания / Барселона, Испания / Рим, Италия / Валенсия / Барселона, Испания / Рим, Италия / Валенсия, Италия / Валенсия',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 	{
 		id: 3,
@@ -30,7 +29,7 @@ export const dataInternationalCard: ICard[] = [
 		alt: 'Moscow city',
 		title: 'Кушадасы',
 		subtitle: 'Дубай, ОАЭ / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 	{
 		id: 4,
@@ -38,6 +37,6 @@ export const dataInternationalCard: ICard[] = [
 		alt: 'Moscow city',
 		title: 'Барселона',
 		subtitle: 'Барселона, Испания / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ / Валенсия, Испания / Барселона, Испания',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/port',
 	},
 ]

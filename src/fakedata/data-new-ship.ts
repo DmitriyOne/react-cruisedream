@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
 import { ICard } from '../model/interfaces'
 
 import shipSrc from '../assets/images/ship/new-ship.jpg'
@@ -11,7 +10,7 @@ export const dataNewShip: ICard[] = [
 		alt: 'Moscow city',
 		title: 'RCL Icon of the Seas',
 		subtitle: 'Дубай, ОАЭ / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/ship',
 	},
 	{
 		id: 2,
@@ -19,7 +18,7 @@ export const dataNewShip: ICard[] = [
 		alt: 'Moscow city',
 		title: 'RCL Icon of the Seas',
 		subtitle: 'Дубай, ОАЭ / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/ship',
 	},
 	{
 		id: 3,
@@ -27,7 +26,7 @@ export const dataNewShip: ICard[] = [
 		alt: 'Moscow city',
 		title: 'RCL Icon of the Seas',
 		subtitle: 'Дубай, ОАЭ / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/ship',
 	},
 	{
 		id: 4,
@@ -35,6 +34,6 @@ export const dataNewShip: ICard[] = [
 		alt: 'Moscow city',
 		title: 'RCL Icon of the Seas',
 		subtitle: 'Дубай, ОАЭ / Абу-Даби, ОАЭ / Сир Бани Яс, ОАЭ / Даммам, Саудовская Аравия / Дубай, ОАЭ /Катар Дубай, ОАЭ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/ship',
 	},
 ]

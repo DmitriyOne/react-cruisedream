@@ -12,20 +12,20 @@ export const dataHelpfulBlogPosts: ICard[] = [
 		src: img1Src,
 		alt: '',
 		title: 'ЛУЧШИЕ ПЛЯЖИ СРЕДИЗЕМНОГО МОРЯ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/blog-post',
 	},
 	{
 		id: 2,
 		src: img2Src,
 		alt: '',
 		title: 'ГИД ПО ВИНОДЕЛЬНЯМ ТОСКАНЫ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/blog-post',
 	},
 	{
 		id: 3,
 		src: img3Src,
 		alt: '',
 		title: 'ЛУЧШИЕ РЕСТОРАНЫ ИТАЛИИ',
-		href: `${CRUISE_ROUTES.EMPTY}`
+		href: '/blog-post',
 	}
 ]

@@ -30,7 +30,10 @@ export const CardWithRoute: FC<ICard> = ({ ...card }) => {
 					{card.subtitle}
 				</p>
 			</div>
-			<Link to={card.href!} className={styles.button}>
+			<Link
+				to={`${card.href}/${card.id}`}
+				className={styles.button}
+			>
 				ВЫБРАТЬ
 			</Link>
 		</div>

@@ -1,8 +1,8 @@
 import { Container } from '../../../../components'
 
 import { Card } from '../card'
-import { PaginationBottom } from '../paginationBottom'
-import { Sort } from '../sort'
+import { PaginationBottom } from './paginationBottom/paginationBottom'
+import { Sort } from './sort/sort'
 
 import styles from './main.module.scss'
 

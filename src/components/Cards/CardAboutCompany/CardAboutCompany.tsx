@@ -36,7 +36,10 @@ export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
 				</B>
 			</div>
 			<div className={styles.buttonWrapper}>
-				<Link to={card.learnMoreHref!} className={styles.button}>
+				<Link
+					to={`${card.href}/${card.id}`}
+					className={styles.button}
+				>
 					ПОДРОБНЕЕ
 				</Link>
 				<Link to={card.href!} className={styles.button}>
