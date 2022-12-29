@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import { FC } from 'react'
-
 import { sortBy, sortCurrency } from '../../../fakedata'
 
 import { MySelect } from '../../MySelect'
