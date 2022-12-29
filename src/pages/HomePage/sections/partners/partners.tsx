@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 
-import { PartnersData } from '../data/partners-data'
+import { dataPartners } from '../../../../fakedata'
 
 import { useSwiperButtons } from '../../../../hooks'
 import { Button, Container, Heading } from '../../../../components'
@@ -11,6 +11,7 @@ import { Button, Container, Heading } from '../../../../components'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import styles from './partners.module.scss'
+
 export const Partners = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
@@ -28,7 +29,7 @@ export const Partners = () => {
 					onSwiper={upDateSwiper}
 					{...params}
 				>
-					{PartnersData.map(item =>
+					{dataPartners.map(item =>
 						<SwiperSlide
 							key={item.id}
 							className={styles.slide}

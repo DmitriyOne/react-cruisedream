@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
-import romeSrc from '../assets/images/ports/rome.jpg'
-import barcelonaSrc from '../assets/images/ports/barcelona.jpg'
-import santoriniSrc from '../assets/images/ports/santorini.jpg'
-import veniceSrc from '../assets/images/ports/venice.jpg'
+import romeSrc from '../../components/RepeaterBlocks/PopularPorts/images/rome.jpg'
+import barcelonaSrc from '../../components/RepeaterBlocks/PopularPorts/images/barcelona.jpg'
+import santoriniSrc from '../../components/RepeaterBlocks/PopularPorts/images/santorini.jpg'
+import veniceSrc from '../../components/RepeaterBlocks/PopularPorts/images/venice.jpg'
 
 export const dataPopularPort: ICard[] = [
 	{

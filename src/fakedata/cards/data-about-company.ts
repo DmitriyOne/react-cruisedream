@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
-import { ICard } from '../model/interfaces'
+import { CRUISE_ROUTES } from '../../constants'
+import { ICard } from '../../model/interfaces'
 
-import shipSrc from '../assets/images/ship/new-ship.jpg'
+import shipSrc from '../../assets/images/ship/new-ship.jpg'
 
 export const dataAboutCompany: ICard[] = [
 	{

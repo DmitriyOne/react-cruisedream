@@ -1,6 +1,6 @@
 import { Container } from '../../../../components'
 
-import introSrc from '../../../../assets/images/company/intro.jpg'
+import introSrc from './images/intro.jpg'
 
 import styles from './intro.module.scss'
 

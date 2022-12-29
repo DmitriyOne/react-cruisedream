@@ -4,9 +4,9 @@ import classNames from 'classnames'
 import { B, Container, Heading, MyGallery } from '../../../components'
 import { useWindowSize } from '../../../hooks'
 
-import galleryImg1 from '../../../assets/images/single-region/1.jpg'
-import galleryImg2 from '../../../assets/images/single-region/2.jpg'
-import galleryImg3 from '../../../assets/images/single-region/3.jpg'
+import galleryImg1 from '../../../assets/images/galleries/region/1.jpg'
+import galleryImg2 from '../../../assets/images/galleries/region/2.jpg'
+import galleryImg3 from '../../../assets/images/galleries/region/3.jpg'
 
 import styles from './intro-with-gallery.module.scss'
 

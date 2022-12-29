@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
-import shipSrc from '../assets/images/ship/new-ship.jpg'
+import shipSrc from '../../assets/images/ship/new-ship.jpg'
 
 export const dataNewShip: ICard[] = [
 	{

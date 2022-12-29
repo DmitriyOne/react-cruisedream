@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
-import { IArticle } from '../model/interfaces'
+import { IArticle } from '../../model/interfaces'
 
-import regionImage1 from '../assets/images/articles/region/1.jpg'
-import regionImage2 from '../assets/images/articles/region/2.jpg'
+import regionImage1 from '../../components/RepeaterBlocks/Articles/images/region/1.jpg'
+import regionImage2 from '../../components/RepeaterBlocks/Articles/images/region/2.jpg'
 
-import portImage1 from '../assets/images/articles/port/1.jpg'
-import portImage2 from '../assets/images/articles/port/2.jpg'
-import portImage3 from '../assets/images/articles/port/3.jpg'
+import portImage1 from '../../components/RepeaterBlocks/Articles/images/port/1.jpg'
+import portImage2 from '../../components/RepeaterBlocks/Articles/images/port/2.jpg'
+import portImage3 from '../../components/RepeaterBlocks/Articles/images/port/3.jpg'
 
-import countryImage1 from '../assets/images/articles/coutry/1.jpg'
-import countryImage2 from '../assets/images/articles/coutry/2.jpg'
+import countryImage1 from '../../components/RepeaterBlocks/Articles/images/coutry/1.jpg'
+import countryImage2 from '../../components/RepeaterBlocks/Articles/images/coutry/2.jpg'
 
 const videoYouTube = 'https://www.youtube.com/embed/or047P2NOjc'
 

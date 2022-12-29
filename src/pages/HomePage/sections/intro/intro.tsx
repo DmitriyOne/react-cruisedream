@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 import { useSwiperButtons } from '../../../../hooks'
 
-import { IntroData } from '../data'
-
+import { dataIntro } from '../../../../fakedata'
 import { Button, Container } from '../../../../components'
 import { IntroContent } from './content/content'
 
@@ -32,7 +31,7 @@ export const Intro = () => {
 				}}
 				{...params}
 			>
-				{IntroData.map((slider, idx) =>
+				{dataIntro.map((slider, idx) =>
 					<SwiperSlide
 						className={styles.slide}
 						key={idx}

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
 export const dataPopularCruises: ICard[] = [
 	{

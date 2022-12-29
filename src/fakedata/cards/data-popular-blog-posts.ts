@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { CRUISE_ROUTES } from '../constants'
-import { ICard } from '../model/interfaces'
+import { CRUISE_ROUTES } from '../../constants'
+import { ICard } from '../../model/interfaces'
 
-import europeSrc from '../assets/images/region/region-europe.jpeg'
-import asiaSrc from '../assets/images/region/region-asia.jpeg'
-import russiaSrc from '../assets/images/region/region-russia.jpeg'
+import europeSrc from '../../components/RepeaterBlocks/RegionsCards/images/region-europe.jpeg'
+import asiaSrc from '../../components/RepeaterBlocks/RegionsCards/images/region-asia.jpeg'
+import russiaSrc from '../../components/RepeaterBlocks/RegionsCards/images/region-russia.jpeg'
 
 export const dataPopularBlogPosts: ICard[] = [
 	{

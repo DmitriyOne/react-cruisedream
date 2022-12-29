@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
-import dubaiSrc from '../assets/images/international/1.jpg'
-import istanbulSrc from '../assets/images/international/2.jpg'
-import kusadasiSrc from '../assets/images/international/3.jpg'
-import barcelonaSrc from '../assets/images/international/4.jpg'
+import dubaiSrc from '../../assets/images/cruises/international/1.jpg'
+import istanbulSrc from '../../assets/images/cruises/international/2.jpg'
+import kusadasiSrc from '../../assets/images/cruises/international/3.jpg'
+import barcelonaSrc from '../../assets/images/cruises/international/4.jpg'
 
 export const dataInternationalCard: ICard[] = [
 	{

@@ -1,7 +1,8 @@
-import saleImg from '../../../../assets/images/sale/sale-1.jpeg'
-import { CRUISE_ROUTES } from '../../../../constants'
+import saleImg from '../../pages/HomePage/sections/sale/images/sale-1.jpeg'
 
-export const SaleData = [
+import { CRUISE_ROUTES } from '../../constants'
+
+export const dataSale = [
 	{
 		src: saleImg,
 		alt: 'Coconut cocktail on the beach',

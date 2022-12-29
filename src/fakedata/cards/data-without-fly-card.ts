@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
-import moscowSrc from '../assets/images/no-fly/1.jpg'
-import spSrc from '../assets/images/no-fly/2.jpg'
-import sochiSrc from '../assets/images/no-fly/3.jpg'
-import kazanSrc from '../assets/images/no-fly/4.jpg'
+import moscowSrc from '../../assets/images/cruises/no-fly/1.jpg'
+import spSrc from '../../assets/images/cruises/no-fly/2.jpg'
+import sochiSrc from '../../assets/images/cruises/no-fly/3.jpg'
+import kazanSrc from '../../assets/images/cruises/no-fly/4.jpg'
 
 export const dataWithoutFlyCard: ICard[] = [
 	{

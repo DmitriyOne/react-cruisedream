@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import anchorIcon from '../assets/images/advantages/anchor.svg'
-import bookmarkIcon from '../assets/images/advantages/bookmark.svg'
-import lockIcon from '../assets/images/advantages/lock.svg'
-import doneIcon from '../assets/images/advantages/done.svg'
+import anchorIcon from '../../components/RepeaterBlocks/Advantages/icons/anchor.svg'
+import bookmarkIcon from '../../components/RepeaterBlocks/Advantages/icons/bookmark.svg'
+import lockIcon from '../../components/RepeaterBlocks/Advantages/icons/lock.svg'
+import doneIcon from '../../components/RepeaterBlocks/Advantages/icons/done.svg'
 
 export const dataAdvantages = [
 	{

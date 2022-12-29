@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-import { ICard } from '../model/interfaces'
+import { ICard } from '../../model/interfaces'
 
-import italySrc from '../assets/images/countries/italy.jpg'
-import greeceSrc from '../assets/images/countries/greece.jpg'
-import choatiaSrc from '../assets/images/countries/choatia.jpg'
+import italySrc from '../../components/RepeaterBlocks/PopularCountries/images/italy.jpg'
+import greeceSrc from '../../components/RepeaterBlocks/PopularCountries/images/greece.jpg'
+import choatiaSrc from '../../components/RepeaterBlocks/PopularCountries/images/choatia.jpg'
 
 export const dataCountries: ICard[] = [
 	{
