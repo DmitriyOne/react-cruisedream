@@ -21,6 +21,7 @@ export const SortBy: FC<IProps> = ({ className }) => {
 				defaultSelect={sortCurrency}
 				isMulti={false}
 				defaultValue={sortCurrency[0]}
+				allowSelectAll={false}
 			/>
 			<MySelect
 				className={styles.select}

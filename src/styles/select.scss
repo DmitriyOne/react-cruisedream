@@ -124,9 +124,9 @@
 	}
 
 	&__multi-value {
-		background-color: transparent !important; 
-    margin: 0 !important;
-    border-radius: 0 !important;
+		background-color: transparent !important;
+		margin: 0 !important;
+		border-radius: 0 !important;
 	}
 
 	&__multi-value__label {
@@ -134,7 +134,7 @@
 		font-size: 24px !important;
 		line-height: 120% !important;
 		color: #004275 !important;
-    padding: 0 !important;
+		padding: 0 !important;
 	}
 }
 
@@ -214,7 +214,7 @@
 		@include mixins.media-w(breakpoints.$tablet-s) {
 			width: 12px;
 		}
-		
+
 		&:hover {
 			color: #999aa5 !important;
 		}
@@ -248,9 +248,9 @@
 	}
 
 	&__multi-value {
-		background-color: transparent !important; 
-    margin: 0 !important;
-    border-radius: 0 !important;
+		background-color: transparent !important;
+		margin: 0 !important;
+		border-radius: 0 !important;
 	}
 
 	&__multi-value__label {
@@ -258,11 +258,11 @@
 		font-size: 17px;
 		line-height: 120%;
 		color: rgba(79, 78, 78, 0.6) !important;
-    padding: 0 !important;
+		padding: 0 !important;
 	}
 }
 
-.select-sort {	
+.select-sort {
 	&__control {
 		min-height: auto !important;
 		background-color: colors.$white !important;
@@ -345,7 +345,7 @@
 		@include mixins.media-w(breakpoints.$tablet-s) {
 			width: 12px;
 		}
-		
+
 		&:hover {
 			color: #999aa5 !important;
 		}
@@ -356,7 +356,7 @@
 	}
 
 	&__clear-indicator {
-		display: none !important; 
+		display: none !important;
 		// @include mixins.square-size(12);
 		// @include mixins.bg-cover;
 		// background-image: url('../assets/images/select/delete.svg');
@@ -375,9 +375,14 @@
 		cursor: pointer !important;
 		color: colors.$black !important;
 		font-size: 16px !important;
+		background-color: colors.$transparent !important;
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			font-size: 14px !important;
 		}
+	}
+
+	&__option--is-selected {
+		background-color: #ddebff !important;
 	}
 }

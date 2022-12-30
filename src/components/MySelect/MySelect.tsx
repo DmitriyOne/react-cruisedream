@@ -42,9 +42,6 @@ export const MySelect: FC<IProps> = ({
 	return (
 		<Select
 			options={options}
-			components={{
-				Option: CheckboxSelect
-			}}
 			placeholder={placeholder}
 			className={className}
 			classNamePrefix={classNamePrefix}
