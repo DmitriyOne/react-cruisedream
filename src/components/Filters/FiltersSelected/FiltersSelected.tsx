@@ -77,8 +77,7 @@ export const FiltersSelected = () => {
 
 	const handlerRemoveDate = (e: FormEvent) => {
 		e.preventDefault()
-		date.resetDateStart()
-		date.resetDateEnd()
+		date.resetDates()
 	}
 
 	return (

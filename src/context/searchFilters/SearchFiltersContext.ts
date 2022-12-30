@@ -3,11 +3,9 @@ import { ISelect } from '../../model/interfaces'
 
 interface IInputDate {
 	dateStart?: Date
-	onChangeDateStart: (date: Date) => void
-	resetDateStart: () => void
 	dateEnd?: Date
-	onChangeDateEnd: (date: Date) => void
-	resetDateEnd: () => void
+	onChangeDates: (dates: any) => void
+	resetDates: () => void
 }
 
 interface IInputPrice {
@@ -107,10 +105,8 @@ const defaultValue: IProps = {
 	},
 
 	date: {
-		resetDateStart: () => { },
-		onChangeDateStart: () => { },
-		resetDateEnd: () => { },
-		onChangeDateEnd: () => { }
+		onChangeDates: () => {},
+		resetDates: () => {}
 	}
 }
 

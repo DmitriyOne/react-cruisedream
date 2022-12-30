@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import classNames from 'classnames'
 
 import { SearchFiltersContext } from '../../../context'
 import { optionRegionHome, optionCompanyHome } from '../../../fakedata'
@@ -10,7 +9,6 @@ import styles from './filters-visible.module.scss'
 
 export const FiltersVisible = () => {
 	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
-	
 
 	return (
 		<Container width="full" className={styles.component}>
@@ -31,14 +29,13 @@ export const FiltersVisible = () => {
 				onChange={onChangeCruise}
 			/>
 			<MyDatepicker
-				componentClassName={classNames(styles.col, styles.relative)}
+				componentClassName={styles.col}
 				wrapperClassName={styles.datepickerWrapper}
 				inputClassName={styles.inputDatepicker}
-				width="half"
+				placeholder="Даты круиза"
 				startDate={date.dateStart}
 				endDate={date.dateEnd}
-				onChangeStart={date.onChangeDateStart}
-				onChangeEnd={date.onChangeDateEnd}
+				onChange={date.onChangeDates}
 			/>
 			<Button className={styles.button}>
 				НАЙТИ КРУИЗ

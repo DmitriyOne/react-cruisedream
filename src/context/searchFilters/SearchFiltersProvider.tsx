@@ -14,8 +14,13 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle } = useOpen(false)
 	const [region, setRegion] = useState<ISelect>()
 	const [cruise, setCruise] = useState<ISelect>()
-	const [dateStart, setDateStart] = useState<Date>()
-	const [dateEnd, setDateEnd] = useState<Date>()
+
+	const today = new Date()
+	const nextDay = new Date(today)
+	nextDay.setDate(today.getDate() + 7)
+	const [dateStart, setDateStart] = useState<Date | undefined>(today)
+	const [dateEnd, setDateEnd] = useState<Date | undefined>(nextDay)
+
 	const [port1, setPort1] = useState<ISelect>()
 	const [port2, setPort2] = useState<ISelect>()
 	const [port3, setPort3] = useState<ISelect>()
@@ -86,19 +91,14 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 		setPriceEnd('')
 	}
 
-	const onChangeDateStart = (date: Date) => {
-		setDateStart(date)
+	const onChangeDates = (dates: any) => {
+		const [start, end] = dates
+		setDateStart(start)
+		setDateEnd(end)
 	}
 
-	const onChangeDateEnd = (date: Date) => {
-		setDateEnd(date)
-	}
-
-	const resetDateStart = () => {
+	const resetDates = () => {
 		setDateStart(undefined)
-	}
-
-	const resetDateEnd = () => {
 		setDateEnd(undefined)
 	}
 
@@ -107,11 +107,9 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 
 	const date = {
 		dateStart,
-		onChangeDateStart,
-		resetDateStart,
 		dateEnd,
-		onChangeDateEnd,
-		resetDateEnd
+		onChangeDates,
+		resetDates
 	}
 
 	const amountDays = {
