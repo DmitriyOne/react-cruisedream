@@ -11,6 +11,10 @@
 	padding: 22px 20px;
 	background-color: colors.$white;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		flex-flow: column;
+	}
 }
 
 .wrapper {
