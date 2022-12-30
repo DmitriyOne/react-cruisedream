@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { FC } from 'react'
 import { CardImageSlider, Container, Heading } from '../../../components'
-import { dataRegionsHelpfulAdvice } from '../../../fakedata'
 
 import styles from './helpful-advice.module.scss'
 

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { About, Advantages, Articles, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCountries, PopularCruises } from '../../components/RepeaterBlocks'
-import { dataCountryArticles, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice } from '../../fakedata'
+import { About, Advantages, Articles, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
+import { dataCountryArticles, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryHelpfulBlogPosts } from '../../fakedata'
 
 export const CurrentCountryPage = () => {
 	return (
@@ -9,11 +9,11 @@ export const CurrentCountryPage = () => {
 			<IntroWithGallery {...dataCountryGallery} />
 			<PopularCruises />
 			<Desc {...dataCountryDesc} />
-			<PopularCountries />
+			<PopularPorts {...dataCountryPopularPort} />
 			<Articles articles={dataCountryArticles} />
 			<HelpfulAdvice {...dataCountryHelpfulAdvice} />
 			<PopularCruises />
-			<HelpfulBlogPosts />
+			<HelpfulBlogPosts cards={dataCountryHelpfulBlogPosts} />
 			<About />
 			<Advantages />
 		</>

@@ -56,7 +56,7 @@ export const dataRegionPopularPort: IPort = {
 }
 
 export const dataCountryPopularPort: IPort = {
-	title: 'ПОПУЛЯРНЫЕ ПОРТЫ СРЕДИЗЕМНОГО МОРЯ',
+	title: 'ПОПУЛЯРНЫЕ ГОРОДА ИСПАНИИ',
 	cards: [
 		{
 			id: 1,

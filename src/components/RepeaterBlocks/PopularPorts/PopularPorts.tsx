@@ -1,13 +1,20 @@
+import { FC } from 'react'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { ICard } from '../../../model/interfaces'
 import { CardWithRoute, Container, Heading } from '../../../components'
-import { params4Col, dataPopularPort } from '../../../fakedata'
+import { params4Col, } from '../../../fakedata'
 
 import 'swiper/css'
 import styles from './popular-ports.module.scss'
 
-export const PopularPorts = () => {
+interface IProps {
+	title: string
+	cards: ICard[]
+}
+
+export const PopularPorts: FC<IProps> = ({ ...content }) => {
 	return (
 		<Container
 			id="ports"
@@ -17,7 +24,7 @@ export const PopularPorts = () => {
 			tag="section"
 		>
 			<Heading as="h2" className={classNames(styles.title, 'title-secondary')}>
-				ПОПУЛЯРНЫЕ порты СРЕДИЗЕМНОГО МОРЯ
+				{content.title}
 			</Heading>
 
 			<Container>
@@ -25,7 +32,7 @@ export const PopularPorts = () => {
 					className={styles.swiper}
 					{...params4Col}
 				>
-					{dataPopularPort.map(card =>
+					{content.cards.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
 							<CardWithRoute
 								{...card}

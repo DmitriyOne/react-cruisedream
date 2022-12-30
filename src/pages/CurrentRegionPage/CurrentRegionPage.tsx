@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, Articles, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts } from '../../components/RepeaterBlocks'
 
-import { dataRegionArticles, dataRegionDesc, dataRegionGallery, dataRegionsHelpfulAdvice } from '../../fakedata'
+import { dataRegionArticles, dataRegionDesc, dataRegionGallery, dataRegionHelpfulBlogPosts, dataRegionPopularPort, dataRegionsHelpfulAdvice } from '../../fakedata'
 
 export const CurrentRegionPage = () => {
 	return (
@@ -12,11 +12,11 @@ export const CurrentRegionPage = () => {
 			<Desc {...dataRegionDesc} />
 			<PopularCountries />
 			<MapsImages />
-			<PopularPorts />
+			<PopularPorts {...dataRegionPopularPort} />
 			<Articles articles={dataRegionArticles} />
 			<HelpfulAdvice {...dataRegionsHelpfulAdvice} />
 			<PopularCruises />
-			<HelpfulBlogPosts />
+			<HelpfulBlogPosts cards={dataRegionHelpfulBlogPosts} />
 			<About />
 			<Advantages />
 		</>

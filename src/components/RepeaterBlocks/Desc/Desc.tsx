@@ -17,7 +17,7 @@ export const Desc: FC<IProps> = ({ ...content }) => {
 	return (
 		<Container
 			width="full"
-			className={classNames(styles.component, 'pb-section')}
+			className={classNames(styles.component)}
 			tag="section"
 		>
 			<Container width="containerS" direction="column">
