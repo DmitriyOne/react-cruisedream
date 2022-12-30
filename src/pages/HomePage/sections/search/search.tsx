@@ -1,7 +1,8 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
+import { SearchFiltersContext } from '../../../../context'
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
@@ -14,14 +15,7 @@ export const Search = () => {
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
-	const [startDate, setStartDate] = useState<Date>()
-	const [endDate, setEndDate] = useState<Date>()
-
-	const onChangeDates = (dates: any) => {
-		const [start, end] = dates
-		setStartDate(start)
-		setEndDate(end)
-	}
+	const { date } = useContext(SearchFiltersContext)
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
@@ -73,9 +67,9 @@ export const Search = () => {
 						wrapperClassName={styles.datepickerWrapper}
 						inputClassName={styles.inputDatepicker}
 						placeholder="Даты круиза"
-						startDate={startDate}
-						endDate={endDate}
-						onChange={onChangeDates}
+						startDate={date.dateStart}
+						endDate={date.dateEnd}
+						onChange={date.onChangeDates}
 					/>
 					<Button
 						className={styles.button}

@@ -57,9 +57,16 @@
 .optionWrapper {
 	display: flex;
 	margin-right: 10px;
+	padding-right: 18px;
+	position: relative;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		margin-right: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 14px;
+		margin-right: 10px;
 	}
 
 	&:last-child {
@@ -84,9 +91,17 @@
 }
 
 .removeBtn {
-	@include mixins.square-size(8);
+	padding: 6px;
+	position: absolute;
+	top: -5px;
+	right: 0;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 4px;
+	}
 }
 
 .removeIcon {
 	display: block;
+	@include mixins.square-size(8);
 }
