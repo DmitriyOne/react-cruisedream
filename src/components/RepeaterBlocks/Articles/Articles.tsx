@@ -15,6 +15,8 @@ export const Articles: FC<IProps> = ({ articles }) => {
 			width="full"
 			direction="column"
 			id="info"
+			className="pt-section"
+			tag="section"
 		>
 			{articles.map((article =>
 				<ArticleItem key={article.id} {...article} />
