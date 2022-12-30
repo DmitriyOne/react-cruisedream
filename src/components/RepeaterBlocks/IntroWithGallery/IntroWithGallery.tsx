@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
-import { B, Container, Heading, MyGallery } from '../../../components'
+import { Container, Heading, MyGallery } from '../../../components'
 import { useWindowSize } from '../../../hooks'
 
 import styles from './intro-with-gallery.module.scss'

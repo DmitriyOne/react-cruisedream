@@ -32,7 +32,7 @@ export const CardPopularCruise: FC<ICard> = ({ ...card }) => {
 					classComponent={styles.timer}
 					classText={styles.timerText}
 					classNumber={styles.timerNumber}
-					deadline="31 Dec 2022"
+					deadline="5 Jan 2023"
 					isSeconds={false}
 				/>
 			</div>

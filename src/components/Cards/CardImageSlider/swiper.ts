@@ -4,6 +4,7 @@ export const params: SwiperOptions = {
 	slidesPerView: 1.5,
 	loop: true,
 	direction: 'horizontal',
+	grabCursor: true,
 	initialSlide: 1,
 	centeredSlides: true,
 	spaceBetween: 5,
