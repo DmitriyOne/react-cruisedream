@@ -9,6 +9,10 @@ import countryImg1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/ima
 import countryImg2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/country/2.jpg'
 import countryImg3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/country/3.jpg'
 
+import portImg1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/port/1.jpg'
+import portImg2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/port/2.jpg'
+import portImg3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/port/3.jpg'
+
 export const dataRegionHelpfulBlogPosts: ICard[] = [
 	{
 		id: 1,
@@ -51,6 +55,30 @@ export const dataCountryHelpfulBlogPosts: ICard[] = [
 	{
 		id: 3,
 		src: countryImg3Src,
+		alt: '',
+		title: 'ЗАГАДОЧНЫЕ ДВОРЦЫ ИСПАНИИ',
+		href: '/blog-post',
+	}
+]
+
+export const dataPortHelpfulBlogPosts: ICard[] = [
+	{
+		id: 1,
+		src: portImg1Src,
+		alt: '',
+		title: 'ЛУЧШИЕ ВИДЫ НА ВЕЧНЫЙ ГОРОД',
+		href: '/blog-post',
+	},
+	{
+		id: 2,
+		src: portImg2Src,
+		alt: '',
+		title: 'ЛУЧШИЕ ПЛЯЖИ МАЙОРКИ',
+		href: '/blog-post',
+	},
+	{
+		id: 3,
+		src: portImg3Src,
 		alt: '',
 		title: 'ЗАГАДОЧНЫЕ ДВОРЦЫ ИСПАНИИ',
 		href: '/blog-post',

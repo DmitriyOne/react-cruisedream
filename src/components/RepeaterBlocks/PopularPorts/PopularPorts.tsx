@@ -20,7 +20,7 @@ export const PopularPorts: FC<IProps> = ({ ...content }) => {
 			id="ports"
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			className={classNames(styles.component, 'pt-section')}
 			tag="section"
 		>
 			<Heading as="h2" className={classNames(styles.title, 'title-secondary')}>

@@ -1,11 +1,21 @@
-import { Heading } from '../../components'
+/* eslint-disable max-len */
+import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, Articles, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
+
+import { dataPortArticles, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortHelpfulBlogPosts } from '../../fakedata'
 
 export const CurrentPortPage = () => {
 	return (
-		<div style={{ marginTop: '100px', marginBottom: '100px' }}>
-			<Heading align="center">
-				CurrentPortPage
-			</Heading>
-		</div>
+		<>
+			<HeaderAnchors />
+			<IntroWithGallery {...dataPortGallery} />
+			<PopularCruises />
+			<Desc {...dataPortDesc} />
+			<Articles articles={dataPortArticles} />
+			<HelpfulAdvice {...dataPortHelpfulAdvice} />
+			<PopularCruises />
+			<HelpfulBlogPosts cards={dataPortHelpfulBlogPosts} />
+			<About />
+			<Advantages />
+		</>
 	)
 }
