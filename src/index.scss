@@ -1,7 +1,142 @@
 @import './styles/global.scss';
 @import './styles/select.scss';
 @import './styles/datepicker.scss';
+@import './styles/family.scss';
+@import './styles/mixins.scss';
+@import './styles/breakpoints.scss';
+@import './styles/colors.scss';
 
 #root {
 	overflow-x: hidden;
+}
+
+.pt-section {
+	padding-top: 32px;
+
+	@include media-w($laptop-l) {
+		padding-top: 25px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-top: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-top: 16px;
+	}
+
+	@include media-w($tablet) {
+		padding-top: 12px;
+	}
+}
+
+.pb-section {
+	padding-bottom: 42px;
+
+	@include media-w($laptop-l) {
+		padding-bottom: 36px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 16px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 12px;
+	}
+}
+
+.title {
+	display: block;
+	@include fonts($source-sans-pro);
+	font-size: 36px;
+	line-height: 120%;
+	text-align: center;
+	color: #004275;
+	text-transform: uppercase;
+	padding-bottom: 22px;
+
+	@include media-w($laptop-l) {
+		font-size: 32px;
+		padding-bottom: 18px;
+	}
+
+	@include media-w($laptop-s) {
+		font-size: 28px;
+		padding-bottom: 14px;
+	}
+
+	@include media-w($laptop) {
+		font-size: 24px;
+		padding-bottom: 12px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 10px;
+	}
+}
+
+.title-secondary {
+	width: 100%;
+	@include fonts($source-sans-pro, 300);
+	font-size: 36px;
+	line-height: 120%;
+	color: #546E90;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 32px;
+
+	@include media-w($laptop-l) {
+		font-size: 30px;
+		padding-bottom: 24px;
+	}
+
+	@include media-w($laptop-s) {
+		font-size: 26px;
+		padding-bottom: 18px;
+	}
+
+	@include media-w($laptop) {
+		font-size: 24px;
+		padding-bottom: 12px;
+	}
+}
+
+.button {
+	display: inline-block;
+	margin-top: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 17px;
+	line-height: 120%;
+	text-align: center;
+	text-transform: uppercase;
+	color: $btn-text;
+	padding: 18px 50px;
+	background-color: $transparent;
+	border: 1px solid $btn-border;
+	border-radius: 3px;
+	white-space: nowrap;
+	transition: all .3s;
+
+	@include media-w($laptop) {
+		margin-top: 10px;
+	}
+
+	@include media-w($tablet) {
+		font-size: 16px;
+		padding: 16px 40px;
+		margin-top: 2px;
+	}
+
+	@include media-minw($laptop) {
+		&:hover {
+			background-color: $btn-hover;
+			color: $white;
+		}
+	}
 }

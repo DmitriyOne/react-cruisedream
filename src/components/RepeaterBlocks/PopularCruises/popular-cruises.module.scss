@@ -1,0 +1,30 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+
+.component {
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.swiper {
+	width: 100%;
+	padding: 0 10px 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&>div {
+		align-items: stretch;
+	}
+}
+
+.slide {
+	height: auto;
+}

@@ -1,5 +1,5 @@
-import { Banner } from '../../components'
-import { Intro, Search, About, Advantages, Partners, Regions, Sale } from './sections'
+import { About, Advantages, Banner, RegionsCards } from '../../components/RepeaterBlocks'
+import { Intro, Search, Partners, Sale } from './sections'
 
 export const HomePage = () => {
 
@@ -8,8 +8,8 @@ export const HomePage = () => {
 			<Intro />
 			<Search />
 			<Sale />
-			<Regions />
 			<Banner />
+			<RegionsCards />
 			<Partners />
 			<About />
 			<Advantages />

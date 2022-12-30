@@ -32,6 +32,7 @@ interface IProps {
 	onShowModal?: () => void
 
 	isCruisePage?: boolean
+	isOnlyPrice?: boolean
 }
 
 export const CruisePrice: FC<IProps> = ({
@@ -51,6 +52,7 @@ export const CruisePrice: FC<IProps> = ({
 	onClickСhoose,
 	onShowModal,
 	isCruisePage,
+	isOnlyPrice
 }) => {
 	const { isMobile } = useWindowSize()
 
@@ -85,49 +87,70 @@ export const CruisePrice: FC<IProps> = ({
 	const isShowBottomBlock = !isMobile && isCruisePage
 	return (
 		<>
-			{isShowTopBlock &&
-				<B className={classNames(styles.text, styles.darker)}>
-					Внутренняя каюта
-				</B>
-			}
-			<div className={styles.priceWrapper}>
+			{isOnlyPrice
+				?
 				<B fontWeight={700} className={classNamePrice}>
 					<span className={classNames(priceSpanClass, styles.priceSpan)}>
 						от
 					</span>
 					1400$
 				</B>
-				{isShowDiscount &&
-					<Discount
-						percentage={50}
-						className={classNames(discountClass, styles.discount)}
-						classNameText={styles.discountText}
-						classNamePercentage={styles.discountPercentage}
-					/>
-				}
-			</div>
-			{isShowBottomBlock &&
-				<B className={classNameText}>
-					{isCruisePage ? 'Внутренняя каюта за человека' : 'за человека'}
-				</B>
+				:
+				<>
+					{isShowTopBlock &&
+						<B className={classNames(styles.text, styles.darker)}>
+							Внутренняя каюта
+						</B>
+					}
+					<div className={styles.priceWrapper}>
+						<B fontWeight={700} className={classNamePrice}>
+							<span className={classNames(priceSpanClass, styles.priceSpan)}>
+								от
+							</span>
+							1400$
+						</B>
+						{isShowDiscount &&
+							<Discount
+								percentage={50}
+								className={classNames(discountClass, styles.discount)}
+								classNameText={styles.discountText}
+								classNamePercentage={styles.discountPercentage}
+							/>
+						}
+					</div>
+					{isShowBottomBlock &&
+						<B className={classNameText}>
+							{isCruisePage ? 'Внутренняя каюта за человека' : 'за человека'}
+						</B>
+					}
+					<div className={classNameRowButtons}>
+						{isCruisePage
+							?
+							<>
+								<Button
+									className={classNameModalButton}
+									onClick={onShowModal}
+								>
+									ЗАПРОСИТЬ
+								</Button>
+								<Button
+									className={classNameButton}
+									onClick={onClickСhoose}
+								>
+									{buttonText}
+								</Button>
+							</>
+							:
+							<Link
+								to={'/cruise/1'}
+								className={classNameButton}
+							>
+								{buttonText}
+							</Link>
+						}
+					</div>
+				</>
 			}
-			<div className={classNameRowButtons}>
-				{isCruisePage &&
-					<Button
-						className={classNameModalButton}
-						onClick={onShowModal}
-					>
-						ЗАПРОСИТЬ
-					</Button>
-				}
-				<Link
-					to={'/cruise/1'}
-					className={classNameButton}
-					onClick={onClickСhoose}
-				>
-					{buttonText}
-				</Link>
-			</div>
 		</>
 	)
 }

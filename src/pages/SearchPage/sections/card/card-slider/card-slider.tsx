@@ -16,7 +16,7 @@ export const CardSlider = () => {
 			<CruiseSlider />
 
 			<CruiseTimer
-				deadline="28 Dec 2022 17:00"
+				deadline="7 Jan 2023 17:00"
 				classComponent={styles.timer}
 			/>
 

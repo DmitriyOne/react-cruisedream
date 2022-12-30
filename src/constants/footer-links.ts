@@ -1,39 +1,39 @@
 import { CRUISE_ROUTES } from './routes'
 
 const MainAccordion = [
-	{ href: CRUISE_ROUTES.HOME, text: 'Главная 2', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Главная 3', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Главная 4', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Главная 5', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 2', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 3', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 4', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 5', },
 	{ href: CRUISE_ROUTES.EMPTY, text: 'Контакты', }
 ]
 
 const RegionAccordion = [
-	{ href: CRUISE_ROUTES.HOME, text: 'Регионы 2', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Регионы 3', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Регионы 4', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Регионы 5', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Регионы 2', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Регионы 3', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Регионы 4', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Регионы 5', },
 ]
 
 const AcrossRussiaAccordion = [
-	{ href: CRUISE_ROUTES.HOME, text: 'По России 2', },
-	{ href: CRUISE_ROUTES.HOME, text: 'По России 3', },
-	{ href: CRUISE_ROUTES.HOME, text: 'По России 4', },
-	{ href: CRUISE_ROUTES.HOME, text: 'По России 5', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'По России 2', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'По России 3', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'По России 4', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'По России 5', },
 ]
 
 const ShipsAccordion = [
-	{ href: CRUISE_ROUTES.HOME, text: 'Корабли 2', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Корабли 3', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Корабли 4', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Корабли 5', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Корабли 2', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Корабли 3', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Корабли 4', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Корабли 5', },
 ]
 
 const BlogAccordion = [
-	{ href: CRUISE_ROUTES.HOME, text: 'Блог 2', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Блог 3', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Блог 4', },
-	{ href: CRUISE_ROUTES.HOME, text: 'Блог 5', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Блог 2', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Блог 3', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Блог 4', },
+	{ href: CRUISE_ROUTES.EMPTY, text: 'Блог 5', },
 ]
 
 

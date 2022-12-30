@@ -1,2 +1,11 @@
-export * from './data-select'
-export * from './data-faq'
+export * from './advantage'
+export * from './article'
+export * from './faq'
+export * from './select'
+export * from './homepage'
+export * from './swiper'
+export * from './cards'
+
+export * from './data-gallery'
+export * from './data-desc'
+export * from './data-helpful-advice'

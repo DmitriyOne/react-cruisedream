@@ -1,0 +1,158 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+
+.component {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	margin-right: auto;
+	margin-bottom: 32px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-bottom: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column !important;
+	}
+
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.component {
+
+	&:nth-child(odd) .left {
+		margin-right: 8px;
+	}
+
+	&:nth-child(even) .left {
+		margin-left: 8px;
+	}
+}
+
+.left {
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin: 0 !important;
+	}
+
+	&.large {
+		@include mixins.fluidMaxSize(960);
+		min-width: 720px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			min-width: 670px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			min-width: 550px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			min-width: 450px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			min-width: 100%;
+		}
+	}
+
+	&.small {
+		@include mixins.fluidMaxSize(670);
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			max-width: 550px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			max-width: 500px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			max-width: 400px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			max-width: 100%;
+		}
+	}
+}
+
+.iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.right {
+	width: 100%;
+	padding-right: 40px;
+	padding-left: 40px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.title {
+	@include mixins.fonts(family.$source-sans-pro, 300);
+	font-size: 36px;
+	line-height: 110%;
+	color: #004275;
+	padding-bottom: 26px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 28px;
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+		padding-bottom: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+}
+
+.description {
+	@include mixins.fluidMaxSize(1140);
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 25px;
+	line-height: 110%;
+	text-align: justify;
+	color: rgba(79, 78, 78, 0.8);
+	text-indent: 3rem;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+		text-indent: 2rem;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+		text-indent: 1rem;
+	}
+
+	&.large {
+		@include mixins.fluidMaxSize(860);
+	}
+
+	&.small {
+		@include mixins.fluidMaxSize(1140);
+	}
+}

@@ -15,21 +15,24 @@ interface IProps {
 	isRoutes?: boolean
 	tooltipDates?: string[]
 	tooltipRoutes?: ICruiseRoute[]
+	classTooltipText?: string
+	classTooltipWrapper?: string
 	children: ReactElement
 }
 
 export const MyTooltip: FC<IProps> = ({
-	tooltipDates, children, tooltipRoutes, isDates, isRoutes
+	tooltipDates, children, tooltipRoutes, isDates, isRoutes, classTooltipText, classTooltipWrapper
 }) => {
 
-	const DateContent = <Dates tooltipDates={tooltipDates} classText={styles.text} />
-	const RoutesContent = <Route tooltipRoutes={tooltipRoutes} classText={styles.text} />
+	const DateContent = <Dates tooltipDates={tooltipDates} classText={classNames(classTooltipText, styles.text)} />
+	const RoutesContent = <Route tooltipRoutes={tooltipRoutes} classText={classNames(classTooltipText, styles.text)} />
 
 	const content = isDates ? DateContent : isRoutes ? RoutesContent : null
 
 	return (
 		<Tippy
 			className={classNames(
+				classTooltipWrapper,
 				styles.component,
 				isDates ? styles.date : '',
 				isRoutes ? styles.routes : ''

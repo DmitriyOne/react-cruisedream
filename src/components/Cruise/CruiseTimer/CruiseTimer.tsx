@@ -23,6 +23,10 @@ export const CruiseTimer: FC<IProps> = ({
 	const [minutes, setMinutes] = useState(0)
 	const [seconds, setSeconds] = useState(0)
 
+	const nowDate = Date.now()
+	const deadlineDate = Date.parse(deadline)
+	const isShowComponent = nowDate < deadlineDate ? true : false
+
 	const getTime = (value: string) => {
 		const time = Date.parse(deadline) - Date.now()
 
@@ -33,59 +37,68 @@ export const CruiseTimer: FC<IProps> = ({
 	}
 
 	useEffect(() => {
-		const interval = setInterval(() => getTime(deadline), 1000)
+		if (isShowComponent) {
+			const interval = setInterval(() => getTime(deadline), 1000)
 
-		return () => clearInterval(interval)
+			return () => clearInterval(interval)
+		}
 	}, [deadline])
 
 	return (
-		<div className={classNames(classComponent, styles.component)}>
+		<>
+			{isShowComponent
+				?
+				<div className={classNames(classComponent, styles.component)}>
 
-			<div className={styles.item}>
-				<span className={classNames(classNumber, styles.number)}>
-					{days < 10 ? '0' + days : days}
-				</span>
-				<span className={classNames(classText, styles.text)}>
-					дней
-				</span>
-			</div>
-			<div className={styles.dots}>
-				:
-			</div>
-			<div className={styles.item}>
-				<span className={classNames(classNumber, styles.number)}>
-					{hours < 10 ? '0' + hours : hours}
-				</span>
-				<span className={classNames(classText, styles.text)}>
-					часов
-				</span>
-			</div>
-			<div className={styles.dots}>
-				:
-			</div>
-			<div className={styles.item}>
-				<span className={classNames(classNumber, styles.number)}>
-					{minutes < 10 ? '0' + minutes : minutes}
-				</span>
-				<span className={classNames(classText, styles.text)}>
-					минут
-				</span>
-			</div>
-			{isSeconds &&
-				<>
-					<div className={styles.dots}>
+					<div className={styles.item}>
+						<span className={classNames(classNumber, styles.number)}>
+							{days < 10 ? '0' + days : days}
+						</span>
+						<span className={classNames(classText, styles.text)}>
+							дней
+						</span>
+					</div>
+					<div className={classNames(classNumber, styles.dots)}>
 						:
 					</div>
 					<div className={styles.item}>
 						<span className={classNames(classNumber, styles.number)}>
-							{seconds < 10 ? '0' + seconds : seconds}
+							{hours < 10 ? '0' + hours : hours}
 						</span>
 						<span className={classNames(classText, styles.text)}>
-							секунд
+							часов
 						</span>
 					</div>
-				</>
+					<div className={classNames(classNumber, styles.dots)}>
+						:
+					</div>
+					<div className={styles.item}>
+						<span className={classNames(classNumber, styles.number)}>
+							{minutes < 10 ? '0' + minutes : minutes}
+						</span>
+						<span className={classNames(classText, styles.text)}>
+							минут
+						</span>
+					</div>
+					{isSeconds &&
+						<>
+							<div className={classNames(classNumber, styles.dots)}>
+								:
+							</div>
+							<div className={styles.item}>
+								<span className={classNames(classNumber, styles.number)}>
+									{seconds < 10 ? '0' + seconds : seconds}
+								</span>
+								<span className={classNames(classText, styles.text)}>
+									секунд
+								</span>
+							</div>
+						</>
+					}
+				</div>
+				:
+				null
 			}
-		</div>
+		</>
 	)
 }

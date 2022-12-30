@@ -1,16 +1,33 @@
 export const CRUISE_ROUTES = {
 	HOME: '/',
-	SALE: '/sale',
 	SEARCH: '/search',
-	CRUISE: '/cruise/:id',
-	REGIONS: '/regions',
-	ACROSS_RUSSIA: '/across-russia',
-	SHIPS: '/ships',
-	COMPANIES: '/companies',
+	CURRENT_CRUISE: '/cruise/:id',
+	
+	REGIONS: '/all-regions',
+	CURRENT_REGION: '/region/:id',
+	
+	COMPANIES: '/all-companies',
+	CURRENT_COMPANY: '/company/:id',
+
+	COUNTRIES: '/all-countries',
+	CURRENT_COUNTRY: '/country/:id',
+
+	SHIPS: '/all-ships',
+	CURRENT_SHIP: '/ship/:id',
+
+	PORTS: '/all-ports',
+	CURRENT_PORT: '/port/:id',
+
 	BLOG: '/blog',
-	NOT_FOUND: '*',
-	EMPTY: '#',
+	CURRENT_BLOG_POST: '/blog-post/:id',
+
+	DISCOUNTS: '/all-discounts',
+	
+	ACROSS_RUSSIA: '/across-russia',
+
 	ACCOUNT: '/account',
 	SUBSCRIBE: '/subscribe',
-	TO_BOOK: '/to-book'
+	
+	NOT_FOUND: '*',
+	EMPTY: '#',
 }

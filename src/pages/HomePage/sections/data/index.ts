@@ -1,5 +1,0 @@
-export * from './advantages-data'
-export * from './partners-data'
-export * from './regions-data'
-export * from './sale-data'
-export * from './intro-data'
