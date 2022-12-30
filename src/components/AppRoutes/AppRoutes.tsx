@@ -20,6 +20,8 @@ import {
 	NotFoundPage,
 	CurrentBlogPostPage,
 	AllPortPage,
+	AllCountryPage,
+	CurrentCountryPage,
 } from '../../pages'
 
 import { Layout } from '../Layout'
@@ -38,6 +40,9 @@ export const AppRoutes = () => {
 							<Route path={CRUISE_ROUTES.REGIONS} element={<AllRegionsPage />} />
 							<Route path={CRUISE_ROUTES.CURRENT_REGION} element={<CurrentRegionPage />} />
 
+							<Route path={CRUISE_ROUTES.COUNTRIES} element={<AllCountryPage />} />
+							<Route path={CRUISE_ROUTES.CURRENT_COUNTRY} element={<CurrentCountryPage />} />
+
 							<Route path={CRUISE_ROUTES.COMPANIES} element={<AllCompanyPage />} />
 							<Route path={CRUISE_ROUTES.CURRENT_COMPANY} element={<CurrentCompanyPage />} />
 
@@ -52,7 +57,7 @@ export const AppRoutes = () => {
 
 							<Route path={CRUISE_ROUTES.DISCOUNTS} element={<AllDiscountsPage />} />
 							<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />
-							
+
 							<Route path={CRUISE_ROUTES.NOT_FOUND} element={<NotFoundPage />} />
 						</Route>
 					</Routes>

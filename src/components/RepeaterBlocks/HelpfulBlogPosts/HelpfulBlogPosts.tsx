@@ -1,17 +1,23 @@
+import { FC } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { params3Col, dataHelpfulBlogPosts } from '../../../fakedata'
+import { params3Col } from '../../../fakedata'
 import { useSwiperButtons } from '../../../hooks'
 import { CRUISE_ROUTES } from '../../../constants'
+import { ICard } from '../../../model/interfaces'
 
 import { Button, CardBlackout, Container, Heading } from '../../../components'
 
 import 'swiper/css'
 import styles from './helpful-blog-posts.module.scss'
 
-export const HelpfulBlogPosts = () => {
+interface IProps {
+	cards: ICard[]
+}
+
+export const HelpfulBlogPosts: FC<IProps> = ({ cards }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -31,7 +37,7 @@ export const HelpfulBlogPosts = () => {
 					onSwiper={upDateSwiper}
 					{...params3Col}
 				>
-					{dataHelpfulBlogPosts.map(card =>
+					{cards.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
 							<CardBlackout card={card}
 								titleSize="mobLarge"

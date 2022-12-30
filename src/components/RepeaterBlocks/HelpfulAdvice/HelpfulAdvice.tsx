@@ -1,10 +1,21 @@
 /* eslint-disable max-len */
+import { FC } from 'react'
 import { CardImageSlider, Container, Heading } from '../../../components'
-import { dataRegionsHelpfulAdvice } from '../../../fakedata'
 
 import styles from './helpful-advice.module.scss'
 
-export const HelpfulAdvice = () => {
+interface IImage {
+	src: string
+	alt: string
+}
+
+interface IProps {
+	id: number
+	desc: string
+	images: IImage[]
+}
+
+export const HelpfulAdvice: FC<IProps> = ({ ...content }) => {
 	return (
 		<Container
 			width="full"
@@ -17,10 +28,11 @@ export const HelpfulAdvice = () => {
 					ПОЛЕЗНЫЕ СОВЕТЫ
 				</Heading>
 				<p className={styles.subtitle}>
-					Колыбель цивилизаций, яблоко раздора и древнейшие торговые пути — всё это «море посреди земли», чьи волны омывают берега 22 государств, большая часть которых сумела извлечь прямую туристическую выгоду из этого примечательного соседства. Именно на многочисленных побережьях Средиземного моря расположены наиболее известные мировые курорты, на штурм которых ежегодно устремляются миллионы отпускников со всего мира. Страны двух континентов — Африки и Евразии, а также многочисленные острова				</p>
+					{content.desc}
+				</p>
 			</Container>
 
-			<CardImageSlider images={dataRegionsHelpfulAdvice} />
+			<CardImageSlider images={content.images} />
 		</Container>
 	)
 }

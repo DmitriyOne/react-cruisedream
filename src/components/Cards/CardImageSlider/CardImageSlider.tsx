@@ -5,7 +5,6 @@ import { params } from './swiper'
 import styles from './card-image-slider.module.scss'
 
 interface IImage {
-	id: number
 	src: string
 	alt: string
 }
@@ -21,8 +20,8 @@ export const CardImageSlider: FC<IProps> = ({ images }) => {
 			className={styles.component}
 			{...params}
 		>
-			{images.map(image =>
-				<SwiperSlide key={image.id} className={styles.slide}>
+			{images.map((image, idx) =>
+				<SwiperSlide key={idx} className={styles.slide}>
 					<img
 						className={styles.image}
 						src={image.src}
