@@ -1,12 +1,12 @@
 import classNames from 'classnames'
-import { FC, useContext, useState } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 import Select from 'react-select'
 import { SelectContext } from '../../context'
 
 import { ISelect, ISelectGroup } from '../../model/interfaces'
 import { CheckboxSelect } from '../Input'
 import { CustomMenuOptions } from './CustomMenuOptions/CustomMenuOptions'
-import { MultiSelect } from './MultiSelect/MultiSelect'
+import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
 
@@ -26,7 +26,7 @@ export const MySelect: FC<IProps> = ({
 	isCheckbox = true
 }) => {
 	const { isOpenSelect, onToggleSelect } = useContext(SelectContext)
-	const [select0, setSelected0] = useState([])
+	const [select0, setSelected0] = useState<ISelect[]>([selectAllOption])
 
 	const classNameComponent = classNames(classComponent, styles.component)
 	const classNamePrefix = classNames(classPrefix, 'select-transparent')
@@ -42,6 +42,7 @@ export const MySelect: FC<IProps> = ({
 					setSelected={setSelected0}
 					isOpen={isOpenSelect}
 					onToggle={onToggleSelect}
+
 				// optionsGroup={optionsGroup}
 				/>
 				// <Select

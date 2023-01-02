@@ -51,6 +51,7 @@ export const Search = () => {
 					<MySelect
 						classComponent={styles.col}
 						optionsGroup={groupedOptions}
+						
 					/>
 
 

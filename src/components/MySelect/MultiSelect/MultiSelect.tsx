@@ -17,25 +17,40 @@ interface IProps {
 	onToggle: () => void
 }
 
+export const selectAllOption = { value: '*', label: 'Все' }
+
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
-	const [state, setState] = useState<ISelect[]>([])
+	const [allOptions, setAllOptions] = useState<ISelect[]>([])
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
+
+	console.log(props.selectedOption)
+	// console.log(allOptions)
+
 
 	useEffect(() => {
 		const myOption1 = props.optionsGroup.map(v => v.options)[0]
 		const myOption2 = props.optionsGroup.map(v => v.options)[1]
 		const myOptionConcat = myOption1.concat(myOption2)
-		setState(myOptionConcat)
+		setAllOptions(myOptionConcat)
+		props.setSelected(myOptionConcat)
 	}, [])
 
-	const selectAllOption = { value: '*', label: 'Select All' }
-	const isSelectAllSelected = () => (valueRef.current.length === state.length) && state.length > 1
+	// console.log('allOptions:', allOptions)
+
+
+	const isSelectAllSelected = () => (valueRef.current.length === allOptions.length) && allOptions.length > 1
 	const isOptionSelected = (option: any, selectValue: Options<any>) =>
 		valueRef.current.some(({ value }) => value === option.value) ||
 		isSelectAllSelected()
 
-	const getOptions = () => state.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
+
+
+	// const defValue = () => isSelectAllSelected() && props.setSelected(allOptions)
+	// console.log(isSelectAllSelected())
+	// const getOptions = () => isSelectAllSelected() ? [selectAllOption] : [selectAllOption, ...props.optionsGroup]
+
+	const getOptions = () => allOptions.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
 	const getValue = () => isSelectAllSelected() ? [selectAllOption] : props.selectedOption
 
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
@@ -45,7 +60,7 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		const removed = removedValue as ISelect
 		if (action === 'select-option' && opt.value === selectAllOption.value) {
 			// console.log('new item selected')
-			props.setSelected(state)
+			props.setSelected(allOptions)
 		}
 
 		else if ((action === 'deselect-option' && opt.value === selectAllOption.value) || (action === 'remove-value' && removed.value === selectAllOption.value)) {
@@ -55,7 +70,7 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 
 		else if (actionMeta.action === 'deselect-option' && isSelectAllSelected()) {
 			props.setSelected(
-				state.filter(option => option.value !== opt.value))
+				allOptions.filter(option => option.value !== opt.value))
 			// console.log('new item removed')
 		}
 
@@ -69,8 +84,9 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		<Select
 			isOptionSelected={isOptionSelected}
 
-			defaultValue={getOptions()} // Should default to select all option
 			value={getValue()}
+			defaultValue={getOptions()} // Should default to select all option
+
 			isMulti
 			//isSearchable
 			components={{
