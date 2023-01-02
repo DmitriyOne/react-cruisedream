@@ -4,8 +4,6 @@ import classNames from 'classnames'
 import { SearchFiltersContext } from '../../../context'
 import { Container, Input, MySelect } from '../../../components'
 
-import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../fakedata'
-
 import styles from './filters-hidden.module.scss'
 import { CheckboxFilter } from '../../Input/CheckboxFilter/CheckboxFilter'
 
@@ -73,39 +71,16 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					<label className={styles.label}>
 						Порт отправления
 					</label>
-					<MySelect
-						options={optionPort1}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort1}
-						value={port1}
-					/>
 				</div>
 				<div className={styles.col}>
 					<label className={styles.label}>
 						Порт захода
 					</label>
-					<MySelect
-						options={optionPort2}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort2}
-						value={port2}
-					/>
 				</div>
 				<div className={styles.col}>
 					<label className={styles.label}>
 						Порт прибытия
 					</label>
-					<MySelect
-						options={optionPort3}
-						defaultSelect={optionPort3}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort3}
-						value={port3}
-						allowSelectAll={true}
-					/>
 				</div>
 			</div>
 			<div className={classNames(styles.row, styles.last)}>
@@ -113,26 +88,12 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					<label className={styles.label}>
 						Круизный лайнер
 					</label>
-					<MySelect
-						options={optionShip}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						value={ship}
-						onChange={onChangeShip}
-					/>
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
 					<div className={styles.select}>
 						<label className={styles.label}>
 							Тип круиза
 						</label>
-						<MySelect
-							options={optionTypeCruise}
-							placeholder="Все"
-							classNamePrefix="select-white"
-							value={typeCruise}
-							onChange={onChangeTypeCruise}
-						/>
 					</div>
 					<div className={styles.amountDays}>
 						<label className={classNames(styles.label, styles.inputLabel)}>

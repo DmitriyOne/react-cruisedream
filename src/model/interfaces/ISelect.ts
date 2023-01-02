@@ -1,4 +1,9 @@
 export interface ISelect {
-	value: string
 	label: string
+	value: string
+}
+
+export interface ISelectGroup {
+	label: string
+	options: ISelect[]
 }

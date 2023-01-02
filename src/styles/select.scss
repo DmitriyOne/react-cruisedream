@@ -118,6 +118,10 @@
 		z-index: z-index.$idx-select-menu !important;
 	}
 
+	&__menu-list {
+		max-height: 200px !important;
+	}
+
 	&__option {
 		cursor: pointer !important;
 		color: colors.$black !important;

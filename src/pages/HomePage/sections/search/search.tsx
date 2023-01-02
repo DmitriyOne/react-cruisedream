@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { SearchFiltersContext } from '../../../../context'
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { optionRegionHome, optionCompanyHome } from '../../../../fakedata'
+import { groupedOptions, optionSortCurrency } from '../../../../fakedata'
 
 import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
@@ -44,24 +44,19 @@ export const Search = () => {
 					isFixed ? styles.show : undefined
 				)} />
 				<form className={styles.form}>
+
+
+
+
 					<MySelect
-						options={optionRegionHome}
-						defaultSelect={optionRegionHome}
-						placeholder="Регион круиза"
-						className={styles.col}
-						classNamePrefix="select-transparent"
-						closeMenuOnSelect={false}
-						allowSelectAll={true}
+						classComponent={styles.col}
+						optionsGroup={groupedOptions}
 					/>
-					<MySelect
-						options={optionCompanyHome}
-						defaultSelect={optionCompanyHome}
-						placeholder="Круизная компания"
-						className={styles.col}
-						classNamePrefix="select-transparent"
-						closeMenuOnSelect={false}
-						allowSelectAll={true}
-					/>
+
+
+
+
+
 					<MyDatepicker
 						componentClassName={styles.col}
 						wrapperClassName={styles.datepickerWrapper}

@@ -1,4 +1,3 @@
-
 import { FC } from 'react'
 
 import { components, OptionProps } from 'react-select'

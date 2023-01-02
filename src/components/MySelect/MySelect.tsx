@@ -1,51 +1,70 @@
 import classNames from 'classnames'
-import { FC, useState } from 'react'
-import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
+import { FC, useContext, useState } from 'react'
 import Select from 'react-select'
+import { SelectContext } from '../../context'
 
+import { ISelect, ISelectGroup } from '../../model/interfaces'
 import { CheckboxSelect } from '../Input'
-import { ISelect } from '../../model/interfaces'
-import { CustomMultiSelect } from './CustomMultiSelect/CustomMultiSelect'
+import { CustomMenuOptions } from './CustomMenuOptions/CustomMenuOptions'
+import { MultiSelect } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
 
-interface IProps extends StateManagerProps {
-	options: ISelect[]
-	defaultSelect?: ISelect[]
-	placeholder?: string,
-	hide?: boolean
-	className?: string
-	classNamePrefix?: string
-	allowSelectAll?: boolean
+interface IProps {
+	optionsGroup: ISelectGroup[]
+	options?: ISelect[]
+	classComponent?: string
+	classPrefix?: string
+	isCheckbox?: boolean
 }
 
 export const MySelect: FC<IProps> = ({
-	options, placeholder, hide, defaultSelect, className, classNamePrefix, allowSelectAll, ...props
+	optionsGroup,
+	options,
+	classComponent,
+	classPrefix,
+	isCheckbox = true
 }) => {
-	const [selected, setSelected] = useState<ISelect[]>(defaultSelect || [])
+	const { isOpenSelect, onToggleSelect } = useContext(SelectContext)
+	const [select0, setSelected0] = useState([])
 
-	if (allowSelectAll) {
-		return (
-			<CustomMultiSelect
-				className={classNames(styles.select, className)}
-				classNamePrefix={classNamePrefix}
-				options={options}
-				selected={selected}
-				setSelected={setSelected}
-				placeholder={placeholder}
-				allowSelectAll={allowSelectAll}
-				{...props}
-			/>
-		)
-	}
-
+	const classNameComponent = classNames(classComponent, styles.component)
+	const classNamePrefix = classNames(classPrefix, 'select-transparent')
 	return (
-		<Select
-			options={options}
-			placeholder={placeholder}
-			className={className}
-			classNamePrefix={classNamePrefix}
-			{...props}
-		/>
+		<>
+			{isCheckbox
+				?
+				<MultiSelect
+					classComponent={classNameComponent}
+					classNamePrefix={classNamePrefix}
+					optionsGroup={optionsGroup}
+					selectedOption={select0}
+					setSelected={setSelected0}
+					isOpen={isOpenSelect}
+					onToggle={onToggleSelect}
+				// optionsGroup={optionsGroup}
+				/>
+				// <Select
+				// className={classNameComponent}
+				// options={optionsGroup}
+				// classNamePrefix={classNamePrefix}
+				// components={{
+				// 	Option: CheckboxSelect,
+				// 	Menu: CustomMenuOptions
+				// }}
+				// menuIsOpen={isOpenSelect}
+				// onMenuOpen={onToggleSelect}
+				// hideSelectedOptions={false}
+				// closeMenuOnSelect={false}
+				// isMulti
+				// />
+				:
+				<Select
+					className={classNameComponent}
+					options={options}
+					classNamePrefix={classNamePrefix}
+				/>
+			}
+		</>
 	)
 }
