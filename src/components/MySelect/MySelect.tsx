@@ -28,6 +28,9 @@ export const MySelect: FC<IProps> = ({
 	const { isOpenSelect, onToggleSelect } = useContext(SelectContext)
 	const [select0, setSelected0] = useState<ISelect[]>([selectAllOption])
 
+	console.log(select0)
+
+
 	const classNameComponent = classNames(classComponent, styles.component)
 	const classNamePrefix = classNames(classPrefix, 'select-transparent')
 	return (

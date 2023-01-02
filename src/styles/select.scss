@@ -20,6 +20,10 @@
 	}
 }
 
+.select-transparent__menu-list--is-multi>div:first-child {
+	margin-bottom: 12px !important;
+}
+
 .select-transparent {
 	&__control {
 		min-height: auto !important;
@@ -30,6 +34,17 @@
 		box-shadow: none !important;
 		padding: 5px 0 10px;
 		cursor: pointer !important;
+		overflow: hidden;
+		flex-wrap: nowrap !important;
+		width: 100%;
+	}
+
+	&__group {
+		padding: 0 !important;
+	}
+
+	&__group-heading {
+		font-size: 70% !important;
 	}
 
 	&__value-container {
@@ -134,10 +149,14 @@
 
 	&__multi-value__label {
 		border-radius: 0 !important;
-		font-size: 24px !important;
+		font-size: 16px !important;
 		line-height: 120% !important;
-		color: #004275 !important;
+		color: rgba(79, 78, 78, 0.6) !important;
 		padding: 0 !important;
+	}
+
+	&__multi-value__remove {
+		display: none !important;
 	}
 }
 

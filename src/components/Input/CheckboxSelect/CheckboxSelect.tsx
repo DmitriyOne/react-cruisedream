@@ -10,9 +10,6 @@ export const CheckboxSelect: FC<OptionProps> = ({ children, ...props }) => {
 		<components.Option
 			className={styles.component}
 			{...props}>
-			<span className={styles.text}>
-				{children}
-			</span>
 			<Input
 				type="checkbox"
 				labelPosition="right"
@@ -23,6 +20,9 @@ export const CheckboxSelect: FC<OptionProps> = ({ children, ...props }) => {
 				inputClassName={styles.input}
 				labelClassName={styles.label}
 			/>
+			<span className={styles.text}>
+				{children}
+			</span>
 		</components.Option>
 	)
 }

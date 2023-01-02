@@ -13,8 +13,6 @@ export const CustomMenuOptions: FC<MenuProps> = ({ ...props }) => {
 		e.preventDefault()
 		onCloseSelect()
 	}
-	console.log()
-
 	return (
 		<div>
 			<components.Menu {...props}>

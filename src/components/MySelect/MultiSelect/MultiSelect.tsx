@@ -5,6 +5,7 @@ import Select, { ActionMeta, Options } from 'react-select'
 import { ISelect, ISelectGroup } from '../../../model/interfaces'
 import { CheckboxSelect } from '../../Input'
 import { CustomMenuOptions } from '../CustomMenuOptions/CustomMenuOptions'
+import { CustomValueContainer } from '../CustomValueContainer/CustomValueContainer'
 
 interface IProps {
 	classComponent?: string
@@ -24,10 +25,6 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
 
-	console.log(props.selectedOption)
-	// console.log(allOptions)
-
-
 	useEffect(() => {
 		const myOption1 = props.optionsGroup.map(v => v.options)[0]
 		const myOption2 = props.optionsGroup.map(v => v.options)[1]
@@ -36,19 +33,11 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		props.setSelected(myOptionConcat)
 	}, [])
 
-	// console.log('allOptions:', allOptions)
-
-
+	
 	const isSelectAllSelected = () => (valueRef.current.length === allOptions.length) && allOptions.length > 1
 	const isOptionSelected = (option: any, selectValue: Options<any>) =>
 		valueRef.current.some(({ value }) => value === option.value) ||
 		isSelectAllSelected()
-
-
-
-	// const defValue = () => isSelectAllSelected() && props.setSelected(allOptions)
-	// console.log(isSelectAllSelected())
-	// const getOptions = () => isSelectAllSelected() ? [selectAllOption] : [selectAllOption, ...props.optionsGroup]
 
 	const getOptions = () => allOptions.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
 	const getValue = () => isSelectAllSelected() ? [selectAllOption] : props.selectedOption
@@ -91,7 +80,8 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			//isSearchable
 			components={{
 				Option: CheckboxSelect,
-				Menu: CustomMenuOptions
+				Menu: CustomMenuOptions,
+				MultiValueContainer: CustomValueContainer
 			}}
 			placeholder={props.placeholder}
 			options={getOptions()}
@@ -103,6 +93,8 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			closeMenuOnSelect={false}
 			menuIsOpen={props.isOpen}
 			onMenuOpen={props.onToggle}
+
+			isClearable={false}
 		/>
 	)
 }

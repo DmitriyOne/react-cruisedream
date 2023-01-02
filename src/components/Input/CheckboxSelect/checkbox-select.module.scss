@@ -4,7 +4,7 @@
 .component {
 	display: flex !important;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	margin-bottom: 16px !important;
 	padding: 0px 20px !important;
 	background-color: colors.$transparent !important;
@@ -19,15 +19,15 @@
 }
 
 .text {
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 110%;
 	color: #004275;
-	margin-right: 15px;
+	margin-left: 12px;
 }
 
 .inputWrapper {
-	@include mixins.square-size(20);
-	min-width: 20px;
+	@include mixins.square-size(15);
+	min-width: 15px;
 }
 
 .input[type=checkbox]+.label:before {
@@ -43,8 +43,8 @@
 .input[type=checkbox]+.label::after {
 	top: 50%;
 	left: 2px;
-	width: 16px;
-	height: 13px;
+	width: 12px;
+	height: 10px;
 	@include mixins.bg-cover;
 	background-image: url('../icons/checkedFilters.svg');
 	opacity: 0;
