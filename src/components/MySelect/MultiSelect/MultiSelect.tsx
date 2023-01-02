@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Dispatch, FC, SetStateAction, useRef } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react'
 import Select, { ActionMeta, Options } from 'react-select'
 
 import { ISelect, ISelectGroup } from '../../../model/interfaces'
@@ -18,40 +18,52 @@ interface IProps {
 }
 
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
+	const [state, setState] = useState<ISelect[]>([])
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
 
+	useEffect(() => {
+		const myOption1 = props.optionsGroup.map(v => v.options)[0]
+		const myOption2 = props.optionsGroup.map(v => v.options)[1]
+		const myOptionConcat = myOption1.concat(myOption2)
+		setState(myOptionConcat)
+	}, [])
+
 	const selectAllOption = { value: '*', label: 'Select All' }
-	const isSelectAllSelected = () => (valueRef.current.length === props.optionsGroup.length) && props.optionsGroup.length > 1
+	const isSelectAllSelected = () => (valueRef.current.length === state.length) && state.length > 1
 	const isOptionSelected = (option: any, selectValue: Options<any>) =>
 		valueRef.current.some(({ value }) => value === option.value) ||
 		isSelectAllSelected()
 
-	const getOptions = () => props.optionsGroup.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
+	const getOptions = () => state.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
 	const getValue = () => isSelectAllSelected() ? [selectAllOption] : props.selectedOption
 
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
 		const { action, option, removedValue } = actionMeta
-		// Reassigning for typing. Unknown by default
-		console.log(option)
 
 		const opt = option as ISelect
 		const removed = removedValue as ISelect
 		if (action === 'select-option' && opt.value === selectAllOption.value) {
 			// console.log('new item selected')
-			props.setSelected(props.optionsGroup)
-		} else if ((action === 'deselect-option' && opt.value === selectAllOption.value) || (action === 'remove-value' && removed.value === selectAllOption.value)) {
+			props.setSelected(state)
+		}
+
+		else if ((action === 'deselect-option' && opt.value === selectAllOption.value) || (action === 'remove-value' && removed.value === selectAllOption.value)) {
 			props.setSelected([])
 			// console.log('all items removed')
-		} else if (actionMeta.action === 'deselect-option' && isSelectAllSelected()) {
+		}
+
+		else if (actionMeta.action === 'deselect-option' && isSelectAllSelected()) {
 			props.setSelected(
-				props.optionsGroup.filter((options) => options.options.filter(option => option.value !== opt.value)))
+				state.filter(option => option.value !== opt.value))
 			// console.log('new item removed')
-		} else {
+		}
+
+		else {
 			props.setSelected(newValue || [])
 			// console.log('new item added')
 		}
-		console.log(action, newValue, getValue())
+		// console.log(action, newValue, getValue())
 	}
 	return (
 		<Select
