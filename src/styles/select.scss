@@ -51,20 +51,21 @@
 		@include mixins.fonts(family.$source-sans-pro, 300);
 		padding: 0 !important;
 		cursor: text !important;
-		font-size: 24px;
-		line-height: 120%;
-		color: #004275 !important;
-
-		@include mixins.media-w(breakpoints.$laptop-l) {
-			font-size: 20px;
-		}
+		font-size: 16px !important;
+		line-height: 120% !important;
+		color: rgba(79, 78, 78, 0.6) !important;
+		text-overflow: ellipsis !important;
+		white-space: nowrap !important;
+		overflow: hidden !important;
+		display: initial !important;
+		position: relative !important;
 	}
 
 	&__single-value {
 		@include mixins.fonts(family.$source-sans-pro, 300);
 		font-size: 24px;
 		line-height: 120%;
-		color: #004275 !important;
+		color: rgba(79, 78, 78, 0.6) !important;
 		margin: 0 !important;
 
 		@include mixins.media-w(breakpoints.$laptop-l) {
@@ -74,13 +75,13 @@
 
 	&__placeholder {
 		@include mixins.fonts(family.$source-sans-pro, 300);
-		font-size: 24px;
+		font-size: 20px;
 		line-height: 120%;
-		color: #004275 !important;
+		color: rgba(79, 78, 78, 0.6) !important;
 		margin: 0 !important;
 
-		@include mixins.media-w(breakpoints.$laptop-l) {
-			font-size: 20px;
+		@include mixins.media-w(breakpoints.$laptop) {
+			font-size: 18px;
 		}
 	}
 
@@ -88,6 +89,11 @@
 		margin: 0 !important;
 		padding: 0 !important;
 		cursor: pointer;
+		position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 	}
 
 	&__indicators {
@@ -96,8 +102,6 @@
 
 	&__clear-indicator {
 		display: none;
-		// @include mixins.square-size(12);
-		// background-image: url('../assets/images/select/delete.svg');
 	}
 
 	&__indicator-separator {

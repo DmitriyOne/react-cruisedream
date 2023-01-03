@@ -8,18 +8,13 @@ interface IProps {
 }
 
 export const SelectProvider: FC<IProps> = ({ children }) => {
-	const { isOpen, onToggle, onClose } = useOpen()
-	
-	const {
-		isOpen: isOpenSelect,
-		onToggle: onToggleSelect,
-		onClose: onCloseSelect,
-	} = useOpen()
+	const { isOpen: isOpenSelect, onOpen: onOpenSelect, onToggle: onToggleSelect, onClose: onCloseSelect } = useOpen()
 
 	const value = {
 		isOpenSelect,
-		onToggleSelect,
+		onOpenSelect,
 		onCloseSelect,
+		onToggleSelect,
 	}
 
 	return (

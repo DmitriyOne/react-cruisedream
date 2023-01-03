@@ -1,21 +1,20 @@
 import classNames from 'classnames'
-import { FC, useContext, useEffect, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import Select from 'react-select'
 import { SelectContext } from '../../context'
 
 import { ISelect, ISelectGroup } from '../../model/interfaces'
-import { CheckboxSelect } from '../Input'
-import { CustomMenuOptions } from './CustomMenuOptions/CustomMenuOptions'
 import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
 
 interface IProps {
-	optionsGroup: ISelectGroup[]
+	optionsGroup?: ISelectGroup[]
 	options?: ISelect[]
 	classComponent?: string
 	classPrefix?: string
-	isCheckbox?: boolean
+	placeholder?: string
+	isGrouped?: boolean
 }
 
 export const MySelect: FC<IProps> = ({
@@ -23,50 +22,34 @@ export const MySelect: FC<IProps> = ({
 	options,
 	classComponent,
 	classPrefix,
-	isCheckbox = true
+	placeholder = 'Сделайте ваш выбор',
+	isGrouped = true
 }) => {
-	const { isOpenSelect, onToggleSelect } = useContext(SelectContext)
-	const [select0, setSelected0] = useState<ISelect[]>([selectAllOption])
-
-	console.log(select0)
-
+	const { isOpenSelect, onOpenSelect, onCloseSelect, onToggleSelect } = useContext(SelectContext)
+	const [select, setSelected] = useState<ISelect[]>([selectAllOption])
 
 	const classNameComponent = classNames(classComponent, styles.component)
-	const classNamePrefix = classNames(classPrefix, 'select-transparent')
 	return (
 		<>
-			{isCheckbox
+			{isGrouped
 				?
 				<MultiSelect
+					optionsGroup={optionsGroup!}
 					classComponent={classNameComponent}
-					classNamePrefix={classNamePrefix}
-					optionsGroup={optionsGroup}
-					selectedOption={select0}
-					setSelected={setSelected0}
+					classNamePrefix={classPrefix}
+					placeholder={placeholder}
+					selectedOption={select}
+					setSelected={setSelected}
 					isOpen={isOpenSelect}
+					onOpen={onOpenSelect}
+					onClose={onCloseSelect}
 					onToggle={onToggleSelect}
-
-				// optionsGroup={optionsGroup}
 				/>
-				// <Select
-				// className={classNameComponent}
-				// options={optionsGroup}
-				// classNamePrefix={classNamePrefix}
-				// components={{
-				// 	Option: CheckboxSelect,
-				// 	Menu: CustomMenuOptions
-				// }}
-				// menuIsOpen={isOpenSelect}
-				// onMenuOpen={onToggleSelect}
-				// hideSelectedOptions={false}
-				// closeMenuOnSelect={false}
-				// isMulti
-				// />
 				:
 				<Select
 					className={classNameComponent}
 					options={options}
-					classNamePrefix={classNamePrefix}
+					classNamePrefix={classPrefix}
 				/>
 			}
 		</>

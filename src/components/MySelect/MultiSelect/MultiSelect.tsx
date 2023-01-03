@@ -5,7 +5,7 @@ import Select, { ActionMeta, Options } from 'react-select'
 import { ISelect, ISelectGroup } from '../../../model/interfaces'
 import { CheckboxSelect } from '../../Input'
 import { CustomMenuOptions } from '../CustomMenuOptions/CustomMenuOptions'
-import { CustomValueContainer } from '../CustomValueContainer/CustomValueContainer'
+import { MultiValueContainer } from '../MultiValueContainer/MultiValueContainer'
 
 interface IProps {
 	classComponent?: string
@@ -15,6 +15,8 @@ interface IProps {
 	setSelected: Dispatch<SetStateAction<any>>
 	placeholder?: string
 	isOpen: boolean
+	onOpen: () => void
+	onClose: () => void
 	onToggle: () => void
 }
 
@@ -33,7 +35,7 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		props.setSelected(myOptionConcat)
 	}, [])
 
-	
+
 	const isSelectAllSelected = () => (valueRef.current.length === allOptions.length) && allOptions.length > 1
 	const isOptionSelected = (option: any, selectValue: Options<any>) =>
 		valueRef.current.some(({ value }) => value === option.value) ||
@@ -69,32 +71,32 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		}
 		// console.log(action, newValue, getValue())
 	}
+
 	return (
 		<Select
-			isOptionSelected={isOptionSelected}
-
-			value={getValue()}
-			defaultValue={getOptions()} // Should default to select all option
-
-			isMulti
-			//isSearchable
+			options={getOptions()}
+			className={props.classComponent}
+			classNamePrefix={props.classNamePrefix}
+			placeholder={props.placeholder}
 			components={{
 				Option: CheckboxSelect,
 				Menu: CustomMenuOptions,
-				MultiValueContainer: CustomValueContainer
+				MultiValueContainer: MultiValueContainer,
+				
 			}}
-			placeholder={props.placeholder}
-			options={getOptions()}
+			// filterOption
+			value={getValue()}
+			defaultValue={getOptions()}
 			onChange={handleSelect}
-
-			className={props.classComponent}
-			classNamePrefix={props.classNamePrefix}
+			isOptionSelected={isOptionSelected}
+			isMulti
 			hideSelectedOptions={false}
 			closeMenuOnSelect={false}
 			menuIsOpen={props.isOpen}
-			onMenuOpen={props.onToggle}
-
+			onMenuOpen={props.onOpen}
+			onMenuClose={props.onClose}
 			isClearable={false}
+			isSearchable={false}
 		/>
 	)
 }

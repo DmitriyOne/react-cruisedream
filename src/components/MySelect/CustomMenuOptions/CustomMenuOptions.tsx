@@ -16,9 +16,7 @@ export const CustomMenuOptions: FC<MenuProps> = ({ ...props }) => {
 	return (
 		<div>
 			<components.Menu {...props}>
-				<div>
-					{props.children}
-				</div>
+				{props.children}
 				<Button className={styles.button} onClick={(e) => onClick(e)}>
 					Применить
 				</Button>

@@ -49,9 +49,10 @@ export const Search = () => {
 
 
 					<MySelect
-						classComponent={styles.col}
 						optionsGroup={groupedOptions}
-						
+						classComponent={styles.col}
+						classPrefix="select-transparent"
+						placeholder="Круизная компания"
 					/>
 
 
