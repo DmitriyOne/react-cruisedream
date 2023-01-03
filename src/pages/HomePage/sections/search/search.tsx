@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { SearchFiltersContext } from '../../../../context'
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { groupedOptions, optionSortCurrency } from '../../../../fakedata'
+import { groupedOptions, groupedOptions2, optionSortCurrency } from '../../../../fakedata'
 
 import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 

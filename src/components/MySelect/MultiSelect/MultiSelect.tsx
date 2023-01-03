@@ -20,7 +20,7 @@ interface IProps {
 	onToggle: () => void
 }
 
-export const selectAllOption = { value: '*', label: 'Все' }
+export const selectAllOption: ISelect = { value: '*', label: 'Все', tag: 'all' }
 
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	const [inputValue, setInputValue] = useState('')

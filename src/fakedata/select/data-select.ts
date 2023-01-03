@@ -167,25 +167,59 @@ export const optionSortBy = [
 
 
 const popularOptions = [
-	{ value: 'Регион 1', label: 'Регион 1' },
-	{ value: 'Порт 1', label: 'Порт 1' },
-	{ value: 'Круиз 1', label: 'Круиз 1' },
+	{ value: 'Регион 1', label: 'Регион 1', tag: 'popular' },
+	{ value: 'Порт 1', label: 'Порт 1', tag: 'popular' },
+	{ value: 'Круиз 1', label: 'Круиз 1', tag: 'popular' },
 ]
 
 const otherOptions = [
-	{ value: 'Регион 2', label: 'Регион 2', },
-	{ value: 'Регион 3', label: 'Регион 3' },
-	{ value: 'Регион 4', label: 'Регион 4' },
-	{ value: 'Регион 5', label: 'Регион 5' },
-	{ value: 'Регион 6', label: 'Регион 6' }
+	{ value: 'Регион 2', label: 'Регион 2', tag: 'other' },
+	{ value: 'Регион 3', label: 'Регион 3', tag: 'other' },
+	{ value: 'Регион 4', label: 'Регион 4', tag: 'other' },
+	{ value: 'Регион 5', label: 'Регион 5', tag: 'other' },
+	{ value: 'Регион 6', label: 'Регион 6', tag: 'other' }
 ]
+
+const other2Options = [
+	{ value: 'Компания 2', label: 'Регион 2', tag: 'other2' },
+	{ value: 'Корабль 3', label: 'Корабль 3', tag: 'other2' },
+	{ value: 'Порт 4', label: 'Регион 4', tag: 'other2' },
+	{ value: 'Регион 5', label: 'Регион 5', tag: 'other2' },
+	{ value: 'Корабль 6', label: 'Корабль 6', tag: 'other2' }
+]
+
 export const groupedOptions: ISelectGroup[] = [
 	{
 		label: 'Популярное',
-		options: popularOptions
+		options: popularOptions,
+		tag: 'popular',
 	},
 	{
 		label: 'Разное',
-		options: otherOptions
+		options: otherOptions,
+		tag: 'other1'
+	},
+	{
+		label: 'Разное 2',
+		options: other2Options,
+		tag: 'other2'
 	}
+]
+
+export const groupedOptions2: ISelectGroup[] = [
+	{
+		label: 'Разное 2',
+		options: other2Options,
+		tag: 'other2'
+	},
+	{
+		label: 'Популярное',
+		options: popularOptions,
+		tag: 'popular',
+	},
+	{
+		label: 'Разное',
+		options: otherOptions,
+		tag: 'other1'
+	},
 ]
