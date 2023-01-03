@@ -4,7 +4,7 @@ import Select, { ActionMeta, Options } from 'react-select'
 
 import { ISelect, ISelectGroup } from '../../../model/interfaces'
 import { CheckboxSelect } from '../../Input'
-import { CustomMenuOptions } from '../CustomMenuOptions/CustomMenuOptions'
+import { CustomMenuList } from '../CustomMenuList/CustomMenuList'
 import { MultiValueContainer } from '../MultiValueContainer/MultiValueContainer'
 
 interface IProps {
@@ -23,6 +23,7 @@ interface IProps {
 export const selectAllOption = { value: '*', label: 'Все' }
 
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
+	const [inputValue, setInputValue] = useState('')
 	const [allOptions, setAllOptions] = useState<ISelect[]>([])
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
@@ -46,6 +47,9 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
 		const { action, option, removedValue } = actionMeta
+
+		// console.log(props.isOpen); /
+
 
 		const opt = option as ISelect
 		const removed = removedValue as ISelect
@@ -80,11 +84,9 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			placeholder={props.placeholder}
 			components={{
 				Option: CheckboxSelect,
-				Menu: CustomMenuOptions,
 				MultiValueContainer: MultiValueContainer,
-				
+				MenuList: CustomMenuList
 			}}
-			// filterOption
 			value={getValue()}
 			defaultValue={getOptions()}
 			onChange={handleSelect}
@@ -92,9 +94,14 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			isMulti
 			hideSelectedOptions={false}
 			closeMenuOnSelect={false}
-			menuIsOpen={props.isOpen}
+			openMenuOnFocus={props.isOpen}
 			onMenuOpen={props.onOpen}
 			onMenuClose={props.onClose}
+			onInputChange={(val) => setInputValue(val)}
+			{...{
+				menuIsOpen: props.isOpen || undefined,
+				isFocused: props.isOpen || undefined
+			}}
 			isClearable={false}
 			isSearchable={false}
 		/>
