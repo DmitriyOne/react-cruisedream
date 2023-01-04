@@ -9,14 +9,15 @@ import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 import styles from './my-select.module.scss'
 
 interface IProps {
-	selectedOption: ISelect[]
-	setSelected: Dispatch<SetStateAction<any>>
+	selectedOption?: ISelect[]
+	setSelected?: Dispatch<SetStateAction<any>>
 	optionsGroup?: ISelectGroup[]
 	options?: ISelect[]
 	classComponent?: string
 	classPrefix?: string
 	placeholder?: string
 	isGrouped?: boolean
+	defaultValue?: ISelect
 }
 
 export const MySelect: FC<IProps> = ({
@@ -27,7 +28,8 @@ export const MySelect: FC<IProps> = ({
 	classComponent,
 	classPrefix,
 	placeholder = 'Сделайте ваш выбор',
-	isGrouped = true
+	isGrouped = true,
+	defaultValue
 }) => {
 	const { isOpenSelect, onOpenSelect, onCloseSelect, onToggleSelect } = useContext(SelectContext)
 
@@ -41,14 +43,16 @@ export const MySelect: FC<IProps> = ({
 					classComponent={classNameComponent}
 					classNamePrefix={classPrefix}
 					placeholder={placeholder}
-					selectedOption={selectedOption}
-					setSelected={setSelected}
+					selectedOption={selectedOption!}
+					setSelected={setSelected!}
 				/>
 				:
 				<Select
 					className={classNameComponent}
 					options={options}
 					classNamePrefix={classPrefix}
+					defaultValue={defaultValue}
+					isSearchable={false}
 				/>
 			}
 		</>

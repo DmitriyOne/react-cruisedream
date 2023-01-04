@@ -48,28 +48,22 @@ export const Search = () => {
 					isFixed ? styles.show : undefined
 				)} />
 				<form className={styles.form}>
-
-
 					<MySelect
 						selectedOption={select0}
 						setSelected={setSelect0}
 						optionsGroup={groupedOptions2}
 						classComponent={styles.col}
-						classPrefix="select-transparent"
+						classPrefix="select-transparent select-default"
 						placeholder="Регион круиза"
-
 					/>
-
 					<MySelect
 						selectedOption={select1}
 						setSelected={setSelect1}
 						optionsGroup={groupedOptions}
 						classComponent={styles.col}
-						classPrefix="select-transparent"
+						classPrefix="select-transparent select-default"
 						placeholder="Круизная компания"
 					/>
-
-
 					<MyDatepicker
 						componentClassName={styles.col}
 						wrapperClassName={styles.datepickerWrapper}
