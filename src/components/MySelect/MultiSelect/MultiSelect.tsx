@@ -91,8 +91,8 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			isMulti
 			hideSelectedOptions={false}
 			closeMenuOnSelect={false}
+			blurInputOnSelect={false}
 			openMenuOnFocus={isFocused}
-			// menuIsOpen={isFocused}
 			onMenuOpen={() => setIsFocused(true)}
 			onMenuClose={() => setIsFocused(false)}
 			onInputChange={(val) => setInputValue(val)}
