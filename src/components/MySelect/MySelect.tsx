@@ -7,7 +7,6 @@ import { ISelect, ISelectGroup } from '../../model/interfaces'
 import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
-import Dropdown from './SelectDropdown/SelectDropdown'
 
 interface IProps {
 	optionsGroup?: ISelectGroup[]
@@ -34,25 +33,18 @@ export const MySelect: FC<IProps> = ({
 		<>
 			{isGrouped
 				?
-				<Dropdown
-					isSearchable
-					isMulti
-					placeholder="поиск.."
+				<MultiSelect
 					optionsGroup={optionsGroup!}
-					onChange={(value) => console.log(value)}
+					classComponent={classNameComponent}
+					classNamePrefix={classPrefix}
+					placeholder={placeholder}
+					selectedOption={select}
+					setSelected={setSelected}
+					isOpen={isOpenSelect}
+					onOpen={onOpenSelect}
+					onClose={onCloseSelect}
+					onToggle={onToggleSelect}
 				/>
-				// <MultiSelect
-				// 	optionsGroup={optionsGroup!}
-				// 	classComponent={classNameComponent}
-				// 	classNamePrefix={classPrefix}
-				// 	placeholder={placeholder}
-				// 	selectedOption={select}
-				// 	setSelected={setSelected}
-				// 	isOpen={isOpenSelect}
-				// 	onOpen={onOpenSelect}
-				// 	onClose={onCloseSelect}
-				// 	onToggle={onToggleSelect}
-				// />
 				:
 				<Select
 					className={classNameComponent}

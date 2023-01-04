@@ -1,5 +1,5 @@
 import { FC, FormEvent, useContext } from 'react'
-import { components, MenuProps, MenuListProps } from 'react-select'
+import { components, MenuListProps } from 'react-select'
 import { SelectContext } from '../../../context'
 
 import { Button } from '../../Button'
@@ -8,16 +8,20 @@ import { Input } from '../../Input'
 import styles from './custom-menu-list.module.scss'
 
 export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => {
-	const { onInputChange, inputValue, onFocus } = selectProps
-	const { onCloseSelect } = useContext(SelectContext)
+	const { onInputChange, inputValue } = selectProps
+	const { onCloseSelect, onOpenSelect, isOpenSelect } = useContext(SelectContext)
 
 	const ariaAttributes = {
 		'aria-label': selectProps['aria-label'],
 		'aria-labelledby': selectProps['aria-labelledby']
 	}
 
-	const onClick = (e: FormEvent) => {
+	console.log(isOpenSelect)
+
+	const onClickApply = (e: FormEvent) => {
 		e.preventDefault()
+		console.log('apply')
+
 		onCloseSelect()
 	}
 
@@ -35,7 +39,7 @@ export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => 
 						prevInputValue: ''
 					})
 				}
-				onFocus={onFocus}
+				onFocus={onOpenSelect}
 				onMouseDown={(e: any) => {
 					e.stopPropagation()
 					e.target.focus()
@@ -48,7 +52,7 @@ export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => 
 				{...ariaAttributes}
 			/>
 			<components.MenuList {...props} selectProps={selectProps} />
-			<Button className={styles.button} onClick={(e) => onClick(e)}>
+			<Button className={styles.button} onClick={(e) => onClickApply(e)}>
 				Применить
 			</Button>
 		</>

@@ -48,9 +48,6 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
 		const { action, option, removedValue } = actionMeta
 
-		// console.log(props.isOpen); /
-
-
 		const opt = option as ISelect
 		const removed = removedValue as ISelect
 		if (action === 'select-option' && opt.value === selectAllOption.value) {
@@ -95,11 +92,11 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			hideSelectedOptions={false}
 			closeMenuOnSelect={false}
 			openMenuOnFocus={props.isOpen}
+			menuIsOpen={props.isOpen}
 			onMenuOpen={props.onOpen}
 			onMenuClose={props.onClose}
 			onInputChange={(val) => setInputValue(val)}
 			{...{
-				menuIsOpen: props.isOpen || undefined,
 				isFocused: props.isOpen || undefined
 			}}
 			isClearable={false}
