@@ -25,15 +25,14 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
 
-	console.log('isFocused: ', isFocused)
-
-
 	useEffect(() => {
-		const myOption1 = props.optionsGroup.map(v => v.options)[0]
-		const myOption2 = props.optionsGroup.map(v => v.options)[1]
-		const myOptionConcat = myOption1.concat(myOption2)
-		setAllOptions(myOptionConcat)
-		props.setSelected(myOptionConcat)
+		const myOpt = props.optionsGroup.map(opt => opt.options)
+		myOpt.forEach(el =>
+			el.forEach(el2 =>
+				allOptions.push(el2)
+			)
+		)
+		props.setSelected(allOptions)
 	}, [])
 
 

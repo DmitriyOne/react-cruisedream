@@ -28,6 +28,7 @@
 .inputWrapper {
 	@include mixins.square-size(15);
 	min-width: 15px;
+	pointer-events: none;
 }
 
 .input[type=checkbox]+.label:before {
