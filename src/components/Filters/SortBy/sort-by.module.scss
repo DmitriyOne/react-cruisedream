@@ -7,10 +7,18 @@
 
 .select {
 	width: auto;
+	max-width: 280px;
 	margin-right: 14px;
 	
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-right: 10px; 
+	}
+
+	&:first-child {
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			min-width: fit-content;
+		}
 	}
 
 	&:last-child {
@@ -19,12 +27,5 @@
 		@include mixins.media-w(breakpoints.$laptop) {
 			margin-right: 10px; 
 		}
-	}
-}
-
-.sortCurrency {
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		min-width: fit-content;
 	}
 }

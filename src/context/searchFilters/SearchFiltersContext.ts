@@ -64,26 +64,26 @@ const defaultValue: IProps = {
 	onToggle: () => { },
 	isSelected: false,
 	
-	region: { label: '', value: '' },
+	region: { label: '', value: '', tag: '' },
 	onChangeRegion: () => { },
 
-	cruise: { label: '', value: '' },
+	cruise: { label: '', value: '', tag: '' },
 	onChangeCruise: () => { },
 
-	port1: { label: '', value: '' },
+	port1: { label: '', value: '', tag: '' },
 	onChangePort1: () => { },
 
-	port2: { label: '', value: '' },
+	port2: { label: '', value: '', tag: '' },
 	onChangePort2: () => { },
 
-	port3: { label: '', value: '' },
+	port3: { label: '', value: '', tag: '' },
 	onChangePort3: () => { },
 
-	ship: { label: '', value: '' },
+	ship: { label: '', value: '', tag: '' },
 	onChangeShip: () => { },
 
 
-	typeCruise: { label: '', value: '' },
+	typeCruise: { label: '', value: '', tag: '' },
 	onChangeTypeCruise: () => { },
 
 	amountDays: {

@@ -1,32 +1,36 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 import { SearchFiltersContext } from '../../../context'
-import { optionRegionHome, optionCompanyHome } from '../../../fakedata'
 
 import { Container, MySelect, MyDatepicker, Button } from '../../../components'
 
 import styles from './filters-visible.module.scss'
+import { ISelect } from '../../../model/interfaces'
+import { selectAllOption } from '../../MySelect/MultiSelect/MultiSelect'
+import { groupedOptions, groupedOptions2 } from '../../../fakedata'
 
 export const FiltersVisible = () => {
 	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
+	const [select2, setSelect2] = useState<ISelect[]>([selectAllOption])
+	const [select3, setSelect3] = useState<ISelect[]>([selectAllOption])
 
 	return (
 		<Container width="full" className={styles.component}>
 			<MySelect
-				placeholder="Карибы"
-				options={optionRegionHome}
-				className={styles.col}
-				classNamePrefix="select-white"
-				value={region}
-				onChange={onChangeRegion}
+				selectedOption={select2}
+				setSelected={setSelect2}
+				optionsGroup={groupedOptions}
+				classComponent={styles.col}
+				classPrefix="select-white select-default"
+				placeholder="Регион круиза"
 			/>
 			<MySelect
-				placeholder="Royalcaribbean"
-				options={optionCompanyHome}
-				className={styles.col}
-				classNamePrefix="select-white"
-				value={cruise}
-				onChange={onChangeCruise}
+				selectedOption={select3}
+				setSelected={setSelect3}
+				optionsGroup={groupedOptions2}
+				classComponent={styles.col}
+				classPrefix="select-white select-default"
+				placeholder="Регион круиза"
 			/>
 			<MyDatepicker
 				componentClassName={styles.col}

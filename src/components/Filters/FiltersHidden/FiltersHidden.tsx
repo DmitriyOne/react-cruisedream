@@ -3,17 +3,23 @@ import classNames from 'classnames'
 
 import { SearchFiltersContext } from '../../../context'
 import { Container, Input, MySelect } from '../../../components'
-
-import { optionPort1, optionPort2, optionPort3, optionShip, optionTypeCruise } from '../../../fakedata'
+import { groupedOptions, groupedOptions2 } from '../../../fakedata'
 
 import styles from './filters-hidden.module.scss'
 import { CheckboxFilter } from '../../Input/CheckboxFilter/CheckboxFilter'
+import { ISelect } from '../../../model/interfaces'
+import { selectAllOption } from '../../MySelect/MultiSelect/MultiSelect'
 
 interface IProps {
 	isOpen: boolean
 }
 
 export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
+	const [select5, setSelect5] = useState<ISelect[]>([selectAllOption])
+	const [select6, setSelect6] = useState<ISelect[]>([selectAllOption])
+	const [select7, setSelect7] = useState<ISelect[]>([selectAllOption])
+	const [select8, setSelect8] = useState<ISelect[]>([selectAllOption])
+	const [select9, setSelect9] = useState<ISelect[]>([selectAllOption])
 	const [checkedRiver, setCheckedRiver] = useState(true)
 	const [checkedSea, setCheckedSea] = useState(false)
 	const {
@@ -74,11 +80,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						Порт отправления
 					</label>
 					<MySelect
-						options={optionPort1}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort1}
-						value={port1}
+						selectedOption={select5}
+						setSelected={setSelect5}
+						optionsGroup={groupedOptions}
+						classPrefix="select-white select-default"
+						placeholder="Сделайте свой выбор"
 					/>
 				</div>
 				<div className={styles.col}>
@@ -86,11 +92,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						Порт захода
 					</label>
 					<MySelect
-						options={optionPort2}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort2}
-						value={port2}
+						selectedOption={select6}
+						setSelected={setSelect6}
+						optionsGroup={groupedOptions2}
+						classPrefix="select-white select-default"
+						placeholder="Сделайте свой выбор"
 					/>
 				</div>
 				<div className={styles.col}>
@@ -98,13 +104,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						Порт прибытия
 					</label>
 					<MySelect
-						options={optionPort3}
-						defaultSelect={optionPort3}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						onChange={onChangePort3}
-						value={port3}
-						allowSelectAll={true}
+						selectedOption={select7}
+						setSelected={setSelect7}
+						optionsGroup={groupedOptions}
+						classPrefix="select-white select-default"
+						placeholder="Сделайте свой выбор"
 					/>
 				</div>
 			</div>
@@ -114,11 +118,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						Круизный лайнер
 					</label>
 					<MySelect
-						options={optionShip}
-						placeholder="Все"
-						classNamePrefix="select-white"
-						value={ship}
-						onChange={onChangeShip}
+						selectedOption={select8}
+						setSelected={setSelect8}
+						optionsGroup={groupedOptions}
+						classPrefix="select-white select-default"
+						placeholder="Сделайте свой выбор"
 					/>
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
@@ -127,11 +131,11 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 							Тип круиза
 						</label>
 						<MySelect
-							options={optionTypeCruise}
-							placeholder="Все"
-							classNamePrefix="select-white"
-							value={typeCruise}
-							onChange={onChangeTypeCruise}
+							selectedOption={select9}
+							setSelected={setSelect9}
+							optionsGroup={groupedOptions2}
+							classPrefix="select-white select-default"
+							placeholder="Сделайте свой выбор"
 						/>
 					</div>
 					<div className={styles.amountDays}>

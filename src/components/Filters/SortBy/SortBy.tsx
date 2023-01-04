@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { FC } from 'react'
-import { sortBy, sortCurrency } from '../../../fakedata'
+import { FC, useState } from 'react'
+import { optionSortCurrency, optionSortBy } from '../../../fakedata'
+import { ISelect } from '../../../model/interfaces'
 
 import { MySelect } from '../../MySelect'
 
@@ -15,19 +16,18 @@ export const SortBy: FC<IProps> = ({ className }) => {
 	return (
 		<div className={classNames(styles.component, className)}>
 			<MySelect
-				className={classNames(styles.select, styles.sortCurrency)}
-				options={sortCurrency}
-				classNamePrefix="select-sort"
-				defaultSelect={sortCurrency}
-				isMulti={false}
-				defaultValue={sortCurrency[0]}
-				allowSelectAll={false}
+				classComponent={styles.select}
+				classPrefix="select-sort select-default"
+				options={optionSortCurrency!}
+				defaultValue={optionSortCurrency[0]}
+				isGrouped={false}
 			/>
 			<MySelect
-				className={styles.select}
-				options={sortBy}
-				classNamePrefix="select-sort"
-				defaultValue={sortBy[0]}
+				classComponent={styles.select}
+				classPrefix="select-sort select-default"
+				options={optionSortBy!}
+				defaultValue={optionSortBy[0]}
+				isGrouped={false}
 			/>
 		</div>
 	)
