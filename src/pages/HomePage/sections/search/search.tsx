@@ -1,4 +1,4 @@
-import { FormEvent, useContext } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -10,12 +10,16 @@ import { groupedOptions, groupedOptions2, optionSortCurrency } from '../../../..
 import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
 import styles from './search.module.scss'
+import { ISelect } from '../../../../model/interfaces'
+import { selectAllOption } from '../../../../components/MySelect/MultiSelect/MultiSelect'
 
 export const Search = () => {
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
 	const { date } = useContext(SearchFiltersContext)
+	const [select0, setSelect0] = useState<ISelect[]>([selectAllOption])
+	const [select1, setSelect1] = useState<ISelect[]>([selectAllOption])
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
@@ -46,17 +50,24 @@ export const Search = () => {
 				<form className={styles.form}>
 
 
+					<MySelect
+						selectedOption={select0}
+						setSelected={setSelect0}
+						optionsGroup={groupedOptions2}
+						classComponent={styles.col}
+						classPrefix="select-transparent"
+						placeholder="Регион круиза"
 
+					/>
 
 					<MySelect
+						selectedOption={select1}
+						setSelected={setSelect1}
 						optionsGroup={groupedOptions}
 						classComponent={styles.col}
 						classPrefix="select-transparent"
 						placeholder="Круизная компания"
 					/>
-
-
-
 
 
 					<MyDatepicker

@@ -8,21 +8,18 @@ import { Input } from '../../Input'
 import styles from './custom-menu-list.module.scss'
 
 export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => {
-	const { onInputChange, inputValue } = selectProps
-	const { onCloseSelect, onOpenSelect, isOpenSelect } = useContext(SelectContext)
+	const { onInputChange, inputValue, onMenuOpen, onMenuClose } = selectProps
+	// const { onCloseSelect, onOpenSelect } = useContext(SelectContext)
 
 	const ariaAttributes = {
 		'aria-label': selectProps['aria-label'],
 		'aria-labelledby': selectProps['aria-labelledby']
 	}
 
-	console.log(isOpenSelect)
-
 	const onClickApply = (e: FormEvent) => {
 		e.preventDefault()
-		console.log('apply')
-
-		onCloseSelect()
+		onMenuClose()
+		// onCloseSelect()
 	}
 
 	return (
@@ -39,7 +36,7 @@ export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => 
 						prevInputValue: ''
 					})
 				}
-				onFocus={onOpenSelect}
+				onFocus={onMenuOpen}
 				onMouseDown={(e: any) => {
 					e.stopPropagation()
 					e.target.focus()

@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FC, useContext, useState } from 'react'
+import { FC, useContext, useState, Dispatch, SetStateAction } from 'react'
 import Select from 'react-select'
 import { SelectContext } from '../../context'
 
@@ -9,6 +9,8 @@ import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 import styles from './my-select.module.scss'
 
 interface IProps {
+	selectedOption: ISelect[]
+	setSelected: Dispatch<SetStateAction<any>>
 	optionsGroup?: ISelectGroup[]
 	options?: ISelect[]
 	classComponent?: string
@@ -18,6 +20,8 @@ interface IProps {
 }
 
 export const MySelect: FC<IProps> = ({
+	selectedOption,
+	setSelected,
 	optionsGroup,
 	options,
 	classComponent,
@@ -26,7 +30,6 @@ export const MySelect: FC<IProps> = ({
 	isGrouped = true
 }) => {
 	const { isOpenSelect, onOpenSelect, onCloseSelect, onToggleSelect } = useContext(SelectContext)
-	const [select, setSelected] = useState<ISelect[]>([selectAllOption])
 
 	const classNameComponent = classNames(classComponent, styles.component)
 	return (
@@ -38,12 +41,8 @@ export const MySelect: FC<IProps> = ({
 					classComponent={classNameComponent}
 					classNamePrefix={classPrefix}
 					placeholder={placeholder}
-					selectedOption={select}
+					selectedOption={selectedOption}
 					setSelected={setSelected}
-					isOpen={isOpenSelect}
-					onOpen={onOpenSelect}
-					onClose={onCloseSelect}
-					onToggle={onToggleSelect}
 				/>
 				:
 				<Select

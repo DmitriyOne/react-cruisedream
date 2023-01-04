@@ -59,6 +59,10 @@
 		overflow: hidden !important;
 		display: initial !important;
 		position: relative !important;
+
+		// & > input {
+		// 	position: absolute;
+		// }
 	}
 
 	&__single-value {

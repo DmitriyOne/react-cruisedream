@@ -164,27 +164,32 @@ export const optionSortBy = [
 	},
 ]
 
-
-
 const popularOptions = [
 	{ value: 'Регион 1', label: 'Регион 1', tag: 'popular' },
 	{ value: 'Порт 1', label: 'Порт 1', tag: 'popular' },
 	{ value: 'Круиз 1', label: 'Круиз 1', tag: 'popular' },
 ]
 
+const popularOptions2 = [
+	{ value: 'Корабль 3', label: 'Корабль 3', tag: 'popular' },
+	{ value: 'Компания 1', label: 'Компания 1', tag: 'popular' },
+	{ value: 'Порт 2', label: 'Порт 2', tag: 'popular' },
+	{ value: 'Регион 5', label: 'Регион 5', tag: 'popular' },
+]
+
 const otherOptions = [
 	{ value: 'Регион 2', label: 'Регион 2', tag: 'other' },
 	{ value: 'Регион 3', label: 'Регион 3', tag: 'other' },
 	{ value: 'Регион 4', label: 'Регион 4', tag: 'other' },
-	{ value: 'Регион 5', label: 'Регион 5', tag: 'other' },
-	{ value: 'Регион 6', label: 'Регион 6', tag: 'other' }
+	{ value: 'Регион 6', label: 'Регион 6', tag: 'other' },
+	{ value: 'Регион 7', label: 'Регион 7', tag: 'other' }
 ]
 
 const other2Options = [
-	{ value: 'Компания 2', label: 'Регион 2', tag: 'other2' },
-	{ value: 'Корабль 3', label: 'Корабль 3', tag: 'other2' },
+	{ value: 'Компания 2', label: 'Компания 2', tag: 'other2' },
+	{ value: 'Корабль 4', label: 'Корабль 4', tag: 'other2' },
 	{ value: 'Порт 4', label: 'Регион 4', tag: 'other2' },
-	{ value: 'Регион 5', label: 'Регион 5', tag: 'other2' },
+	{ value: 'Регион 8', label: 'Регион 8', tag: 'other2' },
 	{ value: 'Корабль 6', label: 'Корабль 6', tag: 'other2' }
 ]
 
@@ -208,17 +213,17 @@ export const groupedOptions: ISelectGroup[] = [
 
 export const groupedOptions2: ISelectGroup[] = [
 	{
-		label: 'Разное 2',
-		options: other2Options,
-		tag: 'other2'
-	},
-	{
 		label: 'Популярное',
-		options: popularOptions,
+		options: popularOptions2,
 		tag: 'popular',
 	},
 	{
 		label: 'Разное',
+		options: other2Options,
+		tag: 'other2'
+	},
+	{
+		label: 'Другие',
 		options: otherOptions,
 		tag: 'other1'
 	},

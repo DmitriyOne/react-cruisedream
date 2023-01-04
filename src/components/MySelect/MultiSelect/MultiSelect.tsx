@@ -14,19 +14,19 @@ interface IProps {
 	selectedOption: ISelect[]
 	setSelected: Dispatch<SetStateAction<any>>
 	placeholder?: string
-	isOpen: boolean
-	onOpen: () => void
-	onClose: () => void
-	onToggle: () => void
 }
 
 export const selectAllOption: ISelect = { value: '*', label: 'Все', tag: 'all' }
 
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
+	const [isFocused, setIsFocused] = useState(false)
 	const [inputValue, setInputValue] = useState('')
 	const [allOptions, setAllOptions] = useState<ISelect[]>([])
 	const valueRef = useRef(props.selectedOption)
 	valueRef.current = props.selectedOption
+
+	console.log('isFocused: ', isFocused)
+
 
 	useEffect(() => {
 		const myOption1 = props.optionsGroup.map(v => v.options)[0]
@@ -91,13 +91,14 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			isMulti
 			hideSelectedOptions={false}
 			closeMenuOnSelect={false}
-			openMenuOnFocus={props.isOpen}
-			menuIsOpen={props.isOpen}
-			onMenuOpen={props.onOpen}
-			onMenuClose={props.onClose}
+			openMenuOnFocus={isFocused}
+			// menuIsOpen={isFocused}
+			onMenuOpen={() => setIsFocused(true)}
+			onMenuClose={() => setIsFocused(false)}
 			onInputChange={(val) => setInputValue(val)}
 			{...{
-				isFocused: props.isOpen || undefined
+				menuIsOpen: isFocused || undefined,
+				isFocused: isFocused || undefined
 			}}
 			isClearable={false}
 			isSearchable={false}
