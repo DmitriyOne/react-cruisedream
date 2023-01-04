@@ -51,7 +51,7 @@
 
 	&__value-container {
 		padding: 0 !important;
-		cursor: text !important;
+		cursor: pointer !important;
 		font-size: 16px !important;
 		line-height: 120% !important;
 		text-overflow: ellipsis !important;
@@ -181,12 +181,8 @@
 
 	&__placeholder {
 		@include mixins.fonts(family.$source-sans-pro, 300);
-		font-size: 20px;
+		font-size: 16px;
 		color: rgba(79, 78, 78, 0.6) !important;
-
-		@include mixins.media-w(breakpoints.$laptop) {
-			font-size: 18px;
-		}
 	}
 
 	&__multi-value__label {
