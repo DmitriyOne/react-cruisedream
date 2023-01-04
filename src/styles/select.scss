@@ -24,6 +24,10 @@
 	margin-bottom: 12px !important;
 }
 
+.select-transparent__value-container input{
+	position: absolute;
+}
+
 .select-transparent {
 	&__control {
 		min-height: auto !important;
@@ -59,10 +63,6 @@
 		overflow: hidden !important;
 		display: initial !important;
 		position: relative !important;
-
-		// & > input {
-		// 	position: absolute;
-		// }
 	}
 
 	&__single-value {

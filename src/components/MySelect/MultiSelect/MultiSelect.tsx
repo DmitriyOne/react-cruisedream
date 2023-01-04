@@ -101,6 +101,14 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 			}}
 			isClearable={false}
 			isSearchable={false}
+			styles={{
+				input: (defaultStyles) => {
+					return {
+						...defaultStyles,
+						position: 'absolute'
+					}
+				}
+			}}
 		/>
 	)
 }
