@@ -6,5 +6,5 @@ export const CRUISE_HREFS_ANCHOR = [
 	{ href: CRUISE_NAVBAR.route, text: 'Маршрут', },
 	{ href: CRUISE_NAVBAR.included, text: 'Включено', },
 	{ href: CRUISE_NAVBAR.cabins, text: 'Каюты', },
-	{ href: CRUISE_NAVBAR.booknow, text: 'ЗАБРОНИРОВАТЬ', isBooknow: true }
+	{ href: CRUISE_NAVBAR.cabins, text: 'ЗАБРОНИРОВАТЬ', isBooknow: true }
 ]

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { useWindowSize } from '../../../hooks'
 
@@ -8,6 +9,7 @@ import { B, Button, Discount } from '../../../components'
 import { EWidth, EBackground, EColor } from '../../../model/enums'
 
 import styles from './cruise-price.module.scss'
+import { CRUISE_NAVBAR } from '../../../constants'
 
 interface IProps {
 	buttonsRowClass?: string
@@ -133,12 +135,12 @@ export const CruisePrice: FC<IProps> = ({
 								>
 									ЗАПРОСИТЬ
 								</Button>
-								<Button
+								<AnchorLink
+									href={CRUISE_NAVBAR.cabins}
 									className={classNameButton}
-									onClick={onClickСhoose}
 								>
 									{buttonText}
-								</Button>
+								</AnchorLink>
 							</>
 							:
 							<Link
