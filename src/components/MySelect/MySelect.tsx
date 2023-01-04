@@ -1,51 +1,60 @@
 import classNames from 'classnames'
-import { FC, useState } from 'react'
-import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
+import { FC, useContext, useState, Dispatch, SetStateAction } from 'react'
 import Select from 'react-select'
+import { SelectContext } from '../../context'
 
-import { CheckboxSelect } from '../Input'
-import { ISelect } from '../../model/interfaces'
-import { CustomMultiSelect } from './CustomMultiSelect/CustomMultiSelect'
+import { ISelect, ISelectGroup } from '../../model/interfaces'
+import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
 
-interface IProps extends StateManagerProps {
-	options: ISelect[]
-	defaultSelect?: ISelect[]
-	placeholder?: string,
-	hide?: boolean
-	className?: string
-	classNamePrefix?: string
-	allowSelectAll?: boolean
+interface IProps {
+	selectedOption?: ISelect[]
+	setSelected?: Dispatch<SetStateAction<any>>
+	optionsGroup?: ISelectGroup[]
+	options?: ISelect[]
+	classComponent?: string
+	classPrefix?: string
+	placeholder?: string
+	isGrouped?: boolean
+	defaultValue?: ISelect
 }
 
 export const MySelect: FC<IProps> = ({
-	options, placeholder, hide, defaultSelect, className, classNamePrefix, allowSelectAll, ...props
+	selectedOption,
+	setSelected,
+	optionsGroup,
+	options,
+	classComponent,
+	classPrefix,
+	placeholder = 'Сделайте ваш выбор',
+	isGrouped = true,
+	defaultValue
 }) => {
-	const [selected, setSelected] = useState<ISelect[]>(defaultSelect || [])
+	const { isOpenSelect, onOpenSelect, onCloseSelect, onToggleSelect } = useContext(SelectContext)
 
-	if (allowSelectAll) {
-		return (
-			<CustomMultiSelect
-				className={classNames(styles.select, className)}
-				classNamePrefix={classNamePrefix}
-				options={options}
-				selected={selected}
-				setSelected={setSelected}
-				placeholder={placeholder}
-				allowSelectAll={allowSelectAll}
-				{...props}
-			/>
-		)
-	}
-
+	const classNameComponent = classNames(classComponent, styles.component)
 	return (
-		<Select
-			options={options}
-			placeholder={placeholder}
-			className={className}
-			classNamePrefix={classNamePrefix}
-			{...props}
-		/>
+		<>
+			{isGrouped
+				?
+				<MultiSelect
+					optionsGroup={optionsGroup!}
+					classComponent={classNameComponent}
+					classNamePrefix={classPrefix}
+					placeholder={placeholder}
+					selectedOption={selectedOption!}
+					setSelected={setSelected!}
+				/>
+				:
+				<Select
+					className={classNameComponent}
+					options={options}
+					classNamePrefix={classPrefix}
+					defaultValue={defaultValue}
+					isSearchable={false}
+				/>
+			}
+		</>
 	)
 }
