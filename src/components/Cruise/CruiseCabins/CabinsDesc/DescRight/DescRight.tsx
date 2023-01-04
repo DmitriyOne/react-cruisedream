@@ -6,6 +6,7 @@ import { B, Button } from '../../../../../components'
 import { ICabinsDesc } from '../../../../../model/interfaces'
 
 import styles from './desc-right.module.scss'
+import { CRUISE_ROUTES } from '../../../../../constants'
 
 interface IProps {
 	id: number
@@ -40,18 +41,25 @@ export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId, checkedId, han
 				{cabinsDesc.map(cabin =>
 					<div key={cabin.id} className={styles.row} >
 						<div className={styles.item}>
-							<span className={classNames(
-								styles.code,
-								cabin.deck.code === 'A1' ? styles.pink : '',
-								cabin.deck.code === 'A2' ? styles.red : '',
-								cabin.deck.code === 'BU' ? styles.viol : '',
-								cabin.deck.code === 'BY' ? styles.blue : '',
-							)}>
-								{cabin.deck.code}
-							</span>
-							<B fontWeight={500} className={styles.deck}>
-								{cabin.deck.name}
-							</B>
+							<a
+								href={CRUISE_ROUTES.EMPTY}
+								className={styles.link}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<span className={classNames(
+									styles.code,
+									cabin.deck.code === 'A1' ? styles.pink : '',
+									cabin.deck.code === 'A2' ? styles.red : '',
+									cabin.deck.code === 'BU' ? styles.viol : '',
+									cabin.deck.code === 'BY' ? styles.blue : '',
+								)}>
+									{cabin.deck.code}
+								</span>
+								<B fontWeight={500} className={styles.deck}>
+									{cabin.deck.name}
+								</B>
+							</a>
 						</div>
 						<div className={styles.item}>
 							<B fontWeight={700} className={styles.price}>

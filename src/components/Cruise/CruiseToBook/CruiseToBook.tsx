@@ -11,7 +11,7 @@ export const CruiseToBook = () => {
 			<CruiseTimer
 				classComponent={styles.timer}
 				classNumber={styles.timerNumber}
-				deadline="28 Dec 2022 17:00"
+				deadline="28 Jan 2023 17:00"
 				isSeconds={false}
 			/>
 			<div className={styles.contentWrapper}>
