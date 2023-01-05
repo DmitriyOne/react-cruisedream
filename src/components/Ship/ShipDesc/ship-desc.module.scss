@@ -29,6 +29,7 @@
 	text-decoration-line: underline;
 	color: rgba(255, 255, 255, 0.5);
 	padding-left: 4px;
+	transition: color .3s;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 14px;
@@ -36,5 +37,11 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 13px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+		}
 	}
 }

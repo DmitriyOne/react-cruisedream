@@ -73,11 +73,11 @@
 .button {
 	font-size: 17px;
 	line-height: 120%;
-	color: colors.$white;
-	padding: 15px 45px;
-	background-color: colors.$btn-hover;
-	border: 1px solid colors.$transparent;
+	background-color: colors.$transparent;
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
 	border-radius: 3px;
+	padding: 15px 45px;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-top: 10px;
@@ -89,9 +89,9 @@
 
 	@include mixins.media-minw(breakpoints.$laptop) {
 		&:hover {
-			background-color: colors.$transparent;
-			color: colors.$btn-text;
-			border: 1px solid colors.$btn-border;
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+			border: 1px solid colors.$transparent;
 		}
 	}
 }
