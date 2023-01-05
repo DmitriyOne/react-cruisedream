@@ -10,6 +10,7 @@ export const params: SwiperOptions = {
 	slidesPerView: 3.4,
 	centeredSlides: true,
 	speed: 700,
+	slideToClickedSlide: true,
 	slideActiveClass: `${styles.activeSlide}`,
 	slideNextClass: `${styles.nextSlide}`,
 	slidePrevClass: `${styles.prevSlide}`,
