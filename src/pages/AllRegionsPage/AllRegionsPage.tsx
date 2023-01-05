@@ -6,7 +6,7 @@ export const AllRegionsPage = () => {
 	return (
 		<>
 			<Intro />
-			<RegionsCards />
+			<RegionsCards position="row" />
 			<Cruises />
 			<Banner />
 			<PopularCruises />
