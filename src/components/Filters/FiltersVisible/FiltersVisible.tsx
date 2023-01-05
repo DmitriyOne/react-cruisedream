@@ -10,7 +10,7 @@ import { selectAllOption } from '../../MySelect/MultiSelect/MultiSelect'
 import { groupedOptions, groupedOptions2 } from '../../../fakedata'
 
 export const FiltersVisible = () => {
-	const { region, cruise, onChangeRegion, onChangeCruise, date } = useContext(SearchFiltersContext)
+	const { date } = useContext(SearchFiltersContext)
 	const [select2, setSelect2] = useState<ISelect[]>([selectAllOption])
 	const [select3, setSelect3] = useState<ISelect[]>([selectAllOption])
 

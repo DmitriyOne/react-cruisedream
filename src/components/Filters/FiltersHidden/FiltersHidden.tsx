@@ -23,16 +23,6 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 	const [checkedRiver, setCheckedRiver] = useState(true)
 	const [checkedSea, setCheckedSea] = useState(false)
 	const {
-		ship,
-		typeCruise,
-		port1,
-		port2,
-		port3,
-		onChangePort1,
-		onChangePort2,
-		onChangePort3,
-		onChangeShip,
-		onChangeTypeCruise,
 		amountDays,
 		price
 	} = useContext(SearchFiltersContext)
