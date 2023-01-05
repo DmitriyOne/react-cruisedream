@@ -84,10 +84,10 @@
 		padding: 0 !important;
 		cursor: pointer;
 		position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	&__indicators {
@@ -228,6 +228,7 @@
 	&__dropdown-indicator {
 		color: rgba(79, 78, 78, 0.6) !important;
 		padding: 0 !important;
+		background-image: url('../assets/images/select/arrow-down.svg');
 	}
 
 	&__option {
@@ -292,7 +293,7 @@
 		}
 	}
 
-	&__indicator {
+	&__dropdown-indicator {
 		background-image: url('../assets/images/select/arrow-down.svg');
 	}
 

@@ -11,11 +11,11 @@ interface IProps {
 
 export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle } = useOpen(false)
-	const today = new Date()
-	const nextDay = new Date(today)
-	nextDay.setDate(today.getDate() + 7)
-	const [dateStart, setDateStart] = useState<Date | undefined>(today)
-	const [dateEnd, setDateEnd] = useState<Date | undefined>(nextDay)
+	// const today = new Date()
+	// const nextDay = new Date(today)
+	// nextDay.setDate(today.getDate() + 7)
+	const [dateStart, setDateStart] = useState<Date | undefined>()
+	const [dateEnd, setDateEnd] = useState<Date | undefined>()
 	const [amountStart, setAmountStart] = useState('')
 	const [amountEnd, setAmountEnd] = useState('')
 	const [priceStart, setPriceStart] = useState('')

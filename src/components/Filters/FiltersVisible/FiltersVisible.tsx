@@ -1,32 +1,34 @@
 import { useContext, useState } from 'react'
 
 import { SearchFiltersContext } from '../../../context'
+import { groupedOptions, groupedOptions2, allRegionOptions, allCompanyOptions } from '../../../fakedata'
+import { ISelect } from '../../../model/interfaces'
 
 import { Container, MySelect, MyDatepicker, Button } from '../../../components'
 
 import styles from './filters-visible.module.scss'
-import { ISelect } from '../../../model/interfaces'
-import { selectAllOption } from '../../MySelect/MultiSelect/MultiSelect'
-import { groupedOptions, groupedOptions2 } from '../../../fakedata'
 
 export const FiltersVisible = () => {
 	const { date } = useContext(SearchFiltersContext)
-	const [select2, setSelect2] = useState<ISelect[]>([selectAllOption])
-	const [select3, setSelect3] = useState<ISelect[]>([selectAllOption])
+	const [select0, setSelect0] = useState<ISelect[]>([allRegionOptions])
+	const [select1, setSelect1] = useState<ISelect[]>([allCompanyOptions])
 
 	return (
 		<Container width="full" className={styles.component}>
 			<MySelect
-				selectedOption={select2}
-				setSelected={setSelect2}
+				selectAllOption={allRegionOptions}
+				selectedOption={select0}
+				setSelected={setSelect0}
 				optionsGroup={groupedOptions}
 				classComponent={styles.col}
 				classPrefix="select-white select-default"
 				placeholder="Регион круиза"
+				isDefaultSelectAll
 			/>
 			<MySelect
-				selectedOption={select3}
-				setSelected={setSelect3}
+				selectAllOption={allCompanyOptions}
+				selectedOption={select1}
+				setSelected={setSelect1}
 				optionsGroup={groupedOptions2}
 				classComponent={styles.col}
 				classPrefix="select-white select-default"
