@@ -5,21 +5,20 @@ import classNames from 'classnames'
 import { SearchFiltersContext } from '../../../../context'
 import { CRUISE_ROUTES, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 import { useScrollUp, useWindowSize } from '../../../../hooks'
-import { groupedOptions, groupedOptions2, optionSortCurrency } from '../../../../fakedata'
+import { groupedOptions, groupedOptions2, allRegionOptions, allCompanyOptions } from '../../../../fakedata'
+import { ISelect } from '../../../../model/interfaces'
 
 import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
 
 import styles from './search.module.scss'
-import { ISelect } from '../../../../model/interfaces'
-import { selectAllOption } from '../../../../components/MySelect/MultiSelect/MultiSelect'
 
 export const Search = () => {
 	const navigate = useNavigate()
 	const { isDesktop } = useWindowSize()
 	const { isScroll, isScrollUp, ref } = useScrollUp()
 	const { date } = useContext(SearchFiltersContext)
-	const [select0, setSelect0] = useState<ISelect[]>([selectAllOption])
-	const [select1, setSelect1] = useState<ISelect[]>([selectAllOption])
+	const [select0, setSelect0] = useState<ISelect[]>([])
+	const [select1, setSelect1] = useState<ISelect[]>([])
 
 	const handlerClick = (e: FormEvent) => {
 		e.preventDefault()
@@ -49,20 +48,24 @@ export const Search = () => {
 				)} />
 				<form className={styles.form}>
 					<MySelect
+						selectAllOption={allRegionOptions}
 						selectedOption={select0}
 						setSelected={setSelect0}
 						optionsGroup={groupedOptions2}
 						classComponent={styles.col}
 						classPrefix="select-transparent select-default"
 						placeholder="Регион круиза"
+						isDefaultSelectAll={false}
 					/>
 					<MySelect
+						selectAllOption={allCompanyOptions}
 						selectedOption={select1}
 						setSelected={setSelect1}
 						optionsGroup={groupedOptions}
 						classComponent={styles.col}
 						classPrefix="select-transparent select-default"
 						placeholder="Круизная компания"
+						isDefaultSelectAll={false}
 					/>
 					<MyDatepicker
 						componentClassName={styles.col}

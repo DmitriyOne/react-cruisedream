@@ -1,18 +1,16 @@
-import { Grid, SwiperOptions } from 'swiper'
+import { SwiperOptions } from 'swiper'
 
-export const params3x2Grid: SwiperOptions = {
-	slidesPerView: 1,
-	spaceBetween: 20,
+export const paramsRow: SwiperOptions = {
+	allowTouchMove: true,
 	cssMode: true,
-	modules: [Grid],
+	slidesPerView: 1,
+	direction: 'horizontal',
+	spaceBetween: 20,
 	breakpoints: {
-		1280: {
+		1180: {
+			allowTouchMove: false,
 			slidesPerView: 3,
-			spaceBetween: 40,
-			grid: {
-				rows: 2,
-				fill: 'row'
-			},
+			spaceBetween: 0,
 		},
 		1024: {
 			slidesPerView: 2.6,

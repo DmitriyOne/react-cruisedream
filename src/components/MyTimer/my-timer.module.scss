@@ -1,6 +1,12 @@
-@use '../../../styles/mixins.scss';
-@use '../../../styles/breakpoints.scss';
-@use '../../../styles/colors.scss';
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
+
+@keyframes blink {
+	50% {
+    opacity: 0;
+  }
+}
 
 .component {
 	display: flex;
@@ -45,6 +51,7 @@
 	@extend .number;
 	margin-left: 8px;
 	margin-right: 8px;
+	animation: blink 1s linear infinite;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		margin-left: 6px;

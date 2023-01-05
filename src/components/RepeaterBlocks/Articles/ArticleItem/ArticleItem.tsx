@@ -12,9 +12,6 @@ export const ArticleItem: FC<IArticle> = ({ ...article }) => {
 	const leftClassName = classNames(styles.left,
 		article.isVideo ? styles.large : styles.small
 	)
-	const descriptionClassName = classNames(styles.description,
-		article.isVideo ? styles.large : styles.small
-	)
 	return (
 		<div className={styles.component}>
 			<div className={leftClassName}>
@@ -29,7 +26,7 @@ export const ArticleItem: FC<IArticle> = ({ ...article }) => {
 				<Heading as="h4" className={styles.title}>
 					{article.title}
 				</Heading>
-				<p className={descriptionClassName}>
+				<p className={styles.description}>
 					{article.description}
 				</p>
 			</div>

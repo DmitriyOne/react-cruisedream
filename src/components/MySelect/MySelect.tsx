@@ -1,16 +1,16 @@
 import classNames from 'classnames'
-import { FC, useContext, useState, Dispatch, SetStateAction } from 'react'
+import { FC, Dispatch, SetStateAction } from 'react'
 import Select from 'react-select'
-import { SelectContext } from '../../context'
 
 import { ISelect, ISelectGroup } from '../../model/interfaces'
-import { MultiSelect, selectAllOption } from './MultiSelect/MultiSelect'
+import { MultiSelect } from './MultiSelect/MultiSelect'
 
 import styles from './my-select.module.scss'
 
 interface IProps {
 	selectedOption?: ISelect[]
 	setSelected?: Dispatch<SetStateAction<any>>
+	selectAllOption?: ISelect
 	optionsGroup?: ISelectGroup[]
 	options?: ISelect[]
 	classComponent?: string
@@ -18,6 +18,7 @@ interface IProps {
 	placeholder?: string
 	isGrouped?: boolean
 	defaultValue?: ISelect
+	isDefaultSelectAll?: boolean
 }
 
 export const MySelect: FC<IProps> = ({
@@ -29,9 +30,10 @@ export const MySelect: FC<IProps> = ({
 	classPrefix,
 	placeholder = 'Сделайте ваш выбор',
 	isGrouped = true,
-	defaultValue
+	defaultValue,
+	isDefaultSelectAll = true,
+	selectAllOption,
 }) => {
-	const { isOpenSelect, onOpenSelect, onCloseSelect, onToggleSelect } = useContext(SelectContext)
 
 	const classNameComponent = classNames(classComponent, styles.component)
 	return (
@@ -45,6 +47,8 @@ export const MySelect: FC<IProps> = ({
 					placeholder={placeholder}
 					selectedOption={selectedOption!}
 					setSelected={setSelected!}
+					isDefaultSelectAll={isDefaultSelectAll}
+					selectAllOption={selectAllOption!}
 				/>
 				:
 				<Select
