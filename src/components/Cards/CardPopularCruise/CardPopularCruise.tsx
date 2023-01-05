@@ -3,8 +3,8 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ICard } from '../../../model/interfaces'
 
-import { CruiseAmountDays, CruiseDates, CruiseLogo, CruiseName, CruisePrice, CruiseRoute, CruiseSlider, CruiseTimer } from '../../Cruise'
-import { Discount } from '../../Discount'
+import { CruiseAmountDays, CruiseDates, CruiseLogo, CruiseName, CruisePrice, CruiseRoute, CruiseSlider } from '../../Cruise'
+import { MyTimer, Discount } from '../../../components'
 import { ShipName } from '../../Ship'
 
 import styles from './card-popular-cruise.module.scss'
@@ -28,12 +28,11 @@ export const CardPopularCruise: FC<ICard> = ({ ...card }) => {
 					classNameText={styles.discountText}
 					classNamePercentage={styles.discountPercentage}
 				/>
-				<CruiseTimer
+				<MyTimer
 					classComponent={styles.timer}
 					classText={styles.timerText}
 					classNumber={styles.timerNumber}
-					deadline="5 Jan 2023"
-					isSeconds={false}
+					deadline="18 Jan 2023"
 				/>
 			</div>
 			<div className={styles.body}>

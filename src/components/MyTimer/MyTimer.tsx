@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC, useEffect, useState } from 'react'
 
-import styles from './cruise-timer.module.scss'
+import styles from './my-timer.module.scss'
 
 interface IProps {
 	deadline: string
@@ -11,12 +11,12 @@ interface IProps {
 	classNumber?: string
 }
 
-export const CruiseTimer: FC<IProps> = ({
+export const MyTimer: FC<IProps> = ({
 	deadline,
 	classComponent,
 	classNumber,
 	classText,
-	isSeconds = true
+	isSeconds = false
 }) => {
 	const [days, setDays] = useState(0)
 	const [hours, setHours] = useState(0)

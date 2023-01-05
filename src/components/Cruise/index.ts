@@ -1,4 +1,3 @@
-export * from './CruiseTimer/CruiseTimer'
 export * from './CruiseLogo/CruiseLogo'
 export * from './CruisePrice/CruisePrice'
 export * from './CruiseAmountDays/CruiseAmountDays'
