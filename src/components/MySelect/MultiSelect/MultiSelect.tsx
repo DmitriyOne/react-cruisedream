@@ -12,11 +12,11 @@ interface IProps {
 	classNamePrefix?: string
 	optionsGroup: ISelectGroup[]
 	selectedOption: ISelect[]
+	selectAllOption: ISelect
 	setSelected: Dispatch<SetStateAction<any>>
 	placeholder?: string
+	isDefaultSelectAll?: boolean
 }
-
-export const selectAllOption: ISelect = { value: '*', label: 'Все', tag: 'all' }
 
 export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	const [isFocused, setIsFocused] = useState(false)
@@ -26,13 +26,10 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 	valueRef.current = props.selectedOption
 
 	useEffect(() => {
-		const myOpt = props.optionsGroup.map(opt => opt.options)
-		myOpt.forEach(el =>
-			el.forEach(el2 =>
-				allOptions.push(el2)
-			)
-		)
-		props.setSelected(allOptions)
+		props.optionsGroup.forEach((item, idx) => allOptions.push(...item.options))
+		if (props.isDefaultSelectAll) {
+			props.setSelected(allOptions)
+		}
 	}, [])
 
 
@@ -41,20 +38,20 @@ export const MultiSelect: FC<IProps> = ({ ...props }) => {
 		valueRef.current.some(({ value }) => value === option.value) ||
 		isSelectAllSelected()
 
-	const getOptions = () => allOptions.length > 1 ? [selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
-	const getValue = () => isSelectAllSelected() ? [selectAllOption] : props.selectedOption
+	const getOptions = () => allOptions.length > 1 ? [props.selectAllOption, ...props.optionsGroup] : [...props.optionsGroup]
+	const getValue = () => isSelectAllSelected() ? [props.selectAllOption] : props.selectedOption
 
 	const handleSelect = (newValue: unknown, actionMeta: ActionMeta<unknown>) => {
 		const { action, option, removedValue } = actionMeta
 
 		const opt = option as ISelect
 		const removed = removedValue as ISelect
-		if (action === 'select-option' && opt.value === selectAllOption.value) {
+		if (action === 'select-option' && opt.value === props.selectAllOption.value) {
 			// console.log('new item selected')
 			props.setSelected(allOptions)
 		}
 
-		else if ((action === 'deselect-option' && opt.value === selectAllOption.value) || (action === 'remove-value' && removed.value === selectAllOption.value)) {
+		else if ((action === 'deselect-option' && opt.value === props.selectAllOption.value) || (action === 'remove-value' && removed.value === props.selectAllOption.value)) {
 			props.setSelected([])
 			// console.log('all items removed')
 		}

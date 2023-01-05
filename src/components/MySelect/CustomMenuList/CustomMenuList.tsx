@@ -1,6 +1,5 @@
-import { FC, FormEvent, useContext } from 'react'
+import { FC, FormEvent } from 'react'
 import { components, MenuListProps } from 'react-select'
-import { SelectContext } from '../../../context'
 
 import { Button } from '../../Button'
 import { Input } from '../../Input'
@@ -9,7 +8,6 @@ import styles from './custom-menu-list.module.scss'
 
 export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => {
 	const { onInputChange, inputValue, onMenuOpen, onMenuClose } = selectProps
-	// const { onCloseSelect, onOpenSelect } = useContext(SelectContext)
 
 	const ariaAttributes = {
 		'aria-label': selectProps['aria-label'],
@@ -19,9 +17,8 @@ export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => 
 	const onClickApply = (e: FormEvent) => {
 		e.preventDefault()
 		onMenuClose()
-		// onCloseSelect()
 	}
-
+	
 	return (
 		<>
 			<Input

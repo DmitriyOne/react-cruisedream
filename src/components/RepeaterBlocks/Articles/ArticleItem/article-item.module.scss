@@ -126,8 +126,8 @@
 }
 
 .description {
-	@include mixins.fluidMaxSize(1140);
 	@include mixins.fonts(family.$source-sans-pro);
+	width: 100%;
 	font-size: 25px;
 	line-height: 110%;
 	text-align: justify;
@@ -146,13 +146,5 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 16px;
 		text-indent: 1rem;
-	}
-
-	&.large {
-		@include mixins.fluidMaxSize(860);
-	}
-
-	&.small {
-		@include mixins.fluidMaxSize(1140);
 	}
 }

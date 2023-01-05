@@ -1,5 +1,4 @@
 import { ChangeEvent, createContext } from 'react'
-import { ISelect } from '../../model/interfaces'
 
 interface IInputDate {
 	dateStart?: Date
@@ -30,32 +29,8 @@ interface IProps {
 	isOpen: boolean
 	onToggle: () => void
 	isSelected: boolean
-
-	region: ISelect | undefined
-	onChangeRegion: (value: any) => void
-
-	cruise: ISelect | undefined
-	onChangeCruise: (value: any) => void
-
-	port1: ISelect | undefined
-	onChangePort1: (value: any) => void
-
-	port2: ISelect | undefined
-	onChangePort2: (value: any) => void
-
-	port3: ISelect | undefined
-	onChangePort3: (value: any) => void
-
-	ship: ISelect | undefined
-	onChangeShip: (value: any) => void
-
-	typeCruise: ISelect | undefined
-	onChangeTypeCruise: (value: any) => void
-
 	amountDays: IInputAmount
-
 	price: IInputPrice
-
 	date: IInputDate
 }
 
@@ -63,29 +38,6 @@ const defaultValue: IProps = {
 	isOpen: false,
 	onToggle: () => { },
 	isSelected: false,
-	
-	region: { label: '', value: '', tag: '' },
-	onChangeRegion: () => { },
-
-	cruise: { label: '', value: '', tag: '' },
-	onChangeCruise: () => { },
-
-	port1: { label: '', value: '', tag: '' },
-	onChangePort1: () => { },
-
-	port2: { label: '', value: '', tag: '' },
-	onChangePort2: () => { },
-
-	port3: { label: '', value: '', tag: '' },
-	onChangePort3: () => { },
-
-	ship: { label: '', value: '', tag: '' },
-	onChangeShip: () => { },
-
-
-	typeCruise: { label: '', value: '', tag: '' },
-	onChangeTypeCruise: () => { },
-
 	amountDays: {
 		amountStart: '',
 		onChangeAmountStart: () => { },
@@ -94,7 +46,6 @@ const defaultValue: IProps = {
 		onChangeAmountEnd: () => { },
 		resetAmountEnd: () => { }
 	},
-
 	price: {
 		priceStart: '',
 		onChangePriceStart: () => { },
@@ -103,7 +54,6 @@ const defaultValue: IProps = {
 		onChangePriceEnd: () => { },
 		resetPriceEnd: () => { },
 	},
-
 	date: {
 		onChangeDates: () => {},
 		resetDates: () => {}

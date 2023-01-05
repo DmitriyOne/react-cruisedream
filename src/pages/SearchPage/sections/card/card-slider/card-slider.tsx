@@ -1,7 +1,7 @@
 import { useWindowSize } from '../../../../../hooks'
 
-import { Discount } from '../../../../../components'
-import { CruiseAmountDays, CruiseTimer, CruiseLabel, CruiseSlider } from '../../../../../components/Cruise'
+import { Discount, MyTimer } from '../../../../../components'
+import { CruiseAmountDays, CruiseLabel, CruiseSlider } from '../../../../../components/Cruise'
 
 import styles from './card-slider.module.scss'
 
@@ -15,8 +15,8 @@ export const CardSlider = () => {
 
 			<CruiseSlider />
 
-			<CruiseTimer
-				deadline="7 Jan 2023 17:00"
+			<MyTimer
+				deadline="20 Jan 2023 17:00"
 				classComponent={styles.timer}
 			/>
 

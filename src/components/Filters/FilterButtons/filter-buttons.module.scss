@@ -33,6 +33,14 @@
 	&:last-child {
 		margin-right: 0;
 	}
+
+	@include mixins.media-minw(breakpoints.$tablet) {
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+			border-color: colors.$transparent;
+		}
+	}
 }
 
 .filterShow {
@@ -52,22 +60,22 @@
 		padding-left: 5px;
 		padding-right: 5px;
 	}
-}
-
-.buttonApply {
-	color: colors.$white;
-	background-color: colors.$btn-hover;
-	border-color: colors.$transparent;
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		width: 50%;
-	}
 
 	@include mixins.media-minw(breakpoints.$tablet) {
 		&:hover {
-			color: colors.$btn-text;
-			background-color: colors.$transparent;
-			border-color: colors.$btn-border;
+			color: colors.$white;
+			background-color: rgba(79, 78, 78, 0.6);
+			border-color: colors.$transparent;
 		}
+	}
+}
+
+.buttonApply {
+	color: colors.$btn-text;
+	background-color: colors.$transparent;
+	border-color: colors.$btn-border;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
 	}
 }

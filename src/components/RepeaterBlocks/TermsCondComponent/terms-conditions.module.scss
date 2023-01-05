@@ -49,10 +49,10 @@
 	display: inline-block;
 	font-size: 17px;
 	line-height: 110%;
-	color: #004275;
+	color: colors.$btn-text;
 	padding: 20px;
-	background: colors.$white;
-	border: 1px solid rgba(0, 66, 117, 0.8);
+	background: colors.$transparent;
+	border: 1px solid colors.$btn-border;
 	border-radius: 3px;
 	white-space: nowrap;
 
@@ -68,6 +68,14 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-left: 40px;
 		padding-right: 40px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+			border: 1px solid colors.$transparent;
+		}
 	}
 }
 

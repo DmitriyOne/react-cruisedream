@@ -2,7 +2,6 @@
 import { ChangeEvent, FC, ReactNode, useState } from 'react'
 
 import { useOpen } from '../../hooks'
-import { ISelect } from '../../model/interfaces'
 
 import { SearchFiltersContext } from './SearchFiltersContext'
 
@@ -12,52 +11,15 @@ interface IProps {
 
 export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 	const { isOpen, onToggle } = useOpen(false)
-	const [region, setRegion] = useState<ISelect>()
-	const [cruise, setCruise] = useState<ISelect>()
-
-	const today = new Date()
-	const nextDay = new Date(today)
-	nextDay.setDate(today.getDate() + 7)
-	const [dateStart, setDateStart] = useState<Date | undefined>(today)
-	const [dateEnd, setDateEnd] = useState<Date | undefined>(nextDay)
-
-	const [port1, setPort1] = useState<ISelect>()
-	const [port2, setPort2] = useState<ISelect>()
-	const [port3, setPort3] = useState<ISelect>()
-	const [ship, setShip] = useState<ISelect>()
-	const [typeCruise, setTypeCruise] = useState<ISelect>()
+	// const today = new Date()
+	// const nextDay = new Date(today)
+	// nextDay.setDate(today.getDate() + 7)
+	const [dateStart, setDateStart] = useState<Date | undefined>()
+	const [dateEnd, setDateEnd] = useState<Date | undefined>()
 	const [amountStart, setAmountStart] = useState('')
 	const [amountEnd, setAmountEnd] = useState('')
 	const [priceStart, setPriceStart] = useState('')
 	const [priceEnd, setPriceEnd] = useState('')
-
-	const onChangeRegion = (value: any) => {
-		setRegion(value)
-	}
-
-	const onChangeCruise = (value: any) => {
-		setCruise(value)
-	}
-
-	const onChangePort1 = (value: any) => {
-		setPort1(value)
-	}
-
-	const onChangePort2 = (value: any) => {
-		setPort2(value)
-	}
-
-	const onChangePort3 = (value: any) => {
-		setPort3(value)
-	}
-
-	const onChangeShip = (value: any) => {
-		setShip(value)
-	}
-
-	const onChangeTypeCruise = (value: any) => {
-		setTypeCruise(value)
-	}
 
 	const onChangeAmountStart = (e: ChangeEvent<HTMLInputElement>) => {
 		setAmountStart(e.target.value)
@@ -102,7 +64,7 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 		setDateEnd(undefined)
 	}
 
-	const isSelect = region || cruise || dateStart || dateEnd || port1 || port2 || port3 || ship || typeCruise || amountStart || amountEnd
+	const isSelect = dateStart || dateEnd || amountStart || amountEnd
 	const isSelected = !!isSelect
 
 	const date = {
@@ -134,23 +96,9 @@ export const SearchFiltersProvider: FC<IProps> = ({ children }) => {
 		isOpen,
 		onToggle,
 		isSelected,
-		region,
-		onChangeRegion,
-		cruise,
-		onChangeCruise,
-		port1,
-		onChangePort1,
-		port2,
-		onChangePort2,
-		port3,
-		onChangePort3,
-		ship,
-		onChangeShip,
-		typeCruise,
-		onChangeTypeCruise,
+		date,
 		amountDays,
 		price,
-		date
 	}
 
 	return (

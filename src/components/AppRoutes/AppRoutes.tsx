@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 
-import { HeaderProvider, PaginateProvider, SearchFiltersProvider, SelectProvider } from '../../context'
+import { HeaderProvider, PaginateProvider, SearchFiltersProvider } from '../../context'
 import { CRUISE_ROUTES } from '../../constants'
 
 import {
@@ -25,11 +25,13 @@ import {
 } from '../../pages'
 
 import { Layout } from '../Layout'
+import { ScrollToTop } from './ScrollToTop/ScrollToTop'
 
 export const AppRoutes = () => {
 	return (
-		<HeaderProvider>
-			<SelectProvider>
+		<>
+			<ScrollToTop />
+			<HeaderProvider>
 				<PaginateProvider>
 					<SearchFiltersProvider>
 						<Routes>
@@ -64,7 +66,7 @@ export const AppRoutes = () => {
 						</Routes>
 					</SearchFiltersProvider>
 				</PaginateProvider>
-			</SelectProvider>
-		</HeaderProvider>
+			</HeaderProvider>
+		</>
 	)
 }
