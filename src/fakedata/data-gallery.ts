@@ -13,24 +13,8 @@ import bigPortImgSrc from '../assets/images/galleries/port/1.jpg'
 import small1PortImgSrc from '../assets/images/galleries/port/2.jpg'
 import small2PortImgSrc from '../assets/images/galleries/port/3.jpg'
 
-const galleryVisibleRegion = [
-	{ src: bigRegionImgSrc },
-	{ src: small1RegionImgSrc },
-	{ src: small2RegionImgSrc },
-]
-const galleryVisibleCountry = [
-	{ src: bigCountryImgSrc },
-	{ src: small1CountryImgSrc },
-	{ src: small2CountryImgSrc },
-]
-const galleryVisiblePort = [
-	{ src: bigPortImgSrc },
-	{ src: small1PortImgSrc },
-	{ src: small2PortImgSrc },
-]
-
-const galleryHiddenRegion = [
-	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
+const galleryRegion = [
+	{ src: bigCountryImgSrc, width: 3200, height: 2000 },
 	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
 	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
 	{ src: bigCountryImgSrc, width: 3200, height: 2000 },
@@ -38,23 +22,38 @@ const galleryHiddenRegion = [
 	{ src: small2CountryImgSrc, width: 3200, height: 2000 },
 ]
 
+const galleryCountry = [
+	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
+	{ src: small1CountryImgSrc, width: 3200, height: 2000 },
+	{ src: small2CountryImgSrc, width: 3200, height: 2000 },
+	{ src: bigPortImgSrc, width: 3200, height: 2000 },
+	{ src: small1PortImgSrc, width: 3200, height: 2000 },
+	{ src: small2PortImgSrc, width: 3200, height: 2000 },
+]
+
+const galleryPort = [
+	{ src: bigPortImgSrc, width: 3200, height: 2000 },
+	{ src: small1PortImgSrc, width: 3200, height: 2000 },
+	{ src: small2PortImgSrc, width: 3200, height: 2000 },
+	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
+	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
+	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
+]
+
 export const dataRegionGallery: IGallery = {
 	title: 'КРУИЗЫ ПО СРЕДИЗЕМНОМУ МОРЮ',
 	desc: 'From the pure white sand beaches of the Caribbean to the fascinating architecture of the Mediterranean, the natural beauty of Norway to the diverse culture of the Canary Islands, you can choose from a fantastic range of cruise holiday destinations handpicked by the UK’s No.1 Independent Cruise Specialist, ROL Cruise.',
-	galleryVisible: galleryVisibleRegion,
-	galleryHidden: galleryHiddenRegion
+	images: galleryRegion
 }
 
 export const dataCountryGallery: IGallery = {
 	title: 'КРУИЗЫ ПО ИСПАНИИ',
 	desc: 'From the pure white sand beaches of the Caribbean to the fascinating architecture of the Mediterranean, the natural beauty of Norway to the diverse culture of the Canary Islands, you can choose from a fantastic range of cruise holiday destinations handpicked by the UK’s No.1 Independent Cruise Specialist, ROL Cruise.',
-	galleryVisible: galleryVisibleCountry,
-	galleryHidden: [],
+	images: galleryCountry,
 }
 
 export const dataPortGallery: IGallery = {
 	title: 'КРУИЗЫ ИЗ РИМА',
 	desc: 'From the pure white sand beaches of the Caribbean to the fascinating architecture of the Mediterranean, the natural beauty of Norway to the diverse culture of the Canary Islands, you can choose from a fantastic range of cruise holiday destinations handpicked by the UK’s No.1 Independent Cruise Specialist, ROL Cruise.',
-	galleryVisible: galleryVisiblePort,
-	galleryHidden: [],
+	images: galleryPort,
 }
