@@ -9,7 +9,6 @@ import styles from './intro-with-gallery.module.scss'
 import { IGallery } from '../../../model/interfaces'
 
 
-
 export const IntroWithGallery: FC<IGallery> = ({ ...gallery }) => {
 	const { isMobile } = useWindowSize()
 
