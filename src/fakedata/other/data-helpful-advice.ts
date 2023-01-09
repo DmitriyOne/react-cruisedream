@@ -1,16 +1,16 @@
 /* eslint-disable max-len */
 
-import helpfulRegion1Src from '../components/RepeaterBlocks/HelpfulAdvice/images/region/1.jpg'
-import helpfulRegion2Src from '../components/RepeaterBlocks/HelpfulAdvice/images/region/2.jpg'
-import helpfulRegion3Src from '../components/RepeaterBlocks/HelpfulAdvice/images/region/3.jpg'
+import helpfulRegion1Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/region/1.jpg'
+import helpfulRegion2Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/region/2.jpg'
+import helpfulRegion3Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/region/3.jpg'
 
-import helpfulCountry1Src from '../components/RepeaterBlocks/HelpfulAdvice/images/country/1.jpg'
-import helpfulCountry2Src from '../components/RepeaterBlocks/HelpfulAdvice/images/country/2.jpg'
-import helpfulCountry3Src from '../components/RepeaterBlocks/HelpfulAdvice/images/country/3.jpg'
+import helpfulCountry1Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/country/1.jpg'
+import helpfulCountry2Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/country/2.jpg'
+import helpfulCountry3Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/country/3.jpg'
 
-import helpfulPort1Src from '../components/RepeaterBlocks/HelpfulAdvice/images/port/1.jpg'
-import helpfulPort2Src from '../components/RepeaterBlocks/HelpfulAdvice/images/port/2.jpg'
-import helpfulPort3Src from '../components/RepeaterBlocks/HelpfulAdvice/images/port/3.jpg'
+import helpfulPort1Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/port/1.jpg'
+import helpfulPort2Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/port/2.jpg'
+import helpfulPort3Src from '../../components/RepeaterBlocks/HelpfulAdvice/images/port/3.jpg'
 
 interface IImage {
 	src: string

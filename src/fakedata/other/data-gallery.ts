@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
-import { IGallery } from '../model/interfaces'
+import { IGallery } from '../../model/interfaces'
 
-import bigRegionImgSrc from '../assets/images/galleries/region/1.jpg'
-import small1RegionImgSrc from '../assets/images/galleries/region/2.jpg'
-import small2RegionImgSrc from '../assets/images/galleries/region/3.jpg'
+import bigRegionImgSrc from '../../assets/images/galleries/region/1.jpg'
+import small1RegionImgSrc from '../../assets/images/galleries/region/2.jpg'
+import small2RegionImgSrc from '../../assets/images/galleries/region/3.jpg'
 
-import bigCountryImgSrc from '../assets/images/galleries/country/1.jpg'
-import small1CountryImgSrc from '../assets/images/galleries/country/2.jpg'
-import small2CountryImgSrc from '../assets/images/galleries/country/3.jpg'
+import bigCountryImgSrc from '../../assets/images/galleries/country/1.jpg'
+import small1CountryImgSrc from '../../assets/images/galleries/country/2.jpg'
+import small2CountryImgSrc from '../../assets/images/galleries/country/3.jpg'
 
-import bigPortImgSrc from '../assets/images/galleries/port/1.jpg'
-import small1PortImgSrc from '../assets/images/galleries/port/2.jpg'
-import small2PortImgSrc from '../assets/images/galleries/port/3.jpg'
+import bigPortImgSrc from '../../assets/images/galleries/port/1.jpg'
+import small1PortImgSrc from '../../assets/images/galleries/port/2.jpg'
+import small2PortImgSrc from '../../assets/images/galleries/port/3.jpg'
 
 const galleryRegion = [
 	{ src: bigCountryImgSrc, width: 3200, height: 2000 },

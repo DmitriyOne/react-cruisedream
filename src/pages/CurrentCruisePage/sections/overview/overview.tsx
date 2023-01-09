@@ -1,17 +1,15 @@
 import classNames from 'classnames'
 
 import { useWindowSize } from '../../../../hooks'
+import { dataCruiseGallery } from '../../../../fakedata'
 
-import { Container } from '../../../../components'
-import {
-	CruiseGallery,
-	CruiseLogo,
-	CruiseRoute,
-} from '../../../../components/Cruise'
+import { Container, MyGallery } from '../../../../components'
+import { CruiseLogo, CruiseRoute } from '../../../../components/Cruise'
+
+import { RowBottom, RowCenter, RowTop } from './rows'
+import { OverviewHeader } from './overviewHeader/overviewHeader'
 
 import styles from './overview.module.scss'
-import { OverviewHeader } from './overviewHeader/overviewHeader'
-import { RowBottom, RowCenter, RowTop } from './rows'
 
 export const Overview = () => {
 	const { isMobile } = useWindowSize()
@@ -23,7 +21,7 @@ export const Overview = () => {
 
 				<OverviewHeader />
 
-				<CruiseGallery />
+				<MyGallery images={dataCruiseGallery} isCruisePage />
 
 				{isShowOnMobile &&
 					<CruiseLogo className={styles.logo} />
