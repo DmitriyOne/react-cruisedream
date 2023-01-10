@@ -75,7 +75,11 @@ export const Accordion: FC<IProps> = ({
 					?
 					<>
 						{accordion.links!.map((link, idx) =>
-							<Link key={idx} to={accordion.href!} className={linkClassName}>
+							<Link
+								key={idx}
+								to={`${accordion.href}/${accordion.id}`}
+								className={linkClassName}
+							>
 								{link.text}
 							</Link>
 						)}
