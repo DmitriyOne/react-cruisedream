@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, Articles, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
+import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, Article, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
 
-import { dataPortArticles, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortHelpfulBlogPosts } from '../../fakedata'
+import { dataPortArticlePhoto1, dataPortArticlePhoto2, dataPortArticlePhoto3, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortHelpfulBlogPosts } from '../../fakedata'
 
 export const CurrentPortPage = () => {
 	return (
@@ -10,7 +10,9 @@ export const CurrentPortPage = () => {
 			<IntroWithGallery {...dataPortGallery} />
 			<PopularCruises />
 			<Desc {...dataPortDesc} />
-			<Articles articles={dataPortArticles} />
+			<Article {...dataPortArticlePhoto1} />
+			<Article {...dataPortArticlePhoto2} />
+			<Article {...dataPortArticlePhoto3} />
 			<HelpfulAdvice {...dataPortHelpfulAdvice} />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataPortHelpfulBlogPosts} />

@@ -13,7 +13,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd. ',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 2,
@@ -23,7 +23,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 3,
@@ -33,7 +33,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 4,
@@ -43,7 +43,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 5,
@@ -53,7 +53,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 6,
@@ -63,7 +63,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 7,
@@ -73,7 +73,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 8,
@@ -83,7 +83,7 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 	{
 		id: 9,
@@ -93,6 +93,6 @@ export const dataAboutCompany: ICard[] = [
 		subtitle: 'Премиальная круизная компания, собственником которой является материнская компания Royal Caribbean Cruises Ltd. Компания основана в 1989 году греческой компанией Chandris, но уже в 1997 году Celebrity Cruises Ltd объединилась с Royal Caribbean International в круизный холдинг Royal Caribbean Cruises Ltd.',
 		tags: 'Семейных отдых, Круизы для новчков, Романтические круизы',
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
-		href: `${CRUISE_ROUTES.EMPTY}`,
+		href: '/company',
 	},
 ]

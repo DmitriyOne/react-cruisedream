@@ -1,15 +1,11 @@
 import { FC } from 'react'
 
 import { IArticle } from '../../../model/interfaces'
-import { Container } from '../../../components'
+import { Container } from '../..'
 
 import { ArticleItem } from './ArticleItem/ArticleItem'
 
-interface IProps {
-	articles: IArticle[]
-}
-
-export const Articles: FC<IProps> = ({ articles }) => {
+export const Article: FC<IArticle> = ({ ...article }) => {
 	return (
 		<Container
 			width="full"
@@ -18,9 +14,7 @@ export const Articles: FC<IProps> = ({ articles }) => {
 			className="pt-section"
 			tag="section"
 		>
-			{articles.map((article =>
-				<ArticleItem key={article.id} {...article} />
-			))}
+			<ArticleItem {...article} />
 		</Container>
 	)
 }

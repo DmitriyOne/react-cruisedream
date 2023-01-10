@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+
 import { ICard } from '../../../model/interfaces'
-import { B } from '../../B'
+import { B, Heading } from '../../../components'
 import { CruiseLogo } from '../../Cruise'
-import { Heading } from '../../Headings'
+
 import styles from './card-about-company.module.scss'
 
 export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
@@ -37,12 +38,12 @@ export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
 			</div>
 			<div className={styles.buttonWrapper}>
 				<Link
-					to={`${card.href}/${card.id}`}
+					to={'#'}
 					className={styles.button}
 				>
 					ПОДРОБНЕЕ
 				</Link>
-				<Link to={card.href!} className={styles.button}>
+				<Link to={`${card.href}/${card.id}`} className={styles.button}>
 					ВЫБРАТЬ
 				</Link>
 			</div>

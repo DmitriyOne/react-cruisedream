@@ -1,11 +1,31 @@
-import { Heading } from '../../components'
+import {
+	HeaderAnchors,
+	IntroWithGallery,
+	PopularCruises,
+	Desc,
+	Article,
+	HelpfulAdvice,
+	HelpfulBlogPosts,
+	About,
+	Advantages,
+} from '../../components/RepeaterBlocks'
+
+import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc } from '../../fakedata'
 
 export const CurrentCompanyPage = () => {
 	return (
-		<div style={{ marginTop: '100px', marginBottom: '100px' }}>
-			<Heading align="center">
-				CurrentCompanyPage
-			</Heading>
-		</div>
+		<>
+			<HeaderAnchors />
+			<IntroWithGallery {...dataCompanyGallery} />
+			<PopularCruises />
+			<Desc {...dataCompanyDesc} />
+			{/* <Article articles={dataPortArticles} />
+			<HelpfulAdvice {...dataPortHelpfulAdvice} /> */}
+			<PopularCruises />
+			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
+			<About />
+			<Advantages />
+
+		</>
 	)
 }

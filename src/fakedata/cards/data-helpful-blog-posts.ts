@@ -13,6 +13,11 @@ import portImg1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images
 import portImg2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/port/2.jpg'
 import portImg3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/port/3.jpg'
 
+import companyImg1Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/1.jpg'
+import companyImg2Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/2.jpg'
+import companyImg3Src from '../../components/RepeaterBlocks/HelpfulBlogPosts/images/region/3.jpg'
+
+
 export const dataRegionHelpfulBlogPosts: ICard[] = [
 	{
 		id: 1,
@@ -81,6 +86,30 @@ export const dataPortHelpfulBlogPosts: ICard[] = [
 		src: portImg3Src,
 		alt: '',
 		title: 'ЗАГАДОЧНЫЕ ДВОРЦЫ ИСПАНИИ',
+		href: '/blog-post',
+	}
+]
+
+export const dataCompanyHelpfulBlogPosts: ICard[] = [
+	{
+		id: 1,
+		src: companyImg1Src,
+		alt: '',
+		title: 'ЛУЧШИЕ ПЛЯЖИ СРЕДИЗЕМНОГО МОРЯ',
+		href: '/blog-post',
+	},
+	{
+		id: 2,
+		src: companyImg2Src,
+		alt: '',
+		title: 'ГИД ПО ВИНОДЕЛЬНЯМ ТОСКАНЫ',
+		href: '/blog-post',
+	},
+	{
+		id: 3,
+		src: companyImg3Src,
+		alt: '',
+		title: 'ЛУЧШИЕ РЕСТОРАНЫ ИТАЛИИ',
 		href: '/blog-post',
 	}
 ]
