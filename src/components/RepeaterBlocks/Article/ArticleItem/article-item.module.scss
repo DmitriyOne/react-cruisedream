@@ -1,6 +1,7 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
 
 .component {
 	width: 100%;
@@ -34,11 +35,11 @@
 
 .component {
 
-	&:nth-child(odd) .left {
+	&.photoLeft .left {
 		margin-right: 8px;
 	}
 
-	&:nth-child(even) .left {
+	&.photoRight .left {
 		margin-left: 8px;
 	}
 }
@@ -149,5 +150,25 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 16px;
 		text-indent: 1rem;
+	}
+}
+
+.button {
+	display: inline-block;
+	font-size: 17px;
+	line-height: 100%;
+	background-color: colors.$transparent;
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	padding: 20px 45px;
+	margin-top: 30px;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+			border: 1px solid colors.$transparent;
+		}
 	}
 }

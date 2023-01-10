@@ -1,16 +1,17 @@
+/* eslint-disable max-len */
 import {
 	HeaderAnchors,
 	IntroWithGallery,
 	PopularCruises,
 	Desc,
 	Article,
-	HelpfulAdvice,
 	HelpfulBlogPosts,
 	About,
 	Advantages,
 } from '../../components/RepeaterBlocks'
 
-import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc } from '../../fakedata'
+import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo } from '../../fakedata'
+import { Fleet } from './sections'
 
 export const CurrentCompanyPage = () => {
 	return (
@@ -18,9 +19,9 @@ export const CurrentCompanyPage = () => {
 			<HeaderAnchors />
 			<IntroWithGallery {...dataCompanyGallery} />
 			<PopularCruises />
+			<Article {...dataCompanyArticleVideo} />
+			<Fleet />
 			<Desc {...dataCompanyDesc} />
-			{/* <Article articles={dataPortArticles} />
-			<HelpfulAdvice {...dataPortHelpfulAdvice} /> */}
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
 			<About />

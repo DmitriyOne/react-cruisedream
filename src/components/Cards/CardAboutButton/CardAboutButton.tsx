@@ -2,12 +2,12 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ICard } from '../../../model/interfaces'
-import { B, Heading } from '../../../components'
+import { B, Heading } from '../..'
 import { CruiseLogo } from '../../Cruise'
 
-import styles from './card-about-company.module.scss'
+import styles from './card-about-button.module.scss'
 
-export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
+export const CardAboutButton: FC<ICard> = ({ ...card }) => {
 	return (
 		<div className={styles.component}>
 			<div className={styles.imageWrapper}>
@@ -24,11 +24,23 @@ export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
 							{card.title}
 						</B>
 					</Heading>
-					<CruiseLogo className={styles.logo} />
+					{card.logo && <CruiseLogo src={card.logo} className={styles.logo} />}
 				</div>
-				<B fontWeight={700} className={styles.fleetCompany}>
-					Флот: 6
-				</B>
+				{card.fleet &&
+					<B fontWeight={700} className={styles.fleetCompany}>
+						Флот: {card.fleet}
+					</B>
+				}
+				{card.created &&
+					<div className={styles.row}>
+						<B fontWeight={700} className={styles.fleetCompany}>
+							год постройки: {card.created}
+						</B>
+						<B fontWeight={700} className={styles.fleetCompany}>
+							год реновации: {card.update}
+						</B>
+					</div>
+				}
 				<p className={styles.subtitle}>
 					{card.subtitle}
 				</p>
@@ -44,7 +56,7 @@ export const CardAboutCompany: FC<ICard> = ({ ...card }) => {
 					ПОДРОБНЕЕ
 				</Link>
 				<Link to={`${card.href}/${card.id}`} className={styles.button}>
-					ВЫБРАТЬ
+					{card.buttonText ? card.buttonText : 'ВЫБРАТЬ'}
 				</Link>
 			</div>
 		</div>

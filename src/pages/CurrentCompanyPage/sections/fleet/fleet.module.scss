@@ -1,0 +1,54 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.swiper {
+	width: 100%;
+
+	&>div {
+		align-items: stretch;
+		padding: 0 10px 12px;
+	}
+}
+
+.grid {
+
+	&>div {
+		flex-wrap: wrap;
+
+		@include mixins.media-w(1180) {
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+.slide {
+	height: auto;
+}
+
+.w33 {
+	padding-right: 30px;
+	padding-bottom: 30px;
+
+	@include mixins.media-w(1180) {
+		padding-right: 0;
+		padding-bottom: 0;
+	}
+
+	&:nth-last-child(-n+3) {
+		padding-bottom: 0;
+	}
+}
+
+.hideButton {
+	opacity: 0 !important;
+	height: 0 !important;
+	padding: 0 !important;
+	font-size: 0 !important;
+	margin: 0 !important;
+	border-width: 0 !important;
+}

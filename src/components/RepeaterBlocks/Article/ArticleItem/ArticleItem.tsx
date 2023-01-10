@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import classNames from 'classnames'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import { IArticle } from '../../../../model/interfaces'
 import { Heading } from '../../../Headings'
@@ -34,6 +35,11 @@ export const ArticleItem: FC<IArticle> = ({ ...article }) => {
 				<p className={styles.description}>
 					{article.description}
 				</p>
+				{article.href &&
+					<Link className={styles.button} to={article.href!}>
+						ВСЕ КРУИЗЫ
+					</Link>
+				}
 			</div>
 		</div>
 	)

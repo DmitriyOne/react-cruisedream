@@ -1,5 +1,5 @@
 export * from './CardBlackout/CardBlackout'
 export * from './CardWithRoute/CardWithRoute'
 export * from './CardPopularCruise/CardPopularCruise'
-export * from './CardAboutCompany/CardAboutCompany'
+export * from './CardAboutButton/CardAboutButton'
 export * from './CardImageSlider/CardImageSlider'
