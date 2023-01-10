@@ -31,7 +31,7 @@ export const FAQ = () => {
 						textClass={styles.accordionSubtitle}
 						activeId={activeId}
 						handleToggle={handleToggle}
-						faq={faq}
+						accordion={faq}
 					/>
 				)}
 			</div>

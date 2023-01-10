@@ -8,6 +8,7 @@ import {
 	HelpfulBlogPosts,
 	About,
 	Advantages,
+	RegionsAccordion,
 } from '../../components/RepeaterBlocks'
 
 import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo } from '../../fakedata'
@@ -22,6 +23,7 @@ export const CurrentCompanyPage = () => {
 			<Article {...dataCompanyArticleVideo} />
 			<Fleet />
 			<Desc {...dataCompanyDesc} />
+			<RegionsAccordion />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
 			<About />
