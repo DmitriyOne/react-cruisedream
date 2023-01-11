@@ -1,7 +1,15 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, Article, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts } from '../../components/RepeaterBlocks'
-
-import { dataRegionArticlePhoto1, dataRegionArticlePhoto2, dataRegionArticleVideo, dataRegionDesc, dataRegionGallery, dataRegionHelpfulBlogPosts, dataRegionPopularPort, dataRegionsHelpfulAdvice } from '../../fakedata'
+import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts, Article } from '../../components/RepeaterBlocks'
+import {
+	dataRegionGallery,
+	dataRegionDesc,
+	dataRegionPopularPort,
+	dataRegionArticlePhoto1,
+	dataRegionArticlePhoto2,
+	dataRegionArticleVideo,
+	dataRegionsHelpfulAdvice,
+	dataRegionHelpfulBlogPosts,
+} from '../../fakedata'
 
 export const CurrentRegionPage = () => {
 	return (
@@ -13,9 +21,9 @@ export const CurrentRegionPage = () => {
 			<PopularCountries />
 			<MapsImages />
 			<PopularPorts {...dataRegionPopularPort} />
-			<Article {...dataRegionArticlePhoto1} />
+			{/* <Article {...dataRegionArticlePhoto1} />
 			<Article {...dataRegionArticlePhoto2} />
-			<Article {...dataRegionArticleVideo} />
+			<Article {...dataRegionArticleVideo} /> */}
 			<HelpfulAdvice {...dataRegionsHelpfulAdvice} />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataRegionHelpfulBlogPosts} />

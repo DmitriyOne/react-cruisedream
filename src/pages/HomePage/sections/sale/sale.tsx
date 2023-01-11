@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import { Container, Heading, MySwiper } from '../../../../components'
+import { Container, Heading } from '../../../../components'
 import { CRUISE_ROUTES } from '../../../../constants'
 
-import { dataSale } from '../../../../fakedata'
-import { params } from './swiper'
+import { SaleCard } from './sale-card/sale-card'
 
 import styles from './sale.module.scss'
 
@@ -15,16 +14,7 @@ export const Sale = () => {
 				<Heading as="h3" className={styles.title}>
 					АКЦИИ
 				</Heading>
-
-				<MySwiper
-					swiperClass={styles.swiper}
-					slideClass={styles.slide}
-					buttonClass={styles.swiperButtons}
-					params={params}
-					array={dataSale}
-					children="saleHome"
-				/>
-
+				<SaleCard />
 				<Link
 					className={styles.link}
 					to={CRUISE_ROUTES.DISCOUNTS}

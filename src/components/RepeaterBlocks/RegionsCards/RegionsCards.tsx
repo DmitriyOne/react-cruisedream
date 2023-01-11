@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params3x2Grid, dataRegionsCard, paramsRow } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
 
-import { CardBlackout, Container, Heading, MySwiper } from '../../../components'
+import { CardBlackout, Container, Heading } from '../../../components'
 
 import 'swiper/css'
 import 'swiper/css/grid'
@@ -32,10 +32,10 @@ export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
 		}, 1000)
 	}
 
-	const swiperClass = classNames({
+	const swiperClass = classNames(styles.swiper, {
 		[styles.grid]: position === 'row'
 	})
-	const sliderClass = classNames({
+	const sliderClass = classNames(styles.slide, {
 		[styles.w33]: position === 'row'
 	})
 	const buttonClass = classNames('button', {
@@ -54,20 +54,31 @@ export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
 			</Heading>
 
 			<Container>
-
-				<MySwiper
-					swiperClass={swiperClass}
-					slideClass={sliderClass}
-					params={params}
-					array={dataRegionsCard}
-					children="cardBlackout"
-					isSliceArray={true}
-					isNavigate={false}
-					sliceEndIdx={6}
-					isShowAll={isShowAll}
-					isSlideBoxShadow
-				/>
-
+				<Swiper
+					className={swiperClass}
+					{...params}
+				>
+					{isShowAll
+						?
+						<>
+							{dataRegionsCard.map(card =>
+								<SwiperSlide key={card.id} className={sliderClass}>
+									<CardBlackout card={card} />
+								</SwiperSlide>
+							)
+							}
+						</>
+						:
+						<>
+							{dataRegionsCard.slice(0, 6).map(card =>
+								<SwiperSlide key={card.id} className={sliderClass}>
+									<CardBlackout card={card} />
+								</SwiperSlide>
+							)
+							}
+						</>
+					}
+				</Swiper>
 			</Container>
 
 			<Link

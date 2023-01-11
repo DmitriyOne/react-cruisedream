@@ -10,9 +10,9 @@ export const CurrentPortPage = () => {
 			<IntroWithGallery {...dataPortGallery} />
 			<PopularCruises />
 			<Desc {...dataPortDesc} />
-			<Article {...dataPortArticlePhoto1} />
+			{/* <Article {...dataPortArticlePhoto1} />
 			<Article {...dataPortArticlePhoto2} />
-			<Article {...dataPortArticlePhoto3} />
+			<Article {...dataPortArticlePhoto3} /> */}
 			<HelpfulAdvice {...dataPortHelpfulAdvice} />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataPortHelpfulBlogPosts} />

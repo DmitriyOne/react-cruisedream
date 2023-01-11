@@ -4,11 +4,11 @@ import {
 	IntroWithGallery,
 	PopularCruises,
 	Desc,
-	Article,
 	HelpfulBlogPosts,
 	About,
 	Advantages,
 	RegionsAccordion,
+	Article,
 } from '../../components/RepeaterBlocks'
 
 import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo, dataCompanyArticlePhoto1, dataCompanyArticlePhoto2 } from '../../fakedata'
@@ -20,12 +20,12 @@ export const CurrentCompanyPage = () => {
 			<HeaderAnchors />
 			<IntroWithGallery {...dataCompanyGallery} />
 			<PopularCruises />
-			<Article {...dataCompanyArticleVideo} />
+			{/* <Article {...dataCompanyArticleVideo} /> */}
 			<Fleet />
 			<Desc {...dataCompanyDesc} />
 			<RegionsAccordion />
-			<Article {...dataCompanyArticlePhoto1} />
-			<Article {...dataCompanyArticlePhoto2} />
+			{/* <Article {...dataCompanyArticlePhoto1} />
+			<Article {...dataCompanyArticlePhoto2} /> */}
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
 			<About />

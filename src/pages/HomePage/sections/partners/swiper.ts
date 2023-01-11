@@ -1,14 +1,13 @@
-import { Pagination, SwiperOptions, Navigation } from 'swiper'
+import { Pagination, SwiperOptions } from 'swiper'
 
 import styles from './partners.module.scss'
 
 export const params: SwiperOptions = {
-	allowTouchMove: true,
 	loop: true,
 	cssMode: true,
 	slidesPerView: 2,
 	spaceBetween: 25,
-	modules: [Pagination, Navigation],
+	modules: [Pagination],
 	pagination: {
 		el: `.${styles.pagination}`,
 		clickable: true,

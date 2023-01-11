@@ -1,8 +1,31 @@
-@use '../../../styles/mixins.scss';
-@use '../../../styles/breakpoints.scss';
-@use '../../../styles/colors.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
 
-.component {
+.swiper {
+	width: 100%;
+	overflow: visible;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		overflow: hidden;
+	}
+
+	&>div {
+		align-items: stretch;
+	}
+}
+
+.slide {
+	position: relative;
+	height: auto;
+	min-height: 450px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		min-height: 420px;
+	}
+}
+
+.link {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -14,7 +37,7 @@
 	}
 }
 
-.imageWrapper {
+.cardImageWrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -37,13 +60,13 @@
 	}
 }
 
-.image {
+.cardImage {
 	height: 100%;
 	object-position: center;
 	transition: transform .6s;
 }
 
-.title {
+.swiper .cardTitle {
 	font-size: 32px;
 	line-height: 100%;
 	color: colors.$white;
@@ -60,7 +83,7 @@
 	}
 }
 
-.subtitle {
+.cardDescription {
 	font-size: 20px;
 	line-height: 120%;
 	color: colors.$white;
@@ -82,15 +105,15 @@
 }
 
 @include mixins.media-minw(breakpoints.$laptop) {
-	.link:hover .cardImageWrapper::before {
+	.slide:hover .cardImageWrapper::before {
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 
-	.link:hover .cardImageWrapper {
+	.slide:hover .cardImageWrapper {
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 	}
 
-	.link:hover .cardImage {
+	.slide:hover .cardImage {
 		transform: scale(1.05);
 	}
 }
