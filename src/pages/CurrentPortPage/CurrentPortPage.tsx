@@ -9,13 +9,13 @@ export const CurrentPortPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataPortGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<Desc {...dataPortDesc} />
 			<Article {...dataPortArticlePhoto1} />
 			<Article {...dataPortArticlePhoto2} />
 			<Article {...dataPortArticlePhoto3} />
 			<HelpfulAdvice {...dataPortHelpfulAdvice} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink  />
 			<HelpfulBlogPosts cards={dataPortHelpfulBlogPosts} />
 			<About />
 			<Advantages />

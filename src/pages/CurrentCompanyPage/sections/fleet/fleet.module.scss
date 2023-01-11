@@ -4,6 +4,15 @@
 .component {
 	padding-left: 10px;
 	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.container {
+	position: relative;
 }
 
 .swiper {
@@ -12,6 +21,11 @@
 	&>div {
 		align-items: stretch;
 		padding: 0 10px 12px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
 
@@ -51,4 +65,66 @@
 	font-size: 0 !important;
 	margin: 0 !important;
 	border-width: 0 !important;
+}
+
+.swiperArrow {
+	display: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 100%;
+	z-index: 20;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 20px;
+	}
+
+	&.prev {
+		left: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			left: 0;
+		}
+
+		&::before {
+			transform: rotate(-180deg);
+			right: auto;
+			left: 7px;
+		}
+	}
+
+	&.next {
+		right: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			right: 0;
+		}
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 269px;
+		right: 10px;
+		width: 6px;
+		height: 12px;
+		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
+		@include mixins.bg-cover;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 7px;
+			height: 12px;
+			right: 7px;
+		}
+	}
 }

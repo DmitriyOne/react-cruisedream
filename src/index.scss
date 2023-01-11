@@ -31,10 +31,10 @@
 }
 
 .pb-section {
-	padding-bottom: 42px;
+	padding-bottom: 32px;
 
 	@include media-w($laptop-l) {
-		padding-bottom: 36px;
+		padding-bottom: 26px;
 	}
 
 	@include media-w($laptop-s) {
@@ -146,7 +146,7 @@
 
 .button {
 	display: inline-block;
-	margin-top: 30px;
+	margin-top: 22px;
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 17px;

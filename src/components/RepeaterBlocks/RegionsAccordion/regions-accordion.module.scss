@@ -4,8 +4,13 @@
 @use '../../../styles/colors.scss';
 
 .component {
-	padding-left: 25px;
-	padding-right: 25px;
+	padding: 0px 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 10px 16px;
+		border-top: 0.3px solid rgba(79, 78, 78, 0.4);
+		border-bottom: 0.3px solid rgba(79, 78, 78, 0.4);
+	}
 }
 
 .title {
@@ -13,6 +18,10 @@
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		padding-bottom: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-weight: 300 !important;
 	}
 }
 

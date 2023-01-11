@@ -11,13 +11,14 @@ import styles from './desc.module.scss'
 interface IProps {
 	title: string
 	desc: string
+	componentClass?: string
 }
 
-export const Desc: FC<IProps> = ({ ...content }) => {
+export const Desc: FC<IProps> = ({ componentClass, ...content }) => {
 	return (
 		<Container
 			width="full"
-			className={classNames(styles.component)}
+			className={classNames(componentClass, styles.component)}
 			tag="section"
 		>
 			<Container width="containerS" direction="column">

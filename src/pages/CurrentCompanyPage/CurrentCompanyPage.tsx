@@ -19,14 +19,14 @@ export const CurrentCompanyPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataCompanyGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section" isBottomLink />
 			<Article {...dataCompanyArticleVideo} />
 			<Fleet />
-			<Desc {...dataCompanyDesc} />
+			<Desc componentClass="pb-section" {...dataCompanyDesc} />
 			<RegionsAccordion />
 			<Article {...dataCompanyArticlePhoto1} />
 			<Article {...dataCompanyArticlePhoto2} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
 			<About />
 			<Advantages />
