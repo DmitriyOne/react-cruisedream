@@ -10,8 +10,14 @@ import { CardPopularCruise, Container, Heading, Button } from '../../../componen
 
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'
+import { FC } from 'react'
 
-export const PopularCruises = () => {
+interface IProps {
+	componentClass?: string
+	isBottomLink?: boolean
+}
+
+export const PopularCruises: FC<IProps> = ({ componentClass, isBottomLink = false }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -19,7 +25,7 @@ export const PopularCruises = () => {
 			id="cruise"
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-s-section')}
+			className={classNames(componentClass, styles.component,)}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
@@ -49,6 +55,11 @@ export const PopularCruises = () => {
 					onClick={handlerNext}
 				/>
 			</Container>
+			{isBottomLink &&
+				<Link to={CRUISE_ROUTES.SEARCH} className="button">
+					ВСЕ КРУИЗЫ
+				</Link>
+			}
 		</Container>
 	)
 }

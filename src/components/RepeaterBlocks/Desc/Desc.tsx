@@ -31,10 +31,6 @@ export const Desc: FC<IProps> = ({ ...content }) => {
 				<p className={styles.text}>
 					{content.desc}
 				</p>
-
-				<Link to={CRUISE_ROUTES.SEARCH} className="button">
-					ВСЕ КРУИЗЫ
-				</Link>
 			</Container>
 		</Container>
 	)

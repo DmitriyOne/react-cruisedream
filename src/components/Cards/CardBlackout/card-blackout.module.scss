@@ -127,10 +127,6 @@
 		@include mixins.media-w(breakpoints.$laptop-s) {
 			font-size: 38px;
 		}
-
-		@include mixins.media-w(breakpoints.$tablet) {
-			font-size: 22px;
-		}
 	}
 
 	&.small {

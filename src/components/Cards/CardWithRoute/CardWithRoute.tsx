@@ -34,7 +34,7 @@ export const CardWithRoute: FC<ICard> = ({ ...card }) => {
 				to={`${card.href}/${card.id}`}
 				className={styles.button}
 			>
-				ВЫБРАТЬ
+				ПОДРОБНЕЕ
 			</Link>
 		</div>
 	)

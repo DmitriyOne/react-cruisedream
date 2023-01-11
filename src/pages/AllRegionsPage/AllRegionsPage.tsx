@@ -9,7 +9,7 @@ export const AllRegionsPage = () => {
 			<RegionsCards position="row" />
 			<Cruises />
 			<Banner />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-s-section" />
 			<PopularBlogPosts />
 			<About />
 			<Advantages />

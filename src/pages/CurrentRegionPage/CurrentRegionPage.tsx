@@ -17,7 +17,7 @@ export const CurrentRegionPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataRegionGallery} />
-			<PopularCruises />
+			<PopularCruises isBottomLink componentClass="pt-section pb-section" />
 			<Desc {...dataRegionDesc} />
 			<PopularCountries />
 			<MapsImages />

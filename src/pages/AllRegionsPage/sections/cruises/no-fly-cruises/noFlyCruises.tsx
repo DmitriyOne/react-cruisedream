@@ -15,7 +15,7 @@ export const NoFlyCruises = () => {
 	return (
 		<>
 			<Heading as="h2" className="title-secondary">
-				БЕЗ ПЕРЕЛЕТНЫЕ
+				популярные круизы из России
 			</Heading>
 			<Container className={styles.container}>
 				<Swiper

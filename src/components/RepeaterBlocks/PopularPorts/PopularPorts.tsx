@@ -2,8 +2,9 @@ import { FC } from 'react'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { useSwiperButtons } from '../../../hooks'
 import { ICard } from '../../../model/interfaces'
-import { CardWithRoute, Container, Heading } from '../../../components'
+import { CardWithRoute, Container, Heading, Button } from '../../../components'
 import { params4Col, } from '../../../fakedata'
 
 import 'swiper/css'
@@ -15,6 +16,8 @@ interface IProps {
 }
 
 export const PopularPorts: FC<IProps> = ({ ...content }) => {
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+
 	return (
 		<Container
 			id="ports"
@@ -27,9 +30,10 @@ export const PopularPorts: FC<IProps> = ({ ...content }) => {
 				{content.title}
 			</Heading>
 
-			<Container>
+			<Container className={styles.container}>
 				<Swiper
 					className={styles.swiper}
+					onSwiper={upDateSwiper}
 					{...params4Col}
 				>
 					{content.cards.map(card =>
@@ -42,6 +46,14 @@ export const PopularPorts: FC<IProps> = ({ ...content }) => {
 						</SwiperSlide>
 					)}
 				</Swiper>
+				<Button
+					className={classNames(styles.swiperArrow, styles.prev)}
+					onClick={handlerPrev}
+				/>
+				<Button
+					className={classNames(styles.swiperArrow, styles.next)}
+					onClick={handlerNext}
+				/>
 			</Container>
 		</Container>
 	)
