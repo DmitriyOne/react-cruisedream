@@ -21,8 +21,6 @@ interface IProps {
 }
 
 export const IntroHomeBanner: FC<IProps> = ({ ...swiper }) => {
-	console.log('render')
-
 
 	return (
 		<>

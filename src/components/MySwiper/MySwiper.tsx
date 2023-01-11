@@ -5,7 +5,7 @@ import { FC, ReactNode } from 'react'
 import { SwiperOptions } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { IntroHomeBanner } from '../Sliders/IntroHomeBanner/IntroHomeBanner'
+import { IntroHomeBanner, SaleHome } from '../Sliders'
 import { useSwiperButtons } from '../../hooks'
 import { Button } from '../../components'
 
@@ -20,7 +20,8 @@ enum EArrowColor {
 }
 
 enum EChildrenType {
-	introHome = 'intro-home'
+	introHome = 'intro-home',
+	saleHome = 'sale-home',
 }
 
 interface IProps {
@@ -71,7 +72,13 @@ export const MySwiper: FC<IProps> = ({
 
 								{children === 'introHome' &&
 									<IntroHomeBanner {...item}
-									/>}
+									/>
+								}
+
+								{children === 'saleHome' &&
+									<SaleHome {...item}
+									/>
+								}
 
 
 
