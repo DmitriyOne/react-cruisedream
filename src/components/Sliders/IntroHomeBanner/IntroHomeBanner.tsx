@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { IntroContent } from '../../../pages/HomePage/sections/intro/content/content'
+import { IntroHomeBannerContent } from './IntroHomeBannerContent/IntroHomeBannerContent'
 import { Container } from '../../Container'
 
 import styles from './intro-home-banner.module.scss'
@@ -33,16 +33,12 @@ export const IntroHomeBanner: FC<IProps> = ({ ...swiper }) => {
 					alt={swiper.alt}
 				/>
 			</div>
-			<Container
-				width="containerXl"
-			>
-				<IntroContent
-					title={swiper.title}
-					href={swiper.href}
-					variant={swiper.textPosition}
-					discount={swiper.discount}
-				/>
-			</Container>
+			<IntroHomeBannerContent
+				title={swiper.title}
+				href={swiper.href}
+				variant={swiper.textPosition}
+				discount={swiper.discount}
+			/>
 		</>
 	)
 }
