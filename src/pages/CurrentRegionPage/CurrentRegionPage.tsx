@@ -21,9 +21,9 @@ export const CurrentRegionPage = () => {
 			<PopularCountries />
 			<MapsImages />
 			<PopularPorts {...dataRegionPopularPort} />
-			{/* <Article {...dataRegionArticlePhoto1} />
+			<Article {...dataRegionArticlePhoto1} />
 			<Article {...dataRegionArticlePhoto2} />
-			<Article {...dataRegionArticleVideo} /> */}
+			<Article {...dataRegionArticleVideo} />
 			<HelpfulAdvice {...dataRegionsHelpfulAdvice} />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataRegionHelpfulBlogPosts} />

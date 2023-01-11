@@ -10,9 +10,9 @@ export const CurrentCountryPage = () => {
 			<PopularCruises />
 			<Desc {...dataCountryDesc} />
 			<PopularPorts {...dataCountryPopularPort} />
-			{/* <Article {...dataCountryArticlePhoto1} />
+			<Article {...dataCountryArticlePhoto1} />
 			<Article {...dataCountryArticlePhoto2} />
-			<Article {...dataCountryArticleVideo} /> */}
+			<Article {...dataCountryArticleVideo} />
 			<HelpfulAdvice {...dataCountryHelpfulAdvice} />
 			<PopularCruises />
 			<HelpfulBlogPosts cards={dataCountryHelpfulBlogPosts} />

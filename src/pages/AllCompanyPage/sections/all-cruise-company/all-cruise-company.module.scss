@@ -4,6 +4,11 @@
 .component {
 	padding-left: 10px;
 	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .container {
@@ -13,6 +18,11 @@
 .swiper {
 	width: 100%;
 	padding: 0 10px 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 	&>div {
 		align-items: stretch;
@@ -47,25 +57,35 @@
 	&.prev {
 		left: 10px;
 
+		@include mixins.media-w(breakpoints.$tablet) {
+			left: 0;
+		}
+
 		&::before {
-			transform: translate(-50%, -50%) rotate(-180deg);
+			transform: translateY(-50%,) rotate(-180deg);
+			right: auto;
+			left: 7px;
 		}
 	}
 
 	&.next {
 		right: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			right: 0;
+		}
 	}
 
 	&::before {
 		content: '';
 		display: block;
 		position: absolute;
-		top: 25%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 10px;
-		height: 22px;
-		background-image: url('../../../../assets/images/swiper/arrow-white.svg');
+		top: 54%;
+		right: 10px;
+		transform: translateY(-50%);
+		width: 6px;
+		height: 12px;
+		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {

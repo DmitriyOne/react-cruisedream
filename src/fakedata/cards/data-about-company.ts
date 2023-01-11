@@ -28,6 +28,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 3,
@@ -39,6 +40,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 4,
@@ -50,6 +52,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 5,
@@ -61,6 +64,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 6,
@@ -72,6 +76,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 7,
@@ -83,6 +88,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 8,
@@ -94,6 +100,7 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 	{
 		id: 9,
@@ -105,5 +112,6 @@ export const dataAboutCompany: ICard[] = [
 		learnMoreHref: `${CRUISE_ROUTES.EMPTY}`,
 		href: '/company',
 		fleet: '6',
+		logo: logoSrc,
 	},
 ]
