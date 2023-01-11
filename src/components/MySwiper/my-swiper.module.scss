@@ -3,6 +3,7 @@
 
 .component {
 	position: relative;
+	width: 100%;
 }
 
 .swiper {
@@ -22,7 +23,6 @@
 }
 
 .button {
-	display: none;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -34,16 +34,12 @@
 		width: 30px;
 	}
 
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		display: block;
-	}
-
 	@include mixins.media-w(breakpoints.$tablet-s) {
 		width: 20px;
 	}
 
 	&.prev {
-		left: 10px;
+		left: 0px;
 
 		&::before {
 			transform: translate(-50%, -50%) rotate(-180deg);
@@ -51,7 +47,7 @@
 	}
 
 	&.next {
-		right: 10px;
+		right: 0px;
 	}
 
 	&::before {
@@ -72,10 +68,10 @@
 	}
 }
 
-.arrowWhite {
+.arrowWhite::before {
 	background-image: url('../../assets/images/swiper/arrow-white.svg');
 }
 
-.arrowGray {
+.arrowGray::before {
 	background-image: url('../../assets/images/swiper/arrow-gray.svg');
 }

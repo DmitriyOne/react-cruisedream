@@ -1,13 +1,6 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 
-.component {}
-
-.swiper {
-	width: 100%;
-	height: 100%;
-}
-
 .slide {
 	height: 100%;
 	padding: 40px 20px 190px 20px;
@@ -28,7 +21,7 @@
 	}
 }
 
-.swiperArrow {
+.swiperButton {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -44,69 +37,17 @@
 		width: 30px;
 	}
 
-	&.prev {
-		left: 0;
-
-		&::before {
-			left: 55px;
-			transform: translateY(-50%) rotate(-180deg);
-
-			@include mixins.media-w(breakpoints.$laptop-l) {
-				left: 30px;
-			}
-
-			@include mixins.media-w(breakpoints.$tablet) {
-				left: 10px;
-			}
-		}
-	}
-
-	&.next {
-		right: 0;
-
-		&::before {
-			right: 55px;
-
-			@include mixins.media-w(breakpoints.$laptop-l) {
-				right: 30px;
-			}
-
-			@include mixins.media-w(breakpoints.$tablet) {
-				right: 10px;
-			}
-
-		}
-	}
-
 	&::before {
 		content: '';
 		position: absolute;
-		top: 50%;
+		top: 50% !important;
 		transform: translateY(-50%);
 		width: 13px;
 		height: 26px;
-		background-image: url('../../../../assets/images/swiper/arrow-white.svg');
-		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			width: 8px;
 			height: 16px;
 		}
-	}
-}
-
-.imageWrapper {
-	width: 100%;
-	height: 100%;
-	@include mixins.absolute-center;
-	z-index: -1;
-}
-
-.image {
-	height: 100%;
-	object-position: top;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		object-position: left;
 	}
 }

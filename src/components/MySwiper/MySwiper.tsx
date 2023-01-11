@@ -5,9 +5,13 @@ import { FC, ReactNode } from 'react'
 import { SwiperOptions } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { IntroHomeBanner } from '../Sliders/IntroHomeBanner/IntroHomeBanner'
 import { useSwiperButtons } from '../../hooks'
 import { Button } from '../../components'
 
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/navigation'
 import styles from './my-swiper.module.scss'
 
 enum EArrowColor {
@@ -15,10 +19,14 @@ enum EArrowColor {
 	gray = 'gray'
 }
 
+enum EChildrenType {
+	introHome = 'intro-home'
+}
+
 interface IProps {
 	params: SwiperOptions
 	array: any[]
-	children: ReactNode
+	children: keyof typeof EChildrenType
 	isNavigate?: boolean
 	isSlideBoxShadow?: boolean
 	swiperClass?: string
@@ -31,7 +39,7 @@ export const MySwiper: FC<IProps> = ({
 	params,
 	array,
 	children,
-	isNavigate,
+	isNavigate = true,
 	isSlideBoxShadow,
 	swiperClass,
 	slideClass,
@@ -58,9 +66,18 @@ export const MySwiper: FC<IProps> = ({
 						onSwiper={upDateSwiper}
 						{...params}
 					>
-						{array.map(card =>
-							<SwiperSlide key={card.id} className={slideClassName}>
-								{children}
+						{array.map((item, idx) =>
+							<SwiperSlide key={idx} className={slideClassName}>
+
+								{children === 'introHome' &&
+									<IntroHomeBanner {...item}
+									/>}
+
+
+
+
+
+
 							</SwiperSlide>
 						)}
 					</Swiper>
