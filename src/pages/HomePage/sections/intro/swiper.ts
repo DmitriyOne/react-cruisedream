@@ -1,4 +1,3 @@
-
 import { SwiperOptions, Navigation, EffectFade } from 'swiper'
 
 export const params: SwiperOptions = {

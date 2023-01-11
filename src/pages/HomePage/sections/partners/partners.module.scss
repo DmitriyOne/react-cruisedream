@@ -6,30 +6,14 @@
 	padding: 28px 20px;
 	border-top: 1px solid rgba(79, 78, 78, 0.15);
 	position: relative;
-}
-
-.container {
-	@include mixins.fluidMaxSize(910);
-	margin: 0 auto;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		@include mixins.fluidMaxSize(700);
-	}
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		@include mixins.fluidMaxSize(840);
-		padding-left: 70px;
-		padding-right: 70px;
-	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		@include mixins.fluidMaxSize(680);
-		padding-left: 40px;
-		padding-right: 40px;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
-.container .title {
+.title {
 	@include mixins.fonts(family.$source-sans-pro, 300);
 	font-size: 36px;
 	line-height: 120%;
@@ -57,16 +41,29 @@
 	}
 }
 
-.link {
-	display: block;
-}
-
 .swiper {
-	width: 100%;
-	margin-top: 20px;
+	@include mixins.fluidMaxSize(910);
+	margin: 20px auto 0;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(700);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(840);
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(680);
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
 
 	&>div {
-		align-items: center;
+		align-items: center !important;
 	}
 }
 
@@ -91,68 +88,11 @@
 	}
 }
 
-.swiperArrow {
-	position: absolute;
-	top: 57%;
-	transform: translateY(-50%);
-	width: 100px;
-	height: 100%;
-	z-index: 1;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		width: 50px;
-	}
+.swiperButton::before {
+	top: 45% !important;
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		width: 30px;
-	}
-
-	&.prev {
-		left: 0;
-
-		&::before {
-			left: 50px;
-			transform: translateY(-50%) rotate(-180deg);
-
-			@include mixins.media-w(breakpoints.$laptop-l) {
-				left: 30px;
-			}
-
-			@include mixins.media-w(breakpoints.$laptop) {
-				left: 10px;
-			}
-		}
-	}
-
-	&.next {
-		right: 0;
-
-		&::before {
-			right: 50px;
-
-			@include mixins.media-w(breakpoints.$laptop-l) {
-				right: 30px;
-			}
-
-			@include mixins.media-w(breakpoints.$laptop) {
-				right: 10px;
-			}
-		}
-	}
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 13px;
-		height: 26px;
-		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
-		@include mixins.bg-cover;
-
-		@include mixins.media-w(breakpoints.$tablet) {
-			width: 8px;
-			height: 16px;
-		}
+		width: 10px !important;
+		height: 16px !important;
 	}
 }
