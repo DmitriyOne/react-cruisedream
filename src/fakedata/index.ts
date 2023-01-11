@@ -1,6 +1,6 @@
 export * from './advantage'
 export * from './article'
-export * from './faq'
+export * from './accordion'
 export * from './select'
 export * from './homepage'
 export * from './swiper'

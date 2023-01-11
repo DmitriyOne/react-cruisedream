@@ -27,18 +27,18 @@
 
 .body {
 	width: 100%;
-	padding: 6px 20px 20px;
+	padding: 6px 20px 26px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		padding-bottom: 15px;
 	}
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
-		padding: 6px 15px 15px;
+		padding: 6px 20px 20px;
 	}
 
 	@include mixins.media-w(breakpoints.$laptop) {
-		padding: 12px 10px 10px;
+		padding-bottom: 12px;
 	}
 }
 
@@ -57,6 +57,8 @@
 	line-height: 110%;
 	text-align: left;
 	color: #004275;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .logo {
@@ -83,10 +85,10 @@
 
 .subtitle {
 	font-size: 12px;
-	line-height: 110%;
+	line-height: 130%;
 	font-weight: 500;
 	color: #4F4E4E;
-	padding-bottom: 6px;
+	padding-bottom: 8px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-bottom: 12px;
@@ -116,11 +118,12 @@
 	width: 50%;
 	padding: 18px 6px;
 	background-color: colors.$btn-hover;
-	font-size: 13px;
+	font-size: 17px;
 	line-height: 110%;
 	text-align: center;
 	color: colors.$white;
 	border: 1px solid colors.$transparent;
+	text-transform: uppercase;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		padding: 14px 4px;

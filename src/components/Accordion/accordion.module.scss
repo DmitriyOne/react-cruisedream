@@ -1,9 +1,10 @@
 @use '../../styles/mixins.scss';
 @use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
 
 .component {
-	width: 100%;
 	overflow: hidden;
+	width: 100%;
 }
 
 .title {
@@ -32,4 +33,8 @@
 		height: auto;
 	}
 
+}
+
+.link {
+	display: inline-block;
 }

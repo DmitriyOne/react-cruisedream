@@ -4,46 +4,55 @@ import classNames from 'classnames'
 import arrowIcon from './icons/arrow-down.svg'
 
 import styles from './accordion.module.scss'
+import { Link } from 'react-router-dom'
 
-interface IFaq {
+interface ILink {
+	text: string
+}
+
+interface IAccordion {
 	id: number
 	title: string
-	text: string
+	text?: string
+	links?: ILink[]
+	href?: string
 }
 
 interface IProps {
 	handleToggle: (id: number) => void
 	activeId: number | null
-	faq: IFaq
+	accordion: IAccordion
 	componentClass?: string
 	titleClass?: string
 	arrowClass?: string
 	bodyClass?: string
 	textClass?: string
+	linkClass?: string
 }
 
 export const Accordion: FC<IProps> = ({
-	handleToggle, activeId, faq, componentClass, arrowClass, titleClass, bodyClass, textClass
+	handleToggle, activeId, accordion, componentClass, arrowClass, titleClass, bodyClass, textClass, linkClass
 }) => {
 	const ref = useRef<HTMLDivElement>(null)
 
 	const componentClassName = classNames(componentClass, styles.component)
 	const titleClassName = classNames(titleClass, styles.title)
 	const arrowClassName = classNames(arrowClass, styles.arrow, {
-		[styles.active]: activeId === faq.id
+		[styles.active]: activeId === accordion.id
 	})
 	const bodyClassName = classNames(bodyClass, styles.body, {
-		[styles.active]: activeId === faq.id
+		[styles.active]: activeId === accordion.id
 	})
 	const textClassName = classNames(textClass, styles.text)
+	const linkClassName = classNames(linkClass, styles.link)
 
 	return (
 		<div className={componentClassName}>
 			<h4
 				className={titleClassName}
-				onClick={() => handleToggle(faq.id)}
+				onClick={() => handleToggle(accordion.id)}
 			>
-				{faq.title}
+				{accordion.title}
 				<span className={arrowClassName}>
 					<img src={arrowIcon} alt="Arrow icon" />
 				</span>
@@ -52,14 +61,32 @@ export const Accordion: FC<IProps> = ({
 				ref={ref}
 				className={bodyClassName}
 				style={
-					activeId === faq.id
+					activeId === accordion.id
 						? { height: ref.current!.scrollHeight }
 						: { height: '0px' }
 				}
 			>
-				<p className={textClassName}>
-					{faq.text}
-				</p>
+				{accordion.text &&
+					<p className={textClassName}>
+						{accordion.text}
+					</p>
+				}
+				{accordion.href
+					?
+					<>
+						{accordion.links!.map((link, idx) =>
+							<Link
+								key={idx}
+								to={`${accordion.href}/${accordion.id}`}
+								className={linkClassName}
+							>
+								{link.text}
+							</Link>
+						)}
+					</>
+					:
+					<></>
+				}
 			</div>
 		</div>
 	)

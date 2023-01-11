@@ -1,11 +1,36 @@
-import { Heading } from '../../components'
+/* eslint-disable max-len */
+import {
+	HeaderAnchors,
+	IntroWithGallery,
+	PopularCruises,
+	Desc,
+	HelpfulBlogPosts,
+	About,
+	Advantages,
+	RegionsAccordion,
+	Article,
+} from '../../components/RepeaterBlocks'
+
+import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo, dataCompanyArticlePhoto1, dataCompanyArticlePhoto2 } from '../../fakedata'
+import { Fleet } from './sections'
 
 export const CurrentCompanyPage = () => {
 	return (
-		<div style={{ marginTop: '100px', marginBottom: '100px' }}>
-			<Heading align="center">
-				CurrentCompanyPage
-			</Heading>
-		</div>
+		<>
+			<HeaderAnchors />
+			<IntroWithGallery {...dataCompanyGallery} />
+			<PopularCruises />
+			<Article {...dataCompanyArticleVideo} />
+			<Fleet />
+			<Desc {...dataCompanyDesc} />
+			<RegionsAccordion />
+			<Article {...dataCompanyArticlePhoto1} />
+			<Article {...dataCompanyArticlePhoto2} />
+			<PopularCruises />
+			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
+			<About />
+			<Advantages />
+
+		</>
 	)
 }

@@ -1,13 +1,11 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
 
 .component {
 	width: 100%;
 	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	margin-right: auto;
 	margin-bottom: 32px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
@@ -18,24 +16,30 @@
 		flex-direction: column !important;
 	}
 
-	&:nth-child(even) {
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.photoLeft {
+		flex-direction: row;
+		align-items: flex-start;
+		margin-right: auto;
+	}
+
+	&.photoRight {
 		flex-direction: row-reverse;
 		margin-left: auto;
 		margin-right: 0;
-	}
-
-	&:last-child {
-		margin-bottom: 0;
 	}
 }
 
 .component {
 
-	&:nth-child(odd) .left {
+	&.photoLeft .left {
 		margin-right: 8px;
 	}
 
-	&:nth-child(even) .left {
+	&.photoRight .left {
 		margin-left: 8px;
 	}
 }
@@ -146,5 +150,25 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 16px;
 		text-indent: 1rem;
+	}
+}
+
+.button {
+	display: inline-block;
+	font-size: 17px;
+	line-height: 100%;
+	background-color: colors.$transparent;
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	padding: 20px 45px;
+	margin-top: 30px;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+			border: 1px solid colors.$transparent;
+		}
 	}
 }
