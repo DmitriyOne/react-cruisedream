@@ -62,7 +62,7 @@
 		left: 10px;
 
 		&::before {
-			transform: translate(-50%, -50%) rotate(-180deg);
+			transform: translateX(-50%) rotate(-180deg);
 		}
 	}
 
@@ -74,9 +74,8 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateX(-50%);
 		width: 8px;
 		height: 14px;
 		background-image: url('../../../assets/images/swiper/arrow-white.svg');

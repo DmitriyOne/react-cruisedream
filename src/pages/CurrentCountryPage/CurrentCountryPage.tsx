@@ -8,14 +8,14 @@ export const CurrentCountryPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataCountryGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-s-section" />
 			<Desc {...dataCountryDesc} />
 			<PopularPorts {...dataCountryPopularPort} />
 			<Article {...dataCountryArticlePhoto1} />
 			<Article {...dataCountryArticlePhoto2} />
 			<Article {...dataCountryArticleVideo} />
 			<HelpfulAdvice {...dataCountryHelpfulAdvice} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<HelpfulBlogPosts cards={dataCountryHelpfulBlogPosts} />
 			<About />
 			<Advantages />
