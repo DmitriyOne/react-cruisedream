@@ -4,13 +4,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { params4Col, dataPopularCruises } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
+import { useSwiperButtons } from '../../../hooks'
 
-import { CardPopularCruise, Container, Heading } from '../../../components'
+import { CardPopularCruise, Container, Heading, Button } from '../../../components'
 
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'
 
 export const PopularCruises = () => {
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+
 	return (
 		<Container
 			id="cruise"
@@ -23,9 +26,10 @@ export const PopularCruises = () => {
 				ПОПУЛЯРНЫЕ КРУИЗЫ
 			</Heading>
 
-			<Container>
+			<Container className={styles.container}>
 				<Swiper
 					className={styles.swiper}
+					onSwiper={upDateSwiper}
 					{...params4Col}
 				>
 					{dataPopularCruises.map(card =>
@@ -36,10 +40,15 @@ export const PopularCruises = () => {
 						</SwiperSlide>
 					)}
 				</Swiper>
+				<Button
+					className={classNames(styles.swiperArrow, styles.prev)}
+					onClick={handlerPrev}
+				/>
+				<Button
+					className={classNames(styles.swiperArrow, styles.next)}
+					onClick={handlerNext}
+				/>
 			</Container>
-			<Link to={CRUISE_ROUTES.SEARCH} className="button">
-				ВСЕ КРУИЗЫ
-			</Link>
 		</Container>
 	)
 }

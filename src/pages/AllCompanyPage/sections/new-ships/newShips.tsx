@@ -15,7 +15,7 @@ export const NewShips = () => {
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pb-section')}
+			className={classNames(styles.component, 'pb-section-with-swiper')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">

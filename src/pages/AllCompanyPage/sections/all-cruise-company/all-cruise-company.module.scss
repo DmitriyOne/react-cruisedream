@@ -62,7 +62,7 @@
 		}
 
 		&::before {
-			transform: translateY(-50%,) rotate(-180deg);
+			transform: rotate(-180deg);
 			right: auto;
 			left: 7px;
 		}
@@ -80,9 +80,8 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 54%;
+		top: 269px;
 		right: 10px;
-		transform: translateY(-50%);
 		width: 6px;
 		height: 12px;
 		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
@@ -91,6 +90,7 @@
 		@include mixins.media-w(breakpoints.$tablet) {
 			width: 7px;
 			height: 12px;
+			right: 7px;
 		}
 	}
 }
