@@ -8,8 +8,8 @@ import {
 	About,
 	Advantages,
 	RegionsAccordion,
-	Article,
 } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
 
 import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo, dataCompanyArticlePhoto1, dataCompanyArticlePhoto2 } from '../../fakedata'
 import { Fleet } from './sections'

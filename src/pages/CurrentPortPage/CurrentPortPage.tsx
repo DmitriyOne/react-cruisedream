@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, Article, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
+import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
 
 import { dataPortArticlePhoto1, dataPortArticlePhoto2, dataPortArticlePhoto3, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortHelpfulBlogPosts } from '../../fakedata'
 

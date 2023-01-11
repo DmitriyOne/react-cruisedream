@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import { About, Advantages, Article, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
+import { About, Advantages, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
 import { dataCountryArticlePhoto1, dataCountryArticlePhoto2, dataCountryArticleVideo, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryHelpfulBlogPosts } from '../../fakedata'
 
 export const CurrentCountryPage = () => {

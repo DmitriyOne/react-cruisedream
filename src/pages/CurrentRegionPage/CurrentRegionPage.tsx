@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts, Article } from '../../components/RepeaterBlocks'
+import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
 import {
 	dataRegionGallery,
 	dataRegionDesc,
