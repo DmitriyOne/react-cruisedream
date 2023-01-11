@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { IntroHomeBanner, Partners, SaleHome } from '../Sliders'
 import { useSwiperButtons } from '../../hooks'
-import { Button } from '../../components'
+import { Button, CardBlackout } from '../../components'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
@@ -22,7 +22,8 @@ enum EArrowColor {
 enum EChildrenType {
 	introHome = 'intro-home',
 	saleHome = 'sale-home',
-	partners = 'partners'
+	partners = 'partners',
+	cardBlackout = 'card-blackout',
 }
 
 interface IProps {
@@ -32,6 +33,9 @@ interface IProps {
 	isNavigate?: boolean
 	isPagination?: boolean
 	isSlideBoxShadow?: boolean
+	isShowAll?: boolean
+	isSliceArray?: boolean
+	sliceEndIdx?: number
 	componentClass?: string
 	swiperClass?: string
 	slideClass?: string
@@ -47,6 +51,9 @@ export const MySwiper: FC<IProps> = ({
 	isNavigate = true,
 	isPagination = false,
 	isSlideBoxShadow = false,
+	isShowAll,
+	isSliceArray = false,
+	sliceEndIdx,
 	componentClass,
 	swiperClass,
 	slideClass,
@@ -77,26 +84,17 @@ export const MySwiper: FC<IProps> = ({
 					>
 						{array.map((item, idx) =>
 							<SwiperSlide key={idx} className={slideClassName}>
-
 								{children === 'introHome' &&
 									<IntroHomeBanner {...item}
 									/>
 								}
-
 								{children === 'saleHome' &&
 									<SaleHome {...item}
 									/>
 								}
-
 								{children === 'partners' &&
 									<Partners {...item} />
 								}
-
-
-
-
-
-
 							</SwiperSlide>
 						)}
 						{isPagination && <div className={paginationClassName} />}
@@ -112,6 +110,58 @@ export const MySwiper: FC<IProps> = ({
 				</div>
 			}
 
+			{isSliceArray &&
+				<div className={componentClassName}>
+					<Swiper
+						className={swiperClassName}
+						onSwiper={upDateSwiper}
+						{...params}
+					>
+						{isShowAll
+							?
+							<>
+								{array.map((item, idx) =>
+									<SwiperSlide key={idx} className={slideClassName}>
+										{children === 'cardBlackout' && <CardBlackout card={item} />}
+									</SwiperSlide>
+								)}
+							</>
+							:
+							<>
+								{array.slice(0, sliceEndIdx).map((item, idx) =>
+									<SwiperSlide key={idx} className={slideClassName}>
+										{children === 'cardBlackout' && <CardBlackout card={item} />}
+									</SwiperSlide>
+								)}
+							</>
+						}
+
+						{array.map((item, idx) =>
+							<SwiperSlide key={idx} className={slideClassName}>
+								{children === 'introHome' &&
+									<IntroHomeBanner {...item}
+									/>
+								}
+								{children === 'saleHome' &&
+									<SaleHome {...item}
+									/>
+								}
+								{children === 'partners' &&
+									<Partners {...item} />
+								}
+							</SwiperSlide>
+						)}
+					</Swiper>
+					<Button
+						className={classNames(buttonClassName, styles.prev)}
+						onClick={handlerPrev}
+					/>
+					<Button
+						className={classNames(buttonClassName, styles.next)}
+						onClick={handlerNext}
+					/>
+				</div>
+			}
 
 		</>
 	)
