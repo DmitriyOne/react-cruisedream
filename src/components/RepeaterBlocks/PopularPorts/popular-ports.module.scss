@@ -27,6 +27,11 @@
 	width: 100%;
 	padding: 0 10px 12px;
 
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+		overflow: visible;
+	}
+
 	&>div {
 		align-items: stretch;
 	}
