@@ -1,10 +1,17 @@
 import { Container } from '../../../components'
 
 import { dataAdvantages } from '../../../fakedata'
+import { useWindowSize } from '../../../hooks'
 
 import styles from './advantages.module.scss'
 
 export const Advantages = () => {
+	const { isMobile } = useWindowSize()
+
+	if (isMobile) {
+		return null
+	}
+	
 	return (
 		<Container width="full" className={styles.component} tag="section">
 			<Container className={styles.container} align="start">

@@ -19,7 +19,7 @@ export const PopularCruises = () => {
 			id="cruise"
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			className={classNames(styles.component, 'pt-section', 'pb-s-section')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
