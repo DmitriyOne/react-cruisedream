@@ -85,7 +85,7 @@
 		transform: translateY(-50%);
 		width: 13px;
 		height: 26px;
-		background-image: url('../../../../assets/images/swiper/arrow-right.svg');
+		background-image: url('../../../../assets/images/swiper/arrow-white.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {

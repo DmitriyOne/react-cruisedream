@@ -1,29 +1,27 @@
-@use '../../../../styles/mixins.scss';
-@use '../../../../styles/breakpoints.scss';
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
 
 .component {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.container {
 	position: relative;
 }
 
 .swiper {
 	width: 100%;
-	padding: 0 10px 12px;
 
 	&>div {
 		align-items: stretch;
 	}
 }
 
+.swiperPadding {
+	padding: 0 10px 12px;
+}
+
 .slide {
 	height: auto;
 }
 
-.swiperArrow {
+.button {
 	display: none;
 	position: absolute;
 	top: 50%;
@@ -60,22 +58,24 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 62%;
+		top: 25%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 10px;
 		height: 22px;
-		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
 		@include mixins.bg-cover;
-
-		@include mixins.media-w(breakpoints.$tablet) {
-			top: 30%;
-			background-image: url('../../../../assets/images/swiper/arrow-white.svg');
-		}
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			width: 7px;
 			height: 12px;
 		}
 	}
+}
+
+.arrowWhite {
+	background-image: url('../../assets/images/swiper/arrow-white.svg');
+}
+
+.arrowGray {
+	background-image: url('../../assets/images/swiper/arrow-gray.svg');
 }
