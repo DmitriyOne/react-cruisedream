@@ -20,8 +20,8 @@
 	padding: 0 10px 12px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		padding-left: 0;
-		padding-right: 0;
+		padding: 0;
+		overflow: visible;
 	}
 
 	&>div {

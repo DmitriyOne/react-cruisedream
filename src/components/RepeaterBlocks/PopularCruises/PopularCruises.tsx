@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,7 +11,6 @@ import { CardPopularCruise, Container, Heading, Button } from '../../../componen
 
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'
-import { FC } from 'react'
 
 interface IProps {
 	componentClass?: string

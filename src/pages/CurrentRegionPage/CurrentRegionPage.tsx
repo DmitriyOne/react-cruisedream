@@ -17,7 +17,7 @@ export const CurrentRegionPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataRegionGallery} />
-			<PopularCruises isBottomLink componentClass="pt-section pb-section" />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<Desc {...dataRegionDesc} />
 			<PopularCountries />
 			<MapsImages />
@@ -26,7 +26,7 @@ export const CurrentRegionPage = () => {
 			<Article {...dataRegionArticlePhoto2} />
 			<Article {...dataRegionArticleVideo} />
 			<HelpfulAdvice {...dataRegionsHelpfulAdvice} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<HelpfulBlogPosts cards={dataRegionHelpfulBlogPosts} />
 			<About />
 			<Advantages />
