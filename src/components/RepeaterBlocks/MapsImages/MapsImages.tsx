@@ -1,10 +1,9 @@
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
-import { CRUISE_ROUTES } from '../../../constants'
+import { CRUISE_MAP } from '../../../constants'
 
 import { useWindowSize } from '../../../hooks'
 import { B } from '../../B'
-import { Container } from '../../Container'
 
 import mapImage from './images/map.svg'
 
@@ -27,7 +26,7 @@ export const MapsImages = () => {
 				/>
 				<div className={styles.buttonWrapper}>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.aroundTheWorld}
 						className={classNames(styles.button, styles.aroundWorld)}
 					>
 						<B fontWeight={700}>
@@ -37,25 +36,25 @@ export const MapsImages = () => {
 					
 					{/* first row */}
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.northAmerica}
 						className={classNames(styles.button, styles.northAmerica)}
 					>
 						СЕВЕРНАЯ АМЕРИКА
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.europe}
 						className={classNames(styles.button, styles.europe)}
 					>
 						ЕВРОПА
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.asiaFarEast}
 						className={classNames(styles.button, styles.asiaFarEast)}
 					>
 						АЗИЯ ДАЛЬНИЙ ВОСТОК
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.mediterranean}
 						className={classNames(styles.button, styles.mediterranean)}
 					>
 						СРЕДИЗЕМНОЕ МОРЕ
@@ -63,19 +62,19 @@ export const MapsImages = () => {
 
 					{/* second row */}
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.centerAmericaAndPanamaCanal}
 						className={classNames(styles.button, styles.centerAmericaAndPanamaCanal)}
 					>
 						АМЕРИКА И ПАНАМСКИЙ КАНАЛ
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.africaAndMidEast}
 						className={classNames(styles.button, styles.africaAndMidEast)}
 					>
 						АФРИКА И СРЕДНИЙ ВОСТОК
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.pacificIslandsAndHawaii}
 						className={classNames(styles.button, styles.pacificIslandsAndHawaii)}
 					>
 						ОСТРОВА ТИХОГО ОКЕАНА И ГАВАИ
@@ -83,32 +82,32 @@ export const MapsImages = () => {
 
 					{/* third row */}
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.southAmericaAndGalapagos}
 						className={classNames(styles.button, styles.southAmericaAndGalapagos)}
 					>
 						ЮжНАЯ АМЕРИКА и ГАЛАПАГОСЫ
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.atlanticIslands}
 						className={classNames(styles.button, styles.atlanticIslands)}
 					>
 						АТЛАНТИЧЕСКИЕ ОСТРОВА
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.indianOcean}
 						className={classNames(styles.button, styles.indianOcean)}
 					>
 						ИНДИЙСКИЙ ОКЕАН
 					</Link>
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.australiaAndNewZealand}
 						className={classNames(styles.button, styles.australiaAndNewZealand)}
 					>
 						АВСТРАЛИЯ НОВАЯ ЗЕЛАНДИЯ
 					</Link>
 
 					<Link
-						to={CRUISE_ROUTES.EMPTY}
+						to={CRUISE_MAP.popularRegions}
 						className={classNames(styles.button, styles.popularRegions)}
 					>
 						<B fontWeight={700}>

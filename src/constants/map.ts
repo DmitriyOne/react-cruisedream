@@ -1,0 +1,15 @@
+export const CRUISE_MAP = {
+	aroundTheWorld: '#',
+	northAmerica: '#',
+	europe: '#',
+	asiaFarEast: '#',
+	mediterranean: '#',
+	centerAmericaAndPanamaCanal: '#',
+	africaAndMidEast: '#',
+	pacificIslandsAndHawaii: '#',
+	southAmericaAndGalapagos: '#',
+	atlanticIslands: '#',
+	indianOcean: '#',
+	australiaAndNewZealand: '#',
+	popularRegions: '#',
+}
