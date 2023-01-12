@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { useSwiperButtons } from '../../../hooks'
 import { ICard } from '../../../model/interfaces'
-import { CardWithRoute, Container, Heading, Button } from '../../../components'
+import { CardButtonHover, Container, Heading, Button } from '../../../components'
 import { params4Col, } from '../../../fakedata'
 
 import 'swiper/css'
@@ -38,10 +38,10 @@ export const PopularPorts: FC<IProps> = ({ ...content }) => {
 				>
 					{content.cards.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardWithRoute
-								{...card}
+							<CardButtonHover
 								isSubtitleIndent
 								isSubtitleJustify
+								{...card}
 							/>
 						</SwiperSlide>
 					)}

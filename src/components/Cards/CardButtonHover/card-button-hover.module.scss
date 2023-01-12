@@ -86,10 +86,20 @@
 	display: block;
 	width: 100%;
 	padding: 13px 6px;
-	background-color: #004275;
+	background-color: colors.$white;
 	font-size: 13px;
 	line-height: 110%;
 	text-align: center;
-	color: colors.$white;
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
 	margin-top: auto;
+	transition: all .3s;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 1px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
 }

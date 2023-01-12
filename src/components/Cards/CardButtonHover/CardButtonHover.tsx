@@ -1,12 +1,13 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { ICard } from '../../../model/interfaces'
-import { B } from '../../B'
-import { Heading } from '../../Headings'
-import styles from './card-with-route.module.scss'
 
-export const CardWithRoute: FC<ICard> = ({ ...card }) => {
+import { ICard } from '../../../model/interfaces'
+import { B,Heading } from '../../../components'
+
+import styles from './card-button-hover.module.scss'
+
+export const CardButtonHover: FC<ICard> = ({ ...card }) => {
 	const subtitleClassName = classNames(styles.subtitle, {
 		[styles.indent]: card.isSubtitleIndent,
 		[styles.justify]: card.isSubtitleJustify
