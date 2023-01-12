@@ -24,6 +24,7 @@ export const RouteList = () => {
 			<AccordionTable
 				handleToggle={handleToggle}
 				body={DataRouteList}
+				
 				activeId={activeId}
 			/>
 		</div>
