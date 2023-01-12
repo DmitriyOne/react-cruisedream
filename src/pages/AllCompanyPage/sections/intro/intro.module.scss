@@ -22,6 +22,10 @@
 		height: 250px;
 	}
 
+	@include mixins.media-h(830){
+		height: 500px;
+	}
+
 	img {
 		height: 100%;
 	}
