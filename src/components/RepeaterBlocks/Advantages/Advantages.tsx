@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { Container } from '../../../components'
 
 import { dataAdvantages } from '../../../fakedata'
@@ -7,8 +8,9 @@ import styles from './advantages.module.scss'
 
 export const Advantages = () => {
 	const { isMobile } = useWindowSize()
+	const { pathname } = useLocation()
 
-	if (isMobile) {
+	if (isMobile && pathname !== '/') {
 		return null
 	}
 	

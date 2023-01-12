@@ -16,7 +16,7 @@ export const Sale = () => {
 				</Heading>
 				<SaleCard />
 				<Link
-					className={styles.link}
+					className="button"
 					to={CRUISE_ROUTES.DISCOUNTS}
 				>
 					ВСЕ АКЦИИ

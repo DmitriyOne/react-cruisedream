@@ -213,8 +213,8 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin-top: 40px;
 		font-size: 16px;
-		background: #004275;
-		border-color: #004275;
+		background: colors.$btn-hover;
+		border-color: colors.$btn-border;
 	}
 
 	&.mt0 {

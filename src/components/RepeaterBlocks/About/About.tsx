@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { Container } from '../../../components'
 import { CRUISE_ROUTES } from '../../../constants'
@@ -8,8 +8,9 @@ import styles from './about.module.scss'
 
 export const About = () => {
 	const { isMobile } = useWindowSize()
+	const { pathname } = useLocation()
 
-	if (isMobile) {
+	if (isMobile && pathname !== '/') {
 		return null
 	}
 

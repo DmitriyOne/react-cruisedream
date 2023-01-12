@@ -5,15 +5,19 @@ import { params } from './swiper'
 
 import { dataSale } from '../../../../../fakedata'
 
-import { Heading, Discount } from '../../../../../components'
+import { useSwiperButtons } from '../../../../../hooks'
+import { Heading, Discount, Button } from '../../../../../components'
 
 import styles from './sale-card.module.scss'
+import classNames from 'classnames'
 
 export const SaleCard = () => {
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
 		<Swiper
 			className={styles.swiper}
+			onSwiper={upDateSwiper}
 			{...params}
 		>
 			{dataSale.map((item, idx) => {
@@ -34,7 +38,7 @@ export const SaleCard = () => {
 									alt={item.alt}
 								/>
 							</div>
-							<Heading as="h4" className={styles.cardTitle}>
+							<Heading as="h4" className={styles.cardTitle} align="center">
 								{item.title}
 							</Heading>
 							<p className={styles.cardDescription}>
@@ -50,6 +54,14 @@ export const SaleCard = () => {
 				)
 			}
 			)}
+			<Button
+				className={classNames(styles.swiperArrow, styles.prev)}
+				onClick={handlerPrev}
+			/>
+			<Button
+				className={classNames(styles.swiperArrow, styles.next)}
+				onClick={handlerNext}
+			/>
 		</Swiper >
 	)
 }
