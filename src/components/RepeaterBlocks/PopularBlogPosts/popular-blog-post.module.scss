@@ -57,10 +57,6 @@
 	&.prev {
 		left: 10px;
 
-		@include mixins.media-w(breakpoints.$tablet) {
-			left: 0;
-		}
-
 		&::before {
 			transform: translate(-50%, -50%) rotate(-180deg);
 		}
@@ -68,10 +64,6 @@
 
 	&.next {
 		right: 10px;
-
-		@include mixins.media-w(breakpoints.$tablet) {
-			right: 0;
-		}
 	}
 
 	&::before {
@@ -81,13 +73,13 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 8px;
-		height: 14px;
+		width: 10px;
+		height: 22px;
 		background-image: url('../../../assets/images/swiper/arrow-white.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {
-			width: 6px;
+			width: 7px;
 			height: 12px;
 		}
 	}

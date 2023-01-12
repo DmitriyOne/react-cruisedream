@@ -4,14 +4,14 @@ import {
 	IntroWithGallery,
 	PopularCruises,
 	Desc,
-	HelpfulBlogPosts,
 	About,
 	Advantages,
 	RegionsAccordion,
+	PopularBlogPosts,
 } from '../../components/RepeaterBlocks'
 import { Article } from '../../components/RepeaterBlocks/Article/Article'
 
-import { dataCompanyGallery, dataCompanyHelpfulBlogPosts, dataCompanyDesc, dataCompanyArticleVideo, dataCompanyArticlePhoto1, dataCompanyArticlePhoto2 } from '../../fakedata'
+import { dataCompanyGallery, dataCompanyDesc, dataCompanyArticleVideo, dataCompanyArticlePhoto1, dataCompanyArticlePhoto2, dataCompanyPopularBlogPosts } from '../../fakedata'
 import { Fleet } from './sections'
 
 export const CurrentCompanyPage = () => {
@@ -27,7 +27,7 @@ export const CurrentCompanyPage = () => {
 			<Article {...dataCompanyArticlePhoto1} />
 			<Article {...dataCompanyArticlePhoto2} />
 			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
-			<HelpfulBlogPosts cards={dataCompanyHelpfulBlogPosts} />
+			<PopularBlogPosts cards={dataCompanyPopularBlogPosts} />
 			<About />
 			<Advantages />
 

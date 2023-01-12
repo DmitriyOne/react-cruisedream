@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import { About, Advantages, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
+import { About, Advantages, Desc, HeaderAnchors, HelpfulAdvice, IntroWithGallery, PopularBlogPosts, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
 import { Article } from '../../components/RepeaterBlocks/Article/Article'
-import { dataCountryArticlePhoto1, dataCountryArticlePhoto2, dataCountryArticleVideo, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryHelpfulBlogPosts } from '../../fakedata'
+import { dataCountryArticlePhoto1, dataCountryArticlePhoto2, dataCountryArticleVideo, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryPopularBlogPosts } from '../../fakedata'
 
 export const CurrentCountryPage = () => {
 	return (
@@ -16,7 +16,7 @@ export const CurrentCountryPage = () => {
 			<Article {...dataCountryArticleVideo} />
 			<HelpfulAdvice {...dataCountryHelpfulAdvice} />
 			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
-			<HelpfulBlogPosts cards={dataCountryHelpfulBlogPosts} />
+			<PopularBlogPosts cards={dataCountryPopularBlogPosts} />
 			<About />
 			<Advantages />
 		</>
