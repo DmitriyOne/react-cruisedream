@@ -41,6 +41,8 @@ export const MyDatepicker: FC<IProps> = ({
 				onChange={onChange!}
 				selectsRange
 
+				onFocus={(e) => e.target.readOnly = true}
+
 				placeholderText={placeholder}
 				locale={ru}
 				dateFormat={'dd.MM.yy'}
