@@ -1,19 +1,22 @@
 /* eslint-disable max-len */
-import { About, Advantages, Articles, Desc, HeaderAnchors, HelpfulAdvice, HelpfulBlogPosts, IntroWithGallery, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
-import { dataCountryArticles, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryHelpfulBlogPosts } from '../../fakedata'
+import { About, Advantages, Desc, HeaderAnchors, HelpfulAdvice, IntroWithGallery, PopularBlogPosts, PopularCruises, PopularPorts } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
+import { dataCountryArticlePhoto1, dataCountryArticlePhoto2, dataCountryArticleVideo, dataCountryGallery, dataCountryDesc, dataCountryHelpfulAdvice, dataCountryPopularPort, dataCountryPopularBlogPosts } from '../../fakedata'
 
 export const CurrentCountryPage = () => {
 	return (
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataCountryGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-s-section" />
 			<Desc {...dataCountryDesc} />
 			<PopularPorts {...dataCountryPopularPort} />
-			<Articles articles={dataCountryArticles} />
+			<Article {...dataCountryArticlePhoto1} />
+			<Article {...dataCountryArticlePhoto2} />
+			<Article {...dataCountryArticleVideo} />
 			<HelpfulAdvice {...dataCountryHelpfulAdvice} />
-			<PopularCruises />
-			<HelpfulBlogPosts cards={dataCountryHelpfulBlogPosts} />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
+			<PopularBlogPosts cards={dataCountryPopularBlogPosts} />
 			<About />
 			<Advantages />
 		</>

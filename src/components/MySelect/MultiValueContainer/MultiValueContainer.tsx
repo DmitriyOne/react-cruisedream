@@ -9,7 +9,6 @@ export const MultiValueContainer = ({ data, selectProps }: MultiValueGenericProp
 	const isLastSelected = index === allSelected.length - 1
 	const labelSuffix = isLastSelected ? '' : ', '
 	const val = `${label}${labelSuffix}`
-	console.log(val)
 
 	return (
 		<>

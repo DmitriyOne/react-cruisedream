@@ -1,6 +1,12 @@
+/* eslint-disable no-unused-vars */
 interface IImage {
 	src: string
 	alt: string
+}
+
+enum EPosition {
+	left = 'left',
+	right = 'right'
 }
 
 export interface IArticle {
@@ -8,6 +14,7 @@ export interface IArticle {
 	image?: IImage
 	title: string
 	description: string
-	isVideo?: boolean
-	videoSrc?: string
+	video?: string
+	href?: string
+	position: keyof typeof EPosition
 }

@@ -1,19 +1,22 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, Articles, HelpfulAdvice, HelpfulBlogPosts, About, Advantages } from '../../components/RepeaterBlocks'
+import { HeaderAnchors, IntroWithGallery, PopularCruises, Desc, HelpfulAdvice, About, Advantages, PopularBlogPosts } from '../../components/RepeaterBlocks'
+import { Article } from '../../components/RepeaterBlocks/Article/Article'
 
-import { dataPortArticles, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortHelpfulBlogPosts } from '../../fakedata'
+import { dataPortArticlePhoto1, dataPortArticlePhoto2, dataPortArticlePhoto3, dataPortDesc, dataPortGallery, dataPortHelpfulAdvice, dataPortPopularBlogPosts } from '../../fakedata'
 
 export const CurrentPortPage = () => {
 	return (
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataPortGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<Desc {...dataPortDesc} />
-			<Articles articles={dataPortArticles} />
+			<Article {...dataPortArticlePhoto1} />
+			<Article {...dataPortArticlePhoto2} />
+			<Article {...dataPortArticlePhoto3} />
 			<HelpfulAdvice {...dataPortHelpfulAdvice} />
-			<PopularCruises />
-			<HelpfulBlogPosts cards={dataPortHelpfulBlogPosts} />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink  />
+			<PopularBlogPosts cards={dataPortPopularBlogPosts} />
 			<About />
 			<Advantages />
 		</>

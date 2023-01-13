@@ -23,8 +23,12 @@
 	position: relative;
 }
 
-.sliderImage {
+.cruisePhoto {
 	height: 205px;
+
+	img {
+		height: 100%;
+	}
 }
 
 .sliderArrow {
@@ -100,6 +104,11 @@
 .body {
 	width: 100%;
 	padding: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
 }
 
 .logo {
@@ -110,6 +119,10 @@
 .name {
 	font-size: 15px;
 	text-align: center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
 }
 
 .shipWrapper {

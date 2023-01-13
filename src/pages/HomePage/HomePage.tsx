@@ -9,7 +9,7 @@ export const HomePage = () => {
 			<Search />
 			<Sale />
 			<Banner />
-			<RegionsCards />
+			<RegionsCards position="grid" />
 			<Partners />
 			<About />
 			<Advantages />

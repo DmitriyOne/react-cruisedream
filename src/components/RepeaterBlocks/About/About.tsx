@@ -1,11 +1,19 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { Container } from '../../../components'
 import { CRUISE_ROUTES } from '../../../constants'
+import { useWindowSize } from '../../../hooks'
 
 import styles from './about.module.scss'
 
 export const About = () => {
+	const { isMobile } = useWindowSize()
+	const { pathname } = useLocation()
+
+	if (isMobile && pathname !== '/') {
+		return null
+	}
+
 	return (
 		<Container width="full" className={styles.component} tag="section">
 			<div className={styles.bg} />

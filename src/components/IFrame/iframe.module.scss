@@ -1,7 +1,15 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+
 .component {
 	position: relative;
+	height: 100%;
 	padding-bottom: 56.25%;
 	overflow: hidden;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
 }
 
 .iframe {

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { dataWithoutFlyCard, params4Col } from '../../../../../fakedata'
 
-import { Button, CardWithRoute, Container, Heading } from '../../../../../components'
+import { Button, CardButtonHover, Container, Heading } from '../../../../../components'
 import { useSwiperButtons } from '../../../../../hooks'
 
 import 'swiper/css'
@@ -15,7 +15,7 @@ export const NoFlyCruises = () => {
 	return (
 		<>
 			<Heading as="h2" className="title-secondary">
-				БЕЗ ПЕРЕЛЕТНЫЕ
+				популярные круизы из России
 			</Heading>
 			<Container className={styles.container}>
 				<Swiper
@@ -25,7 +25,7 @@ export const NoFlyCruises = () => {
 				>
 					{dataWithoutFlyCard.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardWithRoute {...card} />
+							<CardButtonHover {...card} />
 						</SwiperSlide>
 					)}
 				</Swiper>

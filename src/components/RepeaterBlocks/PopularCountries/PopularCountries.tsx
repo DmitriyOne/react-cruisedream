@@ -19,7 +19,7 @@ export const PopularCountries = () => {
 			id="countries"
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pb-section', 'pt-section')}
+			className={classNames('pb-section', 'pt-section', styles.component)}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">

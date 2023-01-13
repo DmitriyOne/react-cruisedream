@@ -1,7 +1,13 @@
+import classNames from 'classnames'
 import { FC } from 'react'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 
+import { useSwiperButtons } from '../../../hooks'
+import { Button } from '../../Button'
+
+import 'swiper/css'
 import styles from './card-image-slider.module.scss'
 
 interface IImage {
@@ -14,10 +20,12 @@ interface IProps {
 }
 
 export const CardImageSlider: FC<IProps> = ({ images }) => {
-
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+	
 	return (
 		<Swiper
 			className={styles.component}
+			onSwiper={upDateSwiper}
 			{...params}
 		>
 			{images.map((image, idx) =>
@@ -29,6 +37,14 @@ export const CardImageSlider: FC<IProps> = ({ images }) => {
 					/>
 				</SwiperSlide>
 			)}
+			<Button
+				className={classNames(styles.swiperArrow, styles.prev)}
+				onClick={handlerPrev}
+			/>
+			<Button
+				className={classNames(styles.swiperArrow, styles.next)}
+				onClick={handlerNext}
+			/>
 		</Swiper>
 	)
 }

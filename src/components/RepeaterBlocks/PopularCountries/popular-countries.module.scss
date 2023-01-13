@@ -2,8 +2,10 @@
 @use '../../../styles/breakpoints.scss';
 
 .component {
-	padding-left: 10px;
-	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0 !important;
+	}
 }
 
 .container {
@@ -13,6 +15,11 @@
 .swiper {
 	width: 100%;
 	padding: 0 10px 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
 
 	&>div {
 		align-items: stretch;
@@ -47,6 +54,10 @@
 	&.prev {
 		left: 10px;
 
+		@include mixins.media-w(breakpoints.$tablet) {
+			left: 12px;
+		}
+
 		&::before {
 			transform: translate(-50%, -50%) rotate(-180deg);
 		}
@@ -54,6 +65,10 @@
 
 	&.next {
 		right: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			right: 12px;
+		}
 	}
 
 	&::before {

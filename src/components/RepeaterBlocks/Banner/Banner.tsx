@@ -7,13 +7,6 @@ import styles from './banner.module.scss'
 export const Banner = () => {
 	return (
 		<Container width="full" className={styles.component}>
-			<div className={styles.bg}>
-				<img
-					className={styles.image}
-					src={bannerImage}
-					alt="blue sky"
-				/>
-			</div>
 			<div className={styles.container}>
 				<span className={styles.text}>
 					новости и лучшие предложения
@@ -28,6 +21,7 @@ export const Banner = () => {
 							type="text"
 							name="subscribe"
 							id="subscribe"
+							placeholder="Введите ваш e-mail"
 						/>
 					</div>
 					<Button className={styles.button}>

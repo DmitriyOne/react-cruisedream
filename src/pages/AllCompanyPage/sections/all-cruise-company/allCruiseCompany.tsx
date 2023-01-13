@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Button, CardAboutCompany, Container, Heading } from '../../../../components'
+import { Button, CardAboutButton, Container, Heading } from '../../../../components'
 import { useSwiperButtons } from '../../../../hooks'
 import { dataAboutCompany, params3x3Grid } from '../../../../fakedata'
 
@@ -15,7 +15,7 @@ export const AllCruiseCompany = () => {
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			className={classNames(styles.component, 'pt-section', 'pb-s-section')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
@@ -30,7 +30,7 @@ export const AllCruiseCompany = () => {
 				>
 					{dataAboutCompany.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardAboutCompany
+							<CardAboutButton
 								{...card}
 							/>
 						</SwiperSlide>

@@ -7,13 +7,14 @@ import styles from './cruise-logo.module.scss'
 
 interface IProps {
 	className?: string
+	src?: string
 }
 
-export const CruiseLogo: FC<IProps> = ({ className }) => {
+export const CruiseLogo: FC<IProps> = ({ className, src }) => {
 	return (
 		<div className={classNames(className, styles.logo)}>
 			<img
-				src={logo1Src}
+				src={src ? src : logo1Src}
 				alt="Logo Caribbean"
 			/>
 		</div>

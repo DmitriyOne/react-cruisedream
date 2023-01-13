@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { useWindowSize } from '../../../hooks'
+import { useNumberWithSpaces, useWindowSize } from '../../../hooks'
 
 import { B, Button, Discount } from '../../../components'
 import { EWidth, EBackground, EColor } from '../../../model/enums'
@@ -30,7 +30,6 @@ interface IProps {
 
 	textClass?: string
 
-	onClickСhoose?: () => void
 	onShowModal?: () => void
 
 	isCruisePage?: boolean
@@ -51,12 +50,12 @@ export const CruisePrice: FC<IProps> = ({
 	priceSpanClass,
 	discountClass,
 	textClass,
-	onClickСhoose,
 	onShowModal,
 	isCruisePage,
 	isOnlyPrice
 }) => {
 	const { isMobile } = useWindowSize()
+	const { handlerSpaces } = useNumberWithSpaces()
 
 	const classNameButton = classNames(buttonClass, styles.button, {
 		[styles.full]: buttonWidth === 'full',
@@ -95,7 +94,9 @@ export const CruisePrice: FC<IProps> = ({
 					<span className={classNames(priceSpanClass, styles.priceSpan)}>
 						от
 					</span>
-					1400$
+					1 440
+					&nbsp;
+					$
 				</B>
 				:
 				<>
@@ -109,7 +110,7 @@ export const CruisePrice: FC<IProps> = ({
 							<span className={classNames(priceSpanClass, styles.priceSpan)}>
 								от
 							</span>
-							1400$
+							{handlerSpaces(1540)}&nbsp;$
 						</B>
 						{isShowDiscount &&
 							<Discount

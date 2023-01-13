@@ -3,15 +3,17 @@
 
 .component {
 	border-top: 1px solid rgba(79, 78, 78, 0.4);
-	padding-left: 10px;
-	padding-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		border-top: 0;
+	}
 }
 
 .pt {
 	padding-top: 22px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
-		padding-top: 18px;
+		padding-top: 14px;
 	}
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
@@ -19,7 +21,7 @@
 	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
-		padding-top: 4px;
+		padding-top: 0px;
 	}
 }
 
@@ -30,6 +32,11 @@
 .swiper {
 	width: 100%;
 	padding: 0 10px 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
 
 	&>div {
 		align-items: stretch;
@@ -77,17 +84,16 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 62%;
+		top: 260px;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 10px;
 		height: 22px;
-		background-image: url('../../../../assets/images/swiper/arrow-right-gray.svg');
+		background-image: url('../../../../assets/images/swiper/arrow-gray.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {
-			top: 30%;
-			background-image: url('../../../../assets/images/swiper/arrow-white.svg');
+			top: 240px;
 		}
 
 		@include mixins.media-w(breakpoints.$tablet) {

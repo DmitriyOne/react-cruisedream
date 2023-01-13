@@ -5,11 +5,16 @@
 
 .component {
 	@include mixins.fluidMaxSize(630);
+	height: 75%;
+	justify-content: space-between;
+
+	@include mixins.media-h(820){
+		height: 100%;
+	}
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		@include mixins.flex-center;
 		flex-direction: column;
-		padding-top: 60px;
 	}
 
 	&.left {
@@ -94,7 +99,7 @@
 
 .button {
 	display: inline-block;
-	margin-top: 210px;
+	margin-top: 60px;
 	font-size: 16px;
 	line-height: 120%;
 	text-align: center;

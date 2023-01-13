@@ -1,0 +1,131 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	padding: 0px 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 10px 16px;
+		border-top: 0.3px solid rgba(79, 78, 78, 0.4);
+		border-bottom: 0.3px solid rgba(79, 78, 78, 0.4);
+	}
+}
+
+.title {
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-weight: 300 !important;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		gap: 10px 0;
+	}
+}
+
+.accordionItem {
+	width: -webkit-min-content !important;
+	width: -moz-min-content !important;
+	width: min-content !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100% !important;
+	}
+}
+
+.accordionTitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 30px;
+	line-height: 110%;
+	color: #4F4E4E;
+	white-space: nowrap;
+	border-bottom: 1px solid colors.$black;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+		font-weight: 300;
+	}
+}
+
+.accordionArrow {
+	display: block;
+	width: 20px;
+	margin-left: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 14px;
+		margin-left: 12px;
+	}
+}
+
+.accordionBody {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 6px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: flex-start;
+	}
+}
+
+.accordionLink {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 25px;
+	line-height: 110%;
+	color: rgba(79, 78, 78, 0.8);
+	text-align: center;
+	padding-top: 16px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid colors.$black;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+		padding-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+		padding-top: 8px;
+	}
+}

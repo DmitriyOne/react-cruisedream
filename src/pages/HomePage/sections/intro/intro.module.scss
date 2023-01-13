@@ -1,16 +1,37 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 
-.component {}
+.component {
+	height: 65vh;
+	min-height: 550px;
+	max-height: 650px;
+
+	@include mixins.media-h(820){
+		min-height: 500px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		min-height: 500px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-height: 420px;
+		height: 420px;
+	}
+}
+
+.container {
+	height: 100%;
+}
 
 .swiper {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 .slide {
 	height: 100%;
-	padding: 40px 20px 190px 20px;
+	padding: 40px 20px 80px 20px;
 	position: relative;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
@@ -85,7 +106,7 @@
 		transform: translateY(-50%);
 		width: 13px;
 		height: 26px;
-		background-image: url('../../../../assets/images/swiper/arrow-right.svg');
+		background-image: url('../../../../assets/images/swiper/arrow-white.svg');
 		@include mixins.bg-cover;
 
 		@include mixins.media-w(breakpoints.$tablet) {

@@ -3,7 +3,9 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ICard } from '../../../model/interfaces'
 
-import { CruiseAmountDays, CruiseDates, CruiseLogo, CruiseName, CruisePrice, CruiseRoute, CruiseSlider } from '../../Cruise'
+import cruiseImg1 from '../../Cruise/CruiseSlider/images/cruise-1.jpeg'
+
+import { CruiseAmountDays, CruiseDates, CruiseLogo, CruiseName, CruisePrice, CruiseRoute } from '../../Cruise'
 import { MyTimer, Discount } from '../../../components'
 import { ShipName } from '../../Ship'
 
@@ -13,10 +15,9 @@ export const CardPopularCruise: FC<ICard> = ({ ...card }) => {
 	return (
 		<div className={styles.component}>
 			<div className={styles.header}>
-				<CruiseSlider
-					classImage={styles.sliderImage}
-					classArrow={styles.sliderArrow}
-				/>
+				<div className={styles.cruisePhoto}>
+					<img src={cruiseImg1} alt="" />
+				</div>
 				<CruiseAmountDays
 					classComponent={styles.amountDays}
 					classNumber={styles.amountNumber}

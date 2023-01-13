@@ -2,7 +2,6 @@ import { SwiperOptions } from 'swiper'
 
 export const paramsRow: SwiperOptions = {
 	allowTouchMove: true,
-	cssMode: true,
 	slidesPerView: 1,
 	direction: 'horizontal',
 	spaceBetween: 20,
