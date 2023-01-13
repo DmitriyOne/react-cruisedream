@@ -1,4 +1,5 @@
 import { About, Advantages, Banner, PopularBlogPosts, PopularCruises } from '../../components/RepeaterBlocks'
+import { dataCompanyPopularBlogPosts } from '../../fakedata'
 import { AllCruiseCompany, Intro, NewShips } from './sections'
 
 export const AllCompanyPage = () => {
@@ -8,8 +9,8 @@ export const AllCompanyPage = () => {
 			<AllCruiseCompany />
 			<NewShips />
 			<Banner />
-			<PopularCruises />
-			<PopularBlogPosts />
+			<PopularCruises componentClass="pt-section pb-s-section" />
+			<PopularBlogPosts cards={dataCompanyPopularBlogPosts} />
 			<About />
 			<Advantages />
 		</>

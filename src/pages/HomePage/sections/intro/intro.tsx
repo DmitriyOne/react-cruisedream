@@ -19,6 +19,7 @@ export const Intro = () => {
 	return (
 		<Container
 			width="full"
+			align="stretch"
 			className={styles.component}
 			tag="section"
 		>

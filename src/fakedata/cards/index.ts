@@ -1,6 +1,5 @@
 export * from './data-about-company'
 export * from './data-countries'
-export * from './data-helpful-blog-posts'
 export * from './data-international-card'
 export * from './data-new-ship'
 export * from './data-popular-blog-posts'

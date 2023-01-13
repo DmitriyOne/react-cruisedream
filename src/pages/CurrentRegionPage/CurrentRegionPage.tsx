@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, HelpfulBlogPosts } from '../../components/RepeaterBlocks'
+import { HeaderAnchors, MapsImages, PopularCountries, PopularPorts, PopularCruises, About, Advantages, IntroWithGallery, Desc, HelpfulAdvice, PopularBlogPosts } from '../../components/RepeaterBlocks'
 import { Article } from '../../components/RepeaterBlocks/Article/Article'
 import {
 	dataRegionGallery,
@@ -9,7 +9,7 @@ import {
 	dataRegionArticlePhoto2,
 	dataRegionArticleVideo,
 	dataRegionsHelpfulAdvice,
-	dataRegionHelpfulBlogPosts,
+	dataRegionPopularBlogPosts,
 } from '../../fakedata'
 
 export const CurrentRegionPage = () => {
@@ -17,7 +17,7 @@ export const CurrentRegionPage = () => {
 		<>
 			<HeaderAnchors />
 			<IntroWithGallery {...dataRegionGallery} />
-			<PopularCruises />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
 			<Desc {...dataRegionDesc} />
 			<PopularCountries />
 			<MapsImages />
@@ -26,8 +26,8 @@ export const CurrentRegionPage = () => {
 			<Article {...dataRegionArticlePhoto2} />
 			<Article {...dataRegionArticleVideo} />
 			<HelpfulAdvice {...dataRegionsHelpfulAdvice} />
-			<PopularCruises />
-			<HelpfulBlogPosts cards={dataRegionHelpfulBlogPosts} />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink />
+			<PopularBlogPosts cards={dataRegionPopularBlogPosts} />
 			<About />
 			<Advantages />
 		</>

@@ -4,6 +4,8 @@ import classNames from 'classnames'
 import DatePicker from 'react-datepicker'
 import { ru } from 'date-fns/esm/locale'
 
+import { CustomHeader } from './CustomHeader/CustomHeader'
+
 import 'react-datepicker/dist/react-datepicker.css'
 import styles from './my-datepicker.module.scss'
 
@@ -39,9 +41,15 @@ export const MyDatepicker: FC<IProps> = ({
 				onChange={onChange!}
 				selectsRange
 
+				onFocus={e => e.target.blur()}
+				onBlur={e => e.target.blur()}
+
 				placeholderText={placeholder}
 				locale={ru}
 				dateFormat={'dd.MM.yy'}
+
+				showYearDropdown
+				renderCustomHeader={({ ...params }) => <CustomHeader {...params} />}
 			/>
 		</div>
 	)

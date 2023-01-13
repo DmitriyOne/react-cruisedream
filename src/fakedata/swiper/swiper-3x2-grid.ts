@@ -3,7 +3,6 @@ import { Grid, SwiperOptions } from 'swiper'
 export const params3x2Grid: SwiperOptions = {
 	slidesPerView: 1,
 	spaceBetween: 20,
-	cssMode: true,
 	modules: [Grid],
 	breakpoints: {
 		1280: {

@@ -14,6 +14,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		flex-direction: column !important;
+		border-bottom: 0.3px solid rgba(79, 78, 78, 0.4);
 	}
 
 	&:last-child {
@@ -47,6 +48,14 @@
 .left {
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin: 0 !important;
+		height: 250px;
+	}
+
+	img {
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			height: 100%;
+		}
 	}
 
 	&.large {
@@ -105,6 +114,10 @@
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 0 18px;
+	}
 }
 
 .title {
@@ -127,13 +140,22 @@
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 18px;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 24px;
+		font-weight: 400;
+		width: 100%;
+		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 .description {
 	@include mixins.fonts(family.$source-sans-pro);
 	width: 100%;
 	font-size: 25px;
-	line-height: 110%;
+	line-height: 120%;
 	text-align: justify;
 	color: rgba(79, 78, 78, 0.8);
 	text-indent: 3rem;
@@ -151,6 +173,11 @@
 		font-size: 16px;
 		text-indent: 1rem;
 	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 .button {
@@ -163,6 +190,18 @@
 	border-radius: 3px;
 	padding: 20px 45px;
 	margin-top: 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 12px;
+		width: 100%;
+		font-size: 13px;
+		color: colors.$white;
+		background-color: colors.$btn-hover;
+		text-align: center;
+		border: none;
+		border-radius: 0;
+		padding: 16px 5px;
+	}
 
 	@include mixins.media-minw(breakpoints.$laptop) {
 		&:hover {

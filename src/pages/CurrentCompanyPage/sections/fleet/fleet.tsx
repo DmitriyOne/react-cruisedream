@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { paramsRow, dataFleet } from '../../../../fakedata'
+import { useSwiperButtons } from '../../../../hooks'
 
 import { Button, CardAboutButton, Container, Heading } from '../../../../components'
 
@@ -14,6 +15,7 @@ import styles from './fleet.module.scss'
 export const Fleet = () => {
 	const [isShowAll, setIsShowAll] = useState(false)
 	const refButton = useRef<HTMLButtonElement>(null)
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	const getAll = (e: any) => {
 		e.preventDefault()
@@ -39,9 +41,10 @@ export const Fleet = () => {
 				ФЛОТ MSC CRUISES
 			</Heading>
 
-			<Container>
+			<Container className={styles.container}>
 				<Swiper
 					className={swiperClass}
+					onSwiper={upDateSwiper}
 					{...paramsRow}
 				>
 					{isShowAll
@@ -67,6 +70,14 @@ export const Fleet = () => {
 						</>
 					}
 				</Swiper>
+				<Button
+					className={classNames(styles.swiperArrow, styles.prev)}
+					onClick={handlerPrev}
+				/>
+				<Button
+					className={classNames(styles.swiperArrow, styles.next)}
+					onClick={handlerNext}
+				/>
 			</Container>
 
 			<Button

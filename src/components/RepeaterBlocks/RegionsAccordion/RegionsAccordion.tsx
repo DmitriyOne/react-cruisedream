@@ -20,7 +20,7 @@ export const RegionsAccordion = () => {
 	return (
 		<Container
 			width="full"
-			className={classNames(styles.component, 'pt-section')}
+			className={classNames(styles.component)}
 			tag="section"
 		>
 			<Container width="containerS" direction="column">

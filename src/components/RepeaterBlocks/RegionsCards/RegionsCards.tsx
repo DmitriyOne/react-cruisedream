@@ -6,18 +6,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params3x2Grid, dataRegionsCard, paramsRow } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
 
-import { CardBlackout, Container, Heading } from '../../../components'
+import { Button, CardBlackout, Container, Heading } from '../../../components'
 
 import 'swiper/css'
 import 'swiper/css/grid'
 import styles from './regions-cards.module.scss'
 import { FC, useRef, useState } from 'react'
+import { useSwiperButtons } from '../../../hooks'
 
 interface IProps {
 	position?: 'grid' | 'row'
 }
 
 export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 	const [isShowAll, setIsShowAll] = useState(false)
 	const refButton = useRef<HTMLAnchorElement>(null)
 
@@ -46,16 +48,17 @@ export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pt-section', 'pb-section')}
+			className={classNames(styles.component, 'pt-section', 'pb-s-section')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
 				РЕГИОНЫ
 			</Heading>
 
-			<Container>
+			<Container className={styles.container}>
 				<Swiper
 					className={swiperClass}
+					onSwiper={upDateSwiper}
 					{...params}
 				>
 					{isShowAll
@@ -79,6 +82,14 @@ export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
 						</>
 					}
 				</Swiper>
+				<Button
+					className={classNames(styles.swiperArrow, styles.prev)}
+					onClick={handlerPrev}
+				/>
+				<Button
+					className={classNames(styles.swiperArrow, styles.next)}
+					onClick={handlerNext}
+				/>
 			</Container>
 
 			<Link

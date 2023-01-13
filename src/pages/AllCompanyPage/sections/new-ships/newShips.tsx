@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Button, CardWithRoute, Container, Heading } from '../../../../components'
+import { Button, CardButtonHover, Container, Heading } from '../../../../components'
 import { params4Col, dataNewShip } from '../../../../fakedata'
 import { useSwiperButtons } from '../../../../hooks'
 
@@ -15,7 +15,7 @@ export const NewShips = () => {
 		<Container
 			width="full"
 			direction="column"
-			className={classNames(styles.component, 'pb-section')}
+			className={classNames(styles.component, 'pb-section-with-swiper')}
 			tag="section"
 		>
 			<Heading as="h2" className="title-secondary">
@@ -30,7 +30,7 @@ export const NewShips = () => {
 				>
 					{dataNewShip.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardWithRoute
+							<CardButtonHover
 								{...card}
 							/>
 						</SwiperSlide>
