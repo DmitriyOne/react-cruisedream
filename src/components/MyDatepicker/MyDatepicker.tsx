@@ -42,6 +42,7 @@ export const MyDatepicker: FC<IProps> = ({
 				selectsRange
 
 				onFocus={(e) => e.target.readOnly = true}
+				onBlur={(e) => e.target.readOnly = true}
 
 				placeholderText={placeholder}
 				locale={ru}
