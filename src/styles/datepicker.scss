@@ -21,20 +21,17 @@
 }
 
 .react-datepicker-popper {
-	transform: translate3d(0, 0, 0) !important;
+	transform: translate3d(0, 0, 0) translateX(-50%) !important;
+	inset: 35px auto auto 50% !important;
 	animation: scaleInDatePicker 0.35s ease-in-out !important;
 	z-index: z-index.$datepicker !important;
-	// top: 100% !important;
-	// left: 50% !important;
-	// transform: translateX(-50%) !important;
 	width: 100%;
 	min-width: 290px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		min-width: 240px;
 		width: auto;
-		inset: 35px auto auto 20% !important;
-	}
+ 	}
 }
 
 .react-datepicker__current-month,
