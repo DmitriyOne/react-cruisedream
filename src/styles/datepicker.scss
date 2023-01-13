@@ -21,8 +21,8 @@
 }
 
 .react-datepicker-popper {
-	transform: translate3d(0, 0, 0) translateX(-50%) !important;
 	inset: 35px auto auto 50% !important;
+	transform: translate3d(0, 0, 0) translateX(-50%) !important;
 	animation: scaleInDatePicker 0.35s ease-in-out !important;
 	z-index: z-index.$datepicker !important;
 	width: 100%;
@@ -31,8 +31,8 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		min-width: 240px;
 		width: auto;
-		transform: translate3d(0, 0, 0) !important;
-		inset: 35px auto auto 20% !important;
+		// transform: translate3d(0, 0, 0) !important;
+		// inset: 35px auto auto 20% !important;
  	}
 }
 
