@@ -15,4 +15,7 @@ export interface ICard {
 	update?: string
 	logo?: string
 	buttonText?: string
+	isDiscount?: boolean
+	discountPercentage?: number
+	isEveryCardButton?: boolean
 }

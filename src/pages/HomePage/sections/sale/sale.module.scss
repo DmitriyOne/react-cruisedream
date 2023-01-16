@@ -1,7 +1,5 @@
 @use '../../../../styles/mixins.scss';
-@use '../../../../styles/family.scss';
 @use '../../../../styles/breakpoints.scss';
-@use '../../../../styles/colors.scss';
 
 .component {
 	padding: 65px 12px 42px;
@@ -23,53 +21,5 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding: 20px 0;
-	}
-}
-
-.title {
-	@include mixins.fonts(family.$source-sans-pro, 300);
-	font-size: 36px;
-	line-height: 120%;
-	color: #004275;
-	text-align: center;
-	padding-bottom: 28px;
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		font-size: 28px;
-		padding-bottom: 20px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet-s) {
-		font-size: 22px;
-	}
-}
-
-.link {
-	display: inline-block;
-	margin-top: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 17px;
-	line-height: 120%;
-	text-align: center;
-	text-transform: uppercase;
-	color: colors.$btn-text;
-	padding: 18px 50px;
-	border-radius: 3px;
-	border: 1px solid colors.$btn-border;
-	background-color: colors.$transparent;
-  transition: all .3s;
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		margin-top: 0px;
-		font-size: 16px;
-		padding: 16px 40px;
-	}
-
-	@include mixins.media-minw(breakpoints.$laptop) {
-		&:hover {
-			background-color: colors.$btn-hover;
-			color: colors.$white;
-		}
 	}
 }

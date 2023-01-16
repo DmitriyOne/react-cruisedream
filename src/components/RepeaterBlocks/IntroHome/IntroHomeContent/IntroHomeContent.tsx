@@ -3,9 +3,9 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { B } from '../../../../../components'
+import { B } from '../../../../components'
 
-import styles from './content.module.scss'
+import styles from './intro-home-content.module.scss'
 
 enum ETextDirection {
 	left = 'left',
@@ -20,7 +20,7 @@ interface IProps {
 	discount?: number
 }
 
-export const IntroContent: FC<IProps> = ({
+export const IntroHomeContent: FC<IProps> = ({
 	variant,
 	title,
 	href,

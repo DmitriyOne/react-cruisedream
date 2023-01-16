@@ -1,11 +1,18 @@
-import { Heading } from '../../components'
+import { Banner, IntroHome, PopularBlogPosts, PopularCruises, About, Advantages } from '../../components/RepeaterBlocks'
+import { dataPortPopularBlogPosts } from '../../fakedata'
+import { AllSale, NewSales } from './sections'
 
 export const AllDiscountsPage = () => {
 	return (
-		<div style={{ marginTop: '100px', marginBottom: '100px' }}>
-			<Heading align="center">
-				Страница акций
-			</Heading>
-		</div>
+		<>
+			<IntroHome />
+			<AllSale />
+			<NewSales />
+			<Banner />
+			<PopularCruises componentClass="pt-section pb-section" isBottomLink  />
+			<PopularBlogPosts cards={dataPortPopularBlogPosts} />
+			<About />
+			<Advantages />
+		</>
 	)
 }

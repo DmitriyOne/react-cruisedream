@@ -2,18 +2,18 @@ import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
-import { useSwiperButtons } from '../../../../hooks'
+import { useSwiperButtons } from '../../../hooks'
 
-import { dataIntro } from '../../../../fakedata'
-import { Button, Container } from '../../../../components'
-import { IntroContent } from './content/content'
+import { dataIntro } from '../../../fakedata'
+import { Button, Container } from '../../../components'
+import { IntroHomeContent } from './IntroHomeContent/IntroHomeContent'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
-import styles from './intro.module.scss'
+import styles from './intro-home.module.scss'
 
-export const Intro = () => {
+export const IntroHome = () => {
 	const { navPrevButton, navNextButton, onBeforeInit } = useSwiperButtons()
 
 	return (
@@ -48,7 +48,7 @@ export const Intro = () => {
 							width="containerXl"
 							className={styles.container}
 						>
-							<IntroContent
+							<IntroHomeContent
 								title={slider.title}
 								href={slider.href}
 								variant={slider.textPosition}

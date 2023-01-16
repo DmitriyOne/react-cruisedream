@@ -1,6 +1,6 @@
 import { SwiperOptions } from 'swiper'
 
-export const paramsRow: SwiperOptions = {
+export const paramsRow3PerColumn: SwiperOptions = {
 	allowTouchMove: true,
 	slidesPerView: 1,
 	direction: 'horizontal',
