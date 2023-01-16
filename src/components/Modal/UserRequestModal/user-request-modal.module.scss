@@ -1,0 +1,84 @@
+@use '../../../styles/mixins.scss';
+
+.header {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-bottom: 8px;
+	border-bottom: 0.3px solid rgba(79, 78, 78, 0.4);
+}
+
+.headerLeft {}
+
+.title {
+	font-size: 18px;
+	line-height: 110%;
+	font-weight: 400;
+	color: rgba(79, 78, 78, 0.8);
+	padding-bottom: 10px;
+}
+
+.text1 {
+	display: block;
+	font-size: 11px;
+	line-height: 110%;
+	color: #4F4E4E;
+}
+
+.text2 {
+	display: block;
+	font-size: 10px;
+	line-height: 110%;
+	color: #4F4E4E;
+}
+
+.year {
+	padding-bottom: 6px;
+}
+
+.numberCruise {
+	color: rgba(0, 0, 0, 0.78);
+	text-align: right;
+	padding-top: 4px;
+}
+
+.optionsWrapper {
+	width: 100%;
+	@include mixins.fluidMaxSize(330);
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.optionsCol {
+
+}
+
+.optionsItem {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 20px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.optionsIcon {
+	display: block;
+	width: 13px;
+	margin-right: 6px;
+}
+
+.optionsContent {
+	padding-top: 3px;
+}
+
+.optionsTitle {}
+
+.optionsSubtitle {
+	color: rgba(0, 0, 0, 0.78);
+}
