@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { paramsRow, dataFleet } from '../../../../fakedata'
+import { paramsRow3PerColumn, dataFleet } from '../../../../fakedata'
 import { useSwiperButtons } from '../../../../hooks'
 
 import { Button, CardAboutButton, Container, Heading } from '../../../../components'
@@ -45,7 +45,7 @@ export const Fleet = () => {
 				<Swiper
 					className={swiperClass}
 					onSwiper={upDateSwiper}
-					{...paramsRow}
+					{...paramsRow3PerColumn}
 				>
 					{isShowAll
 						?

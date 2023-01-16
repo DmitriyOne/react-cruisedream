@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import bgImage1 from '../../pages/HomePage/sections/intro/images/intro-1.jpeg'
-import bgImage2 from '../../pages/HomePage/sections/intro/images/intro-2.jpeg'
-import bgImage3 from '../../pages/HomePage/sections/intro/images/intro-3.jpeg'
+import bgImage1 from '../../components/RepeaterBlocks/IntroHome/images/intro-1.jpeg'
+import bgImage2 from '../../components/RepeaterBlocks/IntroHome/images/intro-2.jpeg'
+import bgImage3 from '../../components/RepeaterBlocks/IntroHome/images/intro-3.jpeg'
 
 import { CRUISE_ROUTES } from '../../constants'
 

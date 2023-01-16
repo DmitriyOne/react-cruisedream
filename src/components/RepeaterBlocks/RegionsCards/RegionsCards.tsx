@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { params3x2Grid, dataRegionsCard, paramsRow } from '../../../fakedata'
+import { params3x2Grid, dataRegionsCard, paramsRow3PerColumn } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
 
 import { Button, CardBlackout, Container, Heading } from '../../../components'
@@ -43,7 +43,7 @@ export const RegionsCards: FC<IProps> = ({ position = 'grid' }) => {
 	const buttonClass = classNames('button', {
 		[styles.hideButton]: isShowAll
 	})
-	const params = position === 'grid' ? params3x2Grid : paramsRow
+	const params = position === 'grid' ? params3x2Grid : paramsRow3PerColumn
 	return (
 		<Container
 			width="full"

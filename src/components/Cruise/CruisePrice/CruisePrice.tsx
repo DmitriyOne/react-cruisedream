@@ -94,9 +94,7 @@ export const CruisePrice: FC<IProps> = ({
 					<span className={classNames(priceSpanClass, styles.priceSpan)}>
 						от
 					</span>
-					1 440
-					&nbsp;
-					$
+					{handlerSpaces(1400)}&nbsp;$
 				</B>
 				:
 				<>
