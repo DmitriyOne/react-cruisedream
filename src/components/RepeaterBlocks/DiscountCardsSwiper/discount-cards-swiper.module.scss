@@ -1,0 +1,118 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+
+.swiper {
+	width: 100%;
+	padding: 0 10px 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 0px;
+		overflow: visible;
+	}
+
+	&>div {
+		align-items: stretch;
+	}
+}
+
+.grid {
+
+	&>div {
+		flex-wrap: wrap;
+		row-gap: 30px;
+
+		@include mixins.media-w(1180) {
+			flex-wrap: nowrap;
+			row-gap: 0px;
+		}
+	}
+}
+
+.w25 {
+
+	&:nth-child(4n) {
+		margin-right: 0 !important;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			margin-right: 20px !important;
+		}
+	}
+
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		&:nth-child(3n) {
+			margin-right: 0 !important;
+
+			@include mixins.media-w(1180) {
+				margin-right: 20px !important;
+			}
+		}
+	}
+}
+
+.slide {
+	position: relative;
+	height: auto;
+	min-height: 450px;
+}
+
+.swiperArrow {
+	display: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 100%;
+	z-index: 20;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 30px;
+	}
+
+	@include mixins.media-w(1180) {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 20px;
+	}
+
+	&.prev {
+		left: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			left: 0;
+		}
+
+		&::before {
+			transform: translateX(-50%) rotate(-180deg);
+		}
+	}
+
+	&.next {
+		right: 10px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			right: 0;
+		}
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 228px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 8px;
+		height: 14px;
+		background-image: url('../../../assets/images/swiper/arrow-white.svg');
+		@include mixins.bg-cover;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 6px;
+			height: 12px;
+		}
+	}
+}

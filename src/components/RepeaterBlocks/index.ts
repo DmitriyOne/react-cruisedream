@@ -13,4 +13,5 @@ export * from './HelpfulAdvice'
 export * from './IntroWithGallery'
 export * from './Desc'
 export * from './RegionsAccordion'
-
+export * from './IntroHome'
+export * from './DiscountCardsSwiper'
