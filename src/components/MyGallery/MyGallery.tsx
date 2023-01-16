@@ -1,12 +1,17 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { useOpen, useWindowSize } from '../../hooks'
-import { IGalleryImage } from '../../model/interfaces'
-import { Button, Discount, MyLightbox } from '../../components'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { params } from './swiper'
 
-import styles from './my-gallery.module.scss'
+import { useOpen, useSwiperButtons, useWindowSize } from '../../hooks'
+import { IGalleryImage } from '../../model/interfaces'
+
+import { Button, Discount, MyLightbox } from '../../components'
 import { CruiseAmountDays, CruiseLabel } from '../Cruise'
+
+import 'swiper/css'
+import styles from './my-gallery.module.scss'
 
 interface IProps {
 	images: IGalleryImage[]
@@ -16,39 +21,72 @@ interface IProps {
 export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
 	const { isOpen: isOpenGallery, onOpen: onOpenGallery, onClose: onCloseGallery } = useOpen()
 	const { isMobile } = useWindowSize()
+	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
 		<>
 			<div className={styles.component}>
-				<div className={classNames(styles.left, styles.imgWrapper)}>
-					<img src={gallery.images[0].src} alt="" />
-
-					{isCruisePage &&
-						<>
-							<Discount
-								percentage={25}
-								className={styles.discount}
-								classNameText={styles.discountText}
-								classNamePercentage={styles.discountPercentage}
-							/>
-							{isMobile
-								?
+				{isMobile
+					?
+					<Swiper
+						className={styles.swiper}
+						onSwiper={upDateSwiper}
+						{...params}
+					>
+						{gallery.images.slice(0, 3).map((slide, idx) =>
+							<SwiperSlide key={idx} className={styles.slide}>
+								<img src={slide.src} alt="" />
+							</SwiperSlide>
+						)}
+						{isCruisePage &&
+							<>
+								<Discount
+									percentage={25}
+									className={styles.discount}
+									classNameText={styles.discountText}
+									classNamePercentage={styles.discountPercentage}
+								/>
 								<CruiseAmountDays />
-								:
-								<CruiseLabel />
-							}
-						</>
-					}
-				</div>
+							</>}
+						<Button
+							className={classNames(styles.swiperArrow, styles.prev)}
+							onClick={handlerPrev}
+						/>
+						<Button
+							className={classNames(styles.swiperArrow, styles.next)}
+							onClick={handlerNext}
+						/>
+					</Swiper>
+					:
+					<>
+						<div className={classNames(styles.left, styles.imgWrapper)}>
+							<img src={gallery.images[0].src} alt="" />
 
-				<div className={styles.right}>
-					<div className={styles.imgWrapper}>
-						<img src={gallery.images[1].src} alt="" />
-					</div>
-					<div className={styles.imgWrapper}>
-						<img src={gallery.images[2].src} alt="" />
-					</div>
-				</div>
+							{isCruisePage &&
+								<>
+									<Discount
+										percentage={25}
+										className={styles.discount}
+										classNameText={styles.discountText}
+										classNamePercentage={styles.discountPercentage}
+									/>
+									<CruiseLabel />
+								</>
+							}
+						</div>
+						<div className={styles.right}>
+							<div className={styles.imgWrapper}>
+								<img src={gallery.images[1].src} alt="" />
+							</div>
+							<div className={styles.imgWrapper}>
+								<img src={gallery.images[2].src} alt="" />
+							</div>
+						</div>
+
+					</>
+				}
+
+
 
 				<Button className={styles.button} onClick={onOpenGallery}>
 					ВСЕ ФОТО
