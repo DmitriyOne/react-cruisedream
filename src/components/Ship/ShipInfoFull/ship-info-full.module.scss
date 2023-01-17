@@ -63,6 +63,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 50%;
+		flex-basis: auto;
 	}
 
 	&:last-child {
@@ -76,10 +77,18 @@
 	font-weight: 400;
 	color: rgba(255, 255, 255, 0.6);
 	padding-bottom: 4px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 15px;
+	}
 }
 
 .number {
 	font-size: 22px;
 	line-height: 120%;
 	color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
 }
