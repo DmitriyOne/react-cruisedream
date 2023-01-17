@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { ShipOptions } from '../../../../components/Ship'
 
 import styles from './options.module.scss'

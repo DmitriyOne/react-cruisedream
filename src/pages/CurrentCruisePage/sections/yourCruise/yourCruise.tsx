@@ -1,5 +1,6 @@
-import { Container, Heading } from '../../../../components'
+import { Container, Heading } from '../../../../components-ui'
 import { CruiseYourChoose } from '../../../../components/Cruise'
+
 import styles from './your-cruise.module.scss'
 
 export const YourCruise = () => {

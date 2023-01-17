@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { dataInternationalCard, params4Col } from '../../../../../fakedata'
 
-import { Button, CardButtonHover, Container, Heading } from '../../../../../components'
+import { CardButtonHover } from '../../../../../components'
+import { Button, Container, Heading } from '../../../../../components-ui'
 import { useSwiperButtons } from '../../../../../hooks'
 
 import 'swiper/css'

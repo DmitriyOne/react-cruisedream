@@ -1,6 +1,6 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { B, Button } from '../../../../components'
+import { B, Button } from '../../../../components-ui'
 
 import { ShipName } from '../../../Ship'
 import { CruiseDates, CruiseLogo } from '../../../Cruise'

@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { useSwiperButtons } from '../../../hooks'
 import { ICard } from '../../../model/interfaces'
-import { CardButtonHover, Container, Heading, Button } from '../../../components'
+import { Container, Heading, Button } from '../../../components-ui'
 import { params4Col, } from '../../../fakedata'
+import { CardButtonHover } from '../../Cards'
 
 import 'swiper/css'
 import styles from './popular-ports.module.scss'

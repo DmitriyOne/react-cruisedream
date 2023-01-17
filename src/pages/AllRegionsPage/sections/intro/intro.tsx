@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import classNames from 'classnames'
 
-import { B, Container, Heading } from '../../../../components'
+import { B, Container, Heading } from '../../../../components-ui'
 import { MapsImages } from '../../../../components/RepeaterBlocks'
 
 import styles from './intro.module.scss'

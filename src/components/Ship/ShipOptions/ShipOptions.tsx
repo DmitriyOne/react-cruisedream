@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Heading } from '../../../components'
+import { Heading } from '../../../components-ui'
 import { DataExtraTitles, DataIncludedTitles } from './data/ship-options'
 
 import { ExtraTitle } from './ExtraTitle/ExtraTitle'

@@ -3,10 +3,11 @@ import classNames from 'classnames'
 
 import markerIcon from './icons/marker.svg'
 
-import styles from './cruise-route.module.scss'
-import { MyTooltip } from '../../MyTooltip'
+import { MyTooltip } from '../../../components-plugin'
 import { DataTooltipRoutes } from './data/tooltip-route'
 import { DataShowRoutes } from './data/show-routes'
+
+import styles from './cruise-route.module.scss'
 
 interface IProps {
 	classComponent?: string

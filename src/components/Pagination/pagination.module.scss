@@ -1,0 +1,84 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/colors.scss';
+@use '../../styles/breakpoints.scss';
+
+.component {
+	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: flex-start;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.itemWrapper {
+	display: flex;
+}
+
+.item {
+	@include mixins.flex-center;
+	min-width: 48px;
+	min-height: 48px;
+	font-size: 20px;
+	line-height: 120%;
+	text-align: center;
+	color: colors.$white;
+	background-color: rgba(0, 66, 117, 0.7);
+	border-radius: 3px;
+	padding: 12px 4px;
+	margin-right: 10px;
+	cursor: pointer;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+		min-width: 35px;
+		min-height: 35px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		color: colors.$blue;
+		background-color: rgba(79, 78, 78, 0.15);
+	}
+}
+
+.prev {
+
+	& .icon {
+		transform: rotate(-180deg);
+	}
+}
+
+.next {}
+
+.icon {
+	display: block;
+	width: 12px;
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 10px;
+	}
+}
+
+.amountWrapper {
+	font-size: 14px;
+	line-height: 120%;
+	color: colors.$blue;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 10px;
+		margin-left: 0;
+		width: 100%;
+	}
+}

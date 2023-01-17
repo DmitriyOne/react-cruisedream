@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { ICard } from '../../../model/interfaces'
-import { Discount, Heading } from '../../../components'
+import { Discount } from '../../../components'
+import { Heading } from '../../../components-ui'
 
 import styles from './card-discount.module.scss'
 

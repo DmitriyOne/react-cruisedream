@@ -1,6 +1,7 @@
 import { useWindowSize } from '../../../../../hooks'
 
-import { Button, MyPagination, ShowBy } from '../../../../../components'
+import { MyPagination, ShowBy } from '../../../../../components'
+import { Button } from '../../../../../components-ui'
 
 import styles from './pagination-bottom.module.scss'
 

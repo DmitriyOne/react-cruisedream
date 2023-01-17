@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
-import { Accordion, Container, Heading } from '../../../components'
+import { Accordion, Container, Heading } from '../../../components-ui'
 import { dataRegionsAccordion } from '../../../fakedata'
 
 import styles from './regions-accordion.module.scss'

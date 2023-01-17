@@ -124,7 +124,7 @@
 	@include mixins.fonts(family.$source-sans-pro, 300);
 	font-size: 36px;
 	line-height: 110%;
-	color: #004275;
+	color: colors.$blue;
 	padding-bottom: 26px;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {

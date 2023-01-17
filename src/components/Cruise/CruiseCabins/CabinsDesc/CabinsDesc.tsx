@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { Heading } from '../../../../components'
+import { Heading } from '../../../../components-ui'
 
 import { ICabins } from '../../../../model/interfaces'
 

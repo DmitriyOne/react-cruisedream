@@ -7,7 +7,8 @@ import { params4Col, dataPopularCruises } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
 import { useSwiperButtons } from '../../../hooks'
 
-import { CardPopularCruise, Container, Heading, Button } from '../../../components'
+import { CardPopularCruise } from '../../Cards'
+import { Container, Heading, Button } from '../../../components-ui'
 
 import 'swiper/css'
 import styles from './popular-cruises.module.scss'

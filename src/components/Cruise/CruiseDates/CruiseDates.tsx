@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 
 import { useWindowSize } from '../../../hooks'
-import { MyTooltip } from '../../MyTooltip'
+import { MyTooltip } from '../../../components-plugin'
 import { DataTooltipDates } from './data/tooltip-dates'
 
 import calendarIcon from './icons/calendar.svg'

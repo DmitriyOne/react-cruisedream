@@ -1,6 +1,6 @@
 import { useWindowSize } from '../../../../hooks'
 
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { Description } from './description/description'
 import { Slider } from './slider/slider'
 

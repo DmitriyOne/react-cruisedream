@@ -92,7 +92,7 @@
 	font-size: 36px;
 	line-height: 120%;
 	text-align: center;
-	color: #004275;
+	color: $blue;
 	text-transform: uppercase;
 	padding-bottom: 22px;
 
@@ -122,7 +122,7 @@
 	@include fonts($source-sans-pro, 300);
 	font-size: 36px;
 	line-height: 120%;
-	color: #004275;
+	color: $blue;
 	text-align: center;
 	text-transform: uppercase;
 	padding-bottom: 32px;

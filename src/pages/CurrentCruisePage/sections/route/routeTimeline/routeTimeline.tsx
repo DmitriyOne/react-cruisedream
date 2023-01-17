@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 
 import { useSwiperButtons, useSwiperChangeEffect } from '../../../../../hooks'
-import { Button } from '../../../../../components'
+import { Button } from '../../../../../components-ui'
 import { TimelineItem } from './timelineItem/timelineItem'
 
 import 'swiper/css'

@@ -3,13 +3,14 @@ import classNames from 'classnames'
 import { useWindowSize } from '../../../../hooks'
 import { dataCruiseGallery } from '../../../../fakedata'
 
-import { Container, MyGallery } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { CruiseLogo, CruiseRoute } from '../../../../components/Cruise'
 
 import { RowBottom, RowCenter, RowTop } from './rows'
 import { OverviewHeader } from './overviewHeader/overviewHeader'
 
 import styles from './overview.module.scss'
+import { MyGallery } from '../../../../components-plugin'
 
 export const Overview = () => {
 	const { isMobile } = useWindowSize()

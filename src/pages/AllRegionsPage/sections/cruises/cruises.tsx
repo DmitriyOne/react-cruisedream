@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 
 import { InternationalCruises } from './international-cruises/internationalCruises'
 import { NoFlyCruises } from './no-fly-cruises/noFlyCruises'

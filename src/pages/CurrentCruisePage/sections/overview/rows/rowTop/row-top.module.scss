@@ -1,12 +1,11 @@
 @use '../../../../../../styles/mixins.scss';
 @use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/colors.scss';
 
-.component {
-
-}
+.component {}
 
 .laptopReverse {
-	
+
 	@include mixins.media-w(breakpoints.$laptop) {
 		flex-direction: row-reverse;
 	}
@@ -19,7 +18,7 @@
 .title {
 	font-size: 27px;
 	line-height: 110%;
-	color: #004275;
+	color: colors.$blue;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		line-height: 90%;
@@ -32,6 +31,7 @@
 		padding-top: 2px;
 		padding-bottom: 10px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet-s) {
 		font-size: 12px;
 	}

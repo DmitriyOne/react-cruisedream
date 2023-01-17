@@ -1,0 +1,72 @@
+@use "../../../../styles/family.scss";
+@use "../../../../styles/mixins.scss";
+@use "../../../../styles/breakpoints.scss";
+@use "../../../../styles/colors.scss";
+@use "../../../../styles/z-index.scss";
+
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mixins.media-w(breakpoints.$laptop) {
+    position: relative;
+    z-index: z-index.$idx-header;
+  }
+}
+
+.burger {
+  display: none;
+  font-size: 0;
+  position: relative;
+  height: 12px;
+  width: 15px;
+  cursor: pointer;
+
+  @include mixins.media-w(breakpoints.$laptop) {
+    display: block;
+  }
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  background-color: colors.$blue;
+
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    top: 5px;
+  }
+
+  &:nth-child(3) {
+    top: 11px;
+    left: 0;
+  }
+}
+
+.burger.active {
+  span {
+    box-shadow: none;
+    top: calc(50% - 1.5px);
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+  }
+}

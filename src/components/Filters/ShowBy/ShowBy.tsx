@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { Button } from '../../Button'
+import { Button } from '../../../components-ui/Button'
 
 import styles from './show-by.module.scss'
 

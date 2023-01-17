@@ -1,4 +1,4 @@
-import { Button, Heading } from '../../../../../../components'
+import { Button, Heading } from '../../../../../../components-ui'
 import { FC } from 'react'
 
 import styles from './timeline-item.module.scss'

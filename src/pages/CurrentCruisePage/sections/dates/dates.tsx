@@ -1,4 +1,4 @@
-import { Container, Heading } from '../../../../components'
+import { Container, Heading } from '../../../../components-ui'
 import { CruiseCountPassengers, CruiseSliderDates } from '../../../../components/Cruise'
 
 import styles from './dates.module.scss'

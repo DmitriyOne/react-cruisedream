@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { CruiseNavbar } from '../../../../components/Cruise'
 
 import styles from './header.module.scss'

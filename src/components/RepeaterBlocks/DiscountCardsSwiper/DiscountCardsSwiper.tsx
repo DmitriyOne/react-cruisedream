@@ -7,8 +7,8 @@ import { dataSale, paramsRow4PerColumn } from '../../../fakedata'
 import { useSwiperButtons } from '../../.././hooks'
 import { CRUISE_ROUTES } from '../../../constants'
 
-import { Heading } from '../../Headings'
-import { Button } from '../../Button'
+import { Heading } from '../../../components-ui/Headings'
+import { Button } from '../../../components-ui/Button'
 import { CardDiscount } from '../../Cards'
 
 import styles from './discount-cards-swiper.module.scss'

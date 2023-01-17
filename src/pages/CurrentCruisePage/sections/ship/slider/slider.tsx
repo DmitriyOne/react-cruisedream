@@ -5,7 +5,7 @@ import { params } from './data/swiper'
 
 import { useSwiperButtons } from '../../../../../hooks'
 
-import { Button } from '../../../../../components'
+import { Button } from '../../../../../components-ui'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'

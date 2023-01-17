@@ -3,7 +3,7 @@ import { useState } from 'react'
 import adultIcon from './icons/adult.svg'
 import childIcon from './icons/child.svg'
 
-import { B, Button } from '../../../components'
+import { B, Button } from '../../../components-ui'
 
 import styles from './cruise-count-passengers.module.scss'
 

@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 import { DataIncludedIcon } from './data/included-icons'
 
-import { Heading } from '../../Headings'
+import { Heading } from '../../../components-ui/Headings'
 
 import styles from './cruise-included-icon.module.scss'
 

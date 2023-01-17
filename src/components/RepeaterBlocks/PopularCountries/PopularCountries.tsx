@@ -6,10 +6,11 @@ import { params3Col, dataCountries } from '../../../fakedata'
 import { useSwiperButtons } from '../../../hooks'
 import { CRUISE_ROUTES } from '../../../constants'
 
-import { Button, CardBlackout, Container, Heading } from '../../../components'
+import { Button, Container, Heading } from '../../../components-ui'
 
 import 'swiper/css'
 import styles from './popular-countries.module.scss'
+import { CardBlackout } from '../../Cards'
 
 export const PopularCountries = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()

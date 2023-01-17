@@ -2,7 +2,7 @@
 import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Heading } from '../../Headings'
+import { Heading } from '../../../components-ui/Headings'
 
 import shipIcon from './icons/ship.svg'
 

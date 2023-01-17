@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import { Container } from '../../../components'
+import { Container } from '../../../components-ui'
 
 import { dataAdvantages } from '../../../fakedata'
 import { useWindowSize } from '../../../hooks'

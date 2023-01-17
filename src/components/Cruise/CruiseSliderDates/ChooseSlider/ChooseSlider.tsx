@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from '../data/swiper'
 import { DataCabinsDates } from '../data/dates'
 
-import { Button, B } from '../../../../components'
+import { Button, B } from '../../../../components-ui'
 import { useSwiperButtons } from '../../../../hooks'
 
 import 'swiper/css'

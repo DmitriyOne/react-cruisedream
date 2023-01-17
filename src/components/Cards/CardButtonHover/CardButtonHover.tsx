@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ICard } from '../../../model/interfaces'
-import { B,Heading } from '../../../components'
+import { B,Heading } from '../../../components-ui'
 
 import styles from './card-button-hover.module.scss'
 

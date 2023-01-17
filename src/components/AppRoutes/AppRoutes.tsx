@@ -25,7 +25,7 @@ import {
 	ContactsPage,
 } from '../../pages'
 
-import { Layout } from '../Layout'
+import { Layout } from '../../components-ui'
 import { ScrollToTop } from './ScrollToTop/ScrollToTop'
 
 export const AppRoutes = () => {
