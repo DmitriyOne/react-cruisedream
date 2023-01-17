@@ -1,3 +1,4 @@
+import { About, Advantages } from '../../components/RepeaterBlocks'
 import { AboutUs, Contacts } from './sections'
 
 export const ContactsPage = () => {
@@ -5,6 +6,8 @@ export const ContactsPage = () => {
 		<>
 			<AboutUs />
 			<Contacts />
+			<About />
+			<Advantages />
 		</>
 	)
 }
