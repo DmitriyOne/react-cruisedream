@@ -1,8 +1,8 @@
 import { Heading, B } from '../../../components-ui'
 
-import styles from './ship-info.module.scss'
+import styles from './ship-info-short.module.scss'
 
-export const ShipInfo = () => {
+export const ShipInfoShort = () => {
 
 	return (
 		<div className={styles.component}>

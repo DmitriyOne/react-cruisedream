@@ -1,10 +1,10 @@
-@use '../../../../../styles/mixins.scss';
-@use '../../../../../styles/breakpoints.scss';
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
 
 .component {
 	position: relative;
 	@include mixins.fluidMaxSize(440);
-	height: auto;
+	height: 300px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		@include mixins.fluidMaxSize(400);
@@ -81,7 +81,7 @@
 		width: 13px;
 		height: 26px;
 		@include mixins.bg-cover;
-		background-image: url('./images/arrow-slider.svg');
+		background-image: url('../../../assets/images/swiper/arrow-white.svg');
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			width: 8px;

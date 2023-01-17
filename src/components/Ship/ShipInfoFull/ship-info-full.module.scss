@@ -1,0 +1,85 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	// @include mixins.flex-spb;
+	// width: 100%;
+	
+
+	// @include mixins.media-w(breakpoints.$laptop-s) {
+	// 	flex-wrap: wrap;
+	// 	row-gap: 15px;
+	// }
+
+	// @include mixins.media-w(breakpoints.$laptop) {
+	// 	@include mixins.fluidMaxSize(600);
+	// 	padding-bottom: 10px;
+	// }
+
+	// @include mixins.media-w(breakpoints.$tablet) {
+	// 	@include mixins.fluidMaxSize(450);
+	// }
+}
+
+.row {
+	width: 100%;
+	@include mixins.flex-spb;
+	padding-bottom: 22px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		flex-wrap: wrap;
+		row-gap: 15px;
+		padding-bottom: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		// @include mixins.fluidMaxSize(600);
+		padding-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(450);
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.col {
+	flex: 1;
+	padding-right: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		flex: auto;
+		width: 30%;
+	}
+	
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 25%;
+		flex-basis: 200px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+.title {
+	font-size: 20px;
+	line-height: 110%;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.6);
+	padding-bottom: 4px;
+}
+
+.number {
+	font-size: 22px;
+	line-height: 120%;
+	color: colors.$white;
+}

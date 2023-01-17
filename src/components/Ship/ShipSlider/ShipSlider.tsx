@@ -1,18 +1,16 @@
 import classNames from 'classnames'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { params } from './data/swiper'
 
-import { useSwiperButtons } from '../../../../../hooks'
+import { useSwiperButtons } from '../../../hooks'
+import { dataShipSlider, paramsFade } from '../../../fakedata'
 
-import { Button } from '../../../../../components-ui'
+import { Button } from '../../../components-ui'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
-import styles from './slider.module.scss'
-import { DataSliderImg } from './data/data-slider'
+import styles from './ship-slider.module.scss'
 
-export const Slider = () => {
+export const ShipSlider = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
 
 	return (
@@ -20,10 +18,10 @@ export const Slider = () => {
 			<Swiper
 				className={styles.swiper}
 				onSwiper={upDateSwiper}
-				{...params}
+				{...paramsFade}
 			>
 
-				{DataSliderImg.map((img, idx) =>
+				{dataShipSlider.map((img, idx) =>
 					<SwiperSlide key={idx} className={styles.image}>
 						<img
 							src={img}

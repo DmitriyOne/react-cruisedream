@@ -1,6 +1,6 @@
 import { SwiperOptions, EffectFade } from 'swiper'
 
-export const params: SwiperOptions = {
+export const paramsFade: SwiperOptions = {
 	loop: true,
 	allowTouchMove: true,
 	spaceBetween: 0,

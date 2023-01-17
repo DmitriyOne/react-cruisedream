@@ -1,15 +1,14 @@
-@use '../../../../../styles/mixins.scss';
-@use '../../../../../styles/breakpoints.scss';
-@use '../../../../../styles/colors.scss';
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
 
 .component {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	width: 60%;
-	padding-top: 22px;
-	padding-bottom: 28px;
+	width: 70%;
+	padding: 22px 30px 28px 0;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		padding-right: 40px;
@@ -33,7 +32,7 @@
 	}
 }
 
-.title {
+.wrapper .title {
 	font-size: 32px;
 	line-height: 120%;
 	font-weight: 600;

@@ -1,14 +1,14 @@
 import classNames from 'classnames'
 
 import { Heading } from '../../../components-ui'
-import { DataExtraTitles, DataIncludedTitles } from './data/ship-options'
+import { DataExtraTitles, DataIncludedTitles } from './data/cruise-options'
 
 import { ExtraTitle } from './ExtraTitle/ExtraTitle'
 import { IncludedTitle } from './IncludedTitle/IncludedTitle'
 
-import styles from './ship-options.module.scss'
+import styles from './cruise-options.module.scss'
 
-export const ShipOptions = () => {
+export const CruiseOptions = () => {
 
 	return (
 		<>
