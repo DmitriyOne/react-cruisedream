@@ -1,6 +1,6 @@
 import { EffectFade, SwiperOptions } from 'swiper'
 
-import cabinsImage1Src from '../images/cabins-1.jpg'
+import cabinsImage1Src from '../../../../assets/images/cabins/cabins-1.jpg'
 import cabinsImage2Src from '../../../../assets/images/ship/1.jpg'
 
 export const swiperImages = [

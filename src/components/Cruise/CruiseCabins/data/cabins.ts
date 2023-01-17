@@ -8,7 +8,7 @@ import {
 	withBigWindowCabinsDesc
 } from './cabins-desc'
 
-import cabinsImage1Src from '../images/cabins-1.jpg'
+import cabinsImage1Src from '../../../../assets/images/cabins/cabins-1.jpg'
 import cabinsImage2Src from '../../../../assets/images/ship/1.jpg'
 
 import { ICabins, ICabinsImages } from '../../../../model/interfaces'
