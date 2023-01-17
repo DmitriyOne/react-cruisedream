@@ -15,9 +15,10 @@ interface IProps {
 	id: number
 	desc: string
 	images: IImage[]
+	isSlider?: boolean
 }
 
-export const HelpfulAdvice: FC<IProps> = ({ ...content }) => {
+export const HelpfulAdvice: FC<IProps> = ({ isSlider = true, ...content }) => {
 	return (
 		<Container
 			width="full"
@@ -33,8 +34,7 @@ export const HelpfulAdvice: FC<IProps> = ({ ...content }) => {
 					{content.desc}
 				</p>
 			</Container>
-
-			<CardImageSlider images={content.images} />
+			{isSlider && <CardImageSlider images={content.images} />}
 		</Container>
 	)
 }
