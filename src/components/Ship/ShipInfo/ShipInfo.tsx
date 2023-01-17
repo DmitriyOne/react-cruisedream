@@ -1,4 +1,4 @@
-import { Heading, B } from '../../../components'
+import { Heading, B } from '../../../components-ui'
 
 import styles from './ship-info.module.scss'
 

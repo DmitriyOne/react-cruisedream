@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 
 import { Card } from '../card'
 import { PaginationBottom } from './paginationBottom/paginationBottom'

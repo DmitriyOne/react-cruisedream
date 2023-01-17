@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 export const useNumberWithSpaces = () => {
 
 	const handlerSpaces = (number: number) => {

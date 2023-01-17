@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { useWindowSize } from '../../../../../../hooks'
 
-import { Heading, B } from '../../../../../../components'
+import { Heading, B } from '../../../../../../components-ui'
 import { CruiseAmountDays, CruiseDates } from '../../../../../../components/Cruise'
 
 import styles from './row-top.module.scss'

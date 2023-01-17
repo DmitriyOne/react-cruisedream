@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { Heading } from '../../Headings'
+import { Heading } from '../../../components-ui/Headings'
 
 import styles from './cruise-name.module.scss'
 

@@ -1,3 +1,4 @@
+import { FC, useRef, useState } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
@@ -5,14 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { params3x2Grid, dataRegionsCard, paramsRow3PerColumn } from '../../../fakedata'
 import { CRUISE_ROUTES } from '../../../constants'
+import { useSwiperButtons } from '../../../hooks'
 
-import { Button, CardBlackout, Container, Heading } from '../../../components'
+import { Button, Container, Heading } from '../../../components-ui'
+import { CardBlackout } from '../../Cards'
 
 import 'swiper/css'
 import 'swiper/css/grid'
 import styles from './regions-cards.module.scss'
-import { FC, useRef, useState } from 'react'
-import { useSwiperButtons } from '../../../hooks'
 
 interface IProps {
 	position?: 'grid' | 'row'

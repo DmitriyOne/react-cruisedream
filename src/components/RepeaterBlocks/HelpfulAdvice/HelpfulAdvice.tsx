@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import { FC } from 'react'
-import { CardImageSlider, Container, Heading } from '../../../components'
+
+import { Container, Heading } from '../../../components-ui'
+import { CardImageSlider } from '../../Cards'
 
 import styles from './helpful-advice.module.scss'
 

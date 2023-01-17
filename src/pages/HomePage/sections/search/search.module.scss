@@ -30,15 +30,15 @@
   }
 
   & .form {
-    @include mixins.media-w(breakpoints.$laptop-l){
+    @include mixins.media-w(breakpoints.$laptop-l) {
       @include mixins.fluidMaxSize(960);
     }
   }
 
   & .button {
     background-color: colors.$transparent;
-    border: 1px solid #004275;
-    color: #004275;
+    border: 1px solid colors.$blue;
+    color: colors.$blue;
   }
 }
 
@@ -61,7 +61,7 @@
   padding: 17px 43px;
   font-size: 17px;
   line-height: 120%;
-	color: colors.$btn-text;
+  color: colors.$btn-text;
   background-color: colors.$transparent;
   border-radius: 3px;
   border: 1px solid colors.$btn-border;
@@ -74,11 +74,11 @@
   }
 
   @include mixins.media-minw(breakpoints.$laptop) {
-		&:hover {
-			background-color: colors.$btn-hover;
-			color: colors.$white;
-		}
-	}
+    &:hover {
+      background-color: colors.$btn-hover;
+      color: colors.$white;
+    }
+  }
 }
 
 .col {
@@ -105,6 +105,7 @@
     @include mixins.media-w(breakpoints.$laptop) {
       margin-bottom: 40px;
     }
+
     @include mixins.media-w(breakpoints.$tablet) {
       margin-bottom: 30px;
     }
@@ -114,6 +115,7 @@
     @include mixins.media-w(breakpoints.$laptop) {
       margin-bottom: 40px;
     }
+
     @include mixins.media-w(breakpoints.$tablet) {
       margin-bottom: 30px;
     }
@@ -153,7 +155,7 @@
   font-size: 37px;
   line-height: 120%;
   letter-spacing: 0.01em;
-  color: #004275;
+  color: colors.$blue;
   transition: all .4s;
 
   @include mixins.media-w(1900) {
@@ -199,13 +201,13 @@
 .inputDatepicker {
   padding: 5px 0 10px;
   font-size: 24px;
-  color: #004275;
+  color: colors.$blue;
 
   @include mixins.media-w(breakpoints.$laptop-l) {
     font-size: 20px;
   }
 
   &::placeholder {
-    color: #004275;
+    color: colors.$blue;
   }
 }

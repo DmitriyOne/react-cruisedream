@@ -6,7 +6,7 @@ import { ICard } from '../../../model/interfaces'
 import cruiseImg1 from '../../Cruise/CruiseSlider/images/cruise-1.jpeg'
 
 import { CruiseAmountDays, CruiseDates, CruiseLogo, CruiseName, CruisePrice, CruiseRoute } from '../../Cruise'
-import { MyTimer, Discount } from '../../../components'
+import { Timer, Discount } from '../../../components'
 import { ShipName } from '../../Ship'
 
 import styles from './card-popular-cruise.module.scss'
@@ -29,7 +29,7 @@ export const CardPopularCruise: FC<ICard> = ({ ...card }) => {
 					classNameText={styles.discountText}
 					classNamePercentage={styles.discountPercentage}
 				/>
-				<MyTimer
+				<Timer
 					classComponent={styles.timer}
 					classText={styles.timerText}
 					classNumber={styles.timerNumber}

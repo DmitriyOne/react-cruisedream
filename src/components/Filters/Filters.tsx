@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
 import { SearchFiltersContext } from '../../context'
-import { Container, Heading } from '../../components'
+import { Container, Heading } from '../../components-ui'
 
 import { FiltersVisible } from './FiltersVisible/FiltersVisible'
 import { FiltersHidden } from './FiltersHidden/FiltersHidden'

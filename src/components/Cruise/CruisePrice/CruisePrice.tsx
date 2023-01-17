@@ -5,11 +5,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { useNumberWithSpaces, useWindowSize } from '../../../hooks'
 
-import { B, Button, Discount } from '../../../components'
+import { B, Button } from '../../../components-ui'
 import { EWidth, EBackground, EColor } from '../../../model/enums'
 
-import styles from './cruise-price.module.scss'
 import { CRUISE_NAVBAR } from '../../../constants'
+import { Discount } from '../../Discount'
+
+import styles from './cruise-price.module.scss'
 
 interface IProps {
 	buttonsRowClass?: string

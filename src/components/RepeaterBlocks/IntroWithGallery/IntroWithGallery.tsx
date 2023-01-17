@@ -2,11 +2,13 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
-import { Container, Heading, MyGallery } from '../../../components'
+import { IGallery } from '../../../model/interfaces'
 import { useWindowSize } from '../../../hooks'
 
+import { Container, Heading } from '../../../components-ui'
+import { MyGallery } from '../../../components-plugin'
+
 import styles from './intro-with-gallery.module.scss'
-import { IGallery } from '../../../model/interfaces'
 
 
 export const IntroWithGallery: FC<IGallery> = ({ ...gallery }) => {

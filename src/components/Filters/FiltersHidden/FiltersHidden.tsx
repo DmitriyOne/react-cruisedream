@@ -2,8 +2,7 @@ import { FC, useContext, useState } from 'react'
 import classNames from 'classnames'
 
 import { SearchFiltersContext } from '../../../context'
-import { Container, Input, MySelect } from '../../../components'
-import { CheckboxFilter } from '../../Input/CheckboxFilter/CheckboxFilter'
+import { CheckboxFilter, Container, Input } from '../../../components-ui'
 
 import {
 	groupedOptions,
@@ -17,6 +16,7 @@ import {
 import { ISelect } from '../../../model/interfaces'
 
 import styles from './filters-hidden.module.scss'
+import { MySelect } from '../../../components-plugin'
 
 interface IProps {
 	isOpen: boolean

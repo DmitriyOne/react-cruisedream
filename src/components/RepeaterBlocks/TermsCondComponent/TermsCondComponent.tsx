@@ -1,7 +1,7 @@
 import { useWindowSize } from '../../../hooks'
 import { ROUTES_TERMS_CONDITIONS } from '../../../constants'
 
-import { Button, Heading } from '../../../components'
+import { Button, Heading } from '../../../components-ui'
 import { Content } from './Content/Content'
 
 import styles from './terms-conditions.module.scss'

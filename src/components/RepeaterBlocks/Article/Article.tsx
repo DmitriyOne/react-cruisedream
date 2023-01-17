@@ -2,7 +2,7 @@ import { FC } from 'react'
 import classNames from 'classnames'
 
 import { IArticle } from '../../../model/interfaces'
-import { Container } from '../../../components'
+import { Container } from '../../../components-ui'
 
 import { ArticleItem } from './ArticleItem/ArticleItem'
 

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from '../../data/swiper'
 
 import { ICabinsImages } from '../../../../../model/interfaces'
-import { Button } from '../../../../../components'
+import { Button } from '../../../../../components-ui'
 import { useSwiperButtons } from '../../../../../hooks'
 
 import 'swiper/css'

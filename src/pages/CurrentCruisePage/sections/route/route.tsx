@@ -1,6 +1,6 @@
 import { tabs } from './data/tabs'
 
-import { Container, Heading, Tabs } from '../../../../components'
+import { Container, Heading, Tabs } from '../../../../components-ui'
 
 import styles from './route.module.scss'
 

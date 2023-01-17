@@ -33,7 +33,7 @@
 	line-height: 100%;
 	text-align: center;
 	color: colors.$white;
-	background-color: #FDBB11;
+	background-color: colors.$yellow;
 	padding: 4px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
@@ -74,7 +74,7 @@
 	font-size: 32px;
 	line-height: 120%;
 	text-align: center;
-	color: #004275;
+	color: colors.$blue;
 	padding-bottom: 15px;
 
 	@include mixins.media-w(breakpoints.$tablet) {

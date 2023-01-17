@@ -1,0 +1,25 @@
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/z-index.scss';
+@use '../../../../../styles/colors.scss';
+
+.row {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	z-index: z-index.$idx-header;
+	padding-bottom: 5px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 0;
+	}
+}
+
+.centerPhone {
+	@include mixins.fonts(family.$montserrat);
+	font-size: 25px;
+	line-height: 120%;
+	letter-spacing: 0.01em;
+	color: colors.$blue;
+}

@@ -1,6 +1,6 @@
 import { FC, useRef } from 'react'
 
-import { Heading } from '..'
+import { Heading } from '../../components-ui'
 import { useWindowSize } from '../../hooks'
 
 import infoIcon from './images/info.svg'

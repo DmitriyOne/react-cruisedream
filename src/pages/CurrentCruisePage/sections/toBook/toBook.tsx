@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { CruiseToBook } from '../../../../components/Cruise'
 
 import styles from './to-book.module.scss'

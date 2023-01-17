@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import classNames from 'classnames'
 
-import { Container, Heading } from '../../../../components'
+import { Container, Heading } from '../../../../components-ui'
 import { CRUISE_ROUTES } from '../../../../constants'
 
 import styles from './about-us.module.scss'

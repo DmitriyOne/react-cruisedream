@@ -33,7 +33,7 @@
 		width: auto;
 		transform: translate3d(0, 0, 0) !important;
 		inset: 35px auto auto 15% !important;
- 	}
+	}
 }
 
 .react-datepicker__current-month,
@@ -76,7 +76,7 @@
 
 	&__triangle::after {
 		top: 1px;
-		border-bottom-color: #004275 !important;
+		border-bottom-color: colors.$blue !important;
 	}
 
 	&__week {
@@ -130,7 +130,7 @@
 	}
 
 	&__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
-		background-color: #004275;
+		background-color: colors.$blue;
 		color: colors.$white;
 		border-radius: 0;
 		border-top-left-radius: 3px;
@@ -147,7 +147,7 @@
 
 	&__day--range-start,
 	&__day--range-end {
-		background-color: #004275 !important;
+		background-color: colors.$blue !important;
 	}
 
 	&__day--in-range {
@@ -201,13 +201,13 @@
 	}
 
 	&__day--range-start:hover {
-		background-color: #004275;
+		background-color: colors.$blue;
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
 	}
 
 	&__day--range-end:hover {
-		background-color: #004275;
+		background-color: colors.$blue;
 		border-top-right-radius: 3px;
 		border-bottom-right-radius: 3px;
 	}

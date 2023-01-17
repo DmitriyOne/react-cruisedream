@@ -1,6 +1,7 @@
 @use '../../../../styles/mixins.scss';
 @use '../../../../styles/breakpoints.scss';
 @use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
 
 .component {
 	padding: 28px 20px;
@@ -33,7 +34,7 @@
 	@include mixins.fonts(family.$source-sans-pro, 300);
 	font-size: 36px;
 	line-height: 120%;
-	color: #004275;
+	color: colors.$blue;
 	text-align: center;
 
 	@include mixins.media-w(breakpoints.$tablet) {

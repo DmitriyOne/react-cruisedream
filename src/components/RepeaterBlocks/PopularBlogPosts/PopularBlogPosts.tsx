@@ -8,10 +8,11 @@ import { useSwiperButtons } from '../../../hooks'
 import { CRUISE_ROUTES } from '../../../constants'
 import { ICard } from '../../../model/interfaces'
 
-import { Button, CardBlackout, Container, Heading } from '../../../components'
+import { Button, Container, Heading } from '../../../components-ui'
 
 import 'swiper/css'
 import styles from './popular-blog-post.module.scss'
+import { CardBlackout } from '../../Cards'
 
 interface IProps {
 	cards: ICard[]
@@ -39,7 +40,8 @@ export const PopularBlogPosts: FC<IProps> = ({ cards }) => {
 				>
 					{cards.map(card =>
 						<SwiperSlide key={card.id} className={styles.slide}>
-							<CardBlackout card={card}
+							<CardBlackout
+								card={card}
 								titleSize="mobLarge"
 								bodySize="large"
 								position="center"

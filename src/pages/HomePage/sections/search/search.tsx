@@ -8,7 +8,8 @@ import { useScrollUp, useWindowSize } from '../../../../hooks'
 import { groupedOptions, groupedOptions2, allRegionOptions, allCompanyOptions } from '../../../../fakedata'
 import { ISelect } from '../../../../model/interfaces'
 
-import { Button, Container, Logo, MyDatepicker, MySelect } from '../../../../components'
+import { Button, Container, Logo } from '../../../../components-ui'
+import { MyDatepicker, MySelect } from '../../../../components-plugin'
 
 import styles from './search.module.scss'
 

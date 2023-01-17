@@ -2,11 +2,10 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { useWindowSize } from '../../../../hooks'
 
+import { useWindowSize } from '../../../../hooks'
 import { IArticle } from '../../../../model/interfaces'
-import { Heading } from '../../../Headings'
-import { IFrame } from '../../../IFrame'
+import { Heading, IFrame } from '../../../../components-ui'
 
 import styles from './article-item.module.scss'
 

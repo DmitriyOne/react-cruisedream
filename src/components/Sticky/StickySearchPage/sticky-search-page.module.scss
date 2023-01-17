@@ -46,8 +46,8 @@
 
 	& .button {
 		background-color: colors.$transparent;
-		border: 1px solid #004275;
-		color: #004275;
+		border: 1px solid colors.$blue;
+		color: colors.$blue;
 	}
 }
 
@@ -128,7 +128,7 @@
 	font-size: 37px;
 	line-height: 120%;
 	letter-spacing: 0.01em;
-	color: #004275;
+	color: colors.$blue;
 	transition: all .4s;
 
 	@include mixins.media-w(1900) {

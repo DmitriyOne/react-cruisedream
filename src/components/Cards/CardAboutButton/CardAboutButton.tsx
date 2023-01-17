@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ICard } from '../../../model/interfaces'
-import { B, Heading } from '../..'
+import { B, Heading } from '../../../components-ui'
 import { CruiseLogo } from '../../Cruise'
 
 import styles from './card-about-button.module.scss'

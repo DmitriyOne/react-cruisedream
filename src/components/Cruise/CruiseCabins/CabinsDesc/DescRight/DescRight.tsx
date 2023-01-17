@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
-import { B, Button } from '../../../../../components'
+import { B, Button } from '../../../../../components-ui'
 import { ICabinsDesc } from '../../../../../model/interfaces'
 
 import styles from './desc-right.module.scss'

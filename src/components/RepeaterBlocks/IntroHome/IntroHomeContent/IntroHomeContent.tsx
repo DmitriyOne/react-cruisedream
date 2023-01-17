@@ -3,9 +3,9 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { B } from '../../../../components'
+import { B } from '../../../../components-ui'
+import { UserRequestModal } from '../../../../components-ui/Modal/UserRequestModal/UserRequestModal'
 import { useModal } from '../../../../hooks'
-import { UserRequestModal } from '../../../Modal/UserRequestModal/UserRequestModal'
 
 import styles from './intro-home-content.module.scss'
 

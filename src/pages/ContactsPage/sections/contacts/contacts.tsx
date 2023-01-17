@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { Container, Heading } from '../../../../components'
+import { Container, Heading } from '../../../../components-ui'
 import { CRUISE_GMAILS, CRUISE_PAYMENT, CRUISE_SOCIAL_LINKS } from '../../../../constants'
 
 import whatsappIcon from '../../../../assets/images/messengers/whatsapp.svg'

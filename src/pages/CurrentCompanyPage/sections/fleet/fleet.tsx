@@ -6,11 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { paramsRow3PerColumn, dataFleet } from '../../../../fakedata'
 import { useSwiperButtons } from '../../../../hooks'
 
-import { Button, CardAboutButton, Container, Heading } from '../../../../components'
+import { Button, Container, Heading } from '../../../../components-ui'
 
 import 'swiper/css'
 import 'swiper/css/grid'
 import styles from './fleet.module.scss'
+import { CardAboutButton } from '../../../../components'
 
 export const Fleet = () => {
 	const [isShowAll, setIsShowAll] = useState(false)

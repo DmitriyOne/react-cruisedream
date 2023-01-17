@@ -1,7 +1,7 @@
 import { FormEvent, useContext } from 'react'
 
 import { SearchFiltersContext } from '../../../context'
-import { B, Heading, Button } from '../../../components'
+import { B, Heading, Button } from '../../../components-ui'
 
 import crossIcon from './icons/remove.svg'
 

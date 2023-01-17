@@ -1,6 +1,7 @@
 @use '../../../styles/mixins.scss';
 @use '../../../styles/breakpoints.scss';
 @use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
 
 .component {
 	display: flex;
@@ -33,7 +34,7 @@
 	@include mixins.fonts(family.$source-sans-pro, 600);
 	font-size: 16px;
 	line-height: 110%;
-	color: #FDBB11;
+	color: colors.$yellow;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 15px;
@@ -51,7 +52,7 @@
 
 .text {
 	display: block;
-	border-bottom: 1px solid #FDBB11;
+	border-bottom: 1px solid colors.$yellow;
 	padding-bottom: 8px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {

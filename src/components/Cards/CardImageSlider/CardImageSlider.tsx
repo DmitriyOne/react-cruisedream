@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
 
 import { useSwiperButtons } from '../../../hooks'
-import { Button } from '../../Button'
+import { Button } from '../../../components-ui/Button'
 
 import 'swiper/css'
 import styles from './card-image-slider.module.scss'
@@ -21,7 +21,7 @@ interface IProps {
 
 export const CardImageSlider: FC<IProps> = ({ images }) => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
-	
+
 	return (
 		<Swiper
 			className={styles.component}

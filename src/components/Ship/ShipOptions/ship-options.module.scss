@@ -1,6 +1,7 @@
 @use '../../../styles/mixins.scss';
 @use '../../../styles/breakpoints.scss';
 @use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
 
 .wrapper {
 	width: 100%;
@@ -39,7 +40,7 @@
 	@include mixins.fonts(family.$source-sans-pro);
 	font-size: 46px;
 	line-height: 110%;
-	color: #004275;
+	color: colors.$blue;
 	text-align: center;
 	padding-bottom: 18px;
 
