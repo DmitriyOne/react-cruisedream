@@ -1,0 +1,157 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+
+.component {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.blocks {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 60px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 50px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 40px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 20px;
+	}
+
+	&:last-child {
+		padding-bottom: 10px;
+	}
+}
+
+.text {
+	@include mixins.fonts(family.$source-sans-pro);
+	line-height: 130%;
+}
+
+.link {
+	@extend .text;
+	width: fit-content;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.textLarge {
+	font-size: 25px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.textSmall {
+	font-size: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.blue {
+	color: #004275;
+}
+
+.gray {
+	color: rgba(79, 78, 78, 0.8);
+}
+
+.phone {
+	@include mixins.fonts(family.$montserrat);
+	letter-spacing: 0.01em;
+}
+
+.gmailItem {
+	margin-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-bottom: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 0px;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.messengersRow {
+	display: flex;
+	margin-top: 22px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 4px;
+	}
+}
+
+.messengersLink {
+	display: flex;
+	align-items: center;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 16px;
+	line-height: 140%;
+	letter-spacing: 0.05em;
+	color: #004275;
+	margin-right: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.messengersIcon {
+	display: block;
+	width: 17px;
+	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 12px;
+		margin-right: 8px;
+	}
+}
