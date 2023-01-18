@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { B } from '../../../../components-ui'
-import { UserRequestModal } from '../../../../components-ui/Modal/UserRequestModal/UserRequestModal'
+import { UserRequestModal } from '../../../../components'
 import { useModal } from '../../../../hooks'
 
 import styles from './intro-home-content.module.scss'

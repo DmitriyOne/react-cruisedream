@@ -1,15 +1,12 @@
 import classNames from 'classnames'
 import { FC, useState } from 'react'
 
-import { B } from '../../../components-ui/B'
-import { Heading } from '../../../components-ui/Headings'
+import { B, Heading, Modal } from '../../components-ui'
 
-import { Modal } from '../Modal'
-
-import shipIcon from '../icons/ship.svg'
-import markerIcon from '../icons/marker.svg'
-import datepickerIcon from '../icons/datepicker.svg'
-import moonIcon from '../icons/moon.svg'
+import shipIcon from './icons/ship.svg'
+import markerIcon from './icons/marker.svg'
+import datepickerIcon from './icons/datepicker.svg'
+import moonIcon from './icons/moon.svg'
 
 import styles from './user-request-modal.module.scss'
 

@@ -1,14 +1,7 @@
 import { FC } from 'react'
-import classNames from 'classnames'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { paramsFade } from '../../../../../fakedata'
 
 import { ICabinsImages } from '../../../../../model/interfaces'
-import { Button } from '../../../../../components-ui'
-import { useSwiperButtons } from '../../../../../hooks'
 
-import 'swiper/css'
 import styles from './desc-left.module.scss'
 
 interface IProps {

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { ShipName, ShipInfoFull, ShipInfoShort, ShipDesc, ShipLinks } from '../../Ship'
+import { ShipName, ShipDesc, ShipLinks, ShipInfoShort, ShipInfoFull } from '../../Ship'
 
 import styles from './ship-content.module.scss'
 
