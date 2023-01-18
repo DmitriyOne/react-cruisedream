@@ -1,4 +1,5 @@
 @use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
 @use '../../styles/z-index.scss';
 
 .overlay {
@@ -7,21 +8,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-	@include mixins.flex-center;
+  // @include mixins.flex-center;
   background-color: rgba(0, 0, 0, 0.5);
-	z-index: z-index.$idx-overlay;
+  z-index: z-index.$idx-overlay;
+  overflow: scroll;
 }
 
 .component {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #F5F5F5;
-	@include mixins.fluidMaxSize(660);
-  height: fit-content;
-  padding: 22px 55px;
-	z-index: z-index.$idx-modal;
+  // position: fixed;
+  // top: 0%;
+  // left: 0%;
+// left: 0;
+// right: 0;  
+@include mixins.fluidMaxSize(660);
+  // height: 100%;
+  // z-index: z-index.$idx-modal;
+  // overflow: scroll;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container {
+  @include mixins.fluidMaxSize(660);
+  // height: 100%;
+  padding: 40px 12px;
+  position: relative;
+  z-index: z-index.$idx-modal;
 }
 
 .body {
@@ -31,5 +47,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
+  padding: 22px 55px;
+  background: #F5F5F5;
+ 
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
