@@ -1,15 +1,14 @@
 /* eslint-disable max-len */
 import { useWindowSize } from '../../hooks'
+import { Ship } from '../../components/Ship'
 
-import { Cabins, Dates, FAQ, Header, Options, Overview, Route, Ship, TermsAndCond, ToBook, YourCruise } from './sections'
+import { Cabins, Dates, FAQ, Header, Options, Overview, Route, TermsAndCond, ToBook, YourCruise } from './sections'
 
 export const CurrentCruisePage = () => {
 	const { isMobile } = useWindowSize()
-
-	const isShow = !isMobile
 	return (
 		<>
-			{isShow && <Header />}
+			{!isMobile && <Header />}
 			<Overview />
 			<Ship />
 			<Route />

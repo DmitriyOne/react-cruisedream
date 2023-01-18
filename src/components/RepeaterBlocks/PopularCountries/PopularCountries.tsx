@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 import { params3Col, dataCountries } from '../../../fakedata'
 import { useSwiperButtons } from '../../../hooks'
 import { CRUISE_ROUTES } from '../../../constants'
+import { CardBlackout } from '../../Cards'
 
 import { Button, Container, Heading } from '../../../components-ui'
 
 import 'swiper/css'
 import styles from './popular-countries.module.scss'
-import { CardBlackout } from '../../Cards'
 
 export const PopularCountries = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()

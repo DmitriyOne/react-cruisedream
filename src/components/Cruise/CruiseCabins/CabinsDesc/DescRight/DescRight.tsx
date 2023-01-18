@@ -3,14 +3,14 @@ import { FC } from 'react'
 import classNames from 'classnames'
 
 import { B, Button } from '../../../../../components-ui'
-import { ICabinsDesc } from '../../../../../model/interfaces'
+import { ICabinsDescCruise } from '../../../../../model/interfaces'
 
 import styles from './desc-right.module.scss'
 import { CRUISE_ROUTES } from '../../../../../constants'
 
 interface IProps {
 	id: number
-	cabinsDesc: ICabinsDesc[]
+	cabinsDesc: ICabinsDescCruise[]
 	activeId: number | null
 	checkedId: number | null
 	handleChecked: (id: number) => void

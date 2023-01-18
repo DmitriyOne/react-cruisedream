@@ -2,8 +2,8 @@ import { FC } from 'react'
 import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { params } from '../../data/swiper'
 
+import { paramsFade } from '../../../../../fakedata'
 import { ICabinsImages } from '../../../../../model/interfaces'
 import { Button } from '../../../../../components-ui'
 import { useSwiperButtons } from '../../../../../hooks'
@@ -26,7 +26,7 @@ export const DescLeft: FC<IProps> = ({ id, images, handleToggle }) => {
 				<Swiper
 					className={styles.swiper}
 					onSwiper={upDateSwiper}
-					{...params}
+					{...paramsFade}
 				>
 					{images.map((slide, idx) =>
 						<SwiperSlide key={idx} className={styles.slide}>

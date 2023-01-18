@@ -50,7 +50,7 @@ export const ShipName: FC<IProps> = ({
 					/>
 				</span>
 			}
-			<Heading as="h3" className={classNames(classNameText, styles.title)}>
+			<Heading as="h3" className={classNames(styles.title, classNameText)}>
 				{content}
 				{isDesc && <span className={styles.line} />}
 			</Heading>

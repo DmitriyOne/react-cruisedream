@@ -1,0 +1,47 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+
+.laptopFull {
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.logo {
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(180);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(140);
+		margin: 10px auto 0;
+	}
+}
+
+.shipWrapper {
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+	}
+}
+
+.shipName {
+	font-size: 32px;
+	font-weight: 600;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-weight: 500;
+		font-size: 12px;
+	}
+}

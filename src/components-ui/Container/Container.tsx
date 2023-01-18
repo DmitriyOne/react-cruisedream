@@ -51,6 +51,7 @@ export const Container = forwardRef(({
 		[styles.justifyBetween]: justify === 'between',
 		[styles.justifyCenter]: justify === 'center',
 		[styles.justifyBaseline]: justify === 'baseline',
+		[styles.justifyAround]: justify === 'around',
 	})
 
 	if (tag === 'section') {

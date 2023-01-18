@@ -5,23 +5,36 @@ export interface ICabinsImages {
 	alt: string
 }
 
-export interface ICabins {
-	id: number
-	title: string
-	images: ICabinsImages[]
-	desc: ICabinsDesc[]
-}
-
 export interface IDeck {
 	code: keyof typeof EDeckCode
 	name: string
 }
 
-export interface ICabinsDesc {
+export interface ICabinsDescCruise {
 	id: number
 	deck: IDeck
 	price: number
 	checked: boolean
+}
+
+export interface ICabinsCruise {
+	id: number
+	title: string
+	images: ICabinsImages[]
+	desc: ICabinsDescCruise[]
+}
+
+export interface ICabinsShip {
+	id: number
+	title: string
+	images: ICabinsImages
+	desc: string
+}
+
+export interface ICabinsModal {
+	id: number
+	title: string
+	images: ICabinsImages[]
 }
 
 export interface ICabinsSwiperDates {

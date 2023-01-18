@@ -8,17 +8,17 @@ import {
 	withBigWindowCabinsDesc
 } from './cabins-desc'
 
-import cabinsImage1Src from '../images/cabins-1.jpg'
+import cabinsImage1Src from '../../../../assets/images/cabins/cabins-1.jpg'
 import cabinsImage2Src from '../../../../assets/images/ship/1.jpg'
 
-import { ICabins, ICabinsImages } from '../../../../model/interfaces'
+import { ICabinsCruise, ICabinsImages } from '../../../../model/interfaces'
 
 export const swiperImages: ICabinsImages[] = [
 	{ src: cabinsImage1Src, alt: 'Cool cabin' },
 	{ src: cabinsImage2Src, alt: 'Very cool cabin' }
 ]
 
-export const cabinsInner: ICabins[] = [
+export const cabinsInner: ICabinsCruise[] = [
 	{
 		id: 1,
 		title: 'КАЮТА С БАЛКОНОМ С ОГРАНИЧЕННЫМ ВИДОМ',
@@ -33,7 +33,7 @@ export const cabinsInner: ICabins[] = [
 	}
 ]
 
-export const cabinsSuite: ICabins[] = [
+export const cabinsSuite: ICabinsCruise[] = [
 	{
 		id: 1,
 		title: 'КАЮТА Сьют',
@@ -42,7 +42,7 @@ export const cabinsSuite: ICabins[] = [
 	}
 ]
 
-export const cabinsBalcony: ICabins[] = [
+export const cabinsBalcony: ICabinsCruise[] = [
 	{
 		id: 1,
 		title: 'КАЮТА c балконом',
@@ -51,7 +51,7 @@ export const cabinsBalcony: ICabins[] = [
 	}
 ]
 
-export const cabinsWindow: ICabins[] = [
+export const cabinsWindow: ICabinsCruise[] = [
 	{
 		id: 1,
 		title: 'КАЮТА c обычным окном',

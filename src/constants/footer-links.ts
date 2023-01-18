@@ -5,7 +5,7 @@ const MainAccordion = [
 	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 3', },
 	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 4', },
 	{ href: CRUISE_ROUTES.EMPTY, text: 'Главная 5', },
-	{ href: CRUISE_ROUTES.EMPTY, text: 'Контакты', }
+	{ href: CRUISE_ROUTES.CONTACTS, text: 'Контакты', }
 ]
 
 const RegionAccordion = [
