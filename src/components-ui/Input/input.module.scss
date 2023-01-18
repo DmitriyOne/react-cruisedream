@@ -1,9 +1,22 @@
 @use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
 @use '../../styles/colors.scss';
 
 .component {
 	display: flex;
 	position: relative;
+}
+
+.full {
+	width: 100%;
+}
+
+.half {
+	width: 47%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+	}
 }
 
 .input {
