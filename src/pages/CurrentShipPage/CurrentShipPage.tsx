@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { dataRegionPopularBlogPosts, dataRegionsHelpfulAdvice, dataShipArticlePhoto1, dataShipArticlePhoto2, dataShipArticleVideo, dataShipDesc, dataShipGallery } from '../../fakedata'
 
 import { About, Advantages, Desc, HeaderAnchors, HelpfulAdvice, IntroWithGallery, PopularBlogPosts, PopularCountries, PopularCruises } from '../../components/RepeaterBlocks'
-import { Ship, ShipOptions } from '../../components/Ship'
+import { Ship, ShipCabins, ShipOptions } from '../../components/Ship'
 import { Article } from '../../components/RepeaterBlocks/Article'
 
 import styles from './current-ship-page.module.scss'
@@ -34,6 +34,7 @@ export const CurrentShipPage = () => {
 				isSlider={false}
 				{...dataRegionsHelpfulAdvice}
 			/>
+			<ShipCabins />
 			<PopularCruises
 				componentClass="pt-section pb-section"
 				isBottomLink

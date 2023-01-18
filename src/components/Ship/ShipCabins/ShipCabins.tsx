@@ -1,12 +1,21 @@
+import classNames from 'classnames'
 import { tabs } from './data/tabs'
 
-import { Tabs } from '../../../components-ui'
+import { Container, Heading, Tabs } from '../../../components-ui'
 
 import styles from './ship-cabins.module.scss'
 
 export const ShipCabins = () => {
 	return (
-		<div className={styles.component}>
+		<Container
+			width="full"
+			className={classNames(styles.component, 'pt-section')}
+			direction="column"
+			tag="section"
+		>
+			<Heading as="h2" className={styles.title}>
+				КАЮТЫ НА ЛАЙНЕРЕ MSC WORLD EUROPA
+			</Heading>
 			<Tabs
 				items={tabs}
 				headerClass={styles.tabsHeader}
@@ -17,6 +26,6 @@ export const ShipCabins = () => {
 				subTitleClass={styles.tabsSubtitle}
 				isHeaderWrapper
 			/>
-		</div>
+		</Container>
 	)
 }

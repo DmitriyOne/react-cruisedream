@@ -4,7 +4,44 @@
 @use '../../../styles/colors.scss';
 
 .component {
+	
+}
+
+.title {
 	width: 100%;
+	@include mixins.fonts(family.$source-sans-pro, 300);
+	font-size: 36px;
+	line-height: 120%;
+	color: colors.$blue;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 24px;
+	margin-bottom: 30px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 30px;
+		padding-bottom: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 26px;
+		padding-bottom: 18px;
+		margin-bottom: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 24px;
+		font-weight: 400;
+		padding-bottom: 12px;
+		margin-bottom: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 20px;
+		font-weight: 400;
+		padding-bottom: 8px;
+	}
 }
 
 .tabsHeader {
@@ -20,8 +57,8 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		margin-bottom: 10px;
 		border-bottom: none;
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 }
 
@@ -86,26 +123,9 @@
 }
 
 .tabsSubtitle {
+	@extend .tabsTitle;
 	display: block;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 110%;
-	color: colors.$blue;
-	text-align: center;
-	padding-top: 4px;
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		font-size: 16px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		font-size: 15px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet-s) {
-		font-size: 13px;
-		padding-top: 8px;
-	}
+	padding: 0;
 }
 
 .tabsBody {

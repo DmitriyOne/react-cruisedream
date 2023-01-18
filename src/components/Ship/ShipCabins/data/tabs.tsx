@@ -9,25 +9,25 @@ export const tabs: ITabs[] = [
 	{
 		id: 1,
 		title: 'Внутренняя',
-		subtitle: 'от 1 225 $',
+		subtitle: 'каюта',
 		children: <CabinsInner />
 	},
 	{
 		id: 2,
-		title: 'C окном',
-		subtitle: 'от 1 625 $',
+		title: 'Каюта с',
+		subtitle: 'окном',
 		children: <CabinsWithWindow />
 	},
 	{
 		id: 3,
-		title: 'C балконом',
-		subtitle: 'от 1 725 $',
+		title: 'Каюта с',
+		subtitle: 'балконом',
 		children: <CabinsWithBalcony />
 	},
 	{
 		id: 4,
-		title: 'Сьют',
-		subtitle: 'от 1 955 $',
+		title: 'Каюта',
+		subtitle: 'сьют',
 		children: <CabinsSuite />
 	}
 ]

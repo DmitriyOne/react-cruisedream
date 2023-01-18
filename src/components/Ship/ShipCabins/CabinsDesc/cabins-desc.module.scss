@@ -6,7 +6,7 @@
 .component {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 5px;
+	margin-bottom: 80px;
 	width: 100%;
 
 	@include mixins.media-w(breakpoints.$tablet) {
@@ -27,43 +27,12 @@
 	}
 }
 
-.title {
-	width: 67%;
-	margin-left: auto;
-	@include mixins.fonts(family.$source-sans-pro);
-	font-size: 32px;
-	line-height: 120%;
-	color: colors.$blue;
-	text-transform: uppercase;
-	text-align: center;
-	padding-bottom: 2px;
-
-	@include mixins.media-w(breakpoints.$laptop-s) {
-		width: 64%;
-		font-size: 24px;
-	}
-
-	@include mixins.media-w(breakpoints.$laptop) {
-		font-size: 20px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		width: 100%;
-		font-size: 16px;
-		padding-bottom: 10px;
-	}
-
-	@include mixins.media-w(breakpoints.$tablet-s) {
-		font-size: 14px;
-	}
-}
-
 .left {
 	width: 33%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-right: 10px;
+	margin-right: 20px;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		width: 36%;
@@ -72,6 +41,7 @@
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 100%;
 		margin-right: 0;
+		margin-top: 10px;
 	}
 }
 
@@ -84,5 +54,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		width: 100%;
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 }

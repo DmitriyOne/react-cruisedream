@@ -1,4 +1,4 @@
-import { ICabinsDesc, IDeck } from '../../../../model/interfaces'
+import { ICabinsDescCruise, IDeck } from '../../../../model/interfaces'
 
 const deck1: IDeck = {
 	code: 'A1',
@@ -20,7 +20,7 @@ const deck4: IDeck = {
 	name: 'Палуба - 8'
 }
 
-export const innerLimitCabinsDesc: ICabinsDesc[] = [
+export const innerLimitCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck1,
@@ -35,7 +35,7 @@ export const innerLimitCabinsDesc: ICabinsDesc[] = [
 	},
 ]
 
-export const innerUnlimitedCabinsDesc: ICabinsDesc[] = [
+export const innerUnlimitedCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 3,
 		deck: deck3,
@@ -50,7 +50,7 @@ export const innerUnlimitedCabinsDesc: ICabinsDesc[] = [
 	},
 ]
 
-export const suiteCabinsDesc: ICabinsDesc[] = [
+export const suiteCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck3,
@@ -59,7 +59,7 @@ export const suiteCabinsDesc: ICabinsDesc[] = [
 	}
 ]
 
-export const withSmallWindowCabinsDesc: ICabinsDesc[] = [
+export const withSmallWindowCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck1,
@@ -80,7 +80,7 @@ export const withSmallWindowCabinsDesc: ICabinsDesc[] = [
 	},
 ]
 
-export const withWindowCabinsDesc: ICabinsDesc[] = [
+export const withWindowCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck4,
@@ -95,7 +95,7 @@ export const withWindowCabinsDesc: ICabinsDesc[] = [
 	}
 ]
 
-export const withBigWindowCabinsDesc: ICabinsDesc[] = [
+export const withBigWindowCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck3,
@@ -110,7 +110,7 @@ export const withBigWindowCabinsDesc: ICabinsDesc[] = [
 	}
 ]
 
-export const withBalconyCabinsDesc: ICabinsDesc[] = [
+export const withBalconyCabinsDesc: ICabinsDescCruise[] = [
 	{
 		id: 1,
 		deck: deck1,
