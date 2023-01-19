@@ -8,8 +8,12 @@ export const RequestModalForm = () => {
 	const [agree, setAgree] = useState(false)
 
 	const handlerChecked = () => {
+		console.log('click')
 		setAgree(prev => !prev)
 	}
+
+	console.log('checked: ', agree)
+
 
 	return (
 		<form className={styles.form}>
@@ -18,6 +22,7 @@ export const RequestModalForm = () => {
 					width="half"
 					labelText="Имя*"
 					labelPosition="top"
+					componentClassName={styles.inputWrapper}
 					labelClassName={styles.label}
 					inputClassName={styles.input}
 					placeholder="Андрей"
@@ -26,6 +31,7 @@ export const RequestModalForm = () => {
 					width="half"
 					labelText="Фамилия"
 					labelPosition="top"
+					componentClassName={styles.inputWrapper}
 					labelClassName={styles.label}
 					inputClassName={styles.input}
 					placeholder="Иванов"

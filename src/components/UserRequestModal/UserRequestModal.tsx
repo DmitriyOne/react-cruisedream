@@ -21,12 +21,8 @@ export const UserRequestModal: FC<IProps> = ({ onClosed }) => {
 		}
 	}
 
-	const handleModalOpen= () => {
-		setShown(true)
-	}
-
 	return (
-		<Modal isShow={shown} onOpen={handleModalOpen} onClose={handleModalClose}>
+		<Modal isShow={shown} onClose={handleModalClose}>
 			<RequestModalHeader />
 			<RequestModalOptions />
 			<RequestModalForm />
