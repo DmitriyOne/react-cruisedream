@@ -29,7 +29,7 @@ export const Modal: FC<IProps> = ({ isShow, onClose, children }) => {
 	}
 
 	const modalContent = (
-		<div className={styles.component}  >
+		<div className={styles.component}>
 			<div className={styles.overlay} onClick={handleCloseClick} />
 			<div className={styles.wrapper}>
 				<div className={styles.body}>
