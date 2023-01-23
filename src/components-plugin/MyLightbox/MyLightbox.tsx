@@ -11,7 +11,7 @@ import 'yet-another-react-lightbox/styles.css'
 import './my-lightbox.scss'
 
 interface IProps {
-	// index?: number
+	index?: number
 	images: IGalleryImage[]
 	isOpenGallery: boolean
 	onCloseGallery: () => void
@@ -29,12 +29,12 @@ const zoomParams = {
 	scrollToZoom: true,
 }
 
-export const MyLightbox: FC<IProps> = ({ images, isOpenGallery, onCloseGallery }) => {
+export const MyLightbox: FC<IProps> = ({ index = 0, images, isOpenGallery, onCloseGallery }) => {
 	const { isTablet } = useWindowSize()
 
 	return (
 		<Lightbox
-			// index={index}
+			index={index}
 			open={isOpenGallery}
 			close={onCloseGallery}
 			slides={images}
