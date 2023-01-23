@@ -47,11 +47,11 @@
 }
 
 .body {
+	width: 100%;
 	padding: 22px 25px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding: 8px 12px 22px;
-		background-color: red;
 	}
 }
 
@@ -212,7 +212,12 @@
 	background-color: colors.$transparent;
 	border: 1px solid colors.$btn-border;
 	transition: all .3s;
-	margin-right: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 47%;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
 
 	@include mixins.media-minw(breakpoints.$laptop) {
 		&:hover {
@@ -223,7 +228,6 @@
 	}
 
 	&:last-child {
-		margin-right: 0;
 
 		@include mixins.media-w(breakpoints.$tablet) {
 			background-color: colors.$btn-hover;
