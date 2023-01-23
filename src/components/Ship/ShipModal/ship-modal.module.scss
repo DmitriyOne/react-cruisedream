@@ -51,6 +51,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding: 8px 12px 22px;
+		background-color: red;
 	}
 }
 
