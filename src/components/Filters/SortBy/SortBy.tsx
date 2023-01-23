@@ -1,9 +1,8 @@
 import classNames from 'classnames'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { optionSortCurrency, optionSortBy } from '../../../fakedata'
-import { ISelect } from '../../../model/interfaces'
 
-import { MySelect } from '../../MySelect'
+import { MySelect } from '../../../components-plugin'
 
 import styles from './sort-by.module.scss'
 

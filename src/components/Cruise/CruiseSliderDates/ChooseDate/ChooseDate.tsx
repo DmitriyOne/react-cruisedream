@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { B, MyDatepicker } from '../../../../components'
+import { MyDatepicker } from '../../../../components-plugin'
+import { B } from '../../../../components-ui'
 
 import styles from './choose-date.module.scss'
 

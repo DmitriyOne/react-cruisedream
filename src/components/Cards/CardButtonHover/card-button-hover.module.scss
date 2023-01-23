@@ -55,7 +55,7 @@
 	font-size: 19px;
 	line-height: 100%;
 	text-align: center;
-	color: #004275;
+	color: colors.$blue;
 	padding-bottom: 10px;
 
 	@include mixins.media-w(breakpoints.$tablet) {
@@ -68,7 +68,7 @@
 	line-height: 110%;
 	font-weight: 500;
 	color: #4F4E4E;
-	
+
 	&.indent {
 		text-indent: 2rem;
 

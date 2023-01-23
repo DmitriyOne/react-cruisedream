@@ -1,4 +1,5 @@
-import { Button, MyTimer } from '../../../components'
+import { Button } from '../../../components-ui'
+import { Timer } from '../../../components'
 import { ShipName } from '../../Ship'
 
 import styles from './cruise-to-book.module.scss'
@@ -7,7 +8,7 @@ export const CruiseToBook = () => {
 
 	return (
 		<>
-			<MyTimer
+			<Timer
 				classComponent={styles.timer}
 				classNumber={styles.timerNumber}
 				deadline="28 Jan 2023 17:00"

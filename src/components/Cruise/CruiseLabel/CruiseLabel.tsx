@@ -1,4 +1,4 @@
-import { Heading } from '../../Headings'
+import { Heading } from '../../../components-ui/Headings'
 
 import styles from './cruise-label.module.scss'
 

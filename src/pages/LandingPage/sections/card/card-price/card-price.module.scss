@@ -1,0 +1,82 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	width: 39%;
+	padding: 28px 46px 28px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	background-color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 35%;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-ss) {
+		width: 30%;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 1px;
+		height: calc(100% - 56px);
+		background-color: #7E7E7E;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			height: calc(100% - 40px);
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			display: none;
+		}
+	}
+}
+
+.bottom {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-top: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 0;
+	}
+}
+
+.rowButton {
+	margin-top: 12px;
+}
+
+.button {
+	padding: 14px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 16px;
+	}
+}
+

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 
-import { Container } from '../../../components'
+import { Container } from '../../../components-ui'
 import { CRUISE_ROUTES } from '../../../constants'
 import { useWindowSize } from '../../../hooks'
 

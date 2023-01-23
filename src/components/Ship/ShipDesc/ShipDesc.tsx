@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { useState } from 'react'
 
-import { Button } from '../../../components'
+import { Button } from '../../../components-ui'
 
 import styles from './ship-desc.module.scss'
 

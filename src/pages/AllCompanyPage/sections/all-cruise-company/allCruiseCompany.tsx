@@ -1,12 +1,13 @@
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Button, CardAboutButton, Container, Heading } from '../../../../components'
+import { Button, Container, Heading } from '../../../../components-ui'
 import { useSwiperButtons } from '../../../../hooks'
 import { dataAboutCompany, params3x3Grid } from '../../../../fakedata'
 
 import 'swiper/css'
 import styles from './all-cruise-company.module.scss'
+import { CardAboutButton } from '../../../../components'
 
 export const AllCruiseCompany = () => {
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()

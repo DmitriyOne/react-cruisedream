@@ -1,4 +1,4 @@
-import { Heading } from '../../../components'
+import { Heading } from '../../../components-ui'
 import { useWindowSize } from '../../../hooks'
 import { CruiseAmountDays } from '../../Cruise'
 

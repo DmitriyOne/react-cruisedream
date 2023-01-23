@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
 
-import { Heading } from '../../../../components'
+import { Heading } from '../../../../components-ui'
 
-import { ICabins } from '../../../../model/interfaces'
+import { ICabinsCruise } from '../../../../model/interfaces'
 
 import { DescLeft } from './DescLeft/DescLeft'
 import { DescRight } from './DescRight/DescRight'
@@ -10,7 +10,7 @@ import { DescRight } from './DescRight/DescRight'
 import styles from './cabins-desc.module.scss'
 
 interface IProps {
-	cabins: ICabins[]
+	cabins: ICabinsCruise[]
 }
 
 export const CabinsDesc: FC<IProps> = ({ cabins }) => {
@@ -47,7 +47,8 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 						<div className={styles.right}>
 							<DescRight
 								id={cabin.id}
-								cabinsDesc={cabin.desc}
+								cabinsContent={cabin.content}
+								cabinsDescription={cabin.description}
 								activeId={activeId}
 								checkedId={checkedId}
 								handleChecked={handleChecked}

@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { TermsCondComponent } from '../../../../components/RepeaterBlocks'
 
 import styles from './terms-cond.module.scss'

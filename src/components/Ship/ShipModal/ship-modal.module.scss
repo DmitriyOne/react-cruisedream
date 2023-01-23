@@ -1,0 +1,238 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
+
+.containerModal {
+	@include mixins.fluidMaxSize(960);
+}
+
+.bodyModal {
+	background: colors.$white;
+	border: 1px solid rgba(79, 78, 78, 0.28);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.crossModal {
+	top: 22px;
+	right: 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		top: 12px;
+		right: 12px;
+	}
+}
+
+.header {
+	width: 100%;
+	padding: 22px 65px 16px 25px;
+	border-bottom: 1px solid rgba(79, 78, 78, 0.35);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 32px 12px 8px 12px;
+	}
+}
+
+.title {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 22px;
+	line-height: 120%;
+	color: colors.$blue;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 20px;
+		text-align: center;
+	}
+}
+
+.body {
+	width: 100%;
+	padding: 22px 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 8px 12px 22px;
+	}
+}
+
+.description {
+	display: flex;
+	padding-bottom: 28px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 16px;
+		flex-direction: column;
+	}
+}
+
+.descImgWrapper {
+	width: 45%;
+	max-height: 280px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 35%;
+		max-height: 240px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		height: 240px;
+	}
+
+	img {
+		height: 100%;
+	}
+}
+
+.descContentWrapper {
+	width: 55%;
+	padding: 14px 18px;
+	background-color: rgba(0, 66, 117, 0.2);
+	text-align: left;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 65%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding: 12px 16px 16px;
+	}
+}
+
+.descTitle {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 20px;
+	line-height: 120%;
+	color: colors.$blue;
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 2px;
+		text-align: center;
+	}
+}
+
+.descSize {
+	display: block;
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 16px;
+	line-height: 120%;
+	color: rgba(79, 78, 78, 0.8);
+	padding-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+}
+
+.descText {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 18px;
+	line-height: 120%;
+	color: #4F4E4E;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;	
+	}
+}
+
+.advantages {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start
+}
+
+.advantagesTitle {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 20px;
+	line-height: 120%;
+	color: colors.$blue;
+	text-transform: uppercase;
+	padding-bottom: 12px;
+}
+
+.advantagesUl {
+	width: 100%;
+	columns: 2;
+	column-gap: 20px;
+	padding-bottom: 40px;
+	text-align: left;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		columns: 1;
+		column-gap: 0;
+		padding-bottom: 20px;
+	}
+}
+
+.advantagesItem {
+	@include mixins.fonts(family.$source-sans-pro);
+	font-size: 20px;
+	line-height: 100%;
+	color: rgba(79, 78, 78, 0.8);
+	padding-left: 12px;
+	padding-bottom: 18px;
+	position: relative;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		line-height: 140%;
+		font-size: 18px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 12px;
+		left: 0;
+		@include mixins.square-size(5);
+		background-color: rgba(79, 78, 78, 0.8);
+		border-radius: 50%;
+	}
+}
+
+.buttonsRow {
+	width: 100%;
+	@include mixins.flex-spb;
+}
+
+.button {
+	min-width: 170px;
+	font-size: 12px;
+	line-height: 120%;
+	text-align: center;
+	text-transform: uppercase;
+	color: colors.$btn-text;
+	padding: 18px 24px;
+	background-color: colors.$transparent;
+	border: 1px solid colors.$btn-border;
+	transition: all .3s;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 47%;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+			border-color: colors.$transparent;
+		}
+	}
+
+	&:last-child {
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			background-color: colors.$btn-hover;
+			color: colors.$white;
+			border-color: colors.$transparent;
+		}
+	}
+}

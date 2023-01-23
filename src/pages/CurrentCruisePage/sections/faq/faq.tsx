@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Accordion, Container, Heading } from '../../../../components'
+import { Accordion, Container, Heading } from '../../../../components-ui'
 import { DataFaq } from '../../../../fakedata'
 
 import styles from './faq.module.scss'

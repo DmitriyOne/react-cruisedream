@@ -2,21 +2,22 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
-import { B, Button } from '../../../../../components'
-import { ICabinsDesc } from '../../../../../model/interfaces'
+import { B, Button } from '../../../../../components-ui'
+import { ICabinsContentCruise } from '../../../../../model/interfaces'
 
 import styles from './desc-right.module.scss'
 import { CRUISE_ROUTES } from '../../../../../constants'
 
 interface IProps {
 	id: number
-	cabinsDesc: ICabinsDesc[]
+	cabinsContent: ICabinsContentCruise[]
+	cabinsDescription: string
 	activeId: number | null
 	checkedId: number | null
 	handleChecked: (id: number) => void
 }
 
-export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId, checkedId, handleChecked }) => {
+export const DescRight: FC<IProps> = ({ id, cabinsContent, cabinsDescription, activeId, checkedId, handleChecked }) => {
 
 	return (
 		<>
@@ -38,7 +39,7 @@ export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId, checkedId, han
 				</div>
 			</div>
 			<div className={styles.body}>
-				{cabinsDesc.map(cabin =>
+				{cabinsContent.map(cabin =>
 					<div key={cabin.id} className={styles.row} >
 						<div className={styles.item}>
 							<a
@@ -83,7 +84,7 @@ export const DescRight: FC<IProps> = ({ id, cabinsDesc, activeId, checkedId, han
 			{activeId === id &&
 				<div className={styles.hidden}>
 					<p className={styles.hiddenText}>
-						ПРИМЕР ТЕКСТ международный туристический холдинг, основанный в 1990 году, признанный лидер по европейским направлениям и круизам.В структуру холдинга входит туроператорская  круизной компании MSC Cruises на территории России и ряда стран. В структуру холдинга входит туроператорская  компании MSC Cruises на территории ряда стран.
+						{cabinsDescription}
 					</p>
 				</div>
 			}

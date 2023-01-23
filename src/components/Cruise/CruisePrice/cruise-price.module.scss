@@ -24,7 +24,7 @@
 .price {
 	font-size: 36px;
 	line-height: 120%;
-	color: #FDBB11;
+	color: colors.$yellow;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		font-size: 30px;

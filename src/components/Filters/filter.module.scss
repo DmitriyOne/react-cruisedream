@@ -1,16 +1,18 @@
 @use '../../styles/mixins.scss';
 @use '../../styles/breakpoints.scss';
+@use '../../styles/colors.scss';
 
 .component {
 	padding: 50px 20px 40px 20px;
-	background-color: rgba(0, 74, 118, 0.23);
 	position: relative;
 	z-index: 1;
-	
+	@include mixins.bg-cover;
+
 	@include mixins.media-w(breakpoints.$laptop) {
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding: 20px;
 	}
@@ -21,30 +23,75 @@
 	margin: 0 auto;
 }
 
+.containerFilter {
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.containerPadding {
+	@include mixins.fluidMaxSize(1200);
+	padding: 22px 60px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 6px 12px;
+	}
+}
+
 .container .title {
 	font-size: 40px;
 	line-height: 120%;
 	font-weight: 500;
-	color: #004275;
+	color: colors.$blue;
 	padding-bottom: 20px;
 	text-align: center;
 
 	@include mixins.media-w(breakpoints.$laptop-l) {
 		font-size: 34px;
 	}
+
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 32px;
 	}
+
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		padding-bottom: 10px;
 	}
+
 	@include mixins.media-w(breakpoints.$laptop) {
 		font-size: 28px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 20px;
 		padding-bottom: 5px;
 	}
+}
+
+.subtitle {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 120%;
+	text-align: center;
+	color: #4F4E4E;
+	padding-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		padding-bottom: 2px;
+	}
+
 }
 
 .form {

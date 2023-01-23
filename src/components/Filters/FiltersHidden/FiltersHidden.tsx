@@ -2,8 +2,7 @@ import { FC, useContext, useState } from 'react'
 import classNames from 'classnames'
 
 import { SearchFiltersContext } from '../../../context'
-import { Container, Input, MySelect } from '../../../components'
-import { CheckboxFilter } from '../../Input/CheckboxFilter/CheckboxFilter'
+import { CheckboxFilter, Container, Input } from '../../../components-ui'
 
 import {
 	groupedOptions,
@@ -17,12 +16,14 @@ import {
 import { ISelect } from '../../../model/interfaces'
 
 import styles from './filters-hidden.module.scss'
+import { MySelect } from '../../../components-plugin'
 
 interface IProps {
 	isOpen: boolean
+	isBgImage?: boolean
 }
 
-export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
+export const FiltersHidden: FC<IProps> = ({ isOpen, isBgImage }) => {
 	const [select3, setSelect3] = useState<ISelect[]>([allPortStartOptions])
 	const [select4, setSelect4] = useState<ISelect[]>([allPortComingOptions])
 	const [select5, setSelect5] = useState<ISelect[]>([allPortEndOptions])
@@ -42,6 +43,10 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 	const handlerChangeTwo = () => {
 		setCheckedSea(prev => !prev)
 	}
+
+	const labelClassName = classNames(styles.label, {
+		[styles.darkText]: isBgImage,
+	})
 
 	return (
 		<Container
@@ -74,7 +79,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 			</div>
 			<div className={styles.row}>
 				<div className={styles.col}>
-					<label className={styles.label}>
+					<label className={labelClassName}>
 						Порт отправления
 					</label>
 					<MySelect
@@ -87,7 +92,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					/>
 				</div>
 				<div className={styles.col}>
-					<label className={styles.label}>
+					<label className={labelClassName}>
 						Порт захода
 					</label>
 					<MySelect
@@ -100,7 +105,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					/>
 				</div>
 				<div className={styles.col}>
-					<label className={styles.label}>
+					<label className={labelClassName}>
 						Порт прибытия
 					</label>
 					<MySelect
@@ -115,7 +120,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 			</div>
 			<div className={classNames(styles.row, styles.last)}>
 				<div className={styles.col}>
-					<label className={styles.label}>
+					<label className={labelClassName}>
 						Круизный лайнер
 					</label>
 					<MySelect
@@ -129,7 +134,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 				</div>
 				<div className={classNames(styles.col, styles.flex)}>
 					<div className={styles.select}>
-						<label className={styles.label}>
+						<label className={labelClassName}>
 							Тип круиза
 						</label>
 						<MySelect
@@ -142,7 +147,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 						/>
 					</div>
 					<div className={styles.amountDays}>
-						<label className={classNames(styles.label, styles.inputLabel)}>
+						<label className={classNames(labelClassName, styles.inputLabel)}>
 							Кол-во дней
 						</label>
 						<div className={styles.inputWrapper}>
@@ -167,7 +172,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					<Input
 						componentClassName={styles.half}
 						inputClassName={styles.input}
-						labelClassName={styles.label}
+						labelClassName={labelClassName}
 						type="number"
 						placeholder="0"
 						labelPosition="top"
@@ -178,7 +183,7 @@ export const FiltersHidden: FC<IProps> = ({ isOpen }) => {
 					<Input
 						componentClassName={styles.half}
 						inputClassName={styles.input}
-						labelClassName={styles.label}
+						labelClassName={labelClassName}
 						type="number"
 						placeholder="9 000 000"
 						labelPosition="top"

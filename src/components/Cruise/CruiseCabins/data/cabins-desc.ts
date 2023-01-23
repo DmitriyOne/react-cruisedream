@@ -1,4 +1,4 @@
-import { ICabinsDesc, IDeck } from '../../../../model/interfaces'
+import { ICabinsContentCruise, IDeck } from '../../../../model/interfaces'
 
 const deck1: IDeck = {
 	code: 'A1',
@@ -20,108 +20,108 @@ const deck4: IDeck = {
 	name: 'Палуба - 8'
 }
 
-export const innerLimitCabinsDesc: ICabinsDesc[] = [
+export const innerLimitCabinsDesc: ICabinsContentCruise[] = [
 	{
 		id: 1,
 		deck: deck1,
 		price: 2899,
-		checked: true
+		checked: true,
 	},
 	{
 		id: 2,
 		deck: deck2,
 		price: 1559,
-		checked: false
+		checked: false,
 	},
 ]
 
-export const innerUnlimitedCabinsDesc: ICabinsDesc[] = [
+export const innerUnlimitedCabinsDesc: ICabinsContentCruise[] = [
 	{
 		id: 3,
 		deck: deck3,
 		price: 1900,
-		checked: false
+		checked: false,
 	},
 	{
 		id: 4,
 		deck: deck4,
 		price: 1500,
-		checked: false
+		checked: false,
 	},
 ]
 
-export const suiteCabinsDesc: ICabinsDesc[] = [
+export const suiteCabinsDesc: ICabinsContentCruise[] = [
 	{
-		id: 1,
+		id: 5,
 		deck: deck3,
 		price: 3900,
-		checked: false
+		checked: false,
 	}
 ]
 
-export const withSmallWindowCabinsDesc: ICabinsDesc[] = [
+export const withSmallWindowCabinsDesc: ICabinsContentCruise[] = [
 	{
-		id: 1,
+		id: 6,
 		deck: deck1,
 		price: 1500,
-		checked: false
+		checked: false,
 	},
 	{
-		id: 2,
+		id: 7,
 		deck: deck2,
 		price: 1700,
-		checked: false
+		checked: false,
 	},
 	{
-		id: 3,
+		id: 8,
 		deck: deck3,
 		price: 1990,
-		checked: false
+		checked: false,
 	},
 ]
 
-export const withWindowCabinsDesc: ICabinsDesc[] = [
+export const withWindowCabinsDesc: ICabinsContentCruise[] = [
 	{
-		id: 1,
+		id: 9,
 		deck: deck4,
 		price: 1200,
-		checked: false
+		checked: false,
 	},
 	{
-		id: 2,
+		id: 10,
 		deck: deck3,
 		price: 1770,
-		checked: false
+		checked: false,
 	}
 ]
 
-export const withBigWindowCabinsDesc: ICabinsDesc[] = [
+export const withBigWindowCabinsDesc: ICabinsContentCruise[] = [
 	{
-		id: 1,
+		id: 11,
 		deck: deck3,
 		price: 1000,
-		checked: false
+		checked: false,
 	},
 	{
-		id: 2,
+		id: 12,
 		deck: deck1,
 		price: 1790,
-		checked: false
+		checked: false,
 	}
 ]
 
-export const withBalconyCabinsDesc: ICabinsDesc[] = [
+export const withBalconyCabinsDesc: ICabinsContentCruise[] = [
 	{
-		id: 1,
+		id: 13,
 		deck: deck1,
 		price: 1390,
-		checked: false
+		checked: false,
 	},
 	{
-		id: 2,
+		id: 14,
 		deck: deck2,
 		price: 1660,
-		checked: false
+		checked: false,
 	}
 ]
 

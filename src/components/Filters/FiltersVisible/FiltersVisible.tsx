@@ -4,7 +4,8 @@ import { SearchFiltersContext } from '../../../context'
 import { groupedOptions, groupedOptions2, allRegionOptions, allCompanyOptions } from '../../../fakedata'
 import { ISelect } from '../../../model/interfaces'
 
-import { Container, MySelect, MyDatepicker, Button } from '../../../components'
+import { Container, Button } from '../../../components-ui'
+import { MyDatepicker, MySelect } from '../../../components-plugin'
 
 import styles from './filters-visible.module.scss'
 

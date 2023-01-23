@@ -1,10 +1,8 @@
 /* eslint-disable max-len */
 import classNames from 'classnames'
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
 
-import { Container, Heading } from '../../../components'
-import { CRUISE_ROUTES } from '../../../constants'
+import { Container, Heading } from '../../../components-ui'
 
 import styles from './desc.module.scss'
 

@@ -6,7 +6,7 @@ import { params } from './swiper'
 import { dataPartners } from '../../../../fakedata'
 
 import { useSwiperButtons } from '../../../../hooks'
-import { Button, Container, Heading } from '../../../../components'
+import { Button, Container, Heading } from '../../../../components-ui'
 
 import 'swiper/css'
 import 'swiper/css/pagination'

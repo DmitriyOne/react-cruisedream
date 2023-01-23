@@ -5,7 +5,7 @@ import { params } from './swiper'
 import { useSwiperButtons } from '../../../hooks'
 
 import { dataIntro } from '../../../fakedata'
-import { Button, Container } from '../../../components'
+import { Button, Container } from '../../../components-ui'
 import { IntroHomeContent } from './IntroHomeContent/IntroHomeContent'
 
 import 'swiper/css'

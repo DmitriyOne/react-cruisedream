@@ -2,7 +2,7 @@
 import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { Heading } from '../../Headings'
+import { Heading } from '../../../components-ui/Headings'
 
 import shipIcon from './icons/ship.svg'
 
@@ -50,7 +50,7 @@ export const ShipName: FC<IProps> = ({
 					/>
 				</span>
 			}
-			<Heading as="h3" className={classNames(classNameText, styles.title)}>
+			<Heading as="h3" className={classNames(styles.title, classNameText)}>
 				{content}
 				{isDesc && <span className={styles.line} />}
 			</Heading>

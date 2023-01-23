@@ -1,6 +1,6 @@
 import { tabs } from './data/tabs'
 
-import { Tabs } from '../../../components'
+import { Tabs } from '../../../components-ui'
 
 import styles from './cruise-cabins.module.scss'
 

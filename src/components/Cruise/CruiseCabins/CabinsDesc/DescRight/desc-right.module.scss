@@ -172,7 +172,7 @@
 	display: block;
 	font-size: 25px;
 	line-height: 100%;
-	color: #004275;
+	color: colors.$blue;
 	text-align: center;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
@@ -195,7 +195,7 @@
 .choose {
 	font-size: 20px;
 	line-height: 120%;
-	color: #004275;
+	color: colors.$blue;
 	font-weight: 500;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -229,8 +229,8 @@
 .choose {
 
 	&.checked {
-		color: #FDBB11;
-		border-bottom-color: #FDBB11;
+		color: colors.$yellow;
+		border-bottom-color: colors.$yellow;
 	}
 
 	&.active {

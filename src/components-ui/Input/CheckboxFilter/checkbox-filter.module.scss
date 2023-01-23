@@ -1,0 +1,36 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/colors.scss';
+
+.input[type=checkbox]+.label {
+	padding-left: 18px;
+}
+
+.input[type=checkbox]+.label:before {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	@include mixins.square-size(12);
+	border-radius: 3px;
+	background-color: colors.$white;
+}
+
+.input[type=checkbox]+.label::after {
+	bottom: 7px;
+	left: 2px;
+	width: 16px;
+	height: 13px;
+	@include mixins.bg-cover;
+	background-image: url('../icons/checked-black.svg');
+	opacity: 0;
+	transform: scale(0);
+	transition: all .2s;
+}
+
+.input[type=checkbox]:checked+.label::after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.darkText {
+	color: #4F4E4E;
+}

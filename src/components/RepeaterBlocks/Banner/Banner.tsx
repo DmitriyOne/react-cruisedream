@@ -1,6 +1,6 @@
-import { Button, Container } from '../../../components'
+import { Button, Container } from '../../../components-ui'
 
-import bannerImage from './images/banner-1.jpeg'
+// import bannerImage from './images/banner-1.jpeg'
 
 import styles from './banner.module.scss'
 

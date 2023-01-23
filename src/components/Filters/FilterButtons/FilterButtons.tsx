@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { FormEvent, useContext } from 'react'
 
 import { SearchFiltersContext } from '../../../context'
-import { Container, Button } from '../../../components'
+import { Container, Button } from '../../../components-ui'
 
 import styles from './filter-buttons.module.scss'
 

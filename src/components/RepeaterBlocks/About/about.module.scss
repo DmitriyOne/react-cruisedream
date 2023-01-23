@@ -11,6 +11,7 @@
 		padding-top: 60px;
 		padding-bottom: 60px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		padding-top: 40px;
 		padding-bottom: 40px;
@@ -32,6 +33,7 @@
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		@include mixins.fluidMaxSize(560);
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		@include mixins.fluidMaxSize(360);
 	}
@@ -48,6 +50,7 @@
 		font-size: 36px;
 		padding-bottom: 12px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 24px;
 		padding-bottom: 10px;
@@ -64,6 +67,7 @@
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 18px;
 	}
+
 	@include mixins.media-w(breakpoints.$tablet) {
 		font-size: 16px;
 	}
@@ -74,16 +78,17 @@
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 120%;
-	color: #004275;
+	color: colors.$blue;
 	padding: 20px 50px;
-	background: #FDBB11;
-	border-radius: 5px;	
+	background: colors.$yellow;
+	border-radius: 5px;
 	margin-top: 60px;
 	text-transform: uppercase;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		margin-top: 50px;
 	}
+
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		font-size: 14px;
 		padding: 12px 20px;

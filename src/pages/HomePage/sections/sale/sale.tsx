@@ -1,4 +1,4 @@
-import { Container } from '../../../../components'
+import { Container } from '../../../../components-ui'
 import { DiscountCardsSwiper } from '../../../../components/RepeaterBlocks'
 
 import styles from './sale.module.scss'

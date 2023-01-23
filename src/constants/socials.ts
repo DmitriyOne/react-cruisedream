@@ -6,4 +6,5 @@ export const CRUISE_SOCIAL_LINKS = {
 	youtube: 'https://www.youtube.com',
 	inst: 'https://instagram.com',
 	mail: 'mailto:cruise@cruisedream.ru',
+	map: 'https://goo.gl/maps/jqsYp4MmnvbTWLpG9',
 }

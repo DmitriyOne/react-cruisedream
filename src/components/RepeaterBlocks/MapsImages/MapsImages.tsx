@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { CRUISE_MAP } from '../../../constants'
 
 import { useWindowSize } from '../../../hooks'
-import { B } from '../../B'
+import { B } from '../../../components-ui/B'
 
 import mapImage from './images/map.svg'
 
@@ -33,7 +33,7 @@ export const MapsImages = () => {
 							КРУГОСВЕТНОЕ ПУТЕШЕСТВИЕ
 						</B>
 					</Link>
-					
+
 					{/* first row */}
 					<Link
 						to={CRUISE_MAP.northAmerica}

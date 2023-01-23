@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { CRUISE_SOCIAL_LINKS } from '../../../constants'
 
 import { FiltersSelected } from '../../Filters/FiltersSelected/FiltersSelected'
-import { Container, Logo, Button, } from '../../../components'
+import { Container, Logo, Button, } from '../../../components-ui'
 import { useScrollUp, useWindowSize } from '../../../hooks'
 
 import styles from './sticky-search-page.module.scss'

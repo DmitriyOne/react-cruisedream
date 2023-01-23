@@ -30,4 +30,6 @@ export const CRUISE_ROUTES = {
 	
 	NOT_FOUND: '*',
 	EMPTY: '#',
+	CONTACTS: '/contacts',
+	LANDING: '/landing',
 }

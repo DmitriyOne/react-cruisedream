@@ -22,9 +22,11 @@ import {
 	AllPortPage,
 	AllCountryPage,
 	CurrentCountryPage,
+	ContactsPage,
+	LandingPage,
 } from '../../pages'
 
-import { Layout } from '../Layout'
+import { Layout } from '../../components-ui'
 import { ScrollToTop } from './ScrollToTop/ScrollToTop'
 
 export const AppRoutes = () => {
@@ -60,6 +62,9 @@ export const AppRoutes = () => {
 
 								<Route path={CRUISE_ROUTES.DISCOUNTS} element={<AllDiscountsPage />} />
 								<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />
+
+								<Route path={CRUISE_ROUTES.CONTACTS} element={<ContactsPage />} />
+								<Route path={CRUISE_ROUTES.LANDING} element={<LandingPage />} />
 
 								<Route path={CRUISE_ROUTES.NOT_FOUND} element={<NotFoundPage />} />
 							</Route>
