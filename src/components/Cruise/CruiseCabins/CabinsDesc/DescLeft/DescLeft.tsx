@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -7,6 +7,7 @@ import { paramsFade } from '../../../../../fakedata'
 import { ICabinsImages } from '../../../../../model/interfaces'
 import { Button } from '../../../../../components-ui'
 import { useSwiperButtons } from '../../../../../hooks'
+import { MyLightbox } from '../../../../../components-plugin'
 
 import 'swiper/css'
 import styles from './desc-left.module.scss'
@@ -18,7 +19,12 @@ interface IProps {
 }
 
 export const DescLeft: FC<IProps> = ({ id, images, handleToggle }) => {
+	const [index, setIndex] = useState(-1)
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+
+	const onShowGallery = (idx: number) => {
+		setIndex(idx - 1)
+	}
 
 	return (
 		<>
@@ -30,7 +36,7 @@ export const DescLeft: FC<IProps> = ({ id, images, handleToggle }) => {
 				>
 					{images.map((slide, idx) =>
 						<SwiperSlide key={idx} className={styles.slide}>
-							<img src={slide.src} alt={slide.alt} />
+							<img onClick={() => onShowGallery(slide.id)} src={slide.src} alt={slide.alt} />
 						</SwiperSlide>
 					)}
 				</Swiper>
@@ -49,6 +55,13 @@ export const DescLeft: FC<IProps> = ({ id, images, handleToggle }) => {
 			>
 				Описание
 			</Button>
+
+			<MyLightbox
+				isOpenGallery={index >= 0}
+				index={index}
+				onCloseGallery={() => setIndex(-1)}
+				images={images}
+			/>
 		</>
 	)
 }

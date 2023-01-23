@@ -47,7 +47,8 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 						<div className={styles.right}>
 							<DescRight
 								id={cabin.id}
-								cabinsDesc={cabin.desc}
+								cabinsContent={cabin.content}
+								cabinsDescription={cabin.description}
 								activeId={activeId}
 								checkedId={checkedId}
 								handleChecked={handleChecked}

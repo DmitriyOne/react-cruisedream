@@ -19,10 +19,10 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 				<div key={cabin.id} className={styles.component}>
 					<div className={styles.container}>
 						<div className={styles.left}>
-							<DescLeft id={cabin.id} images={cabin.images} />
+							<DescLeft images={cabin.images} />
 						</div>
 						<div className={styles.right}>
-							<DescRight {...cabin} />
+							<DescRight cabin={cabin} />
 						</div>
 					</div>
 				</div>

@@ -33,6 +33,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	margin-right: 20px;
+	position: relative;
 
 	@include mixins.media-w(breakpoints.$laptop-s) {
 		width: 36%;

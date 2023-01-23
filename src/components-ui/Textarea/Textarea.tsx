@@ -1,42 +1,31 @@
 import classNames from 'classnames'
-import {
-	ChangeEvent,
-	DetailedHTMLProps,
-	FC,
-	InputHTMLAttributes,
-	ReactNode
-} from 'react'
+import { DetailedHTMLProps, FC, ReactNode, TextareaHTMLAttributes } from 'react'
 
 import { ELabelPosition } from '../../model/enums'
 
-import styles from './input.module.scss'
+import styles from './textarea.module.scss'
 
-export interface IInput
-	extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface IProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
 	componentClassName?: string
-	type?: InputHTMLAttributes<HTMLInputElement>['type']
-	inputClassName?: string
 	width?: 'full' | 'half'
+	textareaClassName?: string
 	placeholder?: string
 	name?: string
 	value?: string
-	checked?: boolean
 	labelClassName?: string
 	labelText?: string
 	labelPosition?: keyof typeof ELabelPosition
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+	onChange?: (e: any) => void
 	children?: ReactNode
 }
 
-export const Input: FC<IInput> = ({
+export const Textarea: FC<IProps> = ({
 	componentClassName,
-	type = 'text',
-	name,
-	inputClassName,
 	width = 'full',
+	textareaClassName,
 	placeholder,
+	name,
 	value,
-	checked,
 	labelClassName,
 	labelText,
 	labelPosition,
@@ -53,19 +42,16 @@ export const Input: FC<IInput> = ({
 		[styles.full]: width === 'full',
 		[styles.half]: width === 'half',
 	})
-	const inputClass = classNames(styles.input, inputClassName)
-
+	const textareaClass = classNames(styles.textarea, textareaClassName)
 	return (
 		<div className={componentClass}>
-			<input
+			<textarea
 				id={name}
-				type={type}
 				name={name}
-				className={inputClass}
+				className={textareaClass}
 				placeholder={placeholder}
 				value={value}
 				onChange={onChange}
-				checked={checked}
 				{...props}
 			/>
 			<label htmlFor={name} className={classNames(styles.label, labelClassName)}>
