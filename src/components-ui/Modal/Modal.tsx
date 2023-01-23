@@ -1,7 +1,10 @@
 import { useState, useEffect, MouseEvent, FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
+import { Button } from '../../components-ui'
 import { useBodyOverflow } from '../../hooks'
+
+import closeIcon from './icon/close.svg'
 
 import styles from './modal.module.scss'
 
@@ -32,6 +35,9 @@ export const Modal: FC<IProps> = ({ isShow, onClose, children }) => {
 		<div className={styles.component}>
 			<div className={styles.overlay} onClick={handleCloseClick} />
 			<div className={styles.wrapper}>
+				<Button className={styles.cross} onClick={handleCloseClick}>
+					<img src={closeIcon} alt={''} />
+				</Button>
 				<div className={styles.body}>
 					{children}
 				</div>
