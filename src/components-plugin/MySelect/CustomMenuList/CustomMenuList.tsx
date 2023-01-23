@@ -22,6 +22,7 @@ export const CustomMenuList: FC<MenuListProps> = ({ selectProps, ...props }) => 
 	return (
 		<>
 			<Input
+				width="auto"
 				labelPosition="left"
 				componentClassName={styles.inputWrapper}
 				labelClassName={styles.label}
