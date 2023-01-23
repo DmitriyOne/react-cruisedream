@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { params } from './swiper'
@@ -21,9 +21,17 @@ interface IProps {
 }
 
 export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
-	const { isOpen: isOpenGallery, onOpen: onOpenGallery, onClose: onCloseGallery } = useOpen()
+	const [index, setIndex] = useState(-1)
 	const { isMobile } = useWindowSize()
 	const { upDateSwiper, handlerNext, handlerPrev } = useSwiperButtons()
+
+	const onShowCurrentImg = (idx: number) => {
+		setIndex(idx - 1)
+	}
+
+	const onShowFirstImg = (idx: number) => {
+		setIndex(idx)
+	}
 
 	return (
 		<>
@@ -37,7 +45,7 @@ export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
 					>
 						{gallery.images.slice(0, 3).map((slide, idx) =>
 							<SwiperSlide key={idx} className={styles.slide}>
-								<img src={slide.src} alt="" />
+								<img onClick={() => onShowCurrentImg(slide.id)} src={slide.src} alt="" />
 							</SwiperSlide>
 						)}
 						{isCruisePage &&
@@ -62,7 +70,11 @@ export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
 					:
 					<>
 						<div className={classNames(styles.left, styles.imgWrapper)}>
-							<img src={gallery.images[0].src} alt="" />
+							<img
+								onClick={() => onShowCurrentImg(gallery.images[0].id)}
+								src={gallery.images[0].src}
+								alt=""
+							/>
 
 							{isCruisePage &&
 								<>
@@ -78,10 +90,18 @@ export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
 						</div>
 						<div className={styles.right}>
 							<div className={styles.imgWrapper}>
-								<img src={gallery.images[1].src} alt="" />
+								<img
+									onClick={() => onShowCurrentImg(gallery.images[1].id)}
+									src={gallery.images[1].src}
+									alt=""
+								/>
 							</div>
 							<div className={styles.imgWrapper}>
-								<img src={gallery.images[2].src} alt="" />
+								<img
+									onClick={() => onShowCurrentImg(gallery.images[2].id)}
+									src={gallery.images[2].src}
+									alt=""
+								/>
 							</div>
 						</div>
 
@@ -90,14 +110,15 @@ export const MyGallery: FC<IProps> = ({ isCruisePage = false, ...gallery }) => {
 
 
 
-				<Button className={styles.button} onClick={onOpenGallery}>
+				<Button className={styles.button} onClick={() => onShowFirstImg(0)}>
 					ВСЕ ФОТО
 				</Button>
 			</div>
 
 			<MyLightbox
-				isOpenGallery={isOpenGallery}
-				onCloseGallery={onCloseGallery}
+				isOpenGallery={index >= 0}
+				index={index}
+				onCloseGallery={() => setIndex(-1)}
 				images={gallery.images}
 			/>
 		</>
