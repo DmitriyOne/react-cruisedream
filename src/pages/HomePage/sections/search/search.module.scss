@@ -200,8 +200,4 @@
 
 .inputDatepicker {
   padding: 5px 0 10px;
-
-  @include mixins.media-w(breakpoints.$laptop-l) {
-    font-size: 20px;
-  }
 }
