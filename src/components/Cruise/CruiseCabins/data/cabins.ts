@@ -11,12 +11,32 @@ import {
 
 import cabinsImage1Src from '../../../../assets/images/cabins/cabins-1.jpg'
 import cabinsImage2Src from '../../../../assets/images/ship/1.jpg'
+import cabinsImage3Src from '../../../../assets/images/ship/new-ship.jpg'
 
 import { ICabinsCruise, ICabinsImages } from '../../../../model/interfaces'
 
 export const swiperImages: ICabinsImages[] = [
-	{ src: cabinsImage1Src, alt: 'Cool cabin', width: 1180, height: 700 },
-	{ src: cabinsImage2Src, alt: 'Very cool cabin', width: 1180, height: 700 }
+	{
+		id: 1,
+		src: cabinsImage1Src,
+		alt: 'Cool cabin',
+		width: 1180,
+		height: 700
+	},
+	{
+		id: 2,
+		src: cabinsImage2Src,
+		alt: 'Cool cabin',
+		width: 1180,
+		height: 700
+	},
+	{
+		id: 3,
+		src: cabinsImage3Src,
+		alt: 'Cool cabin',
+		width: 1180,
+		height: 700
+	}
 ]
 
 export const cabinsInner: ICabinsCruise[] = [

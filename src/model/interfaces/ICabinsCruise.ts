@@ -1,6 +1,7 @@
 import { EDeckCode } from '../enums'
 
 export interface ICabinsImages {
+	id: number
 	src: string
 	alt: string
 	width: number
