@@ -23,6 +23,7 @@ import {
 	AllCountryPage,
 	CurrentCountryPage,
 	ContactsPage,
+	LandingPage,
 } from '../../pages'
 
 import { Layout } from '../../components-ui'
@@ -63,6 +64,8 @@ export const AppRoutes = () => {
 								<Route path={CRUISE_ROUTES.ACROSS_RUSSIA} element={<AcrossRussiaPage />} />
 
 								<Route path={CRUISE_ROUTES.CONTACTS} element={<ContactsPage />} />
+								<Route path={CRUISE_ROUTES.LANDING} element={<LandingPage />} />
+
 								<Route path={CRUISE_ROUTES.NOT_FOUND} element={<NotFoundPage />} />
 							</Route>
 						</Routes>

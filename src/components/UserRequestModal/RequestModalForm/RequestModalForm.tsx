@@ -8,12 +8,8 @@ export const RequestModalForm = () => {
 	const [agree, setAgree] = useState(false)
 
 	const handlerChecked = () => {
-		console.log('click')
 		setAgree(prev => !prev)
 	}
-
-	console.log('checked: ', agree)
-
 
 	return (
 		<form className={styles.form}>
