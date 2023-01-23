@@ -22,10 +22,7 @@ export const CabinsDesc: FC<IProps> = ({ cabins }) => {
 							<DescLeft id={cabin.id} images={cabin.images} />
 						</div>
 						<div className={styles.right}>
-							<DescRight
-								cabins={cabin}
-								modal={cabin.modal}
-							/>
+							<DescRight cabin={cabin} />
 						</div>
 					</div>
 				</div>

@@ -6,7 +6,7 @@ import styles from './desc-left.module.scss'
 
 interface IProps {
 	id: number
-	images: ICabinsImages
+	images: ICabinsImages[]
 }
 
 export const DescLeft: FC<IProps> = ({ id, images }) => {
@@ -14,7 +14,7 @@ export const DescLeft: FC<IProps> = ({ id, images }) => {
 	return (
 		<>
 			<div className={styles.component}>
-				<img src={images.src} alt={images.alt} />
+				<img src={images[0].src} alt={images[0].alt} />
 			</div>
 		</>
 	)

@@ -3,17 +3,16 @@ import { FC } from 'react'
 
 import { Button, Heading } from '../../../../../components-ui'
 import { useModal } from '../../../../../hooks'
-import { ICabinsModal, ICabinsShip } from '../../../../../model/interfaces'
+import { ICabinsShip } from '../../../../../model/interfaces'
 import { ShipModal } from '../../../ShipModal/ShipModal'
 
 import styles from './desc-right.module.scss'
 
 interface IProps {
-	cabins: ICabinsShip
-	modal: ICabinsModal
+	cabin: ICabinsShip
 }
 
-export const DescRight: FC<IProps> = ({ cabins, modal }) => {
+export const DescRight: FC<IProps> = ({ cabin }) => {
 	const { handleModalOpen, isShowModal, handleModalClose } = useModal()
 
 	const onClick = (e: any) => {
@@ -24,17 +23,18 @@ export const DescRight: FC<IProps> = ({ cabins, modal }) => {
 	return (
 		<>
 			<Heading as="h4" className={styles.title}>
-				{cabins.title}
+				{cabin.title}
 			</Heading>
 			<p className={styles.desc}>
-				{cabins.description}
+				{cabin.sortDesc}
 			</p>
 			<Button className={styles.button} onClick={(e) => onClick(e)}>
 				Описание
 			</Button>
 			{isShowModal &&
 				<ShipModal
-					modal={cabins.modal}
+					currentCabin={cabin}
+					imageModal={cabin.images[0].src}
 					onClosed={handleModalClose}
 				/>
 			}

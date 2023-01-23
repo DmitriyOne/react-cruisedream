@@ -3,6 +3,21 @@
 @use '../../styles/colors.scss';
 @use '../../styles/family.scss';
 
+.container {
+	@include mixins.fluidMaxSize(660);
+	background: #F5F5F5;
+}
+
+.body {
+	padding: 36px 55px 22px;
+	background: #F5F5F5;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+
 .header {
 	width: 100%;
 	text-align: left;
@@ -133,6 +148,7 @@
 
 	@include mixins.media-w(breakpoints.$tablet) {
 		flex-direction: column;
+		max-width: 100%;
 	}
 
 	&:last-child {

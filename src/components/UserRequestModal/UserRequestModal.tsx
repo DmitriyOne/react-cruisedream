@@ -6,6 +6,8 @@ import { RequestModalForm } from './RequestModalForm/RequestModalForm'
 import { RequestModalHeader } from './RequestModalHeader/RequestModalHeader'
 import { RequestModalOptions } from './RequestModalOptions/RequestModalOptions'
 
+import styles from './user-request-modal.module.scss'
+
 interface IProps {
 	onClosed?: () => void;
 };
@@ -22,7 +24,12 @@ export const UserRequestModal: FC<IProps> = ({ onClosed }) => {
 	}
 
 	return (
-		<Modal isShow={shown} onClose={handleModalClose}>
+		<Modal
+			containerClass={styles.container}
+			bodyClass={styles.body}
+			isShow={shown}
+			onClose={handleModalClose}
+		>
 			<RequestModalHeader />
 			<RequestModalOptions />
 			<RequestModalForm />

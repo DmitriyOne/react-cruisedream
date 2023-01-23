@@ -41,10 +41,8 @@
   }
 }
 
-.wrapper {
+.container {
   display: inline-block;
-  @include mixins.fluidMaxSize(660);
-  background: #F5F5F5;
   vertical-align: middle;
   position: relative;
   z-index: z-index.$idx-modal;
@@ -58,13 +56,6 @@
   justify-content: center;
   flex-direction: column;
   height: fit-content;
-  padding: 36px 55px 22px;
-  background: #F5F5F5;
-
-  @include mixins.media-w(breakpoints.$tablet) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 .cross {

@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { useState, useEffect, MouseEvent, FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -13,9 +14,19 @@ interface IProps {
 	onClose: () => void;
 	title?: string;
 	children: ReactNode
+	containerClass?: string
+	bodyClass?: string
+	crossClass?: string
 };
 
-export const Modal: FC<IProps> = ({ isShow, onClose, children }) => {
+export const Modal: FC<IProps> = ({
+	isShow,
+	onClose,
+	children,
+	containerClass,
+	bodyClass,
+	crossClass,
+}) => {
 	const [isBrowser, setIsBrowser] = useState(false)
 	useBodyOverflow(isShow)
 
@@ -31,14 +42,18 @@ export const Modal: FC<IProps> = ({ isShow, onClose, children }) => {
 		onClose()
 	}
 
+	const containerClassName = classNames(containerClass, styles.container)
+	const bodyClassName = classNames(bodyClass, styles.body)
+	const crossClassName = classNames(crossClass, styles.cross)
+
 	const modalContent = (
 		<div className={styles.component}>
 			<div className={styles.overlay} onClick={handleCloseClick} />
-			<div className={styles.wrapper}>
-				<Button className={styles.cross} onClick={handleCloseClick}>
+			<div className={containerClassName}>
+				<Button className={crossClassName} onClick={handleCloseClick}>
 					<img src={closeIcon} alt={''} />
 				</Button>
-				<div className={styles.body}>
+				<div className={bodyClassName}>
 					{children}
 				</div>
 			</div>
