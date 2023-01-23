@@ -15,8 +15,8 @@ import cabinsImage2Src from '../../../../assets/images/ship/1.jpg'
 import { ICabinsCruise, ICabinsImages } from '../../../../model/interfaces'
 
 export const swiperImages: ICabinsImages[] = [
-	{ src: cabinsImage1Src, alt: 'Cool cabin' },
-	{ src: cabinsImage2Src, alt: 'Very cool cabin' }
+	{ src: cabinsImage1Src, alt: 'Cool cabin', width: 1180, height: 700 },
+	{ src: cabinsImage2Src, alt: 'Very cool cabin', width: 1180, height: 700 }
 ]
 
 export const cabinsInner: ICabinsCruise[] = [

@@ -3,6 +3,8 @@ import { EDeckCode } from '../enums'
 export interface ICabinsImages {
 	src: string
 	alt: string
+	width: number
+	height: number
 }
 
 export interface IDeck {
