@@ -24,6 +24,10 @@
     width: 0;
     height: 100%;
     vertical-align: middle;
+
+    @include mixins.media-w(breakpoints.$tablet) {
+      display: none;
+    }
   }
 }
 
@@ -46,6 +50,11 @@
   vertical-align: middle;
   position: relative;
   z-index: z-index.$idx-modal;
+
+  @include mixins.media-w(breakpoints.$tablet) {
+    display: block;
+    vertical-align: auto;
+  }
 }
 
 .body {
