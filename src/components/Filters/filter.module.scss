@@ -4,9 +4,9 @@
 
 .component {
 	padding: 50px 20px 40px 20px;
-	background-color: rgba(0, 74, 118, 0.23);
 	position: relative;
 	z-index: 1;
+	@include mixins.bg-cover;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		padding-top: 30px;
@@ -21,6 +21,24 @@
 .container {
 	@include mixins.fluidMaxSize(1080);
 	margin: 0 auto;
+}
+
+.containerFilter {
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.containerPadding {
+	@include mixins.fluidMaxSize(1200);
+	padding: 22px 60px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 6px 12px;
+	}
 }
 
 .container .title {
@@ -51,6 +69,29 @@
 		font-size: 20px;
 		padding-bottom: 5px;
 	}
+}
+
+.subtitle {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 120%;
+	text-align: center;
+	color: #4F4E4E;
+	padding-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+		padding-bottom: 2px;
+	}
+
 }
 
 .form {

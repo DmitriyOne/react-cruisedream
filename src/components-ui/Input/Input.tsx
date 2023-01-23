@@ -16,7 +16,7 @@ export interface IInput
 	componentClassName?: string
 	type?: InputHTMLAttributes<HTMLInputElement>['type']
 	inputClassName?: string
-	width?: 'full' | 'half'
+	width?: 'full' | 'half' | 'auto'
 	placeholder?: string
 	name?: string
 	value?: string
@@ -52,6 +52,7 @@ export const Input: FC<IInput> = ({
 		[styles.labelBottom]: labelPosition === 'bottom',
 		[styles.full]: width === 'full',
 		[styles.half]: width === 'half',
+		[styles.auto]: width === 'auto',
 	})
 	const inputClass = classNames(styles.input, inputClassName)
 

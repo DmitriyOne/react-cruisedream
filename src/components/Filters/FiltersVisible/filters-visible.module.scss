@@ -78,6 +78,7 @@
 	border: 1px solid colors.$btn-border;
 	border-radius: 3px;
 	padding: 15px 45px;
+	white-space: nowrap;
 
 	@include mixins.media-w(breakpoints.$laptop) {
 		margin-top: 10px;
