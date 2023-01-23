@@ -3,10 +3,11 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { useNumberWithSpaces, useWindowSize } from '../../../hooks'
+import { useNumberWithSpaces, useWindowSize, useModal } from '../../../hooks'
 
 import { B, Button } from '../../../components-ui'
 import { EWidth, EBackground, EColor } from '../../../model/enums'
+import { UserRequestModal } from '../../UserRequestModal'
 
 import { CRUISE_NAVBAR } from '../../../constants'
 import { Discount } from '../../Discount'
@@ -32,8 +33,6 @@ interface IProps {
 
 	textClass?: string
 
-	onShowModal?: () => void
-
 	isCruisePage?: boolean
 	isOnlyPrice?: boolean
 }
@@ -52,12 +51,17 @@ export const CruisePrice: FC<IProps> = ({
 	priceSpanClass,
 	discountClass,
 	textClass,
-	onShowModal,
 	isCruisePage,
 	isOnlyPrice
 }) => {
 	const { isMobile } = useWindowSize()
 	const { handlerSpaces } = useNumberWithSpaces()
+	const { handleModalOpen, isShowModal, handleModalClose } = useModal()
+
+	const onShowModal = (e: any) => {
+		e.preventDefault()
+		handleModalOpen()
+	}
 
 	const classNameButton = classNames(buttonClass, styles.button, {
 		[styles.full]: buttonWidth === 'full',
@@ -132,7 +136,7 @@ export const CruisePrice: FC<IProps> = ({
 							<>
 								<Button
 									className={classNameModalButton}
-									onClick={onShowModal}
+									onClick={(e) => onShowModal(e)}
 								>
 									ЗАПРОСИТЬ
 								</Button>
@@ -154,6 +158,8 @@ export const CruisePrice: FC<IProps> = ({
 					</div>
 				</>
 			}
+
+			{isShowModal && <UserRequestModal onClosed={handleModalClose} />}
 		</>
 	)
 }
