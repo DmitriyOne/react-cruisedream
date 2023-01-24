@@ -22,48 +22,197 @@ import small1ShipImgSrc from '../../assets/images/galleries/ship/2.jpg'
 import small2ShipImgSrc from '../../assets/images/galleries/ship/3.jpg'
 
 const galleryRegion = [
-	{ src: bigCountryImgSrc, width: 3200, height: 2000 },
-	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
-	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
-	{ src: bigCountryImgSrc, width: 3200, height: 2000 },
-	{ src: small1CountryImgSrc, width: 3200, height: 2000 },
-	{ src: small2CountryImgSrc, width: 3200, height: 2000 },
+	{
+		id: 1,
+		src: bigCountryImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 2,
+		src: small1RegionImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 3,
+		src: small2RegionImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 4,
+		src: bigCountryImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 5,
+		src: small1CountryImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 6,
+		src: small2CountryImgSrc,
+		width: 3200,
+		height: 2000
+	},
 ]
 
 const galleryCountry = [
-	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
-	{ src: small1CountryImgSrc, width: 3200, height: 2000 },
-	{ src: small2CountryImgSrc, width: 3200, height: 2000 },
-	{ src: bigPortImgSrc, width: 3200, height: 2000 },
-	{ src: small1PortImgSrc, width: 3200, height: 2000 },
-	{ src: small2PortImgSrc, width: 3200, height: 2000 },
+	{
+		id: 1,
+		src: bigRegionImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 2,
+		src: small1CountryImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 3,
+		src: small2CountryImgSrc,
+		width: 3200, height: 2000
+	},
+	{
+		id: 4,
+		src: bigPortImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 5,
+		src: small1PortImgSrc,
+		width: 3200,
+		height: 2000
+	},
+	{
+		id: 6,
+		src: small2PortImgSrc,
+		width: 3200,
+		height: 2000
+	},
 ]
 
 const galleryPort = [
-	{ src: bigPortImgSrc, width: 3200, height: 2000 },
-	{ src: small1PortImgSrc, width: 3200, height: 2000 },
-	{ src: small2PortImgSrc, width: 3200, height: 2000 },
-	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
-	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
-	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
+	{ 
+		id: 1,
+		src: bigPortImgSrc, 
+		width: 3200, 
+		height: 2000 
+	},
+	{ 
+		id: 2,
+		src: small1PortImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id: 3,
+		src: small2PortImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id:4,
+		src: bigRegionImgSrc,
+		 width: 3200,
+		 height: 2000
+	 },
+	{ 
+		id: 5,
+		src: small1RegionImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id:6 ,
+		src: small2RegionImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
 ]
 
 const galleryCompany = [
-	{ src: bigCompanyImgSrc, width: 3200, height: 2000 },
-	{ src: small1CompanyImgSrc, width: 3200, height: 2000 },
-	{ src: small2CompanyImgSrc, width: 3200, height: 2000 },
-	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
-	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
-	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
+	{ 
+		id:1 ,
+		src: bigCompanyImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id: 2,
+		src: small1CompanyImgSrc,
+		 width: 3200,
+		height: 2000
+	 },
+	{ 
+		id: 3,
+		src: small2CompanyImgSrc, 
+		width: 3200, 
+		height: 2000
+	 },
+	{ 
+		id: 4,
+		src: bigRegionImgSrc, 
+		width: 3200,
+		 height: 2000
+	 },
+	{ 
+		id:5 ,
+		src: small1RegionImgSrc,
+		 width: 3200, 
+		height: 2000 
+	},
+	{ 
+		id: 6,
+		src: small2RegionImgSrc, 
+		width: 3200, 
+		height: 2000 
+	},
 ]
 
 const galleryShip = [
-	{ src: bigShipImgSrc, width: 3200, height: 2000 },
-	{ src: small1ShipImgSrc, width: 3200, height: 2000 },
-	{ src: small2ShipImgSrc, width: 3200, height: 2000 },
-	{ src: bigRegionImgSrc, width: 3200, height: 2000 },
-	{ src: small1RegionImgSrc, width: 3200, height: 2000 },
-	{ src: small2RegionImgSrc, width: 3200, height: 2000 },
+	{ 
+		id: 1,
+		src: bigShipImgSrc,
+		width: 3200, 
+		height: 2000 
+	},
+	{ 
+		id: 2,
+		src: small1ShipImgSrc, 
+		width: 3200, 
+		height: 2000 
+	},
+	{ 
+		id: 3,
+		src: small2ShipImgSrc, 
+		width: 3200, 
+		height: 2000 
+	},
+	{ 
+		id: 4,
+		src: bigRegionImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id: 5,
+		src: small1RegionImgSrc, 
+		width: 3200,
+		 height: 2000 
+	},
+	{ 
+		id: 6,
+		src: small2RegionImgSrc,
+		 width: 3200,
+		 height: 2000 
+	},
 ]
 
 export const dataRegionGallery: IGallery = {

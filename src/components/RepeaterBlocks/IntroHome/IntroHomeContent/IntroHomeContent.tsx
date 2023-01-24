@@ -4,8 +4,6 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { B } from '../../../../components-ui'
-import { UserRequestModal } from '../../../../components'
-import { useModal } from '../../../../hooks'
 
 import styles from './intro-home-content.module.scss'
 
@@ -28,12 +26,6 @@ export const IntroHomeContent: FC<IProps> = ({
 	href,
 	discount,
 }) => {
-	const { handleModalOpen, isShowModal, handleModalClose } = useModal()
-
-	const onClick = (e: any) => {
-		e.preventDefault()
-		handleModalOpen()
-	}
 
 	const textPosition = classNames({
 		[styles.left]: variant === 'left',
@@ -57,13 +49,11 @@ export const IntroHomeContent: FC<IProps> = ({
 			<Link
 				to={href!}
 				className={styles.button}
-				onClick={(e) => onClick(e)}
 			>
 				<B fontWeight={500}>
 					ЗАБРОНИРОВАТЬ
 				</B>
 			</Link>
-			{isShowModal && <UserRequestModal onClosed={handleModalClose} />}
 		</div>
 	)
 }

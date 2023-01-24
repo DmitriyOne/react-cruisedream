@@ -22,7 +22,6 @@ export const DescLeft: FC<IProps> = ({ images }) => {
 
 	const onShowGallery = (idx: number) => {
 		setIndex(idx - 1)
-		
 	}
 
 	return (
