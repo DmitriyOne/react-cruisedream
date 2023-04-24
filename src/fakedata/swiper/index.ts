@@ -1,7 +1,0 @@
-export * from './swiper-3x2-grid'
-export * from './swiper-4-col'
-export * from './swiper-3-col'
-export * from './swiper-3x3-grid'
-export * from './swiper-row-4-per-col'
-export * from './swiper-row-3-per-col'
-export * from './swiper-fade'
