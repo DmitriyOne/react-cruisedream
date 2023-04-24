@@ -1,0 +1,68 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	flex-direction: column;
+
+	min-width: 95px;
+	min-height: 90px;
+	margin-right: 10px;
+	padding: 10px 12px;
+
+	background-color: colors.$blue;
+
+	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		min-width: 80px;
+		min-height: 80px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+
+		min-width: 55px;
+		min-height: 55px;
+		padding: 8px;
+	}
+}
+
+.days {
+	color: colors.$white;
+
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 26px;
+	}
+}
+
+.text {
+	color: colors.$white;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		color: colors.$white;
+
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 100%;
+	}
+}

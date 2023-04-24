@@ -1,0 +1,62 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/family.scss';
+
+.box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-right: 4px;
+
+	border: 1px solid #004275;
+	border-radius: 0;
+	background-color: colors.$white;
+
+	&::after {
+		display: inline-block;
+
+		width: 16px;
+		height: 13px;
+		margin: 2px;
+
+		content: "";
+		transition: all .3s;
+		transform: scale(0);
+
+		opacity: 0;
+
+		background-image: url('../icons/checked-blue.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain
+	}
+
+	@include mixins.square-size(14);
+}
+
+.label {
+	display: flex;
+	align-items: center;
+
+	cursor: pointer;
+
+	&.errorState {
+		color: colors.$red;
+
+		.box {
+			border-color: colors.$red;
+			background-color: rgb(236 88 64 / 10%);
+		}
+	}
+}
+
+.input {
+	display: none;
+
+	&:checked + span::after {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+}

@@ -1,0 +1,59 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/family.scss';
+
+.component {
+	padding-top: 20px;
+}
+
+.inputWrapper {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+}
+
+.inputIcon {
+	margin-right: 15px;
+
+	@include mixins.square-size(16);
+
+}
+
+.input {
+	&::placeholder {
+		color: #4f4e4e;
+
+		font-size: 13px;
+		line-height: 16px;
+	}
+}
+
+.linksWrapper {
+	display: flex;
+	align-items: center;
+
+	margin-top: 22px;
+}
+
+.linksIcon {
+	margin-right: 15px;
+
+	@include mixins.square-size(16);
+}
+
+.linksTitle {
+	color: #4f4e4e;
+
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 16px;
+}
+
+.linksWrapper:last-child .linksTitle {
+	letter-spacing: 0.01em;
+
+	color: #393939;
+
+	font-size: 18px;
+	line-height: 120%;
+}

@@ -1,0 +1,130 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/colors.scss';
+
+.includedItem {
+	width: 60px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 45px;
+	}
+}
+
+.includedIcon {
+	@include mixins.square-size(60);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.square-size(45);
+	}
+}
+
+.column {
+	align-items: flex-start;
+	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		align-items: flex-end;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: flex-start
+	}
+}
+
+.rowButtons {
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(400);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin: 12px auto 0;
+	}
+}
+
+.button {
+	padding: 18px;
+
+	&:first-child {
+		margin-right: 5px;
+	}
+
+	&:last-child {
+		margin-left: 5px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-right: 5px;
+		padding-left: 5px;
+
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 14px;
+		padding-bottom: 14px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 16px;
+		padding-bottom: 16px;
+
+		font-size: 12px;
+	}
+}
+
+.price {
+	color: colors.$yellow;
+
+	font-size: 61px;
+	line-height: 90%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 52px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 46px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+
+		text-align: right;
+
+		font-size: 40px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		text-align: center;
+	}
+}
+
+.priceSpan {
+	font-size: 36px;
+}
+
+.priceBottomText {
+	padding-bottom: 6px;
+
+	color: rgb(79 78 78 / 80%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 14px;
+	}
+}
+
+.priceModalBtn {
+	border-radius: 3px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		border-radius: 0;
+	}
+}
+
+.discount {
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none;
+	}
+}

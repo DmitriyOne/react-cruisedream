@@ -1,0 +1,74 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding: 20px;
+
+	transition: all .3s;
+
+	color: colors.$white;
+	background-color: colors.$blue;
+
+	&.remove {
+		height: 0;
+		padding: 0 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 8px 20px;
+	}
+}
+
+.container {
+	position: relative;
+
+	padding: 0 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 25px;
+		padding-left: 0;
+	}
+}
+
+.b {
+	font-size: 16px;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.text {
+	margin: 0 auto;
+
+	font-size: 14px;
+	line-height: 120%;
+
+	@include mixins.fluidMaxSize(490);
+	@include mixins.fonts(family.$montserrat);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-left: 0;
+	}
+}
+
+.button {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	right: 0;
+
+	transform: translateY(-50%);
+
+	@include mixins.square-size(12);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		top: 0;
+
+		transform: translateY(0);
+	}
+}

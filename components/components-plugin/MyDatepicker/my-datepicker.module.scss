@@ -1,0 +1,61 @@
+/* stylelint-disable keyframe-declaration-no-important */
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
+
+@keyframes scaleInDatePicker {
+	0% {
+		transform: scale(0.9) translate3d(0, 0, 0) !important;
+
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: scale(1) translate3d(0, 0, 0) !important;
+
+		opacity: 1;
+	}
+}
+
+.component {
+	position: relative;
+
+	display: flex;
+}
+
+.datepicker {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+
+		content: '';
+		transform: translateY(-50%);
+
+		@include mixins.bg-cover;
+	}
+}
+
+.input {
+	width: 100%;
+
+	cursor: pointer;
+
+	color: rgb(79 78 78 / 60%);
+	border-radius: 0;
+
+	font-size: 16px;
+	line-height: 120%;
+
+	&::placeholder {
+		color: rgb(79 78 78 / 60%);
+	}
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+}

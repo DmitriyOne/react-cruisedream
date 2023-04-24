@@ -1,0 +1,97 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.nav {
+	display: flex;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-direction: column;
+
+		width: 100%;
+		padding-right: 40px;
+		padding-bottom: 35px;
+		padding-left: 40px;
+
+		border-bottom: 1px solid #546e90;
+
+	}
+}
+
+.menuCol {
+	margin-right: 80px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 50px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 22px;
+		margin-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 12px;
+	}
+}
+
+.title {
+	display: block;
+
+	margin-top: 13px;
+
+	letter-spacing: 0.05em;
+
+	color: colors.$white;
+
+	font-size: 15px;
+	line-height: 140%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 10px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		position: relative;
+
+		width: 100%;
+		padding-right: 40px;
+
+		font-size: 20px;
+	}
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	right: 0;
+
+	display: block;
+
+	width: 13px;
+	height: 8px;
+
+	transition: all 0.3s;
+	transform: translateY(-50%);
+
+	&.active {
+		transform: translateY(-50%) rotate(-180deg);
+	}
+
+	img {
+		display: block;
+	}
+}

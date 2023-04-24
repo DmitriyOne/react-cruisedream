@@ -1,0 +1,277 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.containerModal {
+	@include mixins.fluidMaxSize(960);
+}
+
+.bodyModal {
+	border: 1px solid rgb(79 78 78 / 28%);
+	background: colors.$white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+.crossModal {
+	top: 22px;
+	right: 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		top: 12px;
+		right: 12px;
+	}
+}
+
+.header {
+	width: 100%;
+	padding: 22px 65px 16px 25px;
+
+	border-bottom: 1px solid rgb(79 78 78 / 35%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 32px 12px 8px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+
+	color: colors.$blue;
+
+	font-size: 22px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: center;
+
+		font-size: 20px;
+	}
+}
+
+.body {
+	width: 100%;
+	padding: 22px 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 8px 12px 22px;
+	}
+}
+
+.description {
+	display: flex;
+
+	padding-bottom: 28px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		padding-bottom: 16px;
+	}
+}
+
+.descImgWrapper {
+	position: relative;
+
+	width: 45%;
+	max-height: 280px;
+
+	img {
+		height: 100%;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 35%;
+		max-height: 240px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		height: 240px;
+	}
+}
+
+.descContentWrapper {
+	width: 55%;
+	padding: 14px 18px;
+
+	text-align: left;
+
+	background-color: rgb(0 66 117 / 20%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 65%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding: 12px 16px 16px;
+	}
+}
+
+.descTitle {
+	text-transform: uppercase;
+
+	color: colors.$blue;
+
+	font-size: 20px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 2px;
+
+		text-align: center;
+	}
+}
+
+.descSize {
+	display: block;
+
+	padding-bottom: 20px;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 16px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 10px;
+
+		text-align: center;
+	}
+}
+
+.descText {
+	color: #4f4e4e;
+
+	font-size: 18px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;	
+	}
+}
+
+.advantages {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column
+}
+
+.advantagesTitle {
+	padding-bottom: 12px;
+
+	text-transform: uppercase;
+
+	color: colors.$blue;
+
+	font-size: 20px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+}
+
+.advantagesUl {
+	width: 100%;
+	columns: 2;
+	column-gap: 20px;
+
+	padding-bottom: 40px;
+
+	text-align: left;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		columns: 1;
+		column-gap: 0;
+
+		padding-bottom: 20px;
+	}
+}
+
+.advantagesItem {
+	position: relative;
+
+	padding-bottom: 18px;
+	padding-left: 12px;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 20px;
+	line-height: 100%;
+
+	&::before {
+		position: absolute;
+		top: 12px;
+		left: 0;
+
+		content: '';
+
+		border-radius: 50%;
+		background-color: rgb(79 78 78 / 80%);
+
+		@include mixins.square-size(5);
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 18px;
+		line-height: 140%;
+	}
+}
+
+.buttonsRow {
+	width: 100%;
+
+	@include mixins.flex-spb;
+}
+
+.button {
+	min-width: 170px;
+	padding: 18px 24px;
+
+	transition: all .3s;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	background-color: colors.$transparent;
+
+	font-size: 12px;
+	line-height: 120%;
+
+	&:last-child {
+		@include mixins.media-w(breakpoints.$tablet) {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 47%;
+		padding-right: 2px;
+		padding-left: 2px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}

@@ -1,0 +1,142 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 0 25px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 10px 16px;
+
+		border-top: 0.3px solid rgb(79 78 78 / 40%);
+		border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+	}
+}
+
+.title {
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-weight: 300 !important;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	width: 100%;
+	gap: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		gap: 10px 0;
+	}
+}
+
+.accordionItem {
+	width: min-content !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100% !important;
+	}
+}
+
+.accordionTitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	white-space: nowrap;
+
+	color: #4f4e4e;
+	border-bottom: 1px solid colors.$black;
+
+	font-size: 30px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: space-between;
+
+		font-size: 20px;
+		font-weight: 300;
+	}
+}
+
+.accordionArrow {
+	display: block;
+
+	width: 20px;
+	margin-left: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		width: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 14px;
+		margin-left: 12px;
+	}
+}
+
+.accordionBody {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 6px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: flex-start;
+	}
+}
+
+.accordionLink {
+	width: fit-content;
+	padding-top: 16px;
+	padding-bottom: 2px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+	border-bottom: 1px solid colors.$black;
+
+	font-size: 25px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 10px;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 8px;
+
+		font-size: 16px;
+	}
+}

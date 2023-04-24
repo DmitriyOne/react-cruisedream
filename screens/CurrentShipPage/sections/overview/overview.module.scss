@@ -1,0 +1,83 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding: 20px 20px 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 20px 0 10px;
+	}
+}
+
+.row {
+	display: flex;
+
+	width: 100%;
+	padding-top: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		padding-top: 0;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.pt0 {
+	padding-top: 10px;
+}
+
+.alignTop {
+	align-items: flex-start;
+}
+
+.alignBottom {
+	align-items: flex-end;
+}
+
+.colLeft {
+	width: 68%;
+	padding-right: 10px;
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 50%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: flex-start;
+
+		width: 100%;
+	}
+}
+
+.colRight {
+	display: flex;
+	align-items: center;
+
+	width: 32%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 50%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: flex-start;
+
+		width: 100%;
+	}
+}
+
+.routeWrapper {
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.logo {
+	margin-top: 10px;
+}

@@ -1,0 +1,177 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+	padding: 30px 20px 50px;
+
+	background-color: rgb(79 78 78 / 15%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 10px 0 20px;
+	}
+}
+
+.imageWrapper {
+	position: relative;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1660);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(1220);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 500px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 400px;
+	}
+}
+
+.image {
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 100%;
+	}
+}
+
+.buttonWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.button {
+	position: absolute;
+
+	min-height: 60px;
+	padding: 8px 2px 6px;
+
+	transition: all .3s;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$btn-text;
+	border: 2px solid colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$white;
+
+	font-size: 17px;
+	line-height: 110%;
+
+	@include mixins.flex-center;
+	@include mixins.fluidMaxSize(215);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		max-width: 170px;
+		min-height: 45px;
+		padding: 6px 2px 4px;
+
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		max-width: 145px;
+		min-height: 40px;
+
+		font-size: 13px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 12px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}
+
+.aroundWorld {
+	top: 2%;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.popularRegions {
+	bottom: 2%;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.northAmerica {
+	top: 30.4%;
+	left: 16%;
+}
+
+.europe {
+	top: 27%;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.asiaFarEast {
+	top: 26%;
+	left: 73%;
+}
+
+.mediterranean {
+	top: 36%;
+	left: 55%;
+
+	transform: translateX(-50%);
+}
+
+.centerAmericaAndPanamaCanal {
+	top: 53%;
+	left: 13%;
+
+	transform: translateY(-50%);
+}
+
+.africaAndMidEast {
+	top: 47%;
+	left: 60%;
+
+	transform: translateX(-50%);
+}
+
+.pacificIslandsAndHawaii {
+	top: 50%;
+	right: 20px;
+
+	transform: translateY(-50%);
+}
+
+.southAmericaAndGalapagos {
+	top: 73%;
+	left: 21%;
+}
+
+.atlanticIslands {
+	top: 61%;
+	left: 35%;
+}
+
+.indianOcean {
+	top: 59%;
+	left: 62%;
+}
+
+.australiaAndNewZealand {
+	bottom: 20%;
+	left: 80%;
+}

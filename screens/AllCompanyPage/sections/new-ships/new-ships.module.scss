@@ -1,0 +1,17 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.container {
+	position: relative;
+}
+
+.swiperArrow {
+	&::before {
+		top: 233px;
+	}
+}

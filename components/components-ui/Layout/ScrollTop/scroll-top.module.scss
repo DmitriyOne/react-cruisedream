@@ -1,0 +1,45 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/z-index.scss';
+
+.component {
+	position: fixed;
+	z-index: z-index.$idx-scrollTop;
+	right: 50px;
+	bottom: 50px;
+
+	visibility: hidden;
+
+	transition: all .3s;
+
+	opacity: 0;
+	border: 1px solid colors.$white;
+	background-color: #004a76;
+
+	&.active {
+		visibility: visible;
+
+		opacity: 1;
+	}
+
+	@include mixins.flex-center;
+	@include mixins.square-size(42);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		right: 25px;
+		bottom: 25px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.square-size(30);
+	}
+}
+
+.img {
+	width: 16px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 12px;
+	}
+}

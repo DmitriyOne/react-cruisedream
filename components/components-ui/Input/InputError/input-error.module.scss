@@ -1,0 +1,46 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.block {
+	display: block;
+}
+
+.absolute {
+	position: absolute;
+	z-index: 1;
+	bottom: -32px;
+	left: 0;
+
+	padding: 6px 10px;
+
+	border-radius: 4px;
+	background-color: colors.$white;
+
+	&::before { 
+		position: absolute; 
+		top: 0; 
+		top: -12px;
+		left: 20px;
+
+		content: '';
+
+		border: 6px solid transparent; 
+		border-bottom: 8px solid colors.$white;
+	}
+}
+
+.paddingLeft {
+	padding-left: 19px;
+}
+
+.text {
+	color: colors.$red;
+
+	font-size: 7px;
+	line-height: 160%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		line-height: 140%;
+	}
+}

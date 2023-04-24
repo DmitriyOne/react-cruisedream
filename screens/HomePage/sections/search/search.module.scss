@@ -1,0 +1,211 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/z-index.scss';
+
+.component {
+	margin-top: 16px;
+}
+
+.container {
+	padding: 12px 20px;
+
+	transition: all 0.5s;
+
+	background-color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.fixed {
+	position: fixed;
+	z-index: z-index.$idx-header;
+	top: -100%;
+	left: 0;
+
+	&.show {
+		top: 0;
+	}
+
+	& .form {
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			@include mixins.fluidMaxSize(960);
+		}
+	}
+
+	& .button {
+		color: colors.$blue;
+		border: 1px solid colors.$blue;
+		background-color: colors.$transparent;
+	}
+}
+
+.form {
+	margin: 0 auto;
+
+	@include mixins.flex-spb;
+	@include mixins.fluidMaxSize(1140);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-wrap: wrap;
+
+		@include mixins.fluidMaxSize(740);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+	}
+}
+
+.button {
+	padding: 17px 43px;
+
+	white-space: nowrap;
+	text-transform: uppercase;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	font-size: 17px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 50px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$btn-hover;
+		}
+	}
+}
+
+.col {
+	margin-right: 40px;
+
+	&:nth-child(even) {
+		@include mixins.media-w(breakpoints.$laptop) {
+			margin-right: 0;
+		}
+	}
+
+	&:nth-child(1) {
+		@include mixins.media-w(breakpoints.$laptop) {
+			margin-bottom: 40px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&:nth-child(2) {
+		@include mixins.media-w(breakpoints.$laptop) {
+			margin-bottom: 40px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include mixins.fluidMaxSize(255);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(340);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 100%;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+}
+
+
+.logo {
+	display: none;
+
+	margin-right: 40px;
+
+	&.show {
+		display: block;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			display: none
+		}
+	}
+
+	@include mixins.media-w(1900) {
+		margin-right: 20px;
+
+		@include mixins.fluidMaxSize(200);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(180);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none
+	}
+}
+
+.phone {
+	display: none;
+
+	margin-left: 40px;
+
+	transition: all .4s;
+	letter-spacing: 0.01em;
+
+	color: colors.$blue;
+
+	font-size: 37px;
+	line-height: 120%;
+
+	&.show {
+		display: block;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			display: none
+		}
+	}
+
+	@include mixins.media-w(1900) {
+		margin-left: 20px;
+
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(1660) {
+		min-width: 25px;
+
+		letter-spacing: 0;
+
+		background-image: url('./icons/phone.svg');
+
+		font-size: 0;
+		line-height: 0;
+
+		@include mixins.square-size(25);
+		@include mixins.bg-cover;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		display: none
+	}
+}
+
+.inputDatepicker {
+	padding: 5px 0 10px;
+}

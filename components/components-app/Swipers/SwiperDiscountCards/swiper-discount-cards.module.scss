@@ -1,0 +1,24 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.slideFilter {
+	filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+}
+
+.cardButton {
+	display: block;
+
+	width: 100%;
+	padding: 18px 6px;
+
+	text-align: center;
+
+	color: colors.$white;
+	border: none;
+	background-color: colors.$btn-hover;
+
+	font-size: 13px;
+	line-height: 110%;
+}

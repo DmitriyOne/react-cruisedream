@@ -1,0 +1,333 @@
+@use "z-index";
+@use "colors";
+@import 'select';
+@import 'datepicker';
+@import 'family';
+@import 'mixins';
+@import 'breakpoints';
+@import 'colors';
+@import 'animate';
+@import 'swiper';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: colors.$black;
+	background: colors.$white;
+
+	font-family:
+		Montserrat,
+		sans-serif,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		Ubuntu,
+		Cantarell,
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue";
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+	list-style-type: none;
+}
+
+table {
+	width: 100%;
+
+	border-spacing: 0;
+
+	border-collapse: collapse;
+}
+
+input,
+button {
+	color: inherit;
+	border: none;
+	outline: none;
+	background-color: transparent;
+
+	font-family: inherit;
+}
+
+textarea {
+	overflow: auto;
+
+	resize: vertical;
+
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+select {
+	border: none;
+	outline: none;
+	appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type="number"] {
+	appearance: none;
+	appearance: textfield;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#__next {
+	display: flex;
+
+	overflow-x: hidden;
+	flex-direction: column;
+
+	width: 100%;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+
+	width: 100%;
+}
+
+.img img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.tippy-content {
+	padding: 0;
+}
+
+.pt-section {
+	padding-top: 32px;
+
+	@include media-w($laptop-l) {
+		padding-top: 25px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-top: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-top: 16px;
+	}
+
+	@include media-w($tablet) {
+		padding-top: 12px;
+	}
+}
+
+.pb-section {
+	padding-bottom: 32px;
+
+	@include media-w($laptop-l) {
+		padding-bottom: 26px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 22px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 18px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 12px;
+	}
+}
+
+.pb-section-with-swiper {
+	padding-bottom: 30px;
+
+	@include media-w($laptop-l) {
+		padding-bottom: 24px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 10px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 4px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.pb-s-section {
+	padding-bottom: 20px;
+
+	@include media-w($laptop-s) {
+		padding-bottom: 12px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 6px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.title {
+	display: block;
+
+	padding-bottom: 22px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: $blue;
+
+	font-size: 36px;
+	line-height: 120%;
+
+	@include fonts($source-sans-pro);
+
+	@include media-w($laptop-l) {
+		padding-bottom: 18px;
+
+		font-size: 32px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 14px;
+
+		font-size: 28px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 12px;
+
+		font-size: 24px;
+	}
+
+	@include media-w($tablet) {
+		padding-bottom: 10px;
+
+		font-size: 22px;
+	}
+}
+
+.title-secondary {
+	width: 100%;
+	padding-bottom: 32px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: $blue;
+
+	font-size: 36px;
+	line-height: 120%;
+
+	@include fonts($source-sans-pro, 300);
+
+	@include media-w($laptop-l) {
+		padding-bottom: 24px;
+
+		font-size: 30px;
+	}
+
+	@include media-w($laptop-s) {
+		padding-bottom: 18px;
+
+		font-size: 26px;
+	}
+
+	@include media-w($laptop) {
+		padding-bottom: 12px;
+
+		font-size: 24px;
+		font-weight: 400;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	margin-top: 22px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 18px 50px;
+
+	transition: all .3s;
+	text-align: center;
+	white-space: nowrap;
+	text-transform: uppercase;
+
+	color: $btn-text;
+	border: 1px solid $btn-border;
+	border-radius: 3px;
+	background-color: $transparent;
+
+	font-size: 17px;
+	line-height: 120%;
+
+	@include media-w($laptop-s) {
+		margin-top: 10px;
+	}
+
+	@include media-w($tablet) {
+		width: 100%;
+		margin-top: 0;
+		padding: 15px 20px;
+
+		color: $white;
+		border: none;
+		border-radius: 0;
+		background-color: $btn-hover;
+
+		font-size: 13px;
+	}
+
+	@include media-minw($laptop) {
+		&:hover {
+			color: $white;
+			background-color: $btn-hover;
+		}
+	}
+}
+
+// ANIMATIONS
+.alert-enter {
+	opacity: 0;
+}
+
+.alert-enter-active {
+	animation: alert-visible 350ms ease-out forwards;
+}
+
+.alert-exit-active {
+	animation: alert-hidden 200ms ease-out forwards;
+}

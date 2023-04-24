@@ -1,0 +1,151 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/z-index.scss';
+@use '../../../styles/breakpoints.scss';
+
+.component {
+	position: fixed;
+	z-index: z-index.$idx-modal;
+	top: 50px;
+	right: 20px;
+
+	display: flex;
+	align-items: center;
+
+	padding: 25px 25px 30px;
+
+	border: 2px solid transparent;
+	border-radius: 16px;
+
+	@include mixins.fluidMaxSize(380);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		top: 10px;
+		right: 10px;
+		
+		padding: 15px;
+
+		border-width: 1px;
+		border-radius: 8px;
+
+		@include mixins.fluidMaxSize(280);
+	}
+}
+
+.alert-enter {
+	opacity: 0;
+}
+
+.alert-enter-active {
+	transition: opacity 1s ease-out;
+
+	opacity: 1;
+}
+
+.alert-exit-active {
+	transition: opacity 1s ease-out;
+
+	opacity: 1;
+}
+
+.iconWrapper {
+	display: flex;
+
+	@include mixins.square-size(45);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.square-size(35);
+	}
+}
+
+.contentWrapper {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	padding-left: 25px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-left: 15px;
+	}
+}
+
+.title {
+	padding-bottom: 8px;
+
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 4px;
+
+		font-size: 15px;
+	}
+}
+
+.text {
+	font-size: 16px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+	}
+}
+
+.green {
+	color: #0a4e2e;
+	border-color: #96d2b7;
+	background-color: #d1e7dd;
+
+	svg {
+		fill: #96d2b7
+	}
+
+	svg path {
+		stroke: #10ac3c;
+	}
+
+	.title {
+		color: #0a4e2e;
+	}
+
+	.text {
+		color: #0a4e2e;
+	}
+}
+
+.red {
+	color: #842029;
+	border-color: #f8a1a9;
+	background-color:#f8d7da;
+
+	svg {
+		fill: #d75a4a;
+	}
+
+	.title {
+		color: #842029;
+	}
+
+	.text {
+		color: #842029;
+	}
+}
+
+.warning {
+	color: #664d03;
+	border-color: #e4c769;
+	background-color: #fff3cd;
+
+	svg {
+		fill: #efce4a;
+	}
+
+	.title {
+		color: #664d03;
+	}
+
+	.text {
+		color: #664d03;
+	}
+}

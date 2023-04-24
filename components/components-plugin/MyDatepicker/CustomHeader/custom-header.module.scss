@@ -1,0 +1,58 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+}
+
+.componentCustomYear {
+	width: 100%;
+	padding: 13px 0;
+
+	border-radius: 3px;
+	background-color: colors.$blue;
+}
+
+.select {
+	padding-right: 12px;
+
+	color: colors.$white;
+	background-color: colors.$blue;
+	background-image: url('../icon/arrow-white.svg');
+	background-repeat: no-repeat;
+	background-position: right 0 top 50%;
+	background-size: 8px auto;
+
+	font-size: 12px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$montserrat);
+}
+
+.componentCustomMonth {
+	padding-top: 5px;
+
+	@include mixins.flex-center;
+}
+
+.buttonArrow {
+	width: 16px;
+	padding: 5px;
+
+	&.prev {
+		transform: rotate(-180deg);
+	}
+
+	@include mixins.flex-center;
+}
+
+.monthText {
+	padding: 0 10px;
+
+	color: colors.$blue;
+
+	font-size: 13px;
+	line-height: 110%;
+}

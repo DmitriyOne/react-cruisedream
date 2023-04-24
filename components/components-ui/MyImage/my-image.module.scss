@@ -1,0 +1,18 @@
+@use '../../../styles/mixins.scss';
+
+.component {
+	position: relative;
+
+	height: 100%;
+
+	@include mixins.flex-center;
+}
+
+.image {
+	position: relative !important;
+
+	width: 100% !important;
+	height: unset !important;
+	object-fit: cover;
+	object-position: center;
+}

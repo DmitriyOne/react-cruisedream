@@ -1,0 +1,85 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+
+.full {
+	width: 100%;
+	max-width: 100%
+}
+
+.containerXL {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1680);
+}
+
+.container {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1500);
+}
+
+.containerS {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1370);
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.rowReverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.columnReverse {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.alignStart {
+	align-items: flex-start;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.alignEnd {
+	align-items: flex-end;
+}
+
+.alignStretch {
+	align-items: stretch;
+}
+
+.justifyStart {
+	justify-content: flex-start;
+}
+
+.justifyEnd {
+	justify-content: flex-end;
+}
+
+.justifyAround {
+	justify-content: space-around;
+}
+
+.justifyBetween {
+	justify-content: space-between;
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.justifyBaseline {
+	justify-content: baseline;
+}

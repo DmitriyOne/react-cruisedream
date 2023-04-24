@@ -1,0 +1,29 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.text {
+	margin-top: 0 !important;
+
+	color: #4f4e4e !important; 
+	border-bottom: none !important;
+
+
+	&::after {
+		padding-right: 3px;
+		padding-left: 3px;
+
+		content: "/";
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px !important;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px !important;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px !important;
+	}
+}

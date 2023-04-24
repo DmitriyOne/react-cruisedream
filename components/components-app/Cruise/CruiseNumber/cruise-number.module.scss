@@ -1,0 +1,17 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 15px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+
+		text-align: right;
+
+		font-size: 12px;
+	}
+}

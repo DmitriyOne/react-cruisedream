@@ -1,0 +1,175 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.shipWrapper {
+	width: 100%;
+	padding-bottom: 6px;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-bottom: 10px;
+	}
+}
+
+.shipName {
+	display: block;
+
+	width: 100%;
+
+	text-align: center;
+
+	color: colors.$white;
+
+	font-size: 24px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 12px;
+		font-weight: 400;
+	}
+}
+
+.contentWrapper {
+	padding-right: 20px;
+	padding-left: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(800);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(700);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.text {
+	text-align: center;
+	text-transform: lowercase;
+
+	color: colors.$yellow;
+
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}
+
+.uppercase {
+	text-transform: uppercase;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 20px;
+	}
+}
+
+.button {
+	padding: 20px 30px;
+
+	color: colors.$blue;
+	border-radius: 3px;
+	background: colors.$yellow;
+	box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 120%;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 14px 25px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 16px;
+		padding-left: 16px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		font-size: 13px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-top: 14px;
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+}
+
+.timer {
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-bottom: 12px;
+	}
+}
+
+.timerNumber {
+	padding-bottom: 0;
+
+	color: colors.$white;
+
+	font-size: 45px;
+	line-height: 90%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 36px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-bottom: 4px;
+
+		font-size: 32px;
+	}
+}

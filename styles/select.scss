@@ -1,0 +1,358 @@
+@use './mixins.scss';
+@use './family.scss';
+@use './colors.scss';
+@use './breakpoints.scss';
+@use './z-index.scss';
+
+@keyframes scaleIn {
+	0% {
+		transform: scale(0.9);
+
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+}
+
+.select-default__menu-list--is-multi>div:first-child {
+	margin-bottom: 12px !important;
+}
+
+.select-default__value-container input {
+	position: absolute !important;
+
+	height: 0 !important;
+}
+
+.select-default {
+	&__control {
+		overflow: hidden;
+		flex-wrap: nowrap !important;
+
+		width: 100%;
+		min-height: auto !important;
+		padding: 5px 0 10px;
+
+		cursor: pointer !important;
+
+		border: none !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	&__group {
+		padding: 0 !important;
+	}
+
+	&__group-heading {
+		font-size: 70% !important;
+	}
+
+	&__value-container {
+		position: relative !important;
+
+		display: initial !important;
+		overflow: hidden !important;
+
+		padding: 0 !important;
+
+		cursor: pointer !important;
+		white-space: nowrap !important;
+		text-overflow: ellipsis !important;
+
+		font-size: 16px !important;
+		line-height: 120% !important;
+	}
+
+	&__single-value {
+		margin: 0 !important;
+
+		line-height: 120%;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
+	}
+
+	&__placeholder {
+		margin: 0 !important;
+
+		line-height: 120%;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			font-size: 18px;
+		}
+	}
+
+	&__input-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+
+		cursor: pointer;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+	}
+
+	&__clear-indicator {
+		display: none;
+	}
+
+	&__indicator-separator {
+		display: none;
+	}
+
+	&__dropdown-indicator {
+		width: 16px;
+		height: 10px;
+		margin-right: 0 !important;
+
+		background-image: url('../public/images/select/arrow-down-dark.svg');
+
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			width: 12px;
+		}
+	}
+
+	&__indicator {
+		margin: 0 10px;
+		padding: 0 5px !important;
+
+		& svg {
+			display: none;
+		}
+
+		@include mixins.bg-cover;
+	}
+
+	&__menu {
+		z-index: z-index.$idx-select-menu !important;
+
+		animation: scaleIn 0.35s ease-in-out;
+
+		color: rgb(255 255 255 / 60%) !important;
+		border-radius: 0 !important;
+		background-color: colors.$white !important;
+		box-shadow: 0 4px 4px rgb(0 0 0 / 25%) !important;
+	}
+
+	&__menu-list {
+		max-height: 200px !important;
+	}
+
+	&__option {
+		cursor: pointer !important;
+
+		color: colors.$black !important;
+	}
+
+	&__multi-value {
+		margin: 0 !important;
+
+		border-radius: 0 !important;
+		background-color: transparent !important;
+	}
+
+	&__multi-value__label {
+		padding: 0 !important;
+
+		border-radius: 0 !important;
+
+		line-height: 120% !important;
+	}
+
+	&__multi-value__remove {
+		display: none !important;
+	}
+}
+
+.select-transparent.select-default {
+	&__control {
+		border-bottom: 1px solid #4f4e4e !important;
+		background-color: transparent !important;
+	}
+
+	&__value-container {
+		color: rgb(79 78 78 / 60%) !important;
+
+		@include mixins.fonts(family.$source-sans-pro, 300);
+	}
+
+	&__single-value {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 24px;
+
+		@include mixins.fonts(family.$source-sans-pro, 300);
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			font-size: 20px;
+		}
+	}
+
+	&__placeholder {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 16px;
+
+		@include mixins.fonts(family.$source-sans-pro, 300);
+	}
+
+	&__multi-value__label {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 16px !important;
+	}
+}
+
+.select-white.select-default {
+	&__control {
+		padding: 15px 12px;
+
+		border-radius: 3px !important;
+		background-color: colors.$white !important;
+	}
+
+	&__value-container {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 17px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__single-value {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 17px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__placeholder {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 17px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__dropdown-indicator {
+		padding: 0 !important;
+
+		color: rgb(79 78 78 / 60%) !important;
+		background-image: url('../public/images/select/arrow-down.svg');
+	}
+
+	&__option {
+		font-size: 16px !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px !important;
+		}
+	}
+
+	&__multi-value__label {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 17px;
+	}
+}
+
+.select-sort.select-default {
+	&__control {
+		padding: 12px 10px;
+
+		border-radius: 3px !important;
+		background-color: colors.$white !important;
+		box-shadow: 0 3px 4px rgb(0 0 0 / 10%) !important;
+	}
+
+	&__value-container {
+		padding: 0 5px 0 0 !important;
+
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 20px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			font-size: 16px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__single-value {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 20px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			font-size: 16px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__placeholder {
+		color: rgb(79 78 78 / 60%) !important;
+
+		font-size: 20px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			font-size: 16px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px;
+		}
+	}
+
+	&__dropdown-indicator {
+		background-image: url('../public/images/select/arrow-down.svg');
+	}
+
+	&__menu {
+		width: auto !important;
+		min-width: 100% !important;
+	}
+
+	&__option {
+		background-color: colors.$transparent !important;
+
+		font-size: 16px !important;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			font-size: 14px !important;
+		}
+	}
+
+	&__option--is-selected {
+		background-color: #ddebff !important;
+	}
+}

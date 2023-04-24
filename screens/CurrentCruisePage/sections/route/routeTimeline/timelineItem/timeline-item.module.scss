@@ -1,0 +1,177 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/colors.scss';
+@use '../../../../../../styles/family.scss';
+
+.component {
+	width: 100%;
+
+	background-color: colors.$white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+.header {
+	position: relative;
+}
+
+.image {
+	position: relative;
+
+	display: block;
+
+	height: 225px;
+
+	img {
+		height: 100% !important;
+	}
+}
+
+.label {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	min-width: 75px;
+	min-height: 55px;
+	padding: 4px;
+
+	text-align: center;
+
+	color: colors.$white;
+	background-color: colors.$yellow;
+
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 55px;
+		min-height: 50px;
+
+		font-weight: 600;
+	}
+}
+
+.labelSpan {
+	display: block;
+
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.body {
+	flex-direction: column;
+
+	padding-top: 45px;
+	padding-bottom: 40px;
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.title {
+	padding-bottom: 15px;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 32px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.date {
+	padding-bottom: 10px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+.time {
+	padding-bottom: 10px;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+.desc {
+	padding: 0 30px 40px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 90%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 0 20px 30px;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	min-width: 205px;
+	padding: 12px;
+
+	text-align: center;
+
+	color: colors.$btn-text;
+	border: 2px solid colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	font-size: 15px;
+	line-height: 110%;
+	filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+
+		color: colors.$white;
+		border: none;
+		border-radius: 0;
+		background-color: colors.$btn-hover;
+
+		font-size: 13px;
+		filter: none;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 2px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}

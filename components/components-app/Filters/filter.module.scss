@@ -1,0 +1,112 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	position: relative;
+	z-index: 1;
+
+	padding: 50px 20px 40px;
+
+	@include mixins.bg-cover;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 20px;
+	}
+}
+
+.container {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1080);
+}
+
+.containerFilter {
+	filter: drop-shadow(0 4px 4px rgb(0 0 0 / 10%));
+}
+
+.containerPadding {
+	padding: 22px 60px;
+
+	@include mixins.fluidMaxSize(1200);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 6px 12px;
+	}
+}
+
+.container .title {
+	padding-bottom: 20px;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 34px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 32px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 5px;
+
+		font-size: 20px;
+	}
+}
+
+.subtitle {
+	padding-bottom: 20px;
+
+	text-align: center;
+
+	color: #4f4e4e;
+
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 2px;
+
+		font-size: 12px;
+	}
+
+}
+
+.form {
+	width: 100%;
+	max-width: 100%;
+}

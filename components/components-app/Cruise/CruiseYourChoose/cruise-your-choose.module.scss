@@ -1,0 +1,112 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.header {
+	display: flex;
+	align-items: flex-start;
+
+	width: 100%;
+	padding-bottom: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 6px;
+	}
+}
+
+.headerAmountDays {
+	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		position: relative;
+	}
+}
+
+.headerTitle {
+	padding-bottom: 8px;
+
+	color: colors.$blue;
+
+	font-size: 29px;
+	font-weight: 600;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+
+		font-size: 15px;
+	}
+}
+
+.headerSubtitle {
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 14px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 10px;
+
+		font-size: 10px;
+	}
+}
+
+.body {
+	display: flex;
+
+	width: 100%;
+
+	border: 1px solid rgb(0 66 117 / 80%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		padding-top: 6px;
+
+		border: none;
+	}
+}
+
+.cardLeft {
+	position: relative;
+
+	display: flex;
+
+	width: 33%;
+	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 36%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+.cardRight {
+	width: 67%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 64%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+}

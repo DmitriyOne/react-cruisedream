@@ -1,0 +1,95 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding-bottom: 32px;
+
+	border-bottom: 1px solid rgb(255 255 255 / 30%);
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 20px;
+	}
+}
+
+.col {
+	width: 25%;
+	margin-right: 10px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 10px;
+
+		@include mixins.fluidMaxSize(230);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 100%;
+		margin-right: 0;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.inputDatepicker {
+	padding: 15px 12px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-family: family.$montserrat !important;
+	font-size: 17px;
+	font-weight: 400 !important;
+
+	&::placeholder {
+		color: rgb(79 78 78 / 60%);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.button {
+	padding: 15px 45px;
+
+	white-space: nowrap;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	font-size: 17px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 1px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}

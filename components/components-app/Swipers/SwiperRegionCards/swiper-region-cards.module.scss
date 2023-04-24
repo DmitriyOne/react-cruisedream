@@ -1,0 +1,33 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding-right: 10px;
+	padding-left: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.mobilePaddingNull {
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0 !important;
+	}
+}
+
+.container {
+	position: relative;
+}
+
+.hideButton {
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	opacity: 0 !important;
+	border-width: 0 !important;
+
+	font-size: 0 !important;
+}

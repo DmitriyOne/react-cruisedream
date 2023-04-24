@@ -1,0 +1,110 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 30px 12px 40px;
+
+	background-color: #efefef;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 0 16px;
+	}
+}
+
+.title {
+	width: 100%;
+	padding-bottom: 12px;
+
+	color: colors.$blue;
+
+	font-size: 46px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 36px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 18px;
+
+		font-size: 24px;
+	}
+}
+
+.tabsHeader {
+	justify-content: center;
+
+	margin-bottom: 28px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+}
+
+.tabsTitle {
+	min-width: 140px;
+	margin-right: 5px;
+	padding: 8px 6px;
+
+	text-align: center;
+	letter-spacing: 0.05em;
+
+	color: colors.$white;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$transparent;
+	background-color: colors.$blue;
+
+	font-size: 15px;
+	line-height: 140%;
+
+	&.active {
+		color: colors.$blue;
+		border-color: colors.$blue;
+		background-color: colors.$transparent;
+	}
+
+	&:last-child {
+		margin-right: 0;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			display: none;
+		}
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+		padding: 6px;
+
+		letter-spacing: 0;
+
+		font-size: 12px;
+
+		@include mixins.fonts(family.$montserrat);
+	}
+}
+
+.tabsBody {
+	position: relative;
+
+	margin: 0 auto;
+}

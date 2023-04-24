@@ -1,0 +1,14 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss';
+
+.ship {
+	margin-top: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 0;
+	}
+}
+
+.desc {
+	border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+}

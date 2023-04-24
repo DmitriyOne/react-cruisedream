@@ -1,0 +1,65 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	margin-bottom: 80px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+	}
+}
+
+.container {
+	display: flex;
+
+	width: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column-reverse;
+	}
+}
+
+.left {
+	position: relative;
+
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	width: 33%;
+	margin-right: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 36%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		margin-top: 10px;
+		margin-right: 0;
+	}
+}
+
+.right {
+	width: 67%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 64%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+}

@@ -1,0 +1,53 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.inputWrapper {
+	margin: 14px 12px 0;
+	padding-left: 9px;
+
+	box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+}
+
+.label {
+	display: block;
+
+	width: 19px;
+	height: 17px;
+
+	background-image: url('./icons/search.svg');
+
+	font-size: 0;
+
+	@include mixins.bg-cover;
+}
+
+.input {
+	width: 100%;
+	padding: 12px 12px 8px;
+
+	color: rgb(79 78 78 / 40%);
+	background-color: colors.$transparent;
+
+	font-size: 9px;
+	line-height: 110%;
+
+	&::placeholder {
+		text-transform: uppercase;
+	}
+}
+
+.button {
+	display: block;
+
+	width: 100%;
+	padding: 18px 6px;
+
+	text-align: center;
+
+	color: colors.$white;
+	background-color: colors.$blue;
+
+	font-size: 13px;
+	line-height: 110%;
+}

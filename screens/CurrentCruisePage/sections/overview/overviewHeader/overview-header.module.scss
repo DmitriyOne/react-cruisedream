@@ -1,0 +1,36 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	flex-wrap: wrap;
+
+	width: 100%;
+	padding-bottom: 4px;
+	row-gap: 5px;
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: flex-start;
+		flex-direction: column;
+
+		padding-right: 20px;
+		padding-bottom: 5px;
+		padding-left: 20px;
+		row-gap: 0;
+	}
+}
+
+.breadcrumb {
+	margin-right: 40px;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-right: 0;
+		padding-bottom: 6px;
+	}
+
+}

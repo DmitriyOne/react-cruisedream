@@ -1,0 +1,50 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+
+.component {
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+.title {
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 10px !important;
+	}
+}
+
+.text {
+	text-align: justify;
+	text-indent: 3rem;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 25px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		text-indent: 1rem;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 12px;
+	}
+}

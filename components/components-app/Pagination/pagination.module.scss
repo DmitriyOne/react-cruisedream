@@ -1,0 +1,88 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/colors.scss';
+@use '../../../styles/breakpoints.scss';
+
+.component {
+	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: flex-start;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+}
+
+.wrapper {
+	display: flex;
+}
+
+.item {
+	min-width: 48px;
+	min-height: 48px;
+	margin-right: 10px;
+	padding: 12px 4px;
+
+	cursor: pointer;
+	text-align: center;
+
+	color: colors.$white;
+	border-radius: 3px;
+	background-color: rgb(0 66 117 / 70%);
+
+	font-size: 20px;
+	line-height: 120%;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		color: colors.$blue;
+		background-color: rgb(79 78 78 / 15%);
+	}
+
+	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 35px;
+		min-height: 35px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+
+		font-size: 14px;
+	}
+}
+
+// .prev {
+// 	& .icon {
+// 		transform: rotate(-180deg);
+// 	}
+// }
+
+// .icon {
+// 	display: block;
+
+// 	width: 12px;
+// 	margin: 0 auto;
+
+// 	@include mixins.media-w(breakpoints.$tablet) {
+// 		width: 10px;
+// 	}
+// }
+
+// .amountWrapper {
+// 	color: colors.$blue;
+
+// 	font-size: 14px;
+// 	line-height: 120%;
+
+// 	@include mixins.media-w(breakpoints.$tablet) {
+// 		width: 100%;
+// 		margin-top: 10px;
+// 		margin-left: 0;
+// 	}
+// }

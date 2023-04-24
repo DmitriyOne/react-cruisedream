@@ -1,0 +1,55 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	position: relative;
+
+	display: flex;
+}
+
+.full {
+	width: 100%;
+}
+
+.half {
+	width: 47%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+	}
+}
+
+.label {
+	display: block;
+
+	cursor: pointer;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 17px;
+	line-height: 120%;
+}
+
+.labelLeft {
+	align-items: center;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+.labelRight {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.labelTop {
+	flex-direction: column-reverse;
+}
+
+.labelBottom {
+	flex-direction: column;
+}
+
+.textarea {
+	border: 1px solid #000;
+}

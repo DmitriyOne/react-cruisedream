@@ -1,0 +1,228 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 100%;
+	height: 100%;
+	min-height: 525px;
+
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		min-height: 465px;
+	}
+}
+
+.header {
+	position: relative;
+
+	width: 100%;
+}
+
+.cruisePhoto {
+	position: relative;
+
+	height: 205px;
+
+	img {
+		height: 100% !important;
+	}
+}
+
+.sliderArrow {
+	width: 30px;
+
+	&::before {
+		width: 8px;
+		height: 16px;
+	}
+}
+
+.amountDays {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+
+	min-width: 55px !important;
+	min-height: 50px !important;
+	margin-right: 0 !important;
+	padding: 2px !important;
+}
+
+.amountNumber {
+	font-size: 26px !important;
+}
+
+.amountText {
+	font-size: 12px !important;
+}
+
+.discount {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+
+	padding: 2px;
+}
+
+.discountText {
+	font-size: 30px;
+}
+
+.discountPercentage {
+	font-size: 20px;
+}
+
+.timer {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+
+	width: 100%;
+	padding: 8px 0;
+
+	background-color: rgb(0 66 117 / 40%);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 4px 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 8px 0;
+	}
+}
+
+.timerText {
+	font-size: 9px !important;
+}
+
+.timerNumber {
+	font-size: 24px !important;
+}
+
+.body {
+	width: 100%;
+	padding: 12px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+}
+
+.logo {
+	max-width: 140px !important;
+	margin: 0 auto 8px;
+}
+
+.name {
+	text-align: center;
+
+	font-size: 15px !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px !important;
+	}
+}
+
+.shipWrapper {
+	margin-bottom: 6px;
+}
+
+.shipName {
+	font-size: 12px !important;
+}
+
+.shipIcon {
+	min-width: 12px !important;
+	max-width: 12px !important;
+	margin-right: 14px !important;
+
+	img {
+		width: 100%;
+	}
+}
+
+.dateWrapper {
+	margin-bottom: 6px ;
+}
+
+.dateText {
+	font-size: 12px !important;
+}
+
+.dateArrow {
+	width: 8px !important;
+}
+
+.routeText {
+	font-size: 12px !important;
+}
+
+.routeIcon {
+	min-width: 12px !important;
+	max-width: 12px !important;
+	margin-right: 14px !important;
+
+	img {
+		width: 100%;
+	}
+}
+
+.tooltipWrapper {
+	overflow-x: hidden;
+
+	width: 50% !important;
+	max-height: 75px !important;
+	padding: 6px !important
+}
+
+.tooltipText {
+	font-size: 12px !important;
+}
+
+.priceText {
+	display: block;
+
+	width: 100%;
+	padding-top: 12px;
+
+	text-align: center;
+
+	font-size: 40px;
+}
+
+.priceTextSpan {
+	font-size: 36px;
+}
+
+.button {
+	display: block;
+
+	width: 100%;
+	padding: 16px 6px;
+
+	text-align: center;
+
+	color: colors.$white;
+	background-color: colors.$btn-hover;
+
+	font-size: 13px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}

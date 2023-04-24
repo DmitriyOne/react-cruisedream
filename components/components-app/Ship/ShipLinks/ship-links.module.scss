@@ -1,0 +1,103 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+
+	&::-webkit-scrollbar {
+		display: none;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+		background-color: transparent;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		-ms-overflow-style: none;
+
+		overflow: -moz-scrollbars-none;
+		scrollbar-width: none;
+	}
+}
+
+.item {
+	margin-right: 20px;
+}
+
+.link {
+	display: flex;
+	align-items: center;
+
+	transition: text-shadow .3s;
+
+	color: colors.$yellow;
+
+	font-size: 16px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro, 600);
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		white-space: nowrap;
+
+		font-size: 13px;
+	}
+}
+
+.text {
+	display: block;
+
+	padding-bottom: 8px;
+
+	border-bottom: 1px solid colors.$yellow;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 4px;
+	}
+}
+
+.arrow {
+	display: block;
+
+	width: 10px;
+	margin-bottom: 10px;
+	margin-left: 4px;
+
+	font-size: 16px;
+	line-height: 110%;
+
+	img {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-bottom: 6px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 8px;
+
+		font-size: 13px;
+	}
+}

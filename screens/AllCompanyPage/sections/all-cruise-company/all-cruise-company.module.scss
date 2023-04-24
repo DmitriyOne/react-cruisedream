@@ -1,0 +1,22 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding-right: 10px;
+	padding-left: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.container {
+	position: relative;
+}
+
+.swiperArrow {
+	&::before {
+		top: 270px;
+	}
+}

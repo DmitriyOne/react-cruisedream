@@ -1,0 +1,23 @@
+@use '../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	align-items: center;
+}
+
+.text {
+	margin-right: 8px;
+
+	color: colors.$blue;
+
+	font-size: 14px;
+	line-height: 120%;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		font-weight: 700;
+	}
+}
