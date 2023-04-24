@@ -1,9 +1,0 @@
-@use '../../../styles/mixins.scss';
-@use '../../../styles/breakpoints.scss';
-
-.component {
-
-	@include mixins.media-w(breakpoints.$tablet) {
-		// padding-top: 2px !important;
-	}
-}
