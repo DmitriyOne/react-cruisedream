@@ -1,0 +1,32 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/family.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	padding: 8px 6px;
+
+	background: #fb111e;
+	box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+}
+
+.text {
+	display: flex;
+
+	color: colors.$white;
+
+	font-size: 40px;
+	line-height: 85%;
+
+	@include mixins.fonts(family.$advent-pro);
+}
+
+.percentage {
+	display: block;
+
+	color: colors.$white;
+
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 100%;
+}

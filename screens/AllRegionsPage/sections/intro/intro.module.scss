@@ -1,0 +1,74 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+
+.component {
+	border-top: 1px solid rgb(79 78 78 / 40%);
+}
+
+.contentWrapper {
+	padding: 0 20px 26px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.text {
+	padding-bottom: 30px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 25px;
+	line-height: 110%;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 25px;
+
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 20px;
+
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 14px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 12px;
+	}
+}
+
+.link {
+	font-weight: 700;
+
+	@extend .text;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

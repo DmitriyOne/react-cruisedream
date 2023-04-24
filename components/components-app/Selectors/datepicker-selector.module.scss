@@ -1,0 +1,36 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.wrapper {
+	background-color: colors.$white;
+
+	&::before {
+		width: 18px;
+		height: 20px;
+
+		content: '';
+
+		background-image: url('../../../public/images/datepicker/datepicker.svg');
+	}
+}
+
+.borderBottom {
+	border-bottom: 1px solid #4f4e4e !important;
+}
+
+.borderRadius {
+	border-radius: 3px;
+}
+
+.iconIndent0{
+	&::before {
+		right: 0;
+	}
+}
+
+.iconIndent15{
+	&::before {
+		right: 15px;
+	}
+}

@@ -1,0 +1,148 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	position: relative;
+
+	width: 100%;
+}
+
+.swiper {
+	padding: 20px 0 !important;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 100%;
+	height: auto;
+	min-height: 190px;
+	padding: 28px 12px 16px;
+
+	transition: all .3s;
+
+	border-radius: 6px;
+	background-color: colors.$blue;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-height: 90px;
+		padding: 10px 5px;
+	}
+}
+
+.top {
+	flex-direction: column;
+
+	@include mixins.flex-center;
+}
+
+.bottom {
+	padding-top: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 10px;
+	}
+}
+
+.textDate {
+	display: block;
+
+	text-align: center;
+
+	color: colors.$white;
+
+	font-size: 20px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.textTo {
+	display: block;
+
+	padding-top: 8px;
+	padding-bottom: 8px;
+
+	text-align: center;
+
+	color: colors.$white;
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 6px;
+		padding-bottom: 6px;
+
+		font-size: 10px;
+	}
+}
+
+.textPrice {
+	display: block;
+
+	text-align: center;
+
+	color: colors.$white;
+
+	font-size: 20px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.textCall {
+	display: block;
+
+	text-align: center;
+
+	color: colors.$white;
+
+	font-size: 14px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 10px;
+	}
+}
+
+.swiperArrow {
+	&.prev {
+		left: -50px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			left: 0;
+		}
+	}
+
+	&.next {
+		right: -50px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			right: 0;
+		}
+	}
+
+	&::before {
+		width: 10px;
+		height: 22px;
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			background-image: url('../../../../public/images/swiper/arrow-white.svg');
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 7px;
+			height: 12px;
+		}
+	}
+}

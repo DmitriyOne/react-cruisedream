@@ -1,0 +1,184 @@
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.container {
+	height: 100%;
+	padding: 40px 20px 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 20px;
+		padding-bottom: 100px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		min-height: 400px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.component {
+	justify-content: space-between;
+
+	height: 75%;
+
+	&.left {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+
+		margin-right: auto;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			flex-direction: column;
+
+			margin: 0 auto;
+
+			@include mixins.flex-center;
+		}
+	}
+
+	&.center {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		margin: 0 auto;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			flex-direction: column;
+
+			@include mixins.flex-center;
+		}
+	}
+
+	&.right {
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
+
+		margin-left: auto;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			flex-direction: column;
+
+			margin: 0 auto;
+
+			@include mixins.flex-center;
+		}
+	}
+
+	@include mixins.fluidMaxSize(630);
+
+	@include mixins.media-h(820) {
+		height: 100%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		@include mixins.flex-center;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}
+
+.textSale {
+	display: block;
+
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 64px;
+	font-weight: 400;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 54px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 32px;
+	}
+}
+
+.textSaleDamion {
+	padding-left: 5px;
+
+	color: colors.$white;
+
+	font-size: 96px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$damion);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 48px;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	margin-top: 60px;
+	padding: 18px 30px;
+
+	transition: color .3s;
+	text-align: center;
+
+	color: colors.$blue;
+	border-radius: 3px;
+	background: colors.$yellow;
+	box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+
+	font-size: 16px;
+	line-height: 120%;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 80px;
+		padding: 11px 20px;
+
+		font-size: 12px;
+	}
+}
+
+.component.center .title {
+	text-align: center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;
+	}
+}
+
+.component.right .title {
+	text-align: right;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-align: left;
+	}
+}

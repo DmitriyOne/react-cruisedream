@@ -1,0 +1,103 @@
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+@use '../../../../../../styles/family.scss';
+@use '../../../../../../styles/colors.scss';
+
+.title {
+	padding-bottom: 12px;
+
+	text-transform: uppercase;
+
+	color: colors.$blue;
+
+	font-size: 32px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-bottom: 8px;
+
+		text-align: center;
+
+		font-size: 14px
+	}
+}
+
+.desc {
+	text-align: justify;
+	text-indent: 3rem;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 25px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		text-indent: 2rem;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.button {
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 5px 25px;
+
+	transition: filter .3s;
+	letter-spacing: 0.05em;
+
+	color: rgb(79 78 78 / 80%);
+	border: 0.5px solid rgb(79 78 78 / 80%);
+	border-radius: 3px;
+	background: colors.$white;
+
+	font-size: 15px;
+	line-height: 100%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			filter: drop-shadow(0 2px 2px rgb(0 0 0 / 25%));
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 15px;
+		padding-left: 15px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 8px;
+		margin-left: 0;
+
+		font-size: 12px;
+	}
+}

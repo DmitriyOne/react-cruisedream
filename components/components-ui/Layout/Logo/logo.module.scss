@@ -1,0 +1,9 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	@include mixins.fluidMaxSize(300);
+}
+
+

@@ -1,0 +1,111 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+	padding: 22px 20px;
+
+	border-top: 1px solid rgb(79 78 78 / 40%);
+	background: colors.$white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: none;
+	}
+}
+
+.nav {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(630);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(520);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(420);
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.item {
+	margin-right: 26px;
+
+	color: colors.$blue;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 16px;
+	}
+}
+
+.link {
+	position: relative;
+
+	display: block;
+	overflow-x: hidden;
+
+	padding-bottom: 2px;
+
+	font-size: 24px;
+
+	&::before {
+		position: absolute;
+		bottom: 0;
+		left: -110%;
+
+		width: 100%;
+		height: 1px;
+
+		content: '';
+		transition: left .3s;
+
+		background-color: #4f4e4e;
+	}
+
+	&.active::before {
+		left: 0;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			left: -110%;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover::before {
+			left: 0;
+		}
+	}
+}

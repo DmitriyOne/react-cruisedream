@@ -1,0 +1,22 @@
+@use '../../../../../../styles/mixins.scss';
+
+.centerButton {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	letter-spacing: 0.05em;
+
+	color: #004a76;
+
+	font-size: 12px;
+	line-height: 140%;
+
+	img {
+		display: block;
+	}
+}
+
+.centerIcon {
+	@include mixins.square-size(15);
+}

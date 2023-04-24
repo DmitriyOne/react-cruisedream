@@ -1,0 +1,33 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	position: relative;
+
+	height: 300px;
+
+	img {
+		display: block;
+
+		height: 100%;
+		object-position: center;
+	}
+
+	@include mixins.fluidMaxSize(440);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(400);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 330px;
+		margin: 0 auto;
+
+		@include mixins.fluidMaxSize(550);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		max-width: 100%;
+		height: 250px;
+	}
+}

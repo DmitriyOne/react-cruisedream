@@ -1,0 +1,68 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	margin-right: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 40px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-right: 60px;
+	}
+}
+
+.logo {
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
+}
+
+.logoText {
+	display: block;
+
+	width: 100%;
+	margin-top: 12px;
+
+	text-align: center;
+	text-align: right;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 16px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro, 600);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 14px;
+	}
+}
+
+.socialRow {
+	display: flex;
+	justify-content: flex-end;
+
+	margin-top: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 40px;
+	}
+}
+
+.socialIcon {
+	display: block;
+
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.square-size(18);
+}

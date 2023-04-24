@@ -1,0 +1,72 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	position: relative;
+
+	padding: 28px 20px;
+
+	border-top: 1px solid rgb(79 78 78 / 15%);
+}
+
+.container {
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(910);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(700);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 70px;
+		padding-left: 70px;
+
+		@include mixins.fluidMaxSize(840);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 40px;
+		padding-left: 40px;
+
+		@include mixins.fluidMaxSize(680);
+	}
+}
+
+.title {
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 36px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 22px;
+	}
+}
+
+.subtitle {
+	display: block;
+
+	padding-bottom: 20px;
+
+	text-align: center;
+
+	color: #4f4e4e;
+
+	font-size: 20px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 16px;
+	}
+}

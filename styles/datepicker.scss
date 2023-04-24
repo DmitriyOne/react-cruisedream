@@ -1,0 +1,236 @@
+@use './z-index.scss';
+@use './colors.scss';
+@use './family.scss';
+@use './mixins.scss';
+@use './breakpoints.scss';
+
+@keyframes scaleInDatePicker {
+	0% {
+		transform: scale(0.9) translate3d(0, 0, 0);
+
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: scale(1) translate3d(0, 0, 0);
+
+		opacity: 1;
+	}
+}
+
+.react-datepicker-popper {
+	z-index: z-index.$datepicker !important;
+
+	width: 100%;
+	min-width: 290px;
+
+	transform: translate3d(0, 0, 0) !important;
+	animation: scaleInDatePicker 0.35s ease-in-out !important;
+	inset: 35px auto auto -15px !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: auto;
+		min-width: 240px;
+
+		transform: translate3d(0, 0, 0) !important;
+		inset: 35px auto auto 15% !important;
+	}
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+	text-transform: capitalize;
+}
+
+.react-datepicker__triangle,
+.react-datepicker__triangle::after,
+.react-datepicker__triangle::before {
+	left: 50% !important;
+
+	transform: translateX(0%) !important;
+}
+
+.react-datepicker {
+	width: 100%;
+	padding-bottom: 10px;
+
+	color: #4f4e4e;
+	border: none;
+	border-radius: 3px;
+	background-color: colors.$white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	font-size: 12px;
+
+	&__month-container {
+		width: 100%;
+	}
+
+	&__header {
+		padding: 0;
+
+		border: none;
+		border-radius: 0;
+		background-color: colors.$white;
+	}
+
+	&__triangle::before {
+		display: none;
+	}
+
+	&__triangle::after {
+		top: 1px;
+
+		border-bottom-color: colors.$blue !important;
+	}
+
+	&__week {
+		margin-top: 10px;
+
+		&:first-child {
+			margin-top: 18px;
+		}
+	}
+
+	&__day {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: auto;
+		min-width: 24px;
+		min-height: 24px;
+		margin: 0;
+
+		line-height: 100%;
+	}
+
+	&__day-name {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: auto;
+		min-width: 24px;
+		min-height: 24px;
+		margin: 0;
+
+		line-height: 110%;
+	}
+
+	&__day,
+	&__time-name {
+		color: #4f4e4e;
+
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	&__day--keyboard-selected,
+	&__month-text--keyboard-selected,
+	&__quarter-text--keyboard-selected,
+	&__year-text--keyboard-selected {
+		color: #4f4e4e;
+		background-color: colors.$transparent;
+	}
+
+	&__day--today {
+		color: #4f4e4e;
+		background-color: colors.$transparent;
+	}
+
+	&__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+		color: colors.$white;
+		border-radius: 0;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		background-color: colors.$blue;
+	}
+
+	&__day--selected {
+		color: colors.$white;
+	}
+
+	&__day--in-range {
+		color: colors.$white;
+	}
+
+	&__day--range-start,
+	&__day--range-end {
+		background-color: colors.$blue !important;
+	}
+
+	&__day--in-range {
+		border-radius: 0;
+		background-color: #b2c6d6;
+	}
+
+	&__day--range-start {
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+
+	&__day--range-end {
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	&__day--outside-month:not(.react-datepicker__day--in-range) {
+		color: rgb(79 78 78 / 40%);
+	}
+
+	&__day-name {
+		text-transform: uppercase;
+
+		color: rgb(79 78 78 / 80%);
+
+		font-size: 10px;
+	}
+
+	&__day-name:nth-child(6),
+	&__day-name:nth-child(7) {
+		color: #f3af0b;
+	}
+
+	&__day:hover:not(.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range) {
+		border-radius: 3px;
+		background-color: #f0f0f0;
+	}
+
+	&__day:hover:not(.react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__day--today) {
+		border-radius: 3px;
+		background-color: #f0f0f0;
+	}
+
+	&__day--in-selecting-range:not(.react-datepicker__day--selected) {
+		border-radius: 0;
+		background-color: #b2c6d6;
+	}
+
+	&__day--in-range:hover {
+		border-radius: 0;
+		background-color: #b2c6d6;
+	}
+
+	&__day--range-start:hover {
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		background-color: colors.$blue;
+	}
+
+	&__day--range-end:hover {
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		background-color: colors.$blue;
+	}
+
+	&__day:focus-visible {
+		outline: none;
+	}
+
+	@include mixins.fonts(family.$montserrat);
+}

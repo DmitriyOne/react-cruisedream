@@ -1,0 +1,23 @@
+@use '.././../../../styles/mixins.scss';
+@use '.././../../../styles/breakpoints.scss';
+
+.footer {
+	padding: 80px 20px;
+
+	background-color: #004a76;
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+}
+
+.wrapper {
+	display: flex;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+	}
+}

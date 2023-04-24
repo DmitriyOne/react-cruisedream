@@ -1,0 +1,168 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	width: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: space-between;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+
+	margin-right: 80px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 50px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-right: 20px;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: flex-end;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		align-items: center;
+	}
+}
+
+.adultIcon {
+	display: block;
+
+	width: 30px;
+	margin-right: 12px;
+
+	img {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 18px;
+		margin-right: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 4px;
+	}
+}
+
+.childIcon {
+	display: block;
+
+	width: 27px;
+	margin-right: 12px;
+
+	img {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 18px;
+		margin-right: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 4px;
+	}
+}
+
+.countWrapper {
+	display: flex;
+	align-items: center;
+
+	padding-bottom: 2px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 0;
+	}
+}
+
+.countText {
+	min-width: 70px;
+	padding-right: 10px;
+	padding-left: 10px;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 24px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 55px;
+		padding-right: 5px;
+		padding-left: 5px;
+
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		min-width: 45px;
+
+		font-size: 16px;
+	}
+}
+
+.countButton {
+	color: colors.$white;
+	background-color: rgb(79 78 78 / 50%);
+
+	font-size: 20px;
+	line-height: 100%;
+
+	@include mixins.square-size(25);
+}
+
+.label {
+	display: block;
+
+	margin-left: auto;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 110%;
+
+	@include mixins.fluidMaxSize(120);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 10px;
+
+		@include mixins.fluidMaxSize(105);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 8px;
+
+		@include mixins.fluidMaxSize(95);
+	}
+}

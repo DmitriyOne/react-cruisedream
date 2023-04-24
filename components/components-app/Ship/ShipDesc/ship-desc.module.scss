@@ -1,0 +1,53 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.text {
+	display: inline;
+
+	color: colors.$white;
+
+	font-size: 15px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.button {
+	display: inline;
+
+	padding-left: 4px;
+
+	transition: color .3s;
+
+	color: rgb(255 255 255 / 50%);
+
+	font-size: 15px;
+	line-height: 120%;
+	text-decoration-line: underline;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+		}
+	}
+}

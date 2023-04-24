@@ -1,0 +1,234 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.component {
+	display: none;
+
+	opacity: 0;
+
+	&.active {
+		display: block;
+
+		animation: fade-in .6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+}
+
+.row {
+	display: flex;
+	align-items: stretch;
+
+	width: 100%;
+	margin-top: 15px;
+
+	&>.col {
+		@include mixins.media-w(breakpoints.$tablet) {
+			margin-top: 15px;
+		}
+	}
+
+	&:first-child {
+		margin-top: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-wrap: wrap;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 0;
+	}
+}
+
+.col {
+	width: 33.3%;
+	padding-right: 15px;
+
+	&:last-child {
+		padding-right: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-right: 0;
+	}
+}
+
+.last {
+	&>.col:nth-child(2) {
+		@include mixins.media-w(breakpoints.$laptop) {
+			padding-right: 0;
+		}
+	}
+
+	&>.col:last-child {
+		@include mixins.media-w(breakpoints.$laptop) {
+			padding-right: 15px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			padding-right: 0;
+		}
+	}
+
+	&>.col {
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 50%;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 100%;
+		}
+	}
+}
+
+.checkbox {
+	margin-right: 14px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.label {
+	display: block;
+
+	padding-bottom: 4px;
+	padding-left: 12px;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 17px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px !important;
+	}
+}
+
+.darkText {
+	color: #4f4e4e;
+}
+
+.flex {
+	display: flex;
+}
+
+.select {
+	width: 64%;
+	margin-right: 15px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 80%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 65%;
+	}
+}
+
+.amountDays {
+	display: flex;
+	flex-direction: column;
+
+	width: 33%;
+	height: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 20%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 35%;
+	}
+}
+
+.inputWrapper {
+	position: relative;
+
+	display: flex;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 3px;
+
+	&::before {
+		z-index: 1;
+
+		width: 1px;
+		height: 50%;
+
+		content: '';
+
+		background-color: rgb(79 78 78 / 30%);
+
+		@include mixins.absolute-center;
+	}
+
+	.input {
+		border-radius: 0;
+	}
+}
+
+.input {
+	width: 100%;
+	height: 100%;
+	min-height: 46px;
+	padding: 0 6px;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 60%) !important;
+	background-color: colors.$white !important;
+
+	font-size: 17px;
+	line-height: 120%;
+
+	&::placeholder {
+		color: rgb(79 78 78 / 60%);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.inputLabel {
+	padding-left: 0;
+
+	text-align: center;
+	white-space: nowrap;
+
+	@extend .label;
+}
+
+.half {
+	width: 50%;
+	height: 100%;
+	margin-right: 15px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	.input {
+		padding: 0 12px;
+
+		text-align: left;
+
+		border-radius: 3px;
+	}
+}

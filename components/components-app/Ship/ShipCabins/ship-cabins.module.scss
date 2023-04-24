@@ -1,0 +1,154 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.title {
+	width: 100%;
+	margin-bottom: 30px;
+	padding-bottom: 24px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$blue;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	font-size: 36px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 24px;
+
+		font-size: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-bottom: 22px;
+		padding-bottom: 18px;
+
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 14px;
+		padding-bottom: 12px;
+
+		font-size: 24px;
+		font-weight: 400;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 8px;
+
+		font-size: 20px;
+		font-weight: 400;
+	}
+}
+
+.tabsHeader {
+	width: 100%;
+
+	margin-bottom: 35px;
+
+	border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+		padding-right: 12px;
+		padding-left: 12px;
+
+		border-bottom: none;
+	}
+}
+
+.tabsHeaderWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1370);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(1170);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(800);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: space-between;
+	}
+}
+
+.tabsTitle {
+	margin-right: 40px;
+	padding: 0 20px 12px;
+
+	text-align: center;
+	text-transform: none !important;
+
+	color: rgb(0 66 117 / 55%);
+	border-bottom: 3px solid colors.$transparent;
+
+	font-size: 28px;
+	line-height: 110%;
+
+	&.active {
+		border-bottom-color: rgb(79 78 78 / 50%);
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-right: 20px;
+		padding: 0 14px 8px;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-right: 10px;
+		padding: 0 8px 4px;
+
+		border-bottom-width: 2px;
+
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding: 0 2px 2px;
+
+		font-size: 13px;
+	}
+}
+
+.tabsSubtitle {
+	display: block;
+
+	padding: 0;
+
+	@extend .tabsTitle;
+}
+
+.tabsBody {
+	display: flex;
+	flex-direction: column;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1370);
+}

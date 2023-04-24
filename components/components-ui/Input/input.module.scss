@@ -1,0 +1,100 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	position: relative;
+}
+
+.wrapper {
+	display: flex;
+
+	height: 100%;
+}
+
+.full {
+	width: 100%;
+}
+
+.auto {
+	width: auto;
+}
+
+.half {
+	width: 47%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+	}
+}
+
+.input {
+	color: #fff;
+	background-color: #000;
+}
+
+.label {
+	display: block;
+
+	cursor: pointer;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 17px;
+	line-height: 120%;
+}
+
+.labelLeft {
+	align-items: center;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+.labelRight {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.labelTop {
+	flex-direction: column-reverse;
+}
+
+.labelBottom {
+	flex-direction: column;
+}
+
+.input[type="checkbox"] {
+	display: none;
+	visibility: hidden;
+
+	opacity: 0;
+}
+
+.input[type="number"] {
+	-moz-appearance:textfield;
+}
+
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+
+	margin: 0;
+}
+
+.input[type="checkbox"]+.label::before,
+.input[type="checkbox"]+.label::after {
+	position: absolute;
+
+	content: "";
+}
+
+.error {
+	& .input {
+		border: 1px solid colors.$red;
+		background-color: rgb(#ec5840, 0.1);
+	}
+
+	& .label {
+		color: colors.$red;
+	}
+}

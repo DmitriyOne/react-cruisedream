@@ -1,0 +1,38 @@
+@use '../../../../../../styles/family.scss';
+@use '../../../../../../styles/mixins.scss';
+@use '../../../../../../styles/breakpoints.scss';
+
+.row {
+	display: flex;
+	justify-content: flex-end;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		display: none;
+	}
+}
+
+.topLanguageWrapper {
+	display: flex;
+}
+
+.topSearch {
+	margin-right: 20px;
+
+	@include mixins.square-size(18);
+}
+
+.topLanguage {
+	margin-right: 14px;
+
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 13px;
+	line-height: 120%;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

@@ -1,0 +1,23 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.logo {
+	img {
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 100%;
+			max-width: 140px !important;
+			margin: 0 auto;
+		}
+	}
+
+	@include mixins.fluidMaxSize(250);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		max-width: 100%;
+		margin-bottom: 8px;
+	}
+}

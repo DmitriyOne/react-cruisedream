@@ -1,0 +1,5 @@
+export * from './CabinsInner/CabinsInner'
+export * from './CabinsSuite/CabinsSuite'
+export * from './CabinsWithBalcony/CabinsWithBalcony'
+export * from './CabinsWithWindow/CabinsWithWindow'
+export * from './CruiseCabins'

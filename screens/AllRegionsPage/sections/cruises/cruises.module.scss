@@ -1,0 +1,36 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	border-top: 1px solid rgb(79 78 78 / 40%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		border-top: 0;
+	}
+}
+
+.pt {
+	padding-top: 22px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 0;
+	}
+}
+
+.container {
+	position: relative;
+}
+
+.swiperArrow {
+	&::before {
+		top: 233px;
+	}
+}

@@ -1,0 +1,25 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	padding: 65px 12px 42px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 50px;
+		padding-bottom: 36px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 40px;
+		padding-bottom: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 30px;
+		padding-bottom: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 20px 0;
+	}
+}

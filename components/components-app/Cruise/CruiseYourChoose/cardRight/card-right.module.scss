@@ -1,0 +1,359 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
+
+.row {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	margin-top: 20px;
+
+	&:first-child {
+		margin-top: 6px;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			margin-top: 0;
+		}
+	}
+
+	& .col:nth-child(2) {
+		max-width: 110px;
+		padding-right: 15px;
+		padding-left: 15px;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			max-width: 75px;
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 10px;
+	}
+}
+
+.col {
+	flex: 1;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.changeButton {
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 14px;
+	line-height: 110%;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+
+		text-align: right;
+
+		font-size: 12px;
+	}
+}
+
+.cabins {
+	color: colors.$blue;
+
+	font-size: 23px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.currentCabins {
+	display: block;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 14px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 13px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.cabinsCode {
+	min-width: 20px;
+	min-height: 20px;
+	margin-right: 8px;
+
+	text-align: center;
+
+	color: colors.$white;
+	border-radius: 2px;
+	background: #c20303;
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 100%;
+
+	@include mixins.flex-center;
+}
+
+.logo {
+	max-width: 220px;
+	margin: 0 auto;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		max-width: 180px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		max-width: 140px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-top: 6px;
+		margin-bottom: 12px;
+	}
+}
+
+.passengers {
+	color: colors.$blue;
+
+	font-size: 23px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 13px;
+	}
+}
+
+.passengersIcon {
+	display: block;
+
+	width: 16px;
+	margin-right: 12px;
+}
+
+.shipName {
+	width: 100%;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 25px;
+	font-weight: 600;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 23px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.dateWrapper {
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 0;
+	}
+}
+
+.date {
+	color: colors.$blue;
+	border-bottom: none;
+
+	font-size: 23px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		color: rgb(79 78 78 / 80%);
+		border-bottom: 1px solid rgb(79 78 78 / 80%);
+
+		font-size: 12px;
+	}
+}
+
+.price {
+	display: block;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 32px;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 6px;
+		padding-bottom: 12px;
+	}
+}
+
+.buttonsWrapper {
+	display: flex;
+	align-items: stretch;
+
+	margin-left: auto;
+	padding: 18px 18px 4px 0;
+
+	@include mixins.fluidMaxSize(450);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(420);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: center;
+
+		max-width: 100%;
+		padding-top: 0;
+		padding-right: 0;
+	}
+}
+
+.buttonCol {
+	display: flex;
+	flex-direction: column;
+
+	width: 50%;
+
+	&:first-child {
+		margin-right: 12px;
+	}
+
+	&:first-child .button {
+		border-radius: 3px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: auto;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 50%;
+	}
+}
+
+.button {
+	padding: 18px 4px;
+
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		max-width: 160px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-width: 145px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+
+		font-size: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		max-width: 100%;
+	}
+}
+
+.list {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	padding-top: 12px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 8px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-top: 4px;
+	}
+}
+
+.listItem {
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 14px;
+	line-height: 145%;
+
+	&::before {
+		display: inline-block;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 10px;
+	}
+}
+
+.listItem.minus::before {
+	content: '-';
+}
+
+.listItem.plus::before {
+	content: '+';
+}

@@ -1,0 +1,20 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	z-index: -1;
+
+	width: 100%;
+	height: 100%;
+
+	@include mixins.absolute-center;
+}
+
+.image {
+	height: 100% !important;
+	object-position: top;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		object-position: left;
+	}
+}

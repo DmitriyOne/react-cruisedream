@@ -1,0 +1,383 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+
+	width: 100%;
+	padding-bottom: 6px;
+
+	border-bottom: 1px solid rgb(79 78 78 / 40%);
+
+	& .col {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	& .col:nth-child(3) {
+		justify-content: flex-start;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		display: none;
+	}
+}
+
+.body {
+	width: 100%;
+
+	&:nth-child(odd) .port {
+		color: colors.$blue;
+	}
+}
+
+.header,
+.body {
+	& .col:nth-child(1) {
+		width: 3%;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+			padding-right: 4px;
+			padding-left: 8px;
+		}
+	}
+
+	& .col:nth-child(2) {
+		width: 6%;
+		margin-right: 20px;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 8%;
+			margin-right: 10px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 12%;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+			margin-right: 0;
+			padding-right: 16px;
+			padding-left: 10px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet-s) {
+			min-width: 80px;
+		}
+	}
+
+	& .col:nth-child(3) {
+		width: 60%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 56%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			width: 78%;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: 100%;
+		}
+	}
+
+	& .col:nth-child(4) {
+		width: 6%;
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			width: auto;
+		}
+
+	}
+
+	& .col:nth-child(5) {
+		width: 12%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 13%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			display: none;
+		}
+	}
+
+	& .col:nth-child(6) {
+		width: 12%;
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			width: 13%;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			display: none;
+		}
+	}
+}
+
+.row {
+	display: flex;
+	overflow: hidden;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	width: 100%;
+	padding: 6px 0;
+
+	cursor: pointer;
+
+	border-bottom: 1px solid rgb(79 78 78 / 40%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-right: 6px;
+	}
+}
+
+.visible {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+}
+
+.title {
+	color: colors.$blue;
+
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+}
+
+.number {
+	display: block;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+}
+
+.date {
+	display: block;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		text-align: left;
+	}
+}
+
+.port {
+	display: block;
+
+	text-align: left;
+
+	color: #4f4e4e;
+
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 15px;
+	}
+}
+
+.info {
+	display: block;
+
+	margin: 0 auto;
+
+	&.active {
+		@include mixins.media-w(breakpoints.$laptop) {
+			transform: rotate(-180deg);
+		}
+	}
+
+	img {
+		display: block;
+
+		height: 100%;
+	}
+
+	@include mixins.square-size(25);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.square-size(20);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 14px;
+		height: 8px;
+	}
+}
+
+.text {
+	display: block;
+
+	text-align: center;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+.hidden {
+	overflow: hidden;
+
+	transition: height 0.4s ease;
+
+	&.active {
+		height: auto !important;
+	}
+}
+
+.hiddenRow {
+	display: flex;
+	justify-content: center;
+
+	width: 100%;
+	padding-top: 6px;
+}
+
+.hiddenCol {
+	display: flex;
+	align-items: center;
+
+	color: rgb(79 78 78 / 60%);
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+
+	&:first-child {
+		justify-content: flex-end;
+
+		padding-right: 8px;
+	}
+
+	&:last-child {
+		justify-content: flex-start;
+
+		padding-left: 8px;
+	}
+
+	@include mixins.fluidMaxSize(300);
+}
+
+.hiddenColText {
+	display: block;
+
+	color: colors.$blue;
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 110%;
+
+	&:first-child {
+		padding-left: 8px;
+	}
+
+	&:last-child {
+		padding-right: 8px;
+	}
+}
+
+.hiddenContent {
+	display: flex;
+	align-items: flex-start;
+
+	width: 60%;
+	margin-left: 10%;
+	padding-top: 6px;
+	padding-bottom: 15px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 56%;
+		margin-left: 12%;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+		margin-left: 0;
+		padding-top: 10px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+	}
+}
+
+.hiddenImg {
+	display: block;
+
+	min-width: 180px;
+	margin-right: 10px;
+
+	@include mixins.fluidMaxSize(180);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		min-width: 250px;
+
+		@include mixins.fluidMaxSize(250);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(480);
+	}
+}
+
+.hiddenText {
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 15px;
+	line-height: 110%;
+}

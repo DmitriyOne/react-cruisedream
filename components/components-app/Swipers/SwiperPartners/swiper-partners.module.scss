@@ -1,0 +1,46 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.link {
+	display: block;
+}
+
+.pagination {
+	margin-top: 20px;
+
+	@include mixins.flex-center;
+}
+
+.bullet {
+	display: block;
+
+	margin-right: 4px;
+
+	border-radius: 50%;
+	background: rgb(217 217 217 / 50%);
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.active {
+		background: rgb(217 217 217 / 90%);
+	}
+
+	@include mixins.square-size(11);
+}
+
+.swiperArrow {
+	top: 57%;
+
+	width: 100px;
+	height: 85%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		width: 50px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 30px;
+	}
+}

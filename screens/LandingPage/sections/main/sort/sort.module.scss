@@ -1,0 +1,73 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-direction: column;
+	}
+}
+
+.pagination {
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
+.amountWrapper {
+	margin-left: 30px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-left: 20px;
+	}
+}
+
+.sortWrapper {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+
+		width: 100%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}
+
+.sortBy {
+	margin-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 70%;
+		margin-bottom: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-bottom: 20px;
+	}
+}
+
+.showBy {
+	@include mixins.media-w(breakpoints.$laptop) {
+		justify-content: flex-end;
+
+		width: 30%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		width: 100%;
+	}
+}

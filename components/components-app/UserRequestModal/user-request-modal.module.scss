@@ -1,0 +1,258 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+@use '../../../styles/family.scss';
+
+.container {
+	background: #f5f5f5;
+
+	@include mixins.fluidMaxSize(660);
+}
+
+.body {
+	padding: 36px 55px 22px;
+
+	background: #f5f5f5;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 24px;
+		padding-left: 24px;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	width: 100%;
+	padding-bottom: 8px;
+
+	text-align: left;
+
+	border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 5px;
+	}
+}
+
+.title {
+	padding-bottom: 10px;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 8px;
+	}
+}
+
+.text1 {
+	display: block;
+
+	color: #4f4e4e;
+
+	font-size: 11px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.text2 {
+	display: block;
+
+	color: #4f4e4e;
+
+	font-size: 10px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+}
+
+.year {
+	padding-bottom: 6px;
+}
+
+.numberCruise {
+	padding-top: 4px;
+
+	text-align: right;
+
+	color: rgb(0 0 0 / 78%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 2px;
+	}
+}
+
+.optionsWrapper {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+	margin-right: auto;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	@include mixins.fluidMaxSize(330);
+}
+
+.optionsItem {
+	display: flex;
+	align-items: flex-start;
+
+	margin-bottom: 20px;
+
+	text-align: left;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 16px;
+	}
+}
+
+.optionsIcon {
+	display: block;
+
+	width: 13px;
+	margin-right: 8px;
+}
+
+.optionsContent {
+	padding-top: 3px;
+}
+
+.optionsSubtitle {
+	color: rgb(0 0 0 / 78%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 4px;
+	}
+}
+
+.form {
+	width: 100%;
+	padding: 16px 21px 12px;
+
+	text-align: left;
+
+	background: colors.$white;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 16px 12px;
+	}
+}
+
+.formRow {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	padding-bottom: 12px;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	&.error {
+		padding-bottom: 6px;
+	}
+
+	@include mixins.fluidMaxSize(330);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		max-width: 100%;
+	}
+}
+
+.inputWrapper {
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 12px;
+	}
+}
+
+.label {
+	padding-bottom: 2px;
+
+	cursor: default;
+
+	color: #4f4e4e;
+
+	font-size: 11px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 2px;
+	}
+}
+
+.labelCheckbox {
+	padding-bottom: 2px;
+
+	color: #4f4e4e !important;
+
+	font-size: 11px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 2px;
+	}
+}
+
+.input,
+.textarea {
+	padding: 5px 8px 6px;
+
+	color: rgb(79 78 78 / 60%);
+	border: none;
+	border-radius: 3px;
+	background: #ececec;
+
+	font-size: 11px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+}
+
+.textarea {
+	min-height: 110px;
+	margin-bottom: 20px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		min-height: 80px;
+	}
+}
+
+.button {
+	margin-top: 10px;
+	padding: 12px 22px;
+
+	color: colors.$white;
+	background-color: colors.$btn-hover;
+
+	font-size: 10px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 12px;
+		padding-left: 12px;
+	}
+}

@@ -1,0 +1,116 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 70px 20px 50px;
+	padding-top: 70px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 30px;
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-top: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 12px;
+		padding-bottom: 0;
+	}
+}
+
+.title {
+	padding-bottom: 8px;
+
+	color: colors.$blue;
+
+	font-size: 46px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 34px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 32px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 4px;
+
+		font-size: 22px;
+	}
+}
+
+.item {
+	position: relative;
+
+	padding-left: 20px;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 32px;
+	line-height: 160%;
+
+	&::before {
+		position: absolute;
+		top: 22px;
+		left: 0;
+
+		content: '';
+
+		border-radius: 50%;
+		background-color: rgb(79 78 78 / 80%);
+
+		@include mixins.square-size(8);
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			top: 16px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			top: 12px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			top: 9px;
+
+			@include mixins.square-size(5);
+		}
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-left: 10px;
+
+		font-size: 16px;
+		line-height: 140%;
+	}
+}

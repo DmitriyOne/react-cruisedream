@@ -1,0 +1,119 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding: 40px 20px;
+
+	background-color: #013c5e;
+}
+
+.container {
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	width: 20%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		width: 40%;
+
+		&:nth-child(odd) {
+			margin-right: 60px;
+		}
+
+		&:first-child {
+			margin-bottom: 40px;
+		}
+
+		&:nth-child(2) {
+			margin-bottom: 40px;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 45%;
+
+		&:nth-child(odd) {
+			margin-right: 30px;
+		}
+
+		&:first-child {
+			margin-bottom: 20px;
+		}
+
+		&:nth-child(2) {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.imgWrapper {
+	margin-bottom: 18px;
+
+	@include mixins.square-size(60);
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+
+		@include mixins.square-size(50);
+	}
+}
+
+.img {
+	filter: drop-shadow(0 4px 2px rgb(0 0 0 / 100%));
+}
+
+.title {
+	padding-bottom: 18px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 32px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 2px;
+
+		font-size: 26px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 18px;
+	}
+}
+
+.description {
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 18px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		text-transform: none;
+
+		font-size: 12px;
+	}
+}

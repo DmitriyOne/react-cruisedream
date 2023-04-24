@@ -1,0 +1,25 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	display: flex;
+	justify-content: flex-end;
+
+	margin-top: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 38px;
+	}
+}
+
+.icon {
+	display: block;
+
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.square-size(18);
+}

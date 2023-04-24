@@ -1,0 +1,77 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+}
+
+.half {
+	display: flex;
+	justify-content: space-between;
+
+	width: calc(50% + 84px);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		align-items: flex-start;
+
+		width: 100%;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		flex-direction: column-reverse;
+	}
+}
+
+.pagination {
+	margin-right: 10px;
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: 0;
+	}
+}
+
+.amountWrapper {
+	margin-left: 30px;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-left: 20px;
+	}
+}
+
+.showMore {
+	padding: 14px 22px;
+
+	color: colors.$btn-text;
+	border-width: 1px;
+	border-style: solid;
+	border-color: colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	font-size: 17px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 9px 18px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		margin-right: auto;
+		margin-bottom: 20px;
+		margin-left: auto;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}

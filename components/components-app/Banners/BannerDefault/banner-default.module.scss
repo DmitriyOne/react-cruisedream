@@ -1,0 +1,193 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/colors.scss';
+@use '../../../../styles/breakpoints.scss';
+
+.component {
+	position: relative;
+
+	padding: 14px 20px 18px;
+
+	background-color: colors.$blue;
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding: 10px 20px;
+	}
+}
+
+.bg {
+	z-index: -1;
+
+	width: 100%;
+	height: 100%;
+
+	@include mixins.absolute-center;
+}
+
+.image {
+	height: 100%;
+	object-position: center;
+}
+
+.container {
+	flex-direction: column;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(560);
+	@include mixins.flex-center;
+}
+
+.text {
+	padding-bottom: 8px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 20px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 4px;
+
+		font-size: 12px;
+	}
+}
+
+.title {
+	padding-bottom: 20px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$white;
+
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 16px;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 14px;
+	}
+}
+
+.form {
+	display: flex;
+	align-items: stretch;
+
+	width: 100%;
+
+	border: 2px solid colors.$white;
+	border-radius: 3px;
+	filter: drop-shadow(0 2px 4px rgb(0 0 0 / 25%));
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		flex-direction: column;
+
+		border: none;
+	}
+}
+
+.inputWrapper {
+	width: 100%;
+
+	background-color: colors.$white;
+}
+
+.input {
+	width: 100%;
+	height: 100%;
+	padding: 6px 14px;
+
+	color: rgb(79 78 78 / 80%);
+	background-color: colors.$transparent;
+
+	font-size: 15px;
+
+	&::placeholder {
+		color: rgb(79 78 78 / 80%);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		min-height: 47px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		min-height: 40px;
+	}
+}
+
+.button {
+	padding: 12px 26px 11px 29px;
+
+	color: colors.$white;
+	background-color: colors.$transparent;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-top: 16px;
+		padding-bottom: 12px;
+
+		border: 2px solid colors.$white;
+	}
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding-top: 12px;
+		padding-bottom: 10px;
+
+		font-size: 14px;
+	}
+}
+
+.footnote {
+	padding-top: 20px;
+
+	text-align: center;
+	text-transform: lowercase;
+
+	color: colors.$white;
+
+	font-size: 16px;
+	line-height: 120%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-top: 24px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 12px;
+	}
+
+	@include mixins.media-w(breakpoints.$mobile-l) {
+		padding-top: 16px;
+
+		font-size: 10px;
+	}
+}

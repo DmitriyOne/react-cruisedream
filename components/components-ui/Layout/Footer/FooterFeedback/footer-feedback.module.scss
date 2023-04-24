@@ -1,0 +1,87 @@
+@use '../../../../../styles/colors.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/breakpoints.scss';
+
+.component {
+	margin-left: 80px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		margin-left: 60px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		flex-direction: column;
+
+		width: 100%;
+		margin-left: 0;
+		padding-top: 30px;
+		padding-bottom: 25px;
+
+		border-bottom: 1px solid #546e90;
+
+		@include mixins.flex-center;
+	}
+}
+
+.buttonFeedback {
+	padding: 12px 30px;
+
+	letter-spacing: 0.05em;
+
+	color: colors.$white;
+	border: 2px solid colors.$white;
+
+	font-size: 15px;
+	line-height: 140%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 10px 40px;
+
+		font-size: 15px;
+	}
+}
+
+.phoneFeedback {
+	display: block;
+
+	margin-top: 30px;
+	margin-bottom: 10px;
+
+	text-align: right;
+	letter-spacing: 0.05em;
+
+	color: colors.$white;
+
+	font-size: 20px;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-top: 20px;
+
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-top: 30px;
+		margin-bottom: 28px;
+
+		font-size: 20px;
+	}
+}
+
+.mailFeedback {
+	display: block;
+
+	text-align: right;
+	letter-spacing: 0.05em;
+
+	color: colors.$white;
+
+	font-size: 15px;
+	line-height: 140%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+}

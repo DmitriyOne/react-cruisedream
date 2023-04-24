@@ -1,0 +1,133 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	width: 100%;
+}
+
+.tabsHeader {
+	width: 100%;
+
+	margin-bottom: 35px;
+
+	border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-bottom: 10px;
+		padding-right: 20px;
+		padding-left: 20px;
+
+		border-bottom: none;
+	}
+}
+
+.tabsHeaderWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1370);
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		@include mixins.fluidMaxSize(1170);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		@include mixins.fluidMaxSize(800);
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		justify-content: space-between;
+	}
+}
+
+.tabsTitle {
+	margin-right: 40px;
+	padding: 0 20px 12px;
+
+	text-align: center;
+	text-transform: none !important;
+
+	color: rgb(0 66 117 / 55%);
+	border-bottom: 3px solid colors.$transparent;
+
+	font-size: 28px;
+	line-height: 110%;
+
+	&.active {
+		border-bottom-color: rgb(79 78 78 / 50%);
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		margin-right: 20px;
+		padding: 0 14px 8px;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		margin-right: 10px;
+		padding: 0 8px 4px;
+
+		border-bottom-width: 2px;
+
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding: 0 2px 2px;
+
+		font-size: 13px;
+	}
+}
+
+.tabsSubtitle {
+	display: block;
+
+	padding-top: 4px;
+
+	text-align: center;
+
+	color: colors.$blue;
+
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		padding-top: 8px;
+
+		font-size: 13px;
+	}
+}
+
+.tabsBody {
+	display: flex;
+	flex-direction: column;
+
+	margin: 0 auto;
+
+	@include mixins.fluidMaxSize(1370);
+}

@@ -1,0 +1,34 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	position: relative;
+
+	width: 100%;
+	height: 420px;
+	margin-top: 32px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		height: 370px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		height: 300px;
+		margin-top: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		height: 240px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 175px;
+		margin-top: 12px;
+	}
+}
+
+.image {
+	height: 100%;
+}

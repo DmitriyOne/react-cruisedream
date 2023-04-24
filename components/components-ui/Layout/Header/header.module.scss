@@ -1,0 +1,64 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/z-index.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	position: relative;
+}
+
+.column {
+	display: flex;
+	flex-direction: column-reverse;
+
+	width: 100%;
+}
+
+.header {
+	width: 100%;
+	padding-right: 20px;
+	padding-left: 20px;
+
+	@include mixins.media-w(breakpoints.$laptop){
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.headerRow {
+	padding: 18px 0;
+
+	transition: all .5s;
+
+	background-color: colors.$white;
+
+	@include mixins.media-w(breakpoints.$laptop){
+		padding: 12px 20px;
+	}
+}
+
+.fixed {
+	position: fixed;
+	z-index: z-index.$idx-header;
+	top: -100%;
+	left: 0;
+
+	&.show {
+		top: 0;
+	}
+}
+
+.logo {
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		@include mixins.fluidMaxSize(200);
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		position: relative;
+		z-index: z-index.$idx-header;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		@include mixins.fluidMaxSize(125);
+	}
+}

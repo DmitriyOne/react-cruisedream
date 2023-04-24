@@ -1,0 +1,28 @@
+@use '../styles/mixins.scss';
+@use '../styles/breakpoints.scss';
+
+.yarl__navigation_next, .yarl__navigation_prev {
+	& .yarl__icon {
+		@include mixins.media-w(breakpoints.$laptop) {
+			@include mixins.square-size(24)
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 4px;
+	}
+}
+
+.yarl__toolbar .yarl__button:first-child,
+.yarl__toolbar .yarl__button:nth-child(2) {
+	display: none;
+}
+
+.yarl__fullsize > span {
+	width: 100% !important;
+	height: 100% !important;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: auto !important;
+	}
+}

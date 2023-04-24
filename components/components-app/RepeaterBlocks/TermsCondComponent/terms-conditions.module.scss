@@ -1,0 +1,122 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.left {
+	margin-right: 40px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-right: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column;
+
+		@include mixins.flex-center;
+	}
+}
+
+.right {
+	max-width: 1180px;
+}
+
+.title {
+	padding-bottom: 35px;
+
+	color: rgb(0 66 117 / 55%);
+
+	font-size: 30px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 10px;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		font-size: 24px;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	padding: 20px;
+
+	white-space: nowrap;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	background: colors.$transparent;
+
+	font-size: 17px;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 14px 16px;
+
+		font-size: 13px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 1px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}
+
+.text {
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 28px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 22px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-bottom: 20px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,240 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/breakpoints.scss';
+@use '../../../../../styles/family.scss';
+@use '../../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+
+	width: 100%;
+	margin-bottom: 32px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.photoLeft {
+		flex-direction: row;
+
+		margin-right: auto;
+	}
+
+	&.photoRight {
+		flex-direction: row-reverse;
+
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		margin-bottom: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		flex-direction: column !important;
+
+		border-bottom: 0.3px solid rgb(79 78 78 / 40%);
+	}
+}
+
+.component {
+	&.photoLeft .left {
+		margin-right: 8px;
+	}
+
+	&.photoRight .left {
+		margin-left: 8px;
+	}
+}
+
+.left {
+	position: relative;
+	
+	img {
+		@include mixins.media-w(breakpoints.$tablet) {
+			height: 100%;
+		}
+	}
+
+	&.large {
+		min-width: 720px;
+
+		@include mixins.fluidMaxSize(960);
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			min-width: 670px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			min-width: 550px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			min-width: 450px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			min-width: 100%;
+		}
+	}
+
+	&.small {
+		@include mixins.fluidMaxSize(670);
+
+		@include mixins.media-w(breakpoints.$laptop-l) {
+			max-width: 550px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop-s) {
+			max-width: 500px;
+		}
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			max-width: 400px;
+		}
+
+		@include mixins.media-w(breakpoints.$tablet) {
+			max-width: 100%;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 250px;
+		margin: 0 !important;
+	}
+}
+
+.iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.right {
+	width: 100%;
+	padding-right: 40px;
+	padding-left: 40px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 12px 0 18px;
+	}
+}
+
+.title {
+	padding-bottom: 26px;
+
+	color: colors.$blue;
+
+	font-size: 36px;
+	line-height: 110%;
+
+	@include mixins.fonts(family.$source-sans-pro, 300);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 20px;
+
+		font-size: 28px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-bottom: 14px;
+
+		font-size: 24px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		padding-right: 10px;
+		padding-left: 10px;
+
+		text-align: center;
+
+		font-size: 24px;
+		font-weight: 400;
+	}
+}
+
+.description {
+	width: 100%;
+
+	text-align: justify;
+	text-indent: 3rem;
+
+	color: rgb(79 78 78 / 80%);
+
+	font-size: 25px;
+	line-height: 120%;
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		text-indent: 2rem;
+
+		font-size: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		font-size: 18px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		text-indent: 1rem;
+
+		font-size: 16px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	margin-top: 30px;
+	padding: 20px 45px;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	border-radius: 3px;
+	background-color: colors.$transparent;
+
+	font-size: 17px;
+	line-height: 100%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 100%;
+		margin-top: 12px;
+		padding: 16px 5px;
+
+		text-align: center;
+
+		color: colors.$white;
+		border: none;
+		border-radius: 0;
+		background-color: colors.$btn-hover;
+
+		font-size: 13px;
+	}
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 1px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}
+
+.image {
+	height: 100% !important;
+}

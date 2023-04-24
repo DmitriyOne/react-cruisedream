@@ -6,7 +6,7 @@ yarn
 
 ## CruiseDream:
 
-1. Envs for development: https://www.notion.so/fb228910fe974119abce5fb37b4d8950?v=06e7e3925cab4e1b8f1cb92be2a0bd23
+1. Envs for development: https://www.notion.so/895f6fd82e174beaa31b5f78ee6ba3a2?v=8ccbfd37a49045e4bdf5ff86ccb5c8dd
 
 2. Start local dev:
 

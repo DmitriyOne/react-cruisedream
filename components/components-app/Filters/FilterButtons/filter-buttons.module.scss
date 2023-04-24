@@ -1,0 +1,87 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/family.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	padding-top: 40px;
+
+	@include mixins.flex-center;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 20px;
+	}
+}
+
+.button {
+	min-width: 180px;
+	margin-right: 10px;
+	padding: 10px 17px;
+
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+
+	border-width: 2px;
+	border-style: solid;
+
+	font-size: 15px;
+	line-height: 140%;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include mixins.fonts(family.$source-sans-pro);
+
+	@include mixins.media-w(breakpoints.$tablet-s) {
+		min-width: 150px;
+
+		font-size: 14px;
+	}
+
+	@include mixins.media-minw(breakpoints.$tablet) {
+		&:hover {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+}
+
+.filterShow {
+	color: colors.$btn-text;
+	border-color: colors.$btn-border;
+	background-color: colors.$transparent;
+}
+
+.filterHide {
+	color: rgb(79 78 78 / 70%);
+	border-color: rgb(79 78 78 / 60%);
+	background-color: colors.$transparent;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+		margin-right: 15px;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	@include mixins.media-minw(breakpoints.$tablet) {
+		&:hover {
+			color: colors.$white;
+			border-color: colors.$transparent;
+			background-color: rgb(79 78 78 / 60%);
+		}
+	}
+}
+
+.buttonApply {
+	color: colors.$btn-text;
+	border-color: colors.$btn-border;
+	background-color: colors.$transparent;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		width: 50%;
+	}
+}

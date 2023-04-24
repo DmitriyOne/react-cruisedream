@@ -1,0 +1,15 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/breakpoints.scss';
+@use '../../../styles/colors.scss';
+
+.component {
+	min-height: 295px;
+	padding-left: 20px;
+
+	background: colors.$blue;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-left: 0;
+	}
+}

@@ -1,0 +1,277 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/breakpoints.scss';
+@use '../../../../styles/colors.scss';
+
+.component {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	height: 100%;
+	min-height: 450px;
+
+	box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		min-height: 420px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		min-height: 405px;
+	}
+}
+
+.imageWrapper {
+	position: relative;
+
+	width: 100%;
+	
+}
+
+.imageHeightL {
+	height: 310px;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		height: 250px;
+	}
+}
+
+.imageHeightS {
+	height: 230px;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		height: 210px;
+	}
+}
+
+.image {
+	height: 100% !important;
+}
+
+.row {
+	width: 100%;
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 6px;
+	}
+}
+
+.body {
+	width: 100%;
+}
+
+.bodyPaddingL {
+	padding: 25px 40px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding: 25px 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 20px 15px 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding: 20px 25px;
+	}
+}
+
+.bodyPaddingS {
+	padding: 12px 20px 26px;
+
+	@include mixins.media-w(breakpoints.$laptop-l) {
+		padding-bottom: 15px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding-right: 20px;
+		padding-bottom: 20px;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		padding-bottom: 12px;
+	}
+}
+
+.header {
+	width: 100%;
+
+	&.start {
+		justify-content: start;
+	}
+
+	&.center {
+		justify-content: center;
+	}
+
+	@include mixins.flex-spb;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-bottom: 6px;
+	}
+}
+
+.title {
+	display: block;
+
+	padding-bottom: 8px;
+
+	color: colors.$blue;
+
+	font-size: 19px;
+	line-height: 100%;
+}
+
+.paddingNull {
+	padding-bottom: 0;
+}
+
+.subtitle {
+	color: #4f4e4e;
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 110%;
+
+	&.indent {
+		text-indent: 2rem;
+
+		@include mixins.media-w(breakpoints.$laptop) {
+			text-indent: 1rem;
+		}
+	}
+
+	&.justify {
+		text-align: justify;
+	}
+}
+
+.logo {
+	max-width: 160px;
+	margin-bottom: 0;
+	margin-left: 10px;
+
+	img {
+		display: block;
+	}
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		max-width: 120px;
+	}
+}
+
+.fleetCompany {
+	display: block;
+
+	padding-bottom: 6px;
+
+	color: #4f4e4e;
+
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 110%;
+}
+
+.tags {
+	display: block;
+
+	padding-top: 8px;
+
+	color: colors.$blue;
+
+	font-size: 12px;
+	font-style: italic;
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 12px;
+	}
+}
+
+.footer {
+	display: flex;
+
+	width: 100%;
+	margin-top: auto;
+}
+
+.footerPaddingMobile {
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding: 0 12px 12px;
+	}
+}
+
+.button {
+	display: block;
+
+	padding: 16px 6px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: colors.$white;
+	border: 1px solid colors.$transparent;
+	background-color: colors.$btn-hover;
+
+	line-height: 110%;
+
+	@include mixins.media-w(breakpoints.$laptop-s) {
+		padding: 14px 4px;
+	}
+
+	@include mixins.media-w(breakpoints.$tablet) {
+		padding-top: 18px;
+		padding-bottom: 18px;
+
+		font-size: 12px;
+	}
+}
+
+.buttonWithHover {
+	transition: all .3s;
+
+	color: colors.$btn-text;
+	border: 1px solid colors.$btn-border;
+	background-color: colors.$white;
+
+	@include mixins.media-minw(breakpoints.$laptop) {
+		&:hover {
+			color: colors.$white;
+			border: 1px solid colors.$transparent;
+			background-color: colors.$btn-hover;
+		}
+	}
+
+	@include mixins.media-w(breakpoints.$laptop) {
+		color: colors.$white;
+		border: 1px solid colors.$transparent;
+		background-color: colors.$btn-hover;
+	}
+}
+
+.buttonFull {
+	width: 100%;
+}
+
+.buttonHalf {
+	width: 50%;
+
+	&:first-child {
+		margin-right: 6px;
+
+		color: colors.$btn-text;
+		border: 1px solid colors.$btn-border;
+		background-color: colors.$transparent;
+	}
+}
+
+.buttonFontSizeL {
+	font-size: 17px;
+}
+
+.buttonFontSizeS {
+	font-size: 13px;
+}

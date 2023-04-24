@@ -1,26 +1,58 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "strictNullChecks": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@crdr/components": ["components/components-app"],
+      "@crdr/components/*": ["components/components-app/*"],
+
+      "@crdr/plugins": ["components/components-plugin"],
+      "@crdr/plugins/*": ["components/components-plugin/*"],
+
+      "@crdr/ui": ["components/components-ui"],
+      "@crdr/ui/*": ["components/components-ui/*"],
+
+      "@crdr/constants": ["constants"],
+      "@crdr/constants/*": ["constants/*"],
+
+      "@crdr/context": ["context"],
+      "@crdr/context/*": ["context/*"],
+
+      "@crdr/fakedata": ["fakedata"],
+      "@crdr/fakedata/*": ["fakedata/*"],
+
+      "@crdr/hooks": ["hooks"],
+      "@crdr/hooks/*": ["hooks/*"],
+
+      "@crdr/store": ["store"],
+      "@crdr/store/*": ["store/*"],
+
+      "@crdr/interfaces": ["model/interfaces"],
+      "@crdr/interfaces/*": ["model/interfaces/*"],
+
+      "@crdr/enums": ["model/enums"],
+      "@crdr/enums/*": ["model/enums/*"],
+
+      "@crdr/pages": ["pages"],
+      "@crdr/pages/*": ["pages/*"],
+
+      "@crdr/image/*": ["public/images/*"],
+    }  
   },
-  "include": [
-    "src"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "env.d.ts"],
+  "exclude": ["node_modules"]
 }
